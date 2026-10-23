@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "Please cite the original papers and identify this as an unofficial partial implementation."
+title: "NL/Sleep Reproduction Lab"
+type: software
+version: 0.1.0rc1
+date-released: 2026-10-23
+authors:
+  - family-names: Zhu
+    given-names: Zhirui
+    alias: zhiruizz
+repository-code: "https://github.com/zhiruizz/nested_learning_and_sleep"
+url: "https://github.com/zhiruizz/nested_learning_and_sleep"
+license:
+  - MIT
+  - CC-BY-4.0
+references:
+  - type: article
+    title: "Nested Learning: The Illusion of Deep Learning Architectures"
+    authors:
+      - family-names: Behrouz
+        given-names: Ali
+      - family-names: Razaviyayn
+        given-names: Meisam
+      - family-names: Zhong
+        given-names: Peilin
+      - family-names: Mirrokni
+        given-names: Vahab
+    year: 2025
+    url: "https://arxiv.org/abs/2512.24695v1"
+  - type: article
+    title: "Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories"
+    authors:
+      - family-names: Behrouz
+        given-names: Ali
+      - family-names: Hashemi
+        given-names: Farnoosh
+      - family-names: Javanmard
+        given-names: Adel
+      - family-names: Mirrokni
+        given-names: Vahab
+    year: 2026
+    url: "https://arxiv.org/abs/2606.03979v2"

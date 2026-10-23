@@ -1,0 +1,300 @@
+{
+  "schema": "nl-sleep-public-release-files-v1",
+  "version": "0.1.0rc1",
+  "attribution": "Zhirui Zhu (zhiruizz)",
+  "repository": "https://github.com/zhiruizz/nested_learning_and_sleep",
+  "licenses": {
+    "code": "MIT",
+    "documentation_and_results_compilation": "CC-BY-4.0",
+    "prior_and_third_party_notices": "retained; see LICENSE.md"
+  },
+  "file_count_excluding_manifests": 57,
+  "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
+      "bytes": 19
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/reproduction.md",
+      "sha256": "6d3068cfe5bef7aed558860a449093c62bf4749d9e836ac527462312dc66bfa3",
+      "bytes": 521
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "a00245cc876850bbe47bcad235469a1fcbcefb62663226a3f0961e96e26f50dc",
+      "bytes": 79
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "2d558d17afb4677c700a5d20450b11267c25e05e07a82d5f8bbd32335c1b6d7a",
+      "bytes": 1276
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "b695dc9b7c809815906013fb6a5f68dfa57e569a0e032c6b2de304149ef09ca3",
+      "bytes": 2699
+    },
+    {
+      "path": "LICENSES/CC-BY-4.0.txt",
+      "sha256": "2ade8c89b8bbe0d859b124a9e47032c8494022f43091e8278ae8e2554a292196",
+      "bytes": 18615
+    },
+    {
+      "path": "LICENSES/MIT-source.txt",
+      "sha256": "c3715cbb26e31fea0fa7b6365bc24955258c1d415546b25162d97892da66ccd3",
+      "bytes": 1104
+    },
+    {
+      "path": "LICENSES/MIT.txt",
+      "sha256": "6b6745f7ccd9cad23fa0f25200d7e6e6067075defdbc0d4296b78fe7ded3b814",
+      "bytes": 1078
+    },
+    {
+      "path": "README.md",
+      "sha256": "5d862013f87393d380ae8229f85f2fdc9a955e999045be75564edcb5dd6ad3e0",
+      "bytes": 3875
+    },
+    {
+      "path": "README.zh-CN.md",
+      "sha256": "22f933894f057d0a79db6533b38cf622c50b4ea4dc0142179fd0bab6936d9fdc",
+      "bytes": 2115
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "7eecb1ba84a1f65697de6b9ca426d093aa4ae0f52044bacb4a38a60396df0012",
+      "bytes": 2030
+    },
+    {
+      "path": "configs/historical_protocols.json",
+      "sha256": "6dc7c13111838e029f2152b5fbb8166b2529f585222a652fc1f9c7cbd6f7ce20",
+      "bytes": 1258
+    },
+    {
+      "path": "configs/llama_static.json",
+      "sha256": "6c13a9b23b73560f00117090c2dc161f27317facc86816712103caa16a6aadc5",
+      "bytes": 307
+    },
+    {
+      "path": "docs/limitations.md",
+      "sha256": "7e34cf1bb7fb1536647149088f6db11e45c16d14a6c86f55824136cf61aee09d",
+      "bytes": 2893
+    },
+    {
+      "path": "docs/paper_to_code.md",
+      "sha256": "75044698615cd58b3a251e53cb87547368e0ada8323df740682b49f2696515f5",
+      "bytes": 3318
+    },
+    {
+      "path": "docs/provenance.md",
+      "sha256": "5cf00c7242abd2faedc75a7ed11a4aec475f571c89d945fedf6683f30c3d9ef6",
+      "bytes": 1457
+    },
+    {
+      "path": "docs/reproducibility.md",
+      "sha256": "a2bfd240c2048423159898ecf697ec619ff03fdf728b6c1c2e3baae64138ad93",
+      "bytes": 2485
+    },
+    {
+      "path": "docs/reproduction_status.md",
+      "sha256": "a48d9ff8af70b783aadf763ebcebd7ce986001472af3a4c31ae3f87032fa4d03",
+      "bytes": 1137
+    },
+    {
+      "path": "examples/cms_state.py",
+      "sha256": "9d966913b18ad99abacac5a141d0c440767c4749a19851735a975b9799280403",
+      "bytes": 1004
+    },
+    {
+      "path": "examples/reset_activate.py",
+      "sha256": "f03744d0a7fbf837e25fdf11a802770e65463ca4fc03e53eb029bc543bf652aa",
+      "bytes": 1010
+    },
+    {
+      "path": "examples/structural_counterexamples.py",
+      "sha256": "4a4da0d115def4409333673e9b990c3489927f0bc6f4c8aa798d998ebf28b056",
+      "bytes": 1785
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "29aed77bf0c9da87837d501ad74b23b148e685c448e0e4dc019b9d2ac0b29410",
+      "bytes": 807
+    },
+    {
+      "path": "reports/local_acceptance.md",
+      "sha256": "bed243c61ccea200cfd10d2b05d19acee1d47c7f4d067f010bb84f170b22886e",
+      "bytes": 2078
+    },
+    {
+      "path": "reports/scope_and_security.md",
+      "sha256": "1678828a2c38fc9ee50f5bb509421c900821ab1232999318fcbf2a3d81ac112c",
+      "bytes": 1187
+    },
+    {
+      "path": "reports/technical_report.md",
+      "sha256": "34ece97fd29ad4e2f834ff3b7cb5bd790643982cecfa74bc00480c85c02ceb14",
+      "bytes": 5124
+    },
+    {
+      "path": "requirements/cpu-acceptance-lock.txt",
+      "sha256": "2dd41ee2729ee019f80c35c1f1f8051f1b2c88b132a158cbc8bb8c13cba14b58",
+      "bytes": 260
+    },
+    {
+      "path": "requirements/cpu.txt",
+      "sha256": "886751289ff0b7d28b3c6fb911977aed16364f55b01e43cd391d782f3d981a08",
+      "bytes": 139
+    },
+    {
+      "path": "requirements/sbom.json",
+      "sha256": "07435c914bdd7ee7c815f460dbb647570410b9366d38d9f2164063f67851eb7e",
+      "bytes": 13151
+    },
+    {
+      "path": "results/README.md",
+      "sha256": "f0f6cd4161aec7e01fa996a98a1f51b1d169a8da46ab725895b595a6287b963c",
+      "bytes": 4781
+    },
+    {
+      "path": "results/historical_summary.md",
+      "sha256": "7360bb034c5d517149b3c8a26c8ec1b7195a536daf7d258ca6807dd51183a586",
+      "bytes": 1208
+    },
+    {
+      "path": "results/initial_pilots.csv",
+      "sha256": "b352a6bdfbe169a30baf0bf79cb7e1568ff13f1b60124e67d10de2f74e33e4a8",
+      "bytes": 620
+    },
+    {
+      "path": "results/phase13_benchmark.csv",
+      "sha256": "8d725fb45ae2db2c1609f61a55bd23229fc3b1af95e79536cc2f69ab38867887",
+      "bytes": 977
+    },
+    {
+      "path": "results/phase14_acquisition.csv",
+      "sha256": "3ee0f9e8b69812228310d67e632394b7f796751162afaf080faadb9b8ae84bbe",
+      "bytes": 3379
+    },
+    {
+      "path": "results/reset_distillation.csv",
+      "sha256": "55cffe76ddc0f689899c9d9cb8aeed6a56bdff0055d126a07cb74456b5f9befb",
+      "bytes": 4367
+    },
+    {
+      "path": "results/routing_readout.csv",
+      "sha256": "9d6f5cfc7c4c649992bd330e709a9a75735c51be61b1f4440cde144aa3ec8e9c",
+      "bytes": 2355
+    },
+    {
+      "path": "results/update_reset_activation.csv",
+      "sha256": "38cde1ea876ee3b93c297c86fd759ed41b4468d15e783309825d18229aceb8df",
+      "bytes": 2862
+    },
+    {
+      "path": "src/nested_sleep/__init__.py",
+      "sha256": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5",
+      "bytes": 394
+    },
+    {
+      "path": "src/nested_sleep/accounting.py",
+      "sha256": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96",
+      "bytes": 951
+    },
+    {
+      "path": "src/nested_sleep/clocks.py",
+      "sha256": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d",
+      "bytes": 1850
+    },
+    {
+      "path": "src/nested_sleep/consolidation.py",
+      "sha256": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb",
+      "bytes": 5364
+    },
+    {
+      "path": "src/nested_sleep/dreaming.py",
+      "sha256": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45",
+      "bytes": 2004
+    },
+    {
+      "path": "src/nested_sleep/execution.py",
+      "sha256": "9791e4f85a24d9eedc72760316de5de2d4c7045272506998f83844743e8f1677",
+      "bytes": 609
+    },
+    {
+      "path": "src/nested_sleep/executor_v13.py",
+      "sha256": "0befa81ca6cc28379526a31064b6ad55293d57e0ad3c9444859799ef7f4173ed",
+      "bytes": 16473
+    },
+    {
+      "path": "src/nested_sleep/experts.py",
+      "sha256": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094",
+      "bytes": 8785
+    },
+    {
+      "path": "src/nested_sleep/lifecycle.py",
+      "sha256": "d6c07b764d3d8485b5f37c67e8a931cbb4315cabeec6a81030006984d1310002",
+      "bytes": 17777
+    },
+    {
+      "path": "src/nested_sleep/llama_entry.py",
+      "sha256": "b0538010eaf56c0a212f424e7e977b6de96c052ce5918278966e7234f4e47f69",
+      "bytes": 1972
+    },
+    {
+      "path": "src/nested_sleep/lm.py",
+      "sha256": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+      "bytes": 9234
+    },
+    {
+      "path": "src/nested_sleep/memory.py",
+      "sha256": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f",
+      "bytes": 3556
+    },
+    {
+      "path": "src/nested_sleep/native.py",
+      "sha256": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57",
+      "bytes": 10094
+    },
+    {
+      "path": "src/nested_sleep/objectives.py",
+      "sha256": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654",
+      "bytes": 1894
+    },
+    {
+      "path": "src/nested_sleep/optim.py",
+      "sha256": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817",
+      "bytes": 3976
+    },
+    {
+      "path": "src/nested_sleep/repairability.py",
+      "sha256": "b91fbec03113ac1b02549b58f23e035378a05c2b90ffe4bdd6c4593984866d87",
+      "bytes": 5199
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "c22f07489d40ed5c3b49c6e9c6790ff15f97cae3bbdd9d65e388b853ef2f4fd9",
+      "bytes": 1959
+    },
+    {
+      "path": "tests/test_native.py",
+      "sha256": "7a2b40146bf29688033fb45c123a04c1b625ac67c5b4902264c6daddc0ef2555",
+      "bytes": 7716
+    },
+    {
+      "path": "tests/test_reference.py",
+      "sha256": "1f1dd8e456641bee33533d9141be59b30a7a70663eab29fe96970165a3612e96",
+      "bytes": 12464
+    },
+    {
+      "path": "tests/test_release_contracts.py",
+      "sha256": "7dd4d2c8981890f97b018f234bcae2180047321ec98ac78e222d76b1b28acb4f",
+      "bytes": 4901
+    },
+    {
+      "path": "tools/reanalyze.py",
+      "sha256": "e50ca2385c6ba28d8539df2c8b46baeaf9ab71f83efe062441a6c80136a147b8",
+      "bytes": 2758
+    }
+  ]
+}

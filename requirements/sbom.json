@@ -1,0 +1,413 @@
+{
+  "scope": "Separately installed CPU dependencies; no dependency code or wheels bundled",
+  "packages": [
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "license_expression": null,
+      "license_classifier": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "license_files": [
+        {
+          "file": "colorama-0.4.6.dist-info/licenses/LICENSE.txt",
+          "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318",
+          "bytes": 1491
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "filelock",
+      "version": "3.32.3",
+      "license_expression": "MIT",
+      "license_classifier": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_files": [
+        {
+          "file": "filelock-3.32.3.dist-info/licenses/LICENSE",
+          "sha256": "608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48",
+          "bytes": 1088
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.7.0",
+      "license_expression": "BSD-3-Clause",
+      "license_classifier": [],
+      "license_files": [
+        {
+          "file": "fsspec-2026.7.0.dist-info/licenses/LICENSE",
+          "sha256": "2dc35496ce53a7307915c008a844aad53e772b49b34cdd00445067691407ec94",
+          "bytes": 1513
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "license_expression": "MIT",
+      "license_classifier": [],
+      "license_files": [
+        {
+          "file": "iniconfig-2.3.1.dist-info/licenses/LICENSE",
+          "sha256": "3409fa91f7ace557894632676656e32264fe5ef7581535725dc9a23774551bd4",
+          "bytes": 1098
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "license_expression": null,
+      "license_classifier": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "license_files": [
+        {
+          "file": "jinja2-3.1.6.dist-info/licenses/LICENSE.txt",
+          "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b",
+          "bytes": 1475
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.3",
+      "license_expression": "BSD-3-Clause",
+      "license_classifier": [],
+      "license_files": [
+        {
+          "file": "markupsafe-3.0.3.dist-info/licenses/LICENSE.txt",
+          "sha256": "4631ec0db5fd90a547e336817264c6798214338146f8ac94b4a57f96ee8c9ec4",
+          "bytes": 1503
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "license_expression": null,
+      "license_classifier": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "license_files": [
+        {
+          "file": "mpmath-1.3.0.dist-info/LICENSE",
+          "sha256": "c26cae81da4508e5e249985777a33821f183223ebb74d7f8cfbf90fe7eef2fb7",
+          "bytes": 1537
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "networkx",
+      "version": "3.6.1",
+      "license_expression": "BSD-3-Clause",
+      "license_classifier": [],
+      "license_files": [
+        {
+          "file": "networkx-3.6.1.dist-info/licenses/LICENSE.txt",
+          "sha256": "3cf7c3a179d817b23b8b8568211769fefdf93797d207d984b8b2fa24d0220b33",
+          "bytes": 1763
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "numpy",
+      "version": "2.2.6",
+      "license_expression": null,
+      "license_classifier": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "license_files": [
+        {
+          "file": "numpy-2.2.6.dist-info/LICENSE.txt",
+          "sha256": "14256cc3a2c9d32ac284da96b937feb44f72dd90bee2317ac3020166846ad99d",
+          "bytes": 47709
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "license_expression": "Apache-2.0 OR BSD-2-Clause",
+      "license_classifier": [],
+      "license_files": [
+        {
+          "file": "packaging-26.3.dist-info/licenses/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "file": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "file": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "pip",
+      "version": "24.0",
+      "license_expression": null,
+      "license_classifier": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_files": [
+        {
+          "file": "pip-24.0.dist-info/LICENSE.txt",
+          "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104",
+          "bytes": 1093
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "pluggy",
+      "version": "1.7.0",
+      "license_expression": null,
+      "license_classifier": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_files": [
+        {
+          "file": "pluggy-1.7.0.dist-info/licenses/LICENSE",
+          "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606",
+          "bytes": 1110
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "license_expression": "BSD-2-Clause",
+      "license_classifier": [],
+      "license_files": [
+        {
+          "file": "pygments-2.21.0.dist-info/licenses/AUTHORS",
+          "sha256": "71a83872ad82f57be692cf827e048e2cd51d45169cfa1ea3f28706d97a872c0f",
+          "bytes": 11048
+        },
+        {
+          "file": "pygments-2.21.0.dist-info/licenses/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+          "bytes": 1331
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "pytest",
+      "version": "8.4.2",
+      "license_expression": null,
+      "license_classifier": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_files": [
+        {
+          "file": "pytest-8.4.2.dist-info/licenses/AUTHORS",
+          "sha256": "c2017d6288262cf9c39aecc8e51df3422a9f2bbca1e4b55d28491022070c7577",
+          "bytes": 7369
+        },
+        {
+          "file": "pytest-8.4.2.dist-info/licenses/LICENSE",
+          "sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b",
+          "bytes": 1091
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "setuptools",
+      "version": "80.9.0",
+      "license_expression": "MIT",
+      "license_classifier": [],
+      "license_files": [
+        {
+          "file": "setuptools-80.9.0.dist-info/licenses/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "file": "setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+          "sha256": "ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d",
+          "bytes": 7634
+        },
+        {
+          "file": "setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "file": "setuptools/_vendor/importlib_metadata-8.0.0.dist-info/LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "bytes": 11358
+        },
+        {
+          "file": "setuptools/_vendor/inflect-7.3.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.collections-5.1.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.context-5.3.0.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.functools-4.0.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "file": "setuptools/_vendor/jaraco.text-3.12.1.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        },
+        {
+          "file": "setuptools/_vendor/more_itertools-10.3.0.dist-info/LICENSE",
+          "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46",
+          "bytes": 1053
+        },
+        {
+          "file": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "bytes": 197
+        },
+        {
+          "file": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174
+        },
+        {
+          "file": "setuptools/_vendor/packaging-24.2.dist-info/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "bytes": 1344
+        },
+        {
+          "file": "setuptools/_vendor/platformdirs-4.2.2.dist-info/licenses/LICENSE",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+          "bytes": 1089
+        },
+        {
+          "file": "setuptools/_vendor/tomli-2.0.1.dist-info/LICENSE",
+          "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+          "bytes": 1072
+        },
+        {
+          "file": "setuptools/_vendor/typeguard-4.3.0.dist-info/LICENSE",
+          "sha256": "6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758",
+          "bytes": 1130
+        },
+        {
+          "file": "setuptools/_vendor/typing_extensions-4.12.2.dist-info/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+          "bytes": 13936
+        },
+        {
+          "file": "setuptools/_vendor/wheel-0.45.1.dist-info/LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654",
+          "bytes": 1107
+        },
+        {
+          "file": "setuptools/_vendor/zipp-3.19.2.dist-info/LICENSE",
+          "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+          "bytes": 1023
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0",
+      "license_expression": null,
+      "license_classifier": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "license_files": [
+        {
+          "file": "sympy-1.14.0.dist-info/licenses/AUTHORS",
+          "sha256": "82b1038521b0696c63c90b31ed4a0a2c9c4c16871c648b157b07ca44b6f18f8d",
+          "bytes": 55779
+        },
+        {
+          "file": "sympy-1.14.0.dist-info/licenses/LICENSE",
+          "sha256": "07a5e9819f727b4986ad2829c7a29a6320d42575f720eb24d71b7fef573a0286",
+          "bytes": 7885
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "torch",
+      "version": "2.8.0+cpu",
+      "license_expression": null,
+      "license_classifier": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "license_files": [
+        {
+          "file": "torch-2.8.0+cpu.dist-info/LICENSE",
+          "sha256": "d61701e874c39a858d92c47c2cbf3bd8b9e498032a18ae42832fba591752ce1f",
+          "bytes": 506902
+        },
+        {
+          "file": "torch-2.8.0+cpu.dist-info/NOTICE",
+          "sha256": "1c3dec6c0342c7ed9e12af59b296c7bb1d394af5cf881db74191cc8299efce5c",
+          "bytes": 24088
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "license_expression": "PSF-2.0",
+      "license_classifier": [],
+      "license_files": [
+        {
+          "file": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+          "bytes": 13936
+        }
+      ],
+      "redistributed": false
+    },
+    {
+      "name": "wheel",
+      "version": "0.45.1",
+      "license_expression": null,
+      "license_classifier": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_files": [
+        {
+          "file": "wheel-0.45.1.dist-info/LICENSE.txt",
+          "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654",
+          "bytes": 1107
+        }
+      ],
+      "redistributed": false
+    }
+  ]
+}

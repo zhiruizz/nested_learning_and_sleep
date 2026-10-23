@@ -1,0 +1,17 @@
+{
+  "status": "NOT_RUN",
+  "model_path": null,
+  "architecture": "llama_cms_inspired",
+  "insertion": "last MLP output",
+  "backbone_frozen": true,
+  "rank": 4,
+  "capacity": 8,
+  "levels": 2,
+  "cms_periods": [
+    8,
+    64
+  ],
+  "executor": "REF",
+  "allow_download": false,
+  "allow_training": false
+}

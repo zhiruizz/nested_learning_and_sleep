@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "nl-sleep-repro-lab"
+version = "0.1.0rc1"
+description = "Unofficial, partial NL/Sleep implementation and diagnostic study"
+readme = "README.md"
+authors = [{name = "Zhirui Zhu (zhiruizz)"}]
+requires-python = ">=3.11"
+license = "MIT AND CC-BY-4.0"
+dependencies = ["torch==2.8.0", "numpy==2.2.6"]
+license-files = ["LICENSE.md", "LICENSES/MIT-source.txt", "LICENSES/MIT.txt", "LICENSES/CC-BY-4.0.txt"]
+[project.urls]
+Repository = "https://github.com/zhiruizz/nested_learning_and_sleep"
+[project.optional-dependencies]
+test = ["pytest==8.4.2"]
+llama = ["transformers==4.57.1"]
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

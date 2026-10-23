@@ -1,0 +1,11 @@
+track,group,runs,average_accuracy_mean,average_accuracy_sample_sd,cycles,cycles_with_new_expert_delta,dream_accepted
+native_v2,frozen,4,0.25,0.09622504486493762,0,0,0
+native_v2,sequential_sft,4,0.25,0.09622504486493762,0,0,0
+native_v2,cms,4,0.25,0.09622504486493762,0,0,0
+native_v2,ks_only,4,0.25,0.09622504486493762,16,16,0
+native_v2,ks_dream,4,0.25,0.09622504486493762,16,16,12
+llama3b_v1,frozen,1,0.3888888888888889,,0,0,0
+llama3b_v1,sequential_sft,1,0.4166666666666667,,0,0,0
+llama3b_v1,cms,1,0.4166666666666667,,0,0,0
+llama3b_v1,ks_only,1,0.16666666666666666,,4,3,0
+llama3b_v1,ks_dream,1,0.16666666666666666,,4,3,0

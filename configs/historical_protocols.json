@@ -1,0 +1,51 @@
+{
+  "reset_distillation": {
+    "events": 2,
+    "resets": [
+      0,
+      1
+    ],
+    "steps": [
+      0,
+      16,
+      64,
+      256
+    ],
+    "training_trajectories_per_event": 256,
+    "continuation_positions": 4,
+    "old_dev_n": 64,
+    "new_dev_n": 32,
+    "temperature": 1,
+    "loss": "KL(teacher || student)",
+    "sampling": "fixed teacher trajectories; not live on-policy",
+    "trainable": "receiver a/b only; 24576 FP32 scalars",
+    "optimizer": "AdamW lr=0.0003; clip L2 max=1",
+    "reused_dev": true
+  },
+  "phase13": {
+    "repeats": 3,
+    "formal_steps": 256,
+    "warmup_steps": 8,
+    "validation_conditions_per_executor": 10,
+    "validation_steps_per_executor": 512,
+    "scope": "fixed tokens and repeated fixed teacher bank",
+    "cache_default": false
+  },
+  "phase14": {
+    "histories": 6,
+    "steps": [
+      0,
+      256,
+      1024
+    ],
+    "endpoint": 1024,
+    "train_gate": 0.95,
+    "calibration_gate": 0.75,
+    "relative_nll_reduction_gate": 0.2,
+    "seed_order_confounded": true,
+    "optimizer": "AdamW lr=0.001; betas=(0.9,0.999); eps=1e-8; wd=0; clip L2 max=1",
+    "backbone": "frozen Llama-3.2-3B",
+    "trainable": "two CMS base pairs and two slot0 pairs; 98304 FP32 scalars",
+    "batch_size": 8
+  }
+}
