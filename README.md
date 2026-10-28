@@ -8,6 +8,35 @@ This release contains small reference mechanisms, an explicitly
 assumed native HOPE variant, a last-MLP Llama CMS-inspired extension, and historical
 diagnostic tables. It makes no institutional endorsement or maintenance promise.
 
+## Community contributions welcome
+
+Researchers and developers are welcome to use, fork, test, and improve this
+codebase. The goal is to make implementation assumptions easier to inspect and
+reproduction gaps easier to investigate, not to present a completed reproduction.
+Small fixes, clearer examples, paper-to-code reviews, and well-documented negative
+results are all useful; you do not need to reproduce an entire paper to contribute.
+
+We are particularly interested in:
+
+- **Implementation review:** checking equations against code and testing state
+  updates, routing, and memory consolidation.
+- **Independent experiments:** building minimal integrations with legally acquired
+  models and data, and investigating acquisition or sender/receiver transitions.
+- **Usability and engineering:** improving setup, documentation, diagnostics, and
+  performance while making numerical or algorithmic changes explicit.
+
+Read the [contribution guide](CONTRIBUTING.md), open an
+[issue](https://github.com/zhiruizz/nested_learning_and_sleep/issues), or submit a
+focused pull request. Corrections and results that contradict our observations
+are welcome. Paper questions do not require running experiments; small documentation
+fixes can be submitted directly. Larger architectural changes are best discussed first.
+
+Existing reproduction limits still apply, and historical Llama experiments cannot
+be fully rerun from this package alone. Review and support depend on maintainer
+availability; no response time or full reproduction support is promised.
+
+## Quick start
+
 Python 3.11 is the tested interpreter. Create a fresh virtual environment, then:
 
 ```sh

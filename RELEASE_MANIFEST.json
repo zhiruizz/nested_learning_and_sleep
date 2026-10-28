@@ -8,7 +8,7 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 57,
+  "file_count_excluding_manifests": 58,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
@@ -18,8 +18,8 @@
     },
     {
       "path": ".github/ISSUE_TEMPLATE/reproduction.md",
-      "sha256": "6d3068cfe5bef7aed558860a449093c62bf4749d9e836ac527462312dc66bfa3",
-      "bytes": 521
+      "sha256": "f90c18a7c192227e693840d6be6fbb596012f074bd86d665c2b9c09117ef2a32",
+      "bytes": 1674
     },
     {
       "path": ".gitignore",
@@ -30,6 +30,11 @@
       "path": "CITATION.cff",
       "sha256": "2d558d17afb4677c700a5d20450b11267c25e05e07a82d5f8bbd32335c1b6d7a",
       "bytes": 1276
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "2bb22a7aba9eaf5fefca37941f8765b048fa64f918545e28e140c055f340a9c0",
+      "bytes": 5135
     },
     {
       "path": "LICENSE.md",
@@ -53,13 +58,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "5d862013f87393d380ae8229f85f2fdc9a955e999045be75564edcb5dd6ad3e0",
-      "bytes": 3875
+      "sha256": "6ec6a0317fb5179bc0f64a9c0f79f53044c3408c94e7321dc530769f8694a59c",
+      "bytes": 5438
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "22f933894f057d0a79db6533b38cf622c50b4ea4dc0142179fd0bab6936d9fdc",
-      "bytes": 2115
+      "sha256": "1d2c574321d3d9be52fe53812ed5b1ab7bde6af4259899756061f71518d1317e",
+      "bytes": 3428
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
