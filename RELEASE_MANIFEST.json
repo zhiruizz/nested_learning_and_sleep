@@ -8,7 +8,7 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 138,
+  "file_count_excluding_manifests": 148,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
@@ -72,6 +72,11 @@
       "bytes": 799
     },
     {
+      "path": "configs/agnews-qualified-comparison-v3.json",
+      "sha256": "3fd035e378d612a9638b2ebfe731e3e5fe023cd9f1465a4d706058401c2db929",
+      "bytes": 2934
+    },
+    {
       "path": "configs/agnews-retention-v1.json",
       "sha256": "bfd255227d32a98f3527a339af73798cb92863f2a2761127366ab0544f311a5f",
       "bytes": 3658
@@ -105,6 +110,11 @@
       "path": "configs/x870e-synthetic-dev-v2.json",
       "sha256": "e182d66c1e1c84c29115db70c72971fd80674b2f7ea30bcc8a10dcd734435e01",
       "bytes": 3077
+    },
+    {
+      "path": "docs/agnews-qualified-comparison-v3-protocol.md",
+      "sha256": "29aeff460a47bf611086d1cbb51643bb756fc724f52125db86874f3ab83ea1ee",
+      "bytes": 3375
     },
     {
       "path": "docs/agnews-retention-v1-protocol.md",
@@ -337,6 +347,31 @@
       "bytes": 1009
     },
     {
+      "path": "results/agnews-v3-development/new-stage-1024.json",
+      "sha256": "b5dc79cb349b40c9c40d87fa2c5a6c871001604096787a70d826372d9c58b768",
+      "bytes": 11129
+    },
+    {
+      "path": "results/agnews-v3-development/new-stage-512.json",
+      "sha256": "4d45742f6cfd8d0af30da98483171bab0fc55543cc857e33849602b920533056",
+      "bytes": 11102
+    },
+    {
+      "path": "results/agnews-v3-development/old-stage-512.json",
+      "sha256": "7f37b427f72016f9dc95af0a22b8c030bf49126bde0394519526a838aa326eb8",
+      "bytes": 11072
+    },
+    {
+      "path": "results/agnews-v3-development/qualification-result.json",
+      "sha256": "3eb819584798bc2df9aeddd05f08b786272331029949aa12368d5d99d3e28c01",
+      "bytes": 24152
+    },
+    {
+      "path": "results/agnews-v3-development/qualified-foundations.json",
+      "sha256": "844b406986fdc4a1b221f9cf1b9df779a5f28c7b75f5dec980f585958c237d95",
+      "bytes": 11460
+    },
+    {
       "path": "results/historical_summary.md",
       "sha256": "7360bb034c5d517149b3c8a26c8ec1b7195a536daf7d258ca6807dd51183a586",
       "bytes": 1208
@@ -522,6 +557,11 @@
       "bytes": 3555
     },
     {
+      "path": "tests/test_agnews_qualified_comparison_v3.py",
+      "sha256": "6680a6fb681ca19a4152269014b74ec8ee6f9d50390ba49435d3c6c09c13ad11",
+      "bytes": 1278
+    },
+    {
       "path": "tests/test_agnews_records_v1.py",
       "sha256": "0e51bfff76e4e0f33c62eca90fc967a2b8c374801bef43ee32d855b5ded19dcf",
       "bytes": 6579
@@ -612,6 +652,11 @@
       "bytes": 4427
     },
     {
+      "path": "tools/evaluate_agnews_qualified_v3.py",
+      "sha256": "96530f10b4331f59ae9a0a85608f07c75e8d5732257c72739136ecf07e077f41",
+      "bytes": 5900
+    },
+    {
       "path": "tools/evaluate_agnews_retention_v1.py",
       "sha256": "24717a2bc9e2d0368bff6a75ef502ed2ec1fd2a8ec59f530fc8178926902bfc2",
       "bytes": 21258
@@ -665,6 +710,11 @@
       "path": "tools/run_agnews_mix_fixture_v2.py",
       "sha256": "1f388920def9d3829c08db99d5d3866112f2f614dd70a2a9470800839435654b",
       "bytes": 7610
+    },
+    {
+      "path": "tools/run_agnews_qualified_comparison_v3.py",
+      "sha256": "b16c06542ee92ac3dcc8fdecca319d4b5c872f39d341f4fc797e7a89dc34b32f",
+      "bytes": 8367
     },
     {
       "path": "tools/run_agnews_retention_v1.py",

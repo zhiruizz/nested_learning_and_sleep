@@ -1,0 +1,319 @@
+{
+  "all_qualified": true,
+  "heldout_read": false,
+  "learning_rates": [
+    0.02,
+    0.04
+  ],
+  "model_config": {
+    "capacity": 32,
+    "levels": 2,
+    "rank": 16
+  },
+  "protocol_sha256": "e38f8f65297935c22deb8855c81b3f7b3f311f7bbd8b80ce8795000309e3dacb",
+  "records": [
+    {
+      "checkpoint": {
+        "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+        "controller_counts": [
+          0,
+          0
+        ],
+        "path": "old-seed-17-step-512.pt",
+        "sha256": "c88bd45a0d7d16f3b8e5033005dfbd9c643abf97e9c707c41c68b669a5268514",
+        "step": 512
+      },
+      "phase": "old",
+      "qualified": true,
+      "seed": 17,
+      "step": 512,
+      "train": {
+        "all": {
+          "answer_nll_nats_per_token": 0.05931823722538354,
+          "candidate_accuracy": 0.9609375,
+          "class_given_marker_accuracy": 0.962890625,
+          "class_nll": 0.11712519811615607,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.962890625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0015112763346110114
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.08474866292056049,
+          "candidate_accuracy": 0.94921875,
+          "class_given_marker_accuracy": 0.94921875,
+          "class_nll": 0.16860487845258376,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.94921875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008924473885372208
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.03388781153020659,
+          "candidate_accuracy": 0.97265625,
+          "class_given_marker_accuracy": 0.9765625,
+          "class_nll": 0.06564551777972838,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9765625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.002130105280684802
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.05931823722538354,
+          "candidate_accuracy": 0.9609375,
+          "class_given_marker_accuracy": 0.962890625,
+          "class_nll": 0.11712519811615607,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.962890625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0015112763346110114
+        }
+      },
+      "validation": {
+        "all": {
+          "answer_nll_nats_per_token": 0.10192901610849958,
+          "candidate_accuracy": 0.9296875,
+          "class_given_marker_accuracy": 0.9296875,
+          "class_nll": 0.2024245542523886,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9296875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0014334779646105744
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.1535058599124568,
+          "candidate_accuracy": 0.8984375,
+          "class_given_marker_accuracy": 0.8984375,
+          "class_nll": 0.3061806213725049,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.8984375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008310984524086962
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.050352172304542364,
+          "candidate_accuracy": 0.9609375,
+          "class_given_marker_accuracy": 0.9609375,
+          "class_nll": 0.09866848713227228,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.9609375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0020358574768124527
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.10192901610849958,
+          "candidate_accuracy": 0.9296875,
+          "class_given_marker_accuracy": 0.9296875,
+          "class_nll": 0.2024245542523886,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9296875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0014334779646105744
+        }
+      }
+    },
+    {
+      "checkpoint": {
+        "adapter_fingerprint": "fa864bc6e0a72980ff9e28b7f3283ead56fc1a8b452ab75a13412cd460e566e6",
+        "controller_counts": [
+          0,
+          0
+        ],
+        "path": "old-seed-29-step-512.pt",
+        "sha256": "5ab18ea38bbc56a7911b84ac09c4c283fee31589a00ddafd3467ca51d485a908",
+        "step": 512
+      },
+      "phase": "old",
+      "qualified": true,
+      "seed": 29,
+      "step": 512,
+      "train": {
+        "all": {
+          "answer_nll_nats_per_token": 0.1101455899913617,
+          "candidate_accuracy": 0.935546875,
+          "class_given_marker_accuracy": 0.9375,
+          "class_nll": 0.2175367179836485,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.9375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0027544619990749197
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.13298853850108117,
+          "candidate_accuracy": 0.91796875,
+          "class_given_marker_accuracy": 0.9140625,
+          "class_nll": 0.2633853650031597,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9140625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.002591711999002655
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.08730264148164224,
+          "candidate_accuracy": 0.953125,
+          "class_given_marker_accuracy": 0.9609375,
+          "class_nll": 0.1716880709641373,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9609375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0029172119991471845
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.1101455899913617,
+          "candidate_accuracy": 0.935546875,
+          "class_given_marker_accuracy": 0.9375,
+          "class_nll": 0.2175367179836485,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.9375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0027544619990749197
+        }
+      },
+      "validation": {
+        "all": {
+          "answer_nll_nats_per_token": 0.10149641853251978,
+          "candidate_accuracy": 0.9375,
+          "class_given_marker_accuracy": 0.9375,
+          "class_nll": 0.200687201232995,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0023056358320445725
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.12036464094126131,
+          "candidate_accuracy": 0.921875,
+          "class_given_marker_accuracy": 0.921875,
+          "class_nll": 0.23889403312205104,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.921875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0018352487604715861
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.08262819612377825,
+          "candidate_accuracy": 0.953125,
+          "class_given_marker_accuracy": 0.953125,
+          "class_nll": 0.16248036934393895,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.953125,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0027760229036175588
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.10149641853251978,
+          "candidate_accuracy": 0.9375,
+          "class_given_marker_accuracy": 0.9375,
+          "class_nll": 0.200687201232995,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0023056358320445725
+        }
+      }
+    },
+    {
+      "checkpoint": {
+        "adapter_fingerprint": "a244be3d1da206a32cc6a29f94ce858cbebe266ef53cd737373136dc498155fd",
+        "controller_counts": [
+          0,
+          0
+        ],
+        "path": "old-seed-43-step-512.pt",
+        "sha256": "825e12b15c7f98fdaecb5653ec907dad7d10a244d62c2ad3e0ee282b5b15acc5",
+        "step": 512
+      },
+      "phase": "old",
+      "qualified": true,
+      "seed": 43,
+      "step": 512,
+      "train": {
+        "all": {
+          "answer_nll_nats_per_token": 0.0736120555265316,
+          "candidate_accuracy": 0.953125,
+          "class_given_marker_accuracy": 0.953125,
+          "class_nll": 0.1459334505017722,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.953125,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0012906605512910119
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.13596526698593436,
+          "candidate_accuracy": 0.91015625,
+          "class_given_marker_accuracy": 0.91015625,
+          "class_nll": 0.2710854945120502,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.91015625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008450394598185085
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.011258844067128848,
+          "candidate_accuracy": 0.99609375,
+          "class_given_marker_accuracy": 0.99609375,
+          "class_nll": 0.02078140649149418,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.99609375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0017362816427635153
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.0736120555265316,
+          "candidate_accuracy": 0.953125,
+          "class_given_marker_accuracy": 0.953125,
+          "class_nll": 0.1459334505017722,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.953125,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0012906605512910119
+        }
+      },
+      "validation": {
+        "all": {
+          "answer_nll_nats_per_token": 0.1283195707884417,
+          "candidate_accuracy": 0.90625,
+          "class_given_marker_accuracy": 0.90625,
+          "class_nll": 0.2557410374580371,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.90625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008981041188462768
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.24576476635103006,
+          "candidate_accuracy": 0.8203125,
+          "class_given_marker_accuracy": 0.8203125,
+          "class_nll": 0.4906884294177587,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.8203125,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008411032843014254
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.010874375225853328,
+          "candidate_accuracy": 0.9921875,
+          "class_given_marker_accuracy": 0.9921875,
+          "class_nll": 0.020793645498315527,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.9921875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0009551049533911282
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.1283195707884417,
+          "candidate_accuracy": 0.90625,
+          "class_given_marker_accuracy": 0.90625,
+          "class_nll": 0.2557410374580371,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.90625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008981041188462768
+        }
+      }
+    }
+  ],
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "schema": "agnews-qualified-foundations-v3",
+  "steps": 512
+}

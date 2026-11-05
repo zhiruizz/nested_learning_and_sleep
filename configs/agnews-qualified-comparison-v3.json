@@ -1,0 +1,73 @@
+{
+  "schema": "agnews-qualified-comparison-config-v3",
+  "frozen_utc": "2026-11-05T23:36:03.419865+00:00",
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "qualification_result_sha256": "3eb819584798bc2df9aeddd05f08b786272331029949aa12368d5d99d3e28c01",
+  "old_steps": 512,
+  "new_steps": 1024,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "arms": [
+    "frozen",
+    "sft",
+    "cms",
+    "cms_sleep",
+    "cms_extra_replay"
+  ],
+  "rank": 16,
+  "capacity": 32,
+  "learning_rates": [
+    0.02,
+    0.04
+  ],
+  "periods": [
+    4,
+    16
+  ],
+  "sft_periods": [
+    1,
+    1
+  ],
+  "batch_size": 4,
+  "sleep_interval": 64,
+  "gkd_steps_per_event": 16,
+  "lti_steps_per_event": 8,
+  "dream_steps": 0,
+  "receiver_mix_fraction": 0.5,
+  "extra_replay_batches_per_event": 12,
+  "checkpoints": "0,N/4,N/2,3N/4,N",
+  "old_qualification_gate": {
+    "train": 0.8,
+    "validation": 0.75,
+    "each_validation_class": 0.7
+  },
+  "main_adaptation_supervised_updates": 12864,
+  "main_sleep_adam_updates": 1152,
+  "hard_seconds": 3600,
+  "comparison_source_sha256": "b16c06542ee92ac3dcc8fdecca319d4b5c872f39d341f4fc797e7a89dc34b32f",
+  "evaluator_sha256": "96530f10b4331f59ae9a0a85608f07c75e8d5732257c72739136ecf07e077f41",
+  "helper_source_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+  "nested_source_sha256": {
+    "nested_sleep": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5",
+    "nested_sleep.accounting": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96",
+    "nested_sleep.clocks": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d",
+    "nested_sleep.consolidation": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb",
+    "nested_sleep.dreaming": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45",
+    "nested_sleep.experts": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094",
+    "nested_sleep.lifecycle": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02",
+    "nested_sleep.lm": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+    "nested_sleep.memory": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f",
+    "nested_sleep.native": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57",
+    "nested_sleep.objectives": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654",
+    "nested_sleep.optim": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817"
+  },
+  "holdout_prompts_sha256": "4a7e3c54443cf6f654f264eb76586917ed0baa6cd9081cd68b86f24ac50e86ec",
+  "holdout_labels_sha256": "96b89d014a5251d4310de25f8f99031b07399f36eb93bdb7e6b30e8e6ea6974f",
+  "holdout_scope": "fresh within-AGNews-train, not old official test or external/pretraining-independent confirmation",
+  "automatic_retry": false,
+  "seed_replacement": false,
+  "heldout_scored_at_freeze": false
+}
