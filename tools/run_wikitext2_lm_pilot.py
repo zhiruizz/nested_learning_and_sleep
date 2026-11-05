@@ -59,6 +59,10 @@ def json_hash(value) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def emit_json_line(value) -> None:
+    print(json.dumps(value), flush=True)
+
+
 def read_examples(path: Path) -> list[dict]:
     obj = json.loads(path.read_text(encoding="utf-8"))
     return obj["examples"]
@@ -501,8 +505,8 @@ def run_train(config_path: Path, model_dir: Path, data_dir: Path, out_dir: Path,
                 model.eval().requires_grad_(False)
                 ACTIVE_METER.reset(meter_token)
             all_results.append(run)
-            print(json.dumps({"seed": seed, "method": method, "status": run["status"],
-                              "seconds": round(run["seconds"], 2)}), flush=True)
+            emit_json_line({"seed": seed, "method": method, "status": run["status"],
+                            "seconds": round(run["seconds"], 2)})
         del tokenizer, model
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
@@ -531,6 +535,16 @@ def run_evaluate(config_path: Path, model_dir: Path, data_dir: Path, out_dir: Pa
         raise RuntimeError("evaluation cache hash mismatch")
     if sha256(data_dir / "manifest.json") != run_manifest["data_manifest_sha256"]:
         raise RuntimeError("data manifest differs from the frozen training run")
+    result_path = out_dir / "evaluation-results.json"
+    if result_path.exists():
+        raise RuntimeError("evaluation results already exist; refusing to overwrite")
+    checkpoint_paths = sorted(out_dir.glob("*.pt"))
+    checkpoint_hashes_before = {path.name: sha256(path) for path in checkpoint_paths}
+    if len(checkpoint_hashes_before) != len(config["training"]["seeds"]) * len(config["training"]["methods"]) + 1:
+        raise RuntimeError("sealed checkpoint inventory is incomplete or unexpected")
+    evaluation_ids = data_manifest["selected_article_ids"]["evaluation"]
+    if len(evaluation_ids) != config["data_split"]["evaluation_examples"] or len(set(evaluation_ids)) != len(evaluation_ids):
+        raise RuntimeError("evaluation article ID inventory differs from frozen protocol")
     # This is the first point where the evaluation-role text file is opened.
     evaluation = read_examples(data_dir / "evaluation.json")
     results = []
@@ -565,11 +579,31 @@ def run_evaluate(config_path: Path, model_dir: Path, data_dir: Path, out_dir: Pa
                             "examples": len(eval_sequences), "scored_tokens": token_count,
                             "nll_nats_per_token": nll, "perplexity": math.exp(min(nll, 50)),
                             "work": meter.counts, "seconds": time.perf_counter() - started})
-            print(json.dumps({"seed": seed, "method": method, "nll": round(nll, 5)}, flush=True))
+            emit_json_line({"seed": seed, "method": method, "nll": round(nll, 5)})
         del tokenizer, model
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
-    (out_dir / "evaluation-results.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
+    result_path.write_text(json.dumps(results, indent=2), encoding="utf-8")
+    checkpoint_hashes_after = {path.name: sha256(path) for path in checkpoint_paths}
+    if checkpoint_hashes_after != checkpoint_hashes_before:
+        raise RuntimeError("sealed checkpoint changed during read-only evaluation")
+    evaluator = {"schema": "nl-sleep-wikitext2-lm-evaluation-provenance-v1",
+                 "config_sha256": cfg_hash,
+                 "training_runner_sha256": run_manifest["runner_sha256"],
+                 "evaluation_runner_sha256": sha256(Path(__file__).resolve()),
+                 "implementation_source_hashes": IMPLEMENTATION_SOURCE_HASHES,
+                 "evaluation_data_manifest_sha256": sha256(data_dir / "manifest.json"),
+                 "evaluation_article_id_sha256": evaluation_ids,
+                 "sealed_checkpoint_sha256_before": checkpoint_hashes_before,
+                 "sealed_checkpoint_sha256_after": checkpoint_hashes_after,
+                 "results_sha256": sha256(result_path),
+                 "prior_aborted_evaluation_attempt": {
+                     "seed": 17, "method": "frozen", "status": "scored_then_console_logger_failed",
+                     "examples": 16, "target_tokens": 1520, "forward_input_tokens": 1536,
+                     "process_wall_seconds": 8.523, "score_persisted_or_used_for_selection": False,
+                     "additional_repeat_in_this_read_only_repair": True},
+                 "evaluation_data_opened_after_training_seal": True}
+    (out_dir / "evaluation-provenance.json").write_text(json.dumps(evaluator, indent=2), encoding="utf-8")
 
 
 def main():

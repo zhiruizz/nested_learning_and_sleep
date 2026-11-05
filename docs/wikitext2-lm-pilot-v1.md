@@ -35,3 +35,5 @@ python tools/run_wikitext2_lm_pilot.py --stage evaluate --config configs/wikitex
 ```
 
 The scripts refuse source-hash, role-count, role-overlap, and sealed-config mismatches. Dataset/model assets and checkpoints are local-only; only the code, protocol, and aggregate summaries belong in the repository.
+
+After training was sealed, the first evaluation attempt computed the frozen seed-17 score and then stopped at the same console-only `flush` argument error. It spent 8.523 seconds wall time and scored sixteen windows (1,520 target tokens / 1,536 forward-input tokens); the metric was not persisted or used for selection. The evaluator logging fix does not change the frozen config or scoring code; the complete evaluation is rerun against the same sealed checkpoints and fixed windows, and its provenance records both the training and evaluation runner hashes. The repeated frozen baseline work is explicitly recorded as extra read-only scoring cost. The evaluator refuses to overwrite an existing result file and hashes every sealed checkpoint before and after scoring.

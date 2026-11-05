@@ -8,7 +8,7 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 78,
+  "file_count_excluding_manifests": 79,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
@@ -123,8 +123,8 @@
     },
     {
       "path": "docs/wikitext2-lm-pilot-v1.md",
-      "sha256": "544e94d8618477af13cdfee70d07747f2f79d89413aa861634c9ea187fc18305",
-      "bytes": 8587
+      "sha256": "64728b4de4fc6f81cc494e84c5cf17ad1140a4a73879e5ede56e8954f648942b",
+      "bytes": 9358
     },
     {
       "path": "examples/cms_state.py",
@@ -347,6 +347,11 @@
       "bytes": 1959
     },
     {
+      "path": "tests/test_lm_pilot_logging.py",
+      "sha256": "1120d508901b725ce73efb385a7c3b8cc7dc2273e74b2bf17fd36a87b66b2de1",
+      "bytes": 676
+    },
+    {
       "path": "tests/test_native.py",
       "sha256": "7a2b40146bf29688033fb45c123a04c1b625ac67c5b4902264c6daddc0ef2555",
       "bytes": 7716
@@ -393,8 +398,8 @@
     },
     {
       "path": "tools/run_wikitext2_lm_pilot.py",
-      "sha256": "d8d783372478a7518152ffa9192f55fcc75cfe2340bb5e445a5c470278583c69",
-      "bytes": 31816
+      "sha256": "4ec12834f72631866e47fb1fb44631e5802ff454b9ae19d3976e591054918451",
+      "bytes": 34174
     },
     {
       "path": "tools/summarize_native_retention.py",
