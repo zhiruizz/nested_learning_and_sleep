@@ -1,0 +1,86 @@
+[
+  {
+    "seed": 17,
+    "arm": "sft",
+    "names": [
+      "core.blocks.0.cms.levels.0.wi",
+      "core.blocks.0.cms.levels.0.wo",
+      "core.blocks.0.cms.levels.1.wi",
+      "core.blocks.0.cms.levels.1.wo",
+      "core.blocks.0.cms.expert_banks.0.slots.0.a",
+      "core.blocks.0.cms.expert_banks.0.slots.0.b"
+    ],
+    "parameter_count": 1600,
+    "total_parameters": 7542
+  },
+  {
+    "seed": 17,
+    "arm": "cms",
+    "names": [
+      "core.blocks.0.cms.levels.0.wi",
+      "core.blocks.0.cms.levels.0.wo",
+      "core.blocks.0.cms.levels.1.wi",
+      "core.blocks.0.cms.levels.1.wo",
+      "core.blocks.0.cms.expert_banks.0.slots.0.a",
+      "core.blocks.0.cms.expert_banks.0.slots.0.b"
+    ],
+    "parameter_count": 1600,
+    "total_parameters": 7542
+  },
+  {
+    "seed": 29,
+    "arm": "sft",
+    "names": [
+      "core.blocks.0.cms.levels.0.wi",
+      "core.blocks.0.cms.levels.0.wo",
+      "core.blocks.0.cms.levels.1.wi",
+      "core.blocks.0.cms.levels.1.wo",
+      "core.blocks.0.cms.expert_banks.0.slots.0.a",
+      "core.blocks.0.cms.expert_banks.0.slots.0.b"
+    ],
+    "parameter_count": 1600,
+    "total_parameters": 7542
+  },
+  {
+    "seed": 29,
+    "arm": "cms",
+    "names": [
+      "core.blocks.0.cms.levels.0.wi",
+      "core.blocks.0.cms.levels.0.wo",
+      "core.blocks.0.cms.levels.1.wi",
+      "core.blocks.0.cms.levels.1.wo",
+      "core.blocks.0.cms.expert_banks.0.slots.0.a",
+      "core.blocks.0.cms.expert_banks.0.slots.0.b"
+    ],
+    "parameter_count": 1600,
+    "total_parameters": 7542
+  },
+  {
+    "seed": 43,
+    "arm": "sft",
+    "names": [
+      "core.blocks.0.cms.levels.0.wi",
+      "core.blocks.0.cms.levels.0.wo",
+      "core.blocks.0.cms.levels.1.wi",
+      "core.blocks.0.cms.levels.1.wo",
+      "core.blocks.0.cms.expert_banks.0.slots.0.a",
+      "core.blocks.0.cms.expert_banks.0.slots.0.b"
+    ],
+    "parameter_count": 1600,
+    "total_parameters": 7542
+  },
+  {
+    "seed": 43,
+    "arm": "cms",
+    "names": [
+      "core.blocks.0.cms.levels.0.wi",
+      "core.blocks.0.cms.levels.0.wo",
+      "core.blocks.0.cms.levels.1.wi",
+      "core.blocks.0.cms.levels.1.wo",
+      "core.blocks.0.cms.expert_banks.0.slots.0.a",
+      "core.blocks.0.cms.expert_banks.0.slots.0.b"
+    ],
+    "parameter_count": 1600,
+    "total_parameters": 7542
+  }
+]

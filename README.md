@@ -60,3 +60,7 @@ Project attribution: **Zhirui Zhu (zhiruizz)**. New code, tests, examples and to
 use MIT; new documentation, reports and the results compilation use CC BY 4.0.
 Existing copyright notices and third-party attribution are preserved; the license
 scope does not extend to model weights, datasets or other third-party assets.
+
+## Bounded native retention pilot
+
+[Three-seed synthetic retention pilot](reports/native-retention-v1.md): old mapping and short copying were acquired at100% in each seed; after new-mapping adaptation both SFT and CMS lost the old mapping, with mean copying11.46%/10.87%. This tiny restricted-scope test did not show protection from the multi-frequency schedule. It is not directly comparable with upstream natural-language scores. Protocol, all seed metrics, cost and offline reanalysis are included.

@@ -1,0 +1,35 @@
+{
+  "schema": "native-symbol-retention-v1",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "device": "cpu",
+  "threads": 1,
+  "model": {
+    "vocab_size": 43,
+    "dim": 16,
+    "hidden": 24,
+    "layers": 1
+  },
+  "rank": 2,
+  "capacity": 2,
+  "batch_size": 32,
+  "foundation_steps": 512,
+  "foundation_lr": 0.003,
+  "adapt_steps": 128,
+  "adapt_lr": 0.03,
+  "cms_periods": [
+    4,
+    16
+  ],
+  "clip_norm": 1.0,
+  "eval_steps": [
+    32,
+    128
+  ],
+  "acquisition_accuracy": 0.8,
+  "max_update_attempts": 2304,
+  "wall_seconds": 1200
+}

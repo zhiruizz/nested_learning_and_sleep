@@ -8,7 +8,7 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 60,
+  "file_count_excluding_manifests": 73,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
@@ -53,13 +53,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "5d862013f87393d380ae8229f85f2fdc9a955e999045be75564edcb5dd6ad3e0",
-      "bytes": 3875
+      "sha256": "51b645efcfe5822a2c82cd181496b92896e936a13a575d2d956ddd3374bd5994",
+      "bytes": 4378
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "22f933894f057d0a79db6533b38cf622c50b4ea4dc0142179fd0bab6936d9fdc",
-      "bytes": 2115
+      "sha256": "64e52b1ab8656e2d762ab648f38a09a66c5d0e6e75d31ba295d163e5d7168d57",
+      "bytes": 2541
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -77,9 +77,19 @@
       "bytes": 307
     },
     {
+      "path": "configs/native-retention-v1.json",
+      "sha256": "8b0c871f9f7aaba9303d0b02f795b15837df2895676528feb390bf1fe45ca114",
+      "bytes": 478
+    },
+    {
       "path": "docs/limitations.md",
       "sha256": "7e34cf1bb7fb1536647149088f6db11e45c16d14a6c86f55824136cf61aee09d",
       "bytes": 2893
+    },
+    {
+      "path": "docs/native-retention-protocol.md",
+      "sha256": "d31371ab7b5ec4af063c8c9158a76105a787c2680f43db006d43b8735e338477",
+      "bytes": 4453
     },
     {
       "path": "docs/paper_to_code.md",
@@ -132,6 +142,11 @@
       "bytes": 2078
     },
     {
+      "path": "reports/native-retention-v1.md",
+      "sha256": "552f8888381056254b948399037e746444702718165a04dfc5bc86d69479d283",
+      "bytes": 4871
+    },
+    {
       "path": "reports/scope_and_security.md",
       "sha256": "1678828a2c38fc9ee50f5bb509421c900821ab1232999318fcbf2a3d81ac112c",
       "bytes": 1187
@@ -170,6 +185,41 @@
       "path": "results/initial_pilots.csv",
       "sha256": "b352a6bdfbe169a30baf0bf79cb7e1568ff13f1b60124e67d10de2f74e33e4a8",
       "bytes": 620
+    },
+    {
+      "path": "results/native-retention-v1/config.json",
+      "sha256": "6722e9480df58c0ae670ebbb4dc501d4a4634f91e3ed12114b25497f83ec652b",
+      "bytes": 538
+    },
+    {
+      "path": "results/native-retention-v1/correctness.json",
+      "sha256": "7dd2bb18824dcb62be0e2dbef2edb32c28f11ed4c152e23a41b79210b215fe2d",
+      "bytes": 146
+    },
+    {
+      "path": "results/native-retention-v1/ledger.json",
+      "sha256": "91b4d6d04b50b09f3e3f4ef0b19cbc0c2c3c81ccf1d0ba96de207f23d254326a",
+      "bytes": 1024
+    },
+    {
+      "path": "results/native-retention-v1/metrics.json",
+      "sha256": "cc8613bd40e3b3aef50885ea7f89c0fc5e43675f3e4183acf0676387b02a8d9a",
+      "bytes": 21894
+    },
+    {
+      "path": "results/native-retention-v1/parameter-drift.json",
+      "sha256": "e180cff040901107c55f6f4d3048ee1c26b824136e22245682853335b797bab5",
+      "bytes": 81122
+    },
+    {
+      "path": "results/native-retention-v1/provenance.json",
+      "sha256": "a8f71f5831e349be2a3816a6d60a232601f19460049a8fa9f9ca287d1b3f4d1b",
+      "bytes": 820
+    },
+    {
+      "path": "results/native-retention-v1/scopes.json",
+      "sha256": "49fd70ceae32367edf189c2598a3562dc6f5a9460ed652c770fad143d636b7a5",
+      "bytes": 2295
     },
     {
       "path": "results/phase13_benchmark.csv",
@@ -292,6 +342,11 @@
       "bytes": 7716
     },
     {
+      "path": "tests/test_native_retention.py",
+      "sha256": "1236f0860e6089281870cfe2f4dbf80415ec482b744065eb0cfca93a3b482190",
+      "bytes": 1512
+    },
+    {
       "path": "tests/test_parameter_drift.py",
       "sha256": "44f5567deb9764d603a978216feaa00cce20f5241929515ff96992a574d808e7",
       "bytes": 1574
@@ -307,9 +362,19 @@
       "bytes": 4901
     },
     {
+      "path": "tools/native_retention.py",
+      "sha256": "e6a7eaff0a5a21ad523f486c85cdb427cf571daea69a5a69907263266874a0b3",
+      "bytes": 13369
+    },
+    {
       "path": "tools/reanalyze.py",
       "sha256": "e50ca2385c6ba28d8539df2c8b46baeaf9ab71f83efe062441a6c80136a147b8",
       "bytes": 2758
+    },
+    {
+      "path": "tools/summarize_native_retention.py",
+      "sha256": "f3934b528ec7b8ca3f9dd1c128a6fadf6f83acc45d10de755d4096f24ac9a9b4",
+      "bytes": 8623
     }
   ]
 }

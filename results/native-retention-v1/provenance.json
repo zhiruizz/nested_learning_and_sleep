@@ -1,0 +1,17 @@
+{
+  "config_sha256": "8b0c871f9f7aaba9303d0b02f795b15837df2895676528feb390bf1fe45ca114",
+  "python": "3.11.17",
+  "torch": "2.8.0+cu128",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "device": "cpu",
+  "git_commit": "da41e1cfa05166d47c3e5d35950769c73fb99772",
+  "source_sha256": {
+    "nested_sleep.lm": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+    "nested_sleep.native": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57",
+    "nested_sleep.optim": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817",
+    "nested_sleep.experts": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094",
+    "runner": "e6a7eaff0a5a21ad523f486c85cdb427cf571daea69a5a69907263266874a0b3"
+  },
+  "evaluation_sources": "new synthetic only",
+  "wall_seconds_limit": 1200
+}

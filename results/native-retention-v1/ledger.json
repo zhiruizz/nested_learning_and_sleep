@@ -1,0 +1,38 @@
+{
+  "status": "completed",
+  "update_attempts": 2304,
+  "completed_updates": 2304,
+  "fixture_attempts_reserved": 2,
+  "fixture_completed_updates": 2,
+  "fixture_core_stream_tokens_outside_work_meter": 32,
+  "elapsed_seconds": 64.60999999986961,
+  "work_meter": {
+    "correctness": {
+      "forward_input_tokens": 96,
+      "gradient_forward_input_tokens": 64,
+      "forward_calls": 3
+    },
+    "evaluation": {
+      "forward_input_tokens": 110592,
+      "gradient_forward_input_tokens": 0,
+      "forward_calls": 432
+    },
+    "foundation": {
+      "forward_input_tokens": 196608,
+      "gradient_forward_input_tokens": 196608,
+      "forward_calls": 1536
+    },
+    "adapt_sft": {
+      "forward_input_tokens": 49152,
+      "gradient_forward_input_tokens": 49152,
+      "forward_calls": 384
+    },
+    "adapt_cms": {
+      "forward_input_tokens": 49152,
+      "gradient_forward_input_tokens": 49152,
+      "forward_calls": 384
+    }
+  },
+  "supervised_answer_tokens": 73728,
+  "fixture_supervised_answer_tokens": 16
+}

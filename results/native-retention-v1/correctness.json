@@ -1,0 +1,6 @@
+{
+  "stream_max_abs_error": 0.0,
+  "period_one_matches_sft": true,
+  "fixture_update_attempts": 2,
+  "split_disjoint_and_labels_balanced": true
+}
