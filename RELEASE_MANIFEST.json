@@ -8,7 +8,7 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 128,
+  "file_count_excluding_manifests": 138,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
@@ -67,6 +67,11 @@
       "bytes": 2030
     },
     {
+      "path": "configs/agnews-acquisition-diagnostic-v3.json",
+      "sha256": "ca2299487c7ebc68f2b596b42c133288454de14f519249304c26da8216fb7949",
+      "bytes": 799
+    },
+    {
       "path": "configs/agnews-retention-v1.json",
       "sha256": "bfd255227d32a98f3527a339af73798cb92863f2a2761127366ab0544f311a5f",
       "bytes": 3658
@@ -110,6 +115,11 @@
       "path": "docs/agnews-retention-v2-protocol.md",
       "sha256": "de2074bf3f70fad743f57aaf482359a4d45488b3848f61136c143085ad338523",
       "bytes": 10469
+    },
+    {
+      "path": "docs/agnews-v3-qualification-plan.md",
+      "sha256": "182b579365d07d3e2afd88204377e383e57b67dc1863c32f32e6636dfbd8893c",
+      "bytes": 1865
     },
     {
       "path": "docs/limitations.md",
@@ -317,6 +327,16 @@
       "bytes": 4505
     },
     {
+      "path": "results/agnews-v3-development/acquisition-paired512-summary.json",
+      "sha256": "3942358afa2721ba64849e30a34c9acd87e6db31f2493408c447729e7c51a1de",
+      "bytes": 42993
+    },
+    {
+      "path": "results/agnews-v3-development/fresh-isolation-manifest.json",
+      "sha256": "799b6f5b6dc500f9c57364cab7daa8916b107a8304a213d2b4cf1f29dd2a8a7f",
+      "bytes": 1009
+    },
+    {
       "path": "results/historical_summary.md",
       "sha256": "7360bb034c5d517149b3c8a26c8ec1b7195a536daf7d258ca6807dd51183a586",
       "bytes": 1208
@@ -487,6 +507,11 @@
       "bytes": 1959
     },
     {
+      "path": "tests/test_agnews_acquisition_diagnostic_v3_cpu.py",
+      "sha256": "ea9836203fe6d654c7b2e8c7e54aec8072646878c016597b7ae1bfea5296f659",
+      "bytes": 2347
+    },
+    {
       "path": "tests/test_agnews_evaluation_gate.py",
       "sha256": "527530ece6a293bb0ccbd51749e18c5fbe4680732983f068f408e22b209ba75b",
       "bytes": 3555
@@ -510,6 +535,11 @@
       "path": "tests/test_agnews_retention_v2_driver_cpu.py",
       "sha256": "849a8c10724f56db54da8d7c77e0ad9069ca1c957c11da11a802f2a2aef76388",
       "bytes": 2171
+    },
+    {
+      "path": "tests/test_agnews_v3_common.py",
+      "sha256": "4468c9bef1b22e30c0e77b9c5eb7ca110b18ae405f51214a9ba078bda8de7140",
+      "bytes": 1130
     },
     {
       "path": "tests/test_lm_pilot_logging.py",
@@ -567,6 +597,11 @@
       "bytes": 18895
     },
     {
+      "path": "tools/agnews_v3_common.py",
+      "sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+      "bytes": 5753
+    },
+    {
       "path": "tools/complete_agnews_evaluation_v2.py",
       "sha256": "46cb5bb77fa51602ce4881f650033d96f6fc617c9fe453f1d66ff07932dbc718",
       "bytes": 3820
@@ -597,14 +632,29 @@
       "bytes": 10354
     },
     {
+      "path": "tools/prepare_agnews_v3_isolation.py",
+      "sha256": "e954adfb9f01fb64adf6efa169d8f722f213a2dce93407022873e16b11138f03",
+      "bytes": 8024
+    },
+    {
       "path": "tools/prepare_wikitext2_pilot.py",
       "sha256": "d29f374a9ca6999820d331b3df66f23e3df255314789b8136a517fb3380f1315",
       "bytes": 6425
     },
     {
+      "path": "tools/qualify_agnews_fresh_v3.py",
+      "sha256": "9122053a294c6f69613b128d1d7f387e1139d5e1e5c7aed64a90812b52ed90e0",
+      "bytes": 5258
+    },
+    {
       "path": "tools/reanalyze.py",
       "sha256": "e50ca2385c6ba28d8539df2c8b46baeaf9ab71f83efe062441a6c80136a147b8",
       "bytes": 2758
+    },
+    {
+      "path": "tools/run_agnews_acquisition_diagnostic_v3.py",
+      "sha256": "414d30d153c383838f21b284a7b96688c0b12bb5c91c62f7b15842fde9586d0f",
+      "bytes": 12570
     },
     {
       "path": "tools/run_agnews_foundation_dev_v1.py",

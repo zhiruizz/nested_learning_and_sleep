@@ -1,0 +1,17 @@
+{
+  "schema": "agnews-acquisition-diagnostic-v3",
+  "purpose": "Paired old-phase acquisition qualification on frozen main train and calibration roles",
+  "records_sha256": "7b5169daadcf7d4ccaefc9d0bb79f1a4eef92fc275fae0c3a7d593e06b7e9e59",
+  "official_test_in_runner": false,
+  "seeds": [17, 29, 43],
+  "lr_pairs": [[0.005, 0.01], [0.02, 0.04]],
+  "updates_per_candidate": 512,
+  "batch_size": 4,
+  "periods": [4, 16],
+  "gates": {"train_exact_match_min": 0.8, "calibration_exact_match_min": 0.75},
+  "additional_per_class_floor": "at least one correct example per old class; report per-class accuracy",
+  "maximum_updates": 3072,
+  "hard_wall_seconds": 5400,
+  "automatic_retry": false,
+  "budget_extension": "not included; review results before separately freezing any 1024/2048-step follow-up"
+}

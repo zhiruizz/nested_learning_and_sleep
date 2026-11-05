@@ -1,0 +1,9 @@
+# Fresh-role qualification before a new comparison
+
+The old official AG News test has been viewed and is development history only. V2 remains an unqualified retention study. The historical train/calibration diagnostic repeats three seeds at the same512 steps with paired(.005,.01) and(.02,.04). All three low-LR adapter fingerprints exactly match v2. Medium LR improves validation, but seed29 training EM is.7871, so no global qualification is claimed.
+
+Fresh roles come from official train, new hash salt, excluding all2048 prior roles and all7600 old official-test IDs and tokenized prefixes. Per class:256 train,128 validation,256 sealed holdout. Holdout prompt and label files are separate; training/qualification CLI accepts neither. No final holdout has been scored. This is a fresh within-dataset holdout, not external or pretraining-independent confirmation.
+
+Using uniform LR(.02,.04), rank16, capacity32, CMS periods4/16, all three seeds must satisfy train EM>=.80, validation EM>=.75, and each old validation class EM>=.70. The first common passing old budget among512/1024/2048/4096 is selected; all seeds advance together from exact checkpoints. Capacity32 reserves one receiver for each64-step Sleep interval up to2048 new steps; it differs from the capacity8 historical diagnostic and is separately qualified.
+
+After old acquisition, a fresh-controller SFT-only probe uses new train/validation to choose the first common passing new budget among512/1024/2048 under the same aggregate/per-class gates. No old-retention or heldout scores choose this budget. Failed stages and duplicate development costs are retained. Only after both gates pass will the exact foundation snapshots, adaptation budget and five-arm comparison be frozen and run. The final holdout remains unscored until the complete comparison seal. No seed replacement or gate lowering.

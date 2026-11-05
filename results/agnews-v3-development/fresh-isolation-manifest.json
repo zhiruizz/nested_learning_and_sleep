@@ -1,0 +1,19 @@
+{
+  "schema": "agnews-v3-isolation-manifest",
+  "salt": "nl-sleep-agnews-v3-20261105-fresh",
+  "train_validation_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "holdout_prompts_sha256": "4a7e3c54443cf6f654f264eb76586917ed0baa6cd9081cd68b86f24ac50e86ec",
+  "holdout_labels_sha256": "96b89d014a5251d4310de25f8f99031b07399f36eb93bdb7e6b30e8e6ea6974f",
+  "train_per_class": 256,
+  "validation_per_class": 128,
+  "holdout_per_class": 256,
+  "normalized_id_intersections_zero": true,
+  "tokenized_prompt_intersections_zero": true,
+  "excluded_old_role_count": 2048,
+  "excluded_old_official_test_count": 7600,
+  "prefix_conflict_groups_dropped": 0,
+  "no_model_scoring": true,
+  "interpretation": "fresh within-AGNews-train holdout; development informed by old official-test results; not external or pretraining-independent confirmation",
+  "prepared_utc": "2026-11-05T23:14:34.383341+00:00",
+  "preparer_sha256": "e954adfb9f01fb64adf6efa169d8f722f213a2dce93407022873e16b11138f03"
+}
