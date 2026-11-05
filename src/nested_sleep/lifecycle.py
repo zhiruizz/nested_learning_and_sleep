@@ -8,7 +8,7 @@ from copy import deepcopy
 import hashlib
 import random
 import torch
-from .lm import isolated_clone, immutable_versions
+from .lm import isolated_clone, immutable_versions, execution_state, load_execution_state
 from torch.nn import functional as F
 from .dreaming import select_dreams
 from .objectives import edit_reward
@@ -57,16 +57,25 @@ class ExactOutputSemanticProxy:
 
 class SleepSession:
     def __init__(self, live, sender, prospective, *, seed=17, lr=.01, dream_tokens=4,
-                 semantic_judge=None, share_backbone=False, reject_zero_gradient=False):
+                 semantic_judge=None, share_backbone=False, reject_zero_gradient=False,
+                 receiver_mix_fraction=None):
         if not 0 <= sender < len(live.level_descriptors()) - 1:
             raise ValueError('terminal sender policy is UNSPECIFIED; no slower receiver exists')
+        if receiver_mix_fraction is not None:
+            if (isinstance(receiver_mix_fraction, bool) or
+                not isinstance(receiver_mix_fraction, (int, float)) or
+                not 0. < float(receiver_mix_fraction) < 1.):
+                raise ValueError('receiver_mix_fraction must be None or a finite value strictly between 0 and 1')
+            receiver_mix_fraction = float(receiver_mix_fraction)
         self.live = live
         self.before = fingerprint(live)
+        self.live_execution_state = execution_state(live)
         self.share_backbone = share_backbone
         self.reject_zero_gradient = reject_zero_gradient
         self.base_versions = immutable_versions(live) if share_backbone else {}
         self.teacher = isolated_clone(live, share_backbone=share_backbone).eval().requires_grad_(False)
         self.student = isolated_clone(live, share_backbone=share_backbone).eval().requires_grad_(False)
+        self.teacher_execution_state = execution_state(self.teacher)
         self.sender, self.lr, self.dream_tokens = sender, lr, dream_tokens
         names = dict(self.student.named_parameters())
         expected_names = set(self.student.level_descriptors()[sender]['base'])
@@ -81,10 +90,18 @@ class SleepSession:
         self.reset_slots = self.student.get_submodule(levels[sender]['bank']).reset_active()
         receiver = self.student.get_submodule(levels[sender + 1]['bank'])
         self.slot = receiver.activate()
+        self.receiver_mix_fraction = receiver_mix_fraction
+        if receiver_mix_fraction is not None:
+            # Keep the teacher's original policy. During consolidation the
+            # student mixes in the newly allocated receiver so sparse top-1
+            # routing cannot starve the only trainable parameters. This
+            # execution policy is part of the committed student and checkpoint.
+            receiver.route_override = {'mix': self.slot, 'fraction': receiver_mix_fraction}
         self.new_slot = receiver.slots[self.slot]
         self.new_slot.requires_grad_(True)
         self.allowed = {levels[sender + 1]['bank'] + f'.slots.{self.slot}.a',
                         levels[sender + 1]['bank'] + f'.slots.{self.slot}.b'}
+        self.student_execution_state = execution_state(self.student)
         self.initial_student = checked_state(self.student)
         self.optimizer = torch.optim.AdamW([self.new_slot.a, self.new_slot.b], lr=lr, weight_decay=0.)
         device = next(live.parameters()).device
@@ -250,6 +267,12 @@ class SleepSession:
     def commit(self):
         if self.stage not in ['ready', 'dream']:
             raise RuntimeError('cannot commit an unfinished or closed transaction')
+        if execution_state(self.live) != self.live_execution_state:
+            raise RuntimeError('live execution policy changed before commit')
+        if execution_state(self.teacher) != self.teacher_execution_state:
+            raise RuntimeError('teacher execution policy changed before commit')
+        if execution_state(self.student) != self.student_execution_state:
+            raise RuntimeError('student execution policy changed before commit')
         if fingerprint(self.live) != self.before or fingerprint(self.teacher) != self.before:
             raise RuntimeError('teacher/live changed before commit')
         if self.share_backbone and immutable_versions(self.live) != self.base_versions:
@@ -270,9 +293,17 @@ class SleepSession:
         self.stage = 'aborted'
 
     def state_dict(self):
+        if (execution_state(self.live) != self.live_execution_state or
+            execution_state(self.teacher) != self.teacher_execution_state or
+            execution_state(self.student) != self.student_execution_state):
+            raise RuntimeError('Sleep execution policy changed outside the recorded transaction')
         return {'schema': 1, 'sender': self.sender, 'slot': self.slot, 'before': self.before,
                 'lr': self.lr, 'dream_tokens': self.dream_tokens, 'seed': self.seed,
                 'teacher': self.teacher.state_dict(), 'student': self.student.state_dict(),
+                'live_execution_state': self.live_execution_state,
+                'teacher_execution_state': execution_state(self.teacher),
+                'student_execution_state': execution_state(self.student),
+                'receiver_mix_fraction': self.receiver_mix_fraction,
                 'initial_student': self.initial_student, 'allowed': sorted(self.allowed),
                 'optimizer': self.optimizer.state_dict(), 'generator': self.generator.get_state(),
                 'stage': self.stage, 'steps': self.steps, 'records': self.records,
@@ -284,9 +315,52 @@ class SleepSession:
     def restore(cls, live, state, *, mutable_only=False):
         if state['schema'] != 1 or fingerprint(live) != state['before']:
             raise ValueError('checkpoint schema or live snapshot mismatch')
+        has_teacher_policy = 'teacher_execution_state' in state
+        has_student_policy = 'student_execution_state' in state
+        if has_teacher_policy != has_student_policy:
+            raise ValueError('teacher/student execution policy snapshot is incomplete')
+        receiver_mix_fraction = state.get('receiver_mix_fraction')
+        if receiver_mix_fraction is not None:
+            if (isinstance(receiver_mix_fraction, bool) or
+                not isinstance(receiver_mix_fraction, (int, float)) or
+                not 0. < float(receiver_mix_fraction) < 1.):
+                raise ValueError('checkpoint receiver_mix_fraction is invalid')
+            if not has_student_policy:
+                raise ValueError('mixed receiver checkpoint is missing student execution policy')
+        if has_teacher_policy:
+            if ('live_execution_state' not in state or
+                state['teacher_execution_state'] != state['live_execution_state']):
+                raise ValueError('teacher policy snapshot does not match the saved live policy')
+            teacher_routes = state['teacher_execution_state'].get('routing')
+            student_routes = state['student_execution_state'].get('routing')
+            if not isinstance(teacher_routes, list) or not isinstance(student_routes, list) or len(teacher_routes) != len(student_routes):
+                raise ValueError('teacher/student execution policy topology mismatch')
+            if (state['teacher_execution_state'].get('readout_fp32_accumulation') !=
+                state['student_execution_state'].get('readout_fp32_accumulation')):
+                raise ValueError('teacher/student readout policy mismatch')
+            expected_student_routes = deepcopy(teacher_routes)
+            if receiver_mix_fraction is None:
+                if student_routes != teacher_routes:
+                    raise ValueError('natural-route checkpoint changed student execution policy')
+            else:
+                levels = live.level_descriptors()
+                if not 0 <= state['sender'] < len(levels) - 1:
+                    raise ValueError('checkpoint sender is invalid')
+                banks = [descriptor['bank'] for descriptor in levels]
+                try:
+                    receiver_bank_index = banks.index(levels[state['sender'] + 1]['bank'])
+                except ValueError as exc:
+                    raise ValueError('receiver bank is missing from checkpoint topology') from exc
+                expected_student_routes[receiver_bank_index] = {'mix': state['slot'], 'fraction': float(receiver_mix_fraction)}
+                if student_routes != expected_student_routes:
+                    raise ValueError('student execution policy does not match the saved receiver mix')
         # Construct without re-running prospective updates, expansion or reset.
         obj = cls.__new__(cls)
         obj.live = live
+        if ('live_execution_state' in state and
+            state['live_execution_state'] != execution_state(live)):
+            raise ValueError('live execution policy differs from saved Sleep snapshot')
+        obj.live_execution_state = deepcopy(state.get('live_execution_state', execution_state(live)))
         obj.share_backbone = state.get('share_backbone', False)
         obj.reject_zero_gradient = state.get('reject_zero_gradient', False)
         obj.base_versions = immutable_versions(live) if obj.share_backbone else {}
@@ -298,10 +372,16 @@ class SleepSession:
                 raise ValueError('compact checkpoint mutable scope mismatch')
         obj.teacher.load_state_dict(state['teacher'],strict=not mutable_only)
         obj.student.load_state_dict(state['student'],strict=not mutable_only)
+        if has_teacher_policy:
+            load_execution_state(obj.teacher, state['teacher_execution_state'])
+            load_execution_state(obj.student, state['student_execution_state'])
+        obj.teacher_execution_state = deepcopy(state.get('teacher_execution_state', execution_state(obj.teacher)))
+        obj.student_execution_state = deepcopy(state.get('student_execution_state', execution_state(obj.student)))
         for key in ['sender', 'slot', 'before', 'lr', 'dream_tokens', 'seed', 'initial_student',
                     'stage', 'steps', 'records', 'teacher_data', 'work', 'reset_slots']:
             setattr(obj, key, deepcopy(state[key]))
         obj.allowed = set(state['allowed'])
+        obj.receiver_mix_fraction = None if not has_teacher_policy else receiver_mix_fraction
         receiver = obj.student.get_submodule(obj.student.level_descriptors()[obj.sender + 1]['bank'])
         obj.new_slot = receiver.slots[obj.slot]
         obj.new_slot.requires_grad_(True)

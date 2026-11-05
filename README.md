@@ -72,3 +72,7 @@ scope does not extend to model weights, datasets or other third-party assets.
 ## AG News retention study
 
 The [frozen preregistration](docs/agnews-retention-v1-protocol.md) defines a real Llama 3.2-3B, three-seed, five-arm class-incremental study. [Development feasibility and real-3B recovery checks](results/agnews-dev-v1-summary.json) passed before launch. An earlier [synthetic lookup feasibility attempt](docs/x870e-synthetic-dev-v2.md) failed acquisition and was stopped; its negative result and engineering failures are retained. The [main v1 block stopped at a zero-receiver-gradient safety gate](reports/agnews-retention-v1-failure.md) during the second Sleep event; official test remained unopened and no retention scores are reported. This is a project-specific partial implementation, not a paper reproduction.
+
+## Controlled receiver routing follow-up
+
+The [v2 preregistration](docs/agnews-retention-v2-protocol.md) introduces an explicit persistent 0.5 receiver mixture and checkpointed execution policies. Real-3B four-cycle development and restore checks passed. All three seeds and five arms will run fresh; v1 remains a separate failed experiment, and official test is still unopened at preregistration. This is an engineering variant of partial Sleep, with no claim of a paper reproduction.

@@ -1,0 +1,162 @@
+{
+  "schema": "agnews-controlled-mix-dev-v2",
+  "status": "REAL3B_FOUR_EVENT_MIX_AND_RECOVERY_PASS",
+  "dev_seed": 1907,
+  "new_wake_updates": 256,
+  "new_wake_update_attempts": 257,
+  "sleep_gkd": 64,
+  "sleep_lti": 32,
+  "ghost_restore_gkd_updates": 2,
+  "wake127to128_with_mixed_policy_restored_exact": true,
+  "mixed_sleep_restore": {
+    "status": "passed",
+    "precheckpoint_student_fingerprint": "fac73fd52522cda138cd2d116c6e5ec44667187c14d1fb7e1da56a36a7479b11",
+    "postrestore_next_gkd_equal": true,
+    "snapshot_metadata_unchanged": true,
+    "private_checkpoint_bytes": 25588140,
+    "heldout_roles_read": false
+  },
+  "events": [
+    {
+      "event": 1,
+      "receiver_slot": 0,
+      "gkd_updates": 16,
+      "lti_updates": 8,
+      "positive_receiver_gradients": true,
+      "natural_receiver_loss_hits": 40,
+      "loss_positions": 40,
+      "executed_mix_receiver_coverage": 1.0,
+      "postcommit_execution": {
+        "routing": [
+          null,
+          {
+            "mix": 0,
+            "fraction": 0.5
+          }
+        ],
+        "readout_fp32_accumulation": true
+      },
+      "minimum_gradient_norm": 0.6156186461448669
+    },
+    {
+      "event": 2,
+      "receiver_slot": 1,
+      "gkd_updates": 16,
+      "lti_updates": 8,
+      "positive_receiver_gradients": true,
+      "natural_receiver_loss_hits": 40,
+      "loss_positions": 40,
+      "executed_mix_receiver_coverage": 1.0,
+      "postcommit_execution": {
+        "routing": [
+          null,
+          {
+            "mix": 1,
+            "fraction": 0.5
+          }
+        ],
+        "readout_fp32_accumulation": true
+      },
+      "minimum_gradient_norm": 0.9728508591651917
+    },
+    {
+      "event": 3,
+      "receiver_slot": 2,
+      "gkd_updates": 16,
+      "lti_updates": 8,
+      "positive_receiver_gradients": true,
+      "natural_receiver_loss_hits": 40,
+      "loss_positions": 40,
+      "executed_mix_receiver_coverage": 1.0,
+      "postcommit_execution": {
+        "routing": [
+          null,
+          {
+            "mix": 2,
+            "fraction": 0.5
+          }
+        ],
+        "readout_fp32_accumulation": true
+      },
+      "minimum_gradient_norm": 0.2077985554933548
+    },
+    {
+      "event": 4,
+      "receiver_slot": 3,
+      "gkd_updates": 16,
+      "lti_updates": 8,
+      "positive_receiver_gradients": true,
+      "natural_receiver_loss_hits": 40,
+      "loss_positions": 40,
+      "executed_mix_receiver_coverage": 1.0,
+      "postcommit_execution": {
+        "routing": [
+          null,
+          {
+            "mix": 3,
+            "fraction": 0.5
+          }
+        ],
+        "readout_fp32_accumulation": true
+      },
+      "minimum_gradient_norm": 0.2279009371995926
+    }
+  ],
+  "work": {
+    "dev_new_wake": {
+      "forward_input_tokens": 92336,
+      "gradient_forward_input_tokens": 92336,
+      "forward_calls": 256
+    },
+    "dev_sleep_event1": {
+      "forward_input_tokens": 7356,
+      "gradient_forward_input_tokens": 1713,
+      "forward_calls": 104
+    },
+    "dev_wake128_restore_repeat": {
+      "forward_input_tokens": 376,
+      "gradient_forward_input_tokens": 376,
+      "forward_calls": 1
+    },
+    "dev_sleep_event2": {
+      "forward_input_tokens": 8375,
+      "gradient_forward_input_tokens": 1957,
+      "forward_calls": 104
+    },
+    "dev_restore_fixture": {
+      "forward_input_tokens": 530,
+      "gradient_forward_input_tokens": 134,
+      "forward_calls": 8
+    },
+    "dev_sleep_event3": {
+      "forward_input_tokens": 7976,
+      "gradient_forward_input_tokens": 1846,
+      "forward_calls": 104
+    },
+    "dev_sleep_event4": {
+      "forward_input_tokens": 7680,
+      "gradient_forward_input_tokens": 1783,
+      "forward_calls": 104
+    }
+  },
+  "seconds": 39.311999999918044,
+  "source_sha256": "1f388920def9d3829c08db99d5d3866112f2f614dd70a2a9470800839435654b",
+  "nested_sources": {
+    "nested_sleep": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5",
+    "nested_sleep.accounting": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96",
+    "nested_sleep.clocks": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d",
+    "nested_sleep.consolidation": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb",
+    "nested_sleep.dreaming": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45",
+    "nested_sleep.experts": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094",
+    "nested_sleep.lifecycle": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02",
+    "nested_sleep.lm": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+    "nested_sleep.memory": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f",
+    "nested_sleep.native": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57",
+    "nested_sleep.objectives": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654",
+    "nested_sleep.optim": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817"
+  },
+  "prior_fixture_attempt": "output-parent mkdir failed before model load/CUDA forward; zero updates",
+  "test_opened": false,
+  "main_started": false,
+  "prior_main_v1_not_resumed": true
+}

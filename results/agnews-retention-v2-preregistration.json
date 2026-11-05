@@ -1,0 +1,100 @@
+{
+  "schema": "agnews-retention-v2-preregistration-lock",
+  "main_v2_started": false,
+  "official_test_decoded": false,
+  "prior_v1_failure_commit": "54b11c6436add567ae52e4078158dc796bdce72b",
+  "prior_v1_sgd": 1152,
+  "prior_v1_sleep_adam": 24,
+  "prior_forensics_adam": 1,
+  "no_v1_run_or_checkpoint_reused_in_main_v2": true,
+  "files_sha256": {
+    "configs/agnews-retention-v2.json": "7313565876fe554aaea786992b100bcf4aa50a556af1a4d65db593b79603cb65",
+    "src/nested_sleep/__init__.py": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5",
+    "src/nested_sleep/accounting.py": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96",
+    "src/nested_sleep/clocks.py": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d",
+    "src/nested_sleep/consolidation.py": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb",
+    "src/nested_sleep/dreaming.py": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45",
+    "src/nested_sleep/execution.py": "9791e4f85a24d9eedc72760316de5de2d4c7045272506998f83844743e8f1677",
+    "src/nested_sleep/executor_v13.py": "0befa81ca6cc28379526a31064b6ad55293d57e0ad3c9444859799ef7f4173ed",
+    "src/nested_sleep/experts.py": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094",
+    "src/nested_sleep/lifecycle.py": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02",
+    "src/nested_sleep/llama_entry.py": "b0538010eaf56c0a212f424e7e977b6de96c052ce5918278966e7234f4e47f69",
+    "src/nested_sleep/lm.py": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+    "src/nested_sleep/memory.py": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f",
+    "src/nested_sleep/native.py": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57",
+    "src/nested_sleep/objectives.py": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654",
+    "src/nested_sleep/optim.py": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817",
+    "src/nested_sleep/parameter_drift.py": "073cc7549ec5786910b2716cbf28d7d6c91173b70b731fc8fc53134915a90598",
+    "src/nested_sleep/repairability.py": "b91fbec03113ac1b02549b58f23e035378a05c2b90ffe4bdd6c4593984866d87",
+    "tools/acquire_agnews.py": "df71376ae93ad51ceff6000b46758b47d60f7d7fa24e416ca1bed5ce5735cd86",
+    "tools/agnews_records_v1.py": "afa35ba68366bd268b7c1a9ec4c1460fcf8f64da942d6cdba38fc4ecd8b9ee2e",
+    "tools/evaluate_agnews_retention_v2.py": "b09cc5de75b60cf664472537b6eeee28cb391d68d305218f99fbf91ed51c234d",
+    "tools/prepare_agnews_records.py": "cff538a16773784b7dcdbc8d32a15165d90d55d12e5b76c18b6b4c231cef0976",
+    "tools/run_agnews_mix_fixture_v2.py": "1f388920def9d3829c08db99d5d3866112f2f614dd70a2a9470800839435654b",
+    "tools/run_agnews_retention_v2.py": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+    "tools/run_x870e_synthetic_dev_v2.py": "6c7bf0a079a052eb87458010c1b55e52db1d9daa6dce99e55708b2da98385948"
+  },
+  "train_records_sha256": "7b5169daadcf7d4ccaefc9d0bb79f1a4eef92fc275fae0c3a7d593e06b7e9e59",
+  "train_pack_created_utc": "2026-11-05T20:59:59.250995+00:00",
+  "schedules_and_pools_sha256": {
+    "1907": "9337de5cb813cc971528c82100d2f228155c66c639f45f9a9a19ac9eaa9299fe",
+    "17": "ebb948ccac9932f3475d7e5f56246a796b0c1afceadbe96079eb551e9d720f95",
+    "29": "85f0b7a5938735caa5a3122f162a1d1df732143eca775663301c42db56b62851",
+    "43": "85746ca2a88d4857899d43ca27b4b1ab92a5b9525ee16c3029c3d0498857b95f"
+  },
+  "derived_extra_replay_schedule_sha256": {
+    "17": "17437926d979f4674be6227e44095bf2f0e1ecf067a941667c34091fe21f0e46",
+    "29": "74a0a99430ec1ae826bb4aa89e8c875ab7cc2211b7df1ecf50051de28796adfd",
+    "43": "fa359979e10f5783362b08b631d3765581beb7e5097376e0049cfcadb1c3634d"
+  },
+  "tokenizer_inventory": [
+    {
+      "name": "config.json",
+      "bytes": 844,
+      "sha256": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d"
+    },
+    {
+      "name": "generation_config.json",
+      "bytes": 185,
+      "sha256": "da81b0dd4001a8e19fb5840d2b524f6957f44ddde6f5c3fe32b1f36cef5205bf"
+    },
+    {
+      "name": "LICENSE.txt",
+      "bytes": 7712,
+      "sha256": "0b4284c1f87029e67654c7953afa16279961632cf73dcfe33374c4c2f298fa35"
+    },
+    {
+      "name": "model.safetensors.index.json",
+      "bytes": 20919,
+      "sha256": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c"
+    },
+    {
+      "name": "special_tokens_map.json",
+      "bytes": 301,
+      "sha256": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535"
+    },
+    {
+      "name": "tokenizer.json",
+      "bytes": 9085657,
+      "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+    },
+    {
+      "name": "tokenizer_config.json",
+      "bytes": 50500,
+      "sha256": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+    }
+  ],
+  "main_namespace": "outputs/agnews-retention-v2/main-v2-seeds17-29-43",
+  "dev_fixture_summary_sha256": "035bc5c0340fb387ecdf8137b4f8724dd14638e897ff1c07d365589231780115",
+  "receiver_mix_fraction": 0.5,
+  "default_library_routing": "natural when the opt-in argument is omitted",
+  "same_test_salt_as_unopened_v1": "nl-sleep-agnews-officialtest-v1",
+  "test_source_sha256": "71de87ec66bc5737752a2502204dfa6d7fe9856ade3ea444dc6317789a4f13fb",
+  "test_examples_per_class": 128,
+  "main_sgd": 4752,
+  "main_sleep_adam": 288,
+  "main_hard_seconds": 3600,
+  "resume_retry_or_seed_replacement": false,
+  "review": "user-authorized X870E experiment; root and independent Luna review before launch",
+  "raw_text_tokens_or_weights_in_this_lock": false
+}

@@ -1,0 +1,76 @@
+{
+  "schema": "agnews-receiver-routing-forensics-v1",
+  "private_source_checkpoint_sha256": "0e61dacf204883ae3f23e2c30d11495148f9e7447b9c22a919b1c650b1972231",
+  "main_v1_resumed": false,
+  "official_test_read": false,
+  "branches": {
+    "natural": {
+      "status": "rejected",
+      "error": "nonzero objective but receiving expert gradient is zero; audit loss-position routing",
+      "successful_adam_updates": 0,
+      "new_receiver_slot": 1,
+      "natural_winners_at_two_loss_positions": [
+        0,
+        0
+      ],
+      "new_slot_natural_token_count": 9,
+      "natural_route_score_abs_max": 11.0625,
+      "executed_route_policy": null,
+      "new_slot_parameter_gradient_norms": [
+        null,
+        null
+      ]
+    },
+    "persistent_mix_0.5": {
+      "status": "passed",
+      "record": {
+        "kind": "gkd_teacher",
+        "loss": 0.08294062316417694,
+        "grad_norm": 0.08306260406970978,
+        "tokens": 2,
+        "parameter_grad_norms": [
+          0.0,
+          0.08306260406970978
+        ],
+        "parameter_delta_norms": [
+          0.0,
+          0.6646296977996826
+        ]
+      },
+      "new_receiver_slot": 1,
+      "natural_winners_at_two_loss_positions": [
+        0,
+        0
+      ],
+      "new_slot_natural_token_count": 9,
+      "natural_route_score_abs_max": 11.0625,
+      "executed_route_policy": {
+        "mix": 1,
+        "fraction": 0.5
+      },
+      "new_slot_parameter_gradient_norms": [
+        null,
+        null
+      ]
+    }
+  },
+  "work": {
+    "natural": {
+      "forward_input_tokens": 321,
+      "gradient_forward_input_tokens": 81,
+      "forward_calls": 4
+    },
+    "persistent_mix_0.5": {
+      "forward_input_tokens": 321,
+      "gradient_forward_input_tokens": 81,
+      "forward_calls": 4
+    }
+  },
+  "prior_forensic_attempt": "precondition expected cursor128 but snapshot stores last-completed-loop127; stopped before loading model/CUDA forward, zero updates",
+  "original_live_model_controller_unchanged": true,
+  "seconds": 5.266000000061467,
+  "forensic_successful_adam_updates": 1,
+  "runner_sha256": "8bf68068a3bb3a2caddc00a73691c7beecaf1eda10925235550b984f4da27502",
+  "source_commit": "54b11c6436add567ae52e4078158dc796bdce72b",
+  "source_commit_annotation": "provenance annotated after execution; core source was unchanged from the v1 preregistration at execution"
+}
