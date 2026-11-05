@@ -1,0 +1,77 @@
+{
+  "cuda": "12.8",
+  "gpu_name": "NVIDIA GeForce RTX 5090 D",
+  "gpu_total_memory_bytes": 34162343936,
+  "nested_source_hashes": {
+    "nested_sleep": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\__init__.py",
+      "sha256": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5"
+    },
+    "nested_sleep.accounting": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\accounting.py",
+      "sha256": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96"
+    },
+    "nested_sleep.clocks": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\clocks.py",
+      "sha256": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d"
+    },
+    "nested_sleep.consolidation": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\consolidation.py",
+      "sha256": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb"
+    },
+    "nested_sleep.dreaming": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\dreaming.py",
+      "sha256": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45"
+    },
+    "nested_sleep.experts": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\experts.py",
+      "sha256": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094"
+    },
+    "nested_sleep.lifecycle": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\lifecycle.py",
+      "sha256": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02"
+    },
+    "nested_sleep.lm": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\lm.py",
+      "sha256": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c"
+    },
+    "nested_sleep.memory": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\memory.py",
+      "sha256": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f"
+    },
+    "nested_sleep.native": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\native.py",
+      "sha256": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57"
+    },
+    "nested_sleep.objectives": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\objectives.py",
+      "sha256": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654"
+    },
+    "nested_sleep.optim": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\optim.py",
+      "sha256": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817"
+    }
+  },
+  "python": "3.11.17 | packaged by conda-forge | (main, Oct 13 2026, 16:36:10) [MSC v.1944 64 bit (AMD64)]",
+  "test_opened": false,
+  "tokenizer_sha256": {
+    "LICENSE.txt": "0b4284c1f87029e67654c7953afa16279961632cf73dcfe33374c4c2f298fa35",
+    "config.json": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d",
+    "generation_config.json": "da81b0dd4001a8e19fb5840d2b524f6957f44ddde6f5c3fe32b1f36cef5205bf",
+    "model.safetensors.index.json": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c",
+    "special_tokens_map.json": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535",
+    "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+    "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+  },
+  "torch": "2.8.0+cu128",
+  "weights_sha256": {
+    "model-00001-of-00002.safetensors": "584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002",
+    "model-00002-of-00002.safetensors": "4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb"
+  },
+  "work_meter_fields": [
+    "forward_input_tokens",
+    "gradient_forward_input_tokens",
+    "forward_calls",
+    "gradient_forward_calls"
+  ]
+}

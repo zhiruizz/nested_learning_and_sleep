@@ -87,11 +87,13 @@ def main():
                     vals=[next(r['metrics'][phase][EM]*100 for r in e['results'][f'{seed}/{arm}']if r['base_step']==step)for seed in(17,29,43)]
                     means.append(statistics.mean(vals));sds.append(statistics.stdev(vals))
                 ax.errorbar(steps,means,yerr=sds,marker='o',markersize=3,capsize=2,label=LABELS[arm],linewidth=1.4)
-                ax.set(title=f'{phase.capitalize()} classes',xlabel='Primary new-task minibatches',xticks=[0,64,128,192,256],ylim=(-2,102))
+                ax.set(title=f'{phase.capitalize()} classes',xlabel='Primary new-task minibatches',xticks=[0,64,128,192,256],ylim=(-12,102))
                 ax.grid(alpha=.2)
         axes[0].set_ylabel('Full-vocabulary two-token exact match (%)')
         axes[1].legend(loc='best',fontsize=7)
-        fig.suptitle('Llama 3.2-3B adapter study; three seeds, mean ± sample SD',fontsize=11)
+        qualified=sum(v['qualified_fixed_dev_criterion']for v in e['foundation_qualifications'].values())
+        fig.suptitle('Llama 3.2-3B adapter study; three seeds, mean ± sample SD\n'
+                     f'Foundation acquisition gate: {qualified}/3 passed; exploratory scores',fontsize=10)
         fig.savefig(args.out_dir/'retention-trajectory.png',dpi=180)
         fig.savefig(args.out_dir/'retention-trajectory.svg')
         plt.close(fig)

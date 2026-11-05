@@ -1,0 +1,24 @@
+{
+  "evaluator_sha256": "b09cc5de75b60cf664472537b6eeee28cb391d68d305218f99fbf91ed51c234d",
+  "examples_per_class": 128,
+  "excluded_training_prefixes": 0,
+  "prompt_conflict_groups": 0,
+  "salt": "nl-sleep-agnews-officialtest-v1",
+  "schema": "agnews-postseal-test-pack-private-v2",
+  "seal_sha256": "1418c9b6e632cc5d937c652d8ebad7ed3fd8ac2939d58df3d45b7bf803c1257c",
+  "source_test_sha256": "71de87ec66bc5737752a2502204dfa6d7fe9856ade3ea444dc6317789a4f13fb",
+  "text_selection_audit": {
+    "evaluator_sha256": "b09cc5de75b60cf664472537b6eeee28cb391d68d305218f99fbf91ed51c234d",
+    "excluded_training_texts": 0,
+    "records_sha256": "7b5169daadcf7d4ccaefc9d0bb79f1a4eef92fc275fae0c3a7d593e06b7e9e59",
+    "salt": "nl-sleep-agnews-officialtest-v1",
+    "schema": "agnews-postseal-test-candidates-private-v2",
+    "seal_sha256": "1418c9b6e632cc5d937c652d8ebad7ed3fd8ac2939d58df3d45b7bf803c1257c",
+    "source_rows": 7600,
+    "source_test_sha256": "71de87ec66bc5737752a2502204dfa6d7fe9856ade3ea444dc6317789a4f13fb",
+    "text_conflict_groups": 0,
+    "text_duplicate_rows": 0
+  },
+  "total_examples": 512,
+  "train_records_sha256": "7b5169daadcf7d4ccaefc9d0bb79f1a4eef92fc275fae0c3a7d593e06b7e9e59"
+}

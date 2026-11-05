@@ -75,4 +75,4 @@ The [frozen preregistration](docs/agnews-retention-v1-protocol.md) defines a rea
 
 ## Controlled receiver routing follow-up
 
-The [v2 preregistration](docs/agnews-retention-v2-protocol.md) introduces an explicit persistent 0.5 receiver mixture and checkpointed execution policies. Real-3B four-cycle development and restore checks passed. All three seeds and five arms will run fresh; v1 remains a separate failed experiment, and official test is still unopened at preregistration. This is an engineering variant of partial Sleep, with no claim of a paper reproduction.
+The [v2 preregistration](docs/agnews-retention-v2-protocol.md) introduces an explicit persistent 0.5 receiver mixture and checkpointed execution policies. The [complete three-seed/five-arm results](reports/agnews-retention-v2.md) are now available: all runs completed, but 0/3 foundations met the fixed acquisition gate. SFT/CMS/Sleep old-task EM ended at 0%; this does not establish a qualified retention effect. V1 and evaluation interruptions remain in the evidence ledger. This is an engineering variant of partial Sleep, with no claim of a paper reproduction.

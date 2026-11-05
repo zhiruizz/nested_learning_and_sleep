@@ -1,1 +1,4 @@
 * text=auto eol=lf
+
+# Preserve the captured Windows protocol bytes linked by the training seal.
+results/agnews-retention-v2/training-protocol.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

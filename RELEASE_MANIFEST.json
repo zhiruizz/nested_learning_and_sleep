@@ -8,13 +8,13 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 114,
+  "file_count_excluding_manifests": 128,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
       "path": ".gitattributes",
-      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
-      "bytes": 19
+      "sha256": "46af94cc67881ef0e19a63415bd6da6e926df3d1a96290269d4b930b0306f688",
+      "bytes": 222
     },
     {
       "path": ".github/ISSUE_TEMPLATE/reproduction.md",
@@ -53,13 +53,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "0d21ae775dd60d2994e98759a08b36ce120c22249d96412c3230cce9182ed86b",
-      "bytes": 6115
+      "sha256": "166de9e4117b01204472b262af943330a92c4fa76dcec8a0b719b71d3fb2c802",
+      "bytes": 6236
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "64e52b1ab8656e2d762ab648f38a09a66c5d0e6e75d31ba295d163e5d7168d57",
-      "bytes": 2541
+      "sha256": "ae6ef0d88e2b5d152fb5527eedddc56b535b6a2381eb8f032c1bf533d1ea3449",
+      "bytes": 3446
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -143,8 +143,8 @@
     },
     {
       "path": "docs/reproduction_status.md",
-      "sha256": "a48d9ff8af70b783aadf763ebcebd7ce986001472af3a4c31ae3f87032fa4d03",
-      "bytes": 1137
+      "sha256": "bf6ecb5d85c7266d94ddb4f5026b15f0127d5e356589e625bf155e60189a1532",
+      "bytes": 1567
     },
     {
       "path": "docs/wikitext2-lm-pilot-v1.md",
@@ -180,6 +180,11 @@
       "path": "reports/agnews-retention-v1-failure.md",
       "sha256": "af31126abf24d9b163452b74abdd04dc48cf19ab7bd2db8b657915fd7cc25b70",
       "bytes": 1805
+    },
+    {
+      "path": "reports/agnews-retention-v2.md",
+      "sha256": "974b8accfa23c8584625b3e7af899b12b703a2e49a44274098cecf6fe3c83ef7",
+      "bytes": 7564
     },
     {
       "path": "reports/local_acceptance.md",
@@ -250,6 +255,66 @@
       "path": "results/agnews-retention-v2-preregistration.json",
       "sha256": "adc2641a21cb75fd4dcfb7bb19580191938b4b3ba318362cfaa648d5f4ec74a3",
       "bytes": 5638
+    },
+    {
+      "path": "results/agnews-retention-v2/analysis.json",
+      "sha256": "dfcfa254572eaac6e2227ddd0240f52d2316340019da18ac1ca5bc367ac0763e",
+      "bytes": 17325
+    },
+    {
+      "path": "results/agnews-retention-v2/evaluation-completion.json",
+      "sha256": "4b6c0234114705aa8615f0927892affd9046db25b08083feaa8f7d46770a90a0",
+      "bytes": 4441
+    },
+    {
+      "path": "results/agnews-retention-v2/evaluation-summary.json",
+      "sha256": "21eb2d20c5ad8d7d652eb4960437e1531ff21fca186f5c9c5b32f26864b328ee",
+      "bytes": 239018
+    },
+    {
+      "path": "results/agnews-retention-v2/per-seed-endpoints.csv",
+      "sha256": "685141211a2e35f4f1a334afa76b3d2c6cbe40680619484fcafd361f471a6621",
+      "bytes": 2332
+    },
+    {
+      "path": "results/agnews-retention-v2/retention-trajectory.png",
+      "sha256": "e6456133ebbb39a80805cc8a2ff2b025f50bf802dcb3d20e2688746bc3c883ae",
+      "bytes": 130619
+    },
+    {
+      "path": "results/agnews-retention-v2/retention-trajectory.svg",
+      "sha256": "898141e52a98274d53360b741139439301e4e18b7242e43eaf90991e44cb4cbd",
+      "bytes": 94925
+    },
+    {
+      "path": "results/agnews-retention-v2/table.md",
+      "sha256": "03743c6e98cc15a4cf7f1ce74c8c9c19bb847f823b357073868e41ec7b8bb100",
+      "bytes": 503
+    },
+    {
+      "path": "results/agnews-retention-v2/test-selection-audit.json",
+      "sha256": "0763f83a796a2d3284c390983b88aa8aed07617c65807487ad7c03efede48fb2",
+      "bytes": 1203
+    },
+    {
+      "path": "results/agnews-retention-v2/training-protocol.json",
+      "sha256": "93d9b61b451d1a2f00a03f03cb559b20021aae3df3c2719828440cba6161a008",
+      "bytes": 14648
+    },
+    {
+      "path": "results/agnews-retention-v2/training-runtime.json",
+      "sha256": "845a70b4cee91a1ad2f45e77b6c0a2e4b05271f42cf2afeeefa98c118cfaac09",
+      "bytes": 3872
+    },
+    {
+      "path": "results/agnews-retention-v2/training-seal.json",
+      "sha256": "1418c9b6e632cc5d937c652d8ebad7ed3fd8ac2939d58df3d45b7bf803c1257c",
+      "bytes": 80427
+    },
+    {
+      "path": "results/agnews-retention-v2/work-ledger.json",
+      "sha256": "77049469ebc967816ab98ceceadfac0523b5c01a67dc81f0a665427bff790802",
+      "bytes": 4505
     },
     {
       "path": "results/historical_summary.md",
@@ -438,13 +503,13 @@
     },
     {
       "path": "tests/test_agnews_retention_v1_cpu.py",
-      "sha256": "4a53ca270f8804268afe2d286efb8ba7669df0cd86b4b8649fb1ccb28dda9c6b",
-      "bytes": 5183
+      "sha256": "66aeab3b1e1e0f1a25afcde9c984e046e70a1da87634439b3433b41d66abfb0a",
+      "bytes": 5390
     },
     {
       "path": "tests/test_agnews_retention_v2_driver_cpu.py",
-      "sha256": "26cf86b9a6e8eb5e05c2ed23e2a4227971964f8c58bd5e56acbdeac0b8613f52",
-      "bytes": 2095
+      "sha256": "849a8c10724f56db54da8d7c77e0ad9069ca1c957c11da11a802f2a2aef76388",
+      "bytes": 2171
     },
     {
       "path": "tests/test_lm_pilot_logging.py",
@@ -500,6 +565,11 @@
       "path": "tools/agnews_records_v1.py",
       "sha256": "afa35ba68366bd268b7c1a9ec4c1460fcf8f64da942d6cdba38fc4ecd8b9ee2e",
       "bytes": 18895
+    },
+    {
+      "path": "tools/complete_agnews_evaluation_v2.py",
+      "sha256": "46cb5bb77fa51602ce4881f650033d96f6fc617c9fe453f1d66ff07932dbc718",
+      "bytes": 3820
     },
     {
       "path": "tools/diagnose_agnews_receiver_starvation.py",
@@ -573,8 +643,8 @@
     },
     {
       "path": "tools/summarize_agnews_retention_v2.py",
-      "sha256": "2e7c360339439ccafeb75f9231a3917f2c165d43701ddbf6f8c1a7e9203011fa",
-      "bytes": 6720
+      "sha256": "ee19ca6bb6674c12d87ec1e50820e9fae3763231302cf012219d85ff66d5103b",
+      "bytes": 6923
     },
     {
       "path": "tools/summarize_native_retention.py",

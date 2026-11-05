@@ -1,0 +1,130 @@
+{
+  "schema": "agnews-experiment-work-ledger-v2",
+  "all_counts_are_actual_or_explicit_bounds": true,
+  "phases": [
+    {
+      "phase": "synthetic_DEV907_all_attempts",
+      "supervised_updates": 3072,
+      "sleep_adam_updates": 0,
+      "note": "1536 logger-invalid updates plus1536 valid repeat; no acquisition; separate negative report"
+    },
+    {
+      "phase": "AGNews_DEV1907_foundation_and_initial_fixture",
+      "supervised_updates": 1602,
+      "sleep_adam_updates": 26,
+      "note": "1536 foundation+64 new+1 wake restore+1 replay calibration;24 Sleep+2 ghost restores"
+    },
+    {
+      "phase": "main_v1_failed_unsealed",
+      "supervised_updates": 1152,
+      "sleep_adam_updates": 24,
+      "seconds": 69.25,
+      "additional_failed_gkd_backward_attempts": 1
+    },
+    {
+      "phase": "route_forensics",
+      "supervised_updates": 0,
+      "sleep_adam_updates": 1,
+      "seconds": 5.266,
+      "additional_failed_gkd_backward_attempts": 1,
+      "precondition_failed_attempt_gpu_updates": 0
+    },
+    {
+      "phase": "controlled_mix_DEV_four_cycles",
+      "supervised_updates": 257,
+      "sleep_adam_updates": 98,
+      "seconds": 39.312,
+      "note": "256 main wake+1 restore repeat;96 event Adam+2 ghost restore; prior mkdir failure had zero GPU updates"
+    },
+    {
+      "phase": "main_v2_complete",
+      "supervised_updates": 4752,
+      "sleep_adam_updates": 288,
+      "seconds": 317.3120000001509
+    },
+    {
+      "phase": "postseal_evaluation_first_interrupted",
+      "optimizer_updates": 0,
+      "exit_cause": "unknown",
+      "persisted_checkpoint_scores": 32,
+      "forward_work_lower_bound": {
+        "forward_calls": 2208,
+        "forward_input_tokens": 1650480,
+        "gradient_forward_input_tokens": 0
+      },
+      "forward_work_upper_bound": {
+        "forward_calls": 2272,
+        "forward_input_tokens": 1698384,
+        "gradient_forward_input_tokens": 0
+      },
+      "bound_assumption": "two completed foundation qualifications,32 persisted checkpoint scores,at most one next checkpoint in progress"
+    },
+    {
+      "phase": "postseal_evaluation_frozen_repeat_completion",
+      "optimizer_updates": 0,
+      "scoring_function_seconds_excludes_model_initialization": 240.28100000019185,
+      "completion_wrapper_seconds_includes_initialization": 250.39099999982864,
+      "forward_work": {
+        "forward_calls": 4464,
+        "forward_input_tokens": 3337992,
+        "gradient_forward_input_tokens": 0
+      },
+      "old_scores_verified_identical": 32
+    }
+  ],
+  "total_GPU_supervised_update_attempts_with_successful_collect": 10835,
+  "total_successful_GPU_sleep_adam_updates": 437,
+  "CPU_toy_test_updates_excluded_from_GPU_counts": true,
+  "wall_seconds_are_not_GPU_busy_time_or_energy": true,
+  "extra_replay_additional_proxy_ratios": [
+    {
+      "seed": 17,
+      "sleep_extra_work": {
+        "forward_calls": 416,
+        "padded_forward_input_tokens": 30412,
+        "padded_gradient_forward_input_tokens": 7079,
+        "fw_plus_2gradfw_proxy": 44570
+      },
+      "replay_extra_work": {
+        "forward_calls": 48,
+        "padded_forward_input_tokens": 16816,
+        "padded_gradient_forward_input_tokens": 16816,
+        "fw_plus_2gradfw_proxy": 50448
+      },
+      "replay_to_sleep_additional_proxy_ratio": 1.131882432129235
+    },
+    {
+      "seed": 29,
+      "sleep_extra_work": {
+        "forward_calls": 416,
+        "padded_forward_input_tokens": 30389,
+        "padded_gradient_forward_input_tokens": 7077,
+        "fw_plus_2gradfw_proxy": 44543
+      },
+      "replay_extra_work": {
+        "forward_calls": 48,
+        "padded_forward_input_tokens": 16984,
+        "padded_gradient_forward_input_tokens": 16984,
+        "fw_plus_2gradfw_proxy": 50952
+      },
+      "replay_to_sleep_additional_proxy_ratio": 1.1438834384751813
+    },
+    {
+      "seed": 43,
+      "sleep_extra_work": {
+        "forward_calls": 416,
+        "padded_forward_input_tokens": 30179,
+        "padded_gradient_forward_input_tokens": 7028,
+        "fw_plus_2gradfw_proxy": 44235
+      },
+      "replay_extra_work": {
+        "forward_calls": 48,
+        "padded_forward_input_tokens": 16792,
+        "padded_gradient_forward_input_tokens": 16792,
+        "fw_plus_2gradfw_proxy": 50376
+      },
+      "replay_to_sleep_additional_proxy_ratio": 1.1388267209223466
+    }
+  ],
+  "proxy_definition": "padded model forward-input tokens +2*padded gradient-forward-input tokens; not FLOPs, expert cost or equal-label matching"
+}

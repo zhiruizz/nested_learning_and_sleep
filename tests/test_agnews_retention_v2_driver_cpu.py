@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "tools"))
 
+pytest.importorskip("transformers", reason="optional Llama CLI dependency")
 from run_agnews_retention_v2 import validate_config
 
 

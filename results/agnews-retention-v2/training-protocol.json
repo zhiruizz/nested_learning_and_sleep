@@ -1,0 +1,407 @@
+{
+  "arms": [
+    "frozen",
+    "sft",
+    "cms",
+    "cms_sleep",
+    "cms_extra_replay"
+  ],
+  "attention_backend": "eager",
+  "automatic_retry": false,
+  "backbone_dtype": "BF16",
+  "capacity": 8,
+  "cms_periods": [
+    4,
+    16
+  ],
+  "completed_foundations": 3,
+  "completed_runs": 15,
+  "config_sha256": "7313565876fe554aaea786992b100bcf4aa50a556af1a4d65db593b79603cb65",
+  "config_validation": {
+    "schema": "agnews-retention-main-config-v2",
+    "validated_fields": [
+      "arms",
+      "automatic_retry",
+      "backbone_dtype",
+      "base_lr",
+      "capacity_per_bank",
+      "cms_periods",
+      "expert_lr",
+      "extra_replay_batches_per_event",
+      "foundation_cms_periods",
+      "foundation_updates_per_seed",
+      "hard_wall_seconds",
+      "levels",
+      "mutable_dtype",
+      "new_class_ids",
+      "official_test_in_runner",
+      "old_class_ids",
+      "primary_new_updates_per_adaptive_arm",
+      "rank",
+      "records_helper_sha256",
+      "revision",
+      "schema",
+      "seeds",
+      "sft_periods",
+      "sleep_boundaries_by_primary_step",
+      "sleep_dream_tokens",
+      "sleep_dream_updates_per_event",
+      "sleep_gkd_updates_per_event",
+      "sleep_lti_updates_per_event",
+      "sleep_receiver_mix_fraction",
+      "total_planned_sleep_adam_updates",
+      "total_planned_wake_updates",
+      "train_roles_json_sha256"
+    ]
+  },
+  "controller_policy": "fresh empty clocks for every arm; foundation weights shared within seed",
+  "elapsed_seconds": 317.3120000001509,
+  "extra_replay_batches_per_event": 12,
+  "extra_replay_interpretation": "near-compute/prompt-exposure proxy; not exact FLOPs or isolated Sleep mechanism",
+  "foundation_updates_per_seed": 512,
+  "hard_seconds": 3600,
+  "lr_pair": [
+    0.005,
+    0.01
+  ],
+  "model_revision": "48d84dd14886f01964f72e7f742a404dd86f9fb6",
+  "model_source": "ModelScope LLM-Research/Llama-3.2-3B",
+  "mutable_dtype": "FP32",
+  "nested_source_hashes": {
+    "nested_sleep": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\__init__.py",
+      "sha256": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5"
+    },
+    "nested_sleep.accounting": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\accounting.py",
+      "sha256": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96"
+    },
+    "nested_sleep.clocks": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\clocks.py",
+      "sha256": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d"
+    },
+    "nested_sleep.consolidation": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\consolidation.py",
+      "sha256": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb"
+    },
+    "nested_sleep.dreaming": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\dreaming.py",
+      "sha256": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45"
+    },
+    "nested_sleep.experts": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\experts.py",
+      "sha256": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094"
+    },
+    "nested_sleep.lifecycle": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\lifecycle.py",
+      "sha256": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02"
+    },
+    "nested_sleep.lm": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\lm.py",
+      "sha256": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c"
+    },
+    "nested_sleep.memory": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\memory.py",
+      "sha256": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f"
+    },
+    "nested_sleep.native": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\native.py",
+      "sha256": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57"
+    },
+    "nested_sleep.objectives": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\objectives.py",
+      "sha256": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654"
+    },
+    "nested_sleep.optim": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\optim.py",
+      "sha256": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817"
+    }
+  },
+  "official_test_opened": false,
+  "primary_schedule": "frozen JSON new_primary256 indices; same per seed across arms; replay/Sleep RNG does not shift it",
+  "primary_updates_per_adaptive_arm": 256,
+  "rank": 16,
+  "records_helper_sha256": "afa35ba68366bd268b7c1a9ec4c1460fcf8f64da942d6cdba38fc4ecd8b9ee2e",
+  "records_sha256": "7b5169daadcf7d4ccaefc9d0bb79f1a4eef92fc275fae0c3a7d593e06b7e9e59",
+  "records_summary": {
+    "new_class_ids": [
+      2,
+      3
+    ],
+    "old_class_ids": [
+      0,
+      1
+    ],
+    "raw_source_text_or_token_ids_returned": false,
+    "records": 2048,
+    "role_counts": {
+      "dev/new_calib/class2": 64,
+      "dev/new_calib/class3": 64,
+      "dev/new_train/class2": 128,
+      "dev/new_train/class3": 128,
+      "dev/old_calib/class0": 64,
+      "dev/old_calib/class1": 64,
+      "dev/old_train/class0": 128,
+      "dev/old_train/class1": 128,
+      "main/new_calib/class2": 64,
+      "main/new_calib/class3": 64,
+      "main/new_train/class2": 256,
+      "main/new_train/class3": 256,
+      "main/old_calib/class0": 64,
+      "main/old_calib/class1": 64,
+      "main/old_train/class0": 256,
+      "main/old_train/class1": 256
+    },
+    "schedules_sha256_by_seed": {
+      "17": "ebb948ccac9932f3475d7e5f56246a796b0c1afceadbe96079eb551e9d720f95",
+      "1907": "9337de5cb813cc971528c82100d2f228155c66c639f45f9a9a19ac9eaa9299fe",
+      "29": "85f0b7a5938735caa5a3122f162a1d1df732143eca775663301c42db56b62851",
+      "43": "85746ca2a88d4857899d43ca27b4b1ab92a5b9525ee16c3029c3d0498857b95f"
+    },
+    "schema": "nl-sleep-agnews-train-roles-v1",
+    "test_role_or_file_present": false,
+    "tokenizer_files_sha256": {
+      "LICENSE.txt": "0b4284c1f87029e67654c7953afa16279961632cf73dcfe33374c4c2f298fa35",
+      "config.json": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d",
+      "generation_config.json": "da81b0dd4001a8e19fb5840d2b524f6957f44ddde6f5c3fe32b1f36cef5205bf",
+      "model.safetensors.index.json": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c",
+      "special_tokens_map.json": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535",
+      "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+      "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+    },
+    "train_file_sha256": "fc508d6d9868594e3da960a8cfeb63ab5a4746598b93428c224397080c1f52ee"
+  },
+  "runner_sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+  "schedule_hashes_sha256_by_seed": {
+    "17": "ebb948ccac9932f3475d7e5f56246a796b0c1afceadbe96079eb551e9d720f95",
+    "1907": "9337de5cb813cc971528c82100d2f228155c66c639f45f9a9a19ac9eaa9299fe",
+    "29": "85f0b7a5938735caa5a3122f162a1d1df732143eca775663301c42db56b62851",
+    "43": "85746ca2a88d4857899d43ca27b4b1ab92a5b9525ee16c3029c3d0498857b95f"
+  },
+  "schema": "agnews-retention-main-v2",
+  "sealed": true,
+  "sealed_utc": "2026-11-05T22:28:27.168870+00:00",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "shared_helper_sha256": "6c7bf0a079a052eb87458010c1b55e52db1d9daa6dce99e55708b2da98385948",
+  "sleep_boundaries": [
+    64,
+    128,
+    192,
+    256
+  ],
+  "sleep_dream_tokens": 2,
+  "sleep_dream_updates_per_event": 0,
+  "sleep_gkd_updates_per_event": 16,
+  "sleep_lti_updates_per_event": 8,
+  "sleep_natural_route_audit": "natural top-1 receiver hits at answer-loss positions from existing student logits; no extra forward",
+  "sleep_receiver_mix_fraction": 0.5,
+  "started_utc": "2026-11-05T22:23:09.869671+00:00",
+  "status": "training_sealed",
+  "total_planned_sleep_adam_updates": 288,
+  "total_planned_wake_updates": 4752,
+  "weight_sha256": {
+    "model-00001-of-00002.safetensors": "584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002",
+    "model-00002-of-00002.safetensors": "4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb"
+  },
+  "work_total": {
+    "seed17_cms_extra_replay_event1": {
+      "forward_calls": 12,
+      "forward_input_tokens": 4616,
+      "gradient_forward_input_tokens": 4616
+    },
+    "seed17_cms_extra_replay_event2": {
+      "forward_calls": 12,
+      "forward_input_tokens": 3824,
+      "gradient_forward_input_tokens": 3824
+    },
+    "seed17_cms_extra_replay_event3": {
+      "forward_calls": 12,
+      "forward_input_tokens": 4152,
+      "gradient_forward_input_tokens": 4152
+    },
+    "seed17_cms_extra_replay_event4": {
+      "forward_calls": 12,
+      "forward_input_tokens": 4224,
+      "gradient_forward_input_tokens": 4224
+    },
+    "seed17_cms_extra_replay_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 91352,
+      "gradient_forward_input_tokens": 91352
+    },
+    "seed17_cms_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 91352,
+      "gradient_forward_input_tokens": 91352
+    },
+    "seed17_cms_sleep_event1": {
+      "forward_calls": 104,
+      "forward_input_tokens": 8049,
+      "gradient_forward_input_tokens": 1875
+    },
+    "seed17_cms_sleep_event2": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7103,
+      "gradient_forward_input_tokens": 1661
+    },
+    "seed17_cms_sleep_event3": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7576,
+      "gradient_forward_input_tokens": 1757
+    },
+    "seed17_cms_sleep_event4": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7684,
+      "gradient_forward_input_tokens": 1786
+    },
+    "seed17_cms_sleep_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 91352,
+      "gradient_forward_input_tokens": 91352
+    },
+    "seed17_foundation": {
+      "forward_calls": 512,
+      "forward_input_tokens": 175812,
+      "gradient_forward_input_tokens": 175812
+    },
+    "seed17_sft_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 91352,
+      "gradient_forward_input_tokens": 91352
+    },
+    "seed29_cms_extra_replay_event1": {
+      "forward_calls": 12,
+      "forward_input_tokens": 4320,
+      "gradient_forward_input_tokens": 4320
+    },
+    "seed29_cms_extra_replay_event2": {
+      "forward_calls": 12,
+      "forward_input_tokens": 4576,
+      "gradient_forward_input_tokens": 4576
+    },
+    "seed29_cms_extra_replay_event3": {
+      "forward_calls": 12,
+      "forward_input_tokens": 4016,
+      "gradient_forward_input_tokens": 4016
+    },
+    "seed29_cms_extra_replay_event4": {
+      "forward_calls": 12,
+      "forward_input_tokens": 4072,
+      "gradient_forward_input_tokens": 4072
+    },
+    "seed29_cms_extra_replay_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 90304,
+      "gradient_forward_input_tokens": 90304
+    },
+    "seed29_cms_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 90304,
+      "gradient_forward_input_tokens": 90304
+    },
+    "seed29_cms_sleep_event1": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7550,
+      "gradient_forward_input_tokens": 1760
+    },
+    "seed29_cms_sleep_event2": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7971,
+      "gradient_forward_input_tokens": 1847
+    },
+    "seed29_cms_sleep_event3": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7600,
+      "gradient_forward_input_tokens": 1775
+    },
+    "seed29_cms_sleep_event4": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7268,
+      "gradient_forward_input_tokens": 1695
+    },
+    "seed29_cms_sleep_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 90304,
+      "gradient_forward_input_tokens": 90304
+    },
+    "seed29_foundation": {
+      "forward_calls": 512,
+      "forward_input_tokens": 177232,
+      "gradient_forward_input_tokens": 177232
+    },
+    "seed29_sft_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 90304,
+      "gradient_forward_input_tokens": 90304
+    },
+    "seed43_cms_extra_replay_event1": {
+      "forward_calls": 12,
+      "forward_input_tokens": 4304,
+      "gradient_forward_input_tokens": 4304
+    },
+    "seed43_cms_extra_replay_event2": {
+      "forward_calls": 12,
+      "forward_input_tokens": 4368,
+      "gradient_forward_input_tokens": 4368
+    },
+    "seed43_cms_extra_replay_event3": {
+      "forward_calls": 12,
+      "forward_input_tokens": 3984,
+      "gradient_forward_input_tokens": 3984
+    },
+    "seed43_cms_extra_replay_event4": {
+      "forward_calls": 12,
+      "forward_input_tokens": 4136,
+      "gradient_forward_input_tokens": 4136
+    },
+    "seed43_cms_extra_replay_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 88924,
+      "gradient_forward_input_tokens": 88924
+    },
+    "seed43_cms_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 88924,
+      "gradient_forward_input_tokens": 88924
+    },
+    "seed43_cms_sleep_event1": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7284,
+      "gradient_forward_input_tokens": 1707
+    },
+    "seed43_cms_sleep_event2": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7867,
+      "gradient_forward_input_tokens": 1833
+    },
+    "seed43_cms_sleep_event3": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7289,
+      "gradient_forward_input_tokens": 1703
+    },
+    "seed43_cms_sleep_event4": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7739,
+      "gradient_forward_input_tokens": 1785
+    },
+    "seed43_cms_sleep_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 88924,
+      "gradient_forward_input_tokens": 88924
+    },
+    "seed43_foundation": {
+      "forward_calls": 512,
+      "forward_input_tokens": 179792,
+      "gradient_forward_input_tokens": 179792
+    },
+    "seed43_sft_primary": {
+      "forward_calls": 256,
+      "forward_input_tokens": 88924,
+      "gradient_forward_input_tokens": 88924
+    }
+  }
+}
