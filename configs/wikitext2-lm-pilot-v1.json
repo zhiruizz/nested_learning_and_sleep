@@ -1,6 +1,6 @@
 {
   "schema": "nl-sleep-wikitext2-lm-pilot-v1",
-  "protocol_version": "1.0.0",
+  "protocol_version": "1.1.4",
   "created_utc_date": "2026-11-06",
   "model": {
     "source": "ModelScope",
@@ -8,6 +8,7 @@
     "revision": "48d84dd14886f01964f72e7f742a404dd86f9fb6",
     "local_directory": ".cache/models/llama32-3b",
     "dtype": "bfloat16 backbone; float32 mutable adapter/master parameters",
+    "attention_backend": "eager",
     "rank": 4,
     "capacity": 8,
     "levels": 2,
@@ -39,6 +40,7 @@
     "source_split_boundary": "All roles are disjoint top-level articles derived from WikiText-2 raw train; no official validation/test split is used."
   },
   "training": {
+    "runtime_determinism": "CUBLAS_WORKSPACE_CONFIG=:4096:8 plus torch.use_deterministic_algorithms(True), set before CUDA model initialization; all arms and fixture use the same setting",
     "seeds": [17, 29],
     "methods": ["frozen", "sequential_sft", "cms_wake", "cms_wake_ks_gkd_lti"],
     "wake_steps": 8,

@@ -3,18 +3,21 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import inspect
 import json
 import math
+import os
 import random
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import torch
 import torch.nn.functional as F
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(ROOT.parent / "src"))
 from nested_sleep.accounting import ACTIVE_METER, WorkMeter
 from nested_sleep.lifecycle import SleepSession, fingerprint
 from nested_sleep.lm import LlamaCMSLM, promote_mutable_to_fp32
@@ -27,6 +30,28 @@ def sha256(path: Path) -> str:
         for block in iter(lambda: stream.read(1024 * 1024), b""):
             h.update(block)
     return h.hexdigest()
+
+
+def verify_local_implementation_sources() -> dict:
+    source_root = (ROOT.parent / "src").resolve()
+    loaded = {}
+    for name, module in sorted(sys.modules.items()):
+        if name == "nested_sleep" or name.startswith("nested_sleep."):
+            module_file = getattr(module, "__file__", None)
+            if not module_file:
+                continue
+            path = Path(module_file).resolve()
+            if not path.is_relative_to(source_root):
+                raise RuntimeError(f"refusing to run with external {name} implementation: {path}")
+            loaded[name] = {"path": str(path), "sha256": sha256(path)}
+    required = {"nested_sleep.accounting", "nested_sleep.lifecycle", "nested_sleep.lm", "nested_sleep.optim"}
+    missing = sorted(required - set(loaded))
+    if missing:
+        raise RuntimeError(f"required public source modules were not loaded: {missing}")
+    return loaded
+
+
+IMPLEMENTATION_SOURCE_HASHES = verify_local_implementation_sources()
 
 
 def json_hash(value) -> str:
@@ -62,7 +87,7 @@ def load_model(model_dir: Path, seed: int, config: dict):
         trust_remote_code=False,
         dtype=torch.bfloat16,
         device_map="cuda",
-        attn_implementation="sdpa",
+        attn_implementation=config["attention_backend"],
     ).eval()
     model = LlamaCMSLM(backbone, rank=config["rank"], capacity=config["capacity"], levels=config["levels"])
     promote_mutable_to_fp32(model)
@@ -179,7 +204,66 @@ def compact_sleep_state(session):
     state = session.state_dict()
     state["teacher"] = session.teacher.adapter_state_dict()
     state["student"] = session.student.adapter_state_dict()
-    return state
+    # state_dict() exposes optimizer tensors by reference. Isolate every tensor
+    # on CPU before either restore branch can advance Adam's moments in-place.
+    def cpu_clone(value):
+        if isinstance(value, torch.Tensor):
+            return value.detach().to(device="cpu").clone()
+        if isinstance(value, dict):
+            return {key: cpu_clone(item) for key, item in value.items()}
+        if isinstance(value, list):
+            return [cpu_clone(item) for item in value]
+        if isinstance(value, tuple):
+            return tuple(cpu_clone(item) for item in value)
+        return value
+    return cpu_clone(state)
+
+
+def tensor_tree_hash(value):
+    h = hashlib.sha256()
+    def visit(obj, prefix=""):
+        if isinstance(obj, torch.Tensor):
+            t = obj.detach().cpu().contiguous()
+            h.update(prefix.encode()); h.update(str((tuple(t.shape), t.dtype)).encode())
+            h.update(t.reshape(-1).view(torch.uint8).numpy().tobytes())
+        elif isinstance(obj, dict):
+            for key in sorted(obj, key=str): visit(obj[key], prefix + "/" + str(key))
+        elif isinstance(obj, (list, tuple)):
+            for index, item in enumerate(obj): visit(item, prefix + f"/{index}")
+        else:
+            h.update((prefix + "=" + repr(obj)).encode())
+    visit(value)
+    return h.hexdigest()
+
+
+def instrument_optimizer(session):
+    trace = {}
+    original_step = session.optimizer.step
+    def step(*args, **kwargs):
+        trace["optimizer_state_before"] = tensor_tree_hash(session.optimizer.state_dict())
+        trace["gradients_before"] = tensor_tree_hash([p.grad for p in (session.new_slot.a, session.new_slot.b)])
+        original_step(*args, **kwargs)
+    session.optimizer.step = step
+    return trace
+
+
+def checkpoint_step_aliases(session, checkpoint):
+    aliases = []
+    group = checkpoint["optimizer"]["param_groups"][0]
+    local = session.optimizer.param_groups[0]["params"]
+    for saved_id, parameter in zip(group["params"], local):
+        saved_step = checkpoint["optimizer"]["state"][saved_id].get("step")
+        live_step = session.optimizer.state[parameter].get("step")
+        aliases.append({
+            "saved_step": None if saved_step is None else float(saved_step),
+            "restored_step": None if live_step is None else float(live_step),
+            "same_object": saved_step is live_step,
+            "same_storage": bool(saved_step is not None and live_step is not None and saved_step.device == live_step.device
+                                  and saved_step.data_ptr() == live_step.data_ptr()),
+            "saved_device": None if saved_step is None else str(saved_step.device),
+            "restored_device": None if live_step is None else str(live_step.device),
+        })
+    return aliases
 
 
 def recovery_fixture(model, tokenizer, adaptation_examples, sequences, config, out_dir: Path, seed: int):
@@ -208,23 +292,85 @@ def recovery_fixture(model, tokenizer, adaptation_examples, sequences, config, o
                            dream_tokens=config["dream_tokens"], share_backbone=True, reject_zero_gradient=True)
     meter.stage = "fixture_sleep_first"
     session.seed_step(prefix)
+    checkpoint_fingerprint = fingerprint(session.student)
     state_path = out_dir / f"correctness-resume-s{seed}.pt"
     compact = compact_sleep_state(session)
     torch.save(compact, state_path)
     saved = torch.load(state_path, map_location="cpu", weights_only=False)
+    saved_optimizer_hash_before_restore = tensor_tree_hash(saved["optimizer"])
     reference = SleepSession.restore(model, saved, mutable_only=True)
+    aliases_after_restore = checkpoint_step_aliases(reference, saved)
+    restore_fingerprint = fingerprint(reference.student)
+    restore_state_exact = restore_fingerprint == checkpoint_fingerprint
+    saved_optimizer_hash = tensor_tree_hash(saved["optimizer"])
+    reference_trace = instrument_optimizer(reference)
     reference.seed_step(prefix)
+    saved_optimizer_hash_after_reference = tensor_tree_hash(saved["optimizer"])
+    if saved_optimizer_hash_after_reference != saved_optimizer_hash:
+        failure = {"status": "failed", "seed": seed,
+                   "reason": "optimizer checkpoint snapshot mutated after restored branch update",
+                   "saved_optimizer_hash_before_restore": saved_optimizer_hash_before_restore,
+                   "saved_optimizer_hash_after_restore": saved_optimizer_hash,
+                   "saved_optimizer_hash_after_reference": saved_optimizer_hash_after_reference,
+                   "step_tensor_aliases_after_restore": aliases_after_restore,
+                   "reference_optimizer_and_gradient": reference_trace,
+                   "seconds": time.perf_counter() - started, "work": meter.counts,
+                   "cuda_deterministic_algorithms": torch.are_deterministic_algorithms_enabled()}
+        failure_path = out_dir / f"correctness-failure-s{seed}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')}.json"
+        failure_path.write_text(json.dumps(failure, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        raise RuntimeError("recovery fixture detected optimizer checkpoint alias mutation")
     expected = fingerprint(reference.student)
     resumed = SleepSession.restore(model, saved, mutable_only=True)
+    resumed_trace = instrument_optimizer(resumed)
     meter.stage = "fixture_sleep_resume"
     resumed.seed_step(prefix)
     actual = fingerprint(resumed.student)
     if expected != actual:
-        raise RuntimeError("SleepSession checkpoint resume diverged on the next GKD step")
+        expected_state = reference.student.adapter_state_dict()
+        actual_state = resumed.student.adapter_state_dict()
+        differences = []
+        for name in expected_state:
+            left, right = expected_state[name], actual_state[name]
+            if left.is_floating_point():
+                delta = float((left.float() - right.float()).abs().max())
+                if delta:
+                    differences.append((delta, name))
+        largest = sorted(differences, reverse=True)[:5]
+        failure = {
+            "status": "failed",
+            "seed": seed,
+            "reason": "restored next GKD update did not match byte-identically",
+            "restored_pre_step_exact": restore_state_exact,
+            "checkpoint_fingerprint": checkpoint_fingerprint,
+            "restored_pre_step_fingerprint": restore_fingerprint,
+            "expected_next_fingerprint": expected,
+            "actual_next_fingerprint": actual,
+            "largest_float_deltas": largest,
+            "expected_update": reference.records[-1],
+            "actual_update": resumed.records[-1],
+            "reference_optimizer_and_gradient": reference_trace,
+            "resumed_optimizer_and_gradient": resumed_trace,
+            "generated_teacher_sample_sha256": hashlib.sha256(reference.teacher_data[-1].cpu().numpy().tobytes()).hexdigest(),
+            "resumed_teacher_sample_sha256": hashlib.sha256(resumed.teacher_data[-1].cpu().numpy().tobytes()).hexdigest(),
+            "saved_optimizer_hash_before_reference": saved_optimizer_hash,
+            "saved_optimizer_hash_after_reference": saved_optimizer_hash_after_reference,
+            "seconds": time.perf_counter() - started,
+            "work": meter.counts,
+            "cuda_deterministic_algorithms": torch.are_deterministic_algorithms_enabled(),
+            "implementation_source_hashes": IMPLEMENTATION_SOURCE_HASHES,
+        }
+        failure_path = out_dir / f"correctness-failure-s{seed}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')}.json"
+        failure_path.write_text(json.dumps(failure, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        raise RuntimeError("SleepSession checkpoint resume diverged on next GKD step; "
+                           f"restored_pre_step_exact={restore_state_exact}; largest_float_deltas={largest}; "
+                           f"failure_artifact={failure_path.name}")
     if fingerprint(model) != session.before:
         raise RuntimeError("recovery fixture mutated the live model")
     report = {"status": "passed", "seed": seed, "gkd_steps_before_checkpoint": 1,
+              "sleep_session_source": inspect.getfile(SleepSession),
+              "implementation_source_hashes": IMPLEMENTATION_SOURCE_HASHES,
               "resumed_next_gkd_step_fingerprint": actual, "byte_identical_resume": True,
+              "restored_pre_step_exact": restore_state_exact,
               "checkpoint_bytes": state_path.stat().st_size,
               "seconds": time.perf_counter() - started, "work": meter.counts,
               "heldout_roles_read": False}
@@ -280,6 +426,8 @@ def run_train(config_path: Path, model_dir: Path, data_dir: Path, out_dir: Path,
         asset_checks.append({"path": item["path"], "sha256": actual, "bytes": asset_path.stat().st_size})
     header = {"schema": "nl-sleep-wikitext2-lm-run-v1", "config_sha256": cfg_hash,
               "config": config, "data_manifest_sha256": sha256(data_dir / "manifest.json"),
+              "implementation_source_hashes": IMPLEMENTATION_SOURCE_HASHES,
+              "runner_sha256": sha256(Path(__file__).resolve()),
               "model_asset_manifest_sha256": manifest_digest,
               "model_asset_checks": asset_checks,
               "source_text_is_not_committed": True,
@@ -354,7 +502,7 @@ def run_train(config_path: Path, model_dir: Path, data_dir: Path, out_dir: Path,
                 ACTIVE_METER.reset(meter_token)
             all_results.append(run)
             print(json.dumps({"seed": seed, "method": method, "status": run["status"],
-                              "seconds": round(run["seconds"], 2)}, flush=True))
+                              "seconds": round(run["seconds"], 2)}), flush=True)
         del tokenizer, model
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
@@ -433,6 +581,10 @@ def main():
     parser.add_argument("--out-dir", type=Path, required=True)
     parser.add_argument("--model-manifest", type=Path)
     args = parser.parse_args()
+    # Make the compact resume fixture meaningful on CUDA: SDPA/gradient reduction
+    # nondeterminism can otherwise be amplified by Adam despite exact restored state.
+    os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+    torch.use_deterministic_algorithms(True)
     torch.set_num_threads(4)
     if args.stage == "train":
         run_train(args.config, args.model_dir, args.data_dir, args.out_dir, args.model_manifest)

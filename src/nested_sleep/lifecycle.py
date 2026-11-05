@@ -306,7 +306,28 @@ class SleepSession:
         obj.new_slot = receiver.slots[obj.slot]
         obj.new_slot.requires_grad_(True)
         obj.optimizer = torch.optim.AdamW([obj.new_slot.a, obj.new_slot.b], lr=obj.lr, weight_decay=0.)
-        obj.optimizer.load_state_dict(state['optimizer'])
+        # Optimizer state_dict tensors are mutable references. In particular,
+        # PyTorch may retain a CPU Adam step tensor by reference when restoring
+        # into a CPU optimizer; the next step then mutates the caller's saved
+        # checkpoint and can corrupt later restores. Restoration takes ownership
+        # of an independent optimizer snapshot.
+        def clone_optimizer_value(value):
+            if torch.is_tensor(value):
+                return value.detach().clone()
+            if isinstance(value, dict):
+                return {key: clone_optimizer_value(item) for key, item in value.items()}
+            if isinstance(value, list):
+                return [clone_optimizer_value(item) for item in value]
+            if isinstance(value, tuple):
+                return tuple(clone_optimizer_value(item) for item in value)
+            return deepcopy(value)
+        obj.optimizer.load_state_dict(clone_optimizer_value(state['optimizer']))
+        # Some optimizer implementations may still retain tensors passed through
+        # their load_state_dict casting path. Enforce ownership after that cast.
+        for optimizer_state in obj.optimizer.state.values():
+            for key, value in tuple(optimizer_state.items()):
+                if torch.is_tensor(value):
+                    optimizer_state[key] = value.detach().clone()
         obj.generator = torch.Generator(device=next(live.parameters()).device)
         obj.generator.set_state(state['generator'].cpu())
         obj.semantic_judge = ExactOutputSemanticProxy()

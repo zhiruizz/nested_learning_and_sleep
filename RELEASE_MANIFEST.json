@@ -8,7 +8,7 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 77,
+  "file_count_excluding_manifests": 78,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
@@ -83,8 +83,8 @@
     },
     {
       "path": "configs/wikitext2-lm-pilot-v1.json",
-      "sha256": "3139c14a7f7d7ce929c618fff36d5e3cbf314132a36e4053b85119603a96fa4f",
-      "bytes": 4252
+      "sha256": "bc905972dc3c43372e0294ba872b7b07bafba1bb0929de2123198e5bfce1cdfe",
+      "bytes": 4475
     },
     {
       "path": "docs/limitations.md",
@@ -123,8 +123,8 @@
     },
     {
       "path": "docs/wikitext2-lm-pilot-v1.md",
-      "sha256": "e3c032ec87b3fab0016c3e7bcfd38cc2f6a68b01e5745dbf825ae9f24484866d",
-      "bytes": 6462
+      "sha256": "544e94d8618477af13cdfee70d07747f2f79d89413aa861634c9ea187fc18305",
+      "bytes": 8587
     },
     {
       "path": "examples/cms_state.py",
@@ -298,8 +298,8 @@
     },
     {
       "path": "src/nested_sleep/lifecycle.py",
-      "sha256": "d6c07b764d3d8485b5f37c67e8a931cbb4315cabeec6a81030006984d1310002",
-      "bytes": 17777
+      "sha256": "906e535a2915102ee986f59e4c9cb26945799c8a149a3cb5eb3a76c7abaa50b5",
+      "bytes": 19078
     },
     {
       "path": "src/nested_sleep/llama_entry.py",
@@ -372,6 +372,11 @@
       "bytes": 4901
     },
     {
+      "path": "tests/test_sleep_restore_optimizer_ownership.py",
+      "sha256": "c047448c2c47e02ad2d766df994934ef3a7ef6e134c12f53eac8a4146ba68134",
+      "bytes": 2624
+    },
+    {
       "path": "tools/native_retention.py",
       "sha256": "e6a7eaff0a5a21ad523f486c85cdb427cf571daea69a5a69907263266874a0b3",
       "bytes": 13369
@@ -388,8 +393,8 @@
     },
     {
       "path": "tools/run_wikitext2_lm_pilot.py",
-      "sha256": "c20e0b2dc3745f60664b253ceac826dde5486efc7943a745e236ea5a043c7f4a",
-      "bytes": 23320
+      "sha256": "d8d783372478a7518152ffa9192f55fcc75cfe2340bb5e445a5c470278583c69",
+      "bytes": 31816
     },
     {
       "path": "tools/summarize_native_retention.py",
