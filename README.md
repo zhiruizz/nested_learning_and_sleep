@@ -64,3 +64,7 @@ scope does not extend to model weights, datasets or other third-party assets.
 ## Bounded native retention pilot
 
 [Three-seed synthetic retention pilot](reports/native-retention-v1.md): old mapping and short copying were acquired at100% in each seed; after new-mapping adaptation both SFT and CMS lost the old mapping, with mean copying11.46%/10.87%. This tiny restricted-scope test did not show protection from the multi-frequency schedule. It is not directly comparable with upstream natural-language scores. Protocol, all seed metrics, cost and offline reanalysis are included.
+
+## Llama 3.2-3B LM pilot
+
+[Frozen WikiText train-window protocol](docs/wikitext2-lm-pilot-v1.md): a preregistered two-seed, fixed-step adapter experiment with sequential SFT, CMS wake, and a partial GKD/LTI transfer arm. Results are pending. It is not a WikiText benchmark reproduction; source text and model weights remain local.

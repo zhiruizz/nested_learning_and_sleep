@@ -1,0 +1,80 @@
+{
+  "schema": "nl-sleep-wikitext2-lm-pilot-v1",
+  "protocol_version": "1.0.0",
+  "created_utc_date": "2026-11-06",
+  "model": {
+    "source": "ModelScope",
+    "model_id": "LLM-Research/Llama-3.2-3B",
+    "revision": "48d84dd14886f01964f72e7f742a404dd86f9fb6",
+    "local_directory": ".cache/models/llama32-3b",
+    "dtype": "bfloat16 backbone; float32 mutable adapter/master parameters",
+    "rank": 4,
+    "capacity": 8,
+    "levels": 2,
+    "trust_remote_code": false,
+    "license": "Llama 3.2 Community License; use policy retained locally"
+  },
+  "dataset": {
+    "source": "Salesforce/wikitext",
+    "config": "wikitext-2-raw-v1",
+    "split_file": "train-00000-of-00001.parquet",
+    "revision_ref": "refs/convert/parquet",
+    "revision_commit": "f3fd811233cf8abb79006d3a5f566c280bf47e1a",
+    "source_file_sha256": "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7",
+    "license_metadata": ["cc-by-sa-3.0", "gfdl"],
+    "license_card_text": "CC BY-SA 4.0",
+    "license_note": "The official dataset page presents differing license labels; the experiment does not redistribute source text.",
+    "citation": "Merity, Xiong, Bradbury, and Socher (2016), Pointer Sentinel Mixture Models, arXiv:1609.07843"
+  },
+  "data_split": {
+    "article_hash_salt": "nl-sleep-wikitext2-article-split-v1",
+    "article_hash": "sha256(salt + NUL + normalized top-level article title), first 8 hex digits modulo 100",
+    "adaptation_bucket": "0-59",
+    "calibration_bucket": "60-79",
+    "evaluation_bucket": "80-99",
+    "adaptation_examples": 8,
+    "calibration_examples": 8,
+    "evaluation_examples": 16,
+    "calibration_use": "Reserved and not used by this fixed-budget v1 run; it cannot affect training, commit, or selection.",
+    "source_split_boundary": "All roles are disjoint top-level articles derived from WikiText-2 raw train; no official validation/test split is used."
+  },
+  "training": {
+    "seeds": [17, 29],
+    "methods": ["frozen", "sequential_sft", "cms_wake", "cms_wake_ks_gkd_lti"],
+    "wake_steps": 8,
+    "wake_examples_per_seed_method": 8,
+    "batch_size": 1,
+    "context_tokens": 96,
+    "target_tokens_per_wake_example": 95,
+    "architecture": "LlamaCMSLM: last-MLP residual memory adapters, rank 4, capacity 8, 2 levels; attention/backbone frozen",
+    "cms_periods": [4, 16],
+    "base_lr": 0.005,
+    "expert_lr": 0.01,
+    "sequential_sft_update": "CMSController sequential per-minibatch SGD update on the same two base memory scopes and first active expert",
+    "boundary_steps": [4],
+    "sleep_prefix_tokens": 48,
+    "sleep_lr": 0.003,
+    "sleep_seed_base": 1700,
+    "dream_tokens": 4,
+    "gkd_steps": 2,
+    "lti_steps": 1,
+    "sleep_session": {
+      "class": "nested_sleep.lifecycle.SleepSession",
+      "sender_level": 0,
+      "receiver_level": 1,
+      "shared_frozen_backbone": true,
+      "gkd_steps": 2,
+      "lti_steps": 1,
+      "generated_tokens_per_step": 4,
+      "dreaming": false,
+      "candidate_rule": "Commit every finite candidate that passes SleepSession scope and frozen-backbone guards; no validation/test metric gate or model selection."
+    },
+    "boundary_order": "In CMS arms, at wake step 4 apply/consume only the level-0 proposal. At wake step 8 the level-0 proposal is the SleepSession prospective update and is not pre-applied; commit consumes level 0. The level-1 16-step base proposal remains pending and is not applied, so no simultaneous-due boundary occurs in CMS arms. In the SFT control, both level proposals are due every minibatch and are applied in ascending level order (0 then 1) from the same pre-update gradient batch.",
+    "max_training_budget": "fixed 8 wake updates per seed and arm; 2 GKD plus 1 LTI steps only in the KS arm; no endpoint-based extension"
+  },
+  "evaluation": {
+    "metric": "mean next-token cross-entropy (nats/token) and perplexity on fixed 16 article-disjoint train-derived evaluation windows",
+    "access": "Evaluation file is opened only by the evaluate stage after training-sealed.json exists and all adapter checkpoints are written.",
+    "claim_limit": "Not standard WikiText-2 validation/test perplexity, not a benchmark reproduction, and not evidence of robust continual learning or general forgetting."
+  }
+}
