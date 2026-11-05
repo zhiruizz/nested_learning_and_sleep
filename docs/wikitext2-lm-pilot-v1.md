@@ -22,7 +22,7 @@ Before the main run, a fixed fixture trains one four-example sender proposal, ru
 
 Training reads only the adaptation role. The evaluation-role JSON is first opened by the separate `evaluate` stage after every seed/arm has written its adapter checkpoint and `training-sealed.json`. It scores the sixteen article-disjoint windows once, reporting mean next-token cross-entropy and perplexity. This is a small, train-derived held-out probe, not official WikiText-2 validation/test perplexity and not comparable to upstream benchmark scores. It does not establish task acquisition, durable knowledge retention, or general continual-learning performance.
 
-Every arm reports per-step losses, all counted model forward-input tokens by stage (including teacher/student sampling and LTI), total wall time, CUDA event interval, and peak allocated CUDA memory. The KS arm receives additional compute and is not compute-matched to wake-only arms. Failures and both seeds remain in the results. No run artifact contains source text or model weights.
+Every arm reports per-step losses, all counted model forward-input tokens by stage (including teacher/student sampling and LTI), total wall time, CUDA event interval, and peak allocated CUDA memory. The KS arm receives additional compute and is not compute-matched to wake-only arms. Failures and both seeds remain in the results. No published result artifact contains source text, token IDs, or model/adapter weights. Private adapter checkpoints remain under ignored `outputs/`.
 
 ## Observed pilot results
 

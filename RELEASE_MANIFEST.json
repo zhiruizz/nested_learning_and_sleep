@@ -123,8 +123,8 @@
     },
     {
       "path": "docs/wikitext2-lm-pilot-v1.md",
-      "sha256": "0e26abb3c29ee686a0616faba9edde76b891d668aeee0677d8cf7b736614d46a",
-      "bytes": 11769
+      "sha256": "b644333ee92469ec8ad5c66f4f751f1a3de53315fac4e0fb81d937317ee4b8f1",
+      "bytes": 11863
     },
     {
       "path": "examples/cms_state.py",
