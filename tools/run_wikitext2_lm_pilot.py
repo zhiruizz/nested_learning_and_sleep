@@ -63,6 +63,12 @@ def emit_json_line(value) -> None:
     print(json.dumps(value), flush=True)
 
 
+def expected_checkpoint_count(config: dict) -> int:
+    # Each seed has a frozen initial adapter plus one saved checkpoint per arm;
+    # the first seed also carries the compact SleepSession correctness fixture.
+    return len(config["training"]["seeds"]) * (len(config["training"]["methods"]) + 1) + 1
+
+
 def read_examples(path: Path) -> list[dict]:
     obj = json.loads(path.read_text(encoding="utf-8"))
     return obj["examples"]
@@ -540,7 +546,7 @@ def run_evaluate(config_path: Path, model_dir: Path, data_dir: Path, out_dir: Pa
         raise RuntimeError("evaluation results already exist; refusing to overwrite")
     checkpoint_paths = sorted(out_dir.glob("*.pt"))
     checkpoint_hashes_before = {path.name: sha256(path) for path in checkpoint_paths}
-    if len(checkpoint_hashes_before) != len(config["training"]["seeds"]) * len(config["training"]["methods"]) + 1:
+    if len(checkpoint_hashes_before) != expected_checkpoint_count(config):
         raise RuntimeError("sealed checkpoint inventory is incomplete or unexpected")
     evaluation_ids = data_manifest["selected_article_ids"]["evaluation"]
     if len(evaluation_ids) != config["data_split"]["evaluation_examples"] or len(set(evaluation_ids)) != len(evaluation_ids):
