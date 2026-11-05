@@ -24,16 +24,31 @@ Training reads only the adaptation role. The evaluation-role JSON is first opene
 
 Every arm reports per-step losses, all counted model forward-input tokens by stage (including teacher/student sampling and LTI), total wall time, CUDA event interval, and peak allocated CUDA memory. The KS arm receives additional compute and is not compute-matched to wake-only arms. Failures and both seeds remain in the results. No run artifact contains source text or model weights.
 
+## Observed pilot results
+
+The 16 article-hash evaluation windows yielded these mean NLLs (nats/token); deltas are paired to the same seed's frozen adapter:
+
+| Arm | Mean NLL | Seed 17 delta | Seed 29 delta |
+| --- | ---: | ---: | ---: |
+| Frozen | 2.143193 | 0 | 0 |
+| Sequential SFT | 2.143124 | -0.000125 | -0.000013 |
+| CMS wake | 2.143174 | -0.000034 | -0.000003 |
+| CMS wake + partial GKD/LTI | 2.144252 | -0.000054 | +0.002173 |
+
+Frozen seed-17 and seed-29 scores are exactly equal because both start from the same unchanged adapter. SFT and CMS changes are tiny; the KS arm's sign differs across seeds. This is no evidence of a reliable method advantage, knowledge retention, or task acquisition. Both seeds use the same held-out articles, so they are not 32 independent evaluation examples. The aggregate file contains per-seed scores and cost counters without any raw text or token IDs: [`wikitext2-lm-pilot-v1-summary.json`](../results/wikitext2-lm-pilot-v1-summary.json).
+
+Across active arms, wake used 4,560 forward-input tokens. The two KS sessions added 1,208 GKD and 806 LTI forward-input tokens, plus 28 generated tokens; the terminal level-1 clock remained 8/16 events pending. Adaptive-arm training took 4.66 seconds total by measured arm wall times (the full two-model-load process took about 22 seconds). The 3.13-second recovery fixture used 1,286 forward-input tokens. Read-only scoring used 12,160 forward-input tokens; the first scorer attempt spent 8.523 seconds and repeated 1,520 tokens after its console logger failed. Five persisted fixture failures from earlier engineering checks consumed 14.979 seconds and 5,524 forward-input tokens; two were next-step fingerprint mismatches and three were checkpoint-alias assertions. All five occurred before the runner's source-root fix and used the research checkout rather than this repository's `src/`. One still-earlier console-only recovery mismatch lacked stage metrics and is excluded from these measured totals. A separate partial training invocation spent 14.34 seconds, completed the fixture, wrote the frozen seed-17 adapter, then stopped at a logging exception before sealing or reading evaluation data; it is preserved in the prior ignored run directory. The corrected public-source fixture passed before the sealed training batch. These engineering costs are reported separately from the completed arm results.
+
 ## Reproduce locally
 
 First obtain the exact source shard from the dataset repository and place it under an ignored `outputs/` directory. Prepare the local role cache with an interpreter that has PyArrow; this can be a separate preprocessing interpreter and does not require changing the model environment. Then run the train stage with the local ModelScope model directory and its existing asset manifest:
 
 ```powershell
 python tools/prepare_wikitext2_pilot.py --parquet outputs/wikitext-lm-pilot-v1/data/train-00000-of-00001.parquet --out-dir outputs/wikitext-lm-pilot-v1/data/roles
-python tools/run_wikitext2_lm_pilot.py --stage train --config configs/wikitext2-lm-pilot-v1.json --model-dir D:/path/to/llama32-3b --model-manifest D:/path/to/llama32-3b-manifest.json --data-dir outputs/wikitext-lm-pilot-v1/data/roles --out-dir outputs/wikitext-lm-pilot-v1/run
-python tools/run_wikitext2_lm_pilot.py --stage evaluate --config configs/wikitext2-lm-pilot-v1.json --model-dir D:/path/to/llama32-3b --data-dir outputs/wikitext-lm-pilot-v1/data/roles --out-dir outputs/wikitext-lm-pilot-v1/run
+python tools/run_wikitext2_lm_pilot.py --stage train --config configs/wikitext2-lm-pilot-v1.json --model-dir D:/path/to/llama32-3b --model-manifest D:/path/to/llama32-3b-manifest.json --data-dir outputs/wikitext-lm-pilot-v1/data/roles --out-dir outputs/wikitext-lm-pilot-v1/run-v1.1.4
+python tools/run_wikitext2_lm_pilot.py --stage evaluate --config configs/wikitext2-lm-pilot-v1.json --model-dir D:/path/to/llama32-3b --data-dir outputs/wikitext-lm-pilot-v1/data/roles --out-dir outputs/wikitext-lm-pilot-v1/run-v1.1.4
 ```
 
 The scripts refuse source-hash, role-count, role-overlap, and sealed-config mismatches. Dataset/model assets and checkpoints are local-only; only the code, protocol, and aggregate summaries belong in the repository.
 
-After training was sealed, the first evaluation attempt computed the frozen seed-17 score and then stopped at the same console-only `flush` argument error. It spent 8.523 seconds wall time and scored sixteen windows (1,520 target tokens / 1,536 forward-input tokens); the metric was not persisted or used for selection. The evaluator logging fix does not change the frozen config or scoring code; the complete evaluation is rerun against the same sealed checkpoints and fixed windows, and its provenance records both the training and evaluation runner hashes. The repeated frozen baseline work is explicitly recorded as extra read-only scoring cost. The evaluator refuses to overwrite an existing result file and hashes every sealed checkpoint before and after scoring.
+After training was sealed, the first evaluation attempt computed the frozen seed-17 score and then stopped at the same console-only `flush` argument error. It spent 8.523 seconds wall time and scored sixteen windows (1,520 target tokens / 1,520 forward-input tokens); the metric was not persisted or used for selection. The evaluator logging fix does not change the frozen config or scoring code; the complete evaluation is rerun against the same sealed checkpoints and fixed windows, and its provenance records both the training and evaluation runner hashes. The repeated frozen baseline work is explicitly recorded as extra read-only scoring cost. The evaluator refuses to overwrite an existing result file and hashes every sealed checkpoint before and after scoring.

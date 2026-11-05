@@ -67,4 +67,4 @@ scope does not extend to model weights, datasets or other third-party assets.
 
 ## Llama 3.2-3B LM pilot
 
-[Frozen WikiText train-window protocol](docs/wikitext2-lm-pilot-v1.md): a preregistered two-seed, fixed-step adapter experiment with sequential SFT, CMS wake, and a partial GKD/LTI transfer arm. Results are pending. It is not a WikiText benchmark reproduction; source text and model weights remain local.
+[Frozen WikiText train-window protocol](docs/wikitext2-lm-pilot-v1.md) and [aggregate results](results/wikitext2-lm-pilot-v1-summary.json): the two-seed fixed-step run completed all SFT/CMS/partial GKD-LTI arms. Score shifts were tiny and mixed across seeds, with no evidence of a robust method advantage. This is not a WikiText benchmark reproduction; source text and model weights remain local.

@@ -605,7 +605,7 @@ def run_evaluate(config_path: Path, model_dir: Path, data_dir: Path, out_dir: Pa
                  "results_sha256": sha256(result_path),
                  "prior_aborted_evaluation_attempt": {
                      "seed": 17, "method": "frozen", "status": "scored_then_console_logger_failed",
-                     "examples": 16, "target_tokens": 1520, "forward_input_tokens": 1536,
+                     "examples": 16, "target_tokens": 1520, "forward_input_tokens": 1520,
                      "process_wall_seconds": 8.523, "score_persisted_or_used_for_selection": False,
                      "additional_repeat_in_this_read_only_repair": True},
                  "evaluation_data_opened_after_training_seal": True}

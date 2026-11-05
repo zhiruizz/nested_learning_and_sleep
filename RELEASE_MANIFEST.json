@@ -8,7 +8,7 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 79,
+  "file_count_excluding_manifests": 80,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
@@ -53,8 +53,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "571eaf61bbcdbb8f120d6e4f0a5028c28c4ca86a6e693ad9f4295c8c924770ad",
-      "bytes": 4710
+      "sha256": "c7071b284c40c8bc8335a2d93eea68cc605f0c2f9f70ca076d13f88f5d56830f",
+      "bytes": 4802
     },
     {
       "path": "README.zh-CN.md",
@@ -123,8 +123,8 @@
     },
     {
       "path": "docs/wikitext2-lm-pilot-v1.md",
-      "sha256": "64728b4de4fc6f81cc494e84c5cf17ad1140a4a73879e5ede56e8954f648942b",
-      "bytes": 9358
+      "sha256": "0e26abb3c29ee686a0616faba9edde76b891d668aeee0677d8cf7b736614d46a",
+      "bytes": 11769
     },
     {
       "path": "examples/cms_state.py",
@@ -255,6 +255,11 @@
       "path": "results/update_reset_activation.csv",
       "sha256": "38cde1ea876ee3b93c297c86fd759ed41b4468d15e783309825d18229aceb8df",
       "bytes": 2862
+    },
+    {
+      "path": "results/wikitext2-lm-pilot-v1-summary.json",
+      "sha256": "2a78d053e93c5251c371ade1b274ef43ad1348861436933e2a60376f61bb9e1c",
+      "bytes": 5984
     },
     {
       "path": "src/nested_sleep/__init__.py",
@@ -398,7 +403,7 @@
     },
     {
       "path": "tools/run_wikitext2_lm_pilot.py",
-      "sha256": "f88d506a69b3e430359c741c826f2263a1bd76b55870ddafd976145672774865",
+      "sha256": "393ce1a66688d1215a47ba554bd272f70971306899b09eb8722406897347b335",
       "bytes": 34439
     },
     {

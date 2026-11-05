@@ -1,0 +1,174 @@
+{
+  "config_sha256": "95822097d2ff56f3ec7ede60ed7106ec591c7a122ab217bc20fde06b1793c628",
+  "dataset": {
+    "config": "wikitext-2-raw-v1",
+    "eval_articles": 16,
+    "official_val_test_used": false,
+    "source": "Salesforce/wikitext",
+    "source_text_published": false,
+    "split": "article-hash roles from train only",
+    "tokens_per_arm": 1520,
+    "train_shard_sha256": "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7"
+  },
+  "engineering_failures": {
+    "next_step_fingerprint_mismatches": 2,
+    "one_initial_console_only_failure_uninstrumented": true,
+    "optimizer_alias_assertions": 3,
+    "partial_old_runner_attempt": {
+      "completed": "frozen seed17 checkpoint",
+      "evaluation_read": false,
+      "fixture_forward_tokens": 1286,
+      "sealed": false,
+      "seconds": 14.34
+    },
+    "persisted_fixture_artifacts": 5,
+    "recorded_forward_input_tokens": 5524,
+    "recorded_seconds": 14.978943099966273
+  },
+  "evaluation": {
+    "aborted_logger_attempt": {
+      "extra_forward_input_tokens": 1520,
+      "method": "frozen",
+      "score_persisted_or_used": false,
+      "seconds": 8.523,
+      "seed": 17
+    },
+    "all_eight_completed": true,
+    "checkpoint_count": 11,
+    "checkpoint_sha_unchanged": true,
+    "forward_input_tokens": 12160,
+    "total_with_repeat_forward_input_tokens": 13680
+  },
+  "evaluation_results_sha256": "a1155ca713f170cf3694d350935606342faecfbe2baec2dc36365595a747a1b2",
+  "evaluation_runner_sha256": "f88d506a69b3e430359c741c826f2263a1bd76b55870ddafd976145672774865",
+  "limits": [
+    "Two seeds share the same 16 heldout article windows; not 32 independent samples.",
+    "Train-derived single-domain pilot, not standard WikiText validation/test or a continual-forgetting experiment.",
+    "Tiny seed-dependent changes show no robust task acquisition, retention, or method advantage.",
+    "Sleep arm is partial sender-0\u2192receiver-1 GKD/LTI; no Dream; exact-output/edit proxy; slow level base remains pending.",
+    "Sleep arm has extra compute relative to wake-only arms.",
+    "Official dataset page metadata/card license labels differ; raw data is not redistributed."
+  ],
+  "model": {
+    "attention": "eager",
+    "backbone": "BF16 frozen",
+    "id": "LLM-Research/Llama-3.2-3B",
+    "mutable": "FP32",
+    "revision": "48d84dd14886f01964f72e7f742a404dd86f9fb6",
+    "source": "ModelScope"
+  },
+  "protocol_version": "1.1.4",
+  "runtime": {
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "deterministic": true,
+    "gpu": "RTX 5090 D 32 GB",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.1"
+  },
+  "schema": "nl-sleep-wikitext2-lm-pilot-summary-v1",
+  "training": {
+    "all_eight_seed_arm_runs_completed": true,
+    "correctness_fixture": {
+      "byte_identical_next_update": true,
+      "fingerprint": "aba544c891b292de7e93fc5eade2a42766363146fdde6e1a8ee7cac0b27216d0",
+      "input_tokens": 1286,
+      "passed": true,
+      "seconds": 3.1268803998827934
+    },
+    "cost_by_arm": {
+      "cms_wake": {
+        "peak_cuda_bytes": 6690368000,
+        "wake_forward_input_tokens": 1520,
+        "wall_seconds": 0.8254874001722783
+      },
+      "cms_wake_ks_gkd_lti": {
+        "generated_tokens": 28,
+        "lti_reward": {
+          "17": 0.0,
+          "29": 1.0
+        },
+        "peak_cuda_bytes": 6690368000,
+        "sleep_gkd_forward_tokens": 1208,
+        "sleep_lti_forward_tokens": 806,
+        "slow_level_pending": "8/16",
+        "wake_forward_input_tokens": 1520,
+        "wall_seconds": 2.9909616999793798
+      },
+      "frozen": {
+        "peak_cuda_bytes": 6512348672,
+        "wake_forward_input_tokens": 0,
+        "wall_seconds": 0.036649700021371245
+      },
+      "sequential_sft": {
+        "peak_cuda_bytes": 6690269696,
+        "wake_forward_input_tokens": 1520,
+        "wall_seconds": 0.844327799975872
+      }
+    },
+    "metrics": {
+      "cms_wake": {
+        "delta_nll_vs_same_seed_frozen": {
+          "17": -3.4358352422714233e-05,
+          "29": -3.0919909477233887e-06
+        },
+        "mean_nll": 2.143173897638917,
+        "mean_perplexity": 8.526456830356935,
+        "nll_by_seed": {
+          "17": 2.1431582644581795,
+          "29": 2.1431895308196545
+        }
+      },
+      "cms_wake_ks_gkd_lti": {
+        "delta_nll_vs_same_seed_frozen": {
+          "17": -5.441531538963318e-05,
+          "29": 0.0021730586886405945
+        },
+        "mean_nll": 2.1442519444972277,
+        "mean_perplexity": 8.535658999609673,
+        "nll_by_seed": {
+          "17": 2.1431382074952126,
+          "29": 2.145365681499243
+        }
+      },
+      "frozen": {
+        "delta_nll_vs_same_seed_frozen": {
+          "17": 0.0,
+          "29": 0.0
+        },
+        "mean_nll": 2.143192622810602,
+        "mean_perplexity": 8.526616490177846,
+        "nll_by_seed": {
+          "17": 2.143192622810602,
+          "29": 2.143192622810602
+        }
+      },
+      "sequential_sft": {
+        "delta_nll_vs_same_seed_frozen": {
+          "17": -0.00012467056512832642,
+          "29": -1.2915581464767456e-05
+        },
+        "mean_nll": 2.1431238297373056,
+        "mean_perplexity": 8.52602995151064,
+        "nll_by_seed": {
+          "17": 2.143067952245474,
+          "29": 2.1431797072291374
+        }
+      }
+    },
+    "seeds": [
+      17,
+      29
+    ],
+    "total_arm_wall_seconds": 4.697426600148901,
+    "total_training_forward_input_tokens": 6574,
+    "wake_steps": 8
+  },
+  "training_results_sha256": "3a3380817d0db2efb4fe30fd2c12d0af756f98a5612827f0110edd71417cf0d9",
+  "training_runner_sha256": "d8d783372478a7518152ffa9192f55fcc75cfe2340bb5e445a5c470278583c69",
+  "verified_source_sha256": {
+    "accounting": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96",
+    "lifecycle": "906e535a2915102ee986f59e4c9cb26945799c8a149a3cb5eb3a76c7abaa50b5",
+    "lm": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+    "optim": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817"
+  }
+}
