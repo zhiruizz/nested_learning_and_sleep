@@ -1,0 +1,43 @@
+{
+  "schema": "nl-sleep-llama-synthetic-dev-v2",
+  "purpose": "development-only LR feasibility, not main experiment",
+  "seed": 907,
+  "fact_namespace": "DEV907",
+  "rank": 16,
+  "capacity": 8,
+  "levels": 2,
+  "cms_periods": [4, 16],
+  "batch_size": 4,
+  "foundation_steps": 512,
+  "new_wake_fixture_steps": 64,
+  "max_steps_per_candidate": 512,
+  "candidate_lr_pairs": [[0.005, 0.01], [0.02, 0.04], [0.05, 0.1]],
+  "facts_per_phase": 64,
+  "train_templates_per_fact": 4,
+  "calibration_templates_per_fact": 1,
+  "heldout_test_templates_per_fact": 1,
+  "completion_marker": " tag",
+  "completion_format": "exactly two tokens: shared marker token then one category token; no EOS target",
+  "label_token_candidates": [" red", " blue", " green", " gold"],
+  "label_assignment": "64 facts receive balanced 16-per-label assignments, deterministically shuffled by phase namespace and seed",
+  "eval_access": "train and calibration only; no heldout test prompt/template is generated or read by this DEV runner",
+  "success_rule": "Select lowest LR pair for which old-task train exact-match >= 0.80 and calibration exact-match >= 0.50 after 512 foundation updates; if none, stop without expanding grid.",
+  "budget": {"hard_wall_seconds": 1200, "candidate_count": 3, "fixed_foundation_steps_per_candidate": 512, "selected_pair_new_wake_fixture_steps": 64, "no_endpoint_extension": true},
+  "model": {
+    "source": "ModelScope cached local asset",
+    "model_id": "LLM-Research/Llama-3.2-3B",
+    "revision": "48d84dd14886f01964f72e7f742a404dd86f9fb6",
+    "local_directory": "D:/my_paper/Nested_Learning_and_Sleep/.cache/models/llama32-3b",
+    "backbone_dtype": "bfloat16",
+    "mutable_dtype": "float32",
+    "attention_backend": "eager",
+    "trust_remote_code": false
+  },
+  "candidate_update": "CMSController(periods=[4,16]) online level-0 experts, staged base proposals applied slow level first then fast at every due boundary; initialize controller once per candidate foundation, retain its exact empty-clock state through the new wake fixture; at step64, apply slow level1 only on a candidate clone, construct SleepSession from that slow-updated teacher, and pass level0 proposal prospectively without pre-applying; upon guarded commit consume only level0 and atomically replace model+controller. Sleep consists of 16 GKD+8 LTI steps, dream_tokens=2, no Dream; exact-output semantic judge is a partial proxy. LTI samples its first continuation marker; errors before that marker remain conditional teacher-force limitations. No efficacy metric gates commits.",
+  "data": "fully generated, deterministic synthetic lookup facts; no external corpus or private/P2 examples",
+  "template_roles": {
+    "train": ["What code is assigned to entry {entity}? Answer:", "For entry {entity}, return its code. Code:", "Recall the code for record {entity}. Answer:", "Lookup {entity}; provide only its code:"],
+    "calibration": ["Which code belongs to the entry named {entity}? The code is"],
+    "heldout_test_unused": ["Give the stored code for the record named {entity}. Code:"]
+  }
+}

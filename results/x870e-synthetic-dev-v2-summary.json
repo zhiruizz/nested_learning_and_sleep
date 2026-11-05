@@ -1,0 +1,144 @@
+{
+  "schema": "nl-sleep-x870e-synthetic-dev-summary-v1",
+  "protocol_id": "nl-sleep-llama-synthetic-dev-v2",
+  "claim_scope": "single-seed synthetic fact-mapping feasibility only; not a natural-language benchmark, continual-forgetting test, or evidence of retention",
+  "model": {
+    "provider": "ModelScope local cache",
+    "id": "LLM-Research/Llama-3.2-3B",
+    "revision": "48d84dd14886f01964f72e7f742a404dd86f9fb6",
+    "backbone_dtype": "BF16",
+    "mutable_dtype": "FP32",
+    "rank": 16,
+    "capacity_per_bank": 8,
+    "levels": 2,
+    "periods": [
+      4,
+      16
+    ]
+  },
+  "data": {
+    "kind": "deterministically generated synthetic lookup facts",
+    "seed": 907,
+    "old_new_entities_disjoint": true,
+    "labels_per_phase": 4,
+    "balanced_facts_per_label": 16,
+    "training_templates_per_fact": 4,
+    "calibration_templates_per_fact": 1,
+    "heldout_test_rows_generated_or_accessed": 0,
+    "source_text_or_token_ids_published": false
+  },
+  "protocol": {
+    "foundation_updates_per_lr_candidate": 512,
+    "batch_size": 4,
+    "lr_pairs_base_expert": [
+      [
+        0.005,
+        0.01
+      ],
+      [
+        0.02,
+        0.04
+      ],
+      [
+        0.05,
+        0.1
+      ]
+    ],
+    "qualification": {
+      "train_full_vocab_two_token_exact_match_min": 0.8,
+      "calibration_full_vocab_two_token_exact_match_min": 0.5,
+      "selection": "lowest LR pair passing both gates after all three candidates are scored"
+    },
+    "answer": "two tokens: shared marker then one class token; no EOS target",
+    "controller_boundary": "ordinary due proposals slow-level first, then fast-level; period-16 simultaneous boundary for Sleep defers both proposals on a clone, applies slow level first, and passes fast proposal prospectively to SleepSession",
+    "sleep_dev_fixture": "conditional on an LR candidate passing both old-task train/calibration gates; not run because none qualified"
+  },
+  "implementation": {
+    "runner_sha256": "6c7bf0a079a052eb87458010c1b55e52db1d9daa6dce99e55708b2da98385948",
+    "config_file_sha256": "e182d66c1e1c84c29115db70c72971fd80674b2f7ea30bcc8a10dcd734435e01",
+    "config_canonical_sha256": "a6a6b06e1e5fa6833f0463fb298b4767ef628e8d674fc836eca2196cd47d41e0",
+    "source_root_guard": "all nested_sleep imports resolved inside this public repository src/; per-module file hashes recorded privately"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "failed_before_training",
+      "reason": "initial adapter provenance hash called NumPy conversion directly on BF16 tensors",
+      "foundation_updates": 0,
+      "gpu_training_started": false
+    },
+    {
+      "attempt": 2,
+      "status": "engineering_failure_after_training_and_scoring",
+      "reason": "qualification logger requested a nonexistent metric key; no score values were persisted and no gate result is justified",
+      "foundation_updates": 1536,
+      "sleep_or_new_wake_updates": 0,
+      "test_access": false
+    },
+    {
+      "attempt": 3,
+      "status": "completed_no_lr_pair_qualified",
+      "foundation_updates": 1536,
+      "sleep_or_new_wake_updates": 0,
+      "test_access": false
+    }
+  ],
+  "attempt_3_candidate_results": [
+    {
+      "base_lr": 0.005,
+      "expert_lr": 0.01,
+      "train_nll_nats_per_answer_token": 0.7177553065121174,
+      "train_two_token_exact_match": 0.265625,
+      "calibration_nll_nats_per_answer_token": 2.396924674510956,
+      "calibration_two_token_exact_match": 0.0,
+      "train_marker_accuracy": 1.0,
+      "calibration_marker_accuracy": 0.0,
+      "qualified": false
+    },
+    {
+      "base_lr": 0.02,
+      "expert_lr": 0.04,
+      "train_nll_nats_per_answer_token": 0.7541526230052114,
+      "train_two_token_exact_match": 0.25,
+      "calibration_nll_nats_per_answer_token": 2.220832973718643,
+      "calibration_two_token_exact_match": 0.0,
+      "train_marker_accuracy": 1.0,
+      "calibration_marker_accuracy": 0.0,
+      "qualified": false
+    },
+    {
+      "base_lr": 0.05,
+      "expert_lr": 0.1,
+      "train_nll_nats_per_answer_token": 0.8075004043057561,
+      "train_two_token_exact_match": 0.25,
+      "calibration_nll_nats_per_answer_token": 1.932231843471527,
+      "calibration_two_token_exact_match": 0.0,
+      "train_marker_accuracy": 1.0,
+      "calibration_marker_accuracy": 0.0,
+      "qualified": false
+    }
+  ],
+  "accounting": {
+    "total_foundation_updates_across_attempts": 3072,
+    "attempt_3_gpu_event_ms_by_candidate": [
+      30203.640625,
+      28511.46875,
+      28976.703125
+    ],
+    "attempt_3_peak_cuda_allocated_bytes_by_candidate": [
+      7026405376,
+      7027191808,
+      7027191808
+    ],
+    "total_forward_calls_attempts_2_and_3": 3552,
+    "total_forward_input_tokens_including_padding_attempts_2_and_3": 389616,
+    "total_gradient_forward_input_tokens_attempts_2_and_3": 296112,
+    "total_nonpadding_input_tokens_attempts_2_and_3": 321930,
+    "attempt_3_elapsed_seconds": 87.82669180002995,
+    "cumulative_elapsed_seconds_from_fixed_budget_start": 1030.0394344329834,
+    "cumulative_hard_stop_utc": "2026-11-05T20:45:30+00:00",
+    "sleep_compute_proxy_or_extra_replay_calibration": "not run; acquisition gate failed"
+  },
+  "interpretation": "All three candidates learned the shared marker on the seen templates, but class exact match remained at four-way chance on train and zero on the distinct calibration template. The fixed acquisition gate failed; no new-task adaptation, old/new retention comparison, heldout scoring, or main experiment was performed.",
+  "artifact_policy": "Only this aggregate summary, protocol/config/source, CPU tests, and short report are intended for review. Private adapters/checkpoints and source tokens remain under ignored outputs/ and are not part of the release payload."
+}

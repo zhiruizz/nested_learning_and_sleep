@@ -45,7 +45,7 @@ missing items; synthetic examples never stand in for the historical 3B numbers.
 CACHE's historical approximately 3.40x result applies to one small repeated fixed
 bank. Public selection defaults to REF; absent transferable acceptance or an unknown
 scope never grants CACHE. The low-level engineering implementation is retained for
-inspection and independent validation. Llama/GPU execution is NOT_RUN in this release.
+inspection and independent validation. Llama/GPU execution was not run in the original release; the later bounded pilots below have separate evidence and limitations.
 
 Read the [mechanism mapping](docs/paper_to_code.md), [reproduction status](docs/reproduction_status.md),
 [technical report](reports/technical_report.md), [reproducibility instructions](docs/reproducibility.md),
@@ -68,3 +68,7 @@ scope does not extend to model weights, datasets or other third-party assets.
 ## Llama 3.2-3B LM pilot
 
 [Frozen WikiText train-window protocol](docs/wikitext2-lm-pilot-v1.md) and [aggregate results](results/wikitext2-lm-pilot-v1-summary.json): the two-seed fixed-step run completed all SFT/CMS/partial GKD-LTI arms. Score shifts were tiny and mixed across seeds, with no evidence of a robust method advantage. This is not a WikiText benchmark reproduction; source text and model weights remain local.
+
+## AG News retention study
+
+The [frozen preregistration](docs/agnews-retention-v1-protocol.md) defines a real Llama 3.2-3B, three-seed, five-arm class-incremental study. [Development feasibility and real-3B recovery checks](results/agnews-dev-v1-summary.json) passed before launch. An earlier [synthetic lookup feasibility attempt](docs/x870e-synthetic-dev-v2.md) failed acquisition and was stopped; its negative result and engineering failures are retained. Main results will be added after all training is sealed and the independent test protocol runs. This is a project-specific partial implementation, not a paper reproduction.
