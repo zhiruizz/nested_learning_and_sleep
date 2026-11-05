@@ -8,7 +8,7 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 148,
+  "file_count_excluding_manifests": 151,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
@@ -125,6 +125,11 @@
       "path": "docs/agnews-retention-v2-protocol.md",
       "sha256": "de2074bf3f70fad743f57aaf482359a4d45488b3848f61136c143085ad338523",
       "bytes": 10469
+    },
+    {
+      "path": "docs/agnews-v3-operational-recovery.md",
+      "sha256": "bb5b3c86165e32b2c30736ecaf2b541f0637c764f20d4276875e42fc9a808b32",
+      "bytes": 2318
     },
     {
       "path": "docs/agnews-v3-qualification-plan.md",
@@ -582,6 +587,11 @@
       "bytes": 1130
     },
     {
+      "path": "tests/test_agnews_v3_operational_restore_cpu.py",
+      "sha256": "bc441d24e0a4ed01634d120382a571bedecfa52e1ec1ffab40f0e54e77760144",
+      "bytes": 2411
+    },
+    {
       "path": "tests/test_lm_pilot_logging.py",
       "sha256": "8d0de9ec4d8c088651488352ac06b256618ca5e310acdf50748527220e6ee068",
       "bytes": 1246
@@ -695,6 +705,11 @@
       "path": "tools/reanalyze.py",
       "sha256": "e50ca2385c6ba28d8539df2c8b46baeaf9ab71f83efe062441a6c80136a147b8",
       "bytes": 2758
+    },
+    {
+      "path": "tools/recover_agnews_qualified_v3.py",
+      "sha256": "1a5523d6adf01d36afd94478706676f1fb175e4632b571703a627a2eed372b72",
+      "bytes": 11938
     },
     {
       "path": "tools/run_agnews_acquisition_diagnostic_v3.py",

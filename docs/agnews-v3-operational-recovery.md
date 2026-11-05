@@ -1,0 +1,11 @@
+# Operational amendment before final holdout access
+
+The original comparison process disappeared after seed17 Frozen, SFT and CMS completed and the Sleep arm printed primary step64. No Python process, exception record or exit receipt remained. The cause is unknown. All12 completed scientific checkpoint files were verified and retained byte-for-byte. The original progress file and console remain preserved. No final holdout was decoded or scored.
+
+The original protocol prohibited retries. This explicit operational amendment allows continuation of an infrastructure interruption using unchanged data, model, seeds, schedules, optimization, scientific endpoints and the original started_utc+3600 second wall deadline. It is not presented as an unamended preregistered run. There is no automatic retry of a recorded engineering failure or timeout, no seed replacement and no heldout feedback.
+
+Completed arms are skipped. The interrupted Sleep arm restarts from its exact original foundation, execution policy and RNG, because no postzero scientific checkpoint existed. Its discarded prefix consumed at least64 and fewer than256 supervised updates, and at least24 and at most96 Sleep Adam updates; the exact work is unavailable. These are operational duplicate costs in addition to the logical comparison budget, never hidden in method totals.
+
+The continuation wrapper adds independent full recovery checkpoints every64 primary steps, after complete Sleep/replay events. These contain controller pending gradient sums, execution policy, model state, all RNGs, row history and work ledger. Each receipt binds checkpoint bytes, configuration, original protocol, recovery source, seed and arm. Any later manual infrastructure continuation must verify these bindings. Original scientific checkpoints remain at0/256/512/768/1024 (Frozen0/1024). The original source and configuration stay unchanged; the terminal seal records the amendment and wrapper hashes.
+
+The CPU recovery fixture compares uninterrupted versus save/restore continuation from a non-boundary CMS state, including pending sums, adapter fingerprint, execution policy and Python/NumPy/Torch RNG. Independent static review checked the wrapper. All15 arms and all69 checkpoint hashes must pass the original evaluation gate before the new holdout is opened.
