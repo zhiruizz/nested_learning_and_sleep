@@ -8,7 +8,7 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 57,
+  "file_count_excluding_manifests": 60,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
@@ -85,6 +85,11 @@
       "path": "docs/paper_to_code.md",
       "sha256": "75044698615cd58b3a251e53cb87547368e0ada8323df740682b49f2696515f5",
       "bytes": 3318
+    },
+    {
+      "path": "docs/parameter-drift.md",
+      "sha256": "cedf5e9450dc7ab86478e441367165949651f073d9ac7c115926e1eb91f2b37f",
+      "bytes": 1931
     },
     {
       "path": "docs/provenance.md",
@@ -267,6 +272,11 @@
       "bytes": 3976
     },
     {
+      "path": "src/nested_sleep/parameter_drift.py",
+      "sha256": "073cc7549ec5786910b2716cbf28d7d6c91173b70b731fc8fc53134915a90598",
+      "bytes": 2933
+    },
+    {
       "path": "src/nested_sleep/repairability.py",
       "sha256": "b91fbec03113ac1b02549b58f23e035378a05c2b90ffe4bdd6c4593984866d87",
       "bytes": 5199
@@ -280,6 +290,11 @@
       "path": "tests/test_native.py",
       "sha256": "7a2b40146bf29688033fb45c123a04c1b625ac67c5b4902264c6daddc0ef2555",
       "bytes": 7716
+    },
+    {
+      "path": "tests/test_parameter_drift.py",
+      "sha256": "44f5567deb9764d603a978216feaa00cce20f5241929515ff96992a574d808e7",
+      "bytes": 1574
     },
     {
       "path": "tests/test_reference.py",
