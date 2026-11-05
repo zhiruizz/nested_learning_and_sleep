@@ -1,0 +1,9 @@
+# AG News retention v1: stopped before test evaluation
+
+The preregistered main block stopped after 69.25 seconds at the first GKD update of seed 17's **second** Sleep event (primary step 128): the objective was nonzero but the new receiving expert's gradient was zero. The existing safety gate raised an error. No v1 run was retried, and no official-test content was decoded or scored. There are no held-out retention results for v1.
+
+One 512-update old-task foundation and the Frozen/SFT/CMS arms completed for seed 17. CMS+Sleep completed 128 primary updates and its first 16 GKD + 8 LTI event; the second event failed before an Adam step. Extra replay and seeds 29/43 did not start. Total successful supervised updates were 1,152 and Sleep Adam updates 24; the failed forward/backward attempt remains charged in the work ledger. The full terminal record, partial trajectory metadata, checkpoint hashes and per-stage work counters are in [the failure summary](../results/agnews-retention-v1-failure.json). Private adapters and the live pending-gradient/controller/RNG diagnostic snapshot remain local.
+
+The `completed_foundations=0` terminal counter counts seeds that have completed all five arms. The progress record separately proves that one actual foundation completed; both are preserved, with this distinction explicit.
+
+This is an implementation failure, not evidence about retention, a comparison of the three completed arms, or a refutation of either paper. A single-event real-3B DEV restore test and a tiny four-event CPU test had passed; they did not cover the input-dependent routing condition encountered here. Any routing correction or follow-up must have its own source lock and protocol, retain this failure, and keep held-out data unopened until the new complete training block seals.

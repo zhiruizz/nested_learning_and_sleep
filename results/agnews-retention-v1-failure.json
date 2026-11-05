@@ -1,0 +1,454 @@
+{
+  "schema": "agnews-retention-v1-failed-unsealed-summary",
+  "preregistration_commit": "b9d60334264b3f774087b8d208a4b6b7694a1c0f",
+  "outcome": "technical failure at seed17 second Sleep event, primary step128; no retry",
+  "failure": {
+    "automatic_retry": false,
+    "completed_foundations": 0,
+    "completed_runs": 3,
+    "elapsed_seconds": 69.25,
+    "error": "nonzero objective but receiving expert gradient is zero; audit loss-position routing",
+    "error_type": "RuntimeError",
+    "official_test_opened": false,
+    "status": "FAILED_UNSEALED",
+    "work_total": {
+      "seed17_cms_primary": {
+        "forward_calls": 256,
+        "forward_input_tokens": 91352,
+        "gradient_forward_input_tokens": 91352
+      },
+      "seed17_cms_sleep_event1": {
+        "forward_calls": 104,
+        "forward_input_tokens": 8049,
+        "gradient_forward_input_tokens": 1875
+      },
+      "seed17_cms_sleep_event2": {
+        "forward_calls": 4,
+        "forward_input_tokens": 321,
+        "gradient_forward_input_tokens": 81
+      },
+      "seed17_cms_sleep_primary": {
+        "forward_calls": 128,
+        "forward_input_tokens": 45504,
+        "gradient_forward_input_tokens": 45504
+      },
+      "seed17_foundation": {
+        "forward_calls": 512,
+        "forward_input_tokens": 175812,
+        "gradient_forward_input_tokens": 175812
+      },
+      "seed17_sft_primary": {
+        "forward_calls": 256,
+        "forward_input_tokens": 91352,
+        "gradient_forward_input_tokens": 91352
+      }
+    }
+  },
+  "actual_completed_foundations": 1,
+  "bookkeeping_note": "failure.completed_foundations increments after all five arms of a seed; one foundation actually completed before the block stopped",
+  "successful_sgd_collects": 1152,
+  "successful_sleep_adam_updates": 24,
+  "failed_sleep_forward_backward_attempts": 1,
+  "progress_at_stop": {
+    "foundations": {
+      "17": {
+        "adapter_fingerprint": "fe76360a0b6dbbb441fe49782ef0c2b189f2e40f4ba7fdff8e71d7353ed2807f",
+        "checkpoint": "checkpoints\\seed-17-foundation.pt",
+        "checkpoint_sha256": "e938bbe1ec059f719ab22a7e37fbec26f83881f49a96c535d78418ccca7694ef",
+        "seconds": 27.589400799944997,
+        "status": "complete",
+        "updates": 512
+      }
+    },
+    "official_test_opened": false,
+    "runs": {
+      "17/cms": {
+        "active_parameters": {
+          "active_slots_by_bank": [
+            1,
+            0
+          ],
+          "currently_trainable_parameters": 294912,
+          "mutable_adapter_parameters": 2032128
+        },
+        "checkpoints": [
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 0,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "fe76360a0b6dbbb441fe49782ef0c2b189f2e40f4ba7fdff8e71d7353ed2807f",
+            "base_step": 0,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-cms-step-000.pt",
+            "primary_cursor": 0,
+            "replay_events": 0,
+            "sha256": "bdfee4cb95ae075c64ebdbae0daaa11cb8fc9eb7591f590cfc0dd385ec251fc3"
+          },
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 294912,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "5425c425f68bece7062c3bc09f9e0aac6308ff4fb1149b58ed996c702eafbabb",
+            "base_step": 64,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-cms-step-064.pt",
+            "primary_cursor": 64,
+            "replay_events": 0,
+            "sha256": "083ec3ba098eacb871edd963f308b050bd2bb51c8cd2e311c7408d742da4e3e8"
+          },
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 294912,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "8a5ae89f70ae4dd221e9d0138e14beb4b3ce3cf7351405501658ce59d63a23c9",
+            "base_step": 128,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-cms-step-128.pt",
+            "primary_cursor": 128,
+            "replay_events": 0,
+            "sha256": "776fbb1a6cb3f39e8ea7f9f1cd7b82a22d691a32f76bf99e4610e539c43e88d8"
+          },
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 294912,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "1cfb468b159f0e28ec337f8ce9565e179cc992eaa67b5737a754836486b0bf39",
+            "base_step": 192,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-cms-step-192.pt",
+            "primary_cursor": 192,
+            "replay_events": 0,
+            "sha256": "2d2ad346126591d65d741c48c12d420cdef71933ca4be7bb8eb70ee50a495019"
+          },
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 294912,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "3dcc21c79f0b6ba2c2b1097cd92eb5a4bc0beffa61890572ce9e13ef49bca071",
+            "base_step": 256,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-cms-step-256.pt",
+            "primary_cursor": 256,
+            "replay_events": 0,
+            "sha256": "d7b135553efc519fc41b407186c25b9d6f5826f911e02a5f2b105220c879bae2"
+          }
+        ],
+        "extra_replay_updates": 0,
+        "final_adapter_fingerprint": "3dcc21c79f0b6ba2c2b1097cd92eb5a4bc0beffa61890572ce9e13ef49bca071",
+        "primary_updates": 256,
+        "seconds": 13.107872599968687,
+        "sleep_adam_updates": 0,
+        "sleep_events": [],
+        "status": "complete",
+        "work": {
+          "seed17_cms_primary": {
+            "forward_calls": 256,
+            "forward_input_tokens": 91352,
+            "gradient_forward_input_tokens": 91352
+          }
+        }
+      },
+      "17/cms_sleep": {
+        "checkpoints": [
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 0,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "fe76360a0b6dbbb441fe49782ef0c2b189f2e40f4ba7fdff8e71d7353ed2807f",
+            "base_step": 0,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-cms_sleep-step-000.pt",
+            "primary_cursor": 0,
+            "replay_events": 0,
+            "sha256": "da80c68cc600c06f4742989135f8189845fa7a34a72dee0fb07eaa58c899a967"
+          },
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                0,
+                1
+              ],
+              "currently_trainable_parameters": 0,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "34f27cddf230c65aa802a50713ac647a6d08795b3446fc0613a3830467106b07",
+            "base_step": 64,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-cms_sleep-step-064.pt",
+            "primary_cursor": 64,
+            "replay_events": 0,
+            "sha256": "379c5e763c31501b8d0ba6e9fc3b9de8d5fe0bf33affbb72c7a18a48053561c6"
+          }
+        ],
+        "extra_replay_updates": 0,
+        "primary_updates": 64,
+        "seconds": 0.0,
+        "sleep_adam_updates": 24,
+        "sleep_events": [
+          {
+            "candidate_committed": true,
+            "dream_tokens": 2,
+            "dream_updates": 0,
+            "event": 1,
+            "fast_level0_passed_prospectively_without_preapply": true,
+            "gkd_marker_hits": 16,
+            "gkd_marker_total": 16,
+            "gkd_student_on_policy_updates": 8,
+            "gkd_teacher_updates": 8,
+            "gkd_updates": 16,
+            "lti_teacher_marker_hits": 8,
+            "lti_teacher_marker_total": 8,
+            "lti_updates": 8,
+            "postcommit_active_slots_by_bank": [
+              0,
+              1
+            ],
+            "receiver_gradients_all_positive": true,
+            "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+            "slow_level1_applied_to_candidate_before_teacher": true
+          }
+        ],
+        "status": "in_progress"
+      },
+      "17/frozen": {
+        "active_parameters": {
+          "active_slots_by_bank": [
+            1,
+            0
+          ],
+          "currently_trainable_parameters": 0,
+          "mutable_adapter_parameters": 2032128
+        },
+        "checkpoints": [
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 0,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "fe76360a0b6dbbb441fe49782ef0c2b189f2e40f4ba7fdff8e71d7353ed2807f",
+            "base_step": 0,
+            "controller_counts": null,
+            "path": "checkpoints\\seed-17-arm-frozen-step-000.pt",
+            "primary_cursor": 0,
+            "replay_events": 0,
+            "sha256": "620412d2880604ca68a2e747db30f0679d06eabbef0844dde93209ec527499c5"
+          },
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 0,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "fe76360a0b6dbbb441fe49782ef0c2b189f2e40f4ba7fdff8e71d7353ed2807f",
+            "base_step": 256,
+            "controller_counts": null,
+            "path": "checkpoints\\seed-17-arm-frozen-step-256.pt",
+            "primary_cursor": 0,
+            "replay_events": 0,
+            "sha256": "cd006f910feb4b34bb687fe979ef4482bf866e3921697633eb3293d3c9d3d801"
+          }
+        ],
+        "extra_replay_updates": 0,
+        "final_adapter_fingerprint": "fe76360a0b6dbbb441fe49782ef0c2b189f2e40f4ba7fdff8e71d7353ed2807f",
+        "primary_updates": 0,
+        "seconds": 0.07133099995553493,
+        "sleep_adam_updates": 0,
+        "sleep_events": [],
+        "status": "complete",
+        "work": {}
+      },
+      "17/sft": {
+        "active_parameters": {
+          "active_slots_by_bank": [
+            1,
+            0
+          ],
+          "currently_trainable_parameters": 294912,
+          "mutable_adapter_parameters": 2032128
+        },
+        "checkpoints": [
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 0,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "fe76360a0b6dbbb441fe49782ef0c2b189f2e40f4ba7fdff8e71d7353ed2807f",
+            "base_step": 0,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-sft-step-000.pt",
+            "primary_cursor": 0,
+            "replay_events": 0,
+            "sha256": "d92b9984f72f79ab4f3420b25fdd076f3ac1d9cd0daada58aca45b2e959305cd"
+          },
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 294912,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "88ebc93fb0aae56810d4b7536ae773b08d4e12b4a62c1b2cbf365dc6526e57ae",
+            "base_step": 64,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-sft-step-064.pt",
+            "primary_cursor": 64,
+            "replay_events": 0,
+            "sha256": "48743b540cd519caa69fd341d2fdadc06c76272cce9a73a44df43609d555f37c"
+          },
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 294912,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "147bbeab4a4930ddb940b57550f22c8e25196c080609d6a6a12efdb057164ffe",
+            "base_step": 128,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-sft-step-128.pt",
+            "primary_cursor": 128,
+            "replay_events": 0,
+            "sha256": "e5bade5b51a4295b4bf22715479aceeed74be05df1db7722f2bc77be96cd385d"
+          },
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 294912,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "305b67ec47ed2c28bc03eb1dc66a069ec2b6b3a6b0a285ae09add69e51530746",
+            "base_step": 192,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-sft-step-192.pt",
+            "primary_cursor": 192,
+            "replay_events": 0,
+            "sha256": "5692b091355ddc8cf36f0d9754927940bad86a24fb7f34e95127343eb3f21897"
+          },
+          {
+            "active_parameters": {
+              "active_slots_by_bank": [
+                1,
+                0
+              ],
+              "currently_trainable_parameters": 294912,
+              "mutable_adapter_parameters": 2032128
+            },
+            "adapter_fingerprint": "1bae6844beae3c0dfe9b2a81a949502caf98be5c50a8108841fe9e5932ec37fd",
+            "base_step": 256,
+            "controller_counts": [
+              0,
+              0
+            ],
+            "path": "checkpoints\\seed-17-arm-sft-step-256.pt",
+            "primary_cursor": 256,
+            "replay_events": 0,
+            "sha256": "d3fd680068d0ed0169328e5f51f973219aaf25e6663aef5085e5fd55c83a3895"
+          }
+        ],
+        "extra_replay_updates": 0,
+        "final_adapter_fingerprint": "1bae6844beae3c0dfe9b2a81a949502caf98be5c50a8108841fe9e5932ec37fd",
+        "primary_updates": 256,
+        "seconds": 13.34311529994011,
+        "sleep_adam_updates": 0,
+        "sleep_events": [],
+        "status": "complete",
+        "work": {
+          "seed17_sft_primary": {
+            "forward_calls": 256,
+            "forward_input_tokens": 91352,
+            "gradient_forward_input_tokens": 91352
+          }
+        }
+      }
+    },
+    "status": "in_progress"
+  },
+  "private_failure_state_sha256": "0e61dacf204883ae3f23e2c30d11495148f9e7447b9c22a919b1c650b1972231",
+  "failure_file_sha256": "ed9d68729d1daab2625130d7140722f2fe66827a0cc44b31659b08a6921954f2",
+  "test_unsealed": false,
+  "official_test_decoded": false,
+  "heldout_metrics": null,
+  "contains_raw_text_token_ids_or_weights": false,
+  "interpretation": "No retention or method ranking can be inferred; fixed preregistration stopped all arms and kept official test sealed. The nonzero-gradient safety gate was not weakened."
+}

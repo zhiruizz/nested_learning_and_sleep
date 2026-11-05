@@ -8,7 +8,7 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 99,
+  "file_count_excluding_manifests": 101,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
@@ -53,8 +53,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "18764aea7567f7b97a0ce587b913829f0f36a5b43c035dd5b75eee7cb9ad0710",
-      "bytes": 5515
+      "sha256": "6464e9762de915a2fbc5665ebbac6dd897c83edc6588edaaf7aced8c7fe83207",
+      "bytes": 5628
     },
     {
       "path": "README.zh-CN.md",
@@ -167,6 +167,11 @@
       "bytes": 807
     },
     {
+      "path": "reports/agnews-retention-v1-failure.md",
+      "sha256": "af31126abf24d9b163452b74abdd04dc48cf19ab7bd2db8b657915fd7cc25b70",
+      "bytes": 1805
+    },
+    {
       "path": "reports/local_acceptance.md",
       "sha256": "bed243c61ccea200cfd10d2b05d19acee1d47c7f4d067f010bb84f170b22886e",
       "bytes": 2078
@@ -210,6 +215,11 @@
       "path": "results/agnews-dev-v1-summary.json",
       "sha256": "708200b6cd3e0e25272cb1ef607c61e6e621cc90df157295578877e2bd5fa0e8",
       "bytes": 11521
+    },
+    {
+      "path": "results/agnews-retention-v1-failure.json",
+      "sha256": "6f44e91e0863b94a4bfaefaf42ded4a137c40dbe9d7d50feda5e055c8d11e641",
+      "bytes": 15984
     },
     {
       "path": "results/agnews-retention-v1-preregistration.json",
