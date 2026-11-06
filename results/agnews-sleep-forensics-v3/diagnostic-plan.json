@@ -1,0 +1,38 @@
+{
+  "automatic_retry": false,
+  "base_public_commit": "f82c5b9030c3d9dff9b7ee4bf6c5ac6f65d5740b",
+  "created_utc": "2026-11-06T00:39:50.484643+00:00",
+  "elapsed_limit_seconds": 900,
+  "exploratory_after_v3_holdout_access": true,
+  "final_route_probes": [
+    "actual_v3_mix",
+    "natural",
+    "disable_all_slow",
+    "force_oldest_slow",
+    "force_latest_slow"
+  ],
+  "foundation_probe": "disable_fast_bank",
+  "heldout_input": false,
+  "main_seal_sha256": "cbeba8b4ca8edf2f71b356b188cfefcd09714b538eae31d283413141420bb75a",
+  "no_endpoint_selection_or_confirmatory_claim": true,
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "schema": "agnews-sleep-forensics-plan-v3",
+  "scoring_role": "validation only; 128/class; all512",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "sleep_adam_replay_steps": 72,
+  "source_sha256": "be69a47f44ee60403b1f4c4c23aa7208cf05fd5baab5d96ae497700312f11934",
+  "supervised_replay_steps": 192,
+  "time_enforcement": "cooperative checks between operations and after observations; no forced interruption of an in-flight CUDA/kernel/load",
+  "trace_steps": [
+    0,
+    8,
+    16,
+    32,
+    63,
+    64
+  ]
+}

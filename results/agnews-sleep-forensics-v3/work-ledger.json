@@ -1,0 +1,37 @@
+{
+  "CPU_toy_fixture_updates_are_not_GPU_experiment_updates": true,
+  "additional_heldout_scoring": 0,
+  "automatic_retries": 0,
+  "cooperative_time_limit": "cooperative checks between operations and after observations; no forced interruption of an in-flight CUDA/kernel/load",
+  "exploratory_only": true,
+  "forward_work_including_all_diagnostic_model_calls": {
+    "forward_calls": 4428,
+    "forward_input_tokens": 2885016,
+    "gradient_forward_input_tokens": 73356
+  },
+  "low_rank_component_norm_hook_calls_are_not_in_full_model_token_proxy": true,
+  "prior_v3_logical_work": {
+    "SleepAdam_updates": 1152,
+    "ledger": "../agnews-qualified-v3/work-ledger.json",
+    "supervised_updates": 20544
+  },
+  "schema": "agnews-sleep-forensics-work-v3",
+  "seconds": 272.2970000000205,
+  "sleep_Adam_replay_updates": 72,
+  "supervised_replay_updates": 192,
+  "v3_plus_this_diagnostic_actual_bounds_including_prior_interruption": {
+    "SleepAdam_updates": [
+      1248,
+      1320
+    ],
+    "supervised_updates": [
+      20800,
+      20992
+    ]
+  },
+  "v3_plus_this_diagnostic_logical_work": {
+    "SleepAdam_updates": 1224,
+    "supervised_updates": 20736
+  },
+  "wall_seconds_are_not_GPU_busy_time_energy_or_FLOPs": true
+}

@@ -1,0 +1,32 @@
+{
+  "CMS64_controls_exactly_reproduced_seeds": [
+    29,
+    43
+  ],
+  "CMS64_seed17_control_unavailable": true,
+  "CPU_observer_equivalence_fixture": "passed; model/controller/policy/RNG exact vs uninstrumented toy event",
+  "SVG_cleanup_kept_normalized_XML_geometry": true,
+  "all3_first64_model_controller_policy_RNG_exactly_reproduced": true,
+  "all3_precommit_and_committed_metrics_equal": true,
+  "all54_states_864_literal_greedy_checks_match_frozen_scorer": true,
+  "all_independent_decode_model_forward_calls_accounted": true,
+  "checked_utc": "2026-11-06T00:54:23.834089+00:00",
+  "diagnostic_plan_sha256": "de6e464fb6cb0b98080473825e87d0b205f6f7af4ea756860b1a71facaa5545b",
+  "diagnostic_result_sha256": "19631e1529d59f4cfc9581d13fc488cabc96df4ccdceb75cce8ce25625987f57",
+  "diagnostic_source_sha256": "be69a47f44ee60403b1f4c4c23aa7208cf05fd5baab5d96ae497700312f11934",
+  "existing_core_and_frozen_v3_scientific_result_tree_unchanged": true,
+  "exit_code": 0,
+  "exploratory_after_v3_test_access": true,
+  "figure_visually_inspected": true,
+  "frozen_v3_scientific_outputs_and_core_source_unchanged": true,
+  "new_targeted_CPU_tests": {
+    "passed": 3,
+    "scope": "uninstrumented/instrumented Sleep state equality; bundled diagnostic reanalysis; corrupted provenance/denominator rejection",
+    "seconds": 2.96
+  },
+  "no_additional_holdout_access": true,
+  "public_diagnostic_reanalysis_JSON_and_both_tables_identical": true,
+  "raw_models_articles_token_packs_checkpoints_or_secrets_published": false,
+  "schema": "agnews-sleep-forensics-validation-v3",
+  "separate_agent_source_and_result_review": "passed; no release blocker"
+}

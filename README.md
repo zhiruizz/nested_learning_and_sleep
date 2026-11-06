@@ -80,3 +80,7 @@ The [v2 preregistration](docs/agnews-retention-v2-protocol.md) introduces an exp
 ## Qualified fresh-role follow-up
 
 [AG News v3 report](reports/agnews-qualified-v3.md): all three old foundations passed frozen train/validation gates, followed by all15 fixed-endpoint runs and a fresh1024-article within-train holdout. CMS+Sleep endpoint old/new EM is0.00%/77.86%; the full five-arm tradeoff, all seeds, costs, failures and operational recovery amendment are published. This is a bounded partial implementation, not external confirmation or full-paper reproduction.
+
+## Diagnose the missing retention
+
+[Post-v3 exploratory forensics](reports/agnews-sleep-forensics-v3.md) exactly reproduces all three first 64 Sleep states and finds that old validation EM falls from 92.45% to 0.39% before Sleep; its teacher scores 0.26%. All 864 literal greedy checks match the scorer. No core bug or retention repair was established; the next priority is competent-teacher transfer before destructive new-task updates. This is development evidence, not fresh confirmation.

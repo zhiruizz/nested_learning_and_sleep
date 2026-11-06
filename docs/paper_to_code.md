@@ -20,3 +20,5 @@ This is a mechanism index, not a claim of complete fidelity.
 Current CPU checks establish selected numerical and state behavior. They do not
 establish architecture equivalence, benchmark reproduction, successful long-horizon
 continual learning, or independently replay the historical experiments.
+
+The NOT_RUN labels above describe the original CPU release. [Later bounded v3](../reports/agnews-qualified-v3.md) and its [post-v3 diagnostic](../reports/agnews-sleep-forensics-v3.md) include real 3B partial GKD/LTI execution and exact recovery. They do not validate full paper fidelity. In particular, v3 uses fast/slow base periods 4/16 with Sleep every 64 rather than consolidation before each fast-base commit; this schedule deviation is explicit and the historical run is unchanged.
