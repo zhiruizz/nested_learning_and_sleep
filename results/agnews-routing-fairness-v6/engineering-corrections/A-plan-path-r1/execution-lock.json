@@ -1,0 +1,123 @@
+{
+  "B_main_config_sha256": "578c472b54d405cff8c03dd89d6eb831c81cd4a49b06d3d450d96518cf9f3a0e",
+  "applicable_CPU_suite": {
+    "deselected": 1,
+    "passed": 186,
+    "per_process_cap": 256,
+    "seconds": 10.89,
+    "total_update_attempts": 253
+  },
+  "chronology_note": "A choices derive from v5; A source freezes while independent B training runs, before any A score. This is adaptive development, not external preregistration or independent confirmation.",
+  "conditions": [
+    "warm_alone",
+    "new_CMS_reference_alone",
+    "correct_phase_ridge",
+    "permuted_phase_ridge",
+    "hash_random",
+    "confidence_marker",
+    "confidence_selfjoint",
+    "task_ID_DIAGNOSTIC"
+  ],
+  "confidence_selfjoint": "logP(known common format marker|prefix) + max-vocabulary logP(second token|prefix, known marker)",
+  "confirmation_input": false,
+  "confirmation_scored": false,
+  "continuation_input_namespace": "outputs/agnews-fair-continuation-v6/main-all3",
+  "continuation_output_namespace": "outputs/agnews-routing-fairness-v6/continuation-all6",
+  "created_utc": "2026-11-06T12:22:05.178491+00:00",
+  "elapsed_enforcement": "cooperative between batches/conditions/seeds",
+  "elapsed_limit_seconds": 1800,
+  "execution_order": [
+    "B qualification",
+    "B main continuation",
+    "A initial controls",
+    "A all-six continuation endpoints"
+  ],
+  "frozen_utc": "2026-11-06T12:22:05.178491+00:00",
+  "hard_route_note": "one frozen backbone/final-MLP/original-head call per routed batch; both memory/readout contexts are computed then row-selected",
+  "initial_output_namespace": "outputs/agnews-routing-fairness-v6/initial-all3",
+  "no_new_training_or_validation_group_targets_for_inference": true,
+  "offline_note": "eight composite conditions are also derived from one old/new full-branch pair; learned confidence requires both full forwards",
+  "phase": "initial",
+  "phase_label_uses_in_two_gate_fits": 2048,
+  "physical_shared_conditions": [
+    "constant_old",
+    "constant_new",
+    "correct_phase_ridge",
+    "permuted_phase_ridge",
+    "hash_random",
+    "uniform_context_mix"
+  ],
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "ridge_fit_count": 2,
+  "ridge_fit_definition": "fixed dual float64 lambda=1; training mean/std(ddof=0), std floor 1e-6, divide sqrt(d), score > 0 selects new and ties select old; phase labels only",
+  "row_predictions_features_and_gate_weights_public": false,
+  "same_forward_gate_required": true,
+  "schema": "agnews-routing-fairness-execution-lock-v6",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "selector_supervision_note": "the correct gate adds 1,024 train-row old/new phase labels; the permuted gate reuses a fixed balanced permutation of those targets; this is additional task-identity supervision, not label-free routing",
+  "selector_target": "train phase old/new only; class ids are used for consistency checks, task-ID diagnostic and scoring aggregation",
+  "source_sha256": {
+    "checkpoint_sha256_by_seed": {
+      "17": {
+        "v5_cms_448": "422ea75e6d2f879380aab3d623388e5400a59d4104e837e1240f7b4d4ee67b36",
+        "warm": "396ff2f749525986a852ec3620d5dcade1f4dcc2e0fbf368cb70aa14c04c7222"
+      },
+      "29": {
+        "v5_cms_448": "72de95660a981f6456fb9bf506d2514f12760b28c9670ec57bfa5674f37ef0e8",
+        "warm": "99a46c6988cf03ca352469da5dff573874737ef8e927802b2090f33c1f5a5531"
+      },
+      "43": {
+        "v5_cms_448": "b3eb486d7356e9c94c9ed183758ea84d1ec58503ee8954d3cc49db15c27a9eec",
+        "warm": "9241bbb2116a8a5599c7d42670675b62aab7ebf4c47bd0225789e84e1e8f6bbf"
+      }
+    },
+    "common_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+    "driver_sha256": "5e209089e93e00d28a5bcb6a27d3b53ae361337a2b2ca7520ee5ab8c5af305d5",
+    "engine_sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+    "lifecycle_sha256": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02",
+    "model_weights_sha256": {
+      "model-00001-of-00002.safetensors": "584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002",
+      "model-00002-of-00002.safetensors": "4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb"
+    },
+    "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+    "router_helper_sha256": "fa549672ed143d161930699de8a22e6cbe99404ae9f7b00ac30f75b1ed53d76d",
+    "tokenizer_file_sha256": {
+      "LICENSE.txt": "0b4284c1f87029e67654c7953afa16279961632cf73dcfe33374c4c2f298fa35",
+      "config.json": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d",
+      "generation_config.json": "da81b0dd4001a8e19fb5840d2b524f6957f44ddde6f5c3fe32b1f36cef5205bf",
+      "model.safetensors.index.json": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c",
+      "special_tokens_map.json": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535",
+      "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+      "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+    },
+    "v5_protocol_sha256": "75b5c19db27b45efe086e06d4290aa806768653ef962dc37419dacf144bcb26c",
+    "v5_router_probe_sha256": "6659b2a66a1f470661d820a8bace8ed5fe2adae851d8f9006fbd5064be5c9a96",
+    "v5_router_result_sha256": "1763a4b50e5e3fa75d3cb949d96d09092b8790f08c187e72304a6f9c6421190a",
+    "v5_seal_sha256": "45e44b6bd0479234c0aa2b1f491315918476529b01d33fb27678293481fa2253",
+    "warm_result_sha256": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b"
+  },
+  "status": "FROZEN_BEFORE_FIRST_A_MODEL_SCORING",
+  "training_or_optimizer_updates": 0,
+  "uniform_context_mix": "0.5 blend of old/new memory outputs and 0.5 blend of corresponding context-specific readout logits after one shared original head call; not a probability-average",
+  "uniform_operation": "Average two last-MLP memory outputs at 0.5 before the normal residual/final norm, then average the two LoRA updates on the actual mixed post-finalnorm hidden with one original head call.",
+  "unique_phase_labels": 1024,
+  "v5_router_gate_reference_sha256": "515a066290919938117452efd4da14f08dab1b5539e5e31504ed6bc160a9e2c3",
+  "warm_and_v5_checkpoints": {
+    "17": {
+      "v5_cms_448": "422ea75e6d2f879380aab3d623388e5400a59d4104e837e1240f7b4d4ee67b36",
+      "warm": "396ff2f749525986a852ec3620d5dcade1f4dcc2e0fbf368cb70aa14c04c7222"
+    },
+    "29": {
+      "v5_cms_448": "72de95660a981f6456fb9bf506d2514f12760b28c9670ec57bfa5674f37ef0e8",
+      "warm": "99a46c6988cf03ca352469da5dff573874737ef8e927802b2090f33c1f5a5531"
+    },
+    "43": {
+      "v5_cms_448": "b3eb486d7356e9c94c9ed183758ea84d1ec58503ee8954d3cc49db15c27a9eec",
+      "warm": "9241bbb2116a8a5599c7d42670675b62aab7ebf4c47bd0225789e84e1e8f6bbf"
+    }
+  }
+}

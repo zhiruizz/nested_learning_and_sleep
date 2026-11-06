@@ -1,0 +1,74 @@
+{
+  "arms": [
+    "aux_new_CE",
+    "aux_old_gold_CE"
+  ],
+  "automatic_retry": false,
+  "aux_schedule_sha256_by_arm": {
+    "aux_new_CE": "4dc406b66e4fa9ff7231f16ba2540e9f4201362cf5badee522513b99a85c6185",
+    "aux_old_gold_CE": "b4b033d454116bd961870d6d014a4bc3431bdc3ad7b6d4b1640e663969c67b7a"
+  },
+  "branch_count": 2,
+  "common_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+  "config_sha256": "8064b3befba382f4f53c57c512c055f2245fd756ea03981c61332e23d8065a82",
+  "confirmation_input": false,
+  "confirmation_scored": false,
+  "consumed_aux_schedule_prefix_sha256_by_arm": {
+    "aux_new_CE": "1b2f055cbbce96915e8eacde2f57e2e0c3bd7a09e8bd6ab7e6962695414a89fe",
+    "aux_old_gold_CE": "ce1d4be2d08010dbd3d46ca0e17a0e5979edf0a9db809a8c1c7c3cfbcf0e3558"
+  },
+  "continuation_helper_sha256": "442e4175b58b5103f2cde9d7047ff5ef807026de9059b0cadd6e5f4cd55488e2",
+  "created_utc": "2026-11-06T12:09:23.453232+00:00",
+  "elapsed_limit_scope": "active model training; CPU preflight excluded",
+  "elapsed_limit_seconds": 600,
+  "engine_sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+  "examples_per_primary_batch": 4,
+  "expected_auxiliary_answer_token_targets": 96,
+  "expected_auxiliary_examples": 48,
+  "expected_auxiliary_prefix_draws": 48,
+  "expected_controller_after_resume": [
+    0,
+    4
+  ],
+  "expected_controller_at_fork": [
+    2,
+    2
+  ],
+  "expected_primary_answer_token_targets": 96,
+  "expected_primary_prefix_draws": 48,
+  "expected_primary_updates": 12,
+  "expected_student_backward_passes": 24,
+  "expected_student_forward_passes": 24,
+  "fork_step": 450,
+  "new_schedule_batch_count": 4096,
+  "prefix_steps": [
+    449,
+    450
+  ],
+  "primary_batch_indices_consumed": [
+    448,
+    452
+  ],
+  "primary_schedule_batch_slice": [
+    448,
+    452
+  ],
+  "primary_schedule_batch_slice_semantics": "zero_based_half_open",
+  "qualifier_source_sha256": "a03e56f4cba104b9905c6da47641d38e28bb81c7224e4b3251f2f21bbf14effe",
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "resume_steps": [
+    451,
+    452
+  ],
+  "review_status": "FROZEN_DEVELOPMENT_AFTER_REVIEW",
+  "schema": "agnews-fair-resume-plan-v6",
+  "scoring": false,
+  "seed": 17,
+  "start_step": 448,
+  "teacher_forward_passes": 0,
+  "v5_anchor_helper_sha256": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6",
+  "v5_development_seal_sha256": "45e44b6bd0479234c0aa2b1f491315918476529b01d33fb27678293481fa2253",
+  "v5_protocol_sha256": "75b5c19db27b45efe086e06d4290aa806768653ef962dc37419dacf144bcb26c",
+  "v5_start_checkpoint_sha256": "422ea75e6d2f879380aab3d623388e5400a59d4104e837e1240f7b4d4ee67b36",
+  "warm_result_sha256": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b"
+}

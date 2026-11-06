@@ -1,0 +1,25 @@
+{
+  "completed_pairs": 0,
+  "confirmation_scored": false,
+  "elapsed_seconds": 20.812000000150874,
+  "error": "seed17 warm train replay/all/answer_nll_nats_per_token: metric differs from locked score",
+  "error_type": "AssertionError",
+  "schema": "agnews-routing-fairness-failure-v6",
+  "work": {
+    "seed17_train_only_routing_parity": {
+      "forward_calls": 4,
+      "forward_input_tokens": 3328,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    }
+  }
+}

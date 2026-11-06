@@ -1,0 +1,5 @@
+source,stage_count,forward_calls,forward_input_tokens,gradient_forward_input_tokens
+qualification,8,24,8836,8836
+B_main,30,8832,3940440,2476008
+A_initial,49,4612,3563584,0
+A_continuation,84,8064,6230448,0

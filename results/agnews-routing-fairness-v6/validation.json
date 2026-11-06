@@ -1,0 +1,100 @@
+{
+  "Ubuntu_formal_experiment_touched": false,
+  "actual_gpu_job_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "additional_release_fixture_tests": {
+    "combined_seconds": 0.06,
+    "combined_with_analyzer_passed": 12,
+    "passed": 3
+  },
+  "aggregate_analysis_passed": true,
+  "base_public_commit": "060838ce98244f9cd4ad603b55beda40549581a5",
+  "confirmation_scored": false,
+  "cpu_update_budget": {
+    "controller_attempts": 174,
+    "functional_cms_attempts": 3,
+    "last_session_seconds": 8.311999999918044,
+    "limit": 256,
+    "optimizer_attempts": 76
+  },
+  "development_only": true,
+  "final_analyzer_regression_subset": {
+    "combined_seconds": 0.06,
+    "combined_with_release_fixture_tests_passed": 12,
+    "passed": 9
+  },
+  "full_cpu_suite": {
+    "deselected": 1,
+    "deselected_name": "test_all_exported_modules_import_without_optional_llama_dependency",
+    "passed": 196,
+    "reason": "CPU-only wheel assertion is incompatible with the installed CUDA wheel.",
+    "seconds": 8.3
+  },
+  "git_index_verification": {
+    "analyzer_rerun": true,
+    "figure_sha256": {
+      "results/agnews-routing-fairness-v6/analysis/endpoint-routing-validation-em.png": "eb9f8643571b1c4cdde7ef3c2572698ca956a1824c02066b390a7bd77a1cd7bc",
+      "results/agnews-routing-fairness-v6/analysis/endpoint-routing-validation-em.svg": "1485728b9c8cd7ba6c6fb201073f3a70578ceff931749949eed7b0930b7305e9",
+      "results/agnews-routing-fairness-v6/analysis/initial-routing-validation-em.png": "753009e30592fcbe34333de62269d9f311fdb01eff25f34b3436113738cb9601",
+      "results/agnews-routing-fairness-v6/analysis/initial-routing-validation-em.svg": "65b4e6190ad61b658b968984c64addb9b9a568dedc49951dc2bb854d009a7f72"
+    },
+    "head_commit": "060838ce98244f9cd4ad603b55beda40549581a5",
+    "passed": true,
+    "preserved_initial_r2_failure_sha256": {
+      "results/agnews-routing-fairness-v6/failures/initial-metric-replay-r2/account.json": "743ed7db71596cfc35cfdbdb533163be2ba0e3f7041cb925abca2462cbbaaff1",
+      "results/agnews-routing-fairness-v6/failures/initial-metric-replay-r2/execution-lock.json": "bab22d6d71110d5d4fa8c48b1f552595df55e9a4004110f0d55105e0fa5119af",
+      "results/agnews-routing-fairness-v6/failures/initial-metric-replay-r2/failure.json": "fbe977e215659db88e36ed7d3f6e8bbe57008d39df910c4d2e1fe27bddfb7ea1",
+      "results/agnews-routing-fairness-v6/failures/initial-metric-replay-r2/protocol.json": "512ba09255c53177f116868fd915e2610339cbd1da56ab1d1d80fdeacff319fb",
+      "results/agnews-routing-fairness-v6/failures/initial-metric-replay-r2/source-executed.py": "3fdcbc79c744aef8e5ac9f4fd0de83f763e8fe5da7811a756edc5f53e5ff96dd"
+    },
+    "protected_prior_trees_unchanged": true,
+    "protocol_source_sha256": {
+      "A/common_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+      "A/driver_sha256": "7cbfe600399f992533fcd5c81586a3c1a4ecef7744c24fa7706108e94fcb4752",
+      "A/engine_sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+      "A/lifecycle_sha256": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02",
+      "A/router_helper_sha256": "fa549672ed143d161930699de8a22e6cbe99404ae9f7b00ac30f75b1ed53d76d",
+      "A/v5_router_probe_sha256": "6659b2a66a1f470661d820a8bace8ed5fe2adae851d8f9006fbd5064be5c9a96",
+      "B/common_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+      "B/continuation_helper_sha256": "442e4175b58b5103f2cde9d7047ff5ef807026de9059b0cadd6e5f4cd55488e2",
+      "B/driver_source_sha256": "1bdea90f357e595fbaa1461d71106b75ee11c0df56fbcfc5e869a89f8c5fa1be",
+      "B/engine_sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+      "B/v5_anchor_helper_sha256": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6"
+    },
+    "recomputed_analysis_sha256": {
+      "results/agnews-routing-fairness-v6/analysis/analysis.json": "c8f191566e5d3e3f318f39d02b0d7d675cbb436fcb5bdfc0c8657ca513288003",
+      "results/agnews-routing-fairness-v6/analysis/endpoint-gates.csv": "fa57414022d6a527e8fdc14034583fca33d0600a27bc4e42ec172e8e978f58ce",
+      "results/agnews-routing-fairness-v6/analysis/endpoint-summary.csv": "dc06f187990abfd3b1bce1a5d675864c007813f6c3d7589172cbd62f1b53b071",
+      "results/agnews-routing-fairness-v6/analysis/initial-summary.csv": "941047fe4449d8b0c6351556b7ebc19143ee8220c3695dbe9ccac575b5e2fecd",
+      "results/agnews-routing-fairness-v6/analysis/work-ledger.csv": "f3f71751fe630ae8869f25ee65e6b5b4046603bfe8b3c595b5f6dae1182312be",
+      "results/agnews-routing-fairness-v6/analysis/work-ledger.json": "ed9b1c5631f7f75e8b5a9aca6069da6876b908f7b501bc2b96885adb67ee4144"
+    },
+    "required_release_file_count": 31,
+    "schema": "agnews-routing-fairness-v6-index-validation-v1",
+    "source_config_sha256": {
+      "configs/agnews-fair-continuation-v6.json": "578c472b54d405cff8c03dd89d6eb831c81cd4a49b06d3d450d96518cf9f3a0e",
+      "configs/agnews-fair-resume-v6-r2.json": "8064b3befba382f4f53c57c512c055f2245fd756ea03981c61332e23d8065a82",
+      "configs/agnews-routing-fairness-v6-r3.json": "126f0d8b1556234fcf763d18f77893e81f5ae6e11175f999aa5dea3f713cd6da",
+      "src/nested_sleep/lifecycle.py": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02",
+      "tools/agnews_anchored_wake_v5.py": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6",
+      "tools/agnews_fair_continuation_v6.py": "442e4175b58b5103f2cde9d7047ff5ef807026de9059b0cadd6e5f4cd55488e2",
+      "tools/agnews_v3_common.py": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+      "tools/audit_agnews_context_storage_v6.py": "f1b76e89b5ac39ddd7d9aa3cd333e62a5130aec8fa8829fb263422bb5c47e19b",
+      "tools/late_context_router_v6.py": "fa549672ed143d161930699de8a22e6cbe99404ae9f7b00ac30f75b1ed53d76d",
+      "tools/probe_agnews_task_router_v5.py": "6659b2a66a1f470661d820a8bace8ed5fe2adae851d8f9006fbd5064be5c9a96",
+      "tools/qualify_agnews_fair_resume_v6.py": "a03e56f4cba104b9905c6da47641d38e28bb81c7224e4b3251f2f21bbf14effe",
+      "tools/run_agnews_fair_continuation_v6.py": "1bdea90f357e595fbaa1461d71106b75ee11c0df56fbcfc5e869a89f8c5fa1be",
+      "tools/run_agnews_retention_v2.py": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+      "tools/run_agnews_routing_fairness_v6.py": "7cbfe600399f992533fcd5c81586a3c1a4ecef7744c24fa7706108e94fcb4752",
+      "tools/summarize_agnews_routing_fairness_v6.py": "e8c3411a3208576c9308368af81585d7b0cdfdb5a754a7ede120d28b8b90b1d2"
+    },
+    "staged_release_file_count": 32,
+    "verification_scope": "Git index blobs only; no model, raw dataset, private checkpoint, or row-level example loaded"
+  },
+  "independent_review": "two aggregate-only scientific/numeric reviews plus source-provenance review",
+  "schema": "agnews-routing-fairness-v6-release-validation-v1"
+}

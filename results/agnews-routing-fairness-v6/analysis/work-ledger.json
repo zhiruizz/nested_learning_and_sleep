@@ -1,0 +1,997 @@
+{
+  "A_initial_source_R0_failure": {
+    "active_seconds": 20.812000000150874,
+    "actual_optimizer_updates": 0,
+    "actual_ridge_fits": 0,
+    "completed_selector_pairs": 0,
+    "counted_in_active_final_totals": false,
+    "error": "seed17 warm train replay/all/answer_nll_nats_per_token: metric differs from locked score",
+    "evaluation_precision_issue": "Answer NLL was averaged as an FP32 Torch tensor before conversion; the locked scorer averages the two Python floats obtained from the same per-position CE values",
+    "note": "preliminary A source 3fd exact-metric parity attempt; retained separately from successful R3 outputs",
+    "parity_forward_calls": 4,
+    "source_driver_sha256": "3fdcbc79c744aef8e5ac9f4fd0de83f763e8fe5da7811a756edc5f53e5ff96dd",
+    "train_rows_scored": 1024,
+    "validation_rows_scored": 512,
+    "wall_seconds": 24.891000000061467,
+    "work": {
+      "forward_calls": 196,
+      "forward_input_tokens": 151672,
+      "gradient_forward_input_tokens": 0
+    }
+  },
+  "by_source": {
+    "A_continuation": {
+      "forward_calls": 8064,
+      "forward_input_tokens": 6230448,
+      "gradient_forward_input_tokens": 0,
+      "stage_count": 84
+    },
+    "A_initial": {
+      "forward_calls": 4612,
+      "forward_input_tokens": 3563584,
+      "gradient_forward_input_tokens": 0,
+      "stage_count": 49
+    },
+    "B_main": {
+      "forward_calls": 8832,
+      "forward_input_tokens": 3940440,
+      "gradient_forward_input_tokens": 2476008,
+      "stage_count": 30
+    },
+    "qualification": {
+      "forward_calls": 24,
+      "forward_input_tokens": 8836,
+      "gradient_forward_input_tokens": 8836,
+      "stage_count": 8
+    }
+  },
+  "combined_by_stage": {
+    "seed17_aux_new_CE_constant_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_constant_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_constant_old_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_constant_old_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_correct_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_correct_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_hash_random_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_hash_random_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_permuted_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_permuted_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_uniform_context_mix_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_uniform_context_mix_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_new_CE_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_constant_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_constant_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_constant_old_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_constant_old_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_correct_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_correct_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_hash_random_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_hash_random_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_permuted_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_permuted_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_uniform_context_mix_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_uniform_context_mix_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_aux_old_gold_CE_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_train_only_routing_parity": {
+      "forward_calls": 4,
+      "forward_input_tokens": 3328,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_constant_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_constant_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_constant_old_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_constant_old_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_correct_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_correct_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_hash_random_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_hash_random_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_permuted_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_permuted_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_uniform_context_mix_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_uniform_context_mix_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_v5_CMS_reference_step448_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_constant_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_constant_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_constant_old_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_constant_old_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_correct_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_correct_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_hash_random_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_hash_random_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_permuted_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_permuted_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_uniform_context_mix_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_uniform_context_mix_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_new_CE_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_constant_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_constant_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_constant_old_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_constant_old_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_correct_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_correct_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_hash_random_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_hash_random_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_permuted_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_permuted_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_uniform_context_mix_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_uniform_context_mix_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_aux_old_gold_CE_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_constant_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_constant_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_constant_old_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_constant_old_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_correct_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_correct_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_hash_random_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_hash_random_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_permuted_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_permuted_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_uniform_context_mix_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_uniform_context_mix_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_v5_CMS_reference_step448_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_constant_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_constant_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_constant_old_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_constant_old_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_correct_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_correct_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_hash_random_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_hash_random_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_permuted_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_permuted_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_uniform_context_mix_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_uniform_context_mix_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_new_CE_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_constant_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_constant_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_constant_old_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_constant_old_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_correct_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_correct_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_hash_random_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_hash_random_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_permuted_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_permuted_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_uniform_context_mix_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_uniform_context_mix_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_aux_old_gold_CE_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_constant_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_constant_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_constant_old_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_constant_old_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_correct_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_correct_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_hash_random_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_hash_random_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_permuted_phase_ridge_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_permuted_phase_ridge_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_uniform_context_mix_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_uniform_context_mix_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_v5_CMS_reference_step448_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_seed17_aux_new_CE_primary": {
+      "forward_calls": 1152,
+      "forward_input_tokens": 411020,
+      "gradient_forward_input_tokens": 411020
+    },
+    "v6_seed17_aux_old_gold_CE_primary": {
+      "forward_calls": 1152,
+      "forward_input_tokens": 410608,
+      "gradient_forward_input_tokens": 410608
+    },
+    "v6_seed29_aux_new_CE_primary": {
+      "forward_calls": 1152,
+      "forward_input_tokens": 415508,
+      "gradient_forward_input_tokens": 415508
+    },
+    "v6_seed29_aux_old_gold_CE_primary": {
+      "forward_calls": 1152,
+      "forward_input_tokens": 412352,
+      "gradient_forward_input_tokens": 412352
+    },
+    "v6_seed43_aux_new_CE_primary": {
+      "forward_calls": 1152,
+      "forward_input_tokens": 416804,
+      "gradient_forward_input_tokens": 416804
+    },
+    "v6_seed43_aux_old_gold_CE_primary": {
+      "forward_calls": 1152,
+      "forward_input_tokens": 409716,
+      "gradient_forward_input_tokens": 409716
+    },
+    "v6_train_seed17_aux_new_CE_step1024": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_train_seed17_aux_old_gold_CE_step1024": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_train_seed29_aux_new_CE_step1024": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_train_seed29_aux_old_gold_CE_step1024": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_train_seed43_aux_new_CE_step1024": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_train_seed43_aux_old_gold_CE_step1024": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed17_aux_new_CE_step1024": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed17_aux_new_CE_step512": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed17_aux_new_CE_step768": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed17_aux_old_gold_CE_step1024": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed17_aux_old_gold_CE_step512": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed17_aux_old_gold_CE_step768": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed29_aux_new_CE_step1024": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed29_aux_new_CE_step512": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed29_aux_new_CE_step768": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed29_aux_old_gold_CE_step1024": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed29_aux_old_gold_CE_step512": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed29_aux_old_gold_CE_step768": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed43_aux_new_CE_step1024": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed43_aux_new_CE_step512": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed43_aux_new_CE_step768": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed43_aux_old_gold_CE_step1024": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed43_aux_old_gold_CE_step512": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6_validation_seed43_aux_old_gold_CE_step768": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v6qual_(0, 1)_449": {
+      "forward_calls": 2,
+      "forward_input_tokens": 688,
+      "gradient_forward_input_tokens": 688
+    },
+    "v6qual_(0, 1)_450": {
+      "forward_calls": 2,
+      "forward_input_tokens": 696,
+      "gradient_forward_input_tokens": 696
+    },
+    "v6qual_(0, 1)_451": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1232,
+      "gradient_forward_input_tokens": 1232
+    },
+    "v6qual_(0, 1)_452": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1616,
+      "gradient_forward_input_tokens": 1616
+    },
+    "v6qual_(2, 3)_449": {
+      "forward_calls": 2,
+      "forward_input_tokens": 780,
+      "gradient_forward_input_tokens": 780
+    },
+    "v6qual_(2, 3)_450": {
+      "forward_calls": 2,
+      "forward_input_tokens": 656,
+      "gradient_forward_input_tokens": 656
+    },
+    "v6qual_(2, 3)_451": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1280,
+      "gradient_forward_input_tokens": 1280
+    },
+    "v6qual_(2, 3)_452": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1888,
+      "gradient_forward_input_tokens": 1888
+    }
+  },
+  "combined_total": {
+    "forward_calls": 21532,
+    "forward_input_tokens": 13743308,
+    "gradient_forward_input_tokens": 2484844
+  },
+  "cost_interpretation": {
+    "A_physical": "one shared backbone forward and two memory plus two readout adapter branches per scored batch",
+    "A_posthoc": "confidence and offline selectors reuse old/new full-branch scores; do not add a student forward per selector",
+    "confidence_live_estimate": "requires two full branch forwards per input batch to compare both contexts, not one student forward",
+    "not_claimed": [
+      "FLOPs",
+      "GPU busy time",
+      "autoregressive generation latency"
+    ],
+    "qualification": "12 actual optimizer update calls include deterministic fork/resume replay; unique schedule positions are four per arm (449-452)",
+    "token_proxy": "forward_input_tokens includes prompts; gradient_forward_input_tokens is a token-work proxy"
+  },
+  "fields": [
+    "forward_calls",
+    "forward_input_tokens",
+    "gradient_forward_input_tokens"
+  ],
+  "inclusive_totals_with_A_initial_R0_failure": {
+    "forward_calls": 21728,
+    "forward_input_tokens": 13894980,
+    "gradient_forward_input_tokens": 2484844
+  },
+  "phase_breakdown": {
+    "A_continuation": {
+      "forward_calls": 8064,
+      "forward_input_tokens": 6230448,
+      "gradient_forward_input_tokens": 0
+    },
+    "A_initial": {
+      "forward_calls": 4612,
+      "forward_input_tokens": 3563584,
+      "gradient_forward_input_tokens": 0
+    },
+    "B_main": {
+      "total": {
+        "forward_calls": 8832,
+        "forward_input_tokens": 3940440,
+        "gradient_forward_input_tokens": 2476008
+      },
+      "train_endpoint": {
+        "forward_calls": 768,
+        "forward_input_tokens": 602880,
+        "gradient_forward_input_tokens": 0
+      },
+      "training": {
+        "forward_calls": 6912,
+        "forward_input_tokens": 2476008,
+        "gradient_forward_input_tokens": 2476008
+      },
+      "validation_512_at_512_768_1024": {
+        "forward_calls": 1152,
+        "forward_input_tokens": 861552,
+        "gradient_forward_input_tokens": 0
+      }
+    },
+    "actual_optimizer_update_calls": {
+      "B_main_scientific": 3456,
+      "combined": 3468,
+      "qualification_replay_check": 12
+    },
+    "combined_totals": {
+      "forward_calls": 21532,
+      "forward_input_tokens": 13743308,
+      "gradient_forward_input_tokens": 2484844
+    },
+    "contract_gradient_forward_calls_derived_from_pass_receipts": 6936,
+    "contract_gradient_forward_calls_expected": 6936,
+    "limitations": [
+      "forward-input-token counts are a proxy, not FLOPs or GPU busy time",
+      "forward_calls do not establish arbitrary autoregressive generation latency"
+    ],
+    "qualification": {
+      "forward_calls": 24,
+      "forward_input_tokens": 8836,
+      "gradient_forward_input_tokens": 8836
+    },
+    "source_derived_full_forward_calls_expected": 21532
+  },
+  "qualification_preflight_failure": {
+    "counted_in_GPU_work": false,
+    "elapsed_seconds": 4.266000000061467,
+    "error": null,
+    "error_type": "KeyError",
+    "model_loaded": false,
+    "note": "preserved prior config preflight failure; no retry cost is folded into model work",
+    "work": null
+  }
+}

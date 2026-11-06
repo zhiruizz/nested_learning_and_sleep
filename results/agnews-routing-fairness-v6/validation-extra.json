@@ -1,0 +1,662 @@
+{
+  "checkpoint_readback": {
+    "checkpoint_count": 20,
+    "model_forwards": 0,
+    "optimizer_updates": 0,
+    "passed": true,
+    "rows": [
+      {
+        "file_bytes": 28335073,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-17-aux_new_CE-step-0512.pt",
+        "sha256": "0c4d08f6f269c1558eee96f8a8cd4c4d466271783f696eefd71c1be5745ba0fb",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28335073,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-17-aux_new_CE-step-0768.pt",
+        "sha256": "4c7a2d54896ea60fa091031ffa030df5c96f3d345574b511005619ee1b0ce737",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28335073,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-17-aux_new_CE-step-1024.pt",
+        "sha256": "a1b2553e74de1bf408ebee7a76ee9f42dd3a2d27e1ea7bda8205270b7ba88a67",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28337083,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-17-aux_old_gold_CE-step-0512.pt",
+        "sha256": "f8336501298a5122aa5fdbcd5b23e4e74002fb081a2fd8d9c9e9a17d22c24fbd",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28337083,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-17-aux_old_gold_CE-step-0768.pt",
+        "sha256": "c918fe34d84d6b26869fe0fd24b9169743bd47c76277716ccccfa0de2e3c9daa",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28337083,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-17-aux_old_gold_CE-step-1024.pt",
+        "sha256": "c153baee4fe2e63d026640dd016c3539e6c6170de86615fbdeccd8675f7e0e8c",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28335073,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-29-aux_new_CE-step-0512.pt",
+        "sha256": "dbed353f865a98f191305e37720859eddc6fa1ca54a9fff1ba3253e26725d779",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28335073,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-29-aux_new_CE-step-0768.pt",
+        "sha256": "17b2a4b60f4805999a6f9caa9a419a76584407a3569eec77551a1fcc64aff42a",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28335073,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-29-aux_new_CE-step-1024.pt",
+        "sha256": "79a9050134ea40636bd80b5b5b06d4e500fa64d45391ac9c357af3c199da237c",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28337083,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-29-aux_old_gold_CE-step-0512.pt",
+        "sha256": "7a975968f3abdc58fcdde1b1d2d9cc42cab698d223a7222d5013d57b9350022b",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28337083,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-29-aux_old_gold_CE-step-0768.pt",
+        "sha256": "aadaad07597a9a1dd8dfa20edbe7e85cf59ef6fabcc451ffaaaa66100dc778f2",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28337083,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-29-aux_old_gold_CE-step-1024.pt",
+        "sha256": "0eee7d5fafaa466d4d1122d3c87c166d0425d9c9353b0c6a87efdf25cf7c5063",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28335009,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-43-aux_new_CE-step-0512.pt",
+        "sha256": "5559667eaa25fda35542fdb0942c5489886a8eebb8dd143e21facfe4856d1876",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28335009,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-43-aux_new_CE-step-0768.pt",
+        "sha256": "a3bc97ffaee96a07e6f10b020553548b4346957e2c3f5f5b7d15738350aeb23b",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28335009,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-43-aux_new_CE-step-1024.pt",
+        "sha256": "ed95ddc7c193839cc865fd6b880a28ff8a0e2c35f90883c83a9a7b9338798bfc",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28337019,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-43-aux_old_gold_CE-step-0512.pt",
+        "sha256": "6f62661ef9135c6147b0914d7e5e13771afee0c2ee8020ca4b9a737c451faa0d",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28337019,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-43-aux_old_gold_CE-step-0768.pt",
+        "sha256": "b7fa1ce57b2e3ce749fa42c412b56d1997c02bdbf75a0aa36143beb5e167c7b6",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28337019,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/main-all3/checkpoints/seed-43-aux_old_gold_CE-step-1024.pt",
+        "sha256": "f3e7d9d6be90cc5e0ef7431c8aeb7084891b36b6c88ecd5e7cd0684d390a757e",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_class_ids",
+          "aux_schedule_sha256",
+          "config_sha256",
+          "controller",
+          "driver_source_sha256",
+          "execution_state",
+          "model",
+          "model_config",
+          "new_schedule_sha256",
+          "primary_cursor",
+          "protocol_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28339915,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/resume-qualification-r2/pending-aux_new_CE-seed17-step450-private.pt",
+        "sha256": "0371495ff7176bb22c47a921ea52c0e9c84e7dceee7a628925f1178d33a78ab6",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_classes",
+          "controller",
+          "execution_state",
+          "model",
+          "model_config",
+          "qualification_plan_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      },
+      {
+        "file_bytes": 28341925,
+        "model_tensor_count": 390,
+        "path_relative_to_outputs": "agnews-fair-continuation-v6/resume-qualification-r2/pending-aux_old_gold_CE-seed17-step450-private.pt",
+        "sha256": "dd1016b2cb31bdbdd58dc50ef0edc417371107c6b09eb0500c76808dd160b500",
+        "sha256_verified": true,
+        "tensor_devices": [
+          "cpu"
+        ],
+        "top_level_keys": [
+          "arm",
+          "aux_classes",
+          "controller",
+          "execution_state",
+          "model",
+          "model_config",
+          "qualification_plan_sha256",
+          "records_sha256",
+          "rng",
+          "seed",
+          "step"
+        ],
+        "torch_load_cpu_passed": true
+      }
+    ],
+    "schema": "agnews-v6-checkpoint-readback-v1",
+    "wall_seconds": 0.7182063998188823
+  },
+  "initial_index_reanalysis_failure": {
+    "cause": "CSV output CRLF versus Git canonical LF bytes",
+    "fix": "Explicit LF CSV writer and regression assertion; numeric analysis unchanged.",
+    "followup": "Rebuilt CSVs through the full CLI rather than from reloaded sorted JSON, preserving the canonical table order. Both numeric JSON artifacts remain byte-identical.",
+    "model_forwards": 0
+  },
+  "release_test_setup_failure": {
+    "cause": "New metadata tests initially referred to the C development-only fixture directory.",
+    "failed_tests": 2,
+    "fix": "Use the corresponding committed results paths; both tests then passed.",
+    "model_forwards": 0
+  },
+  "schema": "agnews-routing-fairness-v6-validation-extra-v1",
+  "svg_validator_false_positive": {
+    "cause": "A blanket URL regex rejected standard SVG XML namespace identifiers.",
+    "fix": "Parse SVG, reject active/external resources, strip generated DOCTYPE with exact parsed-tree equivalence; regression tests cover namespaces, local references and rejected active resources.",
+    "model_forwards": 0
+  },
+  "warm_file_tensor_provenance_bridge": {
+    "initial_protocol_sha256": "31a318f70f818de9d29aa6b488febcab08e0c2a7048feb6dcc50dea3616578bc",
+    "model_forwards": 0,
+    "optimizer_updates": 0,
+    "passed": true,
+    "rows": [
+      {
+        "all_model_tensors_exactly_equal": true,
+        "execution_policy_exactly_equal": true,
+        "model_tensor_count": 390,
+        "qualified_warm_file_bytes": 27546169,
+        "qualified_warm_sha256": "396ff2f749525986a852ec3620d5dcade1f4dcc2e0fbf368cb70aa14c04c7222",
+        "seed": 17,
+        "v5_step0_file_bytes": 28337951,
+        "v5_step0_sha256": "164f681a1f448285eb0299c3168777c347fb4087ca56d458745191a7dd344fce",
+        "warm_active_expert_count": 1,
+        "warm_base_nonzero_counts": {
+          "backbone.model.layers.27.mlp.memory.0.a": 49152,
+          "backbone.model.layers.27.mlp.memory.0.b": 49152,
+          "backbone.model.layers.27.mlp.memory.1.a": 49152,
+          "backbone.model.layers.27.mlp.memory.1.b": 49152
+        }
+      },
+      {
+        "all_model_tensors_exactly_equal": true,
+        "execution_policy_exactly_equal": true,
+        "model_tensor_count": 390,
+        "qualified_warm_file_bytes": 27546105,
+        "qualified_warm_sha256": "99a46c6988cf03ca352469da5dff573874737ef8e927802b2090f33c1f5a5531",
+        "seed": 29,
+        "v5_step0_file_bytes": 28337951,
+        "v5_step0_sha256": "fa600c5b5236ce18599cc92eec687b95d30e6c3abd473440ff9fe90a81fe0b16",
+        "warm_active_expert_count": 1,
+        "warm_base_nonzero_counts": {
+          "backbone.model.layers.27.mlp.memory.0.a": 49152,
+          "backbone.model.layers.27.mlp.memory.0.b": 49152,
+          "backbone.model.layers.27.mlp.memory.1.a": 49152,
+          "backbone.model.layers.27.mlp.memory.1.b": 49152
+        }
+      },
+      {
+        "all_model_tensors_exactly_equal": true,
+        "execution_policy_exactly_equal": true,
+        "model_tensor_count": 390,
+        "qualified_warm_file_bytes": 27546041,
+        "qualified_warm_sha256": "9241bbb2116a8a5599c7d42670675b62aab7ebf4c47bd0225789e84e1e8f6bbf",
+        "seed": 43,
+        "v5_step0_file_bytes": 28337887,
+        "v5_step0_sha256": "ed394de2ecbf590b58f3bef9a6f5d8c82cdfbad9a92b27f78d65441cc54651ee",
+        "warm_active_expert_count": 1,
+        "warm_base_nonzero_counts": {
+          "backbone.model.layers.27.mlp.memory.0.a": 49152,
+          "backbone.model.layers.27.mlp.memory.0.b": 49152,
+          "backbone.model.layers.27.mlp.memory.1.a": 49152,
+          "backbone.model.layers.27.mlp.memory.1.b": 49152
+        }
+      }
+    ],
+    "schema": "agnews-warm-alias-provenance-v6-v1",
+    "scope": "Exact inference adapter state and policy, not byte-identical checkpoint files or training controller/RNG.",
+    "source_sha256": "ac1b85ab547ddc2f2ddeb01dfbafcd1c7a9752bf444b2d7c4b3c397636119a29"
+  }
+}

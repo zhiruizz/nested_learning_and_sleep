@@ -8,7 +8,7 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 291,
+  "file_count_excluding_manifests": 342,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
@@ -53,13 +53,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "fe674d2c41ec638b8cad870d5dbe285c20fade79dc324fb07f5c40d907f07fc4",
-      "bytes": 8748
+      "sha256": "5508165d57367d53738ef86933dfb1350c52e86729ba35d7d1b0940c988d4376",
+      "bytes": 9446
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "1521cd8c664ae4a6a31ef20cb78eddf5a5d3beddb7e84e916930bb8e05edc5f1",
-      "bytes": 5787
+      "sha256": "c0359981756325a5972c42a8e9c08d818152f6f623d30a47a845cd15913a6f17",
+      "bytes": 6435
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -82,6 +82,16 @@
       "bytes": 5206
     },
     {
+      "path": "configs/agnews-fair-continuation-v6.json",
+      "sha256": "578c472b54d405cff8c03dd89d6eb831c81cd4a49b06d3d450d96518cf9f3a0e",
+      "bytes": 4023
+    },
+    {
+      "path": "configs/agnews-fair-resume-v6-r2.json",
+      "sha256": "8064b3befba382f4f53c57c512c055f2245fd756ea03981c61332e23d8065a82",
+      "bytes": 3874
+    },
+    {
       "path": "configs/agnews-qualified-comparison-v3.json",
       "sha256": "3fd035e378d612a9638b2ebfe731e3e5fe023cd9f1465a4d706058401c2db929",
       "bytes": 2934
@@ -95,6 +105,11 @@
       "path": "configs/agnews-retention-v2.json",
       "sha256": "7313565876fe554aaea786992b100bcf4aa50a556af1a4d65db593b79603cb65",
       "bytes": 3908
+    },
+    {
+      "path": "configs/agnews-routing-fairness-v6-r3.json",
+      "sha256": "126f0d8b1556234fcf763d18f77893e81f5ae6e11175f999aa5dea3f713cd6da",
+      "bytes": 7815
     },
     {
       "path": "configs/historical_protocols.json",
@@ -145,6 +160,11 @@
       "path": "docs/agnews-retention-v2-protocol.md",
       "sha256": "de2074bf3f70fad743f57aaf482359a4d45488b3848f61136c143085ad338523",
       "bytes": 10469
+    },
+    {
+      "path": "docs/agnews-routing-fairness-v6-protocol.md",
+      "sha256": "16725ec921319ef84c84854e356df9275d10700f7a13e79e5ce27a19b8f730a5",
+      "bytes": 14497
     },
     {
       "path": "docs/agnews-v3-operational-recovery.md",
@@ -250,6 +270,11 @@
       "path": "reports/agnews-retention-v2.md",
       "sha256": "04d31e9446b8a072b02a4d624d9a93187e979961205ca8971d39fae381d51247",
       "bytes": 7805
+    },
+    {
+      "path": "reports/agnews-routing-fairness-v6.md",
+      "sha256": "44dab3ac08ec8e070ac88c3f28830bab5d16f4b0a718fd0c6c46273775f781f9",
+      "bytes": 18665
     },
     {
       "path": "reports/agnews-sleep-forensics-v3.md",
@@ -787,6 +812,166 @@
       "bytes": 4505
     },
     {
+      "path": "results/agnews-routing-fairness-v6/analysis/analysis.json",
+      "sha256": "c8f191566e5d3e3f318f39d02b0d7d675cbb436fcb5bdfc0c8657ca513288003",
+      "bytes": 1244778
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/analysis/endpoint-gates.csv",
+      "sha256": "fa57414022d6a527e8fdc14034583fca33d0600a27bc4e42ec172e8e978f58ce",
+      "bytes": 3443
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/analysis/endpoint-routing-validation-em.png",
+      "sha256": "eb9f8643571b1c4cdde7ef3c2572698ca956a1824c02066b390a7bd77a1cd7bc",
+      "bytes": 115086
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/analysis/endpoint-routing-validation-em.svg",
+      "sha256": "1485728b9c8cd7ba6c6fb201073f3a70578ceff931749949eed7b0930b7305e9",
+      "bytes": 69202
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/analysis/endpoint-summary.csv",
+      "sha256": "dc06f187990abfd3b1bce1a5d675864c007813f6c3d7589172cbd62f1b53b071",
+      "bytes": 189171
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/analysis/initial-routing-validation-em.png",
+      "sha256": "753009e30592fcbe34333de62269d9f311fdb01eff25f34b3436113738cb9601",
+      "bytes": 97516
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/analysis/initial-routing-validation-em.svg",
+      "sha256": "65b4e6190ad61b658b968984c64addb9b9a568dedc49951dc2bb854d009a7f72",
+      "bytes": 64218
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/analysis/initial-summary.csv",
+      "sha256": "941047fe4449d8b0c6351556b7ebc19143ee8220c3695dbe9ccac575b5e2fecd",
+      "bytes": 82886
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/analysis/work-ledger.csv",
+      "sha256": "f3f71751fe630ae8869f25ee65e6b5b4046603bfe8b3c595b5f6dae1182312be",
+      "bytes": 205
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/analysis/work-ledger.json",
+      "sha256": "ed9b1c5631f7f75e8b5a9aca6069da6876b908f7b501bc2b96885adb67ee4144",
+      "bytes": 33231
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/continuation/protocol.json",
+      "sha256": "88bad6f5422a079a8a54f5d17e11ad12df9474b74734eb34148a3d0b5280ef3f",
+      "bytes": 5737
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/continuation/result.json",
+      "sha256": "83fb53bf9fefd23b874a4176d393f3fe4f3b972166bc82d0041e358f3bd7322d",
+      "bytes": 714385
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/engineering-corrections/A-plan-path-r1/correction.json",
+      "sha256": "0b05e0c73c489e99852479e663a8bf0cc949bab0b507e55926990f7a44b02b49",
+      "bytes": 900
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/engineering-corrections/A-plan-path-r1/execution-lock.json",
+      "sha256": "08b0350739eff6456041375629152c7137970234e85f11c5062ae78a1d7fe0a2",
+      "bytes": 6826
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/engineering-corrections/A-plan-path-r1/source-executed.py",
+      "sha256": "5e209089e93e00d28a5bcb6a27d3b53ae361337a2b2ca7520ee5ab8c5af305d5",
+      "bytes": 51606
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/failures/initial-metric-replay-r2/account.json",
+      "sha256": "743ed7db71596cfc35cfdbdb533163be2ba0e3f7041cb925abca2462cbbaaff1",
+      "bytes": 1248
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/failures/initial-metric-replay-r2/execution-lock.json",
+      "sha256": "bab22d6d71110d5d4fa8c48b1f552595df55e9a4004110f0d55105e0fa5119af",
+      "bytes": 7255
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/failures/initial-metric-replay-r2/failure.json",
+      "sha256": "fbe977e215659db88e36ed7d3f6e8bbe57008d39df910c4d2e1fe27bddfb7ea1",
+      "bytes": 740
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/failures/initial-metric-replay-r2/protocol.json",
+      "sha256": "512ba09255c53177f116868fd915e2610339cbd1da56ab1d1d80fdeacff319fb",
+      "bytes": 5539
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/failures/initial-metric-replay-r2/source-executed.py",
+      "sha256": "3fdcbc79c744aef8e5ac9f4fd0de83f763e8fe5da7811a756edc5f53e5ff96dd",
+      "bytes": 51868
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/failures/resume-config-preflight-1/config.json",
+      "sha256": "8eaba84c946f2b57fa5b9d8eac2eb19b41f316711ca1edc1fc53fca1f6f05e69",
+      "bytes": 3494
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/failures/resume-config-preflight-1/failure.json",
+      "sha256": "6a020b29779de484c0b1338b528b50e8f99c5f0bf4d108737918ed695f3f6469",
+      "bytes": 702
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/failures/resume-config-preflight-1/source-executed.py",
+      "sha256": "a03e56f4cba104b9905c6da47641d38e28bb81c7224e4b3251f2f21bbf14effe",
+      "bytes": 15452
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/initial/protocol.json",
+      "sha256": "31a318f70f818de9d29aa6b488febcab08e0c2a7048feb6dcc50dea3616578bc",
+      "bytes": 5539
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/initial/result.json",
+      "sha256": "5af06a2579bf3ad4c9752d32a4f0b73f727b983c4f490d69ffc07d1affad9b8f",
+      "bytes": 324162
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/qualification/plan.json",
+      "sha256": "a7ab3a11fe7d43cb44feb0decacff594f61c2d09e114c6ab7fb1b8af45467816",
+      "bytes": 2788
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/qualification/qualification.json",
+      "sha256": "590bc10002510686a6227f71e54aed17672a2913d46c509b4425c868656d5739",
+      "bytes": 6980
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/storage/audit.json",
+      "sha256": "c545964769ef9802e17bde3127a7406d4c564ad58081ce4066f4ec29437969b8",
+      "bytes": 325592
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/training/development-sealed.json",
+      "sha256": "b0d257400793ead7fc6e10626bd1f72bc259313bf45d1f7525e666f207ea10a3",
+      "bytes": 141688
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/training/protocol.json",
+      "sha256": "ccb046d81588272fcedb3864d4f823a20b9308d13862fa14cd10949383a4e6fe",
+      "bytes": 11725
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/validation-extra.json",
+      "sha256": "e2edc0100dfa2bc6190f3c4fc229b8fcb5f1c202bd56f3b0fd061c5df70f6fb2",
+      "bytes": 21196
+    },
+    {
+      "path": "results/agnews-routing-fairness-v6/validation.json",
+      "sha256": "247db9689f686624179cbddf552b1400c71261880fa830fcbd01733f995d31e9",
+      "bytes": 6876
+    },
+    {
       "path": "results/agnews-sleep-forensics-v3/aggregate-forensics.json",
       "sha256": "1c22120f0be7fe5f131f621f3530162168bcdd83853b9c2de29bb1d4db3d3894",
       "bytes": 280328
@@ -1127,6 +1312,11 @@
       "bytes": 3555
     },
     {
+      "path": "tests/test_agnews_fair_continuation_v6_cpu.py",
+      "sha256": "da959a615f29b268701b7eba5f0d9dec4248d45cc3f425419837bdd1f7f282fb",
+      "bytes": 4335
+    },
+    {
       "path": "tests/test_agnews_interference_v5_cpu.py",
       "sha256": "c16667b0b91c56a2c56d8c8cfcbd0a8b29470208fb124469071d6a8167fdc4c5",
       "bytes": 3214
@@ -1157,6 +1347,11 @@
       "bytes": 2171
     },
     {
+      "path": "tests/test_agnews_routing_fairness_v6_cpu.py",
+      "sha256": "ce6ac52de37cfd0426cd652f5950c1b2312fb2962196846e9e62f931cb69918c",
+      "bytes": 7440
+    },
+    {
       "path": "tests/test_agnews_sleep_forensics_analysis_cpu.py",
       "sha256": "fd954027460f754a13c539dd7e66f5ae5dcc79a6286b49c99e53f73e9ee7c0b4",
       "bytes": 1458
@@ -1170,6 +1365,11 @@
       "path": "tests/test_agnews_v3_operational_restore_cpu.py",
       "sha256": "bc441d24e0a4ed01634d120382a571bedecfa52e1ec1ffab40f0e54e77760144",
       "bytes": 2411
+    },
+    {
+      "path": "tests/test_late_context_router_v6_cpu.py",
+      "sha256": "4339a904d267ecedecc563bb90a5e710a6454fe5c18a6f0220e7284c6a6592c1",
+      "bytes": 24174
     },
     {
       "path": "tests/test_lm_pilot_logging.py",
@@ -1227,6 +1427,16 @@
       "bytes": 4855
     },
     {
+      "path": "tests/test_summarize_agnews_routing_fairness_v6.py",
+      "sha256": "142a83205b3a104003ae5c38dce8a4875d2c1d84d9acc862e906b1c0b55fa0f8",
+      "bytes": 8796
+    },
+    {
+      "path": "tests/test_verify_agnews_routing_fairness_v6_release_cpu.py",
+      "sha256": "e10b433298cd0c04787ad5ce9118284b6a759a402a1eada6a2156560d142c706",
+      "bytes": 2934
+    },
+    {
       "path": "tests/test_x870e_synthetic_dev_v2_cpu.py",
       "sha256": "b2fecfb5fcff49a6da30b89ec5d17996e76b81a66707cea786e64503212fc6cd",
       "bytes": 2075
@@ -1242,6 +1452,11 @@
       "bytes": 8978
     },
     {
+      "path": "tools/agnews_fair_continuation_v6.py",
+      "sha256": "442e4175b58b5103f2cde9d7047ff5ef807026de9059b0cadd6e5f4cd55488e2",
+      "bytes": 9476
+    },
+    {
       "path": "tools/agnews_preupdate_sleep_v4.py",
       "sha256": "5415531a3f3b715eac44cfcbd35ff1dd758ea830bd03201550883ace8a2a1a82",
       "bytes": 10108
@@ -1255,6 +1470,11 @@
       "path": "tools/agnews_v3_common.py",
       "sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
       "bytes": 5753
+    },
+    {
+      "path": "tools/audit_agnews_context_storage_v6.py",
+      "sha256": "f1b76e89b5ac39ddd7d9aa3cd333e62a5130aec8fa8829fb263422bb5c47e19b",
+      "bytes": 4895
     },
     {
       "path": "tools/complete_agnews_evaluation_v2.py",
@@ -1290,6 +1510,11 @@
       "path": "tools/evaluate_agnews_retention_v2.py",
       "sha256": "b09cc5de75b60cf664472537b6eeee28cb391d68d305218f99fbf91ed51c234d",
       "bytes": 21258
+    },
+    {
+      "path": "tools/late_context_router_v6.py",
+      "sha256": "fa549672ed143d161930699de8a22e6cbe99404ae9f7b00ac30f75b1ed53d76d",
+      "bytes": 26017
     },
     {
       "path": "tools/native_retention.py",
@@ -1332,6 +1557,11 @@
       "bytes": 11469
     },
     {
+      "path": "tools/qualify_agnews_fair_resume_v6.py",
+      "sha256": "a03e56f4cba104b9905c6da47641d38e28bb81c7224e4b3251f2f21bbf14effe",
+      "bytes": 15452
+    },
+    {
       "path": "tools/qualify_agnews_fresh_v3.py",
       "sha256": "9122053a294c6f69613b128d1d7f387e1139d5e1e5c7aed64a90812b52ed90e0",
       "bytes": 5258
@@ -1362,6 +1592,11 @@
       "bytes": 31408
     },
     {
+      "path": "tools/run_agnews_fair_continuation_v6.py",
+      "sha256": "1bdea90f357e595fbaa1461d71106b75ee11c0df56fbcfc5e869a89f8c5fa1be",
+      "bytes": 31796
+    },
+    {
       "path": "tools/run_agnews_foundation_dev_v1.py",
       "sha256": "53684bc002f15c80d27c11863c2c844071f369f3f37ec2897187ebd3c188607a",
       "bytes": 9521
@@ -1390,6 +1625,11 @@
       "path": "tools/run_agnews_retention_v2.py",
       "sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
       "bytes": 38133
+    },
+    {
+      "path": "tools/run_agnews_routing_fairness_v6.py",
+      "sha256": "7cbfe600399f992533fcd5c81586a3c1a4ecef7744c24fa7706108e94fcb4752",
+      "bytes": 53079
     },
     {
       "path": "tools/run_agnews_sleep_fixture_v1.py",
@@ -1432,6 +1672,11 @@
       "bytes": 6923
     },
     {
+      "path": "tools/summarize_agnews_routing_fairness_v6.py",
+      "sha256": "e8c3411a3208576c9308368af81585d7b0cdfdb5a754a7ede120d28b8b90b1d2",
+      "bytes": 55331
+    },
+    {
       "path": "tools/summarize_agnews_sleep_forensics_v3.py",
       "sha256": "4f23acc0cc8b0e8b13b5857e479755a6e837cf60ac9d0d1a8db17782045b6b29",
       "bytes": 8997
@@ -1465,6 +1710,16 @@
       "path": "tools/verify_agnews_preupdate_v4_release.py",
       "sha256": "fcc4d2cd36d36f0007b5c6c647bb977458d3f4b5613ff51af5540dd27ade1e7d",
       "bytes": 10937
+    },
+    {
+      "path": "tools/verify_agnews_routing_fairness_v6_release.py",
+      "sha256": "7ca288618d971861c50cb30daf756659fa91840c4b996672911a84ecd526e425",
+      "bytes": 18737
+    },
+    {
+      "path": "tools/verify_agnews_warm_alias_v6.py",
+      "sha256": "ac1b85ab547ddc2f2ddeb01dfbafcd1c7a9752bf444b2d7c4b3c397636119a29",
+      "bytes": 4111
     }
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "A_model_scoring_started": false,
+  "CPU_fixture_note": "The added tempfile regression initially hit the C sandbox system-temp ACL; the fixture now creates a task-root temporary directory. No GPU/model/scoring work was involved.",
+  "GPU_model_forwards_or_updates": 0,
+  "corrected_utc": "2026-11-06T12:30:41.972300+00:00",
+  "new_driver_sha256": "3fdcbc79c744aef8e5ac9f4fd0de83f763e8fe5da7811a756edc5f53e5ff96dd",
+  "old_driver_sha256": "5e209089e93e00d28a5bcb6a27d3b53ae361337a2b2ca7520ee5ab8c5af305d5",
+  "old_execution_lock_sha256": "08b0350739eff6456041375629152c7137970234e85f11c5062ae78a1d7fe0a2",
+  "reason": "Continuation plan received a directory but attempted to hash it as a file; resolve development-sealed.json inside that directory",
+  "regression_test_added": true,
+  "schema": "agnews-v6-pre-execution-source-correction-v1",
+  "scientific_conditions_or_budgets_changed": false
+}

@@ -94,3 +94,7 @@ The ordinary CPU suite and the two heavier [explicit check entry points](docs/ag
 ## V5 mechanism diagnosis and frozen follow-up
 
 [Completed v5 comparison](reports/agnews-anchored-v5.md): all21 runs and126 fixed validation states finished; none passes the joint old/new gate. No-Sleep ends at0%/73.57% old/new EM; frozen-teacher wake KD gives75.13%/56.25%, while its tested Sleep additions are worse on both means. A separate two-context, training-supervised router reaches88.67%/71.48%, with extra stored states, labels and two-branch inference; this is not a Sleep benefit and also fails the joint gate. All seeds, failures, costs and source locks are retained; reserved evaluation data remain unscored.
+
+## V6 routing supervision and matched replay controls
+
+The completed [v6 development study](reports/agnews-routing-fairness-v6.md) separates preserved-context routing from phase-label supervision, verifies a shared-backbone inference path, and runs six loss-count-matched continuation trials. Correct supervised routing after new-only continuation scores old/new EM 88.67%/75.78% (joint gate 2/3); the permuted gate scores 55.60%/36.59%. Old-gold replay relearns from an already collapsed checkpoint and passes 1/3. These are development results with extra saved context or supervision, not an unlabeled Sleep result or independent confirmation. All seeds, costs and failed attempts are retained.

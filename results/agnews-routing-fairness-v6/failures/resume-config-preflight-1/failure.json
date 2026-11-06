@@ -1,0 +1,18 @@
+{
+  "automatic_retry": false,
+  "backward_calls": 0,
+  "config_sha256": "8eaba84c946f2b57fa5b9d8eac2eb19b41f316711ca1edc1fc53fca1f6f05e69",
+  "confirmation_scored": false,
+  "error_type": "KeyError",
+  "forward_calls": 0,
+  "manual_revision_reason": "Add the required active-time scope field without changing any scientific parameter",
+  "missing_config_key": "elapsed_limit_scope",
+  "model_loaded": false,
+  "original_output_directory_created": false,
+  "primary_updates": 0,
+  "returncode": 1,
+  "schema": "agnews-v6-qualification-preflight-failure-v1",
+  "scoring": false,
+  "source_sha256": "a03e56f4cba104b9905c6da47641d38e28bb81c7224e4b3251f2f21bbf14effe",
+  "wall_seconds": 4.266000000061467
+}

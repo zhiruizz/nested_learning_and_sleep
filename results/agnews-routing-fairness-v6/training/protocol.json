@@ -1,0 +1,249 @@
+{
+  "arms": [
+    "aux_new_CE",
+    "aux_old_gold_CE"
+  ],
+  "automatic_retry": false,
+  "aux_schedule_sha256_by_seed_arm": {
+    "17:aux_new_CE": "4dc406b66e4fa9ff7231f16ba2540e9f4201362cf5badee522513b99a85c6185",
+    "17:aux_old_gold_CE": "b4b033d454116bd961870d6d014a4bc3431bdc3ad7b6d4b1640e663969c67b7a",
+    "29:aux_new_CE": "6af358490f945b616fd8c1899987e05b90b241ed9f0d0a1958ccf351fc6ca189",
+    "29:aux_old_gold_CE": "78b9afaae5132738c50eca4d1dbffd8a8dcc5f20990e5f043b39ccf8c0920853",
+    "43:aux_new_CE": "64ab4d0141e08764be7b832bff7bfd5e3a53e9b920c66e9525396b8a694c46ee",
+    "43:aux_old_gold_CE": "9cfd155997fb54e1fdc80ad081806490e6cc45a5648dc6c7f8d5dd3092686b03"
+  },
+  "config": {
+    "Ubuntu_formal_experiment_touched": false,
+    "actual_main_primary_updates_expected": 3456,
+    "actual_main_student_FW_BW_each_expected": 6912,
+    "arms": [
+      "aux_new_CE",
+      "aux_old_gold_CE"
+    ],
+    "automatic_retry": false,
+    "aux_schedule_sha256_by_seed_arm": {
+      "17:aux_new_CE": "4dc406b66e4fa9ff7231f16ba2540e9f4201362cf5badee522513b99a85c6185",
+      "17:aux_old_gold_CE": "b4b033d454116bd961870d6d014a4bc3431bdc3ad7b6d4b1640e663969c67b7a",
+      "29:aux_new_CE": "6af358490f945b616fd8c1899987e05b90b241ed9f0d0a1958ccf351fc6ca189",
+      "29:aux_old_gold_CE": "78b9afaae5132738c50eca4d1dbffd8a8dcc5f20990e5f043b39ccf8c0920853",
+      "43:aux_new_CE": "64ab4d0141e08764be7b832bff7bfd5e3a53e9b920c66e9525396b8a694c46ee",
+      "43:aux_old_gold_CE": "9cfd155997fb54e1fdc80ad081806490e6cc45a5648dc6c7f8d5dd3092686b03"
+    },
+    "auxiliary_batch_size": 4,
+    "auxiliary_examples_per_class": 2,
+    "auxiliary_mode": "gold_ce",
+    "base_lr": 0.02,
+    "base_public_commit": "060838ce98244f9cd4ad603b55beda40549581a5",
+    "capacity": 32,
+    "common_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+    "confirmation_input": false,
+    "confirmation_scored": false,
+    "continuation_helper_sha256": "442e4175b58b5103f2cde9d7047ff5ef807026de9059b0cadd6e5f4cd55488e2",
+    "deployment_inference_endpoint_grid": "all2arms_all3seeds_terminal1024; no metric selection",
+    "development_only": true,
+    "driver_source_sha256": "1bdea90f357e595fbaa1461d71106b75ee11c0df56fbcfc5e869a89f8c5fa1be",
+    "early_stopping": false,
+    "elapsed_limit_scope": "active model load, training, and scoring; CPU preflight excluded",
+    "elapsed_limit_seconds": 1800,
+    "end_step": 1024,
+    "engine_sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+    "evaluation_steps": [
+      448,
+      512,
+      768,
+      1024
+    ],
+    "examples_per_primary_batch": 4,
+    "expert_lr": 0.04,
+    "frozen_utc": "2026-11-06T12:12:56.414398+00:00",
+    "gradient_clip": 1.0,
+    "loss_weights": {
+      "auxiliary_ce": 1.0,
+      "primary_new_ce": 1.0
+    },
+    "new_schedule_sha256_by_seed": {
+      "17": "5ec8e0581ab5d8fefc307d3dca9e57ab87b79d51c3dac05dd6a45a46f6100ca0",
+      "29": "7d004c512b5da5eac56341df5e9b386da47023ecf1d11a6be211ddca6b635e65",
+      "43": "29547fe7460f73de019905b5a7ed4a1c71ce82b41cb7dd6d4eaaa13c58cd1014"
+    },
+    "no_sleep": true,
+    "pack_schedule_batch_count": 4096,
+    "periods": [
+      4,
+      16
+    ],
+    "primary_batch_size": 4,
+    "primary_optimizer": "CMS",
+    "primary_schedule_batch_slice": [
+      448,
+      1024
+    ],
+    "primary_schedule_batch_slice_semantics": "zero_based_half_open",
+    "primary_updates_per_arm_seed": 576,
+    "protocol_plan_sha256": "9c88f3b5069fbf21d3d816b1cf7203aa36298aa78630ec5693e82828299a4eb1",
+    "qualification_config_sha256": "8064b3befba382f4f53c57c512c055f2245fd756ea03981c61332e23d8065a82",
+    "qualification_driver_sha256": "a03e56f4cba104b9905c6da47641d38e28bb81c7224e4b3251f2f21bbf14effe",
+    "qualification_plan_sha256": "a7ab3a11fe7d43cb44feb0decacff594f61c2d09e114c6ab7fb1b8af45467816",
+    "qualification_result_sha256": "590bc10002510686a6227f71e54aed17672a2913d46c509b4425c868656d5739",
+    "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+    "review_status": "FROZEN_DEVELOPMENT_AFTER_REVIEW",
+    "schema": "agnews-fair-continuation-config-v6",
+    "scope": "Two loss-count-matched supervised continuation controls; no Sleep claim",
+    "scoring": true,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "start_step": 448,
+    "supervision_note": "new+new uses eight new rows; new+old uses four new/four old rows per primary tick. Counts matched, information differs.",
+    "teacher_FW_expected": 0,
+    "v5_anchor_helper_sha256": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6",
+    "v5_development_seal_sha256": "45e44b6bd0479234c0aa2b1f491315918476529b01d33fb27678293481fa2253",
+    "v5_protocol_sha256": "75b5c19db27b45efe086e06d4290aa806768653ef962dc37419dacf144bcb26c",
+    "warm_result_sha256": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b"
+  },
+  "config_sha256": "578c472b54d405cff8c03dd89d6eb831c81cd4a49b06d3d450d96518cf9f3a0e",
+  "confirmation_input": false,
+  "confirmation_scored": false,
+  "cost_note": "Both arms use one new-task B4 forward/backward and one balanced auxiliary B4 forward/backward before a single global clip and one CMS collect per primary update. Aux class source differs by arm (new classes 2/3 versus old classes 0/1), so label information differs; the comparison is compute-matched, not information-matched. The frozen teacher is passed only for helper integrity checks and incurs zero teacher forwards in gold mode.",
+  "cpu_preflight_and_plan_wall_seconds": 4.061999999918044,
+  "created_utc": "2026-11-06T12:16:35.339431+00:00",
+  "elapsed_limit_scope": "active model load, training, and scoring; CPU preflight excluded",
+  "elapsed_limit_seconds": 1800,
+  "end_step": 1024,
+  "evaluation_steps": [
+    448,
+    512,
+    768,
+    1024
+  ],
+  "examples_per_primary_batch": 4,
+  "exploratory_only": true,
+  "new_schedule_sha256_by_seed": {
+    "17": "5ec8e0581ab5d8fefc307d3dca9e57ab87b79d51c3dac05dd6a45a46f6100ca0",
+    "29": "7d004c512b5da5eac56341df5e9b386da47023ecf1d11a6be211ddca6b635e65",
+    "43": "29547fe7460f73de019905b5a7ed4a1c71ce82b41cb7dd6d4eaaa13c58cd1014"
+  },
+  "pack_schedule_batch_count": 4096,
+  "plan_identity": {
+    "arms": [
+      "aux_new_CE",
+      "aux_old_gold_CE"
+    ],
+    "aux_schedule_sha256_by_seed_arm": {
+      "17:aux_new_CE": "4dc406b66e4fa9ff7231f16ba2540e9f4201362cf5badee522513b99a85c6185",
+      "17:aux_old_gold_CE": "b4b033d454116bd961870d6d014a4bc3431bdc3ad7b6d4b1640e663969c67b7a",
+      "29:aux_new_CE": "6af358490f945b616fd8c1899987e05b90b241ed9f0d0a1958ccf351fc6ca189",
+      "29:aux_old_gold_CE": "78b9afaae5132738c50eca4d1dbffd8a8dcc5f20990e5f043b39ccf8c0920853",
+      "43:aux_new_CE": "64ab4d0141e08764be7b832bff7bfd5e3a53e9b920c66e9525396b8a694c46ee",
+      "43:aux_old_gold_CE": "9cfd155997fb54e1fdc80ad081806490e6cc45a5648dc6c7f8d5dd3092686b03"
+    },
+    "loss_weights": {
+      "auxiliary_ce": 1.0,
+      "primary_new_ce": 1.0
+    },
+    "new_schedule_sha256_by_seed": {
+      "17": "5ec8e0581ab5d8fefc307d3dca9e57ab87b79d51c3dac05dd6a45a46f6100ca0",
+      "29": "7d004c512b5da5eac56341df5e9b386da47023ecf1d11a6be211ddca6b635e65",
+      "43": "29547fe7460f73de019905b5a7ed4a1c71ce82b41cb7dd6d4eaaa13c58cd1014"
+    },
+    "qualification_sha256": "590bc10002510686a6227f71e54aed17672a2913d46c509b4425c868656d5739",
+    "source_sha256": {
+      "common_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+      "continuation_helper_sha256": "442e4175b58b5103f2cde9d7047ff5ef807026de9059b0cadd6e5f4cd55488e2",
+      "driver_source_sha256": "1bdea90f357e595fbaa1461d71106b75ee11c0df56fbcfc5e869a89f8c5fa1be",
+      "engine_sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+      "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+      "v5_anchor_helper_sha256": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6",
+      "v5_development_seal_sha256": "45e44b6bd0479234c0aa2b1f491315918476529b01d33fb27678293481fa2253",
+      "v5_protocol_sha256": "75b5c19db27b45efe086e06d4290aa806768653ef962dc37419dacf144bcb26c",
+      "warm_result_sha256": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b"
+    },
+    "steps": {
+      "end": 1024,
+      "evaluation": [
+        448,
+        512,
+        768,
+        1024
+      ],
+      "start": 448
+    },
+    "warm_start_checkpoints": [
+      {
+        "checkpoint_sha256": "422ea75e6d2f879380aab3d623388e5400a59d4104e837e1240f7b4d4ee67b36",
+        "path": "checkpoints\\seed-17-warm_CMS_reference-step-448.pt",
+        "seed": 17
+      },
+      {
+        "checkpoint_sha256": "72de95660a981f6456fb9bf506d2514f12760b28c9670ec57bfa5674f37ef0e8",
+        "path": "checkpoints\\seed-29-warm_CMS_reference-step-448.pt",
+        "seed": 29
+      },
+      {
+        "checkpoint_sha256": "b3eb486d7356e9c94c9ed183758ea84d1ec58503ee8954d3cc49db15c27a9eec",
+        "path": "checkpoints\\seed-43-warm_CMS_reference-step-448.pt",
+        "seed": 43
+      }
+    ]
+  },
+  "plan_sha256": "9c88f3b5069fbf21d3d816b1cf7203aa36298aa78630ec5693e82828299a4eb1",
+  "planned_auxiliary_answer_token_targets": 27648,
+  "planned_auxiliary_backward_passes": 3456,
+  "planned_auxiliary_forward_passes": 3456,
+  "planned_auxiliary_prefix_draws": 13824,
+  "planned_auxiliary_target_examples": 13824,
+  "planned_new_class_auxiliary_prefix_draws": 6912,
+  "planned_old_class_auxiliary_prefix_draws": 6912,
+  "planned_primary_answer_token_targets": 27648,
+  "planned_primary_prefix_draws": 13824,
+  "planned_primary_target_examples": 13824,
+  "planned_primary_updates": 3456,
+  "planned_student_backward_passes": 6912,
+  "planned_student_forward_passes": 6912,
+  "planned_teacher_forward_passes": 0,
+  "primary_schedule_batch_slice": [
+    448,
+    1024
+  ],
+  "primary_schedule_batch_slice_semantics": "zero_based_half_open",
+  "qualification_plan_sha256": "a7ab3a11fe7d43cb44feb0decacff594f61c2d09e114c6ab7fb1b8af45467816",
+  "qualification_sha256": "590bc10002510686a6227f71e54aed17672a2913d46c509b4425c868656d5739",
+  "schema": "agnews-fair-continuation-protocol-v6",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "source_sha256": {
+    "common_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+    "continuation_helper_sha256": "442e4175b58b5103f2cde9d7047ff5ef807026de9059b0cadd6e5f4cd55488e2",
+    "driver_source_sha256": "1bdea90f357e595fbaa1461d71106b75ee11c0df56fbcfc5e869a89f8c5fa1be",
+    "engine_sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+    "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+    "v5_anchor_helper_sha256": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6",
+    "v5_development_seal_sha256": "45e44b6bd0479234c0aa2b1f491315918476529b01d33fb27678293481fa2253",
+    "v5_protocol_sha256": "75b5c19db27b45efe086e06d4290aa806768653ef962dc37419dacf144bcb26c",
+    "warm_result_sha256": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b"
+  },
+  "start_step": 448,
+  "status": "frozen_development",
+  "v5_start_checkpoints": [
+    {
+      "checkpoint_sha256": "422ea75e6d2f879380aab3d623388e5400a59d4104e837e1240f7b4d4ee67b36",
+      "path": "checkpoints\\seed-17-warm_CMS_reference-step-448.pt",
+      "seed": 17
+    },
+    {
+      "checkpoint_sha256": "72de95660a981f6456fb9bf506d2514f12760b28c9670ec57bfa5674f37ef0e8",
+      "path": "checkpoints\\seed-29-warm_CMS_reference-step-448.pt",
+      "seed": 29
+    },
+    {
+      "checkpoint_sha256": "b3eb486d7356e9c94c9ed183758ea84d1ec58503ee8954d3cc49db15c27a9eec",
+      "path": "checkpoints\\seed-43-warm_CMS_reference-step-448.pt",
+      "seed": 43
+    }
+  ]
+}

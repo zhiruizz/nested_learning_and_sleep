@@ -1,0 +1,90 @@
+{
+  "Ubuntu_formal_experiment_touched": false,
+  "arms": [
+    "aux_new_CE",
+    "aux_old_gold_CE"
+  ],
+  "automatic_retry": false,
+  "aux_schedule_sha256_by_arm": {
+    "aux_new_CE": "4dc406b66e4fa9ff7231f16ba2540e9f4201362cf5badee522513b99a85c6185",
+    "aux_old_gold_CE": "b4b033d454116bd961870d6d014a4bc3431bdc3ad7b6d4b1640e663969c67b7a"
+  },
+  "auxiliary_batch_size": 4,
+  "base_lr": 0.02,
+  "capacity": 32,
+  "common_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+  "confirmation_input": false,
+  "confirmation_scored": false,
+  "continuation_helper_sha256": "442e4175b58b5103f2cde9d7047ff5ef807026de9059b0cadd6e5f4cd55488e2",
+  "development_only": true,
+  "elapsed_limit_seconds": 600,
+  "engine_sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+  "expected_primary_updates": 12,
+  "expected_student_backward_passes": 24,
+  "expected_student_forward_passes": 24,
+  "expected_teacher_forward_passes": 0,
+  "expert_lr": 0.04,
+  "fork_step": 450,
+  "frozen_utc": "2026-11-06T12:03:25.598604+00:00",
+  "gradient_clip": 1.0,
+  "loss_weights": {
+    "auxiliary_ce": 1.0,
+    "primary_new_ce": 1.0
+  },
+  "new_schedule_sha256_by_seed": {
+    "17": "5ec8e0581ab5d8fefc307d3dca9e57ab87b79d51c3dac05dd6a45a46f6100ca0",
+    "29": "7d004c512b5da5eac56341df5e9b386da47023ecf1d11a6be211ddca6b635e65",
+    "43": "29547fe7460f73de019905b5a7ed4a1c71ce82b41cb7dd6d4eaaa13c58cd1014"
+  },
+  "new_schedule_shape": {
+    "batch_size": 4,
+    "outer_B4_batches": 4096
+  },
+  "periods": [
+    4,
+    16
+  ],
+  "planned_main": {
+    "arms": [
+      "aux_new_CE",
+      "aux_old_gold_CE"
+    ],
+    "aux_schedule_sha256_by_seed_arm": {
+      "17:aux_new_CE": "4dc406b66e4fa9ff7231f16ba2540e9f4201362cf5badee522513b99a85c6185",
+      "17:aux_old_gold_CE": "b4b033d454116bd961870d6d014a4bc3431bdc3ad7b6d4b1640e663969c67b7a",
+      "29:aux_new_CE": "6af358490f945b616fd8c1899987e05b90b241ed9f0d0a1958ccf351fc6ca189",
+      "29:aux_old_gold_CE": "78b9afaae5132738c50eca4d1dbffd8a8dcc5f20990e5f043b39ccf8c0920853",
+      "43:aux_new_CE": "64ab4d0141e08764be7b832bff7bfd5e3a53e9b920c66e9525396b8a694c46ee",
+      "43:aux_old_gold_CE": "9cfd155997fb54e1fdc80ad081806490e6cc45a5648dc6c7f8d5dd3092686b03"
+    },
+    "driver_sha256": "1bdea90f357e595fbaa1461d71106b75ee11c0df56fbcfc5e869a89f8c5fa1be",
+    "end_step": 1024,
+    "no_sleep": true,
+    "primary_updates": 3456,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "start_step": 448,
+    "student_FW_BW_each": 6912,
+    "teacher_FW": 0
+  },
+  "primary_batch_size": 4,
+  "qualifier_source_sha256": "a03e56f4cba104b9905c6da47641d38e28bb81c7224e4b3251f2f21bbf14effe",
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "resume_start_checkpoint_sha256": "422ea75e6d2f879380aab3d623388e5400a59d4104e837e1240f7b4d4ee67b36",
+  "resume_steps": [
+    451,
+    452
+  ],
+  "review_status": "FROZEN_DEVELOPMENT_AFTER_REVIEW",
+  "schema": "agnews-fair-continuation-config-v6",
+  "scope": "Real3B resume correctness only; no task scoring or selection",
+  "scoring": false,
+  "start_step": 448,
+  "v5_anchor_helper_sha256": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6",
+  "v5_development_seal_sha256": "45e44b6bd0479234c0aa2b1f491315918476529b01d33fb27678293481fa2253",
+  "v5_protocol_sha256": "75b5c19db27b45efe086e06d4290aa806768653ef962dc37419dacf144bcb26c",
+  "warm_result_sha256": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b"
+}
