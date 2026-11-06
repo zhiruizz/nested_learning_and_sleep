@@ -1,0 +1,1698 @@
+{
+  "optimizer_attempts": 1792,
+  "rows": [
+    {
+      "allowed_parameter_names": [
+        "backbone.model.layers.27.mlp.memory.1.experts.slots.1.a",
+        "backbone.model.layers.27.mlp.memory.1.experts.slots.1.b"
+      ],
+      "answer_token_targets": 16384,
+      "arm": "new_only_receiver",
+      "cache_file_bytes": 1614946135,
+      "cache_sha256": "3cc134e12ff271106d6522ac31106622a35f59ae5c2a45283272245f6c6d52bf",
+      "checkpoints": [
+        {
+          "path": "checkpoints\\43-new_only_receiver-64.pt",
+          "sha256": "a63df02f49211510fa845d0c70de3cceab11f4cf2c984b1414c2486506c2cd18",
+          "step": 64
+        },
+        {
+          "path": "checkpoints\\43-new_only_receiver-256.pt",
+          "sha256": "09b6dd3c373d12c47396d1c2d6fa37fa9f1c16b89339d29a213cab2206aa2489",
+          "step": 256
+        },
+        {
+          "path": "recovery-r1/43-new_only_receiver-1024.pt",
+          "sha256": "a758bc80184f74f5e8edceea940133cd7b6ad34ea1d8ae6b2eb5529406911c75",
+          "step": 1024
+        }
+      ],
+      "class_draws": {
+        "0": 0,
+        "1": 0,
+        "2": 4096,
+        "3": 4096
+      },
+      "class_unique_examples": {
+        "0": 0,
+        "1": 0,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "evaluations": [
+        {
+          "step": 0,
+          "train": {
+            "all": {
+              "candidate": 0.25,
+              "class": 0.1005859375,
+              "class_nll": 5.326521842860529,
+              "em": 0.1005859375,
+              "examples": 1024,
+              "marker": 1.0,
+              "marker_nll": 0.0004823246264393788,
+              "nll": 2.6635020837434844
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 10.271465610712767,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.0005322371284819383,
+              "nll": 5.135998923920624
+            },
+            "class1": {
+              "candidate": 0.81640625,
+              "class": 0.3828125,
+              "class_nll": 1.5640978508308763,
+              "em": 0.3828125,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.0004415103032897605,
+              "nll": 0.782269680567083
+            },
+            "class2": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 6.751091876998544,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.00047951984899441413,
+              "nll": 3.375785698423769
+            },
+            "class3": {
+              "candidate": 0.18359375,
+              "class": 0.01953125,
+              "class_nll": 2.719432032899931,
+              "em": 0.01953125,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.00047603122499140227,
+              "nll": 1.3599540320624612
+            },
+            "new": {
+              "candidate": 0.091796875,
+              "class": 0.009765625,
+              "class_nll": 4.735261954949237,
+              "em": 0.009765625,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 0.0004777755369929082,
+              "nll": 2.367869865243115
+            },
+            "old": {
+              "candidate": 0.408203125,
+              "class": 0.19140625,
+              "class_nll": 5.9177817307718215,
+              "em": 0.19140625,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 0.0004868737158858494,
+              "nll": 2.9591343022438537
+            }
+          },
+          "validation": {
+            "all": {
+              "candidate": 0.248046875,
+              "class": 0.1171875,
+              "class_nll": 5.428406309241836,
+              "em": 0.1171875,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 0.0038400069255430935,
+              "nll": 2.7161231580836898
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 10.50251030176878,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 0.0005009811209220061,
+              "nll": 5.251505641444851
+            },
+            "class1": {
+              "candidate": 0.796875,
+              "class": 0.421875,
+              "class_nll": 1.5944414945261087,
+              "em": 0.421875,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 0.000429783718118415,
+              "nll": 0.7974356391221136
+            },
+            "class2": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 6.891148868948221,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 0.013926134152143277,
+              "nll": 3.4525375015501822
+            },
+            "class3": {
+              "candidate": 0.1953125,
+              "class": 0.046875,
+              "class_nll": 2.725524571724236,
+              "em": 0.046875,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 0.0005031287109886762,
+              "nll": 1.3630138502176123
+            },
+            "new": {
+              "candidate": 0.09765625,
+              "class": 0.0234375,
+              "class_nll": 4.808336720336229,
+              "em": 0.0234375,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.0072146314315659765,
+              "nll": 2.4077756758838973
+            },
+            "old": {
+              "candidate": 0.3984375,
+              "class": 0.2109375,
+              "class_nll": 6.048475898147444,
+              "em": 0.2109375,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.00046538241952021053,
+              "nll": 3.0244706402834822
+            }
+          }
+        },
+        {
+          "step": 64,
+          "train": {
+            "all": {
+              "candidate": 0.44921875,
+              "class": 0.44921875,
+              "class_nll": 7.334691679941358,
+              "em": 0.44921875,
+              "examples": 1024,
+              "marker": 1.0,
+              "marker_nll": 4.411313986762977e-06,
+              "nll": 3.6673480456276732
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 14.920483455061913,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 4.853573869478822e-06,
+              "nll": 7.460244154317892
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 13.883203623816371,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 3.6326159196242713e-06,
+              "nll": 6.941603628216144
+            },
+            "class2": {
+              "candidate": 0.97265625,
+              "class": 0.97265625,
+              "class_nll": 0.0808506840909331,
+              "em": 0.97265625,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 5.081745984902852e-06,
+              "nll": 0.040427882918459
+            },
+            "class3": {
+              "candidate": 0.82421875,
+              "class": 0.82421875,
+              "class_nll": 0.45422895679621433,
+              "em": 0.82421875,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 4.077320173045962e-06,
+              "nll": 0.2271165170581937
+            },
+            "new": {
+              "candidate": 0.8984375,
+              "class": 0.8984375,
+              "class_nll": 0.2675398204435737,
+              "em": 0.8984375,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 4.579533078974407e-06,
+              "nll": 0.13377219998832635
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 14.401843539439142,
+              "em": 0.0,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 4.243094894551547e-06,
+              "nll": 7.200923891267015
+            }
+          },
+          "validation": {
+            "all": {
+              "candidate": 0.3984375,
+              "class": 0.3984375,
+              "class_nll": 7.414572248879892,
+              "em": 0.3984375,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 6.299466422499123e-06,
+              "nll": 3.707289274173158
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 14.817591078579426,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 4.678951976089252e-06,
+              "nll": 7.408797878765701
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 13.705952696502209,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 3.99721555677246e-06,
+              "nll": 6.852978346858882
+            },
+            "class2": {
+              "candidate": 0.875,
+              "class": 0.875,
+              "class_nll": 0.3970735082027659,
+              "em": 0.875,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 1.2352177000352071e-05,
+              "nll": 0.19854293018988312
+            },
+            "class3": {
+              "candidate": 0.71875,
+              "class": 0.71875,
+              "class_nll": 0.7376717122351693,
+              "em": 0.71875,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 4.169521156782707e-06,
+              "nll": 0.368837940878163
+            },
+            "new": {
+              "candidate": 0.796875,
+              "class": 0.796875,
+              "class_nll": 0.5673726102189676,
+              "em": 0.796875,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 8.26084907856739e-06,
+              "nll": 0.28369043553402307
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 14.261771887540817,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 4.338083766430856e-06,
+              "nll": 7.13088811281229
+            }
+          }
+        },
+        {
+          "step": 256,
+          "train": {
+            "all": {
+              "candidate": 0.4521484375,
+              "class": 0.4521484375,
+              "class_nll": 11.182020733247768,
+              "em": 0.4521484375,
+              "examples": 1024,
+              "marker": 1.0,
+              "marker_nll": 2.020269006419717e-06,
+              "nll": 5.591011376758399
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 20.857505075633526,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 2.2519350559857543e-06,
+              "nll": 10.428753663784292
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 23.278133548796177,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 1.6298129104086456e-06,
+              "nll": 11.639067589304538
+            },
+            "class2": {
+              "candidate": 0.8203125,
+              "class": 0.8203125,
+              "class_nll": 0.5766057675061802,
+              "em": 0.8203125,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 2.340875976614143e-06,
+              "nll": 0.2883040541910784
+            },
+            "class3": {
+              "candidate": 0.98828125,
+              "class": 0.98828125,
+              "class_nll": 0.01583854105518867,
+              "em": 0.98828125,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 1.8584520826703255e-06,
+              "nll": 0.00792019975363567
+            },
+            "new": {
+              "candidate": 0.904296875,
+              "class": 0.904296875,
+              "class_nll": 0.29622215428068444,
+              "em": 0.904296875,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 2.099664029642234e-06,
+              "nll": 0.14811212697235704
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 22.06781931221485,
+              "em": 0.0,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 1.9408739831972e-06,
+              "nll": 11.033910626544438
+            }
+          },
+          "validation": {
+            "all": {
+              "candidate": 0.41015625,
+              "class": 0.41015625,
+              "class_nll": 11.537252050216551,
+              "em": 0.41015625,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 2.939510425736813e-06,
+              "nll": 5.768627494863488
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 20.97586789727211,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 2.2286520122705156e-06,
+              "nll": 10.487935062962066
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 23.60794660449028,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 1.7322566900901393e-06,
+              "nll": 11.80397416837348
+            },
+            "class2": {
+              "candidate": 0.6640625,
+              "class": 0.6640625,
+              "class_nll": 1.4870325055721878,
+              "em": 0.6640625,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 5.8469457471233e-06,
+              "nll": 0.7435191762589675
+            },
+            "class3": {
+              "candidate": 0.9765625,
+              "class": 0.9765625,
+              "class_nll": 0.07816119353162776,
+              "em": 0.9765625,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 1.950187253463298e-06,
+              "nll": 0.03908157185944061
+            },
+            "new": {
+              "candidate": 0.8203125,
+              "class": 0.8203125,
+              "class_nll": 0.7825968495519078,
+              "em": 0.8203125,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 3.898566500293299e-06,
+              "nll": 0.39130037405920404
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 22.291907250881195,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 1.9804543511803274e-06,
+              "nll": 11.145954615667776
+            }
+          }
+        },
+        {
+          "step": 1024,
+          "train": {
+            "all": {
+              "candidate": 0.49609375,
+              "class": 0.49609375,
+              "class_nll": 7.111448475686944,
+              "em": 0.49609375,
+              "examples": 1024,
+              "marker": 1.0,
+              "marker_nll": 2.5925687444777745e-07,
+              "nll": 3.5557243674719285
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 15.585434164851904,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 3.03611101509782e-07,
+              "nll": 7.792717234231517
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 12.783114140853286,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 1.8393618247958265e-07,
+              "nll": 6.391557162394742
+            },
+            "class2": {
+              "candidate": 0.984375,
+              "class": 0.984375,
+              "class_nll": 0.0720578511105252,
+              "em": 0.984375,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 3.1897791377688556e-07,
+              "nll": 0.03602908504421949
+            },
+            "class3": {
+              "candidate": 1.0,
+              "class": 1.0,
+              "class_nll": 0.005187745932062171,
+              "em": 1.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 2.305023000248596e-07,
+              "nll": 0.002593988217181098
+            },
+            "new": {
+              "candidate": 0.9921875,
+              "class": 0.9921875,
+              "class_nll": 0.03862279852129369,
+              "em": 0.9921875,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 2.747401069008726e-07,
+              "nll": 0.019311536630700295
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 14.184274152852595,
+              "em": 0.0,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 2.437736419946823e-07,
+              "nll": 7.092137198313132
+            }
+          },
+          "validation": {
+            "all": {
+              "candidate": 0.419921875,
+              "class": 0.419921875,
+              "class_nll": 7.463267179273444,
+              "em": 0.419921875,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 4.013946604264351e-07,
+              "nll": 3.731633790334067
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 15.462255984544754,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 2.915039111761608e-07,
+              "nll": 7.73112813802434
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 12.97523045539856,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 1.9557768149436328e-07,
+              "nll": 6.487615325488127
+            },
+            "class2": {
+              "candidate": 0.7578125,
+              "class": 0.7578125,
+              "class_nll": 1.1334830479823381,
+              "em": 0.7578125,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 8.81009830921986e-07,
+              "nll": 0.5667419644960849
+            },
+            "class3": {
+              "candidate": 0.921875,
+              "class": 0.921875,
+              "class_nll": 0.282099229168125,
+              "em": 0.921875,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 2.3748721811323037e-07,
+              "nll": 0.14104973332767157
+            },
+            "new": {
+              "candidate": 0.83984375,
+              "class": 0.83984375,
+              "class_nll": 0.7077911385752316,
+              "em": 0.83984375,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 5.592485245176082e-07,
+              "nll": 0.3538958489118789
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 14.218743219971657,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 2.4354079633526204e-07,
+              "nll": 7.1093717317562355
+            }
+          }
+        }
+      ],
+      "execution_note": "Observed training counters include the original704 plus replay768 for recovered receiver; logical trajectory ends1024.",
+      "exposure_counters_describe_logical_schedule": true,
+      "extra_recovery_checkpoints": [
+        {
+          "path": "recovery-r1/43-new_only_receiver-320.pt",
+          "sha256": "c9faf863df698fbf5368e107d1a2c2bc32ea7396ddb0cacf63c11d4408219e69",
+          "step": 320
+        },
+        {
+          "path": "recovery-r1/43-new_only_receiver-384.pt",
+          "sha256": "4a68f669989074fcffabb605335adb9bfcb936770778d4339e6c3167e76c5731",
+          "step": 384
+        },
+        {
+          "path": "recovery-r1/43-new_only_receiver-448.pt",
+          "sha256": "6784c08554a8018a206759125a968d8e3420c8582605544992b4e342cf058fb3",
+          "step": 448
+        },
+        {
+          "path": "recovery-r1/43-new_only_receiver-512.pt",
+          "sha256": "a1df7fa83132a7f8b8f58f3d2c9d6f86ee1fe45b53074c00c8e5360a28e98b0f",
+          "step": 512
+        },
+        {
+          "path": "recovery-r1/43-new_only_receiver-576.pt",
+          "sha256": "61cbe88dfb3489957b95e835db097df4c951778d82cb95df37250d15ead92bb2",
+          "step": 576
+        },
+        {
+          "path": "recovery-r1/43-new_only_receiver-640.pt",
+          "sha256": "4db3789709a6cd215fee81395b24af85ffc0f8c58fc1ac81c85511b6ad3570d8",
+          "step": 640
+        },
+        {
+          "path": "recovery-r1/43-new_only_receiver-704.pt",
+          "sha256": "8eb44cd557301cddc856b3d8d7d5c2535766973334a3b01466b364754a1be361",
+          "step": 704
+        },
+        {
+          "path": "recovery-r1/43-new_only_receiver-768.pt",
+          "sha256": "6b7eca776f7c5d8a8a69adcc219724227f6ba4180e1b07865f82d2def4479155",
+          "step": 768
+        },
+        {
+          "path": "recovery-r1/43-new_only_receiver-832.pt",
+          "sha256": "5e02015002c94c5059d85f002cc9a6ac2c247810477bcc7464594e5531b992a5",
+          "step": 832
+        },
+        {
+          "path": "recovery-r1/43-new_only_receiver-896.pt",
+          "sha256": "c1bda474393db36459ff635a24099c7bb6d684ed59c4de5afd0356c7250a2f5c",
+          "step": 896
+        },
+        {
+          "path": "recovery-r1/43-new_only_receiver-960.pt",
+          "sha256": "cc3fac11f21900ea9ed8e9fb30f2473fdc5ea536c89ec0bb1d8cf41e59483352",
+          "step": 960
+        }
+      ],
+      "frozen_scope_guard_passed": true,
+      "initial": {
+        "adapter_sha256": "f467edd3624285a3fcc712bcbf6705d5cc05cbd653ac13d8421bce9de85f329d",
+        "policy_sha256": "70a91a59c47255e9f358d010465785e05e06fa1e2fa2b5710638defeb5ae3d3a"
+      },
+      "logical_student_backward_passes": 1024,
+      "logical_student_forward_passes": 1024,
+      "loss_max": null,
+      "loss_min": null,
+      "loss_sum": null,
+      "model_tensor_bytes": 27396800,
+      "original_attempt_loss_statistics": {
+        "loss_max": 5.520646095275879,
+        "loss_min": 6.221189778443659e-06,
+        "loss_sum": 126.3973943699516
+      },
+      "original_attempt_training_work_observed": {
+        "backward": {
+          "calls": 6336,
+          "flops": 524430213120000,
+          "ops": {
+            "mm": {
+              "calls": 6336,
+              "flops": 524430213120000
+            }
+          }
+        },
+        "forward": {
+          "calls": 9152,
+          "flops": 524569040388096,
+          "ops": {
+            "mm": {
+              "calls": 7744,
+              "flops": 524560874078208
+            },
+            "mv": {
+              "calls": 1408,
+              "flops": 8166309888
+            }
+          }
+        }
+      },
+      "original_unrecorded_optimizer_attempts_inclusive": [
+        0,
+        64
+      ],
+      "parity": {
+        "full": {
+          "all": {
+            "candidate": 0.419921875,
+            "class": 0.419921875,
+            "class_nll": 7.463267181136089,
+            "em": 0.419921875,
+            "examples": 512,
+            "marker": 1.0,
+            "marker_nll": 4.013946604264351e-07,
+            "nll": 3.7316337912653896
+          },
+          "class0": {
+            "candidate": 0.0,
+            "class": 0.0,
+            "class_nll": 15.462255991995335,
+            "em": 0.0,
+            "examples": 128,
+            "marker": 1.0,
+            "marker_nll": 2.915039111761608e-07,
+            "nll": 7.731128141749631
+          },
+          "class1": {
+            "candidate": 0.0,
+            "class": 0.0,
+            "class_nll": 12.97523045539856,
+            "em": 0.0,
+            "examples": 128,
+            "marker": 1.0,
+            "marker_nll": 1.9557768149436328e-07,
+            "nll": 6.487615325488127
+          },
+          "class2": {
+            "candidate": 0.7578125,
+            "class": 0.7578125,
+            "class_nll": 1.1334830479823381,
+            "em": 0.7578125,
+            "examples": 128,
+            "marker": 1.0,
+            "marker_nll": 8.81009830921986e-07,
+            "nll": 0.5667419644960849
+          },
+          "class3": {
+            "candidate": 0.921875,
+            "class": 0.921875,
+            "class_nll": 0.282099229168125,
+            "em": 0.921875,
+            "examples": 128,
+            "marker": 1.0,
+            "marker_nll": 2.3748721811323037e-07,
+            "nll": 0.14104973332767157
+          },
+          "new": {
+            "candidate": 0.83984375,
+            "class": 0.83984375,
+            "class_nll": 0.7077911385752316,
+            "em": 0.83984375,
+            "examples": 256,
+            "marker": 1.0,
+            "marker_nll": 5.592485245176082e-07,
+            "nll": 0.3538958489118789
+          },
+          "old": {
+            "candidate": 0.0,
+            "class": 0.0,
+            "class_nll": 14.218743223696947,
+            "em": 0.0,
+            "examples": 256,
+            "marker": 1.0,
+            "marker_nll": 2.4354079633526204e-07,
+            "nll": 7.109371733618881
+          }
+        },
+        "tail": {
+          "all": {
+            "candidate": 0.419921875,
+            "class": 0.419921875,
+            "class_nll": 7.463267179273444,
+            "em": 0.419921875,
+            "examples": 512,
+            "marker": 1.0,
+            "marker_nll": 4.013946604264351e-07,
+            "nll": 3.731633790334067
+          },
+          "class0": {
+            "candidate": 0.0,
+            "class": 0.0,
+            "class_nll": 15.462255984544754,
+            "em": 0.0,
+            "examples": 128,
+            "marker": 1.0,
+            "marker_nll": 2.915039111761608e-07,
+            "nll": 7.73112813802434
+          },
+          "class1": {
+            "candidate": 0.0,
+            "class": 0.0,
+            "class_nll": 12.97523045539856,
+            "em": 0.0,
+            "examples": 128,
+            "marker": 1.0,
+            "marker_nll": 1.9557768149436328e-07,
+            "nll": 6.487615325488127
+          },
+          "class2": {
+            "candidate": 0.7578125,
+            "class": 0.7578125,
+            "class_nll": 1.1334830479823381,
+            "em": 0.7578125,
+            "examples": 128,
+            "marker": 1.0,
+            "marker_nll": 8.81009830921986e-07,
+            "nll": 0.5667419644960849
+          },
+          "class3": {
+            "candidate": 0.921875,
+            "class": 0.921875,
+            "class_nll": 0.282099229168125,
+            "em": 0.921875,
+            "examples": 128,
+            "marker": 1.0,
+            "marker_nll": 2.3748721811323037e-07,
+            "nll": 0.14104973332767157
+          },
+          "new": {
+            "candidate": 0.83984375,
+            "class": 0.83984375,
+            "class_nll": 0.7077911385752316,
+            "em": 0.83984375,
+            "examples": 256,
+            "marker": 1.0,
+            "marker_nll": 5.592485245176082e-07,
+            "nll": 0.3538958489118789
+          },
+          "old": {
+            "candidate": 0.0,
+            "class": 0.0,
+            "class_nll": 14.218743219971657,
+            "em": 0.0,
+            "examples": 256,
+            "marker": 1.0,
+            "marker_nll": 2.4354079633526204e-07,
+            "nll": 7.1093717317562355
+          }
+        }
+      },
+      "recovered_from_step": 256,
+      "recovery_actual_updates": 768,
+      "schedule_sha256": "81a2e09bb9a17a7213e55710f97adcfe19f0800dced4a52487b0981faa4be010",
+      "seconds_recovery": 29.07799999997951,
+      "seed": 43,
+      "status": "complete",
+      "student_backward_passes": 1472,
+      "student_forward_passes": 1472,
+      "student_input_tokens": 856261,
+      "student_padded_positions": 966656,
+      "teacher_origin_selection_draws": 0,
+      "train_final": {
+        "all": {
+          "candidate": 0.49609375,
+          "class": 0.49609375,
+          "class_nll": 7.111448475686944,
+          "em": 0.49609375,
+          "examples": 1024,
+          "marker": 1.0,
+          "marker_nll": 2.5925687444777745e-07,
+          "nll": 3.5557243674719285
+        },
+        "class0": {
+          "candidate": 0.0,
+          "class": 0.0,
+          "class_nll": 15.585434164851904,
+          "em": 0.0,
+          "examples": 256,
+          "marker": 1.0,
+          "marker_nll": 3.03611101509782e-07,
+          "nll": 7.792717234231517
+        },
+        "class1": {
+          "candidate": 0.0,
+          "class": 0.0,
+          "class_nll": 12.783114140853286,
+          "em": 0.0,
+          "examples": 256,
+          "marker": 1.0,
+          "marker_nll": 1.8393618247958265e-07,
+          "nll": 6.391557162394742
+        },
+        "class2": {
+          "candidate": 0.984375,
+          "class": 0.984375,
+          "class_nll": 0.0720578511105252,
+          "em": 0.984375,
+          "examples": 256,
+          "marker": 1.0,
+          "marker_nll": 3.1897791377688556e-07,
+          "nll": 0.03602908504421949
+        },
+        "class3": {
+          "candidate": 1.0,
+          "class": 1.0,
+          "class_nll": 0.005187745932062171,
+          "em": 1.0,
+          "examples": 256,
+          "marker": 1.0,
+          "marker_nll": 2.305023000248596e-07,
+          "nll": 0.002593988217181098
+        },
+        "new": {
+          "candidate": 0.9921875,
+          "class": 0.9921875,
+          "class_nll": 0.03862279852129369,
+          "em": 0.9921875,
+          "examples": 512,
+          "marker": 1.0,
+          "marker_nll": 2.747401069008726e-07,
+          "nll": 0.019311536630700295
+        },
+        "old": {
+          "candidate": 0.0,
+          "class": 0.0,
+          "class_nll": 14.184274152852595,
+          "em": 0.0,
+          "examples": 512,
+          "marker": 1.0,
+          "marker_nll": 2.437736419946823e-07,
+          "nll": 7.092137198313132
+        }
+      },
+      "trainable_parameter_count": 98304,
+      "unique_training_examples": 512,
+      "updates": 1024
+    },
+    {
+      "allowed_parameter_names": [
+        "backbone.model.layers.27.mlp.memory.0.a",
+        "backbone.model.layers.27.mlp.memory.0.b",
+        "backbone.model.layers.27.mlp.memory.1.a",
+        "backbone.model.layers.27.mlp.memory.1.b",
+        "backbone.model.layers.27.mlp.memory.1.experts.slots.1.a",
+        "backbone.model.layers.27.mlp.memory.1.experts.slots.1.b"
+      ],
+      "answer_token_targets": 16384,
+      "arm": "new_only_shared",
+      "cache_file_bytes": 1614946135,
+      "cache_sha256": "3cc134e12ff271106d6522ac31106622a35f59ae5c2a45283272245f6c6d52bf",
+      "checkpoints": [
+        {
+          "path": "recovery-r1/43-new_only_shared-64.pt",
+          "sha256": "b860f183d7f950a23e99722cd4dca005ff00a465068f16bb6277604a7c3e1426",
+          "step": 64
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-256.pt",
+          "sha256": "5eb3e3a64584210cfa343d62f25eba55e9abaa76de4fa35c01572e921011dc59",
+          "step": 256
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-1024.pt",
+          "sha256": "fbf5e7ff3269c55d62e8ac950a3fdc8abc8b4e0e77658d2bcffe75e73221df4d",
+          "step": 1024
+        }
+      ],
+      "class_draws": {
+        "0": 0,
+        "1": 0,
+        "2": 4096,
+        "3": 4096
+      },
+      "class_unique_examples": {
+        "0": 0,
+        "1": 0,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "evaluations": [
+        {
+          "step": 0,
+          "train": {
+            "all": {
+              "candidate": 0.25,
+              "class": 0.1005859375,
+              "class_nll": 5.326521842860529,
+              "em": 0.1005859375,
+              "examples": 1024,
+              "marker": 1.0,
+              "marker_nll": 0.0004823246264393788,
+              "nll": 2.6635020837434844
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 10.271465610712767,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.0005322371284819383,
+              "nll": 5.135998923920624
+            },
+            "class1": {
+              "candidate": 0.81640625,
+              "class": 0.3828125,
+              "class_nll": 1.5640978508308763,
+              "em": 0.3828125,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.0004415103032897605,
+              "nll": 0.782269680567083
+            },
+            "class2": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 6.751091876998544,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.00047951984899441413,
+              "nll": 3.375785698423769
+            },
+            "class3": {
+              "candidate": 0.18359375,
+              "class": 0.01953125,
+              "class_nll": 2.719432032899931,
+              "em": 0.01953125,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.00047603122499140227,
+              "nll": 1.3599540320624612
+            },
+            "new": {
+              "candidate": 0.091796875,
+              "class": 0.009765625,
+              "class_nll": 4.735261954949237,
+              "em": 0.009765625,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 0.0004777755369929082,
+              "nll": 2.367869865243115
+            },
+            "old": {
+              "candidate": 0.408203125,
+              "class": 0.19140625,
+              "class_nll": 5.9177817307718215,
+              "em": 0.19140625,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 0.0004868737158858494,
+              "nll": 2.9591343022438537
+            }
+          },
+          "validation": {
+            "all": {
+              "candidate": 0.248046875,
+              "class": 0.1171875,
+              "class_nll": 5.428406309241836,
+              "em": 0.1171875,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 0.0038400069255430935,
+              "nll": 2.7161231580836898
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 10.50251030176878,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 0.0005009811209220061,
+              "nll": 5.251505641444851
+            },
+            "class1": {
+              "candidate": 0.796875,
+              "class": 0.421875,
+              "class_nll": 1.5944414945261087,
+              "em": 0.421875,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 0.000429783718118415,
+              "nll": 0.7974356391221136
+            },
+            "class2": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 6.891148868948221,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 0.013926134152143277,
+              "nll": 3.4525375015501822
+            },
+            "class3": {
+              "candidate": 0.1953125,
+              "class": 0.046875,
+              "class_nll": 2.725524571724236,
+              "em": 0.046875,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 0.0005031287109886762,
+              "nll": 1.3630138502176123
+            },
+            "new": {
+              "candidate": 0.09765625,
+              "class": 0.0234375,
+              "class_nll": 4.808336720336229,
+              "em": 0.0234375,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.0072146314315659765,
+              "nll": 2.4077756758838973
+            },
+            "old": {
+              "candidate": 0.3984375,
+              "class": 0.2109375,
+              "class_nll": 6.048475898147444,
+              "em": 0.2109375,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 0.00046538241952021053,
+              "nll": 3.0244706402834822
+            }
+          }
+        },
+        {
+          "step": 64,
+          "train": {
+            "all": {
+              "candidate": 0.4638671875,
+              "class": 0.4638671875,
+              "class_nll": 12.669608596284355,
+              "em": 0.4638671875,
+              "examples": 1024,
+              "marker": 1.0,
+              "marker_nll": 2.8539156119444797e-06,
+              "nll": 6.3348057250999945
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 27.596648029983044,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 2.6617150354901753e-06,
+              "nll": 13.798325345849051
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 22.723537892103195,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 2.020501391086782e-06,
+              "nll": 11.361769956302288
+            },
+            "class2": {
+              "candidate": 0.94921875,
+              "class": 0.94921875,
+              "class_nll": 0.13193272695525593,
+              "em": 0.94921875,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 3.505489430288833e-06,
+              "nll": 0.06596811622234311
+            },
+            "class3": {
+              "candidate": 0.90625,
+              "class": 0.90625,
+              "class_nll": 0.22631573609592692,
+              "em": 0.90625,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 3.227956590912129e-06,
+              "nll": 0.11315948202625892
+            },
+            "new": {
+              "candidate": 0.927734375,
+              "class": 0.927734375,
+              "class_nll": 0.17912423152559143,
+              "em": 0.927734375,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 3.366723010600481e-06,
+              "nll": 0.08956379912430101
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 25.16009296104312,
+              "em": 0.0,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 2.3411082132884786e-06,
+              "nll": 12.580047651075674
+            }
+          },
+          "validation": {
+            "all": {
+              "candidate": 0.421875,
+              "class": 0.421875,
+              "class_nll": 12.903301715419673,
+              "em": 0.421875,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 3.0498394497646686e-06,
+              "nll": 6.4516523826295655
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 27.694837421178818,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 2.8433216909817816e-06,
+              "nll": 13.84742013225026
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 22.875616371631622,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 1.952049374143172e-06,
+              "nll": 11.437809161840498
+            },
+            "class2": {
+              "candidate": 0.8359375,
+              "class": 0.8359375,
+              "class_nll": 0.5998854309964372,
+              "em": 0.8359375,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 4.0018744176251175e-06,
+              "nll": 0.2999447164354274
+            },
+            "class3": {
+              "candidate": 0.8515625,
+              "class": 0.8515625,
+              "class_nll": 0.4428676378718137,
+              "em": 0.8515625,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 3.402112316308603e-06,
+              "nll": 0.221435519992065
+            },
+            "new": {
+              "candidate": 0.84375,
+              "class": 0.84375,
+              "class_nll": 0.5213765344341255,
+              "em": 0.84375,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 3.7019933669668603e-06,
+              "nll": 0.2606901182137462
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 25.28522689640522,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 2.397685532562477e-06,
+              "nll": 12.642614647045368
+            }
+          }
+        },
+        {
+          "step": 256,
+          "train": {
+            "all": {
+              "candidate": 0.4150390625,
+              "class": 0.4150390625,
+              "class_nll": 11.275759821107647,
+              "em": 0.4150390625,
+              "examples": 1024,
+              "marker": 1.0,
+              "marker_nll": 1.10804007844717e-06,
+              "nll": 5.637880464573921
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 24.449273370206356,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 9.904608896382783e-07,
+              "nll": 12.22463718033363
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 19.415300983935595,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 7.627527543463408e-07,
+              "nll": 9.707650873344194
+            },
+            "class2": {
+              "candidate": 0.66015625,
+              "class": 0.66015625,
+              "class_nll": 1.2378629874801845,
+              "em": 0.66015625,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 1.5245732680468915e-06,
+              "nll": 0.6189322560267263
+            },
+            "class3": {
+              "candidate": 1.0,
+              "class": 1.0,
+              "class_nll": 0.0006019428084620415,
+              "em": 1.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 1.1543734017571694e-06,
+              "nll": 0.00030154859093189934
+            },
+            "new": {
+              "candidate": 0.830078125,
+              "class": 0.830078125,
+              "class_nll": 0.6192324651443233,
+              "em": 0.830078125,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 1.3394733349020305e-06,
+              "nll": 0.3096169023088291
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 21.932287177070975,
+              "em": 0.0,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 8.766068219923095e-07,
+              "nll": 10.966144026838931
+            }
+          },
+          "validation": {
+            "all": {
+              "candidate": 0.392578125,
+              "class": 0.392578125,
+              "class_nll": 11.960910144609478,
+              "em": 0.392578125,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 1.1953509342771396e-06,
+              "nll": 5.98045566998023
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 24.757965549826622,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 1.0430804688876805e-06,
+              "nll": 12.378983296453562
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 20.058542482554913,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 7.525082377224379e-07,
+              "nll": 10.029271617531583
+            },
+            "class2": {
+              "candidate": 0.578125,
+              "class": 0.578125,
+              "class_nll": 2.9982776578126504,
+              "em": 0.578125,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 1.7546077637486945e-06,
+              "nll": 1.4991397062102072
+            },
+            "class3": {
+              "candidate": 0.9921875,
+              "class": 0.9921875,
+              "class_nll": 0.028854888243728283,
+              "em": 0.9921875,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 1.2312072667497453e-06,
+              "nll": 0.014428059725497516
+            },
+            "new": {
+              "candidate": 0.78515625,
+              "class": 0.78515625,
+              "class_nll": 1.5135662730281894,
+              "em": 0.78515625,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 1.49290751524922e-06,
+              "nll": 0.7567838829678524
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 22.408254016190767,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 8.977943533050592e-07,
+              "nll": 11.20412745699259
+            }
+          }
+        },
+        {
+          "step": 1024,
+          "train": {
+            "all": {
+              "candidate": 0.4970703125,
+              "class": 0.4970703125,
+              "class_nll": 8.497819508567376,
+              "em": 0.4970703125,
+              "examples": 1024,
+              "marker": 1.0,
+              "marker_nll": 5.296894647899286e-08,
+              "nll": 4.248909780768168
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 18.943199533969164,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 1.2572852703396364e-08,
+              "nll": 9.47159977327101
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 15.016168057918549,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 4.190951197191595e-09,
+              "nll": 7.50808403105475
+            },
+            "class2": {
+              "candidate": 0.99609375,
+              "class": 0.99609375,
+              "class_nll": 0.0076354698393288345,
+              "em": 0.99609375,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 1.881270632608789e-07,
+              "nll": 0.0038178289831960477
+            },
+            "class3": {
+              "candidate": 0.9921875,
+              "class": 0.9921875,
+              "class_nll": 0.024274972542464468,
+              "em": 0.9921875,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 6.9849187545045766e-09,
+              "nll": 0.012137489763691611
+            },
+            "new": {
+              "candidate": 0.994140625,
+              "class": 0.994140625,
+              "class_nll": 0.01595522119089665,
+              "em": 0.994140625,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 9.755599100769174e-08,
+              "nll": 0.00797765937344383
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 16.979683795943856,
+              "em": 0.0,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 8.38190195029398e-09,
+              "nll": 8.48984190216288
+            }
+          },
+          "validation": {
+            "all": {
+              "candidate": 0.423828125,
+              "class": 0.423828125,
+              "class_nll": 9.098739312750329,
+              "em": 0.423828125,
+              "examples": 512,
+              "marker": 1.0,
+              "marker_nll": 1.2386552870891077e-07,
+              "nll": 4.549369718307932
+            },
+            "class0": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 18.783025197684765,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 1.7695125864580774e-08,
+              "nll": 9.391512607689947
+            },
+            "class1": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 14.955603711307049,
+              "em": 0.0,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 8.381901894782828e-09,
+              "nll": 7.477801859844476
+            },
+            "class2": {
+              "candidate": 0.8515625,
+              "class": 0.8515625,
+              "class_nll": 1.7348526819682775,
+              "em": 0.8515625,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 4.5727789471650127e-07,
+              "nll": 0.8674265696230863
+            },
+            "class3": {
+              "candidate": 0.84375,
+              "class": 0.84375,
+              "class_nll": 0.9214756600412244,
+              "em": 0.84375,
+              "examples": 128,
+              "marker": 1.0,
+              "marker_nll": 1.2107192359778196e-08,
+              "nll": 0.4607378360742085
+            },
+            "new": {
+              "candidate": 0.84765625,
+              "class": 0.84765625,
+              "class_nll": 1.328164171004751,
+              "em": 0.84765625,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 2.3469254353813973e-07,
+              "nll": 0.6640822028486474
+            },
+            "old": {
+              "candidate": 0.0,
+              "class": 0.0,
+              "class_nll": 16.869314454495907,
+              "em": 0.0,
+              "examples": 256,
+              "marker": 1.0,
+              "marker_nll": 1.3038513879681801e-08,
+              "nll": 8.434657233767211
+            }
+          }
+        }
+      ],
+      "exposure_counters_describe_logical_schedule": true,
+      "extra_recovery_checkpoints": [
+        {
+          "path": "recovery-r1/43-new_only_shared-128.pt",
+          "sha256": "0d3dfbd2eee8679ac7138a74cbe7f98c99fe479ca5e081cd73b864f8a7993606",
+          "step": 128
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-192.pt",
+          "sha256": "534a0c88c2529a73a340c6a2ae8bf5c91f14e5c29fdaaa3ef71a9695f84224de",
+          "step": 192
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-320.pt",
+          "sha256": "638d67303a7fcf948cfb75730e1eb1d45c065dd661b3c504b7de28fcef1bd46a",
+          "step": 320
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-384.pt",
+          "sha256": "842e3886a6a4bb802835cf4c3e953d8f8ac5578211be46581320aa5d285638ad",
+          "step": 384
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-448.pt",
+          "sha256": "b7b4d6369625c1172382fa521d5b5ce0b07e00eb9e63b208ff9e8e1485cd203e",
+          "step": 448
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-512.pt",
+          "sha256": "d57be70347fc5dc695ff3c9e6d529c8d466fc58e33ed5b62ace9a316565f8334",
+          "step": 512
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-576.pt",
+          "sha256": "cbc7c0c2a67cb8d41fbe565d0d8978060fa97eff12012b96291a076f7a849bbe",
+          "step": 576
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-640.pt",
+          "sha256": "8249535c1547cdf8c0d4d0fadd83b9e6b4cca2394c58eb0c68fef0a18e9282be",
+          "step": 640
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-704.pt",
+          "sha256": "8f4a598bc9e2a2f129c30b19a1e90a69905b6f70aae398f3e48f90843c526920",
+          "step": 704
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-768.pt",
+          "sha256": "cf291e788fa67ac963eb2b16161d028b00479994deb2c94cb6f881210907e530",
+          "step": 768
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-832.pt",
+          "sha256": "afeab4c876cb62913d7e23b94f93dd7e129ea2f52d1f3775b2cae080bd9be40e",
+          "step": 832
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-896.pt",
+          "sha256": "aeaf5baa486606be2d28a1544d4210320cacbcec9318f6b56246c9070509cd96",
+          "step": 896
+        },
+        {
+          "path": "recovery-r1/43-new_only_shared-960.pt",
+          "sha256": "5abc948e44a2ce3cb70be822e1a02cb51678204b3f9c53ca3f7deb86832fb1c2",
+          "step": 960
+        }
+      ],
+      "initial": {
+        "adapter_sha256": "f467edd3624285a3fcc712bcbf6705d5cc05cbd653ac13d8421bce9de85f329d",
+        "policy_sha256": "70a91a59c47255e9f358d010465785e05e06fa1e2fa2b5710638defeb5ae3d3a"
+      },
+      "logical_student_backward_passes": 1024,
+      "logical_student_forward_passes": 1024,
+      "loss_max": 10.333684921264648,
+      "loss_min": 2.264176873723045e-05,
+      "loss_sum": 154.75394749223233,
+      "model_tensor_bytes": 27396800,
+      "recovered_from_step": 0,
+      "recovery_actual_updates": 1024,
+      "schedule_sha256": "81a2e09bb9a17a7213e55710f97adcfe19f0800dced4a52487b0981faa4be010",
+      "seed": 43,
+      "status": "recovery_running",
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 595412,
+      "student_padded_positions": 966656,
+      "teacher_origin_selection_draws": 0,
+      "trainable_parameter_count": 294912,
+      "unique_training_examples": 512,
+      "updates": 1024,
+      "work": {}
+    }
+  ]
+}

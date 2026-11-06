@@ -1,0 +1,10 @@
+{
+  "passed": 227,
+  "deselected": 1,
+  "deselected_test": "test_all_exported_modules_import_without_optional_llama_dependency",
+  "reason": "This installed CUDA build does not satisfy the CPU-wheel-only optional-dependency test premise.",
+  "seconds": 14.15,
+  "CUDA_initialization_prohibited": true,
+  "network_prohibited": true,
+  "separate_stress_controller_check_ticks": 8
+}

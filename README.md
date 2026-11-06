@@ -1,5 +1,7 @@
 # NL/Sleep Reproduction Lab
 
+V7 completed 30 fixed one-context training runs and 12 wake-stress branches. Protected teachers and prompt diversity help retention, but no arm passes both task gates across all three seeds. See the [v7 report](reports/agnews-single-receiver-v7.md) for mixed/negative results, extra supervision, cost limits and the explicitly recovered main run.
+
 An unofficial, partial implementation and diagnostic study of Nested Learning and
 Language Models Need Sleep. This repository is not an official release and does
 not reproduce all architectures or reported benchmarks.

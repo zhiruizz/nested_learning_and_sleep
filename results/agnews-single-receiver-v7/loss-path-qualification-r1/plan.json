@@ -1,0 +1,29 @@
+{
+  "KL": "mean positions KL(teacher||student), temperature1, no LTI/RL",
+  "actual_updates_expected": 16,
+  "fixed_T": 118,
+  "losses": [
+    "current",
+    "split",
+    "gold",
+    "new_only"
+  ],
+  "max_grad_relative": 0.01,
+  "max_logit_abs": 0.05,
+  "max_loss_abs": 0.001,
+  "new_checkpoint_sha256": "a1b2553e74de1bf408ebee7a76ee9f42dd3a2d27e1ea7bda8205270b7ba88a67",
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "require_exact_model_adam_rng": true,
+  "scopes": [
+    "receiver",
+    "shared"
+  ],
+  "source_sha256": {
+    "agnews_tail_cache_v7.py": "a98e44b6f3631f310e32dcef5ca08e5f3cdce91ea69db1d9e1478e4d1aaa4228",
+    "matmul_work_v7.py": "a42f230f32b6baa04683587283f9c2364dc2d60afeea7de2a420447fb0911e75",
+    "qualify_agnews_v7_loss_paths.py": "47b7b9571ec72b2c2c042f4a801f9bcf85e2345375fa43435f72e084e5fc5e0f"
+  },
+  "teacher_logits_detached": true,
+  "updates_per_case": 2,
+  "warm_checkpoint_sha256": "396ff2f749525986a852ec3620d5dcade1f4dcc2e0fbf368cb70aa14c04c7222"
+}

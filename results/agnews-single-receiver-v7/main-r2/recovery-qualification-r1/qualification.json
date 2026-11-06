@@ -1,0 +1,50 @@
+{
+  "branches": [
+    {
+      "model": "01432512a7cd6e9196a47eb70eebb0c469075c545e62e1a6c6e382f24f760aae",
+      "optimizer": "ccc56a981fae32047186dfd8977277cf072ecb746af4b4a38b4b1a1a67d890e8",
+      "policy": "70a91a59c47255e9f358d010465785e05e06fa1e2fa2b5710638defeb5ae3d3a",
+      "rng": "b4006f97d21169cdbc6b2308b8dd123c690ee8a22a15afd7632b6d143f020bdb"
+    },
+    {
+      "model": "01432512a7cd6e9196a47eb70eebb0c469075c545e62e1a6c6e382f24f760aae",
+      "optimizer": "ccc56a981fae32047186dfd8977277cf072ecb746af4b4a38b4b1a1a67d890e8",
+      "policy": "70a91a59c47255e9f358d010465785e05e06fa1e2fa2b5710638defeb5ae3d3a",
+      "rng": "b4006f97d21169cdbc6b2308b8dd123c690ee8a22a15afd7632b6d143f020bdb"
+    }
+  ],
+  "independent_restores_exact": true,
+  "optimizer_attempts": 4,
+  "passed": true,
+  "progress_sha256": "6dcc0ac711b6d0263e9a62d58e376e104e4b1c33e96e4bd69e2578269c020b22",
+  "seconds": 8.0,
+  "source_sha256": "188e26a1cc58b9a951cd7c2a4b4ec9f32bf8551ae11117eb7c65fc4aacbc2faf",
+  "work": {
+    "independent_restore_proof": {
+      "backward": {
+        "calls": 36,
+        "flops": 2979717120000,
+        "ops": {
+          "mm": {
+            "calls": 36,
+            "flops": 2979717120000
+          }
+        }
+      },
+      "forward": {
+        "calls": 52,
+        "flops": 2980505911296,
+        "ops": {
+          "mm": {
+            "calls": 44,
+            "flops": 2980459511808
+          },
+          "mv": {
+            "calls": 8,
+            "flops": 46399488
+          }
+        }
+      }
+    }
+  }
+}

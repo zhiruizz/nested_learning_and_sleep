@@ -1,0 +1,49 @@
+# V7 development mechanism study: single-context offline consolidation
+
+This is an exploratory diagnostic on the already used AG News v3 development train/validation pack, not a paper reproduction or independent confirmation. The 1,024 reserved confirmation articles remain unread and unscored. Ubuntu formal training remains blocked and is not involved. All X870E assets/checkpoints/caches stay under the existing D:/my_paper project, independently of Ubuntu's /mnt/dsm_workspace requirement.
+
+Question: can a single newly added slow rank-16 receiver represent old and new functions when its targets are useful and sufficiently covered, or do frozen shared bases constrain it? After this capacity experiment, probe destructive new-task gradients in a separate fixed continuation. Prior v3-v6 results and failures remain unchanged.
+
+## Fixed inputs and function
+
+Seed 17/29/43. Old teacher: the exact qualified v4 warm checkpoint. New/current teacher: the exact v6 aux_new_CE terminal step1024, all three seeds without selection. Old teacher must retain its existing train>=.80, val>=.75, each old class>=.70 gate. The fixed current teacher may fail new-task gates in a seed; record that ceiling and fidelity, do not replace it or relax gates.
+
+Student starts from the same new/current context per seed, resets fast experts and activates exactly one new slow expert (slot1), with constant mixture .5 on slot1. Prospective base update is identity. This reproduces the initial student of the local Sleep transaction but is an offline distillation experiment, not a periodic live-stream Sleep run. All students retain one context at inference and no task gate; old receiver0, readout and backbone remain frozen. Thus “single receiver” refers to one newly trained slot in a single-context model that also retains old slot0, not a model containing only one slow expert.
+
+Because mutable layers occur only after the last attention layer, cache original last-MLP y and post-attention residual at each prefix's two scored positions. Reconstruct y through both memory layers, add residual, final norm and output head. Require tiny-model forward/gradient parity and real3B qualification before training. Features use prefix and known format marker only; the true class answer token is not part of model input for KD. Cache preparation has real model/matrix costs and private storage costs. It is an implementation optimization specific to this frozen last-MLP setup, not a general cache for full-model tuning or arbitrary on-policy generation.
+
+## Fixed 5x2 grid
+
+Target/data condition × scope =10 arms, all three seeds:
+
+- current: full teacher-distribution KL from the current teacher on old and new prefixes.
+- split: KL from the immutable qualified warm teacher on old-origin prefixes, current teacher on new-origin prefixes.
+- split_narrow: same split targets but old class0/1 training reservoirs restricted to 16 fixed rows/class; new class2/3 retain all256/class.
+- gold: joint old/new gold answer CE.
+- new_only: new-only gold answer CE, a same-budget supervised no-Sleep control.
+
+Scopes: receiver only (new slot A/B,98,304 trainable parameters); shared (same receiver plus both base A/B pairs,294,912 total). Same total allocated parameter capacity and inference architecture across all arms; trainable capacity differs deliberately by3x. This is a parameter-scope intervention, not equal trainable capacity. Frozen old receiver is not a protected old function when its base/input changes. No extra readout training. A finite-budget failure cannot establish a hard representational impossibility.
+
+Each arm: exactly1,024 AdamW updates, LR.003, weight_decay0, clip1; no validation stopping/selection. B8: full/split/narrow/gold use 2/class each batch; new_only uses4/class2 and4/class3. Same full schedule per seed for all full conditions; narrow old draws remap to its fixed stratified reservoir, preserving class positions. Same new_only schedule for both scopes. Evaluate train1024 and val512 at0/64/256/1024, checkpoint64/256/1024. Predeclare old/new EM, marker/class NLL, per-class EM, joint gates (.80 train/.75 val/.70 each class). Preserve all outcomes and seed variability.
+
+Class metadata stratifies all reservoirs; split additionally uses origin to choose its teacher. These are extra supervision assumptions even without gold answer loss. Gold/new_only use actual answer labels. Same batch/update count does not imply equal label information or total FLOPs. KL is KL(teacher||student), temperature1, mean over the two positions and batch, with detached full FP32 teacher logits; it has no LTI, RL, CE addition or other term. Known-marker two-position KL is a fixed-context distillation ablation, not original sampled/on-policy GKD+LTI. Dreaming and reward models are absent. Narrow is a diversity/repetition intervention: same old exposure count, fewer unique prefixes; exact reservoir hashes and distinct/repeated draws are reported rather than calling it reduced old-task mass.
+
+## Correctness and costs
+
+Separate qualification, seed17: split_receiver/shared, save at2, restore twice and continue3/4; compare model/Adam/RNG exactly, no performance selection.12 actual optimizer calls across proof branches. Main binds source/config/schedule/qualified checkpoint/qualification hashes. Main per-run cooperative900s and whole-run28,800s (30x900 plus1,800 setup); no automatic retry/seed substitution. Engineering failures require separately versioned sources/outputs with explicit work accounting. Separate real3B training qualification covers all four distinct loss paths and both scopes, comparing one full and one cached Adam update each:16 additional actual updates, exact model/Adam/RNG equality required. Both scopes already passed zero-update output/loss/gradient parity with all differences0 after preserving GEMM shape.
+
+All new training, teacher/cache capture and full-model reference calls use fixed sequence length118, chosen from the development pack's maximum prefix117 plus marker. Two initial zero-update cache qualifications failed when shortening GEMM M; the second measured max-logit difference.0625 despite identical CE/argmax. They remain preserved. The corrected cache scatters the two positions into zero-filled original-shape hidden tensors, runs the full final-memory/norm/head matrices and gathers the two positions; it does not loosen the.05/.001/.01 qualification thresholds. Matrix shapes and student batch sizes now match across data conditions. Historical variable-padding v3-v6 scores are not claimed byte-identical to this new numerical configuration.
+
+For each endpoint, fixed118 full-model validation must agree with cached-tail EM by class/group exactly and canonical NLL within.001. No tolerance relaxation after failure. Monitor actual source teacher metrics and KL fidelity. All metrics remain on development data.
+
+## Predeclared diagnostic phase
+
+At0/64/256/1024, fixed balanced training prefixes supply old=warm-teacher KL and new=current-teacher KL gradient probes. Use the same B8 forward shape and separate old/new position masks. Report local cosine/dot/norm for new receiver, base0 and base1 with no optimizer updates, restoring requires_grad flags and avoiding .grad/RNG changes. These are local gradients, not universal causal proof.
+
+At the1024 endpoint, score four output interventions: original route, mask only old-slot0 output, mask only new-slot1 output, mask both. Forward hooks replace the selected expert outputs with zero but preserve route logits/winners/mix and all weights. This tests functional necessity under the existing route. It does not prove exclusive memory localization; bases can carry information, particularly in shared scope. Hooks must clean up on exceptions and policy/model hashes must remain identical after probes.
+
+After offline training, use all seeds of the two preselected split/full-diversity scopes (receiver and shared), without choosing by performance. Cross normal CMS base writes with skipped base writes,128 new-only B8 ticks, fresh clocks4/16, base/expert LR.02/.04. Both branches compute identical base gradients/proposals and online fast-expert updates; the skip branch consumes due clocks without applying base proposals. Both slow experts stay frozen. Eval0/4/16/64/128, checkpoint16/64/128; total12 branches and1,536 wake ticks. First three branch model states must agree exactly before the first due base write. Full-model fixed118 endpoint parity remains required. Report a further fast-output mask at each wake endpoint to distinguish fast-context interference. This is continuing new-class optimization after consolidation, not a third novel task. If a starting state fails old/new gates, describe its stress response, not retention of an already competent model. This phase gets its own source/plan lock before any updates.
+
+Record executed matrix multiplication FLOPs via TorchDispatch (MAC=2): mm/addmm/bmm/mv/dot in both forward/backward, by stage (cache prep, teacher tails, student training, diagnostics, scoring, full-model parity). This is an exact count for those operations, a lower bound on total arithmetic; softmax/Silu/normalization/elementwise/optimizer are not counted. Do not present a token proxy or wall time as FLOPs. Also record tail/full forward calls, backwards/Adam updates, seen examples/targets/origin labels, teacher and student parameter/storage bytes, shared cache and standalone prerequisites, peak VRAM, wall times and all failed work.
+
+Published files contain code/configs/aggregate metrics/costs and checkpoint hashes only, never raw articles, tokens, logits/features, teacher/student weights or fitted private assets. Post-consolidation wake interference probes are a separate phase requiring their own source lock before execution; no claims from them until completed.

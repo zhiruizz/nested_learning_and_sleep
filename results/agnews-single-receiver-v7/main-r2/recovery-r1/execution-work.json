@@ -1,0 +1,269 @@
+{
+  "complete": true,
+  "optimizer_attempts": 1792,
+  "schema": "agnews-v7-recovery-execution-work",
+  "seconds": 124.375,
+  "source_sha256": "188e26a1cc58b9a951cd7c2a4b4ec9f32bf8551ae11117eb7c65fc4aacbc2faf",
+  "work": {
+    "new_only_receiver:evaluation": {
+      "forward": {
+        "calls": 2496,
+        "flops": 143064283742208,
+        "ops": {
+          "mm": {
+            "calls": 2112,
+            "flops": 143062056566784
+          },
+          "mv": {
+            "calls": 384,
+            "flops": 2227175424
+          }
+        }
+      }
+    },
+    "new_only_receiver:full_parity": {
+      "forward": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "ops": {
+          "bmm": {
+            "calls": 3648,
+            "flops": 2452863500288
+          },
+          "mm": {
+            "calls": 13376,
+            "flops": 388261078892544
+          },
+          "mv": {
+            "calls": 128,
+            "flops": 742391808
+          }
+        }
+      }
+    },
+    "new_only_receiver:training": {
+      "backward": {
+        "calls": 6912,
+        "flops": 572105687040000,
+        "ops": {
+          "mm": {
+            "calls": 6912,
+            "flops": 572105687040000
+          }
+        }
+      },
+      "forward": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "ops": {
+          "mm": {
+            "calls": 8448,
+            "flops": 572248226267136
+          },
+          "mv": {
+            "calls": 1536,
+            "flops": 8908701696
+          }
+        }
+      }
+    },
+    "new_only_shared:evaluation": {
+      "forward": {
+        "calls": 8640,
+        "flops": 429192851226624,
+        "ops": {
+          "mm": {
+            "calls": 7488,
+            "flops": 429186169700352
+          },
+          "mv": {
+            "calls": 1152,
+            "flops": 6681526272
+          }
+        }
+      }
+    },
+    "new_only_shared:full_parity": {
+      "forward": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "ops": {
+          "bmm": {
+            "calls": 3648,
+            "flops": 2452863500288
+          },
+          "mm": {
+            "calls": 13376,
+            "flops": 388261078892544
+          },
+          "mv": {
+            "calls": 128,
+            "flops": 742391808
+          }
+        }
+      }
+    },
+    "new_only_shared:initial_score": {
+      "forward": {
+        "calls": 2496,
+        "flops": 143064283742208,
+        "ops": {
+          "mm": {
+            "calls": 2112,
+            "flops": 143062056566784
+          },
+          "mv": {
+            "calls": 384,
+            "flops": 2227175424
+          }
+        }
+      }
+    },
+    "new_only_shared:training": {
+      "backward": {
+        "calls": 20472,
+        "flops": 763661168541696,
+        "ops": {
+          "mm": {
+            "calls": 20472,
+            "flops": 763661168541696
+          }
+        }
+      },
+      "forward": {
+        "calls": 15352,
+        "flops": 763009513291776,
+        "ops": {
+          "mm": {
+            "calls": 13304,
+            "flops": 762997635022848
+          },
+          "mv": {
+            "calls": 2048,
+            "flops": 11878268928
+          }
+        }
+      }
+    },
+    "teacher_quality_recomputed:17:current": {
+      "forward": {
+        "calls": 17152,
+        "flops": 390726563053568,
+        "ops": {
+          "bmm": {
+            "calls": 3648,
+            "flops": 2452863500288
+          },
+          "mm": {
+            "calls": 13376,
+            "flops": 388272957161472
+          },
+          "mv": {
+            "calls": 128,
+            "flops": 742391808
+          }
+        }
+      }
+    },
+    "teacher_quality_recomputed:17:warm": {
+      "forward": {
+        "calls": 8480,
+        "flops": 195357156794368,
+        "ops": {
+          "bmm": {
+            "calls": 1824,
+            "flops": 1226431750144
+          },
+          "mm": {
+            "calls": 6624,
+            "flops": 194130539446272
+          },
+          "mv": {
+            "calls": 32,
+            "flops": 185597952
+          }
+        }
+      }
+    },
+    "teacher_quality_recomputed:29:current": {
+      "forward": {
+        "calls": 17152,
+        "flops": 390726563053568,
+        "ops": {
+          "bmm": {
+            "calls": 3648,
+            "flops": 2452863500288
+          },
+          "mm": {
+            "calls": 13376,
+            "flops": 388272957161472
+          },
+          "mv": {
+            "calls": 128,
+            "flops": 742391808
+          }
+        }
+      }
+    },
+    "teacher_quality_recomputed:29:warm": {
+      "forward": {
+        "calls": 8480,
+        "flops": 195357156794368,
+        "ops": {
+          "bmm": {
+            "calls": 1824,
+            "flops": 1226431750144
+          },
+          "mm": {
+            "calls": 6624,
+            "flops": 194130539446272
+          },
+          "mv": {
+            "calls": 32,
+            "flops": 185597952
+          }
+        }
+      }
+    },
+    "teacher_quality_recomputed:43:current": {
+      "forward": {
+        "calls": 17152,
+        "flops": 390726563053568,
+        "ops": {
+          "bmm": {
+            "calls": 3648,
+            "flops": 2452863500288
+          },
+          "mm": {
+            "calls": 13376,
+            "flops": 388272957161472
+          },
+          "mv": {
+            "calls": 128,
+            "flops": 742391808
+          }
+        }
+      }
+    },
+    "teacher_quality_recomputed:43:warm": {
+      "forward": {
+        "calls": 8480,
+        "flops": 195357156794368,
+        "ops": {
+          "bmm": {
+            "calls": 1824,
+            "flops": 1226431750144
+          },
+          "mm": {
+            "calls": 6624,
+            "flops": 194130539446272
+          },
+          "mv": {
+            "calls": 32,
+            "flops": 185597952
+          }
+        }
+      }
+    }
+  }
+}

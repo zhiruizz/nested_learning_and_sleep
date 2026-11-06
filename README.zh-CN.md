@@ -1,5 +1,7 @@
 # NL/Sleep Reproduction Lab
 
+V7 已完成 30 组单上下文训练与 12 组后续压力测试：合格旧教师和样本多样性有助保留，但没有方案在三个种子上全部通过旧新任务门槛。[v7 报告](reports/agnews-single-receiver-v7.md)保留负结果、额外监督/成本限制及主运行中断恢复记录；预留确认集未读取。
+
 这是 Nested Learning 与 Language Models Need Sleep 的非官方、局部实现与诊断研究。
 不是官方发布，没有复现全部架构或论文基准指标，没有机构背书。
 

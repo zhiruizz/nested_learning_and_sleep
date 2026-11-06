@@ -1,0 +1,21 @@
+{
+  "schema": "agnews-v7-private-storage-observation",
+  "buckets": {
+    "v7_feature_teacher_cache": {
+      "files": 3,
+      "bytes": 4844838405,
+      "distributed": false
+    },
+    "v7_all_checkpoints_excluding_cache": {
+      "files": 155,
+      "bytes": 4484599563,
+      "distributed": false
+    },
+    "backbone_safetensors": {
+      "files": 2,
+      "bytes": 6425529048,
+      "distributed": false
+    }
+  },
+  "note": "Retained file sizes, not compressed minimal deployment sizes; prior v4/v6 teacher preparation and training costs are separate. No model/data/logit/cache payload in release."
+}

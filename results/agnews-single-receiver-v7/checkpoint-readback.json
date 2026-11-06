@@ -1,0 +1,3078 @@
+{
+  "schema": "agnews-v7-checkpoint-readback",
+  "passed": true,
+  "checkpoint_count": 155,
+  "model_forwards": 0,
+  "optimizer_updates": 0,
+  "seconds": 6.452999999979511,
+  "rows": [
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-current_receiver-1024.pt",
+      "sha256": "86535b0e4ef1a78c0015a289888a05886a01fd8ad992bb77b7add2ef7209ef51",
+      "bytes": 28333559,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-current_receiver-256.pt",
+      "sha256": "f5ca0f806adb95f67657826afa630b835b6abe09ba2b4a9a72c12b2464fe85c0",
+      "bytes": 28333155,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-current_receiver-64.pt",
+      "sha256": "2351b4ec6db02f782783485bb3b444ab23aa05e8a127f8ca28e9d3fb6bf8905f",
+      "bytes": 28332751,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-current_shared-1024.pt",
+      "sha256": "cda122f22bbbcd6f5995218cf7b8911619650ac06e6638b849a6f18fa036b454",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-current_shared-256.pt",
+      "sha256": "e15caaaf9d41bbd3146f08ec8791d06131ccab7dd98696639eb2a77c61fd816c",
+      "bytes": 29908619,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-current_shared-64.pt",
+      "sha256": "ab05b5a5828798b6beabdf56a2004e477eab08d1f09c5096a1e48c3a6ed44b33",
+      "bytes": 29908203,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-gold_receiver-1024.pt",
+      "sha256": "b4a0443747353992f5ce8f95852528579b3b2f8103566fbaf67390fc0ff9b023",
+      "bytes": 28332283,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-gold_receiver-256.pt",
+      "sha256": "68fc76d3f880fa024da2e0127f93aaf66991a1d0d2f12b289e6c20e735a461f6",
+      "bytes": 28331879,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-gold_receiver-64.pt",
+      "sha256": "1226e20f97f7e0582aba7070e971802d19cb71f890827201b9e79bd60d2ee433",
+      "bytes": 28331475,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-gold_shared-1024.pt",
+      "sha256": "01d1953646127eefd8138564b2708a7784d3a06234d2f6c6ec05dc433eb8b872",
+      "bytes": 29907723,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-gold_shared-256.pt",
+      "sha256": "dc7a03c9d85bbd864255d3e560b571e8705276c1ae86bc56d05665ccb5fc0e48",
+      "bytes": 29907307,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-gold_shared-64.pt",
+      "sha256": "1e0f2966cc9fa5e10d4221a2c61c62b7f34043ce14d71720909af1329a89d4e3",
+      "bytes": 29906891,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-new_only_receiver-1024.pt",
+      "sha256": "10d6dcd85627de6b83d8f321dd90ddef04ea5b0d2680a061dab98c617d601be3",
+      "bytes": 28334027,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-new_only_receiver-256.pt",
+      "sha256": "bb6cd8ec0c9d9b0d4130e41db75571b419931e95d69a55000eebd22ea927042a",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-new_only_receiver-64.pt",
+      "sha256": "70429964b141e34f1572858c400a8cbb2996f802631493d42e2ed2de55ca8541",
+      "bytes": 28333155,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-new_only_shared-1024.pt",
+      "sha256": "596c39819ca35e155d017a5502c65925bf9fb821b91f43b4865cbfdd5a8d6dc3",
+      "bytes": 29909515,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-new_only_shared-256.pt",
+      "sha256": "af67fcef2c15475402a2280546dde63b432f6213ae544f42550f596efd67141a",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-new_only_shared-64.pt",
+      "sha256": "617de6c603af2d9d8fd6542a9d4e8b00cafdaec860c95d7e6aa75d886972c019",
+      "bytes": 29908619,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_narrow_receiver-1024.pt",
+      "sha256": "c84986b4b655e9c5b1bbfca2602c6631bd95a0f7cd6c00e0b01ec84e071b7b5c",
+      "bytes": 28335643,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_narrow_receiver-256.pt",
+      "sha256": "974b32ea7c2353b93c92480d71de972af43e73cdcb995466c5efb9405500d709",
+      "bytes": 28335239,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_narrow_receiver-64.pt",
+      "sha256": "c76476c65c6c3a8561824098b632cf868c7a9658025f7e52ba2947e5b739b3f8",
+      "bytes": 28334835,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_narrow_shared-1024.pt",
+      "sha256": "f6e9ccb7c9495fe9887a5f5b8039be3c6f31a056d923363a31de9a246ff3a3b5",
+      "bytes": 29911179,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_narrow_shared-256.pt",
+      "sha256": "3eb6e4de0a30df33244686d0871d9d22ce9967e3f6d490d1ab84fdf88d144508",
+      "bytes": 29910763,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_narrow_shared-64.pt",
+      "sha256": "993a36a36238b38967a1de3684f91f7b17ac356fb41819a1a968b8f9f29bb485",
+      "bytes": 29910347,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_receiver-1024.pt",
+      "sha256": "41ebe3bcdbab4d4eb70c2c26ac6b4ed7387cbe203404775ea750010a68bbe398",
+      "bytes": 28332751,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_receiver-256.pt",
+      "sha256": "25d7e4072078a83762f958475f5bc61c936c3240b23f8562226cc41013fe2876",
+      "bytes": 28332283,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_receiver-64.pt",
+      "sha256": "a94584c88bfcb54bc6f00eb69fc2691a0b91079265e5572c676a7209a23129e4",
+      "bytes": 28331879,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_shared-1024.pt",
+      "sha256": "1825cb159d5ba2d165bdbdf38eda97f58665e45442cb4d3944f2e6c4cd1b9bd0",
+      "bytes": 29908139,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_shared-256.pt",
+      "sha256": "5a24229fdbb568caf0bc6c23ba380e6523e315da5433f435302938211a1e9bd1",
+      "bytes": 29907723,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/17-split_shared-64.pt",
+      "sha256": "790aa21fc7c48b6cc5c272b1860764f86ab26526f4c366080d5dc7ebfbc7b33f",
+      "bytes": 29907307,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-current_receiver-1024.pt",
+      "sha256": "4682b7d2a6be3ea58420a881f7b018922802c32ad653f5cb8bf99a9eea4e7fe2",
+      "bytes": 28333559,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-current_receiver-256.pt",
+      "sha256": "439d80d91aacd7750bd1081383a80c420d19cf6b3d66525b75d00d9a16426122",
+      "bytes": 28333155,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-current_receiver-64.pt",
+      "sha256": "404fa66b712df15d0ff63ba1b7a6690bef4537597fa2ac45fda23fccbf27c2bb",
+      "bytes": 28332751,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-current_shared-1024.pt",
+      "sha256": "ff805062585ec9174916065ff0c797aba1d33c5fb472cf94cfaf287e86a3854b",
+      "bytes": 29909035,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-current_shared-256.pt",
+      "sha256": "527431734fda94e6cfca017ba009828e3c4d3fff549b035359ddb87c4139eea0",
+      "bytes": 29908555,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-current_shared-64.pt",
+      "sha256": "2a7ca9ed12c8a3887a04ec87cea1243eb968f207a62997457251928b6ef8b0b0",
+      "bytes": 29908139,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-gold_receiver-1024.pt",
+      "sha256": "85e67de854a55904b962773dfdbea974540a7ef534d362abe42278aa42408e92",
+      "bytes": 28332283,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-gold_receiver-256.pt",
+      "sha256": "d3540d82741b91247ac3482cf5080a897bc1fe4b24c428380713c577c1d0e99e",
+      "bytes": 28331879,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-gold_receiver-64.pt",
+      "sha256": "2c0096fe79775eb5f80e1828c1a2e8ac74fd4a1b5748899b3e680624386dd59c",
+      "bytes": 28331475,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-gold_shared-1024.pt",
+      "sha256": "8bb58e034fc5901cf7ebbeab1d7cf20fa8bb2645afdcc60473a8265e76d75d01",
+      "bytes": 29907723,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-gold_shared-256.pt",
+      "sha256": "a1e0d8f23f12328d4a87e3bda5aa73ab200cb24945755073cfc4bdb2fe7444b8",
+      "bytes": 29907307,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-gold_shared-64.pt",
+      "sha256": "14f3371540d220a7e8c9c59ead5406a2a508b5ab84e70d549adb54be6ab5579a",
+      "bytes": 29906891,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-new_only_receiver-1024.pt",
+      "sha256": "0b3cd9467f8a85ca2536a03b9820524f5ceabe71d901c902550721e5b7ac8ce0",
+      "bytes": 28333963,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-new_only_receiver-256.pt",
+      "sha256": "039d78d243a51a17e4f78515aeeb86b196f4abfe15778e7062ec1178bd8f3fd0",
+      "bytes": 28333559,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-new_only_receiver-64.pt",
+      "sha256": "e6d236aac97717b33cc94d750fefb32a65bae2e76a2050de28dcbf2302125c15",
+      "bytes": 28333155,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-new_only_shared-1024.pt",
+      "sha256": "048a8fdefc3c3440c9e590aec336f074b606ae9c4e1eaa116971530a8f86e5df",
+      "bytes": 29909451,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-new_only_shared-256.pt",
+      "sha256": "a1a25a7cae3a5c9da02710f386b6b1b985ccbe5802029fa13dc87476328fd1c1",
+      "bytes": 29909035,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-new_only_shared-64.pt",
+      "sha256": "f9be2051fadc64e0364b858848f26295d5b377b7515b473f9f6f47c9f91106de",
+      "bytes": 29908555,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_narrow_receiver-1024.pt",
+      "sha256": "aa5c3115495321638d8872f4682f38d5414e03bf6a670f5152c984a5ef4c8b87",
+      "bytes": 28335579,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_narrow_receiver-256.pt",
+      "sha256": "6d8a65cc01006069c852cc4ee7abc17843b33a7b3e71f93629f75909ef81a40f",
+      "bytes": 28335175,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_narrow_receiver-64.pt",
+      "sha256": "5f703481acb782fa62696afd617bf0fb47d048e9590eef36af3c4d635665b3bf",
+      "bytes": 28334771,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_narrow_shared-1024.pt",
+      "sha256": "52913a4600ec34f8b0988884d291e520326e1886bee58f0588507cfba552ed9f",
+      "bytes": 29911115,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_narrow_shared-256.pt",
+      "sha256": "39f610b2fa1b2284f545f39322e80b09fb526f2b949e5374541c88b19b75b75f",
+      "bytes": 29910699,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_narrow_shared-64.pt",
+      "sha256": "3eeb0ba6c6c3dc6fed56f3a489a870107f5e80ac9d9c5c34ace2083fd3c4509a",
+      "bytes": 29910283,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_receiver-1024.pt",
+      "sha256": "a384018729625bf8773e5b7807c857cbc41682c133f8bcd81ce0225598fd9df6",
+      "bytes": 28332751,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_receiver-256.pt",
+      "sha256": "a115b636379ab248938e5a20c4dd8d4868156b40c3c04857887f83769d76b34f",
+      "bytes": 28332283,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_receiver-64.pt",
+      "sha256": "0eb468e12a5332798efa0887963f3f47b4ff6ce45420d69938f4ca4d0d69dc2c",
+      "bytes": 28331879,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_shared-1024.pt",
+      "sha256": "cfe19d09464819d41d80da8827dee7488f80e08588752c7adc59e047a634e64e",
+      "bytes": 29908139,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_shared-256.pt",
+      "sha256": "873af4e6d6ef11f68a07d967acc36fdd23d468ef45511b7d4cbc3d1c403bff01",
+      "bytes": 29907723,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/29-split_shared-64.pt",
+      "sha256": "5e6028196ad0a4de4da910b75429a745cae806f278d3afb02b9d64b3fc426583",
+      "bytes": 29907307,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-current_receiver-1024.pt",
+      "sha256": "e179ee0b304cb1c59b87bb37bc86099a55a731670c00122cef3410e35db6784e",
+      "bytes": 28333495,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-current_receiver-256.pt",
+      "sha256": "3214b45967c16072e5a4d0f382efef752df2dbda7e1091fc5a746f6be2ec8d0a",
+      "bytes": 28333091,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-current_receiver-64.pt",
+      "sha256": "2d334930141ac78ede59599a3b0e1762b2599331912cf672357ecef268e50568",
+      "bytes": 28332687,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-current_shared-1024.pt",
+      "sha256": "02046cbfc176c2c77d66d172678b14a3aa010623a7b9be9946361fe9b65a0c34",
+      "bytes": 29908971,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-current_shared-256.pt",
+      "sha256": "339d401a96bc1ec0770fa8eca7ad8c0973147bf9dafca79e8fd4e6c284bafc9e",
+      "bytes": 29908491,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-current_shared-64.pt",
+      "sha256": "553eb21592a609f36216ced7ceed1d6bcc6ec5a16909191c8dcfbe76bb9f10af",
+      "bytes": 29908075,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-gold_receiver-1024.pt",
+      "sha256": "54071cdb94973c153d5293397246a679225eddec27d72aad6b04b728e2c24b3f",
+      "bytes": 28332219,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-gold_receiver-256.pt",
+      "sha256": "5da123fbc87530dbeb702a84f3dc91a77f8c81f74947fdab92a56c31ff309ae5",
+      "bytes": 28331815,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-gold_receiver-64.pt",
+      "sha256": "98fa9b43a88663a78a7773a4d866c5ff098923c8834b7edae71cd827515ab553",
+      "bytes": 28331411,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-gold_shared-1024.pt",
+      "sha256": "c7840afcf79a4216f9632d18bc9468225f0f6b46e0424b19d27da820da1bb237",
+      "bytes": 29907659,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-gold_shared-256.pt",
+      "sha256": "8b6a9ec01507f58b04edece2539829d467b170983661d9aa53cb2a2b474c8dfd",
+      "bytes": 29907243,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-gold_shared-64.pt",
+      "sha256": "c4422f181ff283e6203374e2fc3912815701d55f3526eddb2b1b0e1527d09d66",
+      "bytes": 29906827,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-new_only_receiver-256.pt",
+      "sha256": "09b6dd3c373d12c47396d1c2d6fa37fa9f1c16b89339d29a213cab2206aa2489",
+      "bytes": 28333495,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-new_only_receiver-64.pt",
+      "sha256": "a63df02f49211510fa845d0c70de3cceab11f4cf2c984b1414c2486506c2cd18",
+      "bytes": 28333091,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_narrow_receiver-1024.pt",
+      "sha256": "a5f82d65b45faeeb0ab89819528a2ed285d6b82917305903075ef0a417dcc184",
+      "bytes": 28335515,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_narrow_receiver-256.pt",
+      "sha256": "c6965e9b9e4f5512dc6495f290cb930e23b78ebd0abf335e4835e761b916009a",
+      "bytes": 28335111,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_narrow_receiver-64.pt",
+      "sha256": "6d4fadc14a7d5088c3e27e1573a1c2272f39ca2e1f5a75ebf6378f2e994c9ac0",
+      "bytes": 28334707,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_narrow_shared-1024.pt",
+      "sha256": "f217d25c504968264dbe6e28c6ef4e264717a278c289650356786e11e41a89bf",
+      "bytes": 29911051,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_narrow_shared-256.pt",
+      "sha256": "aa44cb472a574109ebe36e4b2f679ae30fc1d9290fd4e67509ce891970a3e976",
+      "bytes": 29910635,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_narrow_shared-64.pt",
+      "sha256": "180956b53dec5e88a72d2b61097ff18c80150f1cec80855ee3bd638f98014cf1",
+      "bytes": 29910219,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_receiver-1024.pt",
+      "sha256": "d06b6cb96384d5e2144a6ef7a46435cd86c9bea686a3c4e40dd7eefc4d1aff63",
+      "bytes": 28332687,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_receiver-256.pt",
+      "sha256": "6907fcd59dc8f40ee500d919423b5191dfb6bd50575af178756fe2fc4bbf63ab",
+      "bytes": 28332219,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_receiver-64.pt",
+      "sha256": "069a074fa6cfba2db09056a35f2b79679109e3271bb5a10b96ac5fa300894f56",
+      "bytes": 28331815,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_shared-1024.pt",
+      "sha256": "92a82ea49dec7c621a0201216027c6cdf68b8c0e3eeb49d0e43364adc63de4a3",
+      "bytes": 29908075,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_shared-256.pt",
+      "sha256": "4bfdcb54b74028413c180f5e8f80d06febd9f08593b09ff533f4da9837611540",
+      "bytes": 29907659,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/checkpoints/43-split_shared-64.pt",
+      "sha256": "987a2f9d1742b6f281120f85e5920d5bd50e1db1341585f93fec3848ec250192",
+      "bytes": 29907243,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-1024.pt",
+      "sha256": "a758bc80184f74f5e8edceea940133cd7b6ad34ea1d8ae6b2eb5529406911c75",
+      "bytes": 28334027,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-320.pt",
+      "sha256": "c9faf863df698fbf5368e107d1a2c2bc32ea7396ddb0cacf63c11d4408219e69",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-384.pt",
+      "sha256": "4a68f669989074fcffabb605335adb9bfcb936770778d4339e6c3167e76c5731",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-448.pt",
+      "sha256": "6784c08554a8018a206759125a968d8e3420c8582605544992b4e342cf058fb3",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-512.pt",
+      "sha256": "a1df7fa83132a7f8b8f58f3d2c9d6f86ee1fe45b53074c00c8e5360a28e98b0f",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-576.pt",
+      "sha256": "61cbe88dfb3489957b95e835db097df4c951778d82cb95df37250d15ead92bb2",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-640.pt",
+      "sha256": "4db3789709a6cd215fee81395b24af85ffc0f8c58fc1ac81c85511b6ad3570d8",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-704.pt",
+      "sha256": "8eb44cd557301cddc856b3d8d7d5c2535766973334a3b01466b364754a1be361",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-768.pt",
+      "sha256": "6b7eca776f7c5d8a8a69adcc219724227f6ba4180e1b07865f82d2def4479155",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-832.pt",
+      "sha256": "5e02015002c94c5059d85f002cc9a6ac2c247810477bcc7464594e5531b992a5",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-896.pt",
+      "sha256": "c1bda474393db36459ff635a24099c7bb6d684ed59c4de5afd0356c7250a2f5c",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_receiver-960.pt",
+      "sha256": "cc3fac11f21900ea9ed8e9fb30f2473fdc5ea536c89ec0bb1d8cf41e59483352",
+      "bytes": 28333623,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-1024.pt",
+      "sha256": "fbf5e7ff3269c55d62e8ac950a3fdc8abc8b4e0e77658d2bcffe75e73221df4d",
+      "bytes": 29909515,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-128.pt",
+      "sha256": "0d3dfbd2eee8679ac7138a74cbe7f98c99fe479ca5e081cd73b864f8a7993606",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-192.pt",
+      "sha256": "534a0c88c2529a73a340c6a2ae8bf5c91f14e5c29fdaaa3ef71a9695f84224de",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-256.pt",
+      "sha256": "5eb3e3a64584210cfa343d62f25eba55e9abaa76de4fa35c01572e921011dc59",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-320.pt",
+      "sha256": "638d67303a7fcf948cfb75730e1eb1d45c065dd661b3c504b7de28fcef1bd46a",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-384.pt",
+      "sha256": "842e3886a6a4bb802835cf4c3e953d8f8ac5578211be46581320aa5d285638ad",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-448.pt",
+      "sha256": "b7b4d6369625c1172382fa521d5b5ce0b07e00eb9e63b208ff9e8e1485cd203e",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-512.pt",
+      "sha256": "d57be70347fc5dc695ff3c9e6d529c8d466fc58e33ed5b62ace9a316565f8334",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-576.pt",
+      "sha256": "cbc7c0c2a67cb8d41fbe565d0d8978060fa97eff12012b96291a076f7a849bbe",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-64.pt",
+      "sha256": "b860f183d7f950a23e99722cd4dca005ff00a465068f16bb6277604a7c3e1426",
+      "bytes": 29908619,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-640.pt",
+      "sha256": "8249535c1547cdf8c0d4d0fadd83b9e6b4cca2394c58eb0c68fef0a18e9282be",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-704.pt",
+      "sha256": "8f4a598bc9e2a2f129c30b19a1e90a69905b6f70aae398f3e48f90843c526920",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-768.pt",
+      "sha256": "cf291e788fa67ac963eb2b16161d028b00479994deb2c94cb6f881210907e530",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-832.pt",
+      "sha256": "afeab4c876cb62913d7e23b94f93dd7e129ea2f52d1f3775b2cae080bd9be40e",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-896.pt",
+      "sha256": "aeaf5baa486606be2d28a1544d4210320cacbcec9318f6b56246c9070509cd96",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/main-r2/recovery-r1/43-new_only_shared-960.pt",
+      "sha256": "5abc948e44a2ce3cb70be822e1a02cb51678204b3f9c53ca3f7deb86832fb1c2",
+      "bytes": 29909099,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "arm",
+        "execution_state",
+        "model",
+        "optimizer",
+        "protocol_sha256",
+        "recovery_source_sha256",
+        "rng",
+        "schedule_sha256",
+        "schema",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/resume-qualification-r1/pending-receiver-step2.pt",
+      "sha256": "c4f9fa1c4614fb509f294373850d35428a865c5c09cbb72cc75e71a8275b4b5d",
+      "bytes": 28332495,
+      "receipt_hash_verified": false,
+      "model_tensors": 390,
+      "keys": [
+        "execution_state",
+        "model",
+        "optimizer",
+        "rng"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/resume-qualification-r2/pending-receiver-step2.pt",
+      "sha256": "c4f9fa1c4614fb509f294373850d35428a865c5c09cbb72cc75e71a8275b4b5d",
+      "bytes": 28332495,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "execution_state",
+        "model",
+        "optimizer",
+        "rng"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/resume-qualification-r2/pending-shared-step2.pt",
+      "sha256": "0d90993e3bdecabc95dd66b0ca8f453ab892a9b5f2f7fac988077d6011c28c60",
+      "bytes": 29908011,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "execution_state",
+        "model",
+        "optimizer",
+        "rng"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_receiver-False-128.pt",
+      "sha256": "287670e136410871b127d89403733cd269f65e2dab91aac7674c8fc48fa6964e",
+      "bytes": 28334095,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_receiver-False-16.pt",
+      "sha256": "19fb31d96adc7f1eb6b347f3d97674efdf3dd9988d9a9768c99abc53e703a4a2",
+      "bytes": 28333693,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_receiver-False-64.pt",
+      "sha256": "7565ac8f71a952c7475eb607fbd88dca0e378ebd5af39b62d4a9e566d5fb608e",
+      "bytes": 28333693,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_receiver-True-128.pt",
+      "sha256": "01ae3f4a94eb4553677fac44776422495cb7a0d145ad2210d4b7265211fb834e",
+      "bytes": 28333693,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_receiver-True-16.pt",
+      "sha256": "65e5c0eac89aabfae6162e246f250ef6c34bc874148a37f1f6031bc693779eb7",
+      "bytes": 28333291,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_receiver-True-64.pt",
+      "sha256": "c2f2c27c9d7e824a1d91fe0cae66f258283d1d42a036e26df84bbe41bf3e166e",
+      "bytes": 28333291,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_shared-False-128.pt",
+      "sha256": "004b7684eb51404eb66a6b1301a1e2392f6551de9fcd4d8debb3e9c18822cd2c",
+      "bytes": 28333291,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_shared-False-16.pt",
+      "sha256": "482643a046a0c31017a1a0b2536b6eed1a9478a19ae8ef65f4ac171d49efc4b6",
+      "bytes": 28332825,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_shared-False-64.pt",
+      "sha256": "d6753b44bb8394129c52f0bd5e20ca1f187e11ea64bd7fb3ac8405ace27de0ba",
+      "bytes": 28332825,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_shared-True-128.pt",
+      "sha256": "3bd03a66242ba1480fd1e77f758922adee1403cc0db1b85165ccdcae5de0e739",
+      "bytes": 28332825,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_shared-True-16.pt",
+      "sha256": "0921dca3a87e62394c0ba5b953d922ad98bd306ab7af58e1d2a7177de15ac8ba",
+      "bytes": 28332423,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/17-split_shared-True-64.pt",
+      "sha256": "0a113968fe034a377b04c078275c7869d0a96810b0158a012ac8e476e6a7b46f",
+      "bytes": 28332423,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_receiver-False-128.pt",
+      "sha256": "662b64b182b31fb7fbe460129dbeecb70f32866e222b62bd2e7aaa562dc26180",
+      "bytes": 28334031,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_receiver-False-16.pt",
+      "sha256": "bee6accc6ed9cdbcdcab885ba83eaa3ab461519176d0026d4767a187aa0be11b",
+      "bytes": 28333629,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_receiver-False-64.pt",
+      "sha256": "e0373656bcb1664370b2398e67ab4bfc8ae8a9d93b3a645744ff87b04f538555",
+      "bytes": 28333629,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_receiver-True-128.pt",
+      "sha256": "900536152261b495f80222d13c2cbdce1b481df8c76633f1b292ca0fa09cf337",
+      "bytes": 28333629,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_receiver-True-16.pt",
+      "sha256": "0bea04ee7971a07bf290a8e9bcca615201fb1e80203fa2d0e03516abebf61fe7",
+      "bytes": 28333227,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_receiver-True-64.pt",
+      "sha256": "7662a1890de26fd25e8d282d484ccd2ad94813213089dbbc1f9d5f1aa896829e",
+      "bytes": 28333227,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_shared-False-128.pt",
+      "sha256": "e9edfab1cc19cab6e6d53b564a66b9075483a7f5d970f764e7f1f1954bc76c2f",
+      "bytes": 28333227,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_shared-False-16.pt",
+      "sha256": "1873b0d453da57e2f20c88b41e90a479c690208f08e1acee5d742db8f2a9ec53",
+      "bytes": 28332825,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_shared-False-64.pt",
+      "sha256": "8366b8c03ab0c491cef70cf49df65380978a3b1aaf073389b4d3df20082bf823",
+      "bytes": 28332825,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_shared-True-128.pt",
+      "sha256": "2324332dd684c25bf336d1e6613a4a3ee930da153ac8c1b70fe33b8a90a7cb09",
+      "bytes": 28332825,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_shared-True-16.pt",
+      "sha256": "4fc0e140533e6e48be26b637d3f0f665c9ef9a17ffc2a6f541816da1bf6d2450",
+      "bytes": 28332423,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/29-split_shared-True-64.pt",
+      "sha256": "fab92ecf86983021b18d3b88193ef4596acde261ec07ef7823aced9329aa0cee",
+      "bytes": 28332423,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_receiver-False-128.pt",
+      "sha256": "ac9b64b7c0ba4bfc202af3a9aef28324bdb066fbf2f54506f7bba9e0d873bb10",
+      "bytes": 28333967,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_receiver-False-16.pt",
+      "sha256": "ae115c8fb3189d621d6d21b043df72f99beee8ad7b490dd43c0fb1eb57f858b2",
+      "bytes": 28333565,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_receiver-False-64.pt",
+      "sha256": "e3242774c61802291148a7bb848c965750d5ff07ece906da07e9cf1d842802b5",
+      "bytes": 28333565,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_receiver-True-128.pt",
+      "sha256": "0835adbf4edbd00a1640a400c6b5cdfab109dcd08e09971f01d620fe7d2c4585",
+      "bytes": 28333565,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_receiver-True-16.pt",
+      "sha256": "57685c236e12ffea2fc890496fb2aabd4ad7ec491d97d0bea6c45a8d224254c1",
+      "bytes": 28333163,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_receiver-True-64.pt",
+      "sha256": "369b3d5d480971ff40d7620839f1905c82190594d5bf144392901b62ab0a8a19",
+      "bytes": 28333163,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_shared-False-128.pt",
+      "sha256": "3a24c1ddfec4153daf23d5ec6ac00b03b83b9169740cbc3dcd3a670a67a3707a",
+      "bytes": 28333163,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_shared-False-16.pt",
+      "sha256": "790b3c25acd8b443f0a630ccaf3a5487d6e58949570638ed53f6fff901cb1501",
+      "bytes": 28332761,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_shared-False-64.pt",
+      "sha256": "82a196fba5e69fa02f310a586ff1b139a8a72317fc027317367784fa1e5f69ef",
+      "bytes": 28332761,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_shared-True-128.pt",
+      "sha256": "dc82b9b9f531cbe3bd20b6f1c2368e568d3075d09596ef3e4fda32d0c4b9210b",
+      "bytes": 28332761,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_shared-True-16.pt",
+      "sha256": "864ae50cab88757ee846b2e600b8a67f2a7ddf9568eb3343a0f0343206ac0b91",
+      "bytes": 28332359,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-main-r1/43-split_shared-True-64.pt",
+      "sha256": "eba9f64d6ead17c30910a52c0e1a04e6090fec0a0e36b64c56236317700ea624",
+      "bytes": 28332359,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "base_writes",
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "source_arm",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-qualification-r1/pending-False-step2.pt",
+      "sha256": "e7330e64491a0899a3fd313b2e6cfdb63f98278ed864b8ccd0d7ad311ff5060c",
+      "bytes": 28330687,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    },
+    {
+      "path_relative_to_outputs": "agnews-single-receiver-v7/stress-qualification-r1/pending-True-step2.pt",
+      "sha256": "e3e3f90fe091e932955e26ae4588d201eb663897a2d5aa9bcfc80409b189e7dd",
+      "bytes": 28330285,
+      "receipt_hash_verified": true,
+      "model_tensors": 390,
+      "keys": [
+        "controller",
+        "execution_state",
+        "model",
+        "plan_sha256",
+        "rng",
+        "seed",
+        "step"
+      ],
+      "torch_load_cpu_passed": true
+    }
+  ]
+}

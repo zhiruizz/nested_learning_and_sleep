@@ -1,0 +1,79 @@
+{
+  "actual_Adam_updates": 2,
+  "confirmation_scored": false,
+  "driver_sha256": "7035dd9d1600b621ae99b3f50869319edacd5045b0240a3d9b38b191f2606e71",
+  "error": "optimizer got an empty parameter list",
+  "error_type": "ValueError",
+  "matmul_work_lower_bound": {
+    "cache_capture": {
+      "forward": {
+        "calls": 34304,
+        "flops": 781453126107136,
+        "ops": {
+          "bmm": {
+            "calls": 7296,
+            "flops": 4905727000576
+          },
+          "mm": {
+            "calls": 26752,
+            "flops": 776545914322944
+          },
+          "mv": {
+            "calls": 256,
+            "flops": 1484783616
+          }
+        }
+      }
+    },
+    "qualification_training": {
+      "forward": {
+        "calls": 26,
+        "flops": 1490252955648,
+        "ops": {
+          "mm": {
+            "calls": 22,
+            "flops": 1490229755904
+          },
+          "mv": {
+            "calls": 4,
+            "flops": 23199744
+          }
+        }
+      }
+    },
+    "qualification_warm_teacher": {
+      "forward": {
+        "calls": 16960,
+        "flops": 390714313588736,
+        "ops": {
+          "bmm": {
+            "calls": 3648,
+            "flops": 2452863500288
+          },
+          "mm": {
+            "calls": 13248,
+            "flops": 388261078892544
+          },
+          "mv": {
+            "calls": 64,
+            "flops": 371195904
+          }
+        }
+      }
+    },
+    "train": {
+      "backward": {
+        "calls": 18,
+        "flops": 1489858560000,
+        "ops": {
+          "mm": {
+            "calls": 18,
+            "flops": 1489858560000
+          }
+        }
+      }
+    }
+  },
+  "optimizer_attempts": 2,
+  "schema": "agnews-single-receiver-qualification-failure-v7"
+}

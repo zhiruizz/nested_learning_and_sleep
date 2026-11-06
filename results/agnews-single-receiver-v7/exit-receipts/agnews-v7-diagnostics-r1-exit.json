@@ -1,0 +1,8 @@
+{
+  "schema": "agnews-local-exit-v7",
+  "label": "agnews-v7-diagnostics-r1",
+  "returncode": 0,
+  "wall_seconds": 763.9060000001919,
+  "started_utc": "2026-11-06T19:33:00.388179+00:00",
+  "completed_utc": "2026-11-06T19:45:44.274786+00:00"
+}

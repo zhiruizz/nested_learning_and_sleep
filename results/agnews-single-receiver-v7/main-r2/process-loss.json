@@ -1,0 +1,26 @@
+{
+  "schema": "agnews-v7-process-loss-v1",
+  "observed_utc": "2026-11-06T19:12:10.938949+00:00",
+  "pid_absent": 94044,
+  "gpu_idle": true,
+  "exit_code": null,
+  "termination_cause": "unknown; execution transport disconnected during the attempt",
+  "terminal_receipts_missing": [
+    "development-sealed.json",
+    "fail.json",
+    "execution-work.json",
+    "wrapper exit receipt"
+  ],
+  "completed_runs": 28,
+  "last_logged_seed": 43,
+  "last_logged_arm": "new_only_receiver",
+  "last_logged_update": 704,
+  "unknown_extra_attempted_updates_inclusive": [
+    0,
+    64
+  ],
+  "resume_checkpoint_step": 256,
+  "known_repeated_updates_if_resumed": 448,
+  "original_progress_sha256": "6dcc0ac711b6d0263e9a62d58e376e104e4b1c33e96e4bd69e2578269c020b22",
+  "original_protocol_sha256": "9b173ca538b8b88415d477717964bbdcc0d0bf22e03f331c4a50650b69c936d3"
+}

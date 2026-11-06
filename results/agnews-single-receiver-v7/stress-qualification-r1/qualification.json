@@ -1,0 +1,106 @@
+{
+  "actual_CMS_ticks": 16,
+  "complete": true,
+  "confirmation_scored": false,
+  "main_seal_sha256": "efd9a9f3876bb9227d9687753d95866421e22aad14026527c7f167a8a8e013e6",
+  "passed": true,
+  "plan_sha256": "44e26d3a24c23b1dc97073c785889b8b48aa8ec560dc72a37c18be47474d3b68",
+  "qualification": true,
+  "rows": [
+    {
+      "actual_updates": 8,
+      "base_writes": true,
+      "checkpoints": [],
+      "evaluations": [],
+      "first_three_model_sha256": [],
+      "initial_model_sha256": "4ba95f2f57e1ea5a43d2f628aaf9b2eeadb9032993981c0cae0b4c4e5c60b5ef",
+      "pending_checkpoint": {
+        "path": "pending-True-step2.pt",
+        "sha256": "e3e3f90fe091e932955e26ae4588d201eb663897a2d5aa9bcfc80409b189e7dd"
+      },
+      "resume_exact_model_controller_policy_rng": true,
+      "schedule_sha256": "2801ea1f7b728abb90424514e871a8a519e6fb5b28901fa43650b1ae337fc579",
+      "seed": 17,
+      "source_arm": "split_receiver",
+      "source_checkpoint_sha256": "41ebe3bcdbab4d4eb70c2c26ac6b4ed7387cbe203404775ea750010a68bbe398",
+      "status": "complete",
+      "updates": 0
+    },
+    {
+      "actual_updates": 8,
+      "base_writes": false,
+      "checkpoints": [],
+      "evaluations": [],
+      "first_three_model_sha256": [],
+      "initial_model_sha256": "4ba95f2f57e1ea5a43d2f628aaf9b2eeadb9032993981c0cae0b4c4e5c60b5ef",
+      "pending_checkpoint": {
+        "path": "pending-False-step2.pt",
+        "sha256": "e7330e64491a0899a3fd313b2e6cfdb63f98278ed864b8ccd0d7ad311ff5060c"
+      },
+      "resume_exact_model_controller_policy_rng": true,
+      "schedule_sha256": "2801ea1f7b728abb90424514e871a8a519e6fb5b28901fa43650b1ae337fc579",
+      "seed": 17,
+      "source_arm": "split_receiver",
+      "source_checkpoint_sha256": "41ebe3bcdbab4d4eb70c2c26ac6b4ed7387cbe203404775ea750010a68bbe398",
+      "status": "complete",
+      "updates": 0
+    }
+  ],
+  "schema": "agnews-single-receiver-wake-stress-v7",
+  "seconds": 8.780999999959022,
+  "source_sha256": "8072c395b185854c1c0b44536ef57e93dfe8b8cf3c60de405b4589bab6ff2467",
+  "work": {
+    "17:split_receiver:False:training": {
+      "backward": {
+        "calls": 136,
+        "flops": 5965373374464,
+        "ops": {
+          "mm": {
+            "calls": 136,
+            "flops": 5965373374464
+          }
+        }
+      },
+      "forward": {
+        "calls": 128,
+        "flops": 5962543005696,
+        "ops": {
+          "mm": {
+            "calls": 104,
+            "flops": 5962403807232
+          },
+          "mv": {
+            "calls": 24,
+            "flops": 139198464
+          }
+        }
+      }
+    },
+    "17:split_receiver:True:training": {
+      "backward": {
+        "calls": 136,
+        "flops": 5965373374464,
+        "ops": {
+          "mm": {
+            "calls": 136,
+            "flops": 5965373374464
+          }
+        }
+      },
+      "forward": {
+        "calls": 128,
+        "flops": 5962543005696,
+        "ops": {
+          "mm": {
+            "calls": 104,
+            "flops": 5962403807232
+          },
+          "mv": {
+            "calls": 24,
+            "flops": 139198464
+          }
+        }
+      }
+    }
+  }
+}

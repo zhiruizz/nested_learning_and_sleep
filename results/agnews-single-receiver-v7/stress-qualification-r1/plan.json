@@ -1,0 +1,45 @@
+{
+  "base_lr": 0.02,
+  "base_writes": [
+    true,
+    false
+  ],
+  "checkpoint_steps": [
+    16,
+    64,
+    128
+  ],
+  "confirmation_scored": false,
+  "design_note": "same new CE computation and data; numeric gradients may diverge after the first applied base write; skip branch consumes clocks; not a novel third task",
+  "evaluation_steps": [
+    0,
+    4,
+    16,
+    64,
+    128
+  ],
+  "expert_lr": 0.04,
+  "main_protocol_sha256": "9b173ca538b8b88415d477717964bbdcc0d0bf22e03f331c4a50650b69c936d3",
+  "main_seal_sha256": "efd9a9f3876bb9227d9687753d95866421e22aad14026527c7f167a8a8e013e6",
+  "no_old_targets_in_training": true,
+  "periods": [
+    4,
+    16
+  ],
+  "qualification_sha256": null,
+  "qualified": true,
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "schema": "agnews-single-receiver-wake-stress-plan-v7",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "selected_main_arms": [
+    "split_receiver",
+    "split_shared"
+  ],
+  "source_sha256": "8072c395b185854c1c0b44536ef57e93dfe8b8cf3c60de405b4589bab6ff2467",
+  "steps": 128,
+  "whole_cap_seconds": 7200
+}

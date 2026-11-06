@@ -1,0 +1,35 @@
+{
+  "complete": true,
+  "optimizer_attempts": 4,
+  "schema": "agnews-v7-recovery-execution-work",
+  "seconds": 8.0,
+  "source_sha256": "188e26a1cc58b9a951cd7c2a4b4ec9f32bf8551ae11117eb7c65fc4aacbc2faf",
+  "work": {
+    "independent_restore_proof": {
+      "backward": {
+        "calls": 36,
+        "flops": 2979717120000,
+        "ops": {
+          "mm": {
+            "calls": 36,
+            "flops": 2979717120000
+          }
+        }
+      },
+      "forward": {
+        "calls": 52,
+        "flops": 2980505911296,
+        "ops": {
+          "mm": {
+            "calls": 44,
+            "flops": 2980459511808
+          },
+          "mv": {
+            "calls": 8,
+            "flops": 46399488
+          }
+        }
+      }
+    }
+  }
+}

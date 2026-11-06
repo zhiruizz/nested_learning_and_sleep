@@ -1,0 +1,75 @@
+{
+  "driver_sha256": "c8816cba1b3a221e7d266f4ab77481c759d00a15ba5d17fa6e2c0f3ba3be21ca",
+  "optimizer_attempts": 12,
+  "schema": "agnews-single-receiver-authoritative-matmul-work-v7",
+  "scope": "Executed mm/addmm/bmm/mv/dot shapes, MAC=2; arithmetic lower bound. Per-run counters overlap this authoritative ledger; never add them to it.",
+  "seconds": 56.468000000109896,
+  "work": {
+    "qualification:cache_capture": {
+      "forward": {
+        "calls": 34304,
+        "flops": 781453126107136,
+        "ops": {
+          "bmm": {
+            "calls": 7296,
+            "flops": 4905727000576
+          },
+          "mm": {
+            "calls": 26752,
+            "flops": 776545914322944
+          },
+          "mv": {
+            "calls": 256,
+            "flops": 1484783616
+          }
+        }
+      }
+    },
+    "qualification:qualification_warm_teacher": {
+      "forward": {
+        "calls": 16960,
+        "flops": 390714313588736,
+        "ops": {
+          "bmm": {
+            "calls": 3648,
+            "flops": 2452863500288
+          },
+          "mm": {
+            "calls": 13248,
+            "flops": 388261078892544
+          },
+          "mv": {
+            "calls": 64,
+            "flops": 371195904
+          }
+        }
+      }
+    },
+    "qualification:train": {
+      "backward": {
+        "calls": 166,
+        "flops": 8944162111488,
+        "ops": {
+          "mm": {
+            "calls": 166,
+            "flops": 8944162111488
+          }
+        }
+      },
+      "forward": {
+        "calls": 160,
+        "flops": 8941517733888,
+        "ops": {
+          "mm": {
+            "calls": 136,
+            "flops": 8941378535424
+          },
+          "mv": {
+            "calls": 24,
+            "flops": 139198464
+          }
+        }
+      }
+    }
+  }
+}

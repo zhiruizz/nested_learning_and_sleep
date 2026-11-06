@@ -1,0 +1,38 @@
+{
+  "confirmation_scored": false,
+  "development_only": true,
+  "full_model_lesion_validation": true,
+  "global_seconds_cap": 7200,
+  "gradient_batch": "fixed first2 train examples per class; B8 same matrix shape",
+  "gradient_objectives": "warm old KL / current new KL; each averages its four example positions",
+  "lesions": [
+    [],
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "main_protocol_sha256": "9b173ca538b8b88415d477717964bbdcc0d0bf22e03f331c4a50650b69c936d3",
+  "main_seal_sha256": "efd9a9f3876bb9227d9687753d95866421e22aad14026527c7f167a8a8e013e6",
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "schema": "agnews-single-receiver-diagnostic-plan-v7",
+  "source_sha256": {
+    "agnews_tail_cache_v7.py": "a98e44b6f3631f310e32dcef5ca08e5f3cdce91ea69db1d9e1478e4d1aaa4228",
+    "matmul_work_v7.py": "a42f230f32b6baa04683587283f9c2364dc2d60afeea7de2a420447fb0911e75",
+    "probe_agnews_single_receiver_v7.py": "8205732d612ee6214cf16580f5fd57f326910c717884fec38d73b1a8d16e53f0",
+    "run_agnews_single_receiver_v7.py": "c8816cba1b3a221e7d266f4ab77481c759d00a15ba5d17fa6e2c0f3ba3be21ca",
+    "single_receiver_probes_v7.py": "f4de267989e1b019bdc6303c734017c2de2ffc55749d9e91f50287663fd9d8f2"
+  },
+  "steps": [
+    0,
+    64,
+    256,
+    1024
+  ]
+}

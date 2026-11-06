@@ -1,0 +1,643 @@
+{
+  "actual_Adam_updates": 16,
+  "confirmation_scored": false,
+  "passed": true,
+  "plan_sha256": "5bab3e1838aad320a32a2c51635eaf4938cda5f83a57a910154ba9d26f6caeba",
+  "results": [
+    {
+      "family": "current",
+      "gradient_relative_l2": [
+        0.0,
+        0.0
+      ],
+      "loss_abs": 0.0,
+      "max_logit_abs": 0.0,
+      "model_adam_rng_exact": true,
+      "scope": "receiver"
+    },
+    {
+      "family": "current",
+      "gradient_relative_l2": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "loss_abs": 0.0,
+      "max_logit_abs": 0.0,
+      "model_adam_rng_exact": true,
+      "scope": "shared"
+    },
+    {
+      "family": "split",
+      "gradient_relative_l2": [
+        0.0,
+        0.0
+      ],
+      "loss_abs": 0.0,
+      "max_logit_abs": 0.0,
+      "model_adam_rng_exact": true,
+      "scope": "receiver"
+    },
+    {
+      "family": "split",
+      "gradient_relative_l2": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "loss_abs": 0.0,
+      "max_logit_abs": 0.0,
+      "model_adam_rng_exact": true,
+      "scope": "shared"
+    },
+    {
+      "family": "gold",
+      "gradient_relative_l2": [
+        0.0,
+        0.0
+      ],
+      "loss_abs": 0.0,
+      "max_logit_abs": 0.0,
+      "model_adam_rng_exact": true,
+      "scope": "receiver"
+    },
+    {
+      "family": "gold",
+      "gradient_relative_l2": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "loss_abs": 0.0,
+      "max_logit_abs": 0.0,
+      "model_adam_rng_exact": true,
+      "scope": "shared"
+    },
+    {
+      "family": "new_only",
+      "gradient_relative_l2": [
+        0.0,
+        0.0
+      ],
+      "loss_abs": 0.0,
+      "max_logit_abs": 0.0,
+      "model_adam_rng_exact": true,
+      "scope": "receiver"
+    },
+    {
+      "family": "new_only",
+      "gradient_relative_l2": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "loss_abs": 0.0,
+      "max_logit_abs": 0.0,
+      "model_adam_rng_exact": true,
+      "scope": "shared"
+    }
+  ],
+  "seconds": 10.5,
+  "work": {
+    "current_receiver_cached": {
+      "backward": {
+        "calls": 9,
+        "flops": 744929280000,
+        "ops": {
+          "mm": {
+            "calls": 9,
+            "flops": 744929280000
+          }
+        }
+      },
+      "forward": {
+        "calls": 13,
+        "flops": 745126477824,
+        "ops": {
+          "mm": {
+            "calls": 11,
+            "flops": 745114877952
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "current_receiver_full": {
+      "backward": {
+        "calls": 9,
+        "flops": 744926625792,
+        "ops": {
+          "mm": {
+            "calls": 9,
+            "flops": 744926625792
+          }
+        }
+      },
+      "forward": {
+        "calls": 268,
+        "flops": 6104916949760,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 6066579357696
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "current_shared_cached": {
+      "backward": {
+        "calls": 18,
+        "flops": 745764470784,
+        "ops": {
+          "mm": {
+            "calls": 18,
+            "flops": 745764470784
+          }
+        }
+      },
+      "forward": {
+        "calls": 13,
+        "flops": 745126477824,
+        "ops": {
+          "mm": {
+            "calls": 11,
+            "flops": 745114877952
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "current_shared_full": {
+      "backward": {
+        "calls": 20,
+        "flops": 745762701312,
+        "ops": {
+          "mm": {
+            "calls": 20,
+            "flops": 745762701312
+          }
+        }
+      },
+      "forward": {
+        "calls": 268,
+        "flops": 6104916949760,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 6066579357696
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "gold_receiver_cached": {
+      "backward": {
+        "calls": 9,
+        "flops": 744929280000,
+        "ops": {
+          "mm": {
+            "calls": 9,
+            "flops": 744929280000
+          }
+        }
+      },
+      "forward": {
+        "calls": 13,
+        "flops": 745126477824,
+        "ops": {
+          "mm": {
+            "calls": 11,
+            "flops": 745114877952
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "gold_receiver_full": {
+      "backward": {
+        "calls": 9,
+        "flops": 744926625792,
+        "ops": {
+          "mm": {
+            "calls": 9,
+            "flops": 744926625792
+          }
+        }
+      },
+      "forward": {
+        "calls": 268,
+        "flops": 6104916949760,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 6066579357696
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "gold_shared_cached": {
+      "backward": {
+        "calls": 18,
+        "flops": 745764470784,
+        "ops": {
+          "mm": {
+            "calls": 18,
+            "flops": 745764470784
+          }
+        }
+      },
+      "forward": {
+        "calls": 13,
+        "flops": 745126477824,
+        "ops": {
+          "mm": {
+            "calls": 11,
+            "flops": 745114877952
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "gold_shared_full": {
+      "backward": {
+        "calls": 20,
+        "flops": 745762701312,
+        "ops": {
+          "mm": {
+            "calls": 20,
+            "flops": 745762701312
+          }
+        }
+      },
+      "forward": {
+        "calls": 268,
+        "flops": 6104916949760,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 6066579357696
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "new_only_receiver_cached": {
+      "backward": {
+        "calls": 9,
+        "flops": 744929280000,
+        "ops": {
+          "mm": {
+            "calls": 9,
+            "flops": 744929280000
+          }
+        }
+      },
+      "forward": {
+        "calls": 13,
+        "flops": 745126477824,
+        "ops": {
+          "mm": {
+            "calls": 11,
+            "flops": 745114877952
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "new_only_receiver_full": {
+      "backward": {
+        "calls": 9,
+        "flops": 744926625792,
+        "ops": {
+          "mm": {
+            "calls": 9,
+            "flops": 744926625792
+          }
+        }
+      },
+      "forward": {
+        "calls": 268,
+        "flops": 6104916949760,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 6066579357696
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "new_only_shared_cached": {
+      "backward": {
+        "calls": 18,
+        "flops": 745764470784,
+        "ops": {
+          "mm": {
+            "calls": 18,
+            "flops": 745764470784
+          }
+        }
+      },
+      "forward": {
+        "calls": 13,
+        "flops": 745126477824,
+        "ops": {
+          "mm": {
+            "calls": 11,
+            "flops": 745114877952
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "new_only_shared_full": {
+      "backward": {
+        "calls": 20,
+        "flops": 745762701312,
+        "ops": {
+          "mm": {
+            "calls": 20,
+            "flops": 745762701312
+          }
+        }
+      },
+      "forward": {
+        "calls": 268,
+        "flops": 6104916949760,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 6066579357696
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "prepare_balanced_current": {
+      "forward": {
+        "calls": 268,
+        "flops": 6105102547712,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 6066764955648
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "prepare_balanced_warm": {
+      "forward": {
+        "calls": 265,
+        "flops": 6104911149824,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 207,
+            "flops": 6066579357696
+          },
+          "mv": {
+            "calls": 1,
+            "flops": 5799936
+          }
+        }
+      }
+    },
+    "prepare_new_only_current": {
+      "forward": {
+        "calls": 268,
+        "flops": 6105102547712,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 6066764955648
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "prepare_new_only_warm": {
+      "forward": {
+        "calls": 265,
+        "flops": 6104911149824,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 207,
+            "flops": 6066579357696
+          },
+          "mv": {
+            "calls": 1,
+            "flops": 5799936
+          }
+        }
+      }
+    },
+    "split_receiver_cached": {
+      "backward": {
+        "calls": 9,
+        "flops": 744929280000,
+        "ops": {
+          "mm": {
+            "calls": 9,
+            "flops": 744929280000
+          }
+        }
+      },
+      "forward": {
+        "calls": 13,
+        "flops": 745126477824,
+        "ops": {
+          "mm": {
+            "calls": 11,
+            "flops": 745114877952
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "split_receiver_full": {
+      "backward": {
+        "calls": 9,
+        "flops": 744926625792,
+        "ops": {
+          "mm": {
+            "calls": 9,
+            "flops": 744926625792
+          }
+        }
+      },
+      "forward": {
+        "calls": 268,
+        "flops": 6104916949760,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 6066579357696
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "split_shared_cached": {
+      "backward": {
+        "calls": 18,
+        "flops": 745764470784,
+        "ops": {
+          "mm": {
+            "calls": 18,
+            "flops": 745764470784
+          }
+        }
+      },
+      "forward": {
+        "calls": 13,
+        "flops": 745126477824,
+        "ops": {
+          "mm": {
+            "calls": 11,
+            "flops": 745114877952
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    },
+    "split_shared_full": {
+      "backward": {
+        "calls": 20,
+        "flops": 745762701312,
+        "ops": {
+          "mm": {
+            "calls": 20,
+            "flops": 745762701312
+          }
+        }
+      },
+      "forward": {
+        "calls": 268,
+        "flops": 6104916949760,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 38325992192
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 6066579357696
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 11599872
+          }
+        }
+      }
+    }
+  }
+}

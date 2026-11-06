@@ -1,0 +1,25 @@
+{
+  "schema": "agnews-v7-release-validation",
+  "passed": true,
+  "aggregate_files_content_reproduced": 9,
+  "runs": 30,
+  "stress_branches": 12,
+  "independent_gradient_states": 93,
+  "lesions": 120,
+  "checkpoints_loaded_cpu": 155,
+  "confirmation_scored": false,
+  "independent_review": "review_experiment: final static numerical/scientific audit PASS; no remaining publication blockers",
+  "reviewed_report_sha256": "65f39b820d0bc177eab0d2c7fc353c0d614db80f06b54145a7de44cfe53d73bc",
+  "validator_sha256": "504a57dd1ab2b4c15bf36ffda28fae9dd67827673c0f2b14d78dedd45790596b",
+  "CPU_regression": {
+    "passed": 227,
+    "deselected": 1,
+    "post_denominator_correction_pure_aggregate_tests_passed": 2
+  },
+  "original_main_total_work_missing": true,
+  "actual_main_attempts_known": 31168,
+  "original_extra_attempts_unknown_bound": [
+    0,
+    64
+  ]
+}

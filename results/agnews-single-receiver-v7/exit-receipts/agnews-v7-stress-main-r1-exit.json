@@ -1,0 +1,8 @@
+{
+  "schema": "agnews-local-exit-v7",
+  "label": "agnews-v7-stress-main-r1",
+  "returncode": 0,
+  "wall_seconds": 369.125,
+  "started_utc": "2026-11-06T19:23:32.999412+00:00",
+  "completed_utc": "2026-11-06T19:29:42.117064+00:00"
+}

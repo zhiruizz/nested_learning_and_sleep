@@ -1,0 +1,22 @@
+{
+  "config_sha256": "3c91b940ce84672cc17ab65febc30236caad09f9708f0a0e8491738e0c16b7f9",
+  "do_not_sum_overlapping_local_and_global_work": true,
+  "known_replayed_updates": 448,
+  "last_observed_step": 704,
+  "original_exit_cause": "unknown; no terminal receipt",
+  "original_progress_sha256": "6dcc0ac711b6d0263e9a62d58e376e104e4b1c33e96e4bd69e2578269c020b22",
+  "original_protocol_sha256": "9b173ca538b8b88415d477717964bbdcc0d0bf22e03f331c4a50650b69c936d3",
+  "original_unrecorded_updates_inclusive": [
+    0,
+    64
+  ],
+  "qualification": false,
+  "qualification_sha256": "3693f1f187ef92f2d061c038f421280d574cca7b5d28c2a35d39e4edcdf6d60b",
+  "remaining_logical_arms": [
+    "43:new_only_receiver",
+    "43:new_only_shared"
+  ],
+  "schema": "agnews-v7-interruption-recovery-plan",
+  "source_checkpoint_step": 256,
+  "source_sha256": "188e26a1cc58b9a951cd7c2a4b4ec9f32bf8551ae11117eb7c65fc4aacbc2faf"
+}

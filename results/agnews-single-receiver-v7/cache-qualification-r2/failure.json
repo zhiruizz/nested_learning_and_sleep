@@ -1,0 +1,97 @@
+{
+  "error": "",
+  "optimizer_updates": 0,
+  "partial_results": [
+    {
+      "argmax_exact": true,
+      "gradient_relative_l2": [
+        0.0,
+        0.003428962780162692
+      ],
+      "logit_max_abs": 0.0625,
+      "loss_abs": 0.0,
+      "scope": "receiver",
+      "trainable_parameters": 98304
+    }
+  ],
+  "seconds": 5.233999999938533,
+  "type": "AssertionError",
+  "work": {
+    "capture": {
+      "forward": {
+        "calls": 268,
+        "flops": 5376760689664,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 29771183104
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 5346979282944
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 10223616
+          }
+        }
+      }
+    },
+    "receiver_full": {
+      "backward": {
+        "calls": 9,
+        "flops": 656545480704,
+        "ops": {
+          "mm": {
+            "calls": 9,
+            "flops": 656545480704
+          }
+        }
+      },
+      "forward": {
+        "calls": 268,
+        "flops": 5376597111808,
+        "ops": {
+          "bmm": {
+            "calls": 57,
+            "flops": 29771183104
+          },
+          "mm": {
+            "calls": 209,
+            "flops": 5346815705088
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 10223616
+          }
+        }
+      }
+    },
+    "receiver_tail": {
+      "backward": {
+        "calls": 9,
+        "flops": 12625920000,
+        "ops": {
+          "mm": {
+            "calls": 9,
+            "flops": 12625920000
+          }
+        }
+      },
+      "forward": {
+        "calls": 13,
+        "flops": 12629262336,
+        "ops": {
+          "mm": {
+            "calls": 11,
+            "flops": 12629065728
+          },
+          "mv": {
+            "calls": 2,
+            "flops": 196608
+          }
+        }
+      }
+    }
+  }
+}

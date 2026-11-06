@@ -1,0 +1,131 @@
+{
+  "actual_Adam_updates": 12,
+  "config_sha256": "3c91b940ce84672cc17ab65febc30236caad09f9708f0a0e8491738e0c16b7f9",
+  "confirmation_scored": false,
+  "driver_sha256": "c8816cba1b3a221e7d266f4ab77481c759d00a15ba5d17fa6e2c0f3ba3be21ca",
+  "exact_model_optimizer_policy_rng": true,
+  "exact_model_optimizer_rng": true,
+  "matmul_work_lower_bound": {
+    "cache_capture": {
+      "forward": {
+        "calls": 34304,
+        "flops": 781453126107136,
+        "ops": {
+          "bmm": {
+            "calls": 7296,
+            "flops": 4905727000576
+          },
+          "mm": {
+            "calls": 26752,
+            "flops": 776545914322944
+          },
+          "mv": {
+            "calls": 256,
+            "flops": 1484783616
+          }
+        }
+      }
+    },
+    "qualification_training": {
+      "forward": {
+        "calls": 160,
+        "flops": 8941517733888,
+        "ops": {
+          "mm": {
+            "calls": 136,
+            "flops": 8941378535424
+          },
+          "mv": {
+            "calls": 24,
+            "flops": 139198464
+          }
+        }
+      }
+    },
+    "qualification_warm_teacher": {
+      "forward": {
+        "calls": 16960,
+        "flops": 390714313588736,
+        "ops": {
+          "bmm": {
+            "calls": 3648,
+            "flops": 2452863500288
+          },
+          "mm": {
+            "calls": 13248,
+            "flops": 388261078892544
+          },
+          "mv": {
+            "calls": 64,
+            "flops": 371195904
+          }
+        }
+      }
+    },
+    "train": {
+      "backward": {
+        "calls": 166,
+        "flops": 8944162111488,
+        "ops": {
+          "mm": {
+            "calls": 166,
+            "flops": 8944162111488
+          }
+        }
+      }
+    }
+  },
+  "passed": true,
+  "results": [
+    {
+      "actual_updates": 6,
+      "branches": [
+        {
+          "execution_state_sha256": "70a91a59c47255e9f358d010465785e05e06fa1e2fa2b5710638defeb5ae3d3a",
+          "model_sha256": "e59e81ab6e1add11c436d625d440cf3fcf1d922da9b0e7056c0ebe5499951c9d",
+          "optimizer_sha256": "6dbecb5166289d2fd354cf23de6a451555fd74730101dd25d34402a0f8585d3e",
+          "rng_sha256": "674f3824f813eaed05325209f75d7815149588e5bb9c981889ab4aad499aee90"
+        },
+        {
+          "execution_state_sha256": "70a91a59c47255e9f358d010465785e05e06fa1e2fa2b5710638defeb5ae3d3a",
+          "model_sha256": "e59e81ab6e1add11c436d625d440cf3fcf1d922da9b0e7056c0ebe5499951c9d",
+          "optimizer_sha256": "6dbecb5166289d2fd354cf23de6a451555fd74730101dd25d34402a0f8585d3e",
+          "rng_sha256": "674f3824f813eaed05325209f75d7815149588e5bb9c981889ab4aad499aee90"
+        }
+      ],
+      "exact_model_optimizer_policy_rng": true,
+      "exact_model_optimizer_rng": true,
+      "pending_checkpoint": {
+        "path": "pending-receiver-step2.pt",
+        "sha256": "c4f9fa1c4614fb509f294373850d35428a865c5c09cbb72cc75e71a8275b4b5d"
+      },
+      "scope": "receiver"
+    },
+    {
+      "actual_updates": 6,
+      "branches": [
+        {
+          "execution_state_sha256": "70a91a59c47255e9f358d010465785e05e06fa1e2fa2b5710638defeb5ae3d3a",
+          "model_sha256": "96e743def4df27d6122847feae5de401da399ed453c69111c4f0dc16b7bde8db",
+          "optimizer_sha256": "f3db2d96d07f96f9beb1041775f1bd90b0ad4c413a06793c39b66d1281bb4b3b",
+          "rng_sha256": "674f3824f813eaed05325209f75d7815149588e5bb9c981889ab4aad499aee90"
+        },
+        {
+          "execution_state_sha256": "70a91a59c47255e9f358d010465785e05e06fa1e2fa2b5710638defeb5ae3d3a",
+          "model_sha256": "96e743def4df27d6122847feae5de401da399ed453c69111c4f0dc16b7bde8db",
+          "optimizer_sha256": "f3db2d96d07f96f9beb1041775f1bd90b0ad4c413a06793c39b66d1281bb4b3b",
+          "rng_sha256": "674f3824f813eaed05325209f75d7815149588e5bb9c981889ab4aad499aee90"
+        }
+      ],
+      "exact_model_optimizer_policy_rng": true,
+      "exact_model_optimizer_rng": true,
+      "pending_checkpoint": {
+        "path": "pending-shared-step2.pt",
+        "sha256": "0d90993e3bdecabc95dd66b0ca8f453ab892a9b5f2f7fac988077d6011c28c60"
+      },
+      "scope": "shared"
+    }
+  ],
+  "schema": "agnews-single-receiver-resume-qualified-v7",
+  "scoring": false
+}

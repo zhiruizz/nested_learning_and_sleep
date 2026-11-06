@@ -1,0 +1,3628 @@
+{
+  "interpretation": "The original attempt global FLOPs are missing and are never imputed. Retained row-local counters are incomplete observed subsets. Recovery run work and recovery qualification work are separately itemized; their sum is the complete known recovery cost. Never add row-local counters to these global ledgers. Known observed update attempts plus the bounded unknown original attempts are not a measured FLOP total.",
+  "known_replayed_updates": 448,
+  "logical_vs_observed_updates": {
+    "interpretation": "Unknown range is a count bound after the last persisted progress; it is not an inclusive step-index interval.",
+    "known_observed_update_attempts": 31168,
+    "logical_updates": 30720,
+    "unknown_original_update_attempts_max": 64,
+    "unknown_original_update_attempts_min": 0
+  },
+  "numeric_qualification_inputs": {
+    "cache": {
+      "optimizer_updates": 0,
+      "path": "results\\agnews-single-receiver-v7\\cache-qualification-r3\\qualification.json",
+      "sha256": "6a006d4f05a93a44997eba35eecac49df1c2d85b632ca5014d1097bbf819dc2a",
+      "work": {
+        "capture": {
+          "forward": {
+            "calls": 268,
+            "flops": 6105102547712,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066764955648
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "receiver_full": {
+          "backward": {
+            "calls": 9,
+            "flops": 744926920704,
+            "ops": {
+              "mm": {
+                "calls": 9,
+                "flops": 744926920704
+              }
+            }
+          },
+          "forward": {
+            "calls": 268,
+            "flops": 6104916949760,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "receiver_tail": {
+          "backward": {
+            "calls": 9,
+            "flops": 744929280000,
+            "ops": {
+              "mm": {
+                "calls": 9,
+                "flops": 744929280000
+              }
+            }
+          },
+          "forward": {
+            "calls": 13,
+            "flops": 745126477824,
+            "ops": {
+              "mm": {
+                "calls": 11,
+                "flops": 745114877952
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "shared_full": {
+          "backward": {
+            "calls": 20,
+            "flops": 745762897920,
+            "ops": {
+              "mm": {
+                "calls": 20,
+                "flops": 745762897920
+              }
+            }
+          },
+          "forward": {
+            "calls": 268,
+            "flops": 6104916949760,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "shared_tail": {
+          "backward": {
+            "calls": 18,
+            "flops": 745764470784,
+            "ops": {
+              "mm": {
+                "calls": 18,
+                "flops": 745764470784
+              }
+            }
+          },
+          "forward": {
+            "calls": 13,
+            "flops": 745126477824,
+            "ops": {
+              "mm": {
+                "calls": 11,
+                "flops": 745114877952
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        }
+      }
+    },
+    "loss_paths": {
+      "optimizer_updates": 16,
+      "path": "results\\agnews-single-receiver-v7\\loss-path-qualification-r1\\qualification.json",
+      "sha256": "a44e7851063222f85704b5fc2611ba4d4b9f63234bd62140ff977fa7af02e500",
+      "work": {
+        "current_receiver_cached": {
+          "backward": {
+            "calls": 9,
+            "flops": 744929280000,
+            "ops": {
+              "mm": {
+                "calls": 9,
+                "flops": 744929280000
+              }
+            }
+          },
+          "forward": {
+            "calls": 13,
+            "flops": 745126477824,
+            "ops": {
+              "mm": {
+                "calls": 11,
+                "flops": 745114877952
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "current_receiver_full": {
+          "backward": {
+            "calls": 9,
+            "flops": 744926625792,
+            "ops": {
+              "mm": {
+                "calls": 9,
+                "flops": 744926625792
+              }
+            }
+          },
+          "forward": {
+            "calls": 268,
+            "flops": 6104916949760,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "current_shared_cached": {
+          "backward": {
+            "calls": 18,
+            "flops": 745764470784,
+            "ops": {
+              "mm": {
+                "calls": 18,
+                "flops": 745764470784
+              }
+            }
+          },
+          "forward": {
+            "calls": 13,
+            "flops": 745126477824,
+            "ops": {
+              "mm": {
+                "calls": 11,
+                "flops": 745114877952
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "current_shared_full": {
+          "backward": {
+            "calls": 20,
+            "flops": 745762701312,
+            "ops": {
+              "mm": {
+                "calls": 20,
+                "flops": 745762701312
+              }
+            }
+          },
+          "forward": {
+            "calls": 268,
+            "flops": 6104916949760,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "gold_receiver_cached": {
+          "backward": {
+            "calls": 9,
+            "flops": 744929280000,
+            "ops": {
+              "mm": {
+                "calls": 9,
+                "flops": 744929280000
+              }
+            }
+          },
+          "forward": {
+            "calls": 13,
+            "flops": 745126477824,
+            "ops": {
+              "mm": {
+                "calls": 11,
+                "flops": 745114877952
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "gold_receiver_full": {
+          "backward": {
+            "calls": 9,
+            "flops": 744926625792,
+            "ops": {
+              "mm": {
+                "calls": 9,
+                "flops": 744926625792
+              }
+            }
+          },
+          "forward": {
+            "calls": 268,
+            "flops": 6104916949760,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "gold_shared_cached": {
+          "backward": {
+            "calls": 18,
+            "flops": 745764470784,
+            "ops": {
+              "mm": {
+                "calls": 18,
+                "flops": 745764470784
+              }
+            }
+          },
+          "forward": {
+            "calls": 13,
+            "flops": 745126477824,
+            "ops": {
+              "mm": {
+                "calls": 11,
+                "flops": 745114877952
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "gold_shared_full": {
+          "backward": {
+            "calls": 20,
+            "flops": 745762701312,
+            "ops": {
+              "mm": {
+                "calls": 20,
+                "flops": 745762701312
+              }
+            }
+          },
+          "forward": {
+            "calls": 268,
+            "flops": 6104916949760,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "new_only_receiver_cached": {
+          "backward": {
+            "calls": 9,
+            "flops": 744929280000,
+            "ops": {
+              "mm": {
+                "calls": 9,
+                "flops": 744929280000
+              }
+            }
+          },
+          "forward": {
+            "calls": 13,
+            "flops": 745126477824,
+            "ops": {
+              "mm": {
+                "calls": 11,
+                "flops": 745114877952
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "new_only_receiver_full": {
+          "backward": {
+            "calls": 9,
+            "flops": 744926625792,
+            "ops": {
+              "mm": {
+                "calls": 9,
+                "flops": 744926625792
+              }
+            }
+          },
+          "forward": {
+            "calls": 268,
+            "flops": 6104916949760,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "new_only_shared_cached": {
+          "backward": {
+            "calls": 18,
+            "flops": 745764470784,
+            "ops": {
+              "mm": {
+                "calls": 18,
+                "flops": 745764470784
+              }
+            }
+          },
+          "forward": {
+            "calls": 13,
+            "flops": 745126477824,
+            "ops": {
+              "mm": {
+                "calls": 11,
+                "flops": 745114877952
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "new_only_shared_full": {
+          "backward": {
+            "calls": 20,
+            "flops": 745762701312,
+            "ops": {
+              "mm": {
+                "calls": 20,
+                "flops": 745762701312
+              }
+            }
+          },
+          "forward": {
+            "calls": 268,
+            "flops": 6104916949760,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "prepare_balanced_current": {
+          "forward": {
+            "calls": 268,
+            "flops": 6105102547712,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066764955648
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "prepare_balanced_warm": {
+          "forward": {
+            "calls": 265,
+            "flops": 6104911149824,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 207,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 1,
+                "flops": 5799936
+              }
+            }
+          }
+        },
+        "prepare_new_only_current": {
+          "forward": {
+            "calls": 268,
+            "flops": 6105102547712,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066764955648
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "prepare_new_only_warm": {
+          "forward": {
+            "calls": 265,
+            "flops": 6104911149824,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 207,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 1,
+                "flops": 5799936
+              }
+            }
+          }
+        },
+        "split_receiver_cached": {
+          "backward": {
+            "calls": 9,
+            "flops": 744929280000,
+            "ops": {
+              "mm": {
+                "calls": 9,
+                "flops": 744929280000
+              }
+            }
+          },
+          "forward": {
+            "calls": 13,
+            "flops": 745126477824,
+            "ops": {
+              "mm": {
+                "calls": 11,
+                "flops": 745114877952
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "split_receiver_full": {
+          "backward": {
+            "calls": 9,
+            "flops": 744926625792,
+            "ops": {
+              "mm": {
+                "calls": 9,
+                "flops": 744926625792
+              }
+            }
+          },
+          "forward": {
+            "calls": 268,
+            "flops": 6104916949760,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "split_shared_cached": {
+          "backward": {
+            "calls": 18,
+            "flops": 745764470784,
+            "ops": {
+              "mm": {
+                "calls": 18,
+                "flops": 745764470784
+              }
+            }
+          },
+          "forward": {
+            "calls": 13,
+            "flops": 745126477824,
+            "ops": {
+              "mm": {
+                "calls": 11,
+                "flops": 745114877952
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        },
+        "split_shared_full": {
+          "backward": {
+            "calls": 20,
+            "flops": 745762701312,
+            "ops": {
+              "mm": {
+                "calls": 20,
+                "flops": 745762701312
+              }
+            }
+          },
+          "forward": {
+            "calls": 268,
+            "flops": 6104916949760,
+            "ops": {
+              "bmm": {
+                "calls": 57,
+                "flops": 38325992192
+              },
+              "mm": {
+                "calls": 209,
+                "flops": 6066579357696
+              },
+              "mv": {
+                "calls": 2,
+                "flops": 11599872
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "original_attempt_global_work": "MISSING; no original global execution-work receipt",
+  "original_process_loss": {
+    "completed_runs": 28,
+    "exit_code": null,
+    "gpu_idle": true,
+    "known_repeated_updates_if_resumed": 448,
+    "last_logged_arm": "new_only_receiver",
+    "last_logged_seed": 43,
+    "last_logged_update": 704,
+    "observed_utc": "2026-11-06T19:12:10.938949+00:00",
+    "original_progress_sha256": "6dcc0ac711b6d0263e9a62d58e376e104e4b1c33e96e4bd69e2578269c020b22",
+    "original_protocol_sha256": "9b173ca538b8b88415d477717964bbdcc0d0bf22e03f331c4a50650b69c936d3",
+    "pid_absent": 94044,
+    "resume_checkpoint_step": 256,
+    "schema": "agnews-v7-process-loss-v1",
+    "terminal_receipts_missing": [
+      "development-sealed.json",
+      "fail.json",
+      "execution-work.json",
+      "wrapper exit receipt"
+    ],
+    "termination_cause": "unknown; execution transport disconnected during the attempt",
+    "unknown_extra_attempted_updates_inclusive": [
+      0,
+      64
+    ]
+  },
+  "original_qualification_work": {
+    "authoritative_work": {
+      "calls": 51590,
+      "flops": 1190053119541248,
+      "stages": {
+        "qualification:cache_capture": {
+          "calls": 34304,
+          "flops": 781453126107136,
+          "phases": {
+            "forward": {
+              "calls": 34304,
+              "flops": 781453126107136
+            }
+          }
+        },
+        "qualification:qualification_warm_teacher": {
+          "calls": 16960,
+          "flops": 390714313588736,
+          "phases": {
+            "forward": {
+              "calls": 16960,
+              "flops": 390714313588736
+            }
+          }
+        },
+        "qualification:train": {
+          "calls": 326,
+          "flops": 17885679845376,
+          "phases": {
+            "backward": {
+              "calls": 166,
+              "flops": 8944162111488
+            },
+            "forward": {
+              "calls": 160,
+              "flops": 8941517733888
+            }
+          }
+        }
+      }
+    },
+    "optimizer_attempts": 12,
+    "path": "results\\agnews-single-receiver-v7\\resume-qualification-r2\\execution-work.json",
+    "qualification_local_work_overlap_not_additive": {
+      "cache_capture": {
+        "forward": {
+          "calls": 34304,
+          "flops": 781453126107136,
+          "ops": {
+            "bmm": {
+              "calls": 7296,
+              "flops": 4905727000576
+            },
+            "mm": {
+              "calls": 26752,
+              "flops": 776545914322944
+            },
+            "mv": {
+              "calls": 256,
+              "flops": 1484783616
+            }
+          }
+        }
+      },
+      "qualification_training": {
+        "forward": {
+          "calls": 160,
+          "flops": 8941517733888,
+          "ops": {
+            "mm": {
+              "calls": 136,
+              "flops": 8941378535424
+            },
+            "mv": {
+              "calls": 24,
+              "flops": 139198464
+            }
+          }
+        }
+      },
+      "qualification_warm_teacher": {
+        "forward": {
+          "calls": 16960,
+          "flops": 390714313588736,
+          "ops": {
+            "bmm": {
+              "calls": 3648,
+              "flops": 2452863500288
+            },
+            "mm": {
+              "calls": 13248,
+              "flops": 388261078892544
+            },
+            "mv": {
+              "calls": 64,
+              "flops": 371195904
+            }
+          }
+        }
+      },
+      "train": {
+        "backward": {
+          "calls": 166,
+          "flops": 8944162111488,
+          "ops": {
+            "mm": {
+              "calls": 166,
+              "flops": 8944162111488
+            }
+          }
+        }
+      }
+    },
+    "seconds": 56.468000000109896,
+    "sha256": "6f36b81c9bc7369174b81be59afca348793b1db9642f1f659bb200ac57ef6723"
+  },
+  "per_run_seconds_scope": "Sum of per-arm timers only; not total wall time and excludes preparation/qualification not attached to arms.",
+  "preparation_forward_calls_reconstructed": {
+    "basis": "fixed warm/train/validation schedule; this is a call count, not a FLOP estimate",
+    "calls": 864,
+    "flops": null
+  },
+  "prior_failure_separate_not_in_any_total": {
+    "actual_Adam_updates": 2,
+    "authoritative_work": {
+      "calls": 51308,
+      "flops": 1175147551211520,
+      "stages": {
+        "qualification:cache_capture": {
+          "calls": 34304,
+          "flops": 781453126107136,
+          "phases": {
+            "forward": {
+              "calls": 34304,
+              "flops": 781453126107136
+            }
+          }
+        },
+        "qualification:qualification_warm_teacher": {
+          "calls": 16960,
+          "flops": 390714313588736,
+          "phases": {
+            "forward": {
+              "calls": 16960,
+              "flops": 390714313588736
+            }
+          }
+        },
+        "qualification:train": {
+          "calls": 44,
+          "flops": 2980111515648,
+          "phases": {
+            "backward": {
+              "calls": 18,
+              "flops": 1489858560000
+            },
+            "forward": {
+              "calls": 26,
+              "flops": 1490252955648
+            }
+          }
+        }
+      }
+    },
+    "error": "optimizer got an empty parameter list",
+    "error_type": "ValueError",
+    "failure_receipt_local_work_overlap_not_additive": {
+      "cache_capture": {
+        "forward": {
+          "calls": 34304,
+          "flops": 781453126107136,
+          "ops": {
+            "bmm": {
+              "calls": 7296,
+              "flops": 4905727000576
+            },
+            "mm": {
+              "calls": 26752,
+              "flops": 776545914322944
+            },
+            "mv": {
+              "calls": 256,
+              "flops": 1484783616
+            }
+          }
+        }
+      },
+      "qualification_training": {
+        "forward": {
+          "calls": 26,
+          "flops": 1490252955648,
+          "ops": {
+            "mm": {
+              "calls": 22,
+              "flops": 1490229755904
+            },
+            "mv": {
+              "calls": 4,
+              "flops": 23199744
+            }
+          }
+        }
+      },
+      "qualification_warm_teacher": {
+        "forward": {
+          "calls": 16960,
+          "flops": 390714313588736,
+          "ops": {
+            "bmm": {
+              "calls": 3648,
+              "flops": 2452863500288
+            },
+            "mm": {
+              "calls": 13248,
+              "flops": 388261078892544
+            },
+            "mv": {
+              "calls": 64,
+              "flops": 371195904
+            }
+          }
+        }
+      },
+      "train": {
+        "backward": {
+          "calls": 18,
+          "flops": 1489858560000,
+          "ops": {
+            "mm": {
+              "calls": 18,
+              "flops": 1489858560000
+            }
+          }
+        }
+      }
+    },
+    "optimizer_attempts": 2,
+    "receipt_path": "results\\agnews-single-receiver-v7\\resume-qualification-r1\\qualification-failure.json",
+    "receipt_sha256": "4223f570dd3466d86412223563adb8aef173c12972317875e9196e4cc3e74681",
+    "seconds": 41.07799999997951,
+    "work_path": "results\\agnews-single-receiver-v7\\resume-qualification-r1\\execution-work.json",
+    "work_sha256": "063eba71ee765c8527e036e6cc490a211ff42111cedc4124a15d68c80aeb7b69"
+  },
+  "recovery_attempt_run_work": {
+    "calls": 177552,
+    "flops": 5926035451666432,
+    "stages": {
+      "new_only_receiver:evaluation": {
+        "calls": 2496,
+        "flops": 143064283742208,
+        "phases": {
+          "forward": {
+            "calls": 2496,
+            "flops": 143064283742208
+          }
+        }
+      },
+      "new_only_receiver:full_parity": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "phases": {
+          "forward": {
+            "calls": 17152,
+            "flops": 390714684784640
+          }
+        }
+      },
+      "new_only_receiver:training": {
+        "calls": 16896,
+        "flops": 1144362822008832,
+        "phases": {
+          "backward": {
+            "calls": 6912,
+            "flops": 572105687040000
+          },
+          "forward": {
+            "calls": 9984,
+            "flops": 572257134968832
+          }
+        }
+      },
+      "new_only_shared:evaluation": {
+        "calls": 8640,
+        "flops": 429192851226624,
+        "phases": {
+          "forward": {
+            "calls": 8640,
+            "flops": 429192851226624
+          }
+        }
+      },
+      "new_only_shared:full_parity": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "phases": {
+          "forward": {
+            "calls": 17152,
+            "flops": 390714684784640
+          }
+        }
+      },
+      "new_only_shared:initial_score": {
+        "calls": 2496,
+        "flops": 143064283742208,
+        "phases": {
+          "forward": {
+            "calls": 2496,
+            "flops": 143064283742208
+          }
+        }
+      },
+      "new_only_shared:training": {
+        "calls": 35824,
+        "flops": 1526670681833472,
+        "phases": {
+          "backward": {
+            "calls": 20472,
+            "flops": 763661168541696
+          },
+          "forward": {
+            "calls": 15352,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "teacher_quality_recomputed:17:current": {
+        "calls": 17152,
+        "flops": 390726563053568,
+        "phases": {
+          "forward": {
+            "calls": 17152,
+            "flops": 390726563053568
+          }
+        }
+      },
+      "teacher_quality_recomputed:17:warm": {
+        "calls": 8480,
+        "flops": 195357156794368,
+        "phases": {
+          "forward": {
+            "calls": 8480,
+            "flops": 195357156794368
+          }
+        }
+      },
+      "teacher_quality_recomputed:29:current": {
+        "calls": 17152,
+        "flops": 390726563053568,
+        "phases": {
+          "forward": {
+            "calls": 17152,
+            "flops": 390726563053568
+          }
+        }
+      },
+      "teacher_quality_recomputed:29:warm": {
+        "calls": 8480,
+        "flops": 195357156794368,
+        "phases": {
+          "forward": {
+            "calls": 8480,
+            "flops": 195357156794368
+          }
+        }
+      },
+      "teacher_quality_recomputed:43:current": {
+        "calls": 17152,
+        "flops": 390726563053568,
+        "phases": {
+          "forward": {
+            "calls": 17152,
+            "flops": 390726563053568
+          }
+        }
+      },
+      "teacher_quality_recomputed:43:warm": {
+        "calls": 8480,
+        "flops": 195357156794368,
+        "phases": {
+          "forward": {
+            "calls": 8480,
+            "flops": 195357156794368
+          }
+        }
+      }
+    }
+  },
+  "recovery_attempt_work_including_qualification": {
+    "calls": 177640,
+    "flops": 5931995674697728
+  },
+  "recovery_execution_seconds": 124.375,
+  "recovery_optimizer_attempts": 1792,
+  "recovery_qualification_optimizer_attempts": 4,
+  "recovery_qualification_receipt": {
+    "branches": [
+      {
+        "model": "01432512a7cd6e9196a47eb70eebb0c469075c545e62e1a6c6e382f24f760aae",
+        "optimizer": "ccc56a981fae32047186dfd8977277cf072ecb746af4b4a38b4b1a1a67d890e8",
+        "policy": "70a91a59c47255e9f358d010465785e05e06fa1e2fa2b5710638defeb5ae3d3a",
+        "rng": "b4006f97d21169cdbc6b2308b8dd123c690ee8a22a15afd7632b6d143f020bdb"
+      },
+      {
+        "model": "01432512a7cd6e9196a47eb70eebb0c469075c545e62e1a6c6e382f24f760aae",
+        "optimizer": "ccc56a981fae32047186dfd8977277cf072ecb746af4b4a38b4b1a1a67d890e8",
+        "policy": "70a91a59c47255e9f358d010465785e05e06fa1e2fa2b5710638defeb5ae3d3a",
+        "rng": "b4006f97d21169cdbc6b2308b8dd123c690ee8a22a15afd7632b6d143f020bdb"
+      }
+    ],
+    "independent_restores_exact": true,
+    "optimizer_attempts": 4,
+    "passed": true,
+    "progress_sha256": "6dcc0ac711b6d0263e9a62d58e376e104e4b1c33e96e4bd69e2578269c020b22",
+    "seconds": 8.0,
+    "source_sha256": "188e26a1cc58b9a951cd7c2a4b4ec9f32bf8551ae11117eb7c65fc4aacbc2faf",
+    "work": {
+      "independent_restore_proof": {
+        "backward": {
+          "calls": 36,
+          "flops": 2979717120000,
+          "ops": {
+            "mm": {
+              "calls": 36,
+              "flops": 2979717120000
+            }
+          }
+        },
+        "forward": {
+          "calls": 52,
+          "flops": 2980505911296,
+          "ops": {
+            "mm": {
+              "calls": 44,
+              "flops": 2980459511808
+            },
+            "mv": {
+              "calls": 8,
+              "flops": 46399488
+            }
+          }
+        }
+      }
+    }
+  },
+  "recovery_qualification_seconds": 8.0,
+  "recovery_qualification_work_separate": {
+    "calls": 88,
+    "flops": 5960223031296,
+    "stages": {
+      "independent_restore_proof": {
+        "calls": 88,
+        "flops": 5960223031296,
+        "phases": {
+          "backward": {
+            "calls": 36,
+            "flops": 2979717120000
+          },
+          "forward": {
+            "calls": 52,
+            "flops": 2980505911296
+          }
+        }
+      }
+    }
+  },
+  "retained_row_local_work_counters_not_additive": {
+    "calls": 1570586,
+    "flops": 70747047820918784,
+    "interpretation": "This sum includes overlapping local counters across rows and phases; it is diagnostic only, not an attempt-global total.",
+    "original_partial_receiver_training_only": {
+      "calls": 15488,
+      "flops": 1048999253508096
+    }
+  },
+  "run_costs": [
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "current_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9674728448,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 48.561999999918044,
+      "seconds_recovery": null,
+      "seed": 17,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601897,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "current_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17132,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17132,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17132,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 31748,
+        "flops": 1526672331177984,
+        "phases": {
+          "backward": {
+            "calls": 18434,
+            "flops": 763662817886208
+          },
+          "forward": {
+            "calls": 13314,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 52.01600000006147,
+      "seconds_recovery": null,
+      "seed": 17,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601897,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 48.34400000004098,
+      "seconds_recovery": null,
+      "seed": 17,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601897,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17128,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17128,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17128,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 31748,
+        "flops": 1526672331177984,
+        "phases": {
+          "backward": {
+            "calls": 18434,
+            "flops": 763662817886208
+          },
+          "forward": {
+            "calls": 13314,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 52.21900000004098,
+      "seconds_recovery": null,
+      "seed": 17,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601897,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_narrow_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 16,
+        "1": 16,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 48.264999999897555,
+      "seconds_recovery": null,
+      "seed": 17,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 613618,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 544,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_narrow_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 16,
+        "1": 16,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 10358,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 10358,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 10358,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 33616,
+        "flops": 1526671877799936,
+        "phases": {
+          "backward": {
+            "calls": 19368,
+            "flops": 763662364508160
+          },
+          "forward": {
+            "calls": 14248,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 54.21900000004098,
+      "seconds_recovery": null,
+      "seed": 17,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 613618,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 544,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "gold_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 46.60899999993853,
+      "seconds_recovery": null,
+      "seed": 17,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601897,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "gold_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 31788,
+        "flops": 1526672329015296,
+        "phases": {
+          "backward": {
+            "calls": 18454,
+            "flops": 763662815723520
+          },
+          "forward": {
+            "calls": 13334,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 50.389999999897555,
+      "seconds_recovery": null,
+      "seed": 17,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601897,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "new_only_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 0,
+        "1": 0,
+        "2": 4096,
+        "3": 4096
+      },
+      "class_unique_examples": {
+        "0": 0,
+        "1": 0,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 46.515000000130385,
+      "seconds_recovery": null,
+      "seed": 17,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 594812,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 512,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "new_only_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 0,
+        "1": 0,
+        "2": 4096,
+        "3": 4096
+      },
+      "class_unique_examples": {
+        "0": 0,
+        "1": 0,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 31748,
+        "flops": 1526672330784768,
+        "phases": {
+          "backward": {
+            "calls": 18434,
+            "flops": 763662817492992
+          },
+          "forward": {
+            "calls": 13314,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 50.063000000081956,
+      "seconds_recovery": null,
+      "seed": 17,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 594812,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 512,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "current_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17116,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17116,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17116,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 48.64099999982864,
+      "seconds_recovery": null,
+      "seed": 29,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 602647,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "current_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17124,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17124,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17124,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 10752,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 10752,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 10752,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 33432,
+        "flops": 1526671493038080,
+        "phases": {
+          "backward": {
+            "calls": 19276,
+            "flops": 763661979746304
+          },
+          "forward": {
+            "calls": 14156,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 54.484999999869615,
+      "seconds_recovery": null,
+      "seed": 29,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 602647,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17116,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17116,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17116,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 48.82799999997951,
+      "seconds_recovery": null,
+      "seed": 29,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 602647,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 11132,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 11132,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 11132,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 35792,
+        "flops": 1526669662224384,
+        "phases": {
+          "backward": {
+            "calls": 20456,
+            "flops": 763660148932608
+          },
+          "forward": {
+            "calls": 15336,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 56.73400000017136,
+      "seconds_recovery": null,
+      "seed": 29,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 602647,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_narrow_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 16,
+        "1": 16,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17116,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17116,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17116,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 48.73399999993853,
+      "seconds_recovery": null,
+      "seed": 29,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 586226,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 544,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_narrow_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 16,
+        "1": 16,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 11136,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 11136,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 11136,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 35824,
+        "flops": 1526669459128320,
+        "phases": {
+          "backward": {
+            "calls": 20472,
+            "flops": 763659945836544
+          },
+          "forward": {
+            "calls": 15352,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 56.82799999997951,
+      "seconds_recovery": null,
+      "seed": 29,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 586226,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 544,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "gold_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 17116,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17116,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17116,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 46.5,
+      "seconds_recovery": null,
+      "seed": 29,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 602647,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "gold_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 11130,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 11130,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 11130,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 35788,
+        "flops": 1526669828751360,
+        "phases": {
+          "backward": {
+            "calls": 20454,
+            "flops": 763660315459584
+          },
+          "forward": {
+            "calls": 15334,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 53.96899999980815,
+      "seconds_recovery": null,
+      "seed": 29,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 602647,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1024,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "new_only_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 0,
+        "1": 0,
+        "2": 4096,
+        "3": 4096
+      },
+      "class_unique_examples": {
+        "0": 0,
+        "1": 0,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 17116,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17116,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17116,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 46.57799999997951,
+      "seconds_recovery": null,
+      "seed": 29,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 597623,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 512,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "new_only_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 0,
+        "1": 0,
+        "2": 4096,
+        "3": 4096
+      },
+      "class_unique_examples": {
+        "0": 0,
+        "1": 0,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 11136,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 11136,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 11136,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 35820,
+        "flops": 1526670713487360,
+        "phases": {
+          "backward": {
+            "calls": 20470,
+            "flops": 763661200195584
+          },
+          "forward": {
+            "calls": 15350,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 54.140000000130385,
+      "seconds_recovery": null,
+      "seed": 29,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 597623,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 512,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "current_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 255
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 49.125,
+      "seconds_recovery": null,
+      "seed": 43,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601602,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1023,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "current_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 255
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 10028,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 10028,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 10028,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 32056,
+        "flops": 1526672304832512,
+        "phases": {
+          "backward": {
+            "calls": 18588,
+            "flops": 763662791540736
+          },
+          "forward": {
+            "calls": 13468,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 53.07899999991059,
+      "seconds_recovery": null,
+      "seed": 43,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601602,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1023,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 255
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 49.07799999997951,
+      "seconds_recovery": null,
+      "seed": 43,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601602,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 1023,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 255
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 10368,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 10368,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 10368,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 32360,
+        "flops": 1526672093282304,
+        "phases": {
+          "backward": {
+            "calls": 18740,
+            "flops": 763662579990528
+          },
+          "forward": {
+            "calls": 13620,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 53.78099999995902,
+      "seconds_recovery": null,
+      "seed": 43,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601602,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 1023,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_narrow_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 16,
+        "1": 16,
+        "2": 256,
+        "3": 255
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 50.32799999997951,
+      "seconds_recovery": null,
+      "seed": 43,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 599315,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 543,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "split_narrow_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 16,
+        "1": 16,
+        "2": 256,
+        "3": 255
+      },
+      "direct_gold_answer_draws": 0,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 11136,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 11136,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 11136,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 35828,
+        "flops": 1526670280949760,
+        "phases": {
+          "backward": {
+            "calls": 20474,
+            "flops": 763660767657984
+          },
+          "forward": {
+            "calls": 15354,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 57.156999999890104,
+      "seconds_recovery": null,
+      "seed": 43,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 599315,
+      "teacher_origin_selection_draws": 8192,
+      "unique_training_examples": 543,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "gold_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 255
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 9984,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 9984,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 9984,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 22528,
+        "flops": 1525817096011776,
+        "phases": {
+          "backward": {
+            "calls": 9216,
+            "flops": 762807582720000
+          },
+          "forward": {
+            "calls": 13312,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9673769984,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 46.531999999890104,
+      "seconds_recovery": null,
+      "seed": 43,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601602,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1023,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "gold_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 2048,
+        "1": 2048,
+        "2": 2048,
+        "3": 2048
+      },
+      "class_unique_examples": {
+        "0": 256,
+        "1": 256,
+        "2": 256,
+        "3": 255
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 17152,
+        "flops": 390714684784640,
+        "stages": {
+          "full_model_parity": {
+            "calls": 17152,
+            "flops": 390714684784640,
+            "phases": {
+              "forward": {
+                "calls": 17152,
+                "flops": 390714684784640
+              }
+            }
+          }
+        }
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 10790,
+        "flops": 572257134968832,
+        "stages": {
+          "evaluation": {
+            "calls": 10790,
+            "flops": 572257134968832,
+            "phases": {
+              "forward": {
+                "calls": 10790,
+                "flops": 572257134968832
+              }
+            }
+          }
+        }
+      },
+      "local_training_matmul_work": {
+        "calls": 34476,
+        "flops": 1526671234498560,
+        "phases": {
+          "backward": {
+            "calls": 19798,
+            "flops": 763661721206784
+          },
+          "forward": {
+            "calls": 14678,
+            "flops": 763009513291776
+          }
+        }
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": 9676129280,
+      "peak_cuda_reserved_bytes": 10309599232,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": null,
+      "recovery_actual_updates": null,
+      "seconds": 52.59400000004098,
+      "seconds_recovery": null,
+      "seed": 43,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 601602,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 1023,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "new_only_receiver",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 0,
+        "1": 0,
+        "2": 4096,
+        "3": 4096
+      },
+      "class_unique_examples": {
+        "0": 0,
+        "1": 0,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 0,
+        "flops": 0,
+        "stages": {}
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 0,
+        "flops": 0,
+        "stages": {}
+      },
+      "local_training_matmul_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": null,
+      "peak_cuda_reserved_bytes": null,
+      "prior_attempt_local_training_work": {
+        "calls": 15488,
+        "flops": 1048999253508096,
+        "phases": {
+          "backward": {
+            "calls": 6336,
+            "flops": 524430213120000
+          },
+          "forward": {
+            "calls": 9152,
+            "flops": 524569040388096
+          }
+        }
+      },
+      "recovered_from_step": 256,
+      "recovery_actual_updates": 768,
+      "seconds": null,
+      "seconds_recovery": 29.07799999997951,
+      "seed": 43,
+      "student_backward_passes": 1472,
+      "student_forward_passes": 1472,
+      "student_input_tokens": 856261,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 512,
+      "updates": 1024
+    },
+    {
+      "all_local_counters_non_authoritative_not_additive": true,
+      "arm": "new_only_shared",
+      "cache_file_bytes": 1614946135,
+      "class_draws": {
+        "0": 0,
+        "1": 0,
+        "2": 4096,
+        "3": 4096
+      },
+      "class_unique_examples": {
+        "0": 0,
+        "1": 0,
+        "2": 256,
+        "3": 256
+      },
+      "direct_gold_answer_draws": 8192,
+      "local_endpoint_matmul_work": {
+        "calls": 0,
+        "flops": 0,
+        "stages": {}
+      },
+      "local_evaluation_matmul_work": {
+        "calls": 0,
+        "flops": 0,
+        "stages": {}
+      },
+      "local_training_matmul_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "model_tensor_bytes": 27396800,
+      "peak_cuda_allocated_bytes": null,
+      "peak_cuda_reserved_bytes": null,
+      "prior_attempt_local_training_work": {
+        "calls": 0,
+        "flops": 0,
+        "phases": {}
+      },
+      "recovered_from_step": 0,
+      "recovery_actual_updates": 1024,
+      "seconds": null,
+      "seconds_recovery": 45.187999999849126,
+      "seed": 43,
+      "student_backward_passes": 1024,
+      "student_forward_passes": 1024,
+      "student_input_tokens": 595412,
+      "teacher_origin_selection_draws": 0,
+      "unique_training_examples": 512,
+      "updates": 1024
+    }
+  ],
+  "sum_recorded_per_run_seconds_not_wall": 1498.578999999212
+}
