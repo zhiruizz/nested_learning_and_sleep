@@ -1,5 +1,7 @@
 # Recoverable old memories and functional interference: v5 diagnosis
 
+The [seven-arm follow-up and separate routing control are now complete](agnews-anchored-v5.md). The running status in the original publication section below is historical; its raw status receipt and diagnostic evidence remain unchanged. No run passed the joint old/new gate.
+
 **Frozen receiver parameters do not by themselves protect the old-task function.** Base and route interventions have heterogeneous effects across seeds. This is exploratory evidence on already-used AG News train/validation roles. It is not independent confirmation, a full Sleep/HOPE reproduction, or an established new method advantage. The [v4 negative results](agnews-preupdate-v4.md) remain unchanged.
 
 The completed component experiment observes 135 interventions plus three warm references, without any optimizer updates. Its 15 source checkpoint states cover three seeds and five fixed v4 arm/step cases. Every original receiver0 tensor guard passes. Restoring both bases and the original active topology/routing exactly recovers the warm validation function in all cases: old EM 91.93% ± 1.97 pp, new EM 0 (sample SD over the same three seeds). That recovery sacrifices new adaptation and is a diagnostic intervention, not a deployed result.

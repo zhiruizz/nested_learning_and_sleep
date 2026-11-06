@@ -1,0 +1,99 @@
+{
+  "branch_cost_note": "Both complete model branches are evaluated for every row; the post-hoc selector does not share inference computation. Ridge is fitted once per seed on 1024 training group labels. The training gate fit/evaluation is exploratory and not a free performance gain.",
+  "checkpoint_sha256_by_seed": {
+    "17": {
+      "new_CMS_reference_448": "422ea75e6d2f879380aab3d623388e5400a59d4104e837e1240f7b4d4ee67b36",
+      "warm": "396ff2f749525986a852ec3620d5dcade1f4dcc2e0fbf368cb70aa14c04c7222"
+    },
+    "29": {
+      "new_CMS_reference_448": "72de95660a981f6456fb9bf506d2514f12760b28c9670ec57bfa5674f37ef0e8",
+      "warm": "99a46c6988cf03ca352469da5dff573874737ef8e927802b2090f33c1f5a5531"
+    },
+    "43": {
+      "new_CMS_reference_448": "b3eb486d7356e9c94c9ed183758ea84d1ec58503ee8954d3cc49db15c27a9eec",
+      "warm": "9241bbb2116a8a5599c7d42670675b62aab7ebf4c47bd0225789e84e1e8f6bbf"
+    }
+  },
+  "clock_started_utc": "2026-11-06T10:54:04.121191+00:00",
+  "conditions": [
+    "warm_alone",
+    "new_CMS_reference_alone",
+    "learned_feature_gate",
+    "task_ID_diagnostic"
+  ],
+  "confirmation_input": false,
+  "confirmation_scored": false,
+  "driver_sha256": "6659b2a66a1f470661d820a8bace8ed5fe2adae851d8f9006fbd5064be5c9a96",
+  "elapsed_limit_seconds": 900,
+  "environment": {
+    "cuda_build": "12.8",
+    "numpy": "2.2.6",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "python": "3.11.17 | packaged by conda-forge | (main, Oct 13 2026, 16:36:10) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.8.0+cu128"
+  },
+  "estimated_forward_calls": 1152,
+  "estimated_forward_input_tokens": null,
+  "feature_hook": "backbone.model.layers[-1].mlp.original output at input prefix position len(tokens)-1; before memory adapters",
+  "locked_source_sha256": {
+    "common": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+    "core": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02",
+    "engine": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+    "main_driver": "b0ae6daaeb6d18d17ef2fe96972826e6cc685d7f8a81845d1226d9f2725bed7d",
+    "task_router_driver": "6659b2a66a1f470661d820a8bace8ed5fe2adae851d8f9006fbd5064be5c9a96",
+    "v4_boundary": "5415531a3f3b715eac44cfcbd35ff1dd758ea830bd03201550883ace8a2a1a82",
+    "wake_helper": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6"
+  },
+  "main_protocol_sha256": "75b5c19db27b45efe086e06d4290aa806768653ef962dc37419dacf144bcb26c",
+  "main_seal_sha256": "45e44b6bd0479234c0aa2b1f491315918476529b01d33fb27678293481fa2253",
+  "main_source_sha256": {
+    "common": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+    "driver": "b0ae6daaeb6d18d17ef2fe96972826e6cc685d7f8a81845d1226d9f2725bed7d",
+    "v4_boundary": "5415531a3f3b715eac44cfcbd35ff1dd758ea830bd03201550883ace8a2a1a82",
+    "v4_engine": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+    "wake_helper": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6"
+  },
+  "model_assets": {
+    "revision": "48d84dd14886f01964f72e7f742a404dd86f9fb6",
+    "tokenizer_file_sha256": {
+      "LICENSE.txt": "0b4284c1f87029e67654c7953afa16279961632cf73dcfe33374c4c2f298fa35",
+      "config.json": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d",
+      "generation_config.json": "da81b0dd4001a8e19fb5840d2b524f6957f44ddde6f5c3fe32b1f36cef5205bf",
+      "model.safetensors.index.json": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c",
+      "special_tokens_map.json": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535",
+      "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+      "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+    },
+    "weight_sha256": {
+      "model-00001-of-00002.safetensors": "584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002",
+      "model-00002-of-00002.safetensors": "4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb"
+    }
+  },
+  "no_gradient_forwards": true,
+  "no_optimizer_updates": true,
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "ridge": {
+    "decision": "new iff score > 0; no hyperparameter search",
+    "normalizer": "training mean/std(ddof=0), std floor 1e-6, then divide sqrt(d)",
+    "regularization": 1.0,
+    "solver": "dual float64",
+    "targets": {
+      "new": 1,
+      "old": -1
+    }
+  },
+  "schema": "agnews-task-router-control-v5",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "status": "exploratory_capacity_routing_control",
+  "task_ID_diagnostic_note": "group-level old/new task identity selects a branch; diagnostic selector, not a deployable method or guaranteed upper bound",
+  "time_enforcement": "cooperative checks between batches and seed transitions",
+  "training_group_label_uses": 3072,
+  "training_rows": 1024,
+  "validation_rows": 512,
+  "warm_result_sha256": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b",
+  "weights_or_row_predictions_written": false
+}

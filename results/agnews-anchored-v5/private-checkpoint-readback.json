@@ -1,0 +1,10 @@
+{
+  "bytes_read": 3570899258,
+  "checkpoints": 126,
+  "data_or_model_scoring": false,
+  "deserialization": false,
+  "passed": true,
+  "schema": "agnews-v5-private-checkpoint-readback-v1",
+  "seal_sha256": "45e44b6bd0479234c0aa2b1f491315918476529b01d33fb27678293481fa2253",
+  "verified_utc": "2026-11-06T10:51:23.134541+00:00"
+}

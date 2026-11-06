@@ -1,0 +1,383 @@
+{
+  "applicable_CPU_checks": {
+    "explicit_anchored_wake_before_main": {
+      "passed": 5
+    },
+    "explicit_task_router": {
+      "CUDA_visible_devices": "-1",
+      "passed": 5,
+      "seconds": 2.7
+    },
+    "ordinary": {
+      "CUDA_visible_devices": "-1",
+      "deselected": 1,
+      "deselection": "CPU-only-wheel exported import assertion on installed CUDA wheel",
+      "final_session_ledger_persisted": false,
+      "passed": 161,
+      "per_process_update_cap": 256,
+      "seconds": 8.31
+    },
+    "real3B_resume_qualification": "exact model/controller/execution policy/RNG; no scoring"
+  },
+  "completed_utc": "2026-11-06T11:17:30.343602+00:00",
+  "core_receipt": "agnews-anchored-v5/validation.json",
+  "final_report_sha256": "e4b2ad1c2c3282af48744278b251a9f29b7b79e9991874825b916dc23958ca40",
+  "independent_review": {
+    "advisory_applied": true,
+    "only_advisory": "Describe KD/reference as an observed contrast with bundled supervision/storage/compute",
+    "record": {
+      "checks": {
+        "all_router_joint_gates_fail": true,
+        "complete": true,
+        "confirmation_not_scored": true,
+        "elapsed_within_900s": true,
+        "exact_fw": true,
+        "result_prediction_artifacts_absent": true,
+        "router_plan_result_hash_link": true,
+        "three_seeds": true,
+        "train_only_fixed_ridge": true,
+        "validation_classifier_accuracy_matches_confusions": true,
+        "zero_gradient_fw": true,
+        "zero_llm_updates": true
+      },
+      "files": [
+        "development-sealed.json",
+        "protocol.json",
+        "analysis.json",
+        "endpoint-table.md",
+        "paired-endpoints.md",
+        "work-ledger.json",
+        "per-seed-endpoints.md",
+        "report.md",
+        "router/plan.json",
+        "router/result.json",
+        "router/analysis.json",
+        "router/summary.md"
+      ],
+      "issues": [
+        {
+          "finding": "The wording that frozen-teacher KD \u201creduces old-task loss, but slows new-task adaptation\u201d reads causally. The arms differ in auxiliary targets, compute and replay; frame as the observed bundled-arm contrast and cite the measured values, while retaining the later caveat.",
+          "location": "report.md opening sentence",
+          "severity": "advisory"
+        },
+        {
+          "finding": "The report labels this as a separate retained-context routing diagnostic, notes additional group-identity supervision, full evaluation of both branches, no single-forward deployment, no Sleep consolidation, and zero joint gates. This is appropriately scoped.",
+          "location": "router attribution",
+          "severity": "none"
+        }
+      ],
+      "router_metrics": {
+        "learned_feature_gate": {
+          "all": {
+            "mean_pct": 80.078125,
+            "per_seed_pct": [
+              80.46875,
+              80.859375,
+              78.90625
+            ],
+            "sample_sd_pct": 1.0334966058846058
+          },
+          "gates": [
+            {
+              "both": false,
+              "new": false,
+              "old": true,
+              "seed": 17
+            },
+            {
+              "both": false,
+              "new": false,
+              "old": true,
+              "seed": 29
+            },
+            {
+              "both": false,
+              "new": false,
+              "old": true,
+              "seed": 43
+            }
+          ],
+          "new": {
+            "mean_pct": 71.484375,
+            "per_seed_pct": [
+              72.265625,
+              71.875,
+              70.3125
+            ],
+            "sample_sd_pct": 1.0334966058846058
+          },
+          "old": {
+            "mean_pct": 88.671875,
+            "per_seed_pct": [
+              88.671875,
+              89.84375,
+              87.5
+            ],
+            "sample_sd_pct": 1.171875
+          }
+        },
+        "new_CMS_reference_alone": {
+          "all": {
+            "mean_pct": 36.783854166666664,
+            "per_seed_pct": [
+              37.109375,
+              37.109375,
+              36.132812
+            ],
+            "sample_sd_pct": 0.563818622255494
+          },
+          "gates": [
+            {
+              "both": false,
+              "new": false,
+              "old": false,
+              "seed": 17
+            },
+            {
+              "both": false,
+              "new": false,
+              "old": false,
+              "seed": 29
+            },
+            {
+              "both": false,
+              "new": false,
+              "old": false,
+              "seed": 43
+            }
+          ],
+          "new": {
+            "mean_pct": 73.56770833333333,
+            "per_seed_pct": [
+              74.21875,
+              74.21875,
+              72.265625
+            ],
+            "sample_sd_pct": 1.127637244510988
+          },
+          "old": {
+            "mean_pct": 0.0,
+            "per_seed_pct": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "sample_sd_pct": 0.0
+          }
+        },
+        "task_ID_diagnostic": {
+          "all": {
+            "mean_pct": 82.74739583333333,
+            "per_seed_pct": [
+              83.203125,
+              83.984375,
+              81.054688
+            ],
+            "sample_sd_pct": 1.5170807549128964
+          },
+          "gates": [
+            {
+              "both": false,
+              "new": false,
+              "old": true,
+              "seed": 17
+            },
+            {
+              "both": false,
+              "new": false,
+              "old": true,
+              "seed": 29
+            },
+            {
+              "both": false,
+              "new": false,
+              "old": true,
+              "seed": 43
+            }
+          ],
+          "new": {
+            "mean_pct": 73.56770833333333,
+            "per_seed_pct": [
+              74.21875,
+              74.21875,
+              72.265625
+            ],
+            "sample_sd_pct": 1.127637244510988
+          },
+          "old": {
+            "mean_pct": 91.92708333333333,
+            "per_seed_pct": [
+              92.1875,
+              93.75,
+              89.84375
+            ],
+            "sample_sd_pct": 1.9661027175184245
+          }
+        },
+        "warm_alone": {
+          "all": {
+            "mean_pct": 45.963541666666664,
+            "per_seed_pct": [
+              46.09375,
+              46.875,
+              44.921875
+            ],
+            "sample_sd_pct": 0.9830513587592122
+          },
+          "gates": [
+            {
+              "both": false,
+              "new": false,
+              "old": true,
+              "seed": 17
+            },
+            {
+              "both": false,
+              "new": false,
+              "old": true,
+              "seed": 29
+            },
+            {
+              "both": false,
+              "new": false,
+              "old": true,
+              "seed": 43
+            }
+          ],
+          "new": {
+            "mean_pct": 0.0,
+            "per_seed_pct": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "sample_sd_pct": 0.0
+          },
+          "old": {
+            "mean_pct": 91.92708333333333,
+            "per_seed_pct": [
+              92.1875,
+              93.75,
+              89.84375
+            ],
+            "sample_sd_pct": 1.9661027175184245
+          }
+        }
+      },
+      "schema": "agnews-v5-independent-review-v1"
+    },
+    "record_sha256": "8c8bfbde1e43ad7bd843f489cda5157674e6e10d6f5b2242dfdcc72c463cf7fc",
+    "text_sha256": "e1df114b78e58e45cea1a92f0a76cdbfe4d9f5b3422a29cc1118db2d055a948e"
+  },
+  "infrastructure_recovery": {
+    "checkpoint_or_dataset_modification": false,
+    "checkpoint_readback_receipt_already_written_after_lost_response": true,
+    "duplicate_read_only_pass_stopped_at_exclusive_receipt_write": true,
+    "permission_review_timeouts_and_exec_transport_disconnects": true,
+    "training_restarted_or_retried": false
+  },
+  "plot_QA": {
+    "SVG_trailing_whitespace_cleaned_with_XML_geometry_equivalence_check": true,
+    "endpoint_and_trajectory_PNGs_visually_checked": true
+  },
+  "private_reference_direct_CPU_comparison": {
+    "cuda_visible_devices": "-1",
+    "model_construction": false,
+    "pairs": [
+      {
+        "all_rng_streams_equal": true,
+        "controller_equal": true,
+        "execution_policy_equal": true,
+        "model_equal": true,
+        "seed": 17,
+        "step": 16,
+        "v4_checkpoint_sha256": "b18774a089c19aae4d20d426a9d2f9b1b7fc067b38f894d4891186ea1972a3bc",
+        "v5_checkpoint_sha256": "880f2bc8fc40b73a9bbab8ac201328796e7d85b153c5848698da84af137df809"
+      },
+      {
+        "all_rng_streams_equal": true,
+        "controller_equal": true,
+        "execution_policy_equal": true,
+        "model_equal": true,
+        "seed": 17,
+        "step": 112,
+        "v4_checkpoint_sha256": "b30beeb20232a7a8deff2bd046fa887401ccca6bd1b8e384e1ae4eb3272d5128",
+        "v5_checkpoint_sha256": "86d6b77d3297da861011228fa0503238ad82b13a9a781ecb3c3d94e15c050a6a"
+      },
+      {
+        "all_rng_streams_equal": true,
+        "controller_equal": true,
+        "execution_policy_equal": true,
+        "model_equal": true,
+        "seed": 29,
+        "step": 16,
+        "v4_checkpoint_sha256": "bf38e139901ce1e067deb2613edb5d0c9b0955c4a70a470c04328387239e3546",
+        "v5_checkpoint_sha256": "55c74c940d6906ba345dcc9eb440571f638972a2051721d647a28a8a2cc1aead"
+      },
+      {
+        "all_rng_streams_equal": true,
+        "controller_equal": true,
+        "execution_policy_equal": true,
+        "model_equal": true,
+        "seed": 29,
+        "step": 112,
+        "v4_checkpoint_sha256": "f28a3ec6aa4d409d2816afaaff7d29be5540f24d6b6c06e7d4cf82411dad717a",
+        "v5_checkpoint_sha256": "46e19f2dcd6d29e44601b87c2840958c99c162f82704e53742934444749dbf1b"
+      },
+      {
+        "all_rng_streams_equal": true,
+        "controller_equal": true,
+        "execution_policy_equal": true,
+        "model_equal": true,
+        "seed": 43,
+        "step": 16,
+        "v4_checkpoint_sha256": "24a1c703884a77d509e27bc5597bc4c3c6b4acfc53f133bba72c33579fef1a0f",
+        "v5_checkpoint_sha256": "0c10de2fd4dd93ec0e13eacb82edbcfd6a674aabfdc965ffe73b199073e2e07b"
+      },
+      {
+        "all_rng_streams_equal": true,
+        "controller_equal": true,
+        "execution_policy_equal": true,
+        "model_equal": true,
+        "seed": 43,
+        "step": 112,
+        "v4_checkpoint_sha256": "0d0ec8906a82a3dba8cf22f0c569b737f17685d6be50bc407a8cd20299373a10",
+        "v5_checkpoint_sha256": "76b1a4aa8d20f564b7dedafa51ed0833a688357eda24db34fe11699530a71ff1"
+      }
+    ],
+    "passed": true,
+    "schema": "agnews-v5-reference-checkpoint-direct-comparison-v1",
+    "scoring_or_training": false,
+    "source_sha256": "7cc89dd54ee23fa5b90124bafbdc683be0957e64c85c2921d5e4a06d859932b4",
+    "torch_load_map_location": "cpu",
+    "verified_utc": "2026-11-06T11:02:06.311317+00:00"
+  },
+  "public_reanalysis": {
+    "main": {
+      "byte_identical": true,
+      "files": {
+        "analysis.json": "9551e469f8aa1c11dcd2c298a93aa24068052a7c62280b3679c13735528ab291",
+        "endpoint-table.md": "8b6952fe5d521deb2afe9a516645e1bed005edced51d483d6ba82b05155222e1",
+        "paired-endpoints.md": "f17f459ccab13020ab23fb5f936b89bb22fc0e9c6882fe8aaa461c0c1c739832",
+        "per-seed-endpoints.md": "c729585f5711828829daed60869e8bdc765059b3a6a3a60d06f43ff6c974c7fb",
+        "trajectory-table.md": "9c166d9ab9486e9fd1b10fc962c3195b9f4aeeabb711be0fbb20caacb765cbd7",
+        "work-ledger.json": "939880622909e8a308c67705bf2f48baffc18ab95161bd9cb275e6714bc392e3",
+        "work-ledger.md": "4ecbc66edd94b842190cc0df2c2d08e8b8399f7ade8eeacfea525e2562d71425"
+      }
+    },
+    "router": {
+      "byte_identical": true,
+      "files": {
+        "analysis.json": "571a65f6a9a7c9dc8a86dd055c6bab89929fd899ce3273d67caecbe4e427ec87",
+        "summary.md": "472bdddf4e0154159839361052ed7ff89f88a1c086d2af4a4e562a3ed9528835"
+      }
+    }
+  },
+  "publication_verifier_schema_corrections": [
+    "v4 per-validation JSON omits RNG digest and controller counts; retain explicit source-bound equality flags and compare checkpoint controller metadata. Additional direct CPU comparison of six private checkpoint pairs passed.",
+    "Sleep identity/boundary/mode/available aux count are nested under event.sleep. Raw evidence and training sources unchanged."
+  ],
+  "schema": "agnews-v5-supplementary-release-review-v1",
+  "validation_layout_note": "Core receipt is exact verifier output; extra review and CPU evidence are separate. Its recorded base must remain an ancestor of the checkout; all stable scientific and hash fields remain strict.",
+  "verifier_source_sha256": "c1ed4d8589c68947ff79b357b1d7af95c8329251246c00a45a0075c03c20f2c7"
+}

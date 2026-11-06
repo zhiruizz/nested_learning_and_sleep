@@ -1,0 +1,2294 @@
+{
+  "CPU_ridge_fits": 3,
+  "LLM_optimizer_updates": 0,
+  "actual_forward_calls": 1152,
+  "claim_scope": "retained-context capacity/routing development diagnostic, not Sleep benefit",
+  "condition_mean_sample_sd": {
+    "learned_feature_gate": {
+      "train": {
+        "all": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.3173297906131278,
+            "n": 3,
+            "sample_sd": 0.09863065447923304
+          },
+          "candidate_accuracy": {
+            "mean": 0.8639322916666666,
+            "n": 3,
+            "sample_sd": 0.016754048479762723
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8639322916666666,
+            "n": 3,
+            "sample_sd": 0.017587164920885547
+          },
+          "class_nll": {
+            "mean": 0.6297585584036286,
+            "n": 3,
+            "sample_sd": 0.19796194288417907
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8636067708333334,
+            "n": 3,
+            "sample_sd": 0.01761425684696443
+          },
+          "marker_accuracy": {
+            "mean": 0.9996744791666666,
+            "n": 3,
+            "sample_sd": 0.0005638186222554939
+          },
+          "marker_nll": {
+            "mean": 0.004901022822627017,
+            "n": 3,
+            "sample_sd": 0.003483977938069752
+          }
+        },
+        "class0": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.5938515127833952,
+            "n": 3,
+            "sample_sd": 0.2623873563975962
+          },
+          "candidate_accuracy": {
+            "mean": 0.8619791666666666,
+            "n": 3,
+            "sample_sd": 0.027713276892959327
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8619791666666666,
+            "n": 3,
+            "sample_sd": 0.027713276892959327
+          },
+          "class_nll": {
+            "mean": 1.1819819905905102,
+            "n": 3,
+            "sample_sd": 0.5292740350084165
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8606770833333334,
+            "n": 3,
+            "sample_sd": 0.027436598314720673
+          },
+          "marker_accuracy": {
+            "mean": 0.9986979166666666,
+            "n": 3,
+            "sample_sd": 0.0022552744890219755
+          },
+          "marker_nll": {
+            "mean": 0.005721034976280255,
+            "n": 3,
+            "sample_sd": 0.005878630786825965
+          }
+        },
+        "class1": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.10066344415311808,
+            "n": 3,
+            "sample_sd": 0.05938636214863497
+          },
+          "candidate_accuracy": {
+            "mean": 0.9713541666666666,
+            "n": 3,
+            "sample_sd": 0.026009094212810127
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.9713541666666666,
+            "n": 3,
+            "sample_sd": 0.018460217290049253
+          },
+          "class_nll": {
+            "mean": 0.191550351697515,
+            "n": 3,
+            "sample_sd": 0.11473459396032168
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9713541666666666,
+            "n": 3,
+            "sample_sd": 0.018460217290049253
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.009776536608721168,
+            "n": 3,
+            "sample_sd": 0.006635740748768513
+          }
+        },
+        "class2": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.19069962977155797,
+            "n": 3,
+            "sample_sd": 0.1538203077241657
+          },
+          "candidate_accuracy": {
+            "mean": 0.8736979166666666,
+            "n": 3,
+            "sample_sd": 0.1410763878206443
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8736979166666666,
+            "n": 3,
+            "sample_sd": 0.1410763878206443
+          },
+          "class_nll": {
+            "mean": 0.37885310186209153,
+            "n": 3,
+            "sample_sd": 0.3076911302733
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8736979166666666,
+            "n": 3,
+            "sample_sd": 0.1410763878206443
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.002546157681024397,
+            "n": 3,
+            "sample_sd": 0.0018017020676917655
+          }
+        },
+        "class3": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.38410457574444007,
+            "n": 3,
+            "sample_sd": 0.2215724542431315
+          },
+          "candidate_accuracy": {
+            "mean": 0.7486979166666666,
+            "n": 3,
+            "sample_sd": 0.1593603189725122
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.7486979166666666,
+            "n": 3,
+            "sample_sd": 0.1593603189725122
+          },
+          "class_nll": {
+            "mean": 0.7666487894643979,
+            "n": 3,
+            "sample_sd": 0.4439198537427758
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.7486979166666666,
+            "n": 3,
+            "sample_sd": 0.1593603189725122
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0015603620244822498,
+            "n": 3,
+            "sample_sd": 0.0009973650139969061
+          }
+        },
+        "new": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.287402102757999,
+            "n": 3,
+            "sample_sd": 0.05172857140851768
+          },
+          "candidate_accuracy": {
+            "mean": 0.8111979166666666,
+            "n": 3,
+            "sample_sd": 0.028460277336451033
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8111979166666666,
+            "n": 3,
+            "sample_sd": 0.028460277336451033
+          },
+          "class_nll": {
+            "mean": 0.5727509456632447,
+            "n": 3,
+            "sample_sd": 0.1027640325894381
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8111979166666666,
+            "n": 3,
+            "sample_sd": 0.028460277336451033
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0020532598527533232,
+            "n": 3,
+            "sample_sd": 0.0011246569505039736
+          }
+        },
+        "old": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.34725747846825666,
+            "n": 3,
+            "sample_sd": 0.14969895450433796
+          },
+          "candidate_accuracy": {
+            "mean": 0.9166666666666666,
+            "n": 3,
+            "sample_sd": 0.008807128423482215
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.9166666666666666,
+            "n": 3,
+            "sample_sd": 0.007893460711576915
+          },
+          "class_nll": {
+            "mean": 0.6867661711440126,
+            "n": 3,
+            "sample_sd": 0.3018136742582213
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.916015625,
+            "n": 3,
+            "sample_sd": 0.008513474499102879
+          },
+          "marker_accuracy": {
+            "mean": 0.9993489583333334,
+            "n": 3,
+            "sample_sd": 0.0011276372445109878
+          },
+          "marker_nll": {
+            "mean": 0.007748785792500712,
+            "n": 3,
+            "sample_sd": 0.006013575848442963
+          }
+        }
+      },
+      "validation": {
+        "all": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.49868582030295033,
+            "n": 3,
+            "sample_sd": 0.11763055283745413
+          },
+          "candidate_accuracy": {
+            "mean": 0.802734375,
+            "n": 3,
+            "sample_sd": 0.010334966058846057
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8020833333333334,
+            "n": 3,
+            "sample_sd": 0.011444268119301397
+          },
+          "class_nll": {
+            "mean": 0.9874526271647662,
+            "n": 3,
+            "sample_sd": 0.23729234800505333
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.80078125,
+            "n": 3,
+            "sample_sd": 0.010334966058846057
+          },
+          "marker_accuracy": {
+            "mean": 0.9986979166666666,
+            "n": 3,
+            "sample_sd": 0.0011276372445109878
+          },
+          "marker_nll": {
+            "mean": 0.009919013441134439,
+            "n": 3,
+            "sample_sd": 0.003601809176014035
+          }
+        },
+        "class0": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.8364837690971001,
+            "n": 3,
+            "sample_sd": 0.4136828980995363
+          },
+          "candidate_accuracy": {
+            "mean": 0.8151041666666666,
+            "n": 3,
+            "sample_sd": 0.04302789490067267
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8151041666666666,
+            "n": 3,
+            "sample_sd": 0.04302789490067267
+          },
+          "class_nll": {
+            "mean": 1.6681276158987923,
+            "n": 3,
+            "sample_sd": 0.8304070651071911
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8151041666666666,
+            "n": 3,
+            "sample_sd": 0.04302789490067267
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.004839922295407935,
+            "n": 3,
+            "sample_sd": 0.0043055302099524835
+          }
+        },
+        "class1": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.18224660652648103,
+            "n": 3,
+            "sample_sd": 0.02852661090796069
+          },
+          "candidate_accuracy": {
+            "mean": 0.9609375,
+            "n": 3,
+            "sample_sd": 0.0234375
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.9583333333333334,
+            "n": 3,
+            "sample_sd": 0.019661027175184243
+          },
+          "class_nll": {
+            "mean": 0.3556347545703223,
+            "n": 3,
+            "sample_sd": 0.05849340927556528
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9583333333333334,
+            "n": 3,
+            "sample_sd": 0.019661027175184243
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.008858458482639739,
+            "n": 3,
+            "sample_sd": 0.005683563120186151
+          }
+        },
+        "class2": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.3645986896669721,
+            "n": 3,
+            "sample_sd": 0.2077318384004359
+          },
+          "candidate_accuracy": {
+            "mean": 0.765625,
+            "n": 3,
+            "sample_sd": 0.1579980345012241
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.765625,
+            "n": 3,
+            "sample_sd": 0.1579980345012241
+          },
+          "class_nll": {
+            "mean": 0.704989501516593,
+            "n": 3,
+            "sample_sd": 0.410995290615577
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.7604166666666666,
+            "n": 3,
+            "sample_sd": 0.16093244328625392
+          },
+          "marker_accuracy": {
+            "mean": 0.9947916666666666,
+            "n": 3,
+            "sample_sd": 0.004510548978043951
+          },
+          "marker_nll": {
+            "mean": 0.024207877817351193,
+            "n": 3,
+            "sample_sd": 0.004473013539496735
+          }
+        },
+        "class3": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.6114142159212482,
+            "n": 3,
+            "sample_sd": 0.2214641753425878
+          },
+          "candidate_accuracy": {
+            "mean": 0.6692708333333334,
+            "n": 3,
+            "sample_sd": 0.17228880111482386
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.6692708333333334,
+            "n": 3,
+            "sample_sd": 0.17228880111482386
+          },
+          "class_nll": {
+            "mean": 1.2210586366733576,
+            "n": 3,
+            "sample_sd": 0.44343417745031216
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.6692708333333334,
+            "n": 3,
+            "sample_sd": 0.17228880111482386
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.001769795169138888,
+            "n": 3,
+            "sample_sd": 0.00088802768211233
+          }
+        },
+        "new": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.48800645279411015,
+            "n": 3,
+            "sample_sd": 0.03115401135137334
+          },
+          "candidate_accuracy": {
+            "mean": 0.7174479166666666,
+            "n": 3,
+            "sample_sd": 0.012556836928376244
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.7174479166666666,
+            "n": 3,
+            "sample_sd": 0.012556836928376244
+          },
+          "class_nll": {
+            "mean": 0.9630240690949753,
+            "n": 3,
+            "sample_sd": 0.062183214652004416
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.71484375,
+            "n": 3,
+            "sample_sd": 0.010334966058846057
+          },
+          "marker_accuracy": {
+            "mean": 0.9973958333333334,
+            "n": 3,
+            "sample_sd": 0.0022552744890219755
+          },
+          "marker_nll": {
+            "mean": 0.01298883649324504,
+            "n": 3,
+            "sample_sd": 0.0026070719556429
+          }
+        },
+        "old": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.5093651878117905,
+            "n": 3,
+            "sample_sd": 0.2210029892776474
+          },
+          "candidate_accuracy": {
+            "mean": 0.8880208333333334,
+            "n": 3,
+            "sample_sd": 0.009830513587592122
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.88671875,
+            "n": 3,
+            "sample_sd": 0.01171875
+          },
+          "class_nll": {
+            "mean": 1.0118811852345573,
+            "n": 3,
+            "sample_sd": 0.44443621708387665
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.88671875,
+            "n": 3,
+            "sample_sd": 0.01171875
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.006849190389023836,
+            "n": 3,
+            "sample_sd": 0.004870725042336238
+          }
+        }
+      }
+    },
+    "new_CMS_reference_alone": {
+      "train": {
+        "all": {
+          "answer_nll_nats_per_token": {
+            "mean": 3.232727997796578,
+            "n": 3,
+            "sample_sd": 1.320938188176812
+          },
+          "candidate_accuracy": {
+            "mean": 0.4075520833333333,
+            "n": 3,
+            "sample_sd": 0.014230138668225516
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.4075520833333333,
+            "n": 3,
+            "sample_sd": 0.014230138668225516
+          },
+          "class_nll": {
+            "mean": 6.463739078805939,
+            "n": 3,
+            "sample_sd": 2.6427561537236226
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.4075520833333333,
+            "n": 3,
+            "sample_sd": 0.014230138668225516
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.00171691678721686,
+            "n": 3,
+            "sample_sd": 0.0008892609396287281
+          }
+        },
+        "class0": {
+          "answer_nll_nats_per_token": {
+            "mean": 7.274131740108383,
+            "n": 3,
+            "sample_sd": 3.4471207505945896
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 14.54700170767804,
+            "n": 3,
+            "sample_sd": 6.894766061026789
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.001261772538725836,
+            "n": 3,
+            "sample_sd": 0.0006485361424714053
+          }
+        },
+        "class1": {
+          "answer_nll_nats_per_token": {
+            "mean": 5.177429129231882,
+            "n": 3,
+            "sample_sd": 2.104538465653748
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 10.35331574206551,
+            "n": 3,
+            "sample_sd": 4.20965079659994
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0015425163982551264,
+            "n": 3,
+            "sample_sd": 0.001071686702328207
+          }
+        },
+        "class2": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.14059089307908343,
+            "n": 3,
+            "sample_sd": 0.1639382966180776
+          },
+          "candidate_accuracy": {
+            "mean": 0.8815104166666666,
+            "n": 3,
+            "sample_sd": 0.1410763878206443
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8815104166666666,
+            "n": 3,
+            "sample_sd": 0.1410763878206443
+          },
+          "class_nll": {
+            "mean": 0.27865659409678756,
+            "n": 3,
+            "sample_sd": 0.3279022861046923
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8815104166666666,
+            "n": 3,
+            "sample_sd": 0.1410763878206443
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0025251920613792813,
+            "n": 3,
+            "sample_sd": 0.0018027475042300945
+          }
+        },
+        "class3": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.3387602287669627,
+            "n": 3,
+            "sample_sd": 0.2243641234960267
+          },
+          "candidate_accuracy": {
+            "mean": 0.7486979166666666,
+            "n": 3,
+            "sample_sd": 0.1593603189725122
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.7486979166666666,
+            "n": 3,
+            "sample_sd": 0.1593603189725122
+          },
+          "class_nll": {
+            "mean": 0.6759822713834183,
+            "n": 3,
+            "sample_sd": 0.44950574891606315
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.7486979166666666,
+            "n": 3,
+            "sample_sd": 0.1593603189725122
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0015381861505071963,
+            "n": 3,
+            "sample_sd": 0.0009684356588416626
+          }
+        },
+        "new": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.23967556092302308,
+            "n": 3,
+            "sample_sd": 0.0492478851297079
+          },
+          "candidate_accuracy": {
+            "mean": 0.8151041666666666,
+            "n": 3,
+            "sample_sd": 0.028460277336451033
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8151041666666666,
+            "n": 3,
+            "sample_sd": 0.028460277336451033
+          },
+          "class_nll": {
+            "mean": 0.4773194327401029,
+            "n": 3,
+            "sample_sd": 0.09778023201361866
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8151041666666666,
+            "n": 3,
+            "sample_sd": 0.028460277336451033
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0020316891059432387,
+            "n": 3,
+            "sample_sd": 0.0011122050103444068
+          }
+        },
+        "old": {
+          "answer_nll_nats_per_token": {
+            "mean": 6.225780434670132,
+            "n": 3,
+            "sample_sd": 2.656953378217718
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 12.450158724871775,
+            "n": 3,
+            "sample_sd": 5.314639086093865
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0014021444684904811,
+            "n": 3,
+            "sample_sd": 0.0007560594076738138
+          }
+        }
+      },
+      "validation": {
+        "all": {
+          "answer_nll_nats_per_token": {
+            "mean": 3.2733586396034675,
+            "n": 3,
+            "sample_sd": 1.304767615525382
+          },
+          "candidate_accuracy": {
+            "mean": 0.369140625,
+            "n": 3,
+            "sample_sd": 0.0067658234670659265
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.369140625,
+            "n": 3,
+            "sample_sd": 0.0067658234670659265
+          },
+          "class_nll": {
+            "mean": 6.539710110288486,
+            "n": 3,
+            "sample_sd": 2.610748161890149
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.3678385416666667,
+            "n": 3,
+            "sample_sd": 0.005638186222554939
+          },
+          "marker_accuracy": {
+            "mean": 0.9986979166666666,
+            "n": 3,
+            "sample_sd": 0.0011276372445109878
+          },
+          "marker_nll": {
+            "mean": 0.0070071689184487695,
+            "n": 3,
+            "sample_sd": 0.0015511868975985352
+          }
+        },
+        "class0": {
+          "answer_nll_nats_per_token": {
+            "mean": 7.276792543067491,
+            "n": 3,
+            "sample_sd": 3.4012607257801597
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 14.552539845307669,
+            "n": 3,
+            "sample_sd": 6.802983113244365
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0010452408273143494,
+            "n": 3,
+            "sample_sd": 0.0005040112441478938
+          }
+        },
+        "class1": {
+          "answer_nll_nats_per_token": {
+            "mean": 5.148246876468875,
+            "n": 3,
+            "sample_sd": 2.121514289529581
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 10.295229886348048,
+            "n": 3,
+            "sample_sd": 4.243437962623793
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0012638665897005315,
+            "n": 3,
+            "sample_sd": 0.0007183986840734434
+          }
+        },
+        "class2": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.2769438432897952,
+            "n": 3,
+            "sample_sd": 0.2192149801706511
+          },
+          "candidate_accuracy": {
+            "mean": 0.78125,
+            "n": 3,
+            "sample_sd": 0.1579980345012241
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.78125,
+            "n": 3,
+            "sample_sd": 0.1579980345012241
+          },
+          "class_nll": {
+            "mean": 0.5297313901824054,
+            "n": 3,
+            "sample_sd": 0.4339786439771086
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.7760416666666666,
+            "n": 3,
+            "sample_sd": 0.16093244328625392
+          },
+          "marker_accuracy": {
+            "mean": 0.9947916666666666,
+            "n": 3,
+            "sample_sd": 0.004510548978043951
+          },
+          "marker_nll": {
+            "mean": 0.024156296397184935,
+            "n": 3,
+            "sample_sd": 0.0044536421712504225
+          }
+        },
+        "class3": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.3914512955877096,
+            "n": 3,
+            "sample_sd": 0.25970049278622376
+          },
+          "candidate_accuracy": {
+            "mean": 0.6953125,
+            "n": 3,
+            "sample_sd": 0.17660397742902054
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.6953125,
+            "n": 3,
+            "sample_sd": 0.17660397742902054
+          },
+          "class_nll": {
+            "mean": 0.7813393193158239,
+            "n": 3,
+            "sample_sd": 0.5199930845797962
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.6953125,
+            "n": 3,
+            "sample_sd": 0.17660397742902054
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.001563271859595261,
+            "n": 3,
+            "sample_sd": 0.0008082991449760438
+          }
+        },
+        "new": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.3341975694387524,
+            "n": 3,
+            "sample_sd": 0.04053530206394977
+          },
+          "candidate_accuracy": {
+            "mean": 0.73828125,
+            "n": 3,
+            "sample_sd": 0.013531646934131853
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.73828125,
+            "n": 3,
+            "sample_sd": 0.013531646934131853
+          },
+          "class_nll": {
+            "mean": 0.6555353547491146,
+            "n": 3,
+            "sample_sd": 0.08194235597433464
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.7356770833333334,
+            "n": 3,
+            "sample_sd": 0.011276372445109878
+          },
+          "marker_accuracy": {
+            "mean": 0.9973958333333334,
+            "n": 3,
+            "sample_sd": 0.0022552744890219755
+          },
+          "marker_nll": {
+            "mean": 0.012859784128390098,
+            "n": 3,
+            "sample_sd": 0.0025910578287459515
+          }
+        },
+        "old": {
+          "answer_nll_nats_per_token": {
+            "mean": 6.212519709768183,
+            "n": 3,
+            "sample_sd": 2.6268932544954615
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 12.423884865827858,
+            "n": 3,
+            "sample_sd": 5.254338397027334
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0011545537085074404,
+            "n": 3,
+            "sample_sd": 0.0005719598176237609
+          }
+        }
+      }
+    },
+    "task_ID_diagnostic": {
+      "train": {
+        "all": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.20158211177966537,
+            "n": 3,
+            "sample_sd": 0.08706858058393492
+          },
+          "candidate_accuracy": {
+            "mean": 0.876953125,
+            "n": 3,
+            "sample_sd": 0.0180861906029806
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.876953125,
+            "n": 3,
+            "sample_sd": 0.01906173954681947
+          },
+          "class_nll": {
+            "mean": 0.39801082144128114,
+            "n": 3,
+            "sample_sd": 0.17357653579110868
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8766276041666666,
+            "n": 3,
+            "sample_sd": 0.01904505530769541
+          },
+          "marker_accuracy": {
+            "mean": 0.9996744791666666,
+            "n": 3,
+            "sample_sd": 0.0005638186222554939
+          },
+          "marker_nll": {
+            "mean": 0.0051534021180496365,
+            "n": 3,
+            "sample_sd": 0.0038232072022669795
+          }
+        },
+        "class0": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.22631388111949727,
+            "n": 3,
+            "sample_sd": 0.19361851336688576
+          },
+          "candidate_accuracy": {
+            "mean": 0.90625,
+            "n": 3,
+            "sample_sd": 0.03471950944263902
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.90625,
+            "n": 3,
+            "sample_sd": 0.03471950944263902
+          },
+          "class_nll": {
+            "mean": 0.4458540685874037,
+            "n": 3,
+            "sample_sd": 0.3893484713809492
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9049479166666666,
+            "n": 3,
+            "sample_sd": 0.034128495890836344
+          },
+          "marker_accuracy": {
+            "mean": 0.9986979166666666,
+            "n": 3,
+            "sample_sd": 0.0022552744890219755
+          },
+          "marker_nll": {
+            "mean": 0.006773693651590899,
+            "n": 3,
+            "sample_sd": 0.007450860858972972
+          }
+        },
+        "class1": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.10066344415311808,
+            "n": 3,
+            "sample_sd": 0.05938636214863497
+          },
+          "candidate_accuracy": {
+            "mean": 0.9713541666666666,
+            "n": 3,
+            "sample_sd": 0.026009094212810127
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.9713541666666666,
+            "n": 3,
+            "sample_sd": 0.018460217290049253
+          },
+          "class_nll": {
+            "mean": 0.191550351697515,
+            "n": 3,
+            "sample_sd": 0.11473459396032168
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9713541666666666,
+            "n": 3,
+            "sample_sd": 0.018460217290049253
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.009776536608721168,
+            "n": 3,
+            "sample_sd": 0.006635740748768513
+          }
+        },
+        "class2": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.14059089307908343,
+            "n": 3,
+            "sample_sd": 0.1639382966180776
+          },
+          "candidate_accuracy": {
+            "mean": 0.8815104166666666,
+            "n": 3,
+            "sample_sd": 0.1410763878206443
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8815104166666666,
+            "n": 3,
+            "sample_sd": 0.1410763878206443
+          },
+          "class_nll": {
+            "mean": 0.27865659409678756,
+            "n": 3,
+            "sample_sd": 0.3279022861046923
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8815104166666666,
+            "n": 3,
+            "sample_sd": 0.1410763878206443
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0025251920613792813,
+            "n": 3,
+            "sample_sd": 0.0018027475042300945
+          }
+        },
+        "class3": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.3387602287669627,
+            "n": 3,
+            "sample_sd": 0.2243641234960267
+          },
+          "candidate_accuracy": {
+            "mean": 0.7486979166666666,
+            "n": 3,
+            "sample_sd": 0.1593603189725122
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.7486979166666666,
+            "n": 3,
+            "sample_sd": 0.1593603189725122
+          },
+          "class_nll": {
+            "mean": 0.6759822713834183,
+            "n": 3,
+            "sample_sd": 0.44950574891606315
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.7486979166666666,
+            "n": 3,
+            "sample_sd": 0.1593603189725122
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0015381861505071963,
+            "n": 3,
+            "sample_sd": 0.0009684356588416626
+          }
+        },
+        "new": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.23967556092302308,
+            "n": 3,
+            "sample_sd": 0.0492478851297079
+          },
+          "candidate_accuracy": {
+            "mean": 0.8151041666666666,
+            "n": 3,
+            "sample_sd": 0.028460277336451033
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8151041666666666,
+            "n": 3,
+            "sample_sd": 0.028460277336451033
+          },
+          "class_nll": {
+            "mean": 0.4773194327401029,
+            "n": 3,
+            "sample_sd": 0.09778023201361866
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8151041666666666,
+            "n": 3,
+            "sample_sd": 0.028460277336451033
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.0020316891059432387,
+            "n": 3,
+            "sample_sd": 0.0011122050103444068
+          }
+        },
+        "old": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.16348866263630768,
+            "n": 3,
+            "sample_sd": 0.12494297009200159
+          },
+          "candidate_accuracy": {
+            "mean": 0.9388020833333334,
+            "n": 3,
+            "sample_sd": 0.009021097956087902
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.9388020833333334,
+            "n": 3,
+            "sample_sd": 0.009830513587592122
+          },
+          "class_nll": {
+            "mean": 0.3187022101424593,
+            "n": 3,
+            "sample_sd": 0.24942054008657316
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9381510416666666,
+            "n": 3,
+            "sample_sd": 0.010022659061419695
+          },
+          "marker_accuracy": {
+            "mean": 0.9993489583333334,
+            "n": 3,
+            "sample_sd": 0.0011276372445109878
+          },
+          "marker_nll": {
+            "mean": 0.008275115130156033,
+            "n": 3,
+            "sample_sd": 0.0067469668704215864
+          }
+        }
+      },
+      "validation": {
+        "all": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.2838909512733139,
+            "n": 3,
+            "sample_sd": 0.13263270071485522
+          },
+          "candidate_accuracy": {
+            "mean": 0.8294270833333334,
+            "n": 3,
+            "sample_sd": 0.015170807549128962
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8287760416666666,
+            "n": 3,
+            "sample_sd": 0.01626301562082916
+          },
+          "class_nll": {
+            "mean": 0.5577265568117156,
+            "n": 3,
+            "sample_sd": 0.2658837037718544
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8274739583333334,
+            "n": 3,
+            "sample_sd": 0.015170807549128962
+          },
+          "marker_accuracy": {
+            "mean": 0.9986979166666666,
+            "n": 3,
+            "sample_sd": 0.0011276372445109878
+          },
+          "marker_nll": {
+            "mean": 0.01005534573491218,
+            "n": 3,
+            "sample_sd": 0.003778059301728075
+          }
+        },
+        "class0": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.37081089435240716,
+            "n": 3,
+            "sample_sd": 0.4056147761740379
+          },
+          "candidate_accuracy": {
+            "mean": 0.8645833333333334,
+            "n": 3,
+            "sample_sd": 0.05863713671457137
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8645833333333334,
+            "n": 3,
+            "sample_sd": 0.05863713671457137
+          },
+          "class_nll": {
+            "mean": 0.736151279406215,
+            "n": 3,
+            "sample_sd": 0.8127313025793202
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8645833333333334,
+            "n": 3,
+            "sample_sd": 0.05863713671457137
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.005470509298599306,
+            "n": 3,
+            "sample_sd": 0.0049790284911457264
+          }
+        },
+        "class1": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.09635777186334356,
+            "n": 3,
+            "sample_sd": 0.051844969380803255
+          },
+          "candidate_accuracy": {
+            "mean": 0.9765625,
+            "n": 3,
+            "sample_sd": 0.0234375
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.9739583333333334,
+            "n": 3,
+            "sample_sd": 0.019661027175184243
+          },
+          "class_nll": {
+            "mean": 0.1836842383424179,
+            "n": 3,
+            "sample_sd": 0.10031415433704619
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9739583333333334,
+            "n": 3,
+            "sample_sd": 0.019661027175184243
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.009031305384269217,
+            "n": 3,
+            "sample_sd": 0.005822907658533984
+          }
+        },
+        "class2": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.2769438432897952,
+            "n": 3,
+            "sample_sd": 0.2192149801706511
+          },
+          "candidate_accuracy": {
+            "mean": 0.78125,
+            "n": 3,
+            "sample_sd": 0.1579980345012241
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.78125,
+            "n": 3,
+            "sample_sd": 0.1579980345012241
+          },
+          "class_nll": {
+            "mean": 0.5297313901824054,
+            "n": 3,
+            "sample_sd": 0.4339786439771086
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.7760416666666666,
+            "n": 3,
+            "sample_sd": 0.16093244328625392
+          },
+          "marker_accuracy": {
+            "mean": 0.9947916666666666,
+            "n": 3,
+            "sample_sd": 0.004510548978043951
+          },
+          "marker_nll": {
+            "mean": 0.024156296397184935,
+            "n": 3,
+            "sample_sd": 0.0044536421712504225
+          }
+        },
+        "class3": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.3914512955877096,
+            "n": 3,
+            "sample_sd": 0.25970049278622376
+          },
+          "candidate_accuracy": {
+            "mean": 0.6953125,
+            "n": 3,
+            "sample_sd": 0.17660397742902054
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.6953125,
+            "n": 3,
+            "sample_sd": 0.17660397742902054
+          },
+          "class_nll": {
+            "mean": 0.7813393193158239,
+            "n": 3,
+            "sample_sd": 0.5199930845797962
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.6953125,
+            "n": 3,
+            "sample_sd": 0.17660397742902054
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.001563271859595261,
+            "n": 3,
+            "sample_sd": 0.0008082991449760438
+          }
+        },
+        "new": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.3341975694387524,
+            "n": 3,
+            "sample_sd": 0.04053530206394977
+          },
+          "candidate_accuracy": {
+            "mean": 0.73828125,
+            "n": 3,
+            "sample_sd": 0.013531646934131853
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.73828125,
+            "n": 3,
+            "sample_sd": 0.013531646934131853
+          },
+          "class_nll": {
+            "mean": 0.6555353547491146,
+            "n": 3,
+            "sample_sd": 0.08194235597433464
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.7356770833333334,
+            "n": 3,
+            "sample_sd": 0.011276372445109878
+          },
+          "marker_accuracy": {
+            "mean": 0.9973958333333334,
+            "n": 3,
+            "sample_sd": 0.0022552744890219755
+          },
+          "marker_nll": {
+            "mean": 0.012859784128390098,
+            "n": 3,
+            "sample_sd": 0.0025910578287459515
+          }
+        },
+        "old": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.23358433310787538,
+            "n": 3,
+            "sample_sd": 0.22596375348104275
+          },
+          "candidate_accuracy": {
+            "mean": 0.9205729166666666,
+            "n": 3,
+            "sample_sd": 0.01761425684696443
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.9192708333333334,
+            "n": 3,
+            "sample_sd": 0.019661027175184243
+          },
+          "class_nll": {
+            "mean": 0.45991775887431646,
+            "n": 3,
+            "sample_sd": 0.451988232163292
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9192708333333334,
+            "n": 3,
+            "sample_sd": 0.019661027175184243
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.007250907341434261,
+            "n": 3,
+            "sample_sd": 0.005265186492731473
+          }
+        }
+      }
+    },
+    "warm_alone": {
+      "train": {
+        "all": {
+          "answer_nll_nats_per_token": {
+            "mean": 2.903593242034845,
+            "n": 3,
+            "sample_sd": 0.10811239209894329
+          },
+          "candidate_accuracy": {
+            "mean": 0.4694010416666667,
+            "n": 3,
+            "sample_sd": 0.004510548978043951
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.4694010416666667,
+            "n": 3,
+            "sample_sd": 0.004915256793796061
+          },
+          "class_nll": {
+            "mean": 5.798706023533764,
+            "n": 3,
+            "sample_sd": 0.216534555586995
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.4690755208333333,
+            "n": 3,
+            "sample_sd": 0.005011329530709848
+          },
+          "marker_accuracy": {
+            "mean": 0.9996744791666666,
+            "n": 3,
+            "sample_sd": 0.0005638186222554939
+          },
+          "marker_nll": {
+            "mean": 0.008480460535925735,
+            "n": 3,
+            "sample_sd": 0.006353143717001281
+          }
+        },
+        "class0": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.22631388111949727,
+            "n": 3,
+            "sample_sd": 0.19361851336688576
+          },
+          "candidate_accuracy": {
+            "mean": 0.90625,
+            "n": 3,
+            "sample_sd": 0.03471950944263902
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.90625,
+            "n": 3,
+            "sample_sd": 0.03471950944263902
+          },
+          "class_nll": {
+            "mean": 0.4458540685874037,
+            "n": 3,
+            "sample_sd": 0.3893484713809492
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9049479166666666,
+            "n": 3,
+            "sample_sd": 0.034128495890836344
+          },
+          "marker_accuracy": {
+            "mean": 0.9986979166666666,
+            "n": 3,
+            "sample_sd": 0.0022552744890219755
+          },
+          "marker_nll": {
+            "mean": 0.006773693651590899,
+            "n": 3,
+            "sample_sd": 0.007450860858972972
+          }
+        },
+        "class1": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.10066344415311808,
+            "n": 3,
+            "sample_sd": 0.05938636214863497
+          },
+          "candidate_accuracy": {
+            "mean": 0.9713541666666666,
+            "n": 3,
+            "sample_sd": 0.026009094212810127
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.9713541666666666,
+            "n": 3,
+            "sample_sd": 0.018460217290049253
+          },
+          "class_nll": {
+            "mean": 0.191550351697515,
+            "n": 3,
+            "sample_sd": 0.11473459396032168
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9713541666666666,
+            "n": 3,
+            "sample_sd": 0.018460217290049253
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.009776536608721168,
+            "n": 3,
+            "sample_sd": 0.006635740748768513
+          }
+        },
+        "class2": {
+          "answer_nll_nats_per_token": {
+            "mean": 4.933410280216852,
+            "n": 3,
+            "sample_sd": 0.9946873910034537
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 9.858929180850586,
+            "n": 3,
+            "sample_sd": 1.9948612411670306
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.007891379583118882,
+            "n": 3,
+            "sample_sd": 0.00554834860227808
+          }
+        },
+        "class3": {
+          "answer_nll_nats_per_token": {
+            "mean": 6.3539853626499125,
+            "n": 3,
+            "sample_sd": 0.8809093280662194
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 12.698490492999554,
+            "n": 3,
+            "sample_sd": 1.7557690956369065
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.009480232300271988,
+            "n": 3,
+            "sample_sd": 0.0068809149911002255
+          }
+        },
+        "new": {
+          "answer_nll_nats_per_token": {
+            "mean": 5.643697821433382,
+            "n": 3,
+            "sample_sd": 0.33894728292448806
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 11.278709836925069,
+            "n": 3,
+            "sample_sd": 0.6799079669085165
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.008685805941695435,
+            "n": 3,
+            "sample_sd": 0.006209138698718745
+          }
+        },
+        "old": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.16348866263630768,
+            "n": 3,
+            "sample_sd": 0.12494297009200159
+          },
+          "candidate_accuracy": {
+            "mean": 0.9388020833333334,
+            "n": 3,
+            "sample_sd": 0.009021097956087902
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.9388020833333334,
+            "n": 3,
+            "sample_sd": 0.009830513587592122
+          },
+          "class_nll": {
+            "mean": 0.3187022101424593,
+            "n": 3,
+            "sample_sd": 0.24942054008657316
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9381510416666666,
+            "n": 3,
+            "sample_sd": 0.010022659061419695
+          },
+          "marker_accuracy": {
+            "mean": 0.9993489583333334,
+            "n": 3,
+            "sample_sd": 0.0011276372445109878
+          },
+          "marker_nll": {
+            "mean": 0.008275115130156033,
+            "n": 3,
+            "sample_sd": 0.0067469668704215864
+          }
+        }
+      },
+      "validation": {
+        "all": {
+          "answer_nll_nats_per_token": {
+            "mean": 2.9319120023637666,
+            "n": 3,
+            "sample_sd": 0.04334835975160893
+          },
+          "candidate_accuracy": {
+            "mean": 0.4602864583333333,
+            "n": 3,
+            "sample_sd": 0.008807128423482215
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.4596354166666667,
+            "n": 3,
+            "sample_sd": 0.009830513587592122
+          },
+          "class_nll": {
+            "mean": 5.843437742117653,
+            "n": 3,
+            "sample_sd": 0.0889281216792189
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.4596354166666667,
+            "n": 3,
+            "sample_sd": 0.009830513587592122
+          },
+          "marker_accuracy": {
+            "mean": 0.998046875,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.020386262609880152,
+            "n": 3,
+            "sample_sd": 0.00903290302733815
+          }
+        },
+        "class0": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.37081089435240716,
+            "n": 3,
+            "sample_sd": 0.4056147761740379
+          },
+          "candidate_accuracy": {
+            "mean": 0.8645833333333334,
+            "n": 3,
+            "sample_sd": 0.05863713671457137
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.8645833333333334,
+            "n": 3,
+            "sample_sd": 0.05863713671457137
+          },
+          "class_nll": {
+            "mean": 0.736151279406215,
+            "n": 3,
+            "sample_sd": 0.8127313025793202
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.8645833333333334,
+            "n": 3,
+            "sample_sd": 0.05863713671457137
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.005470509298599306,
+            "n": 3,
+            "sample_sd": 0.0049790284911457264
+          }
+        },
+        "class1": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.09635777186334356,
+            "n": 3,
+            "sample_sd": 0.051844969380803255
+          },
+          "candidate_accuracy": {
+            "mean": 0.9765625,
+            "n": 3,
+            "sample_sd": 0.0234375
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.9739583333333334,
+            "n": 3,
+            "sample_sd": 0.019661027175184243
+          },
+          "class_nll": {
+            "mean": 0.1836842383424179,
+            "n": 3,
+            "sample_sd": 0.10031415433704619
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9739583333333334,
+            "n": 3,
+            "sample_sd": 0.019661027175184243
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.009031305384269217,
+            "n": 3,
+            "sample_sd": 0.005822907658533984
+          }
+        },
+        "class2": {
+          "answer_nll_nats_per_token": {
+            "mean": 4.958036401264583,
+            "n": 3,
+            "sample_sd": 0.9033516281568701
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 9.857746393730244,
+            "n": 3,
+            "sample_sd": 1.8264699552128345
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 0.9921875,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.058326408798924,
+            "n": 3,
+            "sample_sd": 0.020243891062800657
+          }
+        },
+        "class3": {
+          "answer_nll_nats_per_token": {
+            "mean": 6.302442941974732,
+            "n": 3,
+            "sample_sd": 0.8462949316242051
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 12.596169056991736,
+            "n": 3,
+            "sample_sd": 1.6884593353517052
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.008716826957728093,
+            "n": 3,
+            "sample_sd": 0.005876874704599071
+          }
+        },
+        "new": {
+          "answer_nll_nats_per_token": {
+            "mean": 5.630239671619658,
+            "n": 3,
+            "sample_sd": 0.31265729878763415
+          },
+          "candidate_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "class_nll": {
+            "mean": 11.22695772536099,
+            "n": 3,
+            "sample_sd": 0.6291896953204993
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_accuracy": {
+            "mean": 0.99609375,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.03352161787832605,
+            "n": 3,
+            "sample_sd": 0.012970903673255268
+          }
+        },
+        "old": {
+          "answer_nll_nats_per_token": {
+            "mean": 0.23358433310787538,
+            "n": 3,
+            "sample_sd": 0.22596375348104275
+          },
+          "candidate_accuracy": {
+            "mean": 0.9205729166666666,
+            "n": 3,
+            "sample_sd": 0.01761425684696443
+          },
+          "class_given_marker_accuracy": {
+            "mean": 0.9192708333333334,
+            "n": 3,
+            "sample_sd": 0.019661027175184243
+          },
+          "class_nll": {
+            "mean": 0.45991775887431646,
+            "n": 3,
+            "sample_sd": 0.451988232163292
+          },
+          "full_vocab_two_token_greedy_exact_match": {
+            "mean": 0.9192708333333334,
+            "n": 3,
+            "sample_sd": 0.019661027175184243
+          },
+          "marker_accuracy": {
+            "mean": 1.0,
+            "n": 3,
+            "sample_sd": 0.0
+          },
+          "marker_nll": {
+            "mean": 0.007250907341434261,
+            "n": 3,
+            "sample_sd": 0.005265186492731473
+          }
+        }
+      }
+    }
+  },
+  "confirmation_scored": false,
+  "independent_confirmation": false,
+  "inference_cost": "Both branches scored every row; this is not single-forward deployed inference",
+  "learned_gate_validation": [
+    {
+      "group_accuracy": 0.962890625,
+      "seed": 17,
+      "validation_confusion": {
+        "actual_new_pred_new": 249,
+        "actual_new_pred_old": 7,
+        "actual_old_pred_new": 12,
+        "actual_old_pred_old": 244
+      }
+    },
+    {
+      "group_accuracy": 0.962890625,
+      "seed": 29,
+      "validation_confusion": {
+        "actual_new_pred_new": 249,
+        "actual_new_pred_old": 7,
+        "actual_old_pred_new": 12,
+        "actual_old_pred_old": 244
+      }
+    },
+    {
+      "group_accuracy": 0.962890625,
+      "seed": 43,
+      "validation_confusion": {
+        "actual_new_pred_new": 249,
+        "actual_new_pred_old": 7,
+        "actual_old_pred_new": 12,
+        "actual_old_pred_old": 244
+      }
+    }
+  ],
+  "plan_sha256": "30de038f4d8537e9bb516d8e3ae0fa44726e20c7a2403e131a5d5424b4e79a78",
+  "result_sha256": "1763a4b50e5e3fa75d3cb949d96d09092b8790f08c187e72304a6f9c6421190a",
+  "schema": "agnews-task-router-analysis-v5",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "task_gates": {
+    "learned_feature_gate": [
+      {
+        "both": false,
+        "new": false,
+        "old": true,
+        "seed": 17
+      },
+      {
+        "both": false,
+        "new": false,
+        "old": true,
+        "seed": 29
+      },
+      {
+        "both": false,
+        "new": false,
+        "old": true,
+        "seed": 43
+      }
+    ],
+    "new_CMS_reference_alone": [
+      {
+        "both": false,
+        "new": false,
+        "old": false,
+        "seed": 17
+      },
+      {
+        "both": false,
+        "new": false,
+        "old": false,
+        "seed": 29
+      },
+      {
+        "both": false,
+        "new": false,
+        "old": false,
+        "seed": 43
+      }
+    ],
+    "task_ID_diagnostic": [
+      {
+        "both": false,
+        "new": false,
+        "old": true,
+        "seed": 17
+      },
+      {
+        "both": false,
+        "new": false,
+        "old": true,
+        "seed": 29
+      },
+      {
+        "both": false,
+        "new": false,
+        "old": true,
+        "seed": 43
+      }
+    ],
+    "warm_alone": [
+      {
+        "both": false,
+        "new": false,
+        "old": true,
+        "seed": 17
+      },
+      {
+        "both": false,
+        "new": false,
+        "old": true,
+        "seed": 29
+      },
+      {
+        "both": false,
+        "new": false,
+        "old": true,
+        "seed": 43
+      }
+    ]
+  },
+  "training_group_label_uses": 3072,
+  "unique_training_group_labels": 1024,
+  "wall_seconds": 80.3289999999106,
+  "work": {
+    "seed17_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_new_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_new_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_train": {
+      "forward_calls": 128,
+      "forward_input_tokens": 100480,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_validation": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    }
+  }
+}

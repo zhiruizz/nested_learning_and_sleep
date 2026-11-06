@@ -1,0 +1,241 @@
+{
+  "config_path": "configs/agnews-anchored-comparison-v5.json",
+  "config_sha256": "44e12f283cc4d933ce133b1ab5e51f6a04376d1bda0361a7b2d674058cf55e7c",
+  "configured_base_public_commit": "5b27a91b3fb96986abd5a7153d5675ddda175db5",
+  "confirmation_scored": false,
+  "figure_sha256": {
+    "endpoint_em.png": "69b1f6176a79011dba27fee372b17be724e1ab12b25e3947ee29cdfaa00046f9",
+    "endpoint_em.svg": "0efa2f6e93ee7bbc5bfcc06399e824a50329e1826eea0be35242ac0388ef1754",
+    "trajectory_em.png": "095fd97d18359e06975b91f80e92a8725dbbf1139ecf569ed7d37eb57bf42a80",
+    "trajectory_em.svg": "a565fd3ee04ddad1f74b7a5b9aa5bd7ec68127ef0023aeced905fdc3674b43aa"
+  },
+  "head_commit": "a214b483cdafbfec7e6bef34dba56d30c588f8e0",
+  "historical_evidence": {
+    "component_hash": "abc46d14b3152f3016481eb6fb719610db61aee6657807862889ae195ecb39d5",
+    "component_receiver_guards": 135,
+    "component_states": 135,
+    "component_warm_references": 3,
+    "interference_gradient_passes": 66,
+    "interference_hash": "0350764a04eb23dbe70cb8b942165089dc431a93eec9673fe26df37cdb5de817",
+    "interference_wake_updates": 48,
+    "qualification_checkpoint_step14_counts": [
+      2,
+      14
+    ],
+    "qualification_pass": true,
+    "qualification_sleep_adam_updates": 48,
+    "qualification_wake_updates": 18,
+    "v4_protocol_hash": "11f2a7dc8b541924a48bfa30b7557e3dee344e279aae49cd32660300e03f7406",
+    "v4_seal_hash": "cff58d178ecd4b36c2a6525d319b54d5afce46e01f68f690b0c14f6b58236bbd",
+    "warm_hash": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b"
+  },
+  "no_raw_tokens_or_model_binary_paths": true,
+  "passed": true,
+  "preserved_history": {
+    "prefixes": [
+      "src/nested_sleep/",
+      "results/agnews-preupdate-v4/",
+      "results/agnews-boundary-transfer-v4/",
+      "results/agnews-mechanism-v5/"
+    ],
+    "preserved_paths": 72
+  },
+  "private_checkpoint_readback": {
+    "bytes_read": 3570899258,
+    "checkpoints": 126,
+    "data_or_model_scoring": false,
+    "deserialization": false,
+    "passed": true,
+    "path": "results/agnews-anchored-v5/private-checkpoint-readback.json",
+    "schema": "agnews-v5-private-checkpoint-readback-v1",
+    "seal_sha256_matches": true
+  },
+  "protocol_sha256": "75b5c19db27b45efe086e06d4290aa806768653ef962dc37419dacf144bcb26c",
+  "raw_seal_path": "results/agnews-anchored-v5/development-sealed.json",
+  "raw_seal_sha256": "45e44b6bd0479234c0aa2b1f491315918476529b01d33fb27678293481fa2253",
+  "recomputed_costs": {
+    "gold_old_aux_steps": 1344,
+    "kd_old_aux_steps": 4032,
+    "objective_mode_primary_forward_calls": {
+      "cms": 448,
+      "gold": 896,
+      "soft_kd": 1792
+    },
+    "primary_updates": 9408,
+    "run_work_equals_global": true,
+    "seal_sha256": "45e44b6bd0479234c0aa2b1f491315918476529b01d33fb27678293481fa2253",
+    "sleep_adam_updates": 8064,
+    "sleep_events": 336
+  },
+  "release_prefix": "results/agnews-anchored-v5",
+  "run_grid": {
+    "arms": [
+      "warm_CMS_reference",
+      "warm_anchorKD",
+      "warm_anchorGold",
+      "warm_anchorKD_sleepP16_latest",
+      "warm_anchorKD_sleepP16_warmmix",
+      "warm_self_sleepP16_latest",
+      "warm_self_sleepP16_warmmix"
+    ],
+    "initial_state_hashes_by_seed": {
+      "17": {
+        "adapter_fingerprint": "6f6d7cc4bbc64327bef5a9139c953f3ade7df266d88ac7c6cc128b5982bdd008",
+        "execution_policy": {
+          "readout_fp32_accumulation": true,
+          "routing": [
+            null,
+            {
+              "fraction": 0.5,
+              "mix": 0
+            }
+          ]
+        },
+        "rng_sha256": "674f3824f813eaed05325209f75d7815149588e5bb9c981889ab4aad499aee90",
+        "teacher_fingerprint": "6f6d7cc4bbc64327bef5a9139c953f3ade7df266d88ac7c6cc128b5982bdd008"
+      },
+      "29": {
+        "adapter_fingerprint": "f8d7f54e4cd63ec1276fe59426ada0a3d56a53ad862509ec77f87553330aecbc",
+        "execution_policy": {
+          "readout_fp32_accumulation": true,
+          "routing": [
+            null,
+            {
+              "fraction": 0.5,
+              "mix": 0
+            }
+          ]
+        },
+        "rng_sha256": "3baddf05713376b141ea2be14fed6a267429acdf58920fda0542cd6e12fd5604",
+        "teacher_fingerprint": "f8d7f54e4cd63ec1276fe59426ada0a3d56a53ad862509ec77f87553330aecbc"
+      },
+      "43": {
+        "adapter_fingerprint": "0422e3db0e359d3327a006fb4680c2f1d860f2ccb31281ea0f9108c89029aa79",
+        "execution_policy": {
+          "readout_fp32_accumulation": true,
+          "routing": [
+            null,
+            {
+              "fraction": 0.5,
+              "mix": 0
+            }
+          ]
+        },
+        "rng_sha256": "b4006f97d21169cdbc6b2308b8dd123c690ee8a22a15afd7632b6d143f020bdb",
+        "teacher_fingerprint": "0422e3db0e359d3327a006fb4680c2f1d860f2ccb31281ea0f9108c89029aa79"
+      }
+    },
+    "old_receiver_provenance_all_true": true,
+    "runs": 21,
+    "same_start_state_per_seed": true,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "sleep_events_have_expected_slots_and_route_policies": true,
+    "train_examples_each": 1024,
+    "v4_reference_checks": 6,
+    "v4_reference_metadata_limits": {
+      "controller_counts_checked_against_checkpoint_metadata": true,
+      "rng_checked_from_recorded_exact_comparison_flag": true,
+      "validation_points_have_controller_counts": false,
+      "validation_points_have_rng_sha256": false
+    },
+    "validation_examples_each": {
+      "all": 512,
+      "new": 256,
+      "old": 256,
+      "per_class": 128
+    },
+    "validation_states": 126
+  },
+  "schema": "agnews-anchored-v5-release-verification-v1",
+  "source": "staged Git index blobs only",
+  "source_graph": {
+    "common": {
+      "path": "tools/agnews_v3_common.py",
+      "sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0"
+    },
+    "driver": {
+      "path": "tools/run_agnews_anchored_comparison_v5.py",
+      "sha256": "b0ae6daaeb6d18d17ef2fe96972826e6cc685d7f8a81845d1226d9f2725bed7d"
+    },
+    "nested_sleep": {
+      "path": "src/nested_sleep/__init__.py",
+      "sha256": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5"
+    },
+    "nested_sleep.accounting": {
+      "path": "src/nested_sleep/accounting.py",
+      "sha256": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96"
+    },
+    "nested_sleep.clocks": {
+      "path": "src/nested_sleep/clocks.py",
+      "sha256": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d"
+    },
+    "nested_sleep.consolidation": {
+      "path": "src/nested_sleep/consolidation.py",
+      "sha256": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb"
+    },
+    "nested_sleep.dreaming": {
+      "path": "src/nested_sleep/dreaming.py",
+      "sha256": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45"
+    },
+    "nested_sleep.experts": {
+      "path": "src/nested_sleep/experts.py",
+      "sha256": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094"
+    },
+    "nested_sleep.lifecycle": {
+      "path": "src/nested_sleep/lifecycle.py",
+      "sha256": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02"
+    },
+    "nested_sleep.lm": {
+      "path": "src/nested_sleep/lm.py",
+      "sha256": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c"
+    },
+    "nested_sleep.memory": {
+      "path": "src/nested_sleep/memory.py",
+      "sha256": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f"
+    },
+    "nested_sleep.native": {
+      "path": "src/nested_sleep/native.py",
+      "sha256": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57"
+    },
+    "nested_sleep.objectives": {
+      "path": "src/nested_sleep/objectives.py",
+      "sha256": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654"
+    },
+    "nested_sleep.optim": {
+      "path": "src/nested_sleep/optim.py",
+      "sha256": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817"
+    },
+    "qualification_driver": {
+      "path": "tools/qualify_agnews_anchored_resume_v5.py",
+      "sha256": "90b0a9e6a2c27f23d8233acbf1748e487d55538f5e33872ba3432b91c568403b"
+    },
+    "release_analyzer": {
+      "path": "tools/summarize_agnews_anchored_v5.py",
+      "sha256": "dae22cc1a51cef7d7e9f4ea8cb7a6caea01e47643b58bce20c9656ce1f01ad82"
+    },
+    "v4_boundary": {
+      "path": "tools/agnews_preupdate_sleep_v4.py",
+      "sha256": "5415531a3f3b715eac44cfcbd35ff1dd758ea830bd03201550883ace8a2a1a82"
+    },
+    "v4_engine": {
+      "path": "tools/run_agnews_retention_v2.py",
+      "sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b"
+    },
+    "wake_helper": {
+      "path": "tools/agnews_anchored_wake_v5.py",
+      "sha256": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6"
+    }
+  },
+  "verified_tables": [
+    "endpoint-table.md",
+    "paired-endpoints.md",
+    "per-seed-endpoints.md",
+    "trajectory-table.md",
+    "work-ledger.md"
+  ],
+  "verified_utc": "2026-11-06T11:13:50.583434+00:00"
+}

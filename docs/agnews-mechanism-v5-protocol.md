@@ -55,3 +55,7 @@ The main cooperative limit is7,200 seconds, checked between operations; it canno
 This independently written variant is inspired by the Sleep paper's consolidation ideas, but anchored wake is an added functional-replay regularizer. The two-level fixed-router last-MLP architecture, arbitrary two-token class codes, exact-output LTI reward and short AG News stream do not reproduce the complete Sleep/HOPE architecture or benchmark. No upstream HOPE source is copied.
 
 The report preserves all seeds, negative results, code/config hashes, fixed endpoints, extra supervision/compute, correction history and limitations. Only code, aggregate metrics, manifests and figures are published. Articles, token arrays, teacher-generated sequences, weights and private checkpoints remain local. Offline aggregate reanalysis is supported; exact training reproduction additionally requires the legally held local model, private role pack and original qualified snapshots. Any future confirmatory use of the reserved within-train data requires a method and evaluation plan frozen before opening it, and remains distinct from an external or pretraining-independent test.
+
+## Completed execution
+
+The frozen comparison finished all21 runs without training retry. [Full results, extra routing/capacity control and limitations](../reports/agnews-anchored-v5.md) report every fixed endpoint; no joint old/new gate passed. The separate task-router control was specified after main completion and is exploratory, not part of the original seven-arm frozen protocol.
