@@ -1,0 +1,26 @@
+{
+  "analysis_endpoints": [
+    "old/new/all EM at fixed112 primary updates",
+    "per-seed old drop from own initial checkpoint",
+    "old/new answer NLL"
+  ],
+  "boundary_helper_sha256": "5415531a3f3b715eac44cfcbd35ff1dd758ea830bd03201550883ace8a2a1a82",
+  "chosen_shared_warm_budget": 1536,
+  "config_sha256": "068b0cc78cc411ead06ef312a41987c281121ce6073c077aadc4e59b6303b484",
+  "confirmation_scored": false,
+  "driver_source_sha256": "1870f063462b5fb44ffbed6a3ce0fce512d0c9aa1d8715e98d7dd629bc6edb49",
+  "frozen_utc": "2026-11-06T01:46:11.622086+00:00",
+  "old_teacher_bank_manifest_sha256": "9c2e4864a784c57c489ebaa14cc5092d4ff6234e10a3bffd29bf0ad17c6ee973",
+  "paired_contrasts": [
+    "pre4 - post4: teacher order, same event/slot/Adam budgets",
+    "pre4 - warm_no_sleep: algorithm bundle with extra compute/capacity",
+    "pre4 - pre64: cadence/compute/capacity bundle",
+    "warm_no_sleep - foundation_CMS_reference: total boundary transfer package",
+    "warm_gold_replay - warm_no_sleep: added gold labels/SGD/data exposure"
+  ],
+  "reported_costs": "shared warm training and restore ghosts once in experiment total; method path warm tax plus arm updates/FW tokens separately; no equal-FLOP claim",
+  "schema": "agnews-preupdate-phaseB-source-lock-v4",
+  "statistics": "all3 seeds, means/sampleSD and paired differences, no p-values or independent confirmation claim",
+  "validation_adaptivity": "warm budget selected by train/validation gate; phaseB reports all arms/endpoints, never selects best checkpoint",
+  "warm_result_sha256": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b"
+}

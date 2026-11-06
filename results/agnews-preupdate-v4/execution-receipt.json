@@ -1,0 +1,54 @@
+{
+  "CPU_observer_check": {
+    "passed": 1,
+    "toy_attempts": 64
+  },
+  "CPU_ordinary_suite": {
+    "deselected": 1,
+    "passed": 139,
+    "toy_attempts": 253
+  },
+  "CPU_tests": {
+    "boundary_cases": 7,
+    "event_pool": 1,
+    "offline_analysis": 8,
+    "transfer_checkpoint": 2
+  },
+  "checked_utc": "2026-11-06T02:14:04.079249+00:00",
+  "confirmation_scored": false,
+  "hardware": {
+    "GPU": "NVIDIA GeForce RTX 5090 D",
+    "GPU_memory_MiB": 32607,
+    "driver": "621.01",
+    "host": "X870E Windows"
+  },
+  "no_training_retry": true,
+  "old_v3_holdout_labels_or_official_test_loaded_by_new_trainers": false,
+  "old_v3_prompt_pack_read_by_CPU_reservation_for_ID_and_prefix_hash_exclusion": true,
+  "phaseA_independent_metadata_review": "PASS: hashes/provenance/all common stages/per-class gates/no confirmation claim",
+  "phaseA_main_Adam_updates": 4608,
+  "phaseA_restore_ghost_Adam_updates": 2,
+  "phaseB_Sleep_Adam_updates": 4104,
+  "phaseB_exit_code": 0,
+  "phaseB_extra_gold_replay_SGD_updates": 1008,
+  "phaseB_independent_result_review": "PASS:18runs/90states; allwarmstarts/eventclocks/slots/pendingcounts/costresidue/report independently reviewed",
+  "phaseB_primary_SGD_updates": 2016,
+  "phaseB_wall_seconds": 1510.6099999998696,
+  "previous_studies_are_separate_costs": true,
+  "private_checkpoint_hashes_read_back": 108,
+  "published_articles_weights_checkpoints_generated_tokens_or_secrets": false,
+  "schema": "agnews-preupdate-execution-receipt-v4",
+  "software": {
+    "CUDA_runtime": "12.8",
+    "NumPy": "2.2.6",
+    "Python": "3.11.17",
+    "Torch": "2.8.0+cu128",
+    "Transformers": "4.57.1"
+  },
+  "this_study_total_Adam_updates_including_ghosts": 8714,
+  "this_study_total_SGD_updates": 3024,
+  "training_core_source_changed": false,
+  "wall_is_not_GPU_busy_time_energy_or_FLOPs": true,
+  "warm_exit_code": 0,
+  "warm_wall_seconds": 1029.6090000001714
+}

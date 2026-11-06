@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-11-06T01:46:11.621087+00:00",
+  "schema": "agnews-immutable-old-teacher-bank-v4",
+  "teachers": [
+    {
+      "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+      "checkpoint_file": "seed-17-qualified-old-teacher.pt",
+      "checkpoint_sha256": "c88bd45a0d7d16f3b8e5033005dfbd9c643abf97e9c707c41c68b669a5268514",
+      "original_snapshot": "qualified v3 foundation saved before new-task adaptation; copied byte-for-byte here for durable reuse",
+      "seed": 17
+    },
+    {
+      "adapter_fingerprint": "fa864bc6e0a72980ff9e28b7f3283ead56fc1a8b452ab75a13412cd460e566e6",
+      "checkpoint_file": "seed-29-qualified-old-teacher.pt",
+      "checkpoint_sha256": "5ab18ea38bbc56a7911b84ac09c4c283fee31589a00ddafd3467ca51d485a908",
+      "original_snapshot": "qualified v3 foundation saved before new-task adaptation; copied byte-for-byte here for durable reuse",
+      "seed": 29
+    },
+    {
+      "adapter_fingerprint": "a244be3d1da206a32cc6a29f94ce858cbebe266ef53cd737373136dc498155fd",
+      "checkpoint_file": "seed-43-qualified-old-teacher.pt",
+      "checkpoint_sha256": "825e12b15c7f98fdaecb5653ec907dad7d10a244d62c2ad3e0ee282b5b15acc5",
+      "original_snapshot": "qualified v3 foundation saved before new-task adaptation; copied byte-for-byte here for durable reuse",
+      "seed": 43
+    }
+  ]
+}

@@ -84,3 +84,9 @@ The [v2 preregistration](docs/agnews-retention-v2-protocol.md) introduces an exp
 ## Diagnose the missing retention
 
 [Post-v3 exploratory forensics](reports/agnews-sleep-forensics-v3.md) exactly reproduces all three first 64 Sleep states and finds that old validation EM falls from 92.45% to 0.39% before Sleep; its teacher scores 0.26%. All 864 literal greedy checks match the scorer. No core bug or retention repair was established; the next priority is competent-teacher transfer before destructive new-task updates. This is development evidence, not fresh confirmation.
+
+## Competent transfer and frequent Sleep follow-up
+
+[AG News v4 development report](reports/agnews-preupdate-v4.md): all three competent teachers pass transfer at a shared 1,536-update budget (old validation EM 91.93% ± 1.97 pp). All 18 subsequent runs and 90 fixed validation states completed. Both high-frequency teacher-order arms finish at 0% old EM; pre/post new EM is 32.68%/49.09%, while extra gold replay trades 77.73% old against 40.76% new with additional labeled compute. Earlier transfer failures, the collapsed seed, costs and CPU budget failure are retained. The new 1,024-article reserve remains unscored; this is development evidence, not confirmation or full-paper reproduction.
+
+The ordinary CPU suite and the two heavier [explicit check entry points](docs/agnews-preupdate-v4-protocol.md#isolation-limitations-and-reproduction) use separate processes under the unchanged 256-update guard.

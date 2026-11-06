@@ -1,0 +1,57 @@
+{
+  "CPU_budget_unchanged": 256,
+  "CPU_explicit_boundary": {
+    "passed": 7,
+    "toy_attempts": 233
+  },
+  "CPU_explicit_observer": {
+    "passed": 1,
+    "toy_attempts": 64
+  },
+  "CPU_initial_budget_failure_retained": true,
+  "CPU_ordinary_suite": {
+    "deselected": 1,
+    "passed": 139,
+    "reason": "existing CPU-only-wheel assertion on CUDA wheel",
+    "toy_attempts": 253
+  },
+  "CPU_wheel_packaging_assertion_not_certified_in_this_CUDA_environment": true,
+  "SVG_cleanup_preserved_normalized_XML_geometry": true,
+  "all3_common1536_transfer_gates_independently_recomputed": true,
+  "all3_pre_post_first_students_identical": true,
+  "all5_warm_start_models_metrics_policies_identical_per_seed": true,
+  "all6_public_reanalysis_JSON_and_tables_byte_identical": true,
+  "all_events_clocks_pending_slots_and_commit_metadata_consistent": true,
+  "all_smaller_budget_failures_retained": true,
+  "checked_utc": "2026-11-06T02:16:39.768683+00:00",
+  "complete_runs": 18,
+  "confirmation_scored": false,
+  "exploratory_validation_adaptive": true,
+  "figures_visually_inspected": true,
+  "fixed_validation_states": 90,
+  "hashes": {
+    "analysis.json": "058c16f98a56a6c2cfc7749174a64ce42864a62f6bb9f464ba7e8bc5f6bccac0",
+    "confirmation-reservation-manifest.json": "12ab343818adb802cfefde2b5aa469320bd2314277e8dce01e5cfbef0f4b16a2",
+    "development-sealed.json": "cff58d178ecd4b36c2a6525d319b54d5afce46e01f68f690b0c14f6b58236bbd",
+    "phaseB-source-lock.json": "c88296153489af8215e7261fda0045fc67bba40fc61d62a6d59916a1cc821556",
+    "protocol.json": "11f2a7dc8b541924a48bfa30b7557e3dee344e279aae49cd32660300e03f7406",
+    "transfer-result.json": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b",
+    "warm-protocol.json": "3359acd9c05931cdafd72ab912bc3d4c185e81433532e2288fb0b09f5ddaa45c"
+  },
+  "independent_phaseA_and_phaseB_review": "PASS; no material scientific/metadata/report publication blocker",
+  "new_trainers_analyzer_evaluators_use_no_holdout_input": true,
+  "no_Sleep_retention_or_new_learning_benefit_supported": true,
+  "old_observer_check_renamed_byte_identically": true,
+  "old_v3_prompt_pack_parsed_only_by_CPU_reservation_for_exclusions": true,
+  "original_v3_and_forensics_scientific_evidence_and_core_unchanged": true,
+  "phaseB_exit_code": 0,
+  "phaseB_metered_counter_residue_zero": true,
+  "private_checkpoint_hashes_read_back": 108,
+  "raw_models_data_checkpoints_generated_sequences_or_secrets_published": false,
+  "review_type": "separate automated agent read-only source/metadata/report review; not external peer review or independent experimental replication",
+  "schema": "agnews-preupdate-validation-v4",
+  "seed29_preP4_zero_EM_marker_and_high_finite_NLL_retained": true,
+  "staged_source_and_evidence_hash_checks_passed": true,
+  "teacher_bank_matches_original_old_only_foundations": true,
+  "warm_exit_code": 0
+}

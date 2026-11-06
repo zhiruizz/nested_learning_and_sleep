@@ -17,3 +17,7 @@ any of these evidence levels. The original release performed no new scientific-e
 The [2026-11-05 AG News study](../reports/agnews-retention-v2.md) completed15 real-3B runs and validated controlled-route engineering/recovery, but0/3 foundations met acquisition. This is not a full-paper reproduction or a qualified retention benefit.
 
 The subsequent [qualified fresh-role v3](../reports/agnews-qualified-v3.md) passed old acquisition in all3 seeds and completed15 bounded real-3B arms, with a new train-derived holdout and explicit operational amendment. This upgrades acquisition evidence for that specific variant; it does not establish the full papers, external confirmation or a general method benefit.
+
+## AG News v4 development extension
+
+[The completed v4 follow-up](../reports/agnews-preupdate-v4.md) adds a competent old-teacher transfer gate and a generalized pre-fast-base-update transaction with slow pending-window preservation. All three teachers transfer at common 1,536 updates; subsequent high-frequency pre/post arms end at 0% old validation EM. The code is a partial last-MLP engineering variant, not a full Sleep/HOPE reproduction or confirmed improvement. All validation endpoints, costs and failures are published; the reserved 1,024-article split remains unscored. The [protocol](agnews-preupdate-v4-protocol.md) distinguishes earlier frozen executable records from its later narrative and documents separate bounded CPU check entry points.

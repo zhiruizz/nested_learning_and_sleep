@@ -1,0 +1,55 @@
+{
+  "GPU_experiment_counts_are_separate": true,
+  "all_limits_unchanged_at_256_per_process": true,
+  "checks": {
+    "boundary_separate": {
+      "captured_private_raw_ledger_sha256": "7c8a0c417114ce26acb9f28bd0d17a8e115db84be1e9f4f3e2e6ad9e691c0b26",
+      "ledger": {
+        "controller_attempts": 17,
+        "functional_cms_attempts": 0,
+        "last_session_seconds": 8.468000000109896,
+        "limit": 256,
+        "optimizer_attempts": 216
+      },
+      "status": "7 passed"
+    },
+    "combined_initial": {
+      "captured_private_raw_ledger_sha256": "f0f281f6de9e52367206aa2806fed1dfd6108d13e80f6cce8c7e13f148c1d30a",
+      "ledger": {
+        "controller_attempts": 130,
+        "functional_cms_attempts": 3,
+        "last_session_seconds": 10.687000000150874,
+        "limit": 256,
+        "optimizer_attempts": 123
+      },
+      "status": "139 passed; 1 failed at unchanged 256-update guard; 1 deselected"
+    },
+    "observer_separate": {
+      "captured_private_raw_ledger_sha256": "874062aad3f088a0606b4424177dbd07b00eb0389c1c92d0efad0b555bc34824",
+      "ledger": {
+        "controller_attempts": 16,
+        "functional_cms_attempts": 0,
+        "last_session_seconds": 3.594000000040978,
+        "limit": 256,
+        "optimizer_attempts": 48
+      },
+      "status": "1 passed"
+    },
+    "ordinary_final": {
+      "captured_private_raw_ledger_sha256": "6ad000b67f4f22869c12f629fa10f698f2e9fdd8856e609da5bfcd4e4ea962c7",
+      "ledger": {
+        "controller_attempts": 174,
+        "functional_cms_attempts": 3,
+        "last_session_seconds": 11.436999999918044,
+        "limit": 256,
+        "optimizer_attempts": 76
+      },
+      "status": "139 passed; 1 CPU-only-wheel assertion deselected"
+    }
+  },
+  "new_boundary_check_is_explicit_check_file": true,
+  "no_CUDA_initialization_or_network": true,
+  "observer_fixture_renamed_only_no_scientific_code_change": true,
+  "raw_ledger_hashes_refer_to_private_captured_files_not_this_canonical_JSON": true,
+  "schema": "agnews-preupdate-CPU-validation-v4"
+}

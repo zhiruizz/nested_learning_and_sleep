@@ -1,0 +1,541 @@
+{
+  "warm_shared_once": {
+    "main_Adam_updates": 4608,
+    "restore_ghost_Adam_updates": 2,
+    "forward_counters": {
+      "forward_calls": 22088,
+      "forward_input_tokens": 3080593,
+      "gradient_forward_input_tokens": 345509
+    },
+    "by_work_stage": {
+      "boundary_transfer_restore_ghost": {
+        "forward_calls": 8,
+        "forward_input_tokens": 634,
+        "gradient_forward_input_tokens": 160
+      },
+      "initial": {
+        "forward_calls": 288,
+        "forward_input_tokens": 218928,
+        "gradient_forward_input_tokens": 0
+      },
+      "teacher": {
+        "forward_calls": 288,
+        "forward_input_tokens": 218928,
+        "gradient_forward_input_tokens": 0
+      },
+      "warm": {
+        "forward_calls": 21504,
+        "forward_input_tokens": 2642103,
+        "gradient_forward_input_tokens": 345349
+      }
+    }
+  },
+  "phaseB": {
+    "primary_SGD_updates": 2016,
+    "total_SGD_updates": 3024,
+    "extra_gold_replay_SGD_updates": 1008,
+    "sleep_Adam_updates": 4104,
+    "run_attributed_forward_counters": {
+      "forward_calls": 26568,
+      "forward_input_tokens": 6693675,
+      "gradient_forward_input_tokens": 1385596
+    },
+    "seal_total_including_validation": {
+      "forward_calls": 26568,
+      "forward_input_tokens": 6693675,
+      "gradient_forward_input_tokens": 1385596
+    },
+    "unattributed_counter_residue": {
+      "forward_calls": 0,
+      "forward_input_tokens": 0,
+      "gradient_forward_input_tokens": 0
+    },
+    "by_arm": {
+      "foundation_CMS_reference": {
+        "seeds": {
+          "17": {
+            "forward_calls": 432,
+            "forward_input_tokens": 279300,
+            "gradient_forward_input_tokens": 39980
+          },
+          "29": {
+            "forward_calls": 432,
+            "forward_input_tokens": 279304,
+            "gradient_forward_input_tokens": 39984
+          },
+          "43": {
+            "forward_calls": 432,
+            "forward_input_tokens": 279936,
+            "gradient_forward_input_tokens": 40616
+          }
+        },
+        "training": {
+          "forward_calls": 336,
+          "forward_input_tokens": 120580,
+          "gradient_forward_input_tokens": 120580
+        },
+        "validation": {
+          "forward_calls": 960,
+          "forward_input_tokens": 717960,
+          "gradient_forward_input_tokens": 0
+        },
+        "total_including_validation": {
+          "forward_calls": 1296,
+          "forward_input_tokens": 838540,
+          "gradient_forward_input_tokens": 120580
+        }
+      },
+      "warm_CMS_no_sleep": {
+        "seeds": {
+          "17": {
+            "forward_calls": 432,
+            "forward_input_tokens": 279300,
+            "gradient_forward_input_tokens": 39980
+          },
+          "29": {
+            "forward_calls": 432,
+            "forward_input_tokens": 279304,
+            "gradient_forward_input_tokens": 39984
+          },
+          "43": {
+            "forward_calls": 432,
+            "forward_input_tokens": 279936,
+            "gradient_forward_input_tokens": 40616
+          }
+        },
+        "training": {
+          "forward_calls": 336,
+          "forward_input_tokens": 120580,
+          "gradient_forward_input_tokens": 120580
+        },
+        "validation": {
+          "forward_calls": 960,
+          "forward_input_tokens": 717960,
+          "gradient_forward_input_tokens": 0
+        },
+        "total_including_validation": {
+          "forward_calls": 1296,
+          "forward_input_tokens": 838540,
+          "gradient_forward_input_tokens": 120580
+        }
+      },
+      "warm_pre_sleep_P64": {
+        "seeds": {
+          "17": {
+            "forward_calls": 536,
+            "forward_input_tokens": 287110,
+            "gradient_forward_input_tokens": 41804
+          },
+          "29": {
+            "forward_calls": 536,
+            "forward_input_tokens": 287104,
+            "gradient_forward_input_tokens": 41797
+          },
+          "43": {
+            "forward_calls": 536,
+            "forward_input_tokens": 287835,
+            "gradient_forward_input_tokens": 42463
+          }
+        },
+        "training": {
+          "forward_calls": 648,
+          "forward_input_tokens": 144089,
+          "gradient_forward_input_tokens": 126064
+        },
+        "validation": {
+          "forward_calls": 960,
+          "forward_input_tokens": 717960,
+          "gradient_forward_input_tokens": 0
+        },
+        "total_including_validation": {
+          "forward_calls": 1608,
+          "forward_input_tokens": 862049,
+          "gradient_forward_input_tokens": 126064
+        }
+      },
+      "warm_pre_sleep_P4": {
+        "seeds": {
+          "17": {
+            "forward_calls": 3344,
+            "forward_input_tokens": 492444,
+            "gradient_forward_input_tokens": 89674
+          },
+          "29": {
+            "forward_calls": 3344,
+            "forward_input_tokens": 492516,
+            "gradient_forward_input_tokens": 89689
+          },
+          "43": {
+            "forward_calls": 3344,
+            "forward_input_tokens": 494167,
+            "gradient_forward_input_tokens": 90657
+          }
+        },
+        "training": {
+          "forward_calls": 9072,
+          "forward_input_tokens": 761167,
+          "gradient_forward_input_tokens": 270020
+        },
+        "validation": {
+          "forward_calls": 960,
+          "forward_input_tokens": 717960,
+          "gradient_forward_input_tokens": 0
+        },
+        "total_including_validation": {
+          "forward_calls": 10032,
+          "forward_input_tokens": 1479127,
+          "gradient_forward_input_tokens": 270020
+        }
+      },
+      "warm_post_sleep_P4": {
+        "seeds": {
+          "17": {
+            "forward_calls": 3344,
+            "forward_input_tokens": 492444,
+            "gradient_forward_input_tokens": 89674
+          },
+          "29": {
+            "forward_calls": 3344,
+            "forward_input_tokens": 492516,
+            "gradient_forward_input_tokens": 89689
+          },
+          "43": {
+            "forward_calls": 3344,
+            "forward_input_tokens": 494167,
+            "gradient_forward_input_tokens": 90657
+          }
+        },
+        "training": {
+          "forward_calls": 9072,
+          "forward_input_tokens": 761167,
+          "gradient_forward_input_tokens": 270020
+        },
+        "validation": {
+          "forward_calls": 960,
+          "forward_input_tokens": 717960,
+          "gradient_forward_input_tokens": 0
+        },
+        "total_including_validation": {
+          "forward_calls": 10032,
+          "forward_input_tokens": 1479127,
+          "gradient_forward_input_tokens": 270020
+        }
+      },
+      "warm_extra_gold_replay_P4": {
+        "seeds": {
+          "17": {
+            "forward_calls": 768,
+            "forward_input_tokens": 398172,
+            "gradient_forward_input_tokens": 158852
+          },
+          "29": {
+            "forward_calls": 768,
+            "forward_input_tokens": 398168,
+            "gradient_forward_input_tokens": 158848
+          },
+          "43": {
+            "forward_calls": 768,
+            "forward_input_tokens": 399952,
+            "gradient_forward_input_tokens": 160632
+          }
+        },
+        "training": {
+          "forward_calls": 1344,
+          "forward_input_tokens": 478332,
+          "gradient_forward_input_tokens": 478332
+        },
+        "validation": {
+          "forward_calls": 960,
+          "forward_input_tokens": 717960,
+          "gradient_forward_input_tokens": 0
+        },
+        "total_including_validation": {
+          "forward_calls": 2304,
+          "forward_input_tokens": 1196292,
+          "gradient_forward_input_tokens": 478332
+        }
+      }
+    }
+  },
+  "method_path_per_seed": {
+    "foundation_CMS_reference": {
+      "17": {
+        "warm_tax_Adam_updates": 0,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 0,
+        "forward_counters": {
+          "forward_calls": 432,
+          "forward_input_tokens": 279300,
+          "gradient_forward_input_tokens": 39980
+        }
+      },
+      "29": {
+        "warm_tax_Adam_updates": 0,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 0,
+        "forward_counters": {
+          "forward_calls": 432,
+          "forward_input_tokens": 279304,
+          "gradient_forward_input_tokens": 39984
+        }
+      },
+      "43": {
+        "warm_tax_Adam_updates": 0,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 0,
+        "forward_counters": {
+          "forward_calls": 432,
+          "forward_input_tokens": 279936,
+          "gradient_forward_input_tokens": 40616
+        }
+      }
+    },
+    "warm_CMS_no_sleep": {
+      "17": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 0,
+        "forward_counters": {
+          "forward_calls": 432,
+          "forward_input_tokens": 279300,
+          "gradient_forward_input_tokens": 39980
+        }
+      },
+      "29": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 0,
+        "forward_counters": {
+          "forward_calls": 432,
+          "forward_input_tokens": 279304,
+          "gradient_forward_input_tokens": 39984
+        }
+      },
+      "43": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 0,
+        "forward_counters": {
+          "forward_calls": 432,
+          "forward_input_tokens": 279936,
+          "gradient_forward_input_tokens": 40616
+        }
+      }
+    },
+    "warm_pre_sleep_P64": {
+      "17": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 24,
+        "forward_counters": {
+          "forward_calls": 536,
+          "forward_input_tokens": 287110,
+          "gradient_forward_input_tokens": 41804
+        }
+      },
+      "29": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 24,
+        "forward_counters": {
+          "forward_calls": 536,
+          "forward_input_tokens": 287104,
+          "gradient_forward_input_tokens": 41797
+        }
+      },
+      "43": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 24,
+        "forward_counters": {
+          "forward_calls": 536,
+          "forward_input_tokens": 287835,
+          "gradient_forward_input_tokens": 42463
+        }
+      }
+    },
+    "warm_pre_sleep_P4": {
+      "17": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 672,
+        "forward_counters": {
+          "forward_calls": 3344,
+          "forward_input_tokens": 492444,
+          "gradient_forward_input_tokens": 89674
+        }
+      },
+      "29": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 672,
+        "forward_counters": {
+          "forward_calls": 3344,
+          "forward_input_tokens": 492516,
+          "gradient_forward_input_tokens": 89689
+        }
+      },
+      "43": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 672,
+        "forward_counters": {
+          "forward_calls": 3344,
+          "forward_input_tokens": 494167,
+          "gradient_forward_input_tokens": 90657
+        }
+      }
+    },
+    "warm_post_sleep_P4": {
+      "17": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 672,
+        "forward_counters": {
+          "forward_calls": 3344,
+          "forward_input_tokens": 492444,
+          "gradient_forward_input_tokens": 89674
+        }
+      },
+      "29": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 672,
+        "forward_counters": {
+          "forward_calls": 3344,
+          "forward_input_tokens": 492516,
+          "gradient_forward_input_tokens": 89689
+        }
+      },
+      "43": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 0,
+        "phaseB_sleep_Adam_updates": 672,
+        "forward_counters": {
+          "forward_calls": 3344,
+          "forward_input_tokens": 494167,
+          "gradient_forward_input_tokens": 90657
+        }
+      }
+    },
+    "warm_extra_gold_replay_P4": {
+      "17": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 336,
+        "phaseB_sleep_Adam_updates": 0,
+        "forward_counters": {
+          "forward_calls": 768,
+          "forward_input_tokens": 398172,
+          "gradient_forward_input_tokens": 158852
+        }
+      },
+      "29": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 336,
+        "phaseB_sleep_Adam_updates": 0,
+        "forward_counters": {
+          "forward_calls": 768,
+          "forward_input_tokens": 398168,
+          "gradient_forward_input_tokens": 158848
+        }
+      },
+      "43": {
+        "warm_tax_Adam_updates": 1536,
+        "phaseB_primary_SGD_updates": 112,
+        "phaseB_extra_gold_replay_SGD_updates": 336,
+        "phaseB_sleep_Adam_updates": 0,
+        "forward_counters": {
+          "forward_calls": 768,
+          "forward_input_tokens": 399952,
+          "gradient_forward_input_tokens": 160632
+        }
+      }
+    }
+  },
+  "method_path_all3_seeds": {
+    "foundation_CMS_reference": {
+      "warm_tax_Adam_updates": 0,
+      "phaseB_primary_SGD_updates": 336,
+      "phaseB_extra_gold_replay_SGD_updates": 0,
+      "phaseB_sleep_Adam_updates": 0,
+      "forward_counters": {
+        "forward_calls": 1296,
+        "forward_input_tokens": 838540,
+        "gradient_forward_input_tokens": 120580
+      }
+    },
+    "warm_CMS_no_sleep": {
+      "warm_tax_Adam_updates": 4608,
+      "phaseB_primary_SGD_updates": 336,
+      "phaseB_extra_gold_replay_SGD_updates": 0,
+      "phaseB_sleep_Adam_updates": 0,
+      "forward_counters": {
+        "forward_calls": 1296,
+        "forward_input_tokens": 838540,
+        "gradient_forward_input_tokens": 120580
+      }
+    },
+    "warm_pre_sleep_P64": {
+      "warm_tax_Adam_updates": 4608,
+      "phaseB_primary_SGD_updates": 336,
+      "phaseB_extra_gold_replay_SGD_updates": 0,
+      "phaseB_sleep_Adam_updates": 72,
+      "forward_counters": {
+        "forward_calls": 1608,
+        "forward_input_tokens": 862049,
+        "gradient_forward_input_tokens": 126064
+      }
+    },
+    "warm_pre_sleep_P4": {
+      "warm_tax_Adam_updates": 4608,
+      "phaseB_primary_SGD_updates": 336,
+      "phaseB_extra_gold_replay_SGD_updates": 0,
+      "phaseB_sleep_Adam_updates": 2016,
+      "forward_counters": {
+        "forward_calls": 10032,
+        "forward_input_tokens": 1479127,
+        "gradient_forward_input_tokens": 270020
+      }
+    },
+    "warm_post_sleep_P4": {
+      "warm_tax_Adam_updates": 4608,
+      "phaseB_primary_SGD_updates": 336,
+      "phaseB_extra_gold_replay_SGD_updates": 0,
+      "phaseB_sleep_Adam_updates": 2016,
+      "forward_counters": {
+        "forward_calls": 10032,
+        "forward_input_tokens": 1479127,
+        "gradient_forward_input_tokens": 270020
+      }
+    },
+    "warm_extra_gold_replay_P4": {
+      "warm_tax_Adam_updates": 4608,
+      "phaseB_primary_SGD_updates": 336,
+      "phaseB_extra_gold_replay_SGD_updates": 1008,
+      "phaseB_sleep_Adam_updates": 0,
+      "forward_counters": {
+        "forward_calls": 2304,
+        "forward_input_tokens": 1196292,
+        "gradient_forward_input_tokens": 478332
+      }
+    }
+  },
+  "method_path_note": "Warm tax is 1536 Adam updates per warm-start seed path, 4608 across all three seeds, and zero for foundation reference. Shared warm total is counted once at experiment level; Phase B counters are reported by arm and by seed."
+}
