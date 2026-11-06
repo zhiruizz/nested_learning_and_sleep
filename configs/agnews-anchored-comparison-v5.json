@@ -1,0 +1,138 @@
+{
+  "P16_rationale": "28events at448 fit unchanged32-slot capacity with29slow slots; longer adaptation than v4, not isolated cadence comparison",
+  "arms": [
+    "warm_CMS_reference",
+    "warm_anchorKD",
+    "warm_anchorGold",
+    "warm_anchorKD_sleepP16_latest",
+    "warm_anchorKD_sleepP16_warmmix",
+    "warm_self_sleepP16_latest",
+    "warm_self_sleepP16_warmmix"
+  ],
+  "base_lr": 0.02,
+  "base_public_commit": "5b27a91b3fb96986abd5a7153d5675ddda175db5",
+  "capacity": 32,
+  "common_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+  "component_diagnostic_result_sha256": "abc46d14b3152f3016481eb6fb719610db61aee6657807862889ae195ecb39d5",
+  "confirmation_input": false,
+  "confirmation_scored": false,
+  "costs": "auxiliary gradients use one primary clock/collect, extra FW/BW recorded; gold adds direct old-answer targets, KD uses class metadata for balance; no equalFLOPs claim",
+  "driver_source_sha256": "b0ae6daaeb6d18d17ef2fe96972826e6cc685d7f8a81845d1226d9f2725bed7d",
+  "elapsed_limit_seconds": 7200,
+  "engine_sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+  "evaluation_steps": [
+    0,
+    16,
+    64,
+    112,
+    256,
+    448
+  ],
+  "expert_lr": 0.04,
+  "factorial_interactions": [
+    "(KDwarm-selfwarm)-(KDlatest-selflatest)",
+    "(KDlatest-selflatest)-(KD-reference)"
+  ],
+  "frozen_utc": "2026-11-06T09:32:56.323619+00:00",
+  "initial_interpretation": "development chosen after v4 and train/validation diagnostics; no independent confirmation",
+  "interference_diagnostic_result_sha256": "0350764a04eb23dbe70cb8b942165089dc431a93eec9673fe26df37cdb5de817",
+  "nested_source_sha256": {
+    "nested_sleep": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5",
+    "nested_sleep.accounting": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96",
+    "nested_sleep.clocks": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d",
+    "nested_sleep.consolidation": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb",
+    "nested_sleep.dreaming": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45",
+    "nested_sleep.experts": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094",
+    "nested_sleep.lifecycle": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02",
+    "nested_sleep.lm": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+    "nested_sleep.memory": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f",
+    "nested_sleep.native": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57",
+    "nested_sleep.objectives": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654",
+    "nested_sleep.optim": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817"
+  },
+  "old_aux_weight": 1,
+  "on_failure": "stop and preserve failed/incomplete runs, no automatic numerical/guard retry or seed substitution",
+  "paired_contrasts_left_minus_right": [
+    [
+      "warm_anchorKD",
+      "warm_CMS_reference"
+    ],
+    [
+      "warm_anchorKD_sleepP16_latest",
+      "warm_self_sleepP16_latest"
+    ],
+    [
+      "warm_anchorKD_sleepP16_warmmix",
+      "warm_self_sleepP16_warmmix"
+    ],
+    [
+      "warm_anchorKD_sleepP16_latest",
+      "warm_anchorKD"
+    ],
+    [
+      "warm_anchorKD_sleepP16_warmmix",
+      "warm_anchorKD"
+    ],
+    [
+      "warm_self_sleepP16_latest",
+      "warm_CMS_reference"
+    ],
+    [
+      "warm_self_sleepP16_warmmix",
+      "warm_CMS_reference"
+    ],
+    [
+      "warm_anchorKD_sleepP16_warmmix",
+      "warm_anchorKD_sleepP16_latest"
+    ],
+    [
+      "warm_self_sleepP16_warmmix",
+      "warm_self_sleepP16_latest"
+    ],
+    [
+      "warm_anchorGold",
+      "warm_anchorKD"
+    ],
+    [
+      "warm_anchorGold",
+      "warm_CMS_reference"
+    ]
+  ],
+  "planned_KD_old_aux_steps": 4032,
+  "planned_Sleep_Adam_updates": 8064,
+  "planned_gold_old_aux_steps": 1344,
+  "planned_primary_SGD_updates": 9408,
+  "primary_endpoints": [
+    "fixed448 old/new/all EM",
+    "old drop from own step0",
+    "old/new/all NLL",
+    "all perclass metrics",
+    "both task acquisition gates"
+  ],
+  "primary_steps": 448,
+  "qualification_driver_sha256": "90b0a9e6a2c27f23d8233acbf1748e487d55538f5e33872ba3432b91c568403b",
+  "qualification_plan_sha256": "7036aac6ba8a96aaf4ff44f55fdf0332b3a62486721a1bffc0bf91227f538170",
+  "qualification_result_sha256": "bbcad9f337d6690848322c382ed0cb5f5ea7b908b0c2733ee76c8adad678aaf3",
+  "rank": 16,
+  "record_pack_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "review_status": "FROZEN_DEVELOPMENT_AFTER_REVIEW",
+  "review_type": "root source review and separate read-only automated-agent review; no external peer-review claim",
+  "route_policy": "Sleep trains newest mix.5; warmmix arms switch aftercommit to original slot0 mix.5, deliberate train-to-wake policy intervention",
+  "schema": "agnews-anchored-comparison-config-v5",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "sleep_period": 16,
+  "statistics": "all3 seeds,means and sampleSD,paired differences,no pvalues or best-checkpoint/seed selection",
+  "task_gates": {
+    "each_class_validation_EM": 0.7,
+    "train_EM": 0.8,
+    "validation_EM": 0.75
+  },
+  "v4_boundary_sha256": "5415531a3f3b715eac44cfcbd35ff1dd758ea830bd03201550883ace8a2a1a82",
+  "v4_development_seal_sha256": "cff58d178ecd4b36c2a6525d319b54d5afce46e01f68f690b0c14f6b58236bbd",
+  "wake_helper_sha256": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6",
+  "warm_result_sha256": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b"
+}

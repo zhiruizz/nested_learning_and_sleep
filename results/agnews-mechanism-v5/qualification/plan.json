@@ -1,0 +1,24 @@
+{
+  "Sleep_pool": "fixed first6/train/class0to3",
+  "anchor_helper_sha256": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6",
+  "automatic_retry": false,
+  "boundary_helper_sha256": "5415531a3f3b715eac44cfcbd35ff1dd758ea830bd03201550883ace8a2a1a82",
+  "branches": 2,
+  "confirmation_input": false,
+  "created_utc": "2026-11-06T09:15:44.591414+00:00",
+  "elapsed_limit_seconds": 600,
+  "expected_SGD_updates": 18,
+  "expected_Sleep_Adam_updates": 48,
+  "old_aux": "fixed first2/train/class0and1",
+  "prefix_steps": 14,
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "resume_steps": [
+    15,
+    16
+  ],
+  "schema": "agnews-anchored-resume-plan-v5",
+  "scoring": false,
+  "seed": 17,
+  "source_sha256": "90b0a9e6a2c27f23d8233acbf1748e487d55538f5e33872ba3432b91c568403b",
+  "warm_checkpoint_sha256": "396ff2f749525986a852ec3620d5dcade1f4dcc2e0fbf368cb70aa14c04c7222"
+}

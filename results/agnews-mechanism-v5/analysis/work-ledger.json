@@ -1,0 +1,1367 @@
+{
+  "by_stage_sum_across_sources": {
+    "qualify_seed17_Sleep16": {
+      "forward_calls": 208,
+      "forward_input_tokens": 15470,
+      "gradient_forward_input_tokens": 3620
+    },
+    "qualify_seed17_step1": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1560,
+      "gradient_forward_input_tokens": 732
+    },
+    "qualify_seed17_step10": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1640,
+      "gradient_forward_input_tokens": 812
+    },
+    "qualify_seed17_step11": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1568,
+      "gradient_forward_input_tokens": 740
+    },
+    "qualify_seed17_step12": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1660,
+      "gradient_forward_input_tokens": 832
+    },
+    "qualify_seed17_step13": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1560,
+      "gradient_forward_input_tokens": 732
+    },
+    "qualify_seed17_step14": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1572,
+      "gradient_forward_input_tokens": 744
+    },
+    "qualify_seed17_step15": {
+      "forward_calls": 8,
+      "forward_input_tokens": 3160,
+      "gradient_forward_input_tokens": 1504
+    },
+    "qualify_seed17_step16": {
+      "forward_calls": 8,
+      "forward_input_tokens": 3128,
+      "gradient_forward_input_tokens": 1472
+    },
+    "qualify_seed17_step2": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1560,
+      "gradient_forward_input_tokens": 732
+    },
+    "qualify_seed17_step3": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1572,
+      "gradient_forward_input_tokens": 744
+    },
+    "qualify_seed17_step4": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1544,
+      "gradient_forward_input_tokens": 716
+    },
+    "qualify_seed17_step5": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1592,
+      "gradient_forward_input_tokens": 764
+    },
+    "qualify_seed17_step6": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1588,
+      "gradient_forward_input_tokens": 760
+    },
+    "qualify_seed17_step7": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1588,
+      "gradient_forward_input_tokens": 760
+    },
+    "qualify_seed17_step8": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1564,
+      "gradient_forward_input_tokens": 736
+    },
+    "qualify_seed17_step9": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1544,
+      "gradient_forward_input_tokens": 716
+    },
+    "seed17_warm_CMS_no_sleep_112_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_112_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_112_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_112_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_112_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_112_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_112_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_112_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_112_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_16_actual": {
+      "forward_calls": 128,
+      "forward_input_tokens": 95728,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_16_disable_fast_force_warm": {
+      "forward_calls": 128,
+      "forward_input_tokens": 95728,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_16_force_warm_receiver": {
+      "forward_calls": 128,
+      "forward_input_tokens": 95728,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_16_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_16_restore_base0_force_warm": {
+      "forward_calls": 128,
+      "forward_input_tokens": 95728,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_16_restore_base1_force_warm": {
+      "forward_calls": 128,
+      "forward_input_tokens": 95728,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_16_restore_both_actual_route": {
+      "forward_calls": 128,
+      "forward_input_tokens": 95728,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_16_restore_both_force_warm": {
+      "forward_calls": 128,
+      "forward_input_tokens": 95728,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_CMS_no_sleep_16_warm_function_control": {
+      "forward_calls": 128,
+      "forward_input_tokens": 95728,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_post_sleep_P4_112_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_post_sleep_P4_112_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_post_sleep_P4_112_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_post_sleep_P4_112_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_post_sleep_P4_112_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_post_sleep_P4_112_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_post_sleep_P4_112_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_post_sleep_P4_112_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_post_sleep_P4_112_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_112_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_112_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_112_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_112_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_112_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_112_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_112_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_112_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_112_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_16_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_16_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_16_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_16_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_16_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_16_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_16_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_16_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_pre_sleep_P4_16_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed17_warm_reference": {
+      "forward_calls": 128,
+      "forward_input_tokens": 95728,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_112_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_112_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_112_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_112_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_112_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_112_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_112_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_112_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_112_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_16_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_16_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_16_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_16_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_16_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_16_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_16_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_16_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_CMS_no_sleep_16_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_post_sleep_P4_112_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_post_sleep_P4_112_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_post_sleep_P4_112_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_post_sleep_P4_112_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_post_sleep_P4_112_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_post_sleep_P4_112_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_post_sleep_P4_112_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_post_sleep_P4_112_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_post_sleep_P4_112_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_112_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_112_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_112_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_112_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_112_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_112_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_112_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_112_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_112_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_16_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_16_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_16_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_16_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_16_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_16_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_16_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_16_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_pre_sleep_P4_16_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed29_warm_reference": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_112_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_112_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_112_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_112_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_112_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_112_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_112_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_112_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_112_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_16_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_16_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_16_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_16_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_16_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_16_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_16_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_16_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_CMS_no_sleep_16_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_post_sleep_P4_112_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_post_sleep_P4_112_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_post_sleep_P4_112_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_post_sleep_P4_112_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_post_sleep_P4_112_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_post_sleep_P4_112_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_post_sleep_P4_112_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_post_sleep_P4_112_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_post_sleep_P4_112_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_112_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_112_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_112_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_112_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_112_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_112_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_112_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_112_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_112_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_16_actual": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_16_disable_fast_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_16_force_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_16_mix_warm_receiver": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_16_restore_base0_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_16_restore_base1_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_16_restore_both_actual_route": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_16_restore_both_force_warm": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_pre_sleep_P4_16_warm_function_control": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "seed43_warm_reference": {
+      "forward_calls": 64,
+      "forward_input_tokens": 47864,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_candidate16_all_due": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_candidate16_before": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_candidate16_slow_only": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_candidate4_all_due": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_candidate4_before": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_post": {
+      "forward_calls": 96,
+      "forward_input_tokens": 72048,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_post_base0_new_gradient": {
+      "forward_calls": 5,
+      "forward_input_tokens": 1740,
+      "gradient_forward_input_tokens": 1740
+    },
+    "v5_seed17_post_base0_old_gradient": {
+      "forward_calls": 5,
+      "forward_input_tokens": 2080,
+      "gradient_forward_input_tokens": 2080
+    },
+    "v5_seed17_post_base1_new_gradient": {
+      "forward_calls": 5,
+      "forward_input_tokens": 1740,
+      "gradient_forward_input_tokens": 1740
+    },
+    "v5_seed17_post_base1_old_gradient": {
+      "forward_calls": 5,
+      "forward_input_tokens": 2080,
+      "gradient_forward_input_tokens": 2080
+    },
+    "v5_seed17_post_fast_active_expert_new_gradient": {
+      "forward_calls": 3,
+      "forward_input_tokens": 1044,
+      "gradient_forward_input_tokens": 1044
+    },
+    "v5_seed17_post_fast_active_expert_old_gradient": {
+      "forward_calls": 3,
+      "forward_input_tokens": 1248,
+      "gradient_forward_input_tokens": 1248
+    },
+    "v5_seed17_prebase": {
+      "forward_calls": 32,
+      "forward_input_tokens": 24016,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step16_ablation_actual": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step16_ablation_disable_fast_bank": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step16_ablation_disable_original_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step16_ablation_force_original_slow_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step16_ablation_restore_both_bases": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step16_ablation_restore_warm_base0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step16_ablation_restore_warm_base1": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step1_ablation_actual": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step1_ablation_disable_fast_bank": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step1_ablation_disable_original_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step1_ablation_force_original_slow_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step1_ablation_restore_both_bases": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step1_ablation_restore_warm_base0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step1_ablation_restore_warm_base1": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step4_ablation_actual": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step4_ablation_disable_fast_bank": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step4_ablation_disable_original_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step4_ablation_force_original_slow_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step4_ablation_restore_both_bases": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step4_ablation_restore_warm_base0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_step4_ablation_restore_warm_base1": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_wake": {
+      "forward_calls": 16,
+      "forward_input_tokens": 5352,
+      "gradient_forward_input_tokens": 5352
+    },
+    "v5_seed29_candidate16_all_due": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_candidate16_before": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_candidate16_slow_only": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_candidate4_all_due": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_candidate4_before": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_post": {
+      "forward_calls": 80,
+      "forward_input_tokens": 60040,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_post_base0_new_gradient": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1392,
+      "gradient_forward_input_tokens": 1392
+    },
+    "v5_seed29_post_base0_old_gradient": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1664,
+      "gradient_forward_input_tokens": 1664
+    },
+    "v5_seed29_post_base1_new_gradient": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1392,
+      "gradient_forward_input_tokens": 1392
+    },
+    "v5_seed29_post_base1_old_gradient": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1664,
+      "gradient_forward_input_tokens": 1664
+    },
+    "v5_seed29_post_fast_active_expert_new_gradient": {
+      "forward_calls": 3,
+      "forward_input_tokens": 1044,
+      "gradient_forward_input_tokens": 1044
+    },
+    "v5_seed29_post_fast_active_expert_old_gradient": {
+      "forward_calls": 3,
+      "forward_input_tokens": 1248,
+      "gradient_forward_input_tokens": 1248
+    },
+    "v5_seed29_prebase": {
+      "forward_calls": 32,
+      "forward_input_tokens": 24016,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step16_ablation_actual": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step16_ablation_disable_fast_bank": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step16_ablation_disable_original_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step16_ablation_force_original_slow_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step16_ablation_restore_both_bases": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step16_ablation_restore_warm_base0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step16_ablation_restore_warm_base1": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step1_ablation_actual": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step1_ablation_disable_fast_bank": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step1_ablation_disable_original_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step1_ablation_force_original_slow_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step1_ablation_restore_both_bases": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step1_ablation_restore_warm_base0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step1_ablation_restore_warm_base1": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step4_ablation_actual": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step4_ablation_disable_fast_bank": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step4_ablation_disable_original_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step4_ablation_force_original_slow_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step4_ablation_restore_both_bases": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step4_ablation_restore_warm_base0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_step4_ablation_restore_warm_base1": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed29_wake": {
+      "forward_calls": 16,
+      "forward_input_tokens": 5488,
+      "gradient_forward_input_tokens": 5488
+    },
+    "v5_seed43_candidate16_all_due": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_candidate16_before": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_candidate16_slow_only": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_candidate4_all_due": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_candidate4_before": {
+      "forward_calls": 3,
+      "forward_input_tokens": 2376,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_post": {
+      "forward_calls": 80,
+      "forward_input_tokens": 60040,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_post_base0_new_gradient": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1392,
+      "gradient_forward_input_tokens": 1392
+    },
+    "v5_seed43_post_base0_old_gradient": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1664,
+      "gradient_forward_input_tokens": 1664
+    },
+    "v5_seed43_post_base1_new_gradient": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1392,
+      "gradient_forward_input_tokens": 1392
+    },
+    "v5_seed43_post_base1_old_gradient": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1664,
+      "gradient_forward_input_tokens": 1664
+    },
+    "v5_seed43_post_fast_active_expert_new_gradient": {
+      "forward_calls": 3,
+      "forward_input_tokens": 1044,
+      "gradient_forward_input_tokens": 1044
+    },
+    "v5_seed43_post_fast_active_expert_old_gradient": {
+      "forward_calls": 3,
+      "forward_input_tokens": 1248,
+      "gradient_forward_input_tokens": 1248
+    },
+    "v5_seed43_prebase": {
+      "forward_calls": 32,
+      "forward_input_tokens": 24016,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step16_ablation_actual": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step16_ablation_disable_fast_bank": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step16_ablation_disable_original_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step16_ablation_force_original_slow_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step16_ablation_restore_both_bases": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step16_ablation_restore_warm_base0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step16_ablation_restore_warm_base1": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step1_ablation_actual": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step1_ablation_disable_fast_bank": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step1_ablation_disable_original_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step1_ablation_force_original_slow_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step1_ablation_restore_both_bases": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step1_ablation_restore_warm_base0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step1_ablation_restore_warm_base1": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step4_ablation_actual": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step4_ablation_disable_fast_bank": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step4_ablation_disable_original_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step4_ablation_force_original_slow_receiver0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step4_ablation_restore_both_bases": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step4_ablation_restore_warm_base0": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_step4_ablation_restore_warm_base1": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed43_wake": {
+      "forward_calls": 16,
+      "forward_input_tokens": 5524,
+      "gradient_forward_input_tokens": 5524
+    }
+  },
+  "grand_total": {
+    "forward_calls": 11211,
+    "forward_input_tokens": 8179302,
+    "gradient_forward_input_tokens": 60220
+  },
+  "logical_cost_and_elapsed": {
+    "all_phase_work_is_forward_token_proxy_not_flops_or_gpu_busy_time": true,
+    "completed_diagnostic_wake_updates": 66,
+    "completed_sleep_adam_updates": 48,
+    "component_corrected_seconds": 548.1089999999385,
+    "component_failed_seconds": null,
+    "component_failed_seconds_status": "not recorded; intentionally unknown",
+    "corrected_gradient_probe_forward_calls": 66,
+    "failed_gradient_probe_counter_mismatch": true,
+    "failed_gradient_probe_derived_calls_from_work_stages": 4,
+    "failed_gradient_probe_reported_calls": 0,
+    "interference_corrected_seconds": 119.29700000002049,
+    "interference_failed_seconds": 6.062000000150874,
+    "known_elapsed_seconds_sum": 696.2800000000279,
+    "qualification_seconds": 22.811999999918044
+  },
+  "per_source": {
+    "anchored_resume_qualification": {
+      "stages": 17,
+      "totals": {
+        "forward_calls": 280,
+        "forward_input_tokens": 43870,
+        "gradient_forward_input_tokens": 17116
+      }
+    },
+    "components_corrected_all3": {
+      "stages": 138,
+      "totals": {
+        "forward_calls": 8832,
+        "forward_input_tokens": 6605232,
+        "gradient_forward_input_tokens": 0
+      }
+    },
+    "components_failed_initial": {
+      "stages": 9,
+      "totals": {
+        "forward_calls": 576,
+        "forward_input_tokens": 430776,
+        "gradient_forward_input_tokens": 0
+      }
+    },
+    "interference_corrected_all3": {
+      "stages": 105,
+      "totals": {
+        "forward_calls": 1503,
+        "forward_input_tokens": 1085888,
+        "gradient_forward_input_tokens": 41576
+      }
+    },
+    "interference_failed_initial": {
+      "stages": 5,
+      "totals": {
+        "forward_calls": 20,
+        "forward_input_tokens": 13536,
+        "gradient_forward_input_tokens": 1528
+      }
+    }
+  }
+}

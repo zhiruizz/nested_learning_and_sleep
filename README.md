@@ -90,3 +90,7 @@ The [v2 preregistration](docs/agnews-retention-v2-protocol.md) introduces an exp
 [AG News v4 development report](reports/agnews-preupdate-v4.md): all three competent teachers pass transfer at a shared 1,536-update budget (old validation EM 91.93% ± 1.97 pp). All 18 subsequent runs and 90 fixed validation states completed. Both high-frequency teacher-order arms finish at 0% old EM; pre/post new EM is 32.68%/49.09%, while extra gold replay trades 77.73% old against 40.76% new with additional labeled compute. Earlier transfer failures, the collapsed seed, costs and CPU budget failure are retained. The new 1,024-article reserve remains unscored; this is development evidence, not confirmation or full-paper reproduction.
 
 The ordinary CPU suite and the two heavier [explicit check entry points](docs/agnews-preupdate-v4-protocol.md#isolation-limitations-and-reproduction) use separate processes under the unchanged 256-update guard.
+
+## V5 mechanism diagnosis and frozen follow-up
+
+[Completed v5 diagnosis](reports/agnews-mechanism-v5.md) finds recoverable old-receiver behavior under joint base/topology restoration, local old/new gradient opposition, and heterogeneous route effects. Both corrected probes and initial failures/costs are published. The source-locked seven-arm, three-seed 448-update comparison is running; no final method advantage is claimed. The new reserved evaluation data remain unscored.

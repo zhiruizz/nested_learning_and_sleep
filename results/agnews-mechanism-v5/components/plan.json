@@ -1,0 +1,59 @@
+{
+  "automatic_retry": false,
+  "cases": [
+    [
+      "warm_CMS_no_sleep",
+      16
+    ],
+    [
+      "warm_CMS_no_sleep",
+      112
+    ],
+    [
+      "warm_pre_sleep_P4",
+      16
+    ],
+    [
+      "warm_pre_sleep_P4",
+      112
+    ],
+    [
+      "warm_post_sleep_P4",
+      112
+    ]
+  ],
+  "confirmation_input": false,
+  "confirmation_scored": false,
+  "created_utc": "2026-11-06T08:56:00.550028+00:00",
+  "data_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "development_only": true,
+  "elapsed_limit_seconds": 1200,
+  "expected_probe_states": 135,
+  "interpretation": "force uses coefficient1 and changes amplitude; positive control restores original active topology and gated mix, not force; no chosen deployment policy",
+  "optimizer_updates": 0,
+  "previous_failure": "v5a asserted force0 equals original singleton mix, but natural routing includes null gate; preserved separately with all 9 scored states cost; no optimizer work",
+  "probes": [
+    "actual",
+    "mix_warm_receiver",
+    "force_warm_receiver",
+    "disable_fast_force_warm",
+    "restore_base0_force_warm",
+    "restore_base1_force_warm",
+    "restore_both_force_warm",
+    "restore_both_actual_route",
+    "warm_function_control"
+  ],
+  "schema": "agnews-components-plan-v5",
+  "scoring_role": "existing validation,all512",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "source_sha256": "258ce9e6234d78f65b1f4b4e832381bc7e62273a0019291fd98d4227aa7617a0",
+  "time_enforcement": "cooperative,between operations",
+  "total_scored_states": 138,
+  "v4_development_seal_sha256": "cff58d178ecd4b36c2a6525d319b54d5afce46e01f68f690b0c14f6b58236bbd",
+  "warm_reference_states": 3,
+  "warm_result_sha256": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b"
+}

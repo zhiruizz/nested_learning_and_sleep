@@ -1,0 +1,40 @@
+{
+  "attempted_wake_updates": 0,
+  "automatic_retry": false,
+  "completed_seeds": [],
+  "elapsed_limit_seconds": 1200,
+  "error": "cannot access local variable 'grad_calls' where it is not associated with a value",
+  "gradient_probe_forward_calls": 0,
+  "no_holdout_input": true,
+  "plan_sha256": "d9224720981ad1e58d8cbc118bae2fcab9e50d8dd306fd6d57d9c8d5ea219f13",
+  "schema": "agnews-interference-failure-v5",
+  "seconds": 6.062000000150874,
+  "type": "UnboundLocalError",
+  "work": {
+    "v5_seed17_post": {
+      "forward_calls": 16,
+      "forward_input_tokens": 12008,
+      "gradient_forward_input_tokens": 0
+    },
+    "v5_seed17_post_base0_new_gradient": {
+      "forward_calls": 1,
+      "forward_input_tokens": 348,
+      "gradient_forward_input_tokens": 348
+    },
+    "v5_seed17_post_base0_old_gradient": {
+      "forward_calls": 1,
+      "forward_input_tokens": 416,
+      "gradient_forward_input_tokens": 416
+    },
+    "v5_seed17_post_base1_new_gradient": {
+      "forward_calls": 1,
+      "forward_input_tokens": 348,
+      "gradient_forward_input_tokens": 348
+    },
+    "v5_seed17_post_base1_old_gradient": {
+      "forward_calls": 1,
+      "forward_input_tokens": 416,
+      "gradient_forward_input_tokens": 416
+    }
+  }
+}

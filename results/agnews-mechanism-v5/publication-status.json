@@ -1,0 +1,25 @@
+{
+  "CPU_anchor_explicit_passed": 5,
+  "CPU_ordinary_tests": {
+    "deselected": 1,
+    "passed": 152,
+    "reason": "CPU-only-wheel assertion on CUDA wheel"
+  },
+  "completed_component_states": 135,
+  "confirmation_scored": false,
+  "created_utc": "2026-11-06T09:56:58.387923+00:00",
+  "diagnostic_gradient_passes": 66,
+  "diagnostic_wake_updates": 48,
+  "diagnostics_complete": true,
+  "initial_failed_component_states": 9,
+  "initial_failed_interference_gradient_passes": 4,
+  "main_comparison_status": "RUNNING_FROZEN_PROTOCOL_NO_FINAL_RESULT_CLAIM",
+  "main_config_sha256": "44e12f283cc4d933ce133b1ab5e51f6a04376d1bda0361a7b2d674058cf55e7c",
+  "old_closed_data_used": false,
+  "qualification_Sleep_Adam_updates": 48,
+  "qualification_no_scoring": true,
+  "qualification_wake_updates": 18,
+  "review_type": "separate automated read-only source/metadata review, not external peer review",
+  "schema": "agnews-mechanism-publication-status-v5",
+  "warm_reference_states": 3
+}

@@ -1,0 +1,1190 @@
+{
+  "review_schema": "v5-component-diagnostic-review-1",
+  "source_result": "D:\\my_paper\\NL_Sleep_Public_Candidate\\outputs\\agnews-mechanism-v5\\components-corrected-all3\\result.json",
+  "source_result_sha256": "abc46d14b3152f3016481eb6fb719610db61aee6657807862889ae195ecb39d5",
+  "reported_source_sha256": "258ce9e6234d78f65b1f4b4e832381bc7e62273a0019291fd98d4227aa7617a0",
+  "reported_plan_sha256": "1528f0c94418d673a7a5ebf14c3594dffd7633e6a27e8d07917d5eaac1dd67c3",
+  "status": {
+    "complete": true,
+    "development_only": true,
+    "confirmation_scored": false,
+    "intervention_states": 135,
+    "warm_reference_states": 3,
+    "total_scored_states": 138,
+    "optimizer_updates": 0,
+    "receiver_frozen_guard_states": 135,
+    "warm_function_controls": 15,
+    "warm_function_metric_group_mismatches": 0,
+    "warm_function_match_groups": "exact full-vocabulary two-token EM; answer NLL absolute difference < 1e-5, for old/new/all/class0-class3",
+    "wall_seconds": 548.1089999999385,
+    "scoring_forward_calls_per_state": 64,
+    "scoring_input_tokens_per_state": 47864,
+    "gradient_forward_tokens_per_state": 0
+  },
+  "metrics_summary": [
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "actual",
+      "n": 3,
+      "seed_values_old": [
+        0.46875,
+        0.87109375,
+        0.22265625
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.33203125
+      ],
+      "old_mean": 0.520833,
+      "old_sample_sd": 0.327341,
+      "new_mean": 0.110677,
+      "new_sample_sd": 0.191698
+    },
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "mix_warm_receiver",
+      "n": 3,
+      "seed_values_old": [
+        0.46875,
+        0.87109375,
+        0.22265625
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.33203125
+      ],
+      "old_mean": 0.520833,
+      "old_sample_sd": 0.327341,
+      "new_mean": 0.110677,
+      "new_sample_sd": 0.191698
+    },
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "force_warm_receiver",
+      "n": 3,
+      "seed_values_old": [
+        0.58984375,
+        0.87109375,
+        0.29296875
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.328125
+      ],
+      "old_mean": 0.584635,
+      "old_sample_sd": 0.289098,
+      "new_mean": 0.109375,
+      "new_sample_sd": 0.189443
+    },
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "disable_fast_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.90234375,
+        0.8671875,
+        0.90625
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.891927,
+      "old_sample_sd": 0.021514,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "restore_base0_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.86328125,
+        0.87890625,
+        0.65625
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.28515625
+      ],
+      "old_mean": 0.799479,
+      "old_sample_sd": 0.124286,
+      "new_mean": 0.095052,
+      "new_sample_sd": 0.164635
+    },
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "restore_base1_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.58984375,
+        0.92578125,
+        0.390625
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.3359375
+      ],
+      "old_mean": 0.635417,
+      "old_sample_sd": 0.270473,
+      "new_mean": 0.111979,
+      "new_sample_sd": 0.193954
+    },
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "restore_both_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.8671875,
+        0.9375,
+        0.73828125
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.19921875
+      ],
+      "old_mean": 0.847656,
+      "old_sample_sd": 0.101035,
+      "new_mean": 0.066406,
+      "new_sample_sd": 0.115019
+    },
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "restore_both_actual_route",
+      "n": 3,
+      "seed_values_old": [
+        0.69140625,
+        0.9375,
+        0.703125
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.2109375
+      ],
+      "old_mean": 0.777344,
+      "old_sample_sd": 0.138823,
+      "new_mean": 0.070312,
+      "new_sample_sd": 0.121785
+    },
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "warm_function_control",
+      "n": 3,
+      "seed_values_old": [
+        0.921875,
+        0.9375,
+        0.8984375
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.919271,
+      "old_sample_sd": 0.019661,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "actual",
+      "n": 3,
+      "seed_values_old": [
+        0.02734375,
+        0.00390625,
+        0.0
+      ],
+      "seed_values_new": [
+        0.546875,
+        0.40625,
+        0.546875
+      ],
+      "old_mean": 0.010417,
+      "old_sample_sd": 0.014789,
+      "new_mean": 0.5,
+      "new_sample_sd": 0.08119
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "mix_warm_receiver",
+      "n": 3,
+      "seed_values_old": [
+        0.02734375,
+        0.00390625,
+        0.0
+      ],
+      "seed_values_new": [
+        0.546875,
+        0.40625,
+        0.546875
+      ],
+      "old_mean": 0.010417,
+      "old_sample_sd": 0.014789,
+      "new_mean": 0.5,
+      "new_sample_sd": 0.08119
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "force_warm_receiver",
+      "n": 3,
+      "seed_values_old": [
+        0.5546875,
+        0.00390625,
+        0.0
+      ],
+      "seed_values_new": [
+        0.08203125,
+        0.40625,
+        0.546875
+      ],
+      "old_mean": 0.186198,
+      "old_sample_sd": 0.319127,
+      "new_mean": 0.345052,
+      "new_sample_sd": 0.238388
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "disable_fast_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.91796875,
+        0.00390625,
+        0.79296875
+      ],
+      "seed_values_new": [
+        0.0,
+        0.41015625,
+        0.0
+      ],
+      "old_mean": 0.571615,
+      "old_sample_sd": 0.495607,
+      "new_mean": 0.136719,
+      "new_sample_sd": 0.236804
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "restore_base0_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.890625,
+        0.89453125,
+        0.01171875
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.4921875
+      ],
+      "old_mean": 0.598958,
+      "old_sample_sd": 0.508568,
+      "new_mean": 0.164062,
+      "new_sample_sd": 0.284165
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "restore_base1_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.5703125,
+        0.0390625,
+        0.00390625
+      ],
+      "seed_values_new": [
+        0.07421875,
+        0.48046875,
+        0.4921875
+      ],
+      "old_mean": 0.204427,
+      "old_sample_sd": 0.317353,
+      "new_mean": 0.348958,
+      "new_sample_sd": 0.238004
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "restore_both_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.890625,
+        0.9375,
+        0.015625
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.4921875
+      ],
+      "old_mean": 0.614583,
+      "old_sample_sd": 0.519242,
+      "new_mean": 0.164062,
+      "new_sample_sd": 0.284165
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "restore_both_actual_route",
+      "n": 3,
+      "seed_values_old": [
+        0.18359375,
+        0.9375,
+        0.01171875
+      ],
+      "seed_values_new": [
+        0.4375,
+        0.0,
+        0.4921875
+      ],
+      "old_mean": 0.377604,
+      "old_sample_sd": 0.492441,
+      "new_mean": 0.309896,
+      "new_sample_sd": 0.269767
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "warm_function_control",
+      "n": 3,
+      "seed_values_old": [
+        0.921875,
+        0.9375,
+        0.8984375
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.919271,
+      "old_sample_sd": 0.019661,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "actual",
+      "n": 3,
+      "seed_values_old": [
+        0.4765625,
+        0.94140625,
+        0.16796875
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.30078125
+      ],
+      "old_mean": 0.528646,
+      "old_sample_sd": 0.38934,
+      "new_mean": 0.10026,
+      "new_sample_sd": 0.173656
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "mix_warm_receiver",
+      "n": 3,
+      "seed_values_old": [
+        0.8828125,
+        0.93359375,
+        0.81640625
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.877604,
+      "old_sample_sd": 0.058767,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "force_warm_receiver",
+      "n": 3,
+      "seed_values_old": [
+        0.89453125,
+        0.24609375,
+        0.78125
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.640625,
+      "old_sample_sd": 0.346337,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "disable_fast_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.89453125,
+        0.24609375,
+        0.78125
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.640625,
+      "old_sample_sd": 0.346337,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "restore_base0_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.9140625,
+        0.890625,
+        0.88671875
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.897135,
+      "old_sample_sd": 0.014789,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "restore_base1_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.89453125,
+        0.546875,
+        0.8984375
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.779948,
+      "old_sample_sd": 0.201857,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "restore_both_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.9140625,
+        0.9375,
+        0.921875
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.924479,
+      "old_sample_sd": 0.011934,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "restore_both_actual_route",
+      "n": 3,
+      "seed_values_old": [
+        0.47265625,
+        0.94140625,
+        0.47265625
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.628906,
+      "old_sample_sd": 0.270633,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "warm_function_control",
+      "n": 3,
+      "seed_values_old": [
+        0.921875,
+        0.9375,
+        0.8984375
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.919271,
+      "old_sample_sd": 0.019661,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "actual",
+      "n": 3,
+      "seed_values_old": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_values_new": [
+        0.4921875,
+        0.0,
+        0.48828125
+      ],
+      "old_mean": 0.0,
+      "old_sample_sd": 0.0,
+      "new_mean": 0.326823,
+      "new_sample_sd": 0.283044
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "mix_warm_receiver",
+      "n": 3,
+      "seed_values_old": [
+        0.91796875,
+        0.0,
+        0.4140625
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.4296875
+      ],
+      "old_mean": 0.44401,
+      "old_sample_sd": 0.459717,
+      "new_mean": 0.143229,
+      "new_sample_sd": 0.24808
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "force_warm_receiver",
+      "n": 3,
+      "seed_values_old": [
+        0.90625,
+        0.0,
+        0.4453125
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.23046875
+      ],
+      "old_mean": 0.450521,
+      "old_sample_sd": 0.453147,
+      "new_mean": 0.076823,
+      "new_sample_sd": 0.133061
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "disable_fast_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.90625,
+        0.0,
+        0.4453125
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.23046875
+      ],
+      "old_mean": 0.450521,
+      "old_sample_sd": 0.453147,
+      "new_mean": 0.076823,
+      "new_sample_sd": 0.133061
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "restore_base0_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.9140625,
+        0.8671875,
+        0.875
+      ],
+      "seed_values_new": [
+        0.0,
+        0.00390625,
+        0.0
+      ],
+      "old_mean": 0.885417,
+      "old_sample_sd": 0.025114,
+      "new_mean": 0.001302,
+      "new_sample_sd": 0.002255
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "restore_base1_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.90234375,
+        0.0,
+        0.48046875
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.015625
+      ],
+      "old_mean": 0.460938,
+      "old_sample_sd": 0.451489,
+      "new_mean": 0.005208,
+      "new_sample_sd": 0.009021
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "restore_both_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.9140625,
+        0.9375,
+        0.921875
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.924479,
+      "old_sample_sd": 0.011934,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "restore_both_actual_route",
+      "n": 3,
+      "seed_values_old": [
+        0.0,
+        0.0,
+        0.01953125
+      ],
+      "seed_values_new": [
+        0.48828125,
+        0.0,
+        0.49609375
+      ],
+      "old_mean": 0.00651,
+      "old_sample_sd": 0.011276,
+      "new_mean": 0.328125,
+      "new_sample_sd": 0.284191
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "warm_function_control",
+      "n": 3,
+      "seed_values_old": [
+        0.921875,
+        0.9375,
+        0.8984375
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.919271,
+      "old_sample_sd": 0.019661,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "actual",
+      "n": 3,
+      "seed_values_old": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "seed_values_new": [
+        0.5,
+        0.49609375,
+        0.4765625
+      ],
+      "old_mean": 0.0,
+      "old_sample_sd": 0.0,
+      "new_mean": 0.490885,
+      "new_sample_sd": 0.012557
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "mix_warm_receiver",
+      "n": 3,
+      "seed_values_old": [
+        0.921875,
+        0.0,
+        0.38671875
+      ],
+      "seed_values_new": [
+        0.0,
+        0.49609375,
+        0.40234375
+      ],
+      "old_mean": 0.436198,
+      "old_sample_sd": 0.462925,
+      "new_mean": 0.299479,
+      "new_sample_sd": 0.263559
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "force_warm_receiver",
+      "n": 3,
+      "seed_values_old": [
+        0.921875,
+        0.0,
+        0.75390625
+      ],
+      "seed_values_new": [
+        0.0,
+        0.49609375,
+        0.0
+      ],
+      "old_mean": 0.558594,
+      "old_sample_sd": 0.490992,
+      "new_mean": 0.165365,
+      "new_sample_sd": 0.28642
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "disable_fast_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.921875,
+        0.0,
+        0.75390625
+      ],
+      "seed_values_new": [
+        0.0,
+        0.49609375,
+        0.0
+      ],
+      "old_mean": 0.558594,
+      "old_sample_sd": 0.490992,
+      "new_mean": 0.165365,
+      "new_sample_sd": 0.28642
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "restore_base0_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.91796875,
+        0.81640625,
+        0.90234375
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.878906,
+      "old_sample_sd": 0.054688,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "restore_base1_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.921875,
+        0.1328125,
+        0.86328125
+      ],
+      "seed_values_new": [
+        0.0,
+        0.39453125,
+        0.0
+      ],
+      "old_mean": 0.639323,
+      "old_sample_sd": 0.439628,
+      "new_mean": 0.13151,
+      "new_sample_sd": 0.227783
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "restore_both_force_warm",
+      "n": 3,
+      "seed_values_old": [
+        0.9140625,
+        0.9375,
+        0.921875
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.924479,
+      "old_sample_sd": 0.011934,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "restore_both_actual_route",
+      "n": 3,
+      "seed_values_old": [
+        0.0,
+        0.9375,
+        0.0
+      ],
+      "seed_values_new": [
+        0.4921875,
+        0.0,
+        0.4453125
+      ],
+      "old_mean": 0.3125,
+      "old_sample_sd": 0.541266,
+      "new_mean": 0.3125,
+      "new_sample_sd": 0.271646
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "warm_function_control",
+      "n": 3,
+      "seed_values_old": [
+        0.921875,
+        0.9375,
+        0.8984375
+      ],
+      "seed_values_new": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "old_mean": 0.919271,
+      "old_sample_sd": 0.019661,
+      "new_mean": 0.0,
+      "new_sample_sd": 0.0
+    }
+  ],
+  "natural_route_telemetry": [
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "actual",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "0": 512
+      },
+      "new_selected_slots": {
+        "0": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.3348,
+      "old_null_gate_mean": 0.6652,
+      "new_warm0_gate_mean": 0.3363,
+      "new_null_gate_mean": 0.6637
+    },
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "mix_warm_receiver",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "0": 512
+      },
+      "new_selected_slots": {
+        "0": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.3348,
+      "old_null_gate_mean": 0.6652,
+      "new_warm0_gate_mean": 0.3363,
+      "new_null_gate_mean": 0.6637
+    },
+    {
+      "case": "warm_CMS_no_sleep@16",
+      "probe": "restore_both_actual_route",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "0": 512
+      },
+      "new_selected_slots": {
+        "0": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.3731,
+      "old_null_gate_mean": 0.6269,
+      "new_warm0_gate_mean": 0.3765,
+      "new_null_gate_mean": 0.6236
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "actual",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "0": 512
+      },
+      "new_selected_slots": {
+        "0": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.3186,
+      "old_null_gate_mean": 0.6814,
+      "new_warm0_gate_mean": 0.3197,
+      "new_null_gate_mean": 0.6803
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "mix_warm_receiver",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "0": 512
+      },
+      "new_selected_slots": {
+        "0": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.3186,
+      "old_null_gate_mean": 0.6814,
+      "new_warm0_gate_mean": 0.3197,
+      "new_null_gate_mean": 0.6803
+    },
+    {
+      "case": "warm_CMS_no_sleep@112",
+      "probe": "restore_both_actual_route",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "0": 512
+      },
+      "new_selected_slots": {
+        "0": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.3511,
+      "old_null_gate_mean": 0.6489,
+      "new_warm0_gate_mean": 0.3535,
+      "new_null_gate_mean": 0.6465
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "actual",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "28": 512
+      },
+      "new_selected_slots": {
+        "28": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.0,
+      "old_null_gate_mean": 0.0,
+      "new_warm0_gate_mean": 0.0,
+      "new_null_gate_mean": 0.0
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "mix_warm_receiver",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "28": 512
+      },
+      "new_selected_slots": {
+        "28": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.0,
+      "old_null_gate_mean": 0.0,
+      "new_warm0_gate_mean": 0.0,
+      "new_null_gate_mean": 0.0
+    },
+    {
+      "case": "warm_post_sleep_P4@112",
+      "probe": "restore_both_actual_route",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "28": 512
+      },
+      "new_selected_slots": {
+        "28": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.0,
+      "old_null_gate_mean": 0.0,
+      "new_warm0_gate_mean": 0.0,
+      "new_null_gate_mean": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "actual",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "4": 512
+      },
+      "new_selected_slots": {
+        "4": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.0049,
+      "old_null_gate_mean": 0.0035,
+      "new_warm0_gate_mean": 0.0049,
+      "new_null_gate_mean": 0.0032
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "mix_warm_receiver",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "4": 512
+      },
+      "new_selected_slots": {
+        "4": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.0049,
+      "old_null_gate_mean": 0.0035,
+      "new_warm0_gate_mean": 0.0049,
+      "new_null_gate_mean": 0.0032
+    },
+    {
+      "case": "warm_pre_sleep_P4@16",
+      "probe": "restore_both_actual_route",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "4": 512
+      },
+      "new_selected_slots": {
+        "4": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.005,
+      "old_null_gate_mean": 0.0034,
+      "new_warm0_gate_mean": 0.0049,
+      "new_null_gate_mean": 0.0032
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "actual",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "28": 512
+      },
+      "new_selected_slots": {
+        "28": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.0,
+      "old_null_gate_mean": 0.0,
+      "new_warm0_gate_mean": 0.0,
+      "new_null_gate_mean": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "mix_warm_receiver",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "28": 512
+      },
+      "new_selected_slots": {
+        "28": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.0,
+      "old_null_gate_mean": 0.0,
+      "new_warm0_gate_mean": 0.0,
+      "new_null_gate_mean": 0.0
+    },
+    {
+      "case": "warm_pre_sleep_P4@112",
+      "probe": "restore_both_actual_route",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "old_selected_slots": {
+        "28": 512
+      },
+      "new_selected_slots": {
+        "28": 512
+      },
+      "positions_per_group": 512,
+      "old_warm0_gate_mean": 0.0,
+      "old_null_gate_mean": 0.0,
+      "new_warm0_gate_mean": 0.0,
+      "new_null_gate_mean": 0.0
+    }
+  ],
+  "interpretation": {
+    "functional_recovery": "The exact warm_function_control positive control matches the warm checkpoint metrics across all five checkpoint cases and all three seeds: mean old EM 0.919271 (sample SD 0.019661; seed values 0.921875, 0.9375, 0.8984375), new EM 0; all seven metric groups meet exact EM and answer-NLL tolerance. Separately, restore_both_force_warm at the two P4@112 checkpoints gives old EM 0.924479 (SD 0.011934), new EM 0. This forced restoration intervention is distinct from the positive control and does not establish joint old/new performance.",
+    "actual_failure": "At P4@112 actual routing, old EM is 0 in both pre and post arms; new EM is 0.326823 (SD 0.283044) pre and 0.490885 (SD 0.012557) post. Restore-both with actual route leaves old EM 0.006510 pre and 0.312500 post, so weights alone do not establish recovered performance under the learned policy.",
+    "mechanism": "Evidence is consistent with joint dependence on base-context drift and routing/expert selection; individual base restorations and receiver-only/mix controls vary by checkpoint and seed. These are zero-training counterfactual interventions, not causal proof of a training mechanism or a deployable fix.",
+    "force_caveat": "force_warm_receiver and force_* interventions override natural gate/null amplitudes and are not ordinary route-policy evaluations. Natural route telemetry is reported only for actual, mix_warm_receiver, and restore_both_actual_route.",
+    "next_design": "The planned 2x3 KD/no-KD x noSleep/P16-latest/P16-warmmix design plus matched gold-joint-CE control covers the main teacher/receiver questions. If mechanism attribution to learned base drift is a primary claim, add one matched P16/noSleep arm freezing both CMS base writes (or restore bases separately) to isolate base updates from routing/receiver effects; otherwise keep this as a follow-up, since present restoration probes are functional counterfactuals."
+  }
+}

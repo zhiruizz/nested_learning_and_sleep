@@ -21,3 +21,7 @@ The subsequent [qualified fresh-role v3](../reports/agnews-qualified-v3.md) pass
 ## AG News v4 development extension
 
 [The completed v4 follow-up](../reports/agnews-preupdate-v4.md) adds a competent old-teacher transfer gate and a generalized pre-fast-base-update transaction with slow pending-window preservation. All three teachers transfer at common 1,536 updates; subsequent high-frequency pre/post arms end at 0% old validation EM. The code is a partial last-MLP engineering variant, not a full Sleep/HOPE reproduction or confirmed improvement. All validation endpoints, costs and failures are published; the reserved 1,024-article split remains unscored. The [protocol](agnews-preupdate-v4-protocol.md) distinguishes earlier frozen executable records from its later narrative and documents separate bounded CPU check entry points.
+
+## V5 mechanism follow-up
+
+[Completed development diagnostics](../reports/agnews-mechanism-v5.md) add component-policy interventions, local gradient probes, exact first16-step replay and real3B anchored-update recovery qualification. The seven-arm follow-up is running under a [frozen configuration](../configs/agnews-anchored-comparison-v5.json); no completed-main or confirmed-method claim is made at this publication. Full-paper fidelity and external confirmation remain unestablished.

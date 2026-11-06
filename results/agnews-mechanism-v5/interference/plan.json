@@ -1,0 +1,73 @@
+{
+  "ablation_steps": [
+    1,
+    4,
+    16
+  ],
+  "created_utc": "2026-11-06T09:08:40.464353+00:00",
+  "elapsed_limit_seconds": 1200,
+  "endpoint_match_required": "v4 warm_CMS_no_sleep step16 model/controller/execution policy/RNG",
+  "gradient_probe": "fixed train-only 4-row batches: 2 each from old classes 0/1 and new classes 2/3; autograd.grad, no optimizer step",
+  "input_sha256": {
+    "records": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+    "v3_seal": "cbeba8b4ca8edf2f71b356b188cfefcd09714b538eae31d283413141420bb75a",
+    "v4_protocol": "11f2a7dc8b541924a48bfa30b7557e3dee344e279aae49cd32660300e03f7406",
+    "v4_seal": "cff58d178ecd4b36c2a6525d319b54d5afce46e01f68f690b0c14f6b58236bbd",
+    "v4_step16_checkpoints": {
+      "17": {
+        "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\outputs\\agnews-preupdate-comparison-v4\\main-all3\\checkpoints\\seed-17-warm_CMS_no_sleep-step-16.pt",
+        "sha256": "b18774a089c19aae4d20d426a9d2f9b1b7fc067b38f894d4891186ea1972a3bc",
+        "step": 16
+      },
+      "29": {
+        "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\outputs\\agnews-preupdate-comparison-v4\\main-all3\\checkpoints\\seed-29-warm_CMS_no_sleep-step-16.pt",
+        "sha256": "bf38e139901ce1e067deb2613edb5d0c9b0955c4a70a470c04328387239e3546",
+        "step": 16
+      },
+      "43": {
+        "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\outputs\\agnews-preupdate-comparison-v4\\main-all3\\checkpoints\\seed-43-warm_CMS_no_sleep-step-16.pt",
+        "sha256": "24a1c703884a77d509e27bc5597bc4c3c6b4acfc53f133bba72c33579fef1a0f",
+        "step": 16
+      }
+    },
+    "warm_checkpoints": {
+      "17": {
+        "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\outputs\\agnews-boundary-transfer-v4\\warm-all3\\seed-17-qualified-transfer.pt",
+        "sha256": "396ff2f749525986a852ec3620d5dcade1f4dcc2e0fbf368cb70aa14c04c7222"
+      },
+      "29": {
+        "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\outputs\\agnews-boundary-transfer-v4\\warm-all3\\seed-29-qualified-transfer.pt",
+        "sha256": "99a46c6988cf03ca352469da5dff573874737ef8e927802b2090f33c1f5a5531"
+      },
+      "43": {
+        "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\outputs\\agnews-boundary-transfer-v4\\warm-all3\\seed-43-qualified-transfer.pt",
+        "sha256": "9241bbb2116a8a5599c7d42670675b62aab7ebf4c47bd0225789e84e1e8f6bbf"
+      }
+    },
+    "warm_result": "de3973344f96086b37ba1632adffe39dd54d5a62e1d942d63f87d0929e925c1b"
+  },
+  "new_wake_updates_per_seed": 16,
+  "no_holdout_input": true,
+  "schema": "agnews-interference-diagnostic-plan-v5",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "source_sha256": {
+    "D:\\my_paper\\NL_Sleep_Public_Candidate\\tools\\agnews_v3_common.py": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+    "D:\\my_paper\\NL_Sleep_Public_Candidate\\tools\\diagnose_agnews_interference_v5.py": "e2af805410609bef8b7f11f32d8edc6f393709ee7f9522e03cab74905a2ed587",
+    "D:\\my_paper\\NL_Sleep_Public_Candidate\\tools\\run_agnews_retention_v2.py": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+    "D:\\my_paper\\NL_Sleep_Public_Candidate\\tools\\run_x870e_synthetic_dev_v2.py": "6c7bf0a079a052eb87458010c1b55e52db1d9daa6dce99e55708b2da98385948"
+  },
+  "teacher_candidate_pool": "fixed train-only 24 rows, 6/class",
+  "total_new_wake_updates": 48,
+  "trace_steps": [
+    0,
+    1,
+    4,
+    8,
+    16
+  ],
+  "validation": "fixed first 32 rows/class from train-derived validation (128 total); all role/class metrics reported consistently"
+}

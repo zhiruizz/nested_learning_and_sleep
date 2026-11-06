@@ -56,3 +56,5 @@ Missing full-path time remains empty; failure/unknown rows stay in the denominat
 [Post-v3 Sleep forensics](../reports/agnews-sleep-forensics-v3.md) and [aggregate diagnostic evidence](agnews-sleep-forensics-v3/) distinguish pre-Sleep forgetting, teacher targets, receiving gradients, fixed route probes and scorer/commit checks. This adds bounded development replay, not a new benchmark result.
 
 [Competent-teacher transfer and update-order v4](../reports/agnews-preupdate-v4.md) includes [all exploratory aggregates](agnews-preupdate-v4/), common-budget qualification failures, all 18/90 fixed runs/states, five paired contrasts, work/capacity accounting, the severe seed-29 pre-P4 failure, and metadata for a still-unscored future reserve. Both P4 arms end at zero old EM; warm transfer is not continuing retention.
+
+[AG News v5 mechanism evidence](agnews-mechanism-v5/) contains all completed component, gradient/teacher-candidate, route and recovery diagnostics, correction history and metered costs. The seven-arm anchored-wake comparison is separately frozen and running; this evidence is development-only.

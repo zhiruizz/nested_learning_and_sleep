@@ -1,0 +1,124 @@
+{
+  "SGD_updates": 18,
+  "Sleep_Adam_updates": 48,
+  "anchor_helper_sha256": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6",
+  "branches": [
+    {
+      "RNG": "674f3824f813eaed05325209f75d7815149588e5bb9c981889ab4aad499aee90",
+      "controller": "212b6bd43c417ff7629cdd616b9ff59652d1ae279545c692c6c12c3fd158ece8",
+      "execution_policy": "1ecd17878f03258ccd54eaf3e44497d6ce583655752668d1ed059a8458ef281d",
+      "model": "8261ce883d775c49c551251e08dd11c459823eaba1dec1680fa729b899e5efa8"
+    },
+    {
+      "RNG": "674f3824f813eaed05325209f75d7815149588e5bb9c981889ab4aad499aee90",
+      "controller": "212b6bd43c417ff7629cdd616b9ff59652d1ae279545c692c6c12c3fd158ece8",
+      "execution_policy": "1ecd17878f03258ccd54eaf3e44497d6ce583655752668d1ed059a8458ef281d",
+      "model": "8261ce883d775c49c551251e08dd11c459823eaba1dec1680fa729b899e5efa8"
+    }
+  ],
+  "confirmation_scored": false,
+  "exact_model_controller_policy_RNG": true,
+  "passed": true,
+  "plan_sha256": "7036aac6ba8a96aaf4ff44f55fdf0332b3a62486721a1bffc0bf91227f538170",
+  "private_checkpoint": {
+    "adapter_fingerprint": "0ac1fd0eaf916c190bd0724dc84deeec8f36745351a15861764881b713840580",
+    "controller_counts": [
+      2,
+      14
+    ],
+    "path": "checkpoint14-private.pt",
+    "sha256": "b8f2daafb9ae173c20b72aabeb8223b94a1ee4f192de2fb1af50b6e2fd93eb59",
+    "step": 14
+  },
+  "schema": "agnews-anchored-resume-qualified-v5",
+  "scoring": false,
+  "seconds": 22.811999999918044,
+  "source_sha256": "90b0a9e6a2c27f23d8233acbf1748e487d55538f5e33872ba3432b91c568403b",
+  "work": {
+    "qualify_seed17_Sleep16": {
+      "forward_calls": 208,
+      "forward_input_tokens": 15470,
+      "gradient_forward_input_tokens": 3620
+    },
+    "qualify_seed17_step1": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1560,
+      "gradient_forward_input_tokens": 732
+    },
+    "qualify_seed17_step10": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1640,
+      "gradient_forward_input_tokens": 812
+    },
+    "qualify_seed17_step11": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1568,
+      "gradient_forward_input_tokens": 740
+    },
+    "qualify_seed17_step12": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1660,
+      "gradient_forward_input_tokens": 832
+    },
+    "qualify_seed17_step13": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1560,
+      "gradient_forward_input_tokens": 732
+    },
+    "qualify_seed17_step14": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1572,
+      "gradient_forward_input_tokens": 744
+    },
+    "qualify_seed17_step15": {
+      "forward_calls": 8,
+      "forward_input_tokens": 3160,
+      "gradient_forward_input_tokens": 1504
+    },
+    "qualify_seed17_step16": {
+      "forward_calls": 8,
+      "forward_input_tokens": 3128,
+      "gradient_forward_input_tokens": 1472
+    },
+    "qualify_seed17_step2": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1560,
+      "gradient_forward_input_tokens": 732
+    },
+    "qualify_seed17_step3": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1572,
+      "gradient_forward_input_tokens": 744
+    },
+    "qualify_seed17_step4": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1544,
+      "gradient_forward_input_tokens": 716
+    },
+    "qualify_seed17_step5": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1592,
+      "gradient_forward_input_tokens": 764
+    },
+    "qualify_seed17_step6": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1588,
+      "gradient_forward_input_tokens": 760
+    },
+    "qualify_seed17_step7": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1588,
+      "gradient_forward_input_tokens": 760
+    },
+    "qualify_seed17_step8": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1564,
+      "gradient_forward_input_tokens": 736
+    },
+    "qualify_seed17_step9": {
+      "forward_calls": 4,
+      "forward_input_tokens": 1544,
+      "gradient_forward_input_tokens": 716
+    }
+  }
+}
