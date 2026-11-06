@@ -1,6 +1,6 @@
 # Recoverable old memories and functional interference: v5 diagnosis
 
-**The frozen old receiver still contains recoverable task behavior, but later base changes and routing can hide it.** This is exploratory evidence on already-used AG News train/validation roles. It is not independent confirmation, a full Sleep/HOPE reproduction, or an established new method advantage. The [v4 negative results](agnews-preupdate-v4.md) remain unchanged.
+**Frozen receiver parameters do not by themselves protect the old-task function.** Base and route interventions have heterogeneous effects across seeds. This is exploratory evidence on already-used AG News train/validation roles. It is not independent confirmation, a full Sleep/HOPE reproduction, or an established new method advantage. The [v4 negative results](agnews-preupdate-v4.md) remain unchanged.
 
 The completed component experiment observes 135 interventions plus three warm references, without any optimizer updates. Its 15 source checkpoint states cover three seeds and five fixed v4 arm/step cases. Every original receiver0 tensor guard passes. Restoring both bases and the original active topology/routing exactly recovers the warm validation function in all cases: old EM 91.93% ± 1.97 pp, new EM 0 (sample SD over the same three seeds). That recovery sacrifices new adaptation and is a diagnostic intervention, not a deployed result.
 
@@ -37,3 +37,5 @@ python tools/summarize_agnews_mechanism_v5.py --components results/agnews-mechan
 The [Sleep paper](https://arxiv.org/html/2606.03979v2#S3.S2) motivates fast-to-slow consolidation. The anchored-wake term and fixed original-slot wake mixture here are additional engineering interventions, whose costs and joint old/new outcomes must be assessed separately.
 
 For the preliminary interference failure, the cumulative summary field reported zero gradient passes while the stage meters record four. The cost ledger uses those stage meters and preserves the original discrepancy.
+
+The warm-function control restores archived base weights as well as active topology and routing. It therefore reintroduces saved pre-task information: its success does not prove that all old knowledge remains in the receiver or that the failure was solely retrieval. Unchanged receiver tensors and partial route-only recoveries are narrower observations, and receiver dependence differs across seeds. The added frozen-teacher wake objective likewise uses an explicit retained teacher and replay computation; any benefit must be attributed accordingly.

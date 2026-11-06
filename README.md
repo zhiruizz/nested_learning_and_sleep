@@ -93,4 +93,4 @@ The ordinary CPU suite and the two heavier [explicit check entry points](docs/ag
 
 ## V5 mechanism diagnosis and frozen follow-up
 
-[Completed v5 diagnosis](reports/agnews-mechanism-v5.md) finds recoverable old-receiver behavior under joint base/topology restoration, local old/new gradient opposition, and heterogeneous route effects. Both corrected probes and initial failures/costs are published. The source-locked seven-arm, three-seed 448-update comparison is running; no final method advantage is claimed. The new reserved evaluation data remain unscored.
+[Completed v5 diagnosis](reports/agnews-mechanism-v5.md) finds old-task functional loss despite frozen receiver parameters, local old/new gradient opposition, and heterogeneous base/route effects. Restoring archived weights reintroduces saved information and does not localize all memory in the receiver. Both corrected probes and initial failures/costs are published. The source-locked seven-arm, three-seed 448-update comparison is running; no final method advantage is claimed. The new reserved evaluation data remain unscored.

@@ -53,13 +53,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "67db6cb3ce3682321c12aa098c7a168c971b0a8df5869ec5bd5385b93e8d1921",
-      "bytes": 8602
+      "sha256": "450afe5c65a40b90bb944e6e817cab23a39d8c0ae57393ca5332c3c1f2b978f8",
+      "bytes": 8703
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "8f1cd1f12c6287abe786924585b09f9ee904fc3bad40654dc4c39ef2f7f79cd7",
-      "bytes": 5570
+      "sha256": "a33a31c7b7a1bbeeb1125eeb5052bad93a7695ef5ecba4606b988641312d91fd",
+      "bytes": 5666
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -223,8 +223,8 @@
     },
     {
       "path": "reports/agnews-mechanism-v5.md",
-      "sha256": "fed1237896c2ebd1cc0ca8e349aa044441917498793fce4048b4e313156a2a56",
-      "bytes": 7811
+      "sha256": "fa41b48adcabb93355f9fa5f2ebd71c3bf330beb164b9daf1c83bf8978f5fae2",
+      "bytes": 8399
     },
     {
       "path": "reports/agnews-preupdate-v4.md",
