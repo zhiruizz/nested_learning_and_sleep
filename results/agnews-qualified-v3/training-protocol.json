@@ -1,0 +1,135 @@
+{
+  "automatic_retry": false,
+  "config": {
+    "arms": [
+      "frozen",
+      "sft",
+      "cms",
+      "cms_sleep",
+      "cms_extra_replay"
+    ],
+    "automatic_retry": false,
+    "batch_size": 4,
+    "capacity": 32,
+    "checkpoints": "0,N/4,N/2,3N/4,N",
+    "comparison_source_sha256": "b16c06542ee92ac3dcc8fdecca319d4b5c872f39d341f4fc797e7a89dc34b32f",
+    "dream_steps": 0,
+    "evaluator_sha256": "96530f10b4331f59ae9a0a85608f07c75e8d5732257c72739136ecf07e077f41",
+    "extra_replay_batches_per_event": 12,
+    "frozen_utc": "2026-11-05T23:36:03.419865+00:00",
+    "gkd_steps_per_event": 16,
+    "hard_seconds": 3600,
+    "heldout_scored_at_freeze": false,
+    "helper_source_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+    "holdout_labels_sha256": "96b89d014a5251d4310de25f8f99031b07399f36eb93bdb7e6b30e8e6ea6974f",
+    "holdout_prompts_sha256": "4a7e3c54443cf6f654f264eb76586917ed0baa6cd9081cd68b86f24ac50e86ec",
+    "holdout_scope": "fresh within-AGNews-train, not old official test or external/pretraining-independent confirmation",
+    "learning_rates": [
+      0.02,
+      0.04
+    ],
+    "lti_steps_per_event": 8,
+    "main_adaptation_supervised_updates": 12864,
+    "main_sleep_adam_updates": 1152,
+    "nested_source_sha256": {
+      "nested_sleep": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5",
+      "nested_sleep.accounting": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96",
+      "nested_sleep.clocks": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d",
+      "nested_sleep.consolidation": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb",
+      "nested_sleep.dreaming": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45",
+      "nested_sleep.experts": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094",
+      "nested_sleep.lifecycle": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02",
+      "nested_sleep.lm": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+      "nested_sleep.memory": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f",
+      "nested_sleep.native": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57",
+      "nested_sleep.objectives": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654",
+      "nested_sleep.optim": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817"
+    },
+    "new_steps": 1024,
+    "old_qualification_gate": {
+      "each_validation_class": 0.7,
+      "train": 0.8,
+      "validation": 0.75
+    },
+    "old_steps": 512,
+    "periods": [
+      4,
+      16
+    ],
+    "qualification_result_sha256": "3eb819584798bc2df9aeddd05f08b786272331029949aa12368d5d99d3e28c01",
+    "rank": 16,
+    "receiver_mix_fraction": 0.5,
+    "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+    "schema": "agnews-qualified-comparison-config-v3",
+    "seed_replacement": false,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "sft_periods": [
+      1,
+      1
+    ],
+    "sleep_interval": 64
+  },
+  "config_sha256": "3fd035e378d612a9638b2ebfe731e3e5fe023cd9f1465a4d706058401c2db929",
+  "engine_sha256": "498c317d876d7e37fdead90ad81057a2f164d24fe7867e3d00bb6abca449216b",
+  "hard_seconds": 3600,
+  "heldout_read": false,
+  "helper_sha256": "6c2e4b49122a6a2682ef70acffe327c97e2167cc90627708cdb90341d779f3a0",
+  "old_all_qualified": true,
+  "qualification_certificate_sha256": "844b406986fdc4a1b221f9cf1b9df779a5f28c7b75f5dec980f585958c237d95",
+  "source_sha256": "b16c06542ee92ac3dcc8fdecca319d4b5c872f39d341f4fc797e7a89dc34b32f",
+  "sources": {
+    "nested_sleep": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\__init__.py",
+      "sha256": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5"
+    },
+    "nested_sleep.accounting": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\accounting.py",
+      "sha256": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96"
+    },
+    "nested_sleep.clocks": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\clocks.py",
+      "sha256": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d"
+    },
+    "nested_sleep.consolidation": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\consolidation.py",
+      "sha256": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb"
+    },
+    "nested_sleep.dreaming": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\dreaming.py",
+      "sha256": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45"
+    },
+    "nested_sleep.experts": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\experts.py",
+      "sha256": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094"
+    },
+    "nested_sleep.lifecycle": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\lifecycle.py",
+      "sha256": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02"
+    },
+    "nested_sleep.lm": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\lm.py",
+      "sha256": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c"
+    },
+    "nested_sleep.memory": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\memory.py",
+      "sha256": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f"
+    },
+    "nested_sleep.native": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\native.py",
+      "sha256": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57"
+    },
+    "nested_sleep.objectives": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\objectives.py",
+      "sha256": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654"
+    },
+    "nested_sleep.optim": {
+      "path": "D:\\my_paper\\NL_Sleep_Public_Candidate\\src\\nested_sleep\\optim.py",
+      "sha256": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817"
+    }
+  },
+  "started_utc": "2026-11-05T23:37:09.838236+00:00"
+}

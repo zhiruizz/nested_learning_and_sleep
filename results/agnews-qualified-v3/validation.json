@@ -1,0 +1,46 @@
+{
+  "CPU_fixture_development_failures": [
+    {
+      "failure": "Initial tiny NativeResearchLM fixture lacked the adapter_state_dict interface required by the production checkpoint helper.",
+      "resolution": "Use a randomly initialized tiny Llama with the same adapter interface; production checkpoint mechanics unchanged."
+    },
+    {
+      "failure": "First CPU RNG fixture reached the CUDA RNG API and failed the no-CUDA session-end guard.",
+      "resolution": "Mock only CUDA RNG state APIs to empty CPU-fixture states; production CUDA RNG capture/restore unchanged. Final full suite prohibited CUDA initialization and passed."
+    }
+  ],
+  "CPU_validation": {
+    "deselected": 1,
+    "deselected_node": "tests/test_release_contracts.py::test_all_exported_modules_import_without_optional_llama_dependency",
+    "environment": "Python3.11.17,Torch2.8.0+cu128,Transformers4.57.1,Numpy2.2.6",
+    "passed": 126,
+    "reason": "CPU-wheel build flag assertion; this run uses the authorized CUDA wheel. CPU tests still prohibit CUDA initialization.",
+    "seconds": 9.27
+  },
+  "SVG_trailing_space_cleanup_preserved_normalized_XML_geometry": true,
+  "all3_SFT_final_fingerprints_equal_qualification_probe": true,
+  "all48_Sleep_events_positive_receiver_gradients": true,
+  "all66_score_JSONs_match_summary_and_hash_receipts": true,
+  "all69_checkpoint_hashes_verified_after_evaluation": true,
+  "all_source_and_config_bindings_checked_before_evaluation": true,
+  "evaluation_exit": 0,
+  "evaluation_gradient_forward_tokens": 0,
+  "evaluation_summary_sha256": "8b0627429e6507cb92667719c3fcc4f12cd9f5918b1892f2ee8d451fbf573eac",
+  "frozen_endpoint_metrics_exactly_equal_step0": true,
+  "main_exit": 0,
+  "no_evaluation_resume_needed": true,
+  "public_aggregate_reanalysis_JSON_table_and_CSV_identical": true,
+  "publication_review_recorded_utc": "2026-11-06T00:22:26.724308+00:00",
+  "qualification_protocol_sha256": "e38f8f65297935c22deb8855c81b3f7b3f311f7bbd8b80ce8795000309e3dacb",
+  "raw_text_tokens_model_weights_checkpoints_or_secrets_in_new_release_payload": false,
+  "same_step0_metrics_within_each_seed_all5arms": true,
+  "schema": "agnews-v3-postrun-validation",
+  "scientific_figure_visually_inspected": true,
+  "separate_agent_publication_review": {
+    "conclusion": "No publication blocker; no Sleep retention advantage in this bounded within-AGNews-train study; no equal-FLOP/label or full-paper claim.",
+    "scope": "source/protocol/seal/evaluation bindings, denominators, all endpoints, descriptive statistics, costs, amendment and scientific limits",
+    "status": "passed"
+  },
+  "training_seal_sha256": "cbeba8b4ca8edf2f71b356b188cfefcd09714b538eae31d283413141420bb75a",
+  "verified_utc": "2026-11-06T00:20:10.682180+00:00"
+}

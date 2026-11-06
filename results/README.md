@@ -48,3 +48,7 @@ code. The public files' own hashes identify this export only.
 
 Recompute with `python tools/reanalyze.py --results results`. No model is invoked.
 Missing full-path time remains empty; failure/unknown rows stay in the denominator.
+
+## Qualified fresh-role AG News v3
+
+[Report](../reports/agnews-qualified-v3.md), [all evidence](agnews-qualified-v3/) and [development failures/qualification](agnews-v3-development/). Three qualified old foundations,15 fixed-endpoint arms,66 read-only checkpoint scores and a fresh1024-article train-derived holdout. The operational recovery amendment and uncertain duplicate-work bounds are retained.

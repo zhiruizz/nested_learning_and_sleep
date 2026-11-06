@@ -1,0 +1,13 @@
+{
+  "all12_completed_scientific_checkpoints_preserved": true,
+  "all3_completed_original_rows_equal_final_seal_rows": true,
+  "last_printed_boundary": {
+    "arm": "cms_sleep",
+    "primary_step": 64,
+    "seed": 17
+  },
+  "original_console_sha256": "16a5b4323776eb2acf8302160aa630f1243ec52b633e2fa2893f3d1e5fa452df",
+  "original_exit_receipt_available": false,
+  "original_process_loss_cause": "unknown",
+  "original_progress_sha256": "f3e6d6b095e5ec242e0f2ac20d5364bed785782636abb112ab7c84cb6144d48b"
+}

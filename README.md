@@ -76,3 +76,7 @@ The [frozen preregistration](docs/agnews-retention-v1-protocol.md) defines a rea
 ## Controlled receiver routing follow-up
 
 The [v2 preregistration](docs/agnews-retention-v2-protocol.md) introduces an explicit persistent 0.5 receiver mixture and checkpointed execution policies. The [complete three-seed/five-arm results](reports/agnews-retention-v2.md) are now available: all runs completed, but 0/3 foundations met the fixed acquisition gate. SFT/CMS/Sleep old-task EM ended at 0%; this does not establish a qualified retention effect. V1 and evaluation interruptions remain in the evidence ledger. This is an engineering variant of partial Sleep, with no claim of a paper reproduction.
+
+## Qualified fresh-role follow-up
+
+[AG News v3 report](reports/agnews-qualified-v3.md): all three old foundations passed frozen train/validation gates, followed by all15 fixed-endpoint runs and a fresh1024-article within-train holdout. CMS+Sleep endpoint old/new EM is0.00%/77.86%; the full five-arm tradeoff, all seeds, costs, failures and operational recovery amendment are published. This is a bounded partial implementation, not external confirmation or full-paper reproduction.

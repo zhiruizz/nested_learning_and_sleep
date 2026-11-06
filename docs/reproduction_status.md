@@ -12,6 +12,8 @@
 | Full HOPE / Sleep benchmark reproduction | NOT_ESTABLISHED | none |
 
 An import, CPU test, file digest, or historical performance receipt cannot upgrade
-any of these evidence levels. The original release performed no new scientific-effect training. Later bounded studies are separately recorded; the AG News main foundations failed acquisition, so no retention claim is upgraded.
+any of these evidence levels. The original release performed no new scientific-effect training. Later bounded studies are separately recorded; the AG News v2 main foundations failed acquisition, so no retention claim is upgraded.
 
 The [2026-11-05 AG News study](../reports/agnews-retention-v2.md) completed15 real-3B runs and validated controlled-route engineering/recovery, but0/3 foundations met acquisition. This is not a full-paper reproduction or a qualified retention benefit.
+
+The subsequent [qualified fresh-role v3](../reports/agnews-qualified-v3.md) passed old acquisition in all3 seeds and completed15 bounded real-3B arms, with a new train-derived holdout and explicit operational amendment. This upgrades acquisition evidence for that specific variant; it does not establish the full papers, external confirmation or a general method benefit.

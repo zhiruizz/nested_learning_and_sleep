@@ -1,0 +1,414 @@
+{
+  "schema": "agnews-qualified-progress-v3",
+  "foundations": [
+    {
+      "checkpoint": "checkpoints\\seed-17-foundation.pt",
+      "phase": "old",
+      "qualified": true,
+      "seed": 17,
+      "step": 512,
+      "train": {
+        "all": {
+          "answer_nll_nats_per_token": 0.05931823722538354,
+          "candidate_accuracy": 0.9609375,
+          "class_given_marker_accuracy": 0.962890625,
+          "class_nll": 0.11712519811615607,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.962890625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0015112763346110114
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.08474866292056049,
+          "candidate_accuracy": 0.94921875,
+          "class_given_marker_accuracy": 0.94921875,
+          "class_nll": 0.16860487845258376,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.94921875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008924473885372208
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.03388781153020659,
+          "candidate_accuracy": 0.97265625,
+          "class_given_marker_accuracy": 0.9765625,
+          "class_nll": 0.06564551777972838,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9765625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.002130105280684802
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.05931823722538354,
+          "candidate_accuracy": 0.9609375,
+          "class_given_marker_accuracy": 0.962890625,
+          "class_nll": 0.11712519811615607,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.962890625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0015112763346110114
+        }
+      },
+      "validation": {
+        "all": {
+          "answer_nll_nats_per_token": 0.10192901610849958,
+          "candidate_accuracy": 0.9296875,
+          "class_given_marker_accuracy": 0.9296875,
+          "class_nll": 0.2024245542523886,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9296875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0014334779646105744
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.1535058599124568,
+          "candidate_accuracy": 0.8984375,
+          "class_given_marker_accuracy": 0.8984375,
+          "class_nll": 0.3061806213725049,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.8984375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008310984524086962
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.050352172304542364,
+          "candidate_accuracy": 0.9609375,
+          "class_given_marker_accuracy": 0.9609375,
+          "class_nll": 0.09866848713227228,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.9609375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0020358574768124527
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.10192901610849958,
+          "candidate_accuracy": 0.9296875,
+          "class_given_marker_accuracy": 0.9296875,
+          "class_nll": 0.2024245542523886,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9296875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0014334779646105744
+        }
+      },
+      "checkpoint_sha256": "c88bd45a0d7d16f3b8e5033005dfbd9c643abf97e9c707c41c68b669a5268514",
+      "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa"
+    }
+  ],
+  "runs": [
+    {
+      "seed": 17,
+      "arm": "frozen",
+      "status": "complete",
+      "primary_updates": 0,
+      "extra_replay_updates": 0,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "checkpoints": [
+        {
+          "base_step": 0,
+          "path": "checkpoints\\seed-17-arm-frozen-step-000.pt",
+          "sha256": "f33c07604e1a36fffb6cde1ce4b2ffcd48340cef4487467cf9fee7eff1a18ad6",
+          "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 0
+          },
+          "controller_counts": null
+        },
+        {
+          "base_step": 1024,
+          "path": "checkpoints\\seed-17-arm-frozen-step-1024.pt",
+          "sha256": "c42063882973ea6e569c883cf2aa7ded88bdeb6c31dd9bc2a149db644732d49d",
+          "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 0
+          },
+          "controller_counts": null
+        }
+      ],
+      "seconds": 0.23400000017136335,
+      "work": {},
+      "final_adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "mutable_adapter_parameters": 6750720,
+        "currently_trainable_parameters": 0
+      }
+    },
+    {
+      "seed": 17,
+      "arm": "sft",
+      "status": "complete",
+      "primary_updates": 1024,
+      "extra_replay_updates": 0,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "checkpoints": [
+        {
+          "base_step": 0,
+          "path": "checkpoints\\seed-17-arm-sft-step-000.pt",
+          "sha256": "f91fe4a69dfcdb28084886b0f4d4e33b61a46a69b1d67ce593b8ba4fe0da9539",
+          "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 0
+          },
+          "controller_counts": [
+            0,
+            0
+          ]
+        },
+        {
+          "base_step": 256,
+          "path": "checkpoints\\seed-17-arm-sft-step-256.pt",
+          "sha256": "f21ced343b1780555a71e7a24e9b733922e74c07e79b8279fbd492a4ea586c21",
+          "adapter_fingerprint": "603c6ce6653e9d7ba604a034f311db13b40c41c37771029c3da07618c8cb8c34",
+          "primary_cursor": 256,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 294912
+          },
+          "controller_counts": [
+            0,
+            0
+          ]
+        },
+        {
+          "base_step": 512,
+          "path": "checkpoints\\seed-17-arm-sft-step-512.pt",
+          "sha256": "4a48047059fcda1c873c263c57771a6fcd7f39ada1000ca18f943837a9509c94",
+          "adapter_fingerprint": "5ecbaecf6df98e08f1fc0acad80ba7169655f769158af50f6426f9a20ded2db1",
+          "primary_cursor": 512,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 294912
+          },
+          "controller_counts": [
+            0,
+            0
+          ]
+        },
+        {
+          "base_step": 768,
+          "path": "checkpoints\\seed-17-arm-sft-step-768.pt",
+          "sha256": "a771ccd828dc338493d97b5506175ae376e8a9f061a92f674a75ec0a8e2f769e",
+          "adapter_fingerprint": "2bd636e663cd32b86b8c622a88bb0ae1ccae51f818489b69c7d04f444e75b6ad",
+          "primary_cursor": 768,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 294912
+          },
+          "controller_counts": [
+            0,
+            0
+          ]
+        },
+        {
+          "base_step": 1024,
+          "path": "checkpoints\\seed-17-arm-sft-step-1024.pt",
+          "sha256": "a25101d8928daa8e4f78c0b51a5f3b7c73621a3621470b97039f512302a9c866",
+          "adapter_fingerprint": "dfe82a72cc9a0ee8a34687ce70773e46eefe8ba3910f5669ac8b473c881f41dd",
+          "primary_cursor": 1024,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 294912
+          },
+          "controller_counts": [
+            0,
+            0
+          ]
+        }
+      ],
+      "seconds": 57.734999999869615,
+      "work": {
+        "seed17_sft_primary": {
+          "forward_input_tokens": 366392,
+          "gradient_forward_input_tokens": 366392,
+          "forward_calls": 1024
+        }
+      },
+      "final_adapter_fingerprint": "dfe82a72cc9a0ee8a34687ce70773e46eefe8ba3910f5669ac8b473c881f41dd",
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "mutable_adapter_parameters": 6750720,
+        "currently_trainable_parameters": 294912
+      }
+    },
+    {
+      "seed": 17,
+      "arm": "cms",
+      "status": "complete",
+      "primary_updates": 1024,
+      "extra_replay_updates": 0,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "checkpoints": [
+        {
+          "base_step": 0,
+          "path": "checkpoints\\seed-17-arm-cms-step-000.pt",
+          "sha256": "448614a8d53170ef49720093073bd9171cf782e50874b8027d90aef4f8801e6c",
+          "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 0
+          },
+          "controller_counts": [
+            0,
+            0
+          ]
+        },
+        {
+          "base_step": 256,
+          "path": "checkpoints\\seed-17-arm-cms-step-256.pt",
+          "sha256": "48830d15f1958f441a68c20d55ad42ecb7b2a2567ee08738b53b1d3ed88d6623",
+          "adapter_fingerprint": "73ca2b7a16cbd0f5607b0e6183cfe1571b9c6d308ab540834504bf710aa4cd93",
+          "primary_cursor": 256,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 294912
+          },
+          "controller_counts": [
+            0,
+            0
+          ]
+        },
+        {
+          "base_step": 512,
+          "path": "checkpoints\\seed-17-arm-cms-step-512.pt",
+          "sha256": "8c75e5c618154389ddaea5a9d0fcfd3f76e11bb74aa0c624ac37a08c8d9df7c1",
+          "adapter_fingerprint": "7851eb0a8a9413a497831303f7bcdef25e39328e3434d6a48525e22f0d237820",
+          "primary_cursor": 512,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 294912
+          },
+          "controller_counts": [
+            0,
+            0
+          ]
+        },
+        {
+          "base_step": 768,
+          "path": "checkpoints\\seed-17-arm-cms-step-768.pt",
+          "sha256": "553e408c2132f21f3a2d2b76a9744406dd0c91ae17146f7cecdddd42083b5342",
+          "adapter_fingerprint": "cdabc51347eca538b5dfd5fc90813600193acf2339535da4f231b1e218685403",
+          "primary_cursor": 768,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 294912
+          },
+          "controller_counts": [
+            0,
+            0
+          ]
+        },
+        {
+          "base_step": 1024,
+          "path": "checkpoints\\seed-17-arm-cms-step-1024.pt",
+          "sha256": "433c38c6b7d66dfbb962b0adc67daf3397f5cdb1cd86bc76a44bc758057bbb9e",
+          "adapter_fingerprint": "f9469787330123f7f730c34d4a426b81a40acb8fc2b4854ad4cbb5ef1742dfad",
+          "primary_cursor": 1024,
+          "replay_events": 0,
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "mutable_adapter_parameters": 6750720,
+            "currently_trainable_parameters": 294912
+          },
+          "controller_counts": [
+            0,
+            0
+          ]
+        }
+      ],
+      "seconds": 55.10899999993853,
+      "work": {
+        "seed17_cms_primary": {
+          "forward_input_tokens": 366392,
+          "gradient_forward_input_tokens": 366392,
+          "forward_calls": 1024
+        }
+      },
+      "final_adapter_fingerprint": "f9469787330123f7f730c34d4a426b81a40acb8fc2b4854ad4cbb5ef1742dfad",
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "mutable_adapter_parameters": 6750720,
+        "currently_trainable_parameters": 294912
+      }
+    }
+  ],
+  "status": "running",
+  "heldout_read": false
+}

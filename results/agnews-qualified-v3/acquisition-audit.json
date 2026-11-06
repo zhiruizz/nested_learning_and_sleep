@@ -1,0 +1,118 @@
+{
+  "candidates": [
+    {
+      "base_lr": 0.005,
+      "bijective_code_map": true,
+      "class_target_counts_without_token_ids": [
+        1024,
+        1024
+      ],
+      "controller_terminal_counts": [
+        0,
+        0
+      ],
+      "expert_lr": 0.01,
+      "grad_norm_min": 0.4206447899341583,
+      "parameter_delta_l2": 1.077497790515785,
+      "seed": 17,
+      "single_shared_marker_targets": 2048,
+      "zero_grad_steps": 0
+    },
+    {
+      "base_lr": 0.02,
+      "bijective_code_map": true,
+      "class_target_counts_without_token_ids": [
+        1024,
+        1024
+      ],
+      "controller_terminal_counts": [
+        0,
+        0
+      ],
+      "expert_lr": 0.04,
+      "grad_norm_min": 0.01888684742152691,
+      "parameter_delta_l2": 1.7088329073676352,
+      "seed": 17,
+      "single_shared_marker_targets": 2048,
+      "zero_grad_steps": 0
+    },
+    {
+      "base_lr": 0.005,
+      "bijective_code_map": true,
+      "class_target_counts_without_token_ids": [
+        1024,
+        1024
+      ],
+      "controller_terminal_counts": [
+        0,
+        0
+      ],
+      "expert_lr": 0.01,
+      "grad_norm_min": 0.32600274682044983,
+      "parameter_delta_l2": 0.829361482817678,
+      "seed": 29,
+      "single_shared_marker_targets": 2048,
+      "zero_grad_steps": 0
+    },
+    {
+      "base_lr": 0.02,
+      "bijective_code_map": true,
+      "class_target_counts_without_token_ids": [
+        1024,
+        1024
+      ],
+      "controller_terminal_counts": [
+        0,
+        0
+      ],
+      "expert_lr": 0.04,
+      "grad_norm_min": 0.1611429899930954,
+      "parameter_delta_l2": 1.3586276976395142,
+      "seed": 29,
+      "single_shared_marker_targets": 2048,
+      "zero_grad_steps": 0
+    },
+    {
+      "base_lr": 0.005,
+      "bijective_code_map": true,
+      "class_target_counts_without_token_ids": [
+        1024,
+        1024
+      ],
+      "controller_terminal_counts": [
+        0,
+        0
+      ],
+      "expert_lr": 0.01,
+      "grad_norm_min": 0.5326732993125916,
+      "parameter_delta_l2": 1.115862277120048,
+      "seed": 43,
+      "single_shared_marker_targets": 2048,
+      "zero_grad_steps": 0
+    },
+    {
+      "base_lr": 0.02,
+      "bijective_code_map": true,
+      "class_target_counts_without_token_ids": [
+        1024,
+        1024
+      ],
+      "controller_terminal_counts": [
+        0,
+        0
+      ],
+      "expert_lr": 0.04,
+      "grad_norm_min": 0.026764020323753357,
+      "parameter_delta_l2": 1.7649421130864769,
+      "seed": 43,
+      "single_shared_marker_targets": 2048,
+      "zero_grad_steps": 0
+    }
+  ],
+  "historical_diagnostic_published_LF_source_sha256": "414d30d153c383838f21b284a7b96688c0b12bb5c91c62f7b15842fde9586d0f",
+  "historical_diagnostic_runtime_source_sha256": "eff787aa1e3901e8a2501cfc35b9d9608864ef2a73645d66606d98a3a2784d8b",
+  "interpretation": "Balanced targets, causal-label exposure tests, positive clipped gradients and parameter changes do not prove semantic acquisition; actual train/validation gates are reported separately.",
+  "low_lr_exact_foundation_reproduction_all3": true,
+  "runtime_source_differs_from_Git_only_by_CRLF_to_LF": true,
+  "schema": "agnews-v3-acquisition-audit"
+}

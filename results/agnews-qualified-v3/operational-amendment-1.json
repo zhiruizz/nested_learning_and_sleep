@@ -1,0 +1,21 @@
+{
+  "attempt": 1,
+  "bound_note": "last printed boundary64 completed; no postzero scientific Sleep checkpoint existed before next256 boundary; exact interrupted work unavailable",
+  "completed_arms_preserved": 3,
+  "config_sha256": "3fd035e378d612a9638b2ebfe731e3e5fe023cd9f1465a4d706058401c2db929",
+  "first_discarded_sleep_prefix_work_bounds": {
+    "sleep_adam_max": 96,
+    "sleep_adam_min": 24,
+    "supervised_max": 256,
+    "supervised_min": 64
+  },
+  "frozen_protocol_sha256": "9b562c1aac3f6a57ff343edacf6c4a3d5f370113d13228f52ab02abb7fa44ed4",
+  "heldout_read": false,
+  "original_deadline_utc": "2026-11-06T00:37:09.838236+00:00",
+  "pid": 93876,
+  "reason": "prior process/session disappeared without exception or exit receipt; cause unknown",
+  "schema": "agnews-operational-recovery-v3",
+  "scientific_parameters_changed": false,
+  "source_sha256": "1a5523d6adf01d36afd94478706676f1fb175e4632b571703a627a2eed372b72",
+  "started_utc": "2026-11-05T23:54:43.407640+00:00"
+}

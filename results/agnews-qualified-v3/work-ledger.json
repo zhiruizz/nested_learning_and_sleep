@@ -1,0 +1,82 @@
+{
+  "CPU_toy_updates_excluded": true,
+  "actual_sleep_adam_updates_including_discarded_bounds": [
+    1176,
+    1248
+  ],
+  "actual_supervised_updates_including_discarded_bounds": [
+    20608,
+    20800
+  ],
+  "compute_limitations": "Forward token/call counts omit architecture-dependent cost, optimizer and clone/serialization overhead; no equal-FLOP or equal-label claim.",
+  "phases": [
+    {
+      "phase": "historical_role_paired_LR_diagnostic",
+      "seconds_exclude_model_loading_and_scoring": true,
+      "sleep_adam_updates": 0,
+      "sum_candidate_training_seconds": 209.06728460034356,
+      "supervised_updates": 3072,
+      "work": {
+        "forward_calls": 4992,
+        "forward_input_tokens": 2476296,
+        "gradient_forward_input_tokens": 1065672
+      }
+    },
+    {
+      "new_SFT_probe_updates": 3072,
+      "note": "New512 to1024 continues the same checkpoint; it is not512+1024 updates per seed.",
+      "old_foundation_updates": 1536,
+      "phase": "fresh_old_qualification_and_new_SFT_budget_probe",
+      "seconds": 322.25,
+      "sleep_adam_updates": 0,
+      "supervised_updates": 4608,
+      "work": {
+        "forward_calls": 5472,
+        "forward_input_tokens": 2319108,
+        "gradient_forward_input_tokens": 1647972
+      }
+    },
+    {
+      "phase": "formal_logical_comparison",
+      "sleep_adam_updates": 1152,
+      "sum_retained_arm_seconds_excludes_initialization_idle_and_discarded_work": 1023.4520000002813,
+      "supervised_updates": 12864,
+      "wall_since_original_start_including_interruption": 1976.8137443065643,
+      "work": {
+        "forward_calls": 17856,
+        "forward_input_tokens": 4989856,
+        "gradient_forward_input_tokens": 4706116
+      }
+    },
+    {
+      "cause": "unknown; process/session disappeared without exception or exit receipt",
+      "completed_arms_preserved": 3,
+      "exact_work_unknown": true,
+      "phase": "discarded_infrastructure_interruption_prefix",
+      "scientific_replacement_or_holdout_feedback": false,
+      "work_bounds": {
+        "sleep_adam_max": 96,
+        "sleep_adam_min": 24,
+        "supervised_max": 256,
+        "supervised_min": 64
+      }
+    },
+    {
+      "optimizer_updates": 0,
+      "phase": "frozen_postseal_holdout_evaluation",
+      "resumed_scores": 0,
+      "scores": 66,
+      "seconds": 481.0,
+      "work": {
+        "forward_calls": 8448,
+        "forward_input_tokens": 6487536,
+        "gradient_forward_input_tokens": 0
+      }
+    }
+  ],
+  "schema": "agnews-v3-work-ledger",
+  "scope": "V3 only; earlier studies and failed v1/v2 work remain in linked reports and their ledgers",
+  "timing_limitations": "Wall measurements are not GPU busy time, energy or comparable method microbenchmarks. Recovered arms add full64-step checkpoints; original completed seed17 SFT/CMS had only scientific checkpoints.",
+  "total_logical_supervised_updates_v3": 20544,
+  "total_successful_logical_sleep_adam_updates_v3": 1152
+}

@@ -1,0 +1,4109 @@
+{
+  "complete": true,
+  "completion_source_sha256": "1a5523d6adf01d36afd94478706676f1fb175e4632b571703a627a2eed372b72",
+  "config_sha256": "3fd035e378d612a9638b2ebfe731e3e5fe023cd9f1465a4d706058401c2db929",
+  "foundations": [
+    {
+      "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+      "checkpoint": "checkpoints\\seed-17-foundation.pt",
+      "checkpoint_sha256": "c88bd45a0d7d16f3b8e5033005dfbd9c643abf97e9c707c41c68b669a5268514",
+      "phase": "old",
+      "qualified": true,
+      "seed": 17,
+      "step": 512,
+      "train": {
+        "all": {
+          "answer_nll_nats_per_token": 0.05931823722538354,
+          "candidate_accuracy": 0.9609375,
+          "class_given_marker_accuracy": 0.962890625,
+          "class_nll": 0.11712519811615607,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.962890625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0015112763346110114
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.08474866292056049,
+          "candidate_accuracy": 0.94921875,
+          "class_given_marker_accuracy": 0.94921875,
+          "class_nll": 0.16860487845258376,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.94921875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008924473885372208
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.03388781153020659,
+          "candidate_accuracy": 0.97265625,
+          "class_given_marker_accuracy": 0.9765625,
+          "class_nll": 0.06564551777972838,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9765625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.002130105280684802
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.05931823722538354,
+          "candidate_accuracy": 0.9609375,
+          "class_given_marker_accuracy": 0.962890625,
+          "class_nll": 0.11712519811615607,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.962890625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0015112763346110114
+        }
+      },
+      "validation": {
+        "all": {
+          "answer_nll_nats_per_token": 0.10192901610849958,
+          "candidate_accuracy": 0.9296875,
+          "class_given_marker_accuracy": 0.9296875,
+          "class_nll": 0.2024245542523886,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9296875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0014334779646105744
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.1535058599124568,
+          "candidate_accuracy": 0.8984375,
+          "class_given_marker_accuracy": 0.8984375,
+          "class_nll": 0.3061806213725049,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.8984375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008310984524086962
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.050352172304542364,
+          "candidate_accuracy": 0.9609375,
+          "class_given_marker_accuracy": 0.9609375,
+          "class_nll": 0.09866848713227228,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.9609375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0020358574768124527
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.10192901610849958,
+          "candidate_accuracy": 0.9296875,
+          "class_given_marker_accuracy": 0.9296875,
+          "class_nll": 0.2024245542523886,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9296875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0014334779646105744
+        }
+      }
+    },
+    {
+      "adapter_fingerprint": "fa864bc6e0a72980ff9e28b7f3283ead56fc1a8b452ab75a13412cd460e566e6",
+      "checkpoint": "checkpoints\\seed-29-foundation.pt",
+      "checkpoint_sha256": "5ab18ea38bbc56a7911b84ac09c4c283fee31589a00ddafd3467ca51d485a908",
+      "phase": "old",
+      "qualified": true,
+      "seed": 29,
+      "step": 512,
+      "train": {
+        "all": {
+          "answer_nll_nats_per_token": 0.1101455899913617,
+          "candidate_accuracy": 0.935546875,
+          "class_given_marker_accuracy": 0.9375,
+          "class_nll": 0.2175367179836485,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.9375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0027544619990749197
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.13298853850108117,
+          "candidate_accuracy": 0.91796875,
+          "class_given_marker_accuracy": 0.9140625,
+          "class_nll": 0.2633853650031597,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9140625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.002591711999002655
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.08730264148164224,
+          "candidate_accuracy": 0.953125,
+          "class_given_marker_accuracy": 0.9609375,
+          "class_nll": 0.1716880709641373,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9609375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0029172119991471845
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.1101455899913617,
+          "candidate_accuracy": 0.935546875,
+          "class_given_marker_accuracy": 0.9375,
+          "class_nll": 0.2175367179836485,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.9375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0027544619990749197
+        }
+      },
+      "validation": {
+        "all": {
+          "answer_nll_nats_per_token": 0.10149641853251978,
+          "candidate_accuracy": 0.9375,
+          "class_given_marker_accuracy": 0.9375,
+          "class_nll": 0.200687201232995,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0023056358320445725
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.12036464094126131,
+          "candidate_accuracy": 0.921875,
+          "class_given_marker_accuracy": 0.921875,
+          "class_nll": 0.23889403312205104,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.921875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0018352487604715861
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.08262819612377825,
+          "candidate_accuracy": 0.953125,
+          "class_given_marker_accuracy": 0.953125,
+          "class_nll": 0.16248036934393895,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.953125,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0027760229036175588
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.10149641853251978,
+          "candidate_accuracy": 0.9375,
+          "class_given_marker_accuracy": 0.9375,
+          "class_nll": 0.200687201232995,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.9375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0023056358320445725
+        }
+      }
+    },
+    {
+      "adapter_fingerprint": "a244be3d1da206a32cc6a29f94ce858cbebe266ef53cd737373136dc498155fd",
+      "checkpoint": "checkpoints\\seed-43-foundation.pt",
+      "checkpoint_sha256": "825e12b15c7f98fdaecb5653ec907dad7d10a244d62c2ad3e0ee282b5b15acc5",
+      "phase": "old",
+      "qualified": true,
+      "seed": 43,
+      "step": 512,
+      "train": {
+        "all": {
+          "answer_nll_nats_per_token": 0.0736120555265316,
+          "candidate_accuracy": 0.953125,
+          "class_given_marker_accuracy": 0.953125,
+          "class_nll": 0.1459334505017722,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.953125,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0012906605512910119
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.13596526698593436,
+          "candidate_accuracy": 0.91015625,
+          "class_given_marker_accuracy": 0.91015625,
+          "class_nll": 0.2710854945120502,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.91015625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008450394598185085
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.011258844067128848,
+          "candidate_accuracy": 0.99609375,
+          "class_given_marker_accuracy": 0.99609375,
+          "class_nll": 0.02078140649149418,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.99609375,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0017362816427635153
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.0736120555265316,
+          "candidate_accuracy": 0.953125,
+          "class_given_marker_accuracy": 0.953125,
+          "class_nll": 0.1459334505017722,
+          "examples": 512,
+          "full_vocab_two_token_greedy_exact_match": 0.953125,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0012906605512910119
+        }
+      },
+      "validation": {
+        "all": {
+          "answer_nll_nats_per_token": 0.1283195707884417,
+          "candidate_accuracy": 0.90625,
+          "class_given_marker_accuracy": 0.90625,
+          "class_nll": 0.2557410374580371,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.90625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008981041188462768
+        },
+        "class0": {
+          "answer_nll_nats_per_token": 0.24576476635103006,
+          "candidate_accuracy": 0.8203125,
+          "class_given_marker_accuracy": 0.8203125,
+          "class_nll": 0.4906884294177587,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.8203125,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008411032843014254
+        },
+        "class1": {
+          "answer_nll_nats_per_token": 0.010874375225853328,
+          "candidate_accuracy": 0.9921875,
+          "class_given_marker_accuracy": 0.9921875,
+          "class_nll": 0.020793645498315527,
+          "examples": 128,
+          "full_vocab_two_token_greedy_exact_match": 0.9921875,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0009551049533911282
+        },
+        "old": {
+          "answer_nll_nats_per_token": 0.1283195707884417,
+          "candidate_accuracy": 0.90625,
+          "class_given_marker_accuracy": 0.90625,
+          "class_nll": 0.2557410374580371,
+          "examples": 256,
+          "full_vocab_two_token_greedy_exact_match": 0.90625,
+          "marker_accuracy": 1.0,
+          "marker_nll": 0.0008981041188462768
+        }
+      }
+    }
+  ],
+  "heldout_read": false,
+  "interrupted_duplicate_work_not_in_logical_counts": true,
+  "new_steps": 1024,
+  "old_all_qualified": true,
+  "old_steps": 512,
+  "operational_amendments": [
+    {
+      "path": "recovery\\attempt-1\\amendment.json",
+      "sha256": "825bd3e63c49a47f9988a25beda22a287830b78c5b2fe8304fc7f0d2b478fb5d"
+    }
+  ],
+  "protocol_sha256": "9b562c1aac3f6a57ff343edacf6c4a3d5f370113d13228f52ab02abb7fa44ed4",
+  "qualification_result_sha256": "3eb819584798bc2df9aeddd05f08b786272331029949aa12368d5d99d3e28c01",
+  "records_sha256": "41d967950b9472eb791e858102e560a5601799fca789ac53d8b42395b5e93fc7",
+  "runs": [
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 0,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "frozen",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+          "base_step": 0,
+          "controller_counts": null,
+          "path": "checkpoints\\seed-17-arm-frozen-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "f33c07604e1a36fffb6cde1ce4b2ffcd48340cef4487467cf9fee7eff1a18ad6"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+          "base_step": 1024,
+          "controller_counts": null,
+          "path": "checkpoints\\seed-17-arm-frozen-step-1024.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "c42063882973ea6e569c883cf2aa7ded88bdeb6c31dd9bc2a149db644732d49d"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+      "primary_updates": 0,
+      "seconds": 0.23400000017136335,
+      "seed": 17,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {}
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 294912,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "sft",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+          "base_step": 0,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-sft-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "f91fe4a69dfcdb28084886b0f4d4e33b61a46a69b1d67ce593b8ba4fe0da9539"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "603c6ce6653e9d7ba604a034f311db13b40c41c37771029c3da07618c8cb8c34",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-sft-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 0,
+          "sha256": "f21ced343b1780555a71e7a24e9b733922e74c07e79b8279fbd492a4ea586c21"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "5ecbaecf6df98e08f1fc0acad80ba7169655f769158af50f6426f9a20ded2db1",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-sft-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 0,
+          "sha256": "4a48047059fcda1c873c263c57771a6fcd7f39ada1000ca18f943837a9509c94"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "2bd636e663cd32b86b8c622a88bb0ae1ccae51f818489b69c7d04f444e75b6ad",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-sft-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 0,
+          "sha256": "a771ccd828dc338493d97b5506175ae376e8a9f061a92f674a75ec0a8e2f769e"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "dfe82a72cc9a0ee8a34687ce70773e46eefe8ba3910f5669ac8b473c881f41dd",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-sft-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 0,
+          "sha256": "a25101d8928daa8e4f78c0b51a5f3b7c73621a3621470b97039f512302a9c866"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "dfe82a72cc9a0ee8a34687ce70773e46eefe8ba3910f5669ac8b473c881f41dd",
+      "primary_updates": 1024,
+      "seconds": 57.734999999869615,
+      "seed": 17,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {
+        "seed17_sft_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 366392,
+          "gradient_forward_input_tokens": 366392
+        }
+      }
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 294912,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "cms",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+          "base_step": 0,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "448614a8d53170ef49720093073bd9171cf782e50874b8027d90aef4f8801e6c"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "73ca2b7a16cbd0f5607b0e6183cfe1571b9c6d308ab540834504bf710aa4cd93",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 0,
+          "sha256": "48830d15f1958f441a68c20d55ad42ecb7b2a2567ee08738b53b1d3ed88d6623"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "7851eb0a8a9413a497831303f7bcdef25e39328e3434d6a48525e22f0d237820",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 0,
+          "sha256": "8c75e5c618154389ddaea5a9d0fcfd3f76e11bb74aa0c624ac37a08c8d9df7c1"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "cdabc51347eca538b5dfd5fc90813600193acf2339535da4f231b1e218685403",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 0,
+          "sha256": "553e408c2132f21f3a2d2b76a9744406dd0c91ae17146f7cecdddd42083b5342"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "f9469787330123f7f730c34d4a426b81a40acb8fc2b4854ad4cbb5ef1742dfad",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 0,
+          "sha256": "433c38c6b7d66dfbb962b0adc67daf3397f5cdb1cd86bc76a44bc758057bbb9e"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "f9469787330123f7f730c34d4a426b81a40acb8fc2b4854ad4cbb5ef1742dfad",
+      "primary_updates": 1024,
+      "seconds": 55.10899999993853,
+      "seed": 17,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {
+        "seed17_cms_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 366392,
+          "gradient_forward_input_tokens": 366392
+        }
+      }
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          0,
+          16
+        ],
+        "currently_trainable_parameters": 0,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "cms_sleep",
+      "checkpoints": [
+        {
+          "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+          "base_step": 0,
+          "path": "checkpoints\\seed-17-arm-cms_sleep-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "17a85f22cffee353af7385aa65427d83efd9c0713b8093358c62e12c07d85803"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              4
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "af653c82f4c392b2b049fdff3185c60cfd8ce40c9748ee9228f71fd277ddc7e5",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms_sleep-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 0,
+          "sha256": "7653a173e6d92a8b4827431261f9c0763a3cf51f602af18a12d268f2e5933755"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              8
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "e22b8afacb3dffaedc143e91a67d94c497086da0707389484bb950f7d7a6851f",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms_sleep-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 0,
+          "sha256": "9ee12922ac79372fd1dc96594f64f11f86b5bb1ad8ed236540b9ddf851b1516d"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              12
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "5087e88a66d027cd1ec6cc0357e9f49ce24b10299564f69bd781490ee4ead1c6",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms_sleep-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 0,
+          "sha256": "32859f743cc898c302e24125b80083196470fab7f4c2c88afcb095c76d878503"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              16
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "e03e28b94812b468d1e99f23fc8a996c44f81eba784140c3fd67ca163b250850",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms_sleep-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 0,
+          "sha256": "506fa2db8cf43d30d7a3aac54de1ac7a55dce6d8e0002fce17441c1afc371e91"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "e03e28b94812b468d1e99f23fc8a996c44f81eba784140c3fd67ca163b250850",
+      "primary_updates": 1024,
+      "seconds": 155.95300000021234,
+      "seed": 17,
+      "sleep_adam_updates": 384,
+      "sleep_events": [
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 1,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            1
+          ],
+          "receiver_gradient_norm_max": 42.69771194458008,
+          "receiver_gradient_norm_mean": 8.217092992117008,
+          "receiver_gradient_norm_min": 0.3584865629673004,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 2,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            2
+          ],
+          "receiver_gradient_norm_max": 45.321163177490234,
+          "receiver_gradient_norm_mean": 7.398977553665948,
+          "receiver_gradient_norm_min": 0.0050290422514081,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 3,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 31,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.975,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            3
+          ],
+          "receiver_gradient_norm_max": 31.851104736328125,
+          "receiver_gradient_norm_mean": 10.620038526753584,
+          "receiver_gradient_norm_min": 0.18262264132499695,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 4,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            4
+          ],
+          "receiver_gradient_norm_max": 39.146697998046875,
+          "receiver_gradient_norm_mean": 11.25945853193601,
+          "receiver_gradient_norm_min": 0.45187950134277344,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 5,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            5
+          ],
+          "receiver_gradient_norm_max": 48.66926193237305,
+          "receiver_gradient_norm_mean": 9.073934915785989,
+          "receiver_gradient_norm_min": 0.199776753783226,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 6,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 5,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.15,
+          "natural_receiver_lti_loss_position_hits": 1,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            6
+          ],
+          "receiver_gradient_norm_max": 7.1672587394714355,
+          "receiver_gradient_norm_mean": 0.7392873986586371,
+          "receiver_gradient_norm_min": 1.4745029375262675e-06,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 7,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 0,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.0,
+          "natural_receiver_lti_loss_position_hits": 0,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            7
+          ],
+          "receiver_gradient_norm_max": 1.918229341506958,
+          "receiver_gradient_norm_mean": 0.46107236564178794,
+          "receiver_gradient_norm_min": 0.0016486450331285596,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 8,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 30,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.925,
+          "natural_receiver_lti_loss_position_hits": 7,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            8
+          ],
+          "receiver_gradient_norm_max": 52.31415557861328,
+          "receiver_gradient_norm_mean": 9.035638216882944,
+          "receiver_gradient_norm_min": 0.15611758828163147,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 9,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 16,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.6,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            9
+          ],
+          "receiver_gradient_norm_max": 27.18450355529785,
+          "receiver_gradient_norm_mean": 7.4091160135964556,
+          "receiver_gradient_norm_min": 0.08549311757087708,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 10,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            10
+          ],
+          "receiver_gradient_norm_max": 34.08158874511719,
+          "receiver_gradient_norm_mean": 13.755847212858498,
+          "receiver_gradient_norm_min": 0.07455813139677048,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 11,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 0,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.0,
+          "natural_receiver_lti_loss_position_hits": 0,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            11
+          ],
+          "receiver_gradient_norm_max": 19.687103271484375,
+          "receiver_gradient_norm_mean": 3.142353102157358,
+          "receiver_gradient_norm_min": 0.002972255926579237,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 12,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 19,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.55,
+          "natural_receiver_lti_loss_position_hits": 3,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            12
+          ],
+          "receiver_gradient_norm_max": 16.15292739868164,
+          "receiver_gradient_norm_mean": 4.006523440747212,
+          "receiver_gradient_norm_min": 0.014503071084618568,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 13,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            13
+          ],
+          "receiver_gradient_norm_max": 31.381010055541992,
+          "receiver_gradient_norm_mean": 10.152198898916444,
+          "receiver_gradient_norm_min": 0.05363209918141365,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 14,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            14
+          ],
+          "receiver_gradient_norm_max": 48.924835205078125,
+          "receiver_gradient_norm_mean": 9.3665096234375,
+          "receiver_gradient_norm_min": 0.022169550880789757,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 15,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            15
+          ],
+          "receiver_gradient_norm_max": 18.564048767089844,
+          "receiver_gradient_norm_mean": 3.81891031190753,
+          "receiver_gradient_norm_min": 0.03572966530919075,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 16,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 0,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.0,
+          "natural_receiver_lti_loss_position_hits": 0,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            16
+          ],
+          "receiver_gradient_norm_max": 13.530152320861816,
+          "receiver_gradient_norm_mean": 2.420730287587503,
+          "receiver_gradient_norm_min": 0.003721641143783927,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        }
+      ],
+      "status": "complete",
+      "work": {
+        "seed17_cms_sleep_event1": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7959,
+          "gradient_forward_input_tokens": 1862
+        },
+        "seed17_cms_sleep_event10": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7521,
+          "gradient_forward_input_tokens": 1755
+        },
+        "seed17_cms_sleep_event11": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7277,
+          "gradient_forward_input_tokens": 1695
+        },
+        "seed17_cms_sleep_event12": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7984,
+          "gradient_forward_input_tokens": 1856
+        },
+        "seed17_cms_sleep_event13": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7796,
+          "gradient_forward_input_tokens": 1827
+        },
+        "seed17_cms_sleep_event14": {
+          "forward_calls": 104,
+          "forward_input_tokens": 8141,
+          "gradient_forward_input_tokens": 1884
+        },
+        "seed17_cms_sleep_event15": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7188,
+          "gradient_forward_input_tokens": 1688
+        },
+        "seed17_cms_sleep_event16": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7547,
+          "gradient_forward_input_tokens": 1771
+        },
+        "seed17_cms_sleep_event2": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7440,
+          "gradient_forward_input_tokens": 1739
+        },
+        "seed17_cms_sleep_event3": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7360,
+          "gradient_forward_input_tokens": 1718
+        },
+        "seed17_cms_sleep_event4": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7859,
+          "gradient_forward_input_tokens": 1834
+        },
+        "seed17_cms_sleep_event5": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7395,
+          "gradient_forward_input_tokens": 1723
+        },
+        "seed17_cms_sleep_event6": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7575,
+          "gradient_forward_input_tokens": 1765
+        },
+        "seed17_cms_sleep_event7": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7688,
+          "gradient_forward_input_tokens": 1801
+        },
+        "seed17_cms_sleep_event8": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7743,
+          "gradient_forward_input_tokens": 1804
+        },
+        "seed17_cms_sleep_event9": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7238,
+          "gradient_forward_input_tokens": 1688
+        },
+        "seed17_cms_sleep_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 366392,
+          "gradient_forward_input_tokens": 366392
+        }
+      }
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 294912,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "cms_extra_replay",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "57270a1cb9362d6cfa4ec9c00530d4749bda6c38f2bfb608f2f3e8296d5f78fa",
+          "base_step": 0,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms_extra_replay-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "f97c9207726bdcf28c42e4b605ebe4c31195f737aab1af81196a315e95517ec2"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "c1ab56e230418d576e63d187e4976f5932fcf5899832700c516dcba8397d48be",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms_extra_replay-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 4,
+          "sha256": "fb7e38ed9f21a39d7b17eed5fa212d99f8c769fdd35c93eca0e88d8e217cc11b"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "4fe56699c9106ad147397b76e9831ab3051ee6a29f22ef5c1c691cd5b61a6b33",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms_extra_replay-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 8,
+          "sha256": "5d901c66be4983a846971a1f4a490b4ba8dd0a2243004ae02e22fbae1850fc87"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "89a1b37c4932967d18707f4fa4eb2a67eccb19b9196a85b7b0c9dae7ff8c4d32",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms_extra_replay-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 12,
+          "sha256": "40bcd076b2582d488f820345c40494b812a4fb8c6258f0efab9e865a2ca21560"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "e1566b37ee2415948d7df34b6fe5e23203e89f98e26e824c780d6ec5d3b7c413",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-17-arm-cms_extra_replay-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 16,
+          "sha256": "0f2f84629a9aee97ab242d053c84fdfc481f1c887c1677cd90082b2b9b4b2130"
+        }
+      ],
+      "extra_replay_updates": 192,
+      "final_adapter_fingerprint": "e1566b37ee2415948d7df34b6fe5e23203e89f98e26e824c780d6ec5d3b7c413",
+      "primary_updates": 1024,
+      "seconds": 70.70299999997951,
+      "seed": 17,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {
+        "seed17_cms_extra_replay_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 366392,
+          "gradient_forward_input_tokens": 366392
+        },
+        "seed17_cms_extra_replay_replay": {
+          "forward_calls": 192,
+          "forward_input_tokens": 68480,
+          "gradient_forward_input_tokens": 68480
+        }
+      }
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 0,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "frozen",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "fa864bc6e0a72980ff9e28b7f3283ead56fc1a8b452ab75a13412cd460e566e6",
+          "base_step": 0,
+          "controller_counts": null,
+          "path": "checkpoints\\seed-29-arm-frozen-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "4aaf87230a945f0852da3ecaf29ef80b832f327bb8e9bdfb7cf4045b5f715236"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "fa864bc6e0a72980ff9e28b7f3283ead56fc1a8b452ab75a13412cd460e566e6",
+          "base_step": 1024,
+          "controller_counts": null,
+          "path": "checkpoints\\seed-29-arm-frozen-step-1024.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "043f19083c9afff0a3c65bb84f3d7e6e24b7e853a3c671a6c2a7dbad5e0be528"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "fa864bc6e0a72980ff9e28b7f3283ead56fc1a8b452ab75a13412cd460e566e6",
+      "primary_updates": 0,
+      "seconds": 0.125,
+      "seed": 29,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {}
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 294912,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "sft",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "fa864bc6e0a72980ff9e28b7f3283ead56fc1a8b452ab75a13412cd460e566e6",
+          "base_step": 0,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-sft-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "b64171ca3550eb97a5c2ae4e3a46bab2e1a9259cfe01b30a24cb2e85908ddf53"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "fa063c4e262d0b5f7f9c4dcb16a8767d1b56258e7e08da6f4cc096882fa85bb7",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-sft-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 0,
+          "sha256": "f41d12ccb1e5f2e4f0c6968e18cfab4c3dd9431c1d24f45e21c9180f9eaec917"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "32a570c8a8f1b07d8492eb2aadc28f49865b244a4970e348862a436ff0149df5",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-sft-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 0,
+          "sha256": "c3ae2ec56dce9f2bbb26d492fa8ec92faddab65083cf254802e460d91a041a31"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "34acde35d33c024419b03445912f2f7e91396f03652c55bf88798244af18d591",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-sft-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 0,
+          "sha256": "ac306c4db8d152b5bb5a3ae582f8cc96768b7824b90cdc945c7f649ea1a8c2ea"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "0fdb1ea591ad3072a4909449acc676d1be1ed6c73ede2f3beda3f16d7c589085",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-sft-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 0,
+          "sha256": "1fb62223f965763560b025696dece6b31d8100a50cd983364a095fe89cd175e5"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "0fdb1ea591ad3072a4909449acc676d1be1ed6c73ede2f3beda3f16d7c589085",
+      "primary_updates": 1024,
+      "seconds": 61.01600000006147,
+      "seed": 29,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {
+        "seed29_sft_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 368572,
+          "gradient_forward_input_tokens": 368572
+        }
+      }
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 294912,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "cms",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "fa864bc6e0a72980ff9e28b7f3283ead56fc1a8b452ab75a13412cd460e566e6",
+          "base_step": 0,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "b5959faf92666e3b8b193a3e2cfdfcb8f358c7657b9baec1ef82961fb1bad116"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "9741e134eac02dc06343a2cadb81f3758385a24c2b75e77508e8b0bdb2b13ca5",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 0,
+          "sha256": "335909992604a1d7d4507b39817c41c6defd2c63a58184612bc50df530a289a0"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "b46ffe786120054c5e2ac8b0492c4aaf1db6c308e0b75ca7932914554d4acec3",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 0,
+          "sha256": "ba4daf38754789b2f7221c4931d41da5d6f6685a3c4ee9f8aac53546834d8aa8"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "83977924d8b03c15b62275958d3fb0566b9cfd3e7401c5f9e8237c5f9215cba6",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 0,
+          "sha256": "a4ce2518a57a12539cae0b6ba7ea1dc9c4a6b1c32e011e115263af1d0e49c024"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "ab472b1713a50afe7bbae2ba4b57310da5d16202889a61275febbbc1434e8123",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 0,
+          "sha256": "579f4e6f4d229e558b74df4c3ba0538a6278a83c5dcf87429e9db3bcaff59de6"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "ab472b1713a50afe7bbae2ba4b57310da5d16202889a61275febbbc1434e8123",
+      "primary_updates": 1024,
+      "seconds": 58.0,
+      "seed": 29,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {
+        "seed29_cms_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 368572,
+          "gradient_forward_input_tokens": 368572
+        }
+      }
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          0,
+          16
+        ],
+        "currently_trainable_parameters": 0,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "cms_sleep",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "fa864bc6e0a72980ff9e28b7f3283ead56fc1a8b452ab75a13412cd460e566e6",
+          "base_step": 0,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms_sleep-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "2ee3904f141c761a6db643398b657702a99312914e5295433b75539ffbe84dbf"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              4
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "78341a88e4ae2acc4cce9cb49b1006f8313e109396daa950096322b8ab1e5ddb",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms_sleep-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 0,
+          "sha256": "42875dede92e59a1a1f8c4e7ca2302c8ded345a9f1dfe702bf6344ea149a92b5"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              8
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "e12d5d3c311a699a719be0714451a1bcfa6ba940565aa1146b8ffc934cfd1b89",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms_sleep-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 0,
+          "sha256": "1cbb9ccb53db26c710616041747ab97de76dc40e491439555e2c6d64e3e4ca01"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              12
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "27bc23a0aca76bd75ac3ab7b161e0c4f0daa5f39348057f4315817b9c6cb5d06",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms_sleep-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 0,
+          "sha256": "7f4e804a68df50a92f47462253b6f07ec2dd4269c8563c13466d911d196036f6"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              16
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "7a95e0c7c921a2f1a24a32b2ed73fbb969d41db5811a1e9a9655c88da90efe6a",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms_sleep-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 0,
+          "sha256": "18a9870f43124074af6ea1ae5fd91407c02077549042e321bc496805bc2626fc"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "7a95e0c7c921a2f1a24a32b2ed73fbb969d41db5811a1e9a9655c88da90efe6a",
+      "primary_updates": 1024,
+      "seconds": 154.43800000008196,
+      "seed": 29,
+      "sleep_adam_updates": 384,
+      "sleep_events": [
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 1,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            1
+          ],
+          "receiver_gradient_norm_max": 16.375288009643555,
+          "receiver_gradient_norm_mean": 2.5332591185967126,
+          "receiver_gradient_norm_min": 0.02458479069173336,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 2,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            2
+          ],
+          "receiver_gradient_norm_max": 32.08713150024414,
+          "receiver_gradient_norm_mean": 5.244792876765132,
+          "receiver_gradient_norm_min": 0.11325803399085999,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 3,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 19,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.5,
+          "natural_receiver_lti_loss_position_hits": 1,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            3
+          ],
+          "receiver_gradient_norm_max": 2.25366473197937,
+          "receiver_gradient_norm_mean": 0.3410438431747025,
+          "receiver_gradient_norm_min": 0.0005639464361593127,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 4,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 0,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.0,
+          "natural_receiver_lti_loss_position_hits": 0,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            4
+          ],
+          "receiver_gradient_norm_max": 6.420385837554932,
+          "receiver_gradient_norm_mean": 1.2151219020961435,
+          "receiver_gradient_norm_min": 0.0006255364860408008,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 5,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 5,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.25,
+          "natural_receiver_lti_loss_position_hits": 5,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            5
+          ],
+          "receiver_gradient_norm_max": 27.89052963256836,
+          "receiver_gradient_norm_mean": 10.607308300212026,
+          "receiver_gradient_norm_min": 0.13983649015426636,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 6,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 7,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.2,
+          "natural_receiver_lti_loss_position_hits": 1,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            6
+          ],
+          "receiver_gradient_norm_max": 1.452466368675232,
+          "receiver_gradient_norm_mean": 0.15066896911474123,
+          "receiver_gradient_norm_min": 4.6953792320891807e-07,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 7,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 5,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.2,
+          "natural_receiver_lti_loss_position_hits": 3,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            7
+          ],
+          "receiver_gradient_norm_max": 30.51321029663086,
+          "receiver_gradient_norm_mean": 7.752260018295298,
+          "receiver_gradient_norm_min": 0.010794058442115784,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 8,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            8
+          ],
+          "receiver_gradient_norm_max": 24.73192596435547,
+          "receiver_gradient_norm_mean": 4.370761101929626,
+          "receiver_gradient_norm_min": 0.00582495890557766,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 9,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            9
+          ],
+          "receiver_gradient_norm_max": 35.48975372314453,
+          "receiver_gradient_norm_mean": 3.5588567391678225,
+          "receiver_gradient_norm_min": 0.00016704034351278096,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 10,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 26,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.775,
+          "natural_receiver_lti_loss_position_hits": 5,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            10
+          ],
+          "receiver_gradient_norm_max": 51.662086486816406,
+          "receiver_gradient_norm_mean": 9.73318748230425,
+          "receiver_gradient_norm_min": 0.016495918855071068,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 11,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 31,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.975,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            11
+          ],
+          "receiver_gradient_norm_max": 33.785518646240234,
+          "receiver_gradient_norm_mean": 9.994449389516376,
+          "receiver_gradient_norm_min": 0.0026293406262993813,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 12,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            12
+          ],
+          "receiver_gradient_norm_max": 32.34177017211914,
+          "receiver_gradient_norm_mean": 8.082459754155328,
+          "receiver_gradient_norm_min": 0.03828856721520424,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 13,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 23,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.625,
+          "natural_receiver_lti_loss_position_hits": 2,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            13
+          ],
+          "receiver_gradient_norm_max": 7.140119552612305,
+          "receiver_gradient_norm_mean": 1.01487403421955,
+          "receiver_gradient_norm_min": 7.883112266426906e-05,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 14,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 6,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.175,
+          "natural_receiver_lti_loss_position_hits": 1,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            14
+          ],
+          "receiver_gradient_norm_max": 29.468887329101562,
+          "receiver_gradient_norm_mean": 3.2724366857728455,
+          "receiver_gradient_norm_min": 0.0028200445231050253,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 15,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 13,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.325,
+          "natural_receiver_lti_loss_position_hits": 0,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            15
+          ],
+          "receiver_gradient_norm_max": 8.44921588897705,
+          "receiver_gradient_norm_mean": 1.0651987064241741,
+          "receiver_gradient_norm_min": 0.0015710024163126945,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 16,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 23,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.725,
+          "natural_receiver_lti_loss_position_hits": 6,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            16
+          ],
+          "receiver_gradient_norm_max": 6.160752773284912,
+          "receiver_gradient_norm_mean": 0.2601715676462472,
+          "receiver_gradient_norm_min": 1.0899989799639798e-09,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        }
+      ],
+      "status": "complete",
+      "work": {
+        "seed29_cms_sleep_event1": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7488,
+          "gradient_forward_input_tokens": 1736
+        },
+        "seed29_cms_sleep_event10": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7571,
+          "gradient_forward_input_tokens": 1776
+        },
+        "seed29_cms_sleep_event11": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7740,
+          "gradient_forward_input_tokens": 1806
+        },
+        "seed29_cms_sleep_event12": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7565,
+          "gradient_forward_input_tokens": 1751
+        },
+        "seed29_cms_sleep_event13": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7667,
+          "gradient_forward_input_tokens": 1796
+        },
+        "seed29_cms_sleep_event14": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7359,
+          "gradient_forward_input_tokens": 1730
+        },
+        "seed29_cms_sleep_event15": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7413,
+          "gradient_forward_input_tokens": 1741
+        },
+        "seed29_cms_sleep_event16": {
+          "forward_calls": 104,
+          "forward_input_tokens": 8235,
+          "gradient_forward_input_tokens": 1920
+        },
+        "seed29_cms_sleep_event2": {
+          "forward_calls": 104,
+          "forward_input_tokens": 8488,
+          "gradient_forward_input_tokens": 1987
+        },
+        "seed29_cms_sleep_event3": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7697,
+          "gradient_forward_input_tokens": 1802
+        },
+        "seed29_cms_sleep_event4": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7988,
+          "gradient_forward_input_tokens": 1863
+        },
+        "seed29_cms_sleep_event5": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7746,
+          "gradient_forward_input_tokens": 1795
+        },
+        "seed29_cms_sleep_event6": {
+          "forward_calls": 104,
+          "forward_input_tokens": 8218,
+          "gradient_forward_input_tokens": 1918
+        },
+        "seed29_cms_sleep_event7": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7117,
+          "gradient_forward_input_tokens": 1673
+        },
+        "seed29_cms_sleep_event8": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7670,
+          "gradient_forward_input_tokens": 1774
+        },
+        "seed29_cms_sleep_event9": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7665,
+          "gradient_forward_input_tokens": 1807
+        },
+        "seed29_cms_sleep_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 368572,
+          "gradient_forward_input_tokens": 368572
+        }
+      }
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 294912,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "cms_extra_replay",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "fa864bc6e0a72980ff9e28b7f3283ead56fc1a8b452ab75a13412cd460e566e6",
+          "base_step": 0,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms_extra_replay-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "5025d1b4b9134d920869c40b1aa770b88f1a5f31ae0ff8907acafc5d36a3faea"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "1ed840ba83857247b87af9cc45b9ec15666a2c234f1dde0b947c4e66bd1c6164",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms_extra_replay-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 4,
+          "sha256": "f77740e7e39bf4b35e7a252306b6ca618092388113da7dbe864aa648ff622d0f"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "1ed3aeba20a05ad9c01c1bb3e872424a4b593ae831e8c775f6f3f2dd0e0c34d3",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms_extra_replay-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 8,
+          "sha256": "0aebaf940a54c815aa17b9264c2b86d3a2abccc971d31634d90a577780a6565a"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "0e891f91205112f4db2bbd9ce3312688432bd34423fd5078313a7d4431c00aaf",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms_extra_replay-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 12,
+          "sha256": "bb6fb3af6ab4f65fd5541c7e7d09c897820692d2abb97427cafaad5d15638ed1"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "8ea1617a8c3d6d692b467a5bdf448560629066078cd9393defa7615e61d418d7",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-29-arm-cms_extra_replay-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 16,
+          "sha256": "d7e4a5f171900b9a6cfb2577f032e959b55d58e1fdac6e1e84ad1e5a48704df2"
+        }
+      ],
+      "extra_replay_updates": 192,
+      "final_adapter_fingerprint": "8ea1617a8c3d6d692b467a5bdf448560629066078cd9393defa7615e61d418d7",
+      "primary_updates": 1024,
+      "seconds": 68.4680000001099,
+      "seed": 29,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {
+        "seed29_cms_extra_replay_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 368572,
+          "gradient_forward_input_tokens": 368572
+        },
+        "seed29_cms_extra_replay_replay": {
+          "forward_calls": 192,
+          "forward_input_tokens": 69320,
+          "gradient_forward_input_tokens": 69320
+        }
+      }
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 0,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "frozen",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "a244be3d1da206a32cc6a29f94ce858cbebe266ef53cd737373136dc498155fd",
+          "base_step": 0,
+          "controller_counts": null,
+          "path": "checkpoints\\seed-43-arm-frozen-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "cffdc4ed2b51347fb18548439bf3a46fc06856b715d37e75476573753330c52e"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "a244be3d1da206a32cc6a29f94ce858cbebe266ef53cd737373136dc498155fd",
+          "base_step": 1024,
+          "controller_counts": null,
+          "path": "checkpoints\\seed-43-arm-frozen-step-1024.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "89654b10d0303b90c418c56fb3a3551104fa6d4fd121561f025ee1d7c5c3b300"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "a244be3d1da206a32cc6a29f94ce858cbebe266ef53cd737373136dc498155fd",
+      "primary_updates": 0,
+      "seconds": 0.10899999993853271,
+      "seed": 43,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {}
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 294912,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "sft",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "a244be3d1da206a32cc6a29f94ce858cbebe266ef53cd737373136dc498155fd",
+          "base_step": 0,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-sft-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "45f2c7f668a9b8335007c8019066785ff1bcc258d286e02f6a32bf31c450f5d4"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "7feaa9d8018ddea4fbf9f6a2da458285e5045b629f52faf527c215acf1886702",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-sft-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 0,
+          "sha256": "d9b98d5e6630855694b6c20e225e7b394e668921a8b81be34372a72463e6c25b"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "74638f05919f62bd146d836116a6fb6d1f70f6bfc8d2c1bba9af7f67cec2adf1",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-sft-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 0,
+          "sha256": "0acf4e83844d0a81b258dba9d7f5e75ad424dcfdbc1287c71c07a9020fec9053"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "29fbd718d81871b8f9e234d5208d59353c4c97acc562285e53978b15a617e21a",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-sft-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 0,
+          "sha256": "b78fafeed9c0fae5ede8023068216bfde2ef01fe4629f980cb584ce7893650e7"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "6a89a36b077ad2b6a23033f2fe6fee082858f7374f9a3f8387a053b367c9ed13",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-sft-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 0,
+          "sha256": "fdaa06cdfd6d26e34a30bb94f7916b50b13b7b2346e0c794c8b73444250f752c"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "6a89a36b077ad2b6a23033f2fe6fee082858f7374f9a3f8387a053b367c9ed13",
+      "primary_updates": 1024,
+      "seconds": 59.218000000109896,
+      "seed": 43,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {
+        "seed43_sft_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 368196,
+          "gradient_forward_input_tokens": 368196
+        }
+      }
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 294912,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "cms",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "a244be3d1da206a32cc6a29f94ce858cbebe266ef53cd737373136dc498155fd",
+          "base_step": 0,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "ee633626c4feaf1581a5019d263e1af61803ab5187bcfc4d153b4e7fa306c2ca"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "eee86fbefa2207ea0ac90e2183fd88141fb295188b1ff11ae65852b265e685ad",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 0,
+          "sha256": "bd44099a962c5f2c31767e4a639d4be196fcb9e62bdcbaae9a6dc5a7c9410cbc"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "561946aec3315f95ea83e81e678fa8960384743aec86d06464b37e67e51cde87",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 0,
+          "sha256": "704ffb48f81647154c61615e386ae294a9b6f6dd3e7e6b0fd35aeb40fcbd580a"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "65be5a9d6b9403bbf5c5c52f08b7b2e0da5be413fd0066c4ae97a67b7c08dcb4",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 0,
+          "sha256": "f6bf1c6e4f61d617bb2f6226c038b2d1e54be05f88749f44436465b3d20f25d2"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "a0d5a478c2e7b0824a3da7278b0e62a67aa5bc997a9a6b4d2f07d64f04d45179",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 0,
+          "sha256": "af4687f46b397294c4fb25fe71aa6a06d3d6c0479721a94648107baf4dea451a"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "a0d5a478c2e7b0824a3da7278b0e62a67aa5bc997a9a6b4d2f07d64f04d45179",
+      "primary_updates": 1024,
+      "seconds": 58.09399999980815,
+      "seed": 43,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {
+        "seed43_cms_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 368196,
+          "gradient_forward_input_tokens": 368196
+        }
+      }
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          0,
+          16
+        ],
+        "currently_trainable_parameters": 0,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "cms_sleep",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "a244be3d1da206a32cc6a29f94ce858cbebe266ef53cd737373136dc498155fd",
+          "base_step": 0,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms_sleep-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "1888419e53e3c2203adc3ec78ba095f7aabdbb27fd15b946b0370df84f768842"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              4
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "e4f6c1aba63d7f12122340870b371320a60d5793a01bbcc21b22c5f17a704eb0",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms_sleep-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 0,
+          "sha256": "9145fed1684942cfb7d093ceed6ac5334c687239e9ed10af7364954a5749cedc"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              8
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "75abc495221e35cf2419fe2a2855c4a78a6b115e094f05f177365bc8904bd809",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms_sleep-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 0,
+          "sha256": "d6ebfc0971869c2675e1cb0e36a9041648d77fc15cb66be00d5e47a6d197a231"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              12
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "e59c914a87070f49c8464979216cd2853db519746cc03c166f8a4c29cd13cba2",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms_sleep-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 0,
+          "sha256": "82334f56878a4a6719b6af1873f872b529d7a44af8950d614295c065db9b13fd"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              0,
+              16
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "a3a0a85fd3f2ccfae271474f65e841c2e725deabefb3a9abeba45a69a3546ee3",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms_sleep-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 0,
+          "sha256": "75fa737b9d302ce3a0470a43a2d7d180a1bb93c77242d549f4bc1fbb94b41d13"
+        }
+      ],
+      "extra_replay_updates": 0,
+      "final_adapter_fingerprint": "a3a0a85fd3f2ccfae271474f65e841c2e725deabefb3a9abeba45a69a3546ee3",
+      "primary_updates": 1024,
+      "seconds": 154.36000000010245,
+      "seed": 43,
+      "sleep_adam_updates": 384,
+      "sleep_events": [
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 1,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            1
+          ],
+          "receiver_gradient_norm_max": 23.539546966552734,
+          "receiver_gradient_norm_mean": 7.3700864513715105,
+          "receiver_gradient_norm_min": 0.28307583928108215,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 2,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            2
+          ],
+          "receiver_gradient_norm_max": 34.5391960144043,
+          "receiver_gradient_norm_mean": 14.577466032157341,
+          "receiver_gradient_norm_min": 0.24518343806266785,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 3,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            3
+          ],
+          "receiver_gradient_norm_max": 48.884765625,
+          "receiver_gradient_norm_mean": 11.367459151893854,
+          "receiver_gradient_norm_min": 0.35532334446907043,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 4,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 8,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.225,
+          "natural_receiver_lti_loss_position_hits": 1,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            4
+          ],
+          "receiver_gradient_norm_max": 52.41024398803711,
+          "receiver_gradient_norm_mean": 12.357042389611403,
+          "receiver_gradient_norm_min": 0.5128475427627563,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 5,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            5
+          ],
+          "receiver_gradient_norm_max": 59.52568054199219,
+          "receiver_gradient_norm_mean": 17.441596695610013,
+          "receiver_gradient_norm_min": 0.022698642686009407,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 6,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            6
+          ],
+          "receiver_gradient_norm_max": 55.09160232543945,
+          "receiver_gradient_norm_mean": 14.839309150973955,
+          "receiver_gradient_norm_min": 0.3298024535179138,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 7,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 1.0,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            7
+          ],
+          "receiver_gradient_norm_max": 50.52796173095703,
+          "receiver_gradient_norm_mean": 9.629961864867559,
+          "receiver_gradient_norm_min": 0.0023582205176353455,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 8,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 21,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.65,
+          "natural_receiver_lti_loss_position_hits": 5,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            8
+          ],
+          "receiver_gradient_norm_max": 28.893823623657227,
+          "receiver_gradient_norm_mean": 6.171223934933853,
+          "receiver_gradient_norm_min": 0.008702737279236317,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 9,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 18,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.6,
+          "natural_receiver_lti_loss_position_hits": 6,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            9
+          ],
+          "receiver_gradient_norm_max": 55.45779037475586,
+          "receiver_gradient_norm_mean": 18.880322635173798,
+          "receiver_gradient_norm_min": 0.13885203003883362,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 10,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 16,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.45,
+          "natural_receiver_lti_loss_position_hits": 2,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            10
+          ],
+          "receiver_gradient_norm_max": 30.971017837524414,
+          "receiver_gradient_norm_mean": 8.542941169037173,
+          "receiver_gradient_norm_min": 0.050450216978788376,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 11,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 2,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.1,
+          "natural_receiver_lti_loss_position_hits": 2,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            11
+          ],
+          "receiver_gradient_norm_max": 26.054595947265625,
+          "receiver_gradient_norm_mean": 5.981308392811722,
+          "receiver_gradient_norm_min": 0.004024171270430088,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 12,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 13,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 31,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.975,
+          "natural_receiver_lti_loss_position_hits": 8,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            12
+          ],
+          "receiver_gradient_norm_max": 59.28670883178711,
+          "receiver_gradient_norm_mean": 20.568394027417526,
+          "receiver_gradient_norm_min": 0.016885647550225258,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 13,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 8,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.25,
+          "natural_receiver_lti_loss_position_hits": 2,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            13
+          ],
+          "receiver_gradient_norm_max": 36.869991302490234,
+          "receiver_gradient_norm_mean": 13.632532336361086,
+          "receiver_gradient_norm_min": 0.011454937979578972,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 14,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 32,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.975,
+          "natural_receiver_lti_loss_position_hits": 7,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            14
+          ],
+          "receiver_gradient_norm_max": 45.99503707885742,
+          "receiver_gradient_norm_mean": 17.399074204149656,
+          "receiver_gradient_norm_min": 0.0022568674758076668,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 15,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 15,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 30,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.9,
+          "natural_receiver_lti_loss_position_hits": 6,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            15
+          ],
+          "receiver_gradient_norm_max": 82.70443725585938,
+          "receiver_gradient_norm_mean": 12.501791799169345,
+          "receiver_gradient_norm_min": 0.009270952083170414,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        },
+        {
+          "candidate_committed": true,
+          "dream_tokens": 2,
+          "dream_updates": 0,
+          "event": 16,
+          "executed_mixed_receiver_loss_position_coverage": 1.0,
+          "fast_level0_passed_prospectively_without_preapply": true,
+          "gkd_marker_hits": 16,
+          "gkd_marker_total": 16,
+          "gkd_student_on_policy_updates": 8,
+          "gkd_teacher_updates": 8,
+          "gkd_updates": 16,
+          "lti_teacher_marker_hits": 8,
+          "lti_teacher_marker_total": 8,
+          "lti_updates": 8,
+          "natural_receiver_gkd_loss_position_hits": 0,
+          "natural_receiver_gkd_loss_positions": 32,
+          "natural_receiver_loss_position_hit_rate": 0.0,
+          "natural_receiver_lti_loss_position_hits": 0,
+          "natural_receiver_lti_loss_positions": 8,
+          "postcommit_active_slots_by_bank": [
+            0,
+            16
+          ],
+          "receiver_gradient_norm_max": 26.45363426208496,
+          "receiver_gradient_norm_mean": 10.284636576174913,
+          "receiver_gradient_norm_min": 0.0027080881409347057,
+          "receiver_gradients_all_positive": true,
+          "receiver_mix_fraction": 0.5,
+          "semantic_judge": "exact_output_proxy_NOT_paper_semantic_RM",
+          "slow_level1_applied_to_candidate_before_teacher": true
+        }
+      ],
+      "status": "complete",
+      "work": {
+        "seed43_cms_sleep_event1": {
+          "forward_calls": 104,
+          "forward_input_tokens": 8545,
+          "gradient_forward_input_tokens": 1990
+        },
+        "seed43_cms_sleep_event10": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7515,
+          "gradient_forward_input_tokens": 1759
+        },
+        "seed43_cms_sleep_event11": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7756,
+          "gradient_forward_input_tokens": 1810
+        },
+        "seed43_cms_sleep_event12": {
+          "forward_calls": 104,
+          "forward_input_tokens": 8029,
+          "gradient_forward_input_tokens": 1866
+        },
+        "seed43_cms_sleep_event13": {
+          "forward_calls": 104,
+          "forward_input_tokens": 8197,
+          "gradient_forward_input_tokens": 1915
+        },
+        "seed43_cms_sleep_event14": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7674,
+          "gradient_forward_input_tokens": 1795
+        },
+        "seed43_cms_sleep_event15": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7841,
+          "gradient_forward_input_tokens": 1828
+        },
+        "seed43_cms_sleep_event16": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7543,
+          "gradient_forward_input_tokens": 1765
+        },
+        "seed43_cms_sleep_event2": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7680,
+          "gradient_forward_input_tokens": 1789
+        },
+        "seed43_cms_sleep_event3": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7794,
+          "gradient_forward_input_tokens": 1795
+        },
+        "seed43_cms_sleep_event4": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7677,
+          "gradient_forward_input_tokens": 1795
+        },
+        "seed43_cms_sleep_event5": {
+          "forward_calls": 104,
+          "forward_input_tokens": 8248,
+          "gradient_forward_input_tokens": 1921
+        },
+        "seed43_cms_sleep_event6": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7520,
+          "gradient_forward_input_tokens": 1751
+        },
+        "seed43_cms_sleep_event7": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7928,
+          "gradient_forward_input_tokens": 1829
+        },
+        "seed43_cms_sleep_event8": {
+          "forward_calls": 104,
+          "forward_input_tokens": 6968,
+          "gradient_forward_input_tokens": 1629
+        },
+        "seed43_cms_sleep_event9": {
+          "forward_calls": 104,
+          "forward_input_tokens": 7835,
+          "gradient_forward_input_tokens": 1826
+        },
+        "seed43_cms_sleep_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 368196,
+          "gradient_forward_input_tokens": 368196
+        }
+      }
+    },
+    {
+      "active_parameters": {
+        "active_slots_by_bank": [
+          1,
+          0
+        ],
+        "currently_trainable_parameters": 294912,
+        "mutable_adapter_parameters": 6750720
+      },
+      "arm": "cms_extra_replay",
+      "checkpoints": [
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 0,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "a244be3d1da206a32cc6a29f94ce858cbebe266ef53cd737373136dc498155fd",
+          "base_step": 0,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms_extra_replay-step-000.pt",
+          "primary_cursor": 0,
+          "replay_events": 0,
+          "sha256": "0ee6efa07c87393d7737d04e767348d3e858b0fed4614827504f8a4d3023ec26"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "7e5e6a2aff4efc0a7ea22f9d7d24ab3c37fc0586fb9f15c1fa548cc7a8f3c32c",
+          "base_step": 256,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms_extra_replay-step-256.pt",
+          "primary_cursor": 256,
+          "replay_events": 4,
+          "sha256": "a4306127f0e005aa0f75386ddc3e1a11e0b7e8e98c4858eb9ce94104d5beefc3"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "be38b7b4d8d9c2b7fed87d33b1aeb43ad66cedd45c821b7c6864532fd047bf2e",
+          "base_step": 512,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms_extra_replay-step-512.pt",
+          "primary_cursor": 512,
+          "replay_events": 8,
+          "sha256": "7961bb94b091b8882de3427e0b898d1760542728929f5f6a11d80e82ec68f942"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "e3ee2d7646a7f7e2fc4cb1f33fbb45708a0b94a802d73dfd408723643fdc81c5",
+          "base_step": 768,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms_extra_replay-step-768.pt",
+          "primary_cursor": 768,
+          "replay_events": 12,
+          "sha256": "272d92fc49a0a54bb7eb37dbb2570fe81fccaf90d1efe0c791ac4817d03bfb9c"
+        },
+        {
+          "active_parameters": {
+            "active_slots_by_bank": [
+              1,
+              0
+            ],
+            "currently_trainable_parameters": 294912,
+            "mutable_adapter_parameters": 6750720
+          },
+          "adapter_fingerprint": "bfd73bd7ef46022c6449702bff2655418488ee96cc1c44cacc9ed54f8f2b3dae",
+          "base_step": 1024,
+          "controller_counts": [
+            0,
+            0
+          ],
+          "path": "checkpoints\\seed-43-arm-cms_extra_replay-step-1024.pt",
+          "primary_cursor": 1024,
+          "replay_events": 16,
+          "sha256": "9dc9c6872d01a673138832105e0890e2fd8c186056dd1c6c7587aeddc2d5b99f"
+        }
+      ],
+      "extra_replay_updates": 192,
+      "final_adapter_fingerprint": "bfd73bd7ef46022c6449702bff2655418488ee96cc1c44cacc9ed54f8f2b3dae",
+      "primary_updates": 1024,
+      "seconds": 69.88999999989755,
+      "seed": 43,
+      "sleep_adam_updates": 0,
+      "sleep_events": [],
+      "status": "complete",
+      "work": {
+        "seed43_cms_extra_replay_primary": {
+          "forward_calls": 1024,
+          "forward_input_tokens": 368196,
+          "gradient_forward_input_tokens": 368196
+        },
+        "seed43_cms_extra_replay_replay": {
+          "forward_calls": 192,
+          "forward_input_tokens": 69328,
+          "gradient_forward_input_tokens": 69328
+        }
+      }
+    }
+  ],
+  "schema": "agnews-qualified-training-seal-v3",
+  "sealed_utc": "2026-11-06T00:10:06.651980+00:00",
+  "seconds": 1976.8137443065643,
+  "source_sha256": "b16c06542ee92ac3dcc8fdecca319d4b5c872f39d341f4fc797e7a89dc34b32f",
+  "work_total": {
+    "seed17_cms_extra_replay_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 366392,
+      "gradient_forward_input_tokens": 366392
+    },
+    "seed17_cms_extra_replay_replay": {
+      "forward_calls": 192,
+      "forward_input_tokens": 68480,
+      "gradient_forward_input_tokens": 68480
+    },
+    "seed17_cms_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 366392,
+      "gradient_forward_input_tokens": 366392
+    },
+    "seed17_cms_sleep_event1": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7959,
+      "gradient_forward_input_tokens": 1862
+    },
+    "seed17_cms_sleep_event10": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7521,
+      "gradient_forward_input_tokens": 1755
+    },
+    "seed17_cms_sleep_event11": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7277,
+      "gradient_forward_input_tokens": 1695
+    },
+    "seed17_cms_sleep_event12": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7984,
+      "gradient_forward_input_tokens": 1856
+    },
+    "seed17_cms_sleep_event13": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7796,
+      "gradient_forward_input_tokens": 1827
+    },
+    "seed17_cms_sleep_event14": {
+      "forward_calls": 104,
+      "forward_input_tokens": 8141,
+      "gradient_forward_input_tokens": 1884
+    },
+    "seed17_cms_sleep_event15": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7188,
+      "gradient_forward_input_tokens": 1688
+    },
+    "seed17_cms_sleep_event16": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7547,
+      "gradient_forward_input_tokens": 1771
+    },
+    "seed17_cms_sleep_event2": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7440,
+      "gradient_forward_input_tokens": 1739
+    },
+    "seed17_cms_sleep_event3": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7360,
+      "gradient_forward_input_tokens": 1718
+    },
+    "seed17_cms_sleep_event4": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7859,
+      "gradient_forward_input_tokens": 1834
+    },
+    "seed17_cms_sleep_event5": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7395,
+      "gradient_forward_input_tokens": 1723
+    },
+    "seed17_cms_sleep_event6": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7575,
+      "gradient_forward_input_tokens": 1765
+    },
+    "seed17_cms_sleep_event7": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7688,
+      "gradient_forward_input_tokens": 1801
+    },
+    "seed17_cms_sleep_event8": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7743,
+      "gradient_forward_input_tokens": 1804
+    },
+    "seed17_cms_sleep_event9": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7238,
+      "gradient_forward_input_tokens": 1688
+    },
+    "seed17_cms_sleep_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 366392,
+      "gradient_forward_input_tokens": 366392
+    },
+    "seed17_sft_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 366392,
+      "gradient_forward_input_tokens": 366392
+    },
+    "seed29_cms_extra_replay_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 368572,
+      "gradient_forward_input_tokens": 368572
+    },
+    "seed29_cms_extra_replay_replay": {
+      "forward_calls": 192,
+      "forward_input_tokens": 69320,
+      "gradient_forward_input_tokens": 69320
+    },
+    "seed29_cms_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 368572,
+      "gradient_forward_input_tokens": 368572
+    },
+    "seed29_cms_sleep_event1": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7488,
+      "gradient_forward_input_tokens": 1736
+    },
+    "seed29_cms_sleep_event10": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7571,
+      "gradient_forward_input_tokens": 1776
+    },
+    "seed29_cms_sleep_event11": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7740,
+      "gradient_forward_input_tokens": 1806
+    },
+    "seed29_cms_sleep_event12": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7565,
+      "gradient_forward_input_tokens": 1751
+    },
+    "seed29_cms_sleep_event13": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7667,
+      "gradient_forward_input_tokens": 1796
+    },
+    "seed29_cms_sleep_event14": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7359,
+      "gradient_forward_input_tokens": 1730
+    },
+    "seed29_cms_sleep_event15": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7413,
+      "gradient_forward_input_tokens": 1741
+    },
+    "seed29_cms_sleep_event16": {
+      "forward_calls": 104,
+      "forward_input_tokens": 8235,
+      "gradient_forward_input_tokens": 1920
+    },
+    "seed29_cms_sleep_event2": {
+      "forward_calls": 104,
+      "forward_input_tokens": 8488,
+      "gradient_forward_input_tokens": 1987
+    },
+    "seed29_cms_sleep_event3": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7697,
+      "gradient_forward_input_tokens": 1802
+    },
+    "seed29_cms_sleep_event4": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7988,
+      "gradient_forward_input_tokens": 1863
+    },
+    "seed29_cms_sleep_event5": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7746,
+      "gradient_forward_input_tokens": 1795
+    },
+    "seed29_cms_sleep_event6": {
+      "forward_calls": 104,
+      "forward_input_tokens": 8218,
+      "gradient_forward_input_tokens": 1918
+    },
+    "seed29_cms_sleep_event7": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7117,
+      "gradient_forward_input_tokens": 1673
+    },
+    "seed29_cms_sleep_event8": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7670,
+      "gradient_forward_input_tokens": 1774
+    },
+    "seed29_cms_sleep_event9": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7665,
+      "gradient_forward_input_tokens": 1807
+    },
+    "seed29_cms_sleep_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 368572,
+      "gradient_forward_input_tokens": 368572
+    },
+    "seed29_sft_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 368572,
+      "gradient_forward_input_tokens": 368572
+    },
+    "seed43_cms_extra_replay_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 368196,
+      "gradient_forward_input_tokens": 368196
+    },
+    "seed43_cms_extra_replay_replay": {
+      "forward_calls": 192,
+      "forward_input_tokens": 69328,
+      "gradient_forward_input_tokens": 69328
+    },
+    "seed43_cms_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 368196,
+      "gradient_forward_input_tokens": 368196
+    },
+    "seed43_cms_sleep_event1": {
+      "forward_calls": 104,
+      "forward_input_tokens": 8545,
+      "gradient_forward_input_tokens": 1990
+    },
+    "seed43_cms_sleep_event10": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7515,
+      "gradient_forward_input_tokens": 1759
+    },
+    "seed43_cms_sleep_event11": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7756,
+      "gradient_forward_input_tokens": 1810
+    },
+    "seed43_cms_sleep_event12": {
+      "forward_calls": 104,
+      "forward_input_tokens": 8029,
+      "gradient_forward_input_tokens": 1866
+    },
+    "seed43_cms_sleep_event13": {
+      "forward_calls": 104,
+      "forward_input_tokens": 8197,
+      "gradient_forward_input_tokens": 1915
+    },
+    "seed43_cms_sleep_event14": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7674,
+      "gradient_forward_input_tokens": 1795
+    },
+    "seed43_cms_sleep_event15": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7841,
+      "gradient_forward_input_tokens": 1828
+    },
+    "seed43_cms_sleep_event16": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7543,
+      "gradient_forward_input_tokens": 1765
+    },
+    "seed43_cms_sleep_event2": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7680,
+      "gradient_forward_input_tokens": 1789
+    },
+    "seed43_cms_sleep_event3": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7794,
+      "gradient_forward_input_tokens": 1795
+    },
+    "seed43_cms_sleep_event4": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7677,
+      "gradient_forward_input_tokens": 1795
+    },
+    "seed43_cms_sleep_event5": {
+      "forward_calls": 104,
+      "forward_input_tokens": 8248,
+      "gradient_forward_input_tokens": 1921
+    },
+    "seed43_cms_sleep_event6": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7520,
+      "gradient_forward_input_tokens": 1751
+    },
+    "seed43_cms_sleep_event7": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7928,
+      "gradient_forward_input_tokens": 1829
+    },
+    "seed43_cms_sleep_event8": {
+      "forward_calls": 104,
+      "forward_input_tokens": 6968,
+      "gradient_forward_input_tokens": 1629
+    },
+    "seed43_cms_sleep_event9": {
+      "forward_calls": 104,
+      "forward_input_tokens": 7835,
+      "gradient_forward_input_tokens": 1826
+    },
+    "seed43_cms_sleep_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 368196,
+      "gradient_forward_input_tokens": 368196
+    },
+    "seed43_sft_primary": {
+      "forward_calls": 1024,
+      "forward_input_tokens": 368196,
+      "gradient_forward_input_tokens": 368196
+    }
+  }
+}
