@@ -1,0 +1,331 @@
+{
+  "_public_capture": {
+    "artifact_role": "logical_storage_aggregate",
+    "public_artifact": "results/clinc-v8-main/retained-storage.json",
+    "raw_input_sha256": "9567ab5f55c4379c812efd09c3cd98f436caf76083025866544b76b5a7ac6b2a",
+    "schema": "clinc-v8-public-main-capture-v1",
+    "source_artifact": "<SOURCE_ROOT>/outputs/clinc-v8-preparation/retained-storage.json",
+    "source_artifact_sha256_raw": "9567ab5f55c4379c812efd09c3cd98f436caf76083025866544b76b5a7ac6b2a"
+  },
+  "all_output_logical_bytes": 69039554650,
+  "as_of_utc": "2026-11-07T10:03:53.290985+00:00",
+  "dataset_cache_directories": {
+    "clinc150-v8-155b9c7-raw": {
+      "file_count": 3,
+      "files_by_suffix": {
+        ".json": 1,
+        ".parquet": 2
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 952,
+        ".parquet": 389885
+      },
+      "logical_file_bytes": 390837
+    },
+    "clinc150-v8-155b9c7-test-after-seal": {
+      "file_count": 2,
+      "files_by_suffix": {
+        ".json": 1,
+        ".parquet": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 742,
+        ".parquet": 135844
+      },
+      "logical_file_bytes": 136586
+    },
+    "clinc150-v8-155b9c7-training": {
+      "file_count": 3,
+      "files_by_suffix": {
+        ".json": 1,
+        ".jsonl": 2
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 10012,
+        ".jsonl": 4088967
+      },
+      "logical_file_bytes": 4098979
+    }
+  },
+  "dataset_cache_logical_bytes": 4626402,
+  "file_contents_read": false,
+  "limitations": [
+    "Retained file lengths at this timestamp, not peak storage or filesystem allocated blocks.",
+    "Hard-linked content is not deduplicated; compression and sparse-file allocation are not measured.",
+    "Deleted temporary writes and diagnostic in-memory state are not recoverable from this inventory.",
+    "Only explicitly named CLINC output/cache prefixes are included; unrelated work is excluded."
+  ],
+  "model_loaded": false,
+  "optimizer_steps": 0,
+  "output_attempts": {
+    "clinc-v8-controlled-boundaries-20261107-a": {
+      "file_count": 1,
+      "files_by_suffix": {
+        ".json": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 1036
+      },
+      "logical_file_bytes": 1036
+    },
+    "clinc-v8-controlled-boundaries-20261107-b": {
+      "file_count": 1,
+      "files_by_suffix": {
+        ".json": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 5609
+      },
+      "logical_file_bytes": 5609
+    },
+    "clinc-v8-controlled-boundaries-20261107-c": {
+      "file_count": 2,
+      "files_by_suffix": {
+        ".json": 1,
+        ".jsonl": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 244179,
+        ".jsonl": 285167
+      },
+      "logical_file_bytes": 529346
+    },
+    "clinc-v8-controlled-launch-qualification-20261107-b": {
+      "file_count": 2,
+      "files_by_suffix": {
+        ".json": 2
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 1425
+      },
+      "logical_file_bytes": 1425
+    },
+    "clinc-v8-controlled-real3b-qualification-20261107-a": {
+      "file_count": 1,
+      "files_by_suffix": {
+        ".json": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 1335
+      },
+      "logical_file_bytes": 1335
+    },
+    "clinc-v8-controlled-real3b-qualification-20261107-b": {
+      "file_count": 2,
+      "files_by_suffix": {
+        ".json": 1,
+        ".pt": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 3576,
+        ".pt": 68430759
+      },
+      "logical_file_bytes": 68434335
+    },
+    "clinc-v8-controlled-seed17-task1-20261107-r1": {
+      "file_count": 1,
+      "files_by_suffix": {
+        ".json": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 574
+      },
+      "logical_file_bytes": 574
+    },
+    "clinc-v8-controlled-seed17-task1-20261107-r2": {
+      "file_count": 93,
+      "files_by_suffix": {
+        ".json": 2,
+        ".jsonl": 1,
+        ".pt": 90
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 51768,
+        ".jsonl": 374525,
+        ".pt": 13475526970
+      },
+      "logical_file_bytes": 13475953263
+    },
+    "clinc-v8-dev-seed17-seen-replay-20261107-r1": {
+      "file_count": 7,
+      "files_by_suffix": {
+        ".json": 2,
+        ".jsonl": 1,
+        ".pt": 4
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 23960,
+        ".jsonl": 138606,
+        ".pt": 596199028
+      },
+      "logical_file_bytes": 596361594
+    },
+    "clinc-v8-full-k10-20261107-a": {
+      "file_count": 219,
+      "files_by_suffix": {
+        ".json": 19,
+        ".jsonl": 11,
+        ".log": 18,
+        ".pt": 171
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 3259729,
+        ".jsonl": 15137378,
+        ".log": 3947,
+        ".pt": 25687257305
+      },
+      "logical_file_bytes": 25705658359
+    },
+    "clinc-v8-hope-task1-resume-20261107-r2": {
+      "file_count": 16,
+      "files_by_suffix": {
+        ".json": 2,
+        ".jsonl": 1,
+        ".pt": 13
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 95948,
+        ".jsonl": 155435,
+        ".pt": 1958118615
+      },
+      "logical_file_bytes": 1958369998
+    },
+    "clinc-v8-r1-hope-corrected-eval-20261107-a": {
+      "file_count": 1,
+      "files_by_suffix": {
+        ".json": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 17872
+      },
+      "logical_file_bytes": 17872
+    },
+    "clinc-v8-r1-hope-corrected-eval-20261107-b-finalsource": {
+      "file_count": 1,
+      "files_by_suffix": {
+        ".json": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 17850
+      },
+      "logical_file_bytes": 17850
+    },
+    "clinc-v8-r1-hope-corrected-eval-20261107-c-hashdomain": {
+      "file_count": 1,
+      "files_by_suffix": {
+        ".json": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 17874
+      },
+      "logical_file_bytes": 17874
+    },
+    "clinc-v8-real3b-qualification-20261107-a": {
+      "file_count": 1,
+      "files_by_suffix": {
+        ".json": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 4639
+      },
+      "logical_file_bytes": 4639
+    },
+    "clinc-v8-real3b-resume-20261107-a": {
+      "file_count": 1,
+      "files_by_suffix": {
+        ".json": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 7511
+      },
+      "logical_file_bytes": 7511
+    },
+    "clinc-v8-real3b-resume-20261107-b-disk": {
+      "file_count": 2,
+      "files_by_suffix": {
+        ".json": 1,
+        ".partial": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 1240,
+        ".partial": 68429654
+      },
+      "logical_file_bytes": 68430894
+    },
+    "clinc-v8-real3b-resume-20261107-c-disk": {
+      "file_count": 2,
+      "files_by_suffix": {
+        ".json": 1,
+        ".pt": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 7824,
+        ".pt": 68429654
+      },
+      "logical_file_bytes": 68437478
+    },
+    "clinc-v8-sparse-sleep-diagnostic-20261107-a": {
+      "file_count": 5,
+      "files_by_suffix": {
+        ".json": 3,
+        ".jsonl": 1,
+        ".pt": 1
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 25905,
+        ".jsonl": 32155,
+        ".pt": 144329372
+      },
+      "logical_file_bytes": 144387432
+    },
+    "clinc-v8-transfer-k1-corrected-20261107-a": {
+      "file_count": 93,
+      "files_by_suffix": {
+        ".json": 2,
+        ".jsonl": 1,
+        ".pt": 90
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 57877,
+        ".jsonl": 375623,
+        ".pt": 13475526970
+      },
+      "logical_file_bytes": 13475960470
+    },
+    "clinc-v8-transfer-k10-corrected-20261107-a": {
+      "file_count": 93,
+      "files_by_suffix": {
+        ".json": 2,
+        ".jsonl": 1,
+        ".pt": 90
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 57813,
+        ".jsonl": 1368096,
+        ".pt": 13475526970
+      },
+      "logical_file_bytes": 13476952879
+    },
+    "clinc-v8-transfer-startup-k1-20261107-a": {
+      "file_count": 2,
+      "files_by_suffix": {
+        ".json": 2
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 1438
+      },
+      "logical_file_bytes": 1438
+    },
+    "clinc-v8-transfer-startup-k10-20261107-a": {
+      "file_count": 2,
+      "files_by_suffix": {
+        ".json": 2
+      },
+      "logical_bytes_by_suffix": {
+        ".json": 1439
+      },
+      "logical_file_bytes": 1439
+    }
+  },
+  "schema": "clinc-v8-retained-artifact-logical-storage-v1"
+}

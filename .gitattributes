@@ -99,3 +99,28 @@ tools/evaluate_clinc_test_v8.py -text -eol whitespace=blank-at-eol,blank-at-eof,
 tests/test_clinc_test_v8_gate_cpu.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/fixtures/clinc_oos_plus_test_pin_v1.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 configs/clinc_cil_v8_test_evaluation_frozen.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the reviewed complete CLINC V8 aggregate bundle.
+tools/summarize_clinc_v8_main_six.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/audit_clinc_main_resources_v8.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/summarize_clinc_v8_artifact_storage.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/reanalyze_clinc_v8_main.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_summarize_clinc_v8_main_six_cpu.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_clinc_main_resource_audit_cpu.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_reanalyze_clinc_v8_main_cpu.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/clinc-v8-main-six-aggregation.md -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+reports/clinc150-lifecycle-v8-final.md -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/README.md -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/summary.md -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/clinc-v8-main-six-development.png -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/clinc-v8-main-six-development.svg -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/summary.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/resource-audit.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/retained-storage.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/final-attempt-ledger.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/operational-attempts.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/training-seal-capture.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/final-test-evaluation.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/public-capture.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v8-main/clinc-v8-main-six-development.svg -whitespace
+results/clinc-v8-main/release-validation.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

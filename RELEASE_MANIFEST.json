@@ -8,13 +8,13 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 511,
+  "file_count_excluding_manifests": 533,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
       "path": ".gitattributes",
-      "sha256": "c8ce14996cf097ede8d2cb59944f5d35d67bafd10fd0b489e428a07afbd16258",
-      "bytes": 11158
+      "sha256": "26b38748593c48670d36995e031c2c8fa05e7a618b71089c9c49f5cd80e14736",
+      "bytes": 13880
     },
     {
       "path": ".github/ISSUE_TEMPLATE/reproduction.md",
@@ -53,13 +53,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "e6f5d4971c5be296bbd838b2a54f902f895d71b2c02fdc65ec7827fabd0f2c27",
-      "bytes": 10672
+      "sha256": "6bf2060c208b520685a7017bbfad638041b94830435bccf21d54b46bb2d33371",
+      "bytes": 11040
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "dd000022602940115fc0c70645cd8ce065bee18bac3eb4ed39c0bf06f33fc12d",
-      "bytes": 7570
+      "sha256": "23bc130a280054b3cadc0947801b368d07d8183efab4606fb598300021eafa0b",
+      "bytes": 7897
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -277,6 +277,11 @@
       "bytes": 9792
     },
     {
+      "path": "docs/clinc-v8-main-six-aggregation.md",
+      "sha256": "a4b345a7a85f09816f0fdfe180774091c82f382eeb7b5797a0b9d281df2307dd",
+      "bytes": 3772
+    },
+    {
       "path": "docs/clinc-v8-reproduction.md",
       "sha256": "b46019a69db1028071e827841cee55ba7532ec2a9e0c53c5b003caeea742a273",
       "bytes": 5869
@@ -395,6 +400,11 @@
       "path": "reports/clinc150-lifecycle-v8-development.md",
       "sha256": "3a33d593381436bbdb76fb777fede437c9726a5ce279c356b98d049342f624a3",
       "bytes": 14501
+    },
+    {
+      "path": "reports/clinc150-lifecycle-v8-final.md",
+      "sha256": "c1011cb7bf6a36b145590250739a0822015b022ea0be20bbe275b107f2aa6c9b",
+      "bytes": 12888
     },
     {
       "path": "reports/local_acceptance.md",
@@ -1587,6 +1597,71 @@
       "bytes": 161995
     },
     {
+      "path": "results/clinc-v8-main/README.md",
+      "sha256": "38d8b8ba62cba025055c8cc1da8ea048a0fd9e3d31749ad67d57312cdeabc2be",
+      "bytes": 2369
+    },
+    {
+      "path": "results/clinc-v8-main/clinc-v8-main-six-development.png",
+      "sha256": "6707c69678707b2dd6145311ee11052ee323a243dc4b4d6aff0841443af7e2d7",
+      "bytes": 140290
+    },
+    {
+      "path": "results/clinc-v8-main/clinc-v8-main-six-development.svg",
+      "sha256": "d21fe5d3547807910082056541174418aae29aaa00ea18ca3e846dc36c467bc0",
+      "bytes": 103169
+    },
+    {
+      "path": "results/clinc-v8-main/final-attempt-ledger.json",
+      "sha256": "5bb6bfd85289e46084370fd8d5230c1ad78e7711b261afb7c01c4fe1a9fab862",
+      "bytes": 41849
+    },
+    {
+      "path": "results/clinc-v8-main/final-test-evaluation.json",
+      "sha256": "57d89ec02a9b4626a0221bcaee47b2a3fa051d0a13498b60ca6f0b18a5ca73dc",
+      "bytes": 119185
+    },
+    {
+      "path": "results/clinc-v8-main/operational-attempts.json",
+      "sha256": "87a8bbd0be8798218e5db81c74a464448c31307c7e19b8fbfd7362762b6215d6",
+      "bytes": 2879
+    },
+    {
+      "path": "results/clinc-v8-main/public-capture.json",
+      "sha256": "23dfbd0ba4edb9811cc89c9d54ccddef16eb69f4f7882a8a6ac426e5fee88027",
+      "bytes": 9314
+    },
+    {
+      "path": "results/clinc-v8-main/release-validation.json",
+      "sha256": "718f840cfde18c762b433e5cd78b0fbd58d76c358d6ad9d04687ec4385b18b35",
+      "bytes": 1498
+    },
+    {
+      "path": "results/clinc-v8-main/resource-audit.json",
+      "sha256": "7f262baf47ac717bf09b88e9edc9a9e2bef40029519967ad83ecbd880e9d9ce9",
+      "bytes": 195619
+    },
+    {
+      "path": "results/clinc-v8-main/retained-storage.json",
+      "sha256": "f8e166200141017fa1e04e14c3c02d34fd52a8d17a2c9e44dbdf8e16a82b0f91",
+      "bytes": 8478
+    },
+    {
+      "path": "results/clinc-v8-main/summary.json",
+      "sha256": "79b238a213f667a034d22683ad81e85fbc33b364048687fef681feb28393b1e1",
+      "bytes": 147942
+    },
+    {
+      "path": "results/clinc-v8-main/summary.md",
+      "sha256": "1b068cd5d7bb38ee1716d2dbee9d48c7e3a1d44f41d33093386deeadb760781d",
+      "bytes": 6754
+    },
+    {
+      "path": "results/clinc-v8-main/training-seal-capture.json",
+      "sha256": "9543ab348f5ba9cddfc68a8c10b9e7f834f783b23f6df4f8c208dec497dbe9df",
+      "bytes": 157467
+    },
+    {
       "path": "results/figures/clinc-v8-corrected-transfer-budgets.png",
       "sha256": "786c65097898b6ab3e5bd04a629c3cfca3631ac10e4fbb9602f5e2b9a95c5414",
       "bytes": 145314
@@ -1952,6 +2027,11 @@
       "bytes": 8916
     },
     {
+      "path": "tests/test_clinc_main_resource_audit_cpu.py",
+      "sha256": "7192203124935b3514f5f72ad73a754fb0ad1431e739fffc4225dc7fb6d7c5b0",
+      "bytes": 3342
+    },
+    {
       "path": "tests/test_clinc_nested_capacity_v8_cpu.py",
       "sha256": "3b18850132c999de2fd72a675845ef75e26b30f7a8d93577e57bc93d1a64c0e9",
       "bytes": 2356
@@ -2010,6 +2090,11 @@
       "path": "tests/test_parameter_drift.py",
       "sha256": "44f5567deb9764d603a978216feaa00cce20f5241929515ff96992a574d808e7",
       "bytes": 1574
+    },
+    {
+      "path": "tests/test_reanalyze_clinc_v8_main_cpu.py",
+      "sha256": "380ecb314539b2c43e181eabb00edab6e7720cd39eba61c508e9f416266ee562",
+      "bytes": 6380
     },
     {
       "path": "tests/test_reference.py",
@@ -2082,6 +2167,11 @@
       "bytes": 3025
     },
     {
+      "path": "tests/test_summarize_clinc_v8_main_six_cpu.py",
+      "sha256": "794dee566c657c2386349d0b49d38852a9995dd4b6e6e3a35473f75a9f91ddcb",
+      "bytes": 23661
+    },
+    {
       "path": "tests/test_summarize_clinc_v8_transfer_budgets_cpu.py",
       "sha256": "62c4e043758d36b36912d77d5ba5fe07990ee156cde2702a8fc3acea93aeaed6",
       "bytes": 5866
@@ -2140,6 +2230,11 @@
       "path": "tools/audit_agnews_context_storage_v6.py",
       "sha256": "f1b76e89b5ac39ddd7d9aa3cd333e62a5130aec8fa8829fb263422bb5c47e19b",
       "bytes": 4895
+    },
+    {
+      "path": "tools/audit_clinc_main_resources_v8.py",
+      "sha256": "9b084ffad5bd806f593b0364a201c32bf3ce6670a769531066e785979caa715e",
+      "bytes": 27752
     },
     {
       "path": "tools/clinc_cil_common_v8.py",
@@ -2310,6 +2405,11 @@
       "path": "tools/reanalyze.py",
       "sha256": "e50ca2385c6ba28d8539df2c8b46baeaf9ab71f83efe062441a6c80136a147b8",
       "bytes": 2758
+    },
+    {
+      "path": "tools/reanalyze_clinc_v8_main.py",
+      "sha256": "ca223c449c0f8171376349ae712bb5a72991281ff585b4fed8f99e1d36b82306",
+      "bytes": 17373
     },
     {
       "path": "tools/recover_agnews_qualified_v3.py",
@@ -2502,6 +2602,11 @@
       "bytes": 13685
     },
     {
+      "path": "tools/summarize_clinc_v8_artifact_storage.py",
+      "sha256": "9dacf3dc7ec4aba525242850c1e665c3a8b635c767fc0ad739aa70c60333afe5",
+      "bytes": 2906
+    },
+    {
       "path": "tools/summarize_clinc_v8_attempts.py",
       "sha256": "908eae6c81b7c9da2b6d82e4edddd90ea40750d32adf3ff0371ea24867eaa027",
       "bytes": 22527
@@ -2520,6 +2625,11 @@
       "path": "tools/summarize_clinc_v8_development.py",
       "sha256": "7edf14b2dac598c520112e86d1a4e018d90a9e0f5238bc18e8ab20cb2ea79722",
       "bytes": 7131
+    },
+    {
+      "path": "tools/summarize_clinc_v8_main_six.py",
+      "sha256": "17f3fc06c0f60ec5f8cd1e5fd8ca73d98b6c0a069c6a28ac7c5d991dd4b6ffb3",
+      "bytes": 62703
     },
     {
       "path": "tools/summarize_clinc_v8_transfer_budgets.py",

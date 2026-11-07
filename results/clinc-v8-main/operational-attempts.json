@@ -1,0 +1,61 @@
+{
+  "artifact_role": "historical operational attempts; not model results",
+  "attempts": [
+    {
+      "backbone_loaded": true,
+      "backward_calls": 0,
+      "elapsed_seconds": null,
+      "error": "Caller had not created the final-test output parent directory",
+      "error_type": "FileNotFoundError",
+      "evaluation_contract_sha256": "a278944e333894ddc3d2f4faa5adaadae3d6eaf2c5002133f1c88d97e8939c1a",
+      "evaluator_sha256": "402ac9bc733354edf2fd52542eeb55aa5187faffaced16d2b620a0e9ba56501c",
+      "forward_calls": 0,
+      "main_seal_sha256": "13cb53aa440d1ec00d00b3059dc0fbb3c96e42405a984340a71b31fc56c73268",
+      "optimizer_steps": 0,
+      "phase": "exclusive_progress_file_creation",
+      "recovery": "Create caller-owned output directory and re-run the same frozen read-only evaluator against the same six final checkpoints; no data re-download or checkpoint selection",
+      "schema": "clinc-v8-final-test-launch-failure-v1",
+      "status": "failed_before_test_reader",
+      "test_payload_downloaded": true,
+      "test_payload_integrity_hash_verified": true,
+      "test_rows_parsed": false
+    },
+    {
+      "audit_source_sha256": "769258b0b3cc970558dc03cfa035489d5abd2ccd85b476e7906f6ec6582a9a12",
+      "elapsed_seconds": null,
+      "error": "Incorrect invariant required backbone-forward count to equal tail-call count despite shared teacher/student captures",
+      "gpu_forward_calls": 0,
+      "model_loaded": false,
+      "optimizer_steps": 0,
+      "phase": "work_histogram_cross_check",
+      "raw_checkpoint_or_receipt_modified": false,
+      "schema": "clinc-v8-resource-audit-qualification-failure-v1",
+      "scientific_training_or_evaluation_source_changed": false,
+      "status": "failed"
+    },
+    {
+      "elapsed_seconds": null,
+      "model_loaded": false,
+      "optimizer_steps": 0,
+      "recovery": "Correct analysis-only schema check, add evaluator-shaped regression fixture, independently review, rebuild from the identical completed aggregate into a fresh output directory",
+      "schema": "clinc-v8-aggregate-technical-failure-v1",
+      "status": "failed_before_summary_write"
+    }
+  ],
+  "elapsed_seconds_note": "null means the source did not report elapsed time; it is not zero.",
+  "schema": "clinc-v8-curated-operational-attempts-v1",
+  "source_artifacts": [
+    {
+      "source_artifact": "test-evaluation-first-launch-failure.json",
+      "source_artifact_sha256_raw": "0c4560428cc06de11e02499f64713f375332ee92078d67007565aec81d666df8"
+    },
+    {
+      "source_artifact": "resource-audit-initial-failure.json",
+      "source_artifact_sha256_raw": "62961bdd1510a06c4a4d28ac319e3d357f6fa4f4471a8b90ab1573a60be7f2df"
+    },
+    {
+      "source_artifact": "final-aggregation-initial-failure.json",
+      "source_artifact_sha256_raw": "079c15a59bbbf04a6ceb9513e74f07c90aab8faf987fe6895c1f184447f1f731"
+    }
+  ]
+}

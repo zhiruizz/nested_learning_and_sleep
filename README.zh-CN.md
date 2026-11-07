@@ -1,8 +1,8 @@
 # NL/Sleep Reproduction Lab
 
-V8 已加入 Llama-3.2-3B / CLINC150 生命周期实验。单种子、两任务开发集中，修正目标后的 k=10 受控 Sleep 旧类/新类准确率为 7.67% / 31.33%，无 Sleep 为 13.00% / 70.67%；尚未显示总体收益。[开发报告](reports/clinc150-lifecycle-v8-development.md)保留两种预算、额外使用已知标签的 Gold CE 对照、无效旧评估、失败重放与成本限制。
+V8 已完成 Llama-3.2-3B / CLINC150 三个配对类别顺序种子、两组各十任务的六次训练，并在封存后用全部 4,500 条域内官方测试样本对最终检查点进行全类别评分。准确率为：本地 `HOPE` 基线 **17.83% ± 0.87%**，`HOPE_SLEEP_FIXEDMIX` **10.76% ± 1.11%**（三种子均值与样本标准差；共享同一适配器初始化）。当前配置未显示 Sleep 的整体收益。[最终报告](reports/clinc150-lifecycle-v8-final.md)保留逐种子结果、开发轨迹、失败尝试、额外回放与标签元数据使用和资源成本。
 
-另行冻结的三个类别顺序种子、十任务对照正在运行；六次正式续训和三份共同起点完成实物校验前，官方测试集继续封存。当前方法是 CMS 最后 MLP 扩展与额外的 0.5 接收器混合，不是原生 HOPE 或论文完整复现。参见 [V8 协议](docs/clinc-cil-v8-protocol.md)及[资产与恢复说明](docs/clinc-v8-reproduction.md)。
+两组共享起点与主要 wake 预算；固定混合组另做 Sleep 更新，续训活跃时间约为基线的 2.97 倍。这是加入持续 0.5 接收分支混合的本地 CMS 最后 MLP 消融，尚非原生 HOPE 或论文完整复现。参见[汇总与离线重算](results/clinc-v8-main/README.md)、[冻结协议](docs/clinc-cil-v8-protocol.md)、[资产与恢复说明](docs/clinc-v8-reproduction.md)。[此前开发报告](reports/clinc150-lifecycle-v8-development.md)作为诊断、失败和负结果的历史快照保留。
 
 V7 已完成 30 组单上下文训练与 12 组后续压力测试：合格旧教师和样本多样性有助保留，但没有方案在三个种子上全部通过旧新任务门槛。[v7 报告](reports/agnews-single-receiver-v7.md)保留负结果、额外监督/成本限制及主运行中断恢复记录；预留确认集未读取。
 

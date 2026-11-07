@@ -1,0 +1,165 @@
+{
+  "capture_note": "Seal and test evaluation are curated aggregate/provenance captures; raw inputs are not staged.",
+  "claim_scope": "completed CLINC V8 main-six and one fixed global final evaluation",
+  "existing_public_dependencies_not_modified": [
+    "tools/run_clinc_cil_v8_full.py",
+    "tools/run_clinc_cil_v8_r2.py",
+    "tools/clinc_cil_common_v8.py",
+    "tools/clinc_lifecycle_v8.py",
+    "tools/clinc_controlled_routing_v8.py",
+    "tools/clinc_tail_runtime_v8.py",
+    "tools/evaluate_clinc_test_v8.py",
+    "configs/clinc_cil_v8_test_evaluation_frozen.json"
+  ],
+  "includes_model_weights_or_private_checkpoints": false,
+  "includes_raw_dataset_rows": false,
+  "includes_raw_predictions_or_tokens": false,
+  "main_seal_source_sha256": "13cb53aa440d1ec00d00b3059dc0fbb3c96e42405a984340a71b31fc56c73268",
+  "production_summary_ready": true,
+  "schema": "clinc-v8-main-publication-capture-v1",
+  "seal_capture_is_reusable_gate": false,
+  "source_artifacts": [
+    {
+      "operation": "byte_copy",
+      "public_artifact": "tools/summarize_clinc_v8_main_six.py",
+      "public_artifact_sha256": "17f3fc06c0f60ec5f8cd1e5fd8ca73d98b6c0a069c6a28ac7c5d991dd4b6ffb3",
+      "source_artifact": "<SOURCE_ROOT>/tools/summarize_clinc_v8_main_six.py",
+      "source_artifact_sha256_raw": "17f3fc06c0f60ec5f8cd1e5fd8ca73d98b6c0a069c6a28ac7c5d991dd4b6ffb3"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "tools/audit_clinc_main_resources_v8.py",
+      "public_artifact_sha256": "9b084ffad5bd806f593b0364a201c32bf3ce6670a769531066e785979caa715e",
+      "source_artifact": "<SOURCE_ROOT>/tools/audit_clinc_main_resources_v8.py",
+      "source_artifact_sha256_raw": "9b084ffad5bd806f593b0364a201c32bf3ce6670a769531066e785979caa715e"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "tools/summarize_clinc_v8_artifact_storage.py",
+      "public_artifact_sha256": "9dacf3dc7ec4aba525242850c1e665c3a8b635c767fc0ad739aa70c60333afe5",
+      "source_artifact": "<SOURCE_ROOT>/tools/summarize_clinc_v8_artifact_storage.py",
+      "source_artifact_sha256_raw": "9dacf3dc7ec4aba525242850c1e665c3a8b635c767fc0ad739aa70c60333afe5"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "tools/reanalyze_clinc_v8_main.py",
+      "public_artifact_sha256": "ca223c449c0f8171376349ae712bb5a72991281ff585b4fed8f99e1d36b82306",
+      "source_artifact": "<SOURCE_ROOT>/tools/reanalyze_clinc_v8_main.py",
+      "source_artifact_sha256_raw": "ca223c449c0f8171376349ae712bb5a72991281ff585b4fed8f99e1d36b82306"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "tests/test_summarize_clinc_v8_main_six_cpu.py",
+      "public_artifact_sha256": "794dee566c657c2386349d0b49d38852a9995dd4b6e6e3a35473f75a9f91ddcb",
+      "source_artifact": "<SOURCE_ROOT>/tests/test_summarize_clinc_v8_main_six_cpu.py",
+      "source_artifact_sha256_raw": "794dee566c657c2386349d0b49d38852a9995dd4b6e6e3a35473f75a9f91ddcb"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "tests/test_clinc_main_resource_audit_cpu.py",
+      "public_artifact_sha256": "7192203124935b3514f5f72ad73a754fb0ad1431e739fffc4225dc7fb6d7c5b0",
+      "source_artifact": "<SOURCE_ROOT>/tests/test_clinc_main_resource_audit_cpu.py",
+      "source_artifact_sha256_raw": "7192203124935b3514f5f72ad73a754fb0ad1431e739fffc4225dc7fb6d7c5b0"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "tests/test_reanalyze_clinc_v8_main_cpu.py",
+      "public_artifact_sha256": "380ecb314539b2c43e181eabb00edab6e7720cd39eba61c508e9f416266ee562",
+      "source_artifact": "<SOURCE_ROOT>/tests/test_reanalyze_clinc_v8_main_cpu.py",
+      "source_artifact_sha256_raw": "380ecb314539b2c43e181eabb00edab6e7720cd39eba61c508e9f416266ee562"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "docs/clinc-v8-main-six-aggregation.md",
+      "public_artifact_sha256": "a4b345a7a85f09816f0fdfe180774091c82f382eeb7b5797a0b9d281df2307dd",
+      "source_artifact": "<SOURCE_ROOT>/docs/clinc-v8-main-six-aggregation.md",
+      "source_artifact_sha256_raw": "a4b345a7a85f09816f0fdfe180774091c82f382eeb7b5797a0b9d281df2307dd"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "reports/clinc150-lifecycle-v8-final.md",
+      "public_artifact_sha256": "c1011cb7bf6a36b145590250739a0822015b022ea0be20bbe275b107f2aa6c9b",
+      "source_artifact": "<SOURCE_ROOT>/reports/clinc150-lifecycle-v8-final.md",
+      "source_artifact_sha256_raw": "c1011cb7bf6a36b145590250739a0822015b022ea0be20bbe275b107f2aa6c9b"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "results/clinc-v8-main/README.md",
+      "public_artifact_sha256": "38d8b8ba62cba025055c8cc1da8ea048a0fd9e3d31749ad67d57312cdeabc2be",
+      "source_artifact": "<SOURCE_ROOT>/results/clinc-v8-main/README.md",
+      "source_artifact_sha256_raw": "38d8b8ba62cba025055c8cc1da8ea048a0fd9e3d31749ad67d57312cdeabc2be"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "results/clinc-v8-main/summary.md",
+      "public_artifact_sha256": "1b068cd5d7bb38ee1716d2dbee9d48c7e3a1d44f41d33093386deeadb760781d",
+      "source_artifact": "<SOURCE_ROOT>/outputs/clinc-v8-main-final-complete-r2/clinc-v8-main-six-summary.md",
+      "source_artifact_sha256_raw": "1b068cd5d7bb38ee1716d2dbee9d48c7e3a1d44f41d33093386deeadb760781d"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "results/clinc-v8-main/clinc-v8-main-six-development.png",
+      "public_artifact_sha256": "6707c69678707b2dd6145311ee11052ee323a243dc4b4d6aff0841443af7e2d7",
+      "source_artifact": "<SOURCE_ROOT>/outputs/clinc-v8-main-final-complete-r2/clinc-v8-main-six-development.png",
+      "source_artifact_sha256_raw": "6707c69678707b2dd6145311ee11052ee323a243dc4b4d6aff0841443af7e2d7"
+    },
+    {
+      "operation": "byte_copy",
+      "public_artifact": "results/clinc-v8-main/clinc-v8-main-six-development.svg",
+      "public_artifact_sha256": "d21fe5d3547807910082056541174418aae29aaa00ea18ca3e846dc36c467bc0",
+      "source_artifact": "<SOURCE_ROOT>/outputs/clinc-v8-main-final-complete-r2/clinc-v8-main-six-development.svg",
+      "source_artifact_sha256_raw": "d21fe5d3547807910082056541174418aae29aaa00ea18ca3e846dc36c467bc0"
+    },
+    {
+      "operation": "curated_json",
+      "public_artifact": "results/clinc-v8-main/summary.json",
+      "public_artifact_sha256": "79b238a213f667a034d22683ad81e85fbc33b364048687fef681feb28393b1e1",
+      "source_artifact": "<SOURCE_ROOT>/outputs/clinc-v8-main-final-complete-r2/clinc-v8-main-six-summary.json",
+      "source_artifact_sha256_raw": "31610594a4a0b5cdcc641a0b40dc7a72c019c2e606683a5a8d712360efe99000"
+    },
+    {
+      "operation": "curated_json",
+      "public_artifact": "results/clinc-v8-main/resource-audit.json",
+      "public_artifact_sha256": "7f262baf47ac717bf09b88e9edc9a9e2bef40029519967ad83ecbd880e9d9ce9",
+      "source_artifact": "<SOURCE_ROOT>/outputs/clinc-v8-preparation/main-resources-audit.json",
+      "source_artifact_sha256_raw": "6fa36dbf7df3a12a3f9ffc13d0015c42af958633613adf19961f5c8d09767e10"
+    },
+    {
+      "operation": "curated_json",
+      "public_artifact": "results/clinc-v8-main/retained-storage.json",
+      "public_artifact_sha256": "f8e166200141017fa1e04e14c3c02d34fd52a8d17a2c9e44dbdf8e16a82b0f91",
+      "source_artifact": "<SOURCE_ROOT>/outputs/clinc-v8-preparation/retained-storage.json",
+      "source_artifact_sha256_raw": "9567ab5f55c4379c812efd09c3cd98f436caf76083025866544b76b5a7ac6b2a"
+    },
+    {
+      "operation": "curated_json",
+      "public_artifact": "results/clinc-v8-main/final-attempt-ledger.json",
+      "public_artifact_sha256": "5bb6bfd85289e46084370fd8d5230c1ad78e7711b261afb7c01c4fe1a9fab862",
+      "source_artifact": "<SOURCE_ROOT>/outputs/clinc-v8-preparation/final-attempt-ledger.json",
+      "source_artifact_sha256_raw": "ddcdd0e0150ebde32eaf0c08b72ce422aa8768d07607aae8d29fc54b6faf0824"
+    },
+    {
+      "operation": "curated_json",
+      "public_artifact": "results/clinc-v8-main/operational-attempts.json",
+      "public_artifact_sha256": "87a8bbd0be8798218e5db81c74a464448c31307c7e19b8fbfd7362762b6215d6",
+      "source_artifact": "<SOURCE_ROOT>/outputs/clinc-v8-preparation/operational-failures-source-set",
+      "source_artifact_sha256_raw": "23b6cde204fb83bcfed68eba9904135db4de4e5571bae13590c11b5434a9ab79"
+    },
+    {
+      "operation": "curated_json",
+      "public_artifact": "results/clinc-v8-main/training-seal-capture.json",
+      "public_artifact_sha256": "9543ab348f5ba9cddfc68a8c10b9e7f834f783b23f6df4f8c208dec497dbe9df",
+      "source_artifact": "<PRIVATE_ARTIFACT>/main-six-seal.json",
+      "source_artifact_sha256_raw": "13cb53aa440d1ec00d00b3059dc0fbb3c96e42405a984340a71b31fc56c73268"
+    },
+    {
+      "operation": "curated_json",
+      "public_artifact": "results/clinc-v8-main/final-test-evaluation.json",
+      "public_artifact_sha256": "57d89ec02a9b4626a0221bcaee47b2a3fa051d0a13498b60ca6f0b18a5ca73dc",
+      "source_artifact": "<PRIVATE_ARTIFACT>/evaluation.json",
+      "source_artifact_sha256_raw": "e67bd2c7195c924a6ebf482af6b167550efb12c6b7f412e27a02a4ed72b49204"
+    }
+  ],
+  "test_evaluation_sha_matches_summary": true,
+  "test_evaluation_source_sha256": "e67bd2c7195c924a6ebf482af6b167550efb12c6b7f412e27a02a4ed72b49204"
+}
