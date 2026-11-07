@@ -1,0 +1,288 @@
+{
+  "checkpoint_review": {
+    "alln_posthoc_sha256": {
+      "bytes": 700659302400,
+      "expected_files": 20,
+      "limitation": "This validates current persisted bytes against source-derived hashes only; it does not recreate historical destination readback at the time of write.",
+      "mismatches": 0,
+      "pilot_bytes": 70065930240,
+      "pilot_elapsed_seconds": 243.3360887359886,
+      "pilot_files": 2,
+      "pre_post_metadata_unchanged": 20,
+      "receipt_and_sidecar_matches": 20,
+      "remainder_bytes": 630593372160,
+      "remainder_elapsed_seconds": 2164.7185531269934,
+      "remainder_files": 18,
+      "remote_writes": false,
+      "retries": 0,
+      "seeds": [
+        402,
+        403
+      ],
+      "steps": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        12,
+        16,
+        24,
+        32,
+        40
+      ],
+      "sum_elapsed_seconds": 2408.054641862982,
+      "torch_imported": false,
+      "verified_current_files": 20
+    },
+    "checkpoint_metadata_count": 40,
+    "checkpoint_payloads_hashed_in_snapshot": false,
+    "dsm_path_and_size_checks": 40,
+    "k4_payload_posthoc_rehash": {
+      "files": 20,
+      "rehashed": false,
+      "writer_evidence": "Existing frozen direct writer review records destination readback with per-tensor/whole-stream hash and finiteness checks before COMMITTED."
+    },
+    "meta_json_hash_rechecks": 40,
+    "metadata_anomalies": 0,
+    "metadata_only": true,
+    "metadata_snapshot": "outputs/ubuntu-formal-metadata-audit/snapshot-20261107T1608Z.json"
+  },
+  "decision": {
+    "acceptance_or_release": false,
+    "descriptive_aggregate_publication": "The user authorized a descriptive aggregate and a report of protocol deviation. The reviewed records contain no explicit prohibition on such descriptive reporting; pending status alone is not treated as a publication ban.",
+    "formal_accepted_or_released": false,
+    "formal_terminal_modified": false,
+    "original_protocol_conformant": false,
+    "permitted_interpretation": "Report only as a completed, protocol-deviating descriptive development run with the write-time readback gap and endpoint exposure disclosed; it is not an accepted/released or blinded confirmatory result.",
+    "process_completed": true,
+    "reason": "The All+N save_atomic path did not read the written destination state.bin back before publication, which the frozen protocol requires. A later matching digest of the existing bytes cannot retroactively satisfy that write-time condition.",
+    "remote_terminal_status_preserved": "FORMAL_RUN_COMPLETE_PENDING_INDEPENDENT_REVIEW",
+    "status": "NOT_ACCEPTED_UNDER_FROZEN_PROTOCOL; DESCRIPTIVE_REPORTING_ONLY"
+  },
+  "endpoint_exposure": {
+    "exposed_content_category": "A truncated prefix of endpoint-row objects containing IDs, gold labels, predictions, and loss fields; visible row count is unknown.",
+    "impact": "The already completed training is not computationally altered, and the incident record reports no value-driven tuning. But reviewers saw part of the endpoint payload, so endpoint interpretation is not blind and these development examples cannot be reused as blind confirmation. The separate sealed confirmation data remains unopened.",
+    "incident_record": "outputs/ubuntu-formal-metadata-audit/terminal-review-incident-20261107.json",
+    "recorded_window_utc": "2026-11-07T16:04-16:06Z",
+    "run_completion_preceded_incident": true,
+    "sealed_confirmation_or_official_test_read": false,
+    "values_used_for_tuning_or_selection": false
+  },
+  "evidence_sha256": {
+    "baseline-hash-pilot-freeze-20261107.json": "7c8ead678e345e2b207ff53d519f1adda3200ea0990fc3a88f97be1938c888b5",
+    "baseline-hash-pilot-result-20261107.json": "ada5023614330cb03b7d303dd9547c601bd671b9503469ed08cda34a519c9c65",
+    "baseline-posthoc-readback-plan.json": "ab39d2e4b95be8f6600445759a88f7846c67846c5288f1e096336e169b68ea86",
+    "baseline-remainder-hash-freeze-20261107-r2.json": "d204ecab8598ba4376930c90f801e3e562f4b9ab2028f8472fa93c3d332c800c",
+    "baseline-remainder-hash-result-20261107-r2.json": "e1cd56e49d35c815d7d94cd85d70c1c6ed3613475c55cadc8314920ab530e7e7",
+    "consolidated-final-readonly-review-20261107-r2.json": "550638d6738acf1ad68f11b76bdd3d744d23a68697d128f6dde1e05e67fb6946",
+    "science-aggregate-20261108-r2.json": "00f76516d6f0f62e1bae0b46b5c0048443d0385327e46618e1a3a454b64af027",
+    "snapshot-20261107T1600Z.json": "e568591ee5f77c62826b9f0399c27c5557d18a6ffdef3a047fde25a8f3c91dcd",
+    "snapshot-20261107T1608Z.json": "054d72722d9f9324685602181979898bd5f0802fbb777685e9a56d8aafe24746",
+    "terminal-review-20261107.json": "877766a01c4baa53f5d66f3ee6877ef7d7c5d8b76b3a4b9d0cc5192212cc18e9",
+    "terminal-review-incident-20261107.json": "cc62cfd7d382e985fcb427596e0bacc5a4ff3bbae8b8c2fc294819ae2d83054d",
+    "terminal-status-summary-20261108.json": "4f7dd85c3553944126c426c6b73024a707084ed885745257b2da75b9d411799f"
+  },
+  "frozen_bindings": {
+    "alln_writer_readback_deviation": true,
+    "contract_sha256": "28906555f8cf6255fb1caa46b6e20535e76eb020a4e971ff34782a4e65b8a83f",
+    "permission_receipt_sha256": "92de1616cb7f30cfb7cbd445adbf68b3eb412fa9300a38776837cfaf44371512",
+    "permission_scope": "PASS_FORMAL_ALLN_ONCE for seeds 402/403, two named arms, 40 steps/run; retries prohibited; confirmation access false.",
+    "protocol_sha256": "32554d309336fdeac82df03649421fcc4f3e8a9db7c3742a1755cc7e2cc5cd3d",
+    "source_lock_sha256": "80def5fb4ed001b67328ee897796b7c083da9e8bb4b7871c03284b83e5803fd1"
+  },
+  "prior_failed_preflights": {
+    "additional_training_or_remote_io_performed": false,
+    "metadata_only_failures_preserved": "outputs/ubuntu-formal-metadata-audit/pilot-preflight-attempts-20261107.json",
+    "sandbox_brokenpipe_preserved": "outputs/ubuntu-formal-metadata-audit/remainder-freeze-brokenpipe-attempt-20261107.json"
+  },
+  "process_and_budget": {
+    "all_run_results_present": true,
+    "all_statuses": "RUN_COMPLETE",
+    "arms": [
+      "All+N-repeat",
+      "FastNew-SlowOld-k4"
+    ],
+    "checkpoint_metadata_receipts": 40,
+    "cleanup_complete": true,
+    "dev_fw": 11399,
+    "dev_fw_breakdown": {
+      "endpoint_eval_fw": 6279,
+      "fixed_per_step_probe_fw": 5120
+    },
+    "logical_updates": 160,
+    "physical_adam_steps": 180,
+    "runs": 4,
+    "seeds": [
+      402,
+      403
+    ],
+    "steps_per_run": 40,
+    "systemd_exit_status": 0,
+    "systemd_result": "success",
+    "training_bw": 4608,
+    "training_fw": 4608,
+    "unit_inactive_dead": true,
+    "unsettled_ledger_attempts": 0,
+    "worker_or_monitor_error": null
+  },
+  "reviewed_at_utc": "2026-11-07T22:45:33.392407+00:00",
+  "schema": "p2-formal-independent-final-disposition-v1",
+  "scientific_summary": {
+    "endpoints_are_development_validation": true,
+    "evidence_source": "Sanitized aggregate-only terminal summary; no row-level endpoint payload or sealed confirmation payload read for this disposition.",
+    "interpretation": "All+N immediately emitted EOS (EOS token was the only generated token) for all old/current endpoint examples in both seeds. k4 had 220/298 old and 198/300 current correct with no immediate-EOS-empty outputs in seed 402, but emitted immediate EOS for all old/current endpoint examples in seed 403. The endpoint result is strongly seed-dependent and does not establish a stable benefit.",
+    "per_run_summary": [
+      {
+        "arm": "All+N-repeat",
+        "elapsed_seconds": 11216.307753600995,
+        "endpoint_dev": {
+          "new": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "eos_reached_within_cap_count": 300,
+            "eos_reached_within_cap_rate": 1.0,
+            "immediate_eos_empty_output_count": 300,
+            "immediate_eos_empty_output_rate": 1.0,
+            "n": 300
+          },
+          "old": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "eos_reached_within_cap_count": 298,
+            "eos_reached_within_cap_rate": 1.0,
+            "immediate_eos_empty_output_count": 298,
+            "immediate_eos_empty_output_rate": 1.0,
+            "n": 298
+          }
+        },
+        "endpoint_eval_fw": 1196,
+        "physical_adam_steps": 40,
+        "seed": 402,
+        "step_probe_summary": {
+          "new": {
+            "first_step_of_sustained_full_immediate_eos": 33,
+            "mean_first_token_eos_rate_across_40_probes": 0.7234375
+          },
+          "old": {
+            "first_step_of_sustained_full_immediate_eos": 33,
+            "mean_first_token_eos_rate_across_40_probes": 0.725
+          }
+        }
+      },
+      {
+        "arm": "All+N-repeat",
+        "elapsed_seconds": 11067.794293634011,
+        "endpoint_dev": {
+          "new": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "eos_reached_within_cap_count": 300,
+            "eos_reached_within_cap_rate": 1.0,
+            "immediate_eos_empty_output_count": 300,
+            "immediate_eos_empty_output_rate": 1.0,
+            "n": 300
+          },
+          "old": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "eos_reached_within_cap_count": 298,
+            "eos_reached_within_cap_rate": 1.0,
+            "immediate_eos_empty_output_count": 298,
+            "immediate_eos_empty_output_rate": 1.0,
+            "n": 298
+          }
+        },
+        "endpoint_eval_fw": 1196,
+        "physical_adam_steps": 40,
+        "seed": 403,
+        "step_probe_summary": {
+          "new": {
+            "first_step_of_sustained_full_immediate_eos": 40,
+            "mean_first_token_eos_rate_across_40_probes": 0.625
+          },
+          "old": {
+            "first_step_of_sustained_full_immediate_eos": 40,
+            "mean_first_token_eos_rate_across_40_probes": 0.625
+          }
+        }
+      },
+      {
+        "arm": "FastNew-SlowOld-k4",
+        "elapsed_seconds": 12171.177294182999,
+        "endpoint_dev": {
+          "new": {
+            "accuracy": 0.66,
+            "correct": 198,
+            "eos_reached_within_cap_count": 296,
+            "eos_reached_within_cap_rate": 0.9866666666666667,
+            "immediate_eos_empty_output_count": 0,
+            "immediate_eos_empty_output_rate": 0.0,
+            "n": 300
+          },
+          "old": {
+            "accuracy": 0.738255033557047,
+            "correct": 220,
+            "eos_reached_within_cap_count": 298,
+            "eos_reached_within_cap_rate": 1.0,
+            "immediate_eos_empty_output_count": 0,
+            "immediate_eos_empty_output_rate": 0.0,
+            "n": 298
+          }
+        },
+        "endpoint_eval_fw": 2691,
+        "physical_adam_steps": 50,
+        "seed": 402,
+        "step_probe_summary": {
+          "new": {
+            "first_step_of_sustained_full_immediate_eos": null,
+            "mean_first_token_eos_rate_across_40_probes": 0.0453125
+          },
+          "old": {
+            "first_step_of_sustained_full_immediate_eos": null,
+            "mean_first_token_eos_rate_across_40_probes": 0.0453125
+          }
+        }
+      },
+      {
+        "arm": "FastNew-SlowOld-k4",
+        "elapsed_seconds": 12286.294769189,
+        "endpoint_dev": {
+          "new": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "eos_reached_within_cap_count": 300,
+            "eos_reached_within_cap_rate": 1.0,
+            "immediate_eos_empty_output_count": 300,
+            "immediate_eos_empty_output_rate": 1.0,
+            "n": 300
+          },
+          "old": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "eos_reached_within_cap_count": 298,
+            "eos_reached_within_cap_rate": 1.0,
+            "immediate_eos_empty_output_count": 298,
+            "immediate_eos_empty_output_rate": 1.0,
+            "n": 298
+          }
+        },
+        "endpoint_eval_fw": 1196,
+        "physical_adam_steps": 50,
+        "seed": 403,
+        "step_probe_summary": {
+          "new": {
+            "first_step_of_sustained_full_immediate_eos": 24,
+            "mean_first_token_eos_rate_across_40_probes": 0.640625
+          },
+          "old": {
+            "first_step_of_sustained_full_immediate_eos": 24,
+            "mean_first_token_eos_rate_across_40_probes": 0.6328125
+          }
+        }
+      }
+    ],
+    "probe_interpretation": "The 40 per-step probes per run also show distinct EOS trajectories across seed/arm; those probes are development diagnostics, not an independent confirmation.",
+    "training_loss_caveat": "Run metadata contains last-update training losses, not accuracy; this review does not use those values to claim benefit."
+  }
+}

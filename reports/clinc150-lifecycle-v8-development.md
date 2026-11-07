@@ -152,9 +152,9 @@ A second, corrected-objective development comparison varies the fixed number of 
 | k=10 | SLEEP_MIX | 23/300 (7.67%) | 94/300 (31.33%) | 117/600 (19.50%) | 480 | 4,553 |
 | k=10 | GOLD_CE_MIX | 118/300 (39.33%) | 105/300 (35.00%) | 223/600 (37.17%) | 480 | 2,181 |
 
-![Corrected transfer-budget development endpoints](../outputs/clinc-v8-figures/clinc-v8-corrected-transfer-budgets.png)
+![Corrected transfer-budget development endpoints](../results/figures/clinc-v8-corrected-transfer-budgets.png)
 
-Figure: exact-match counts and rates on the clean development set for the same-foundation HOPE reference and corrected k=1/k=10 transfer budgets. One class-order seed only. Gold CE reuses known labeled training targets and performs the same number of receiver AdamW updates as Sleep within each budget; target information and forward work differ. This is development evidence, not a multi-seed or final-test result. [SVG](../outputs/clinc-v8-figures/clinc-v8-corrected-transfer-budgets.svg).
+Figure: exact-match counts and rates on the clean development set for the same-foundation HOPE reference and corrected k=1/k=10 transfer budgets. One class-order seed only. Gold CE reuses known labeled training targets and performs the same number of receiver AdamW updates as Sleep within each budget; target information and forward work differ. This is development evidence, not a multi-seed or final-test result. [SVG](../results/figures/clinc-v8-corrected-transfer-budgets.svg).
 
 The k=10 Sleep teacher emitted valid canonical labels for 63/320 teacher-owned samples (19.69%) and matched the prompt's gold label 49/320 times (15.31%); k=1 was 2/32 valid and 0/32 gold-matching. The Sleep arm used 24 old and 24 current prompts at k=1, and 240 old and 240 current prompts at k=10, covering all 15 classes in each role. Gold CE reused 48/480 known training labels, accounting for 151/1,520 target tokens; these are additional labeled optimization targets, not new annotations. It is not matched to sampled Sleep by information or FLOPs.
 

@@ -1,5 +1,8 @@
 # Reproduction status
 
+Ubuntu P2 final disposition: [completed but not accepted under the original protocol](../reports/ubuntu-p2-formal-descriptive-disposition.md). Aggregate-only development reporting, not a formal acceptance/release or blinded confirmation.
+
+
 | Item | State | Evidence level |
 |---|---|---|
 | CPU reference primitives and synthetic examples | Executable; actual acceptance in reports/local_acceptance.md | CPU_MECHANISM_DEMO |

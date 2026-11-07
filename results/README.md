@@ -1,5 +1,8 @@
 # Numeric tables and aggregate experiments
 
+[Ubuntu P2 descriptive evidence](ubuntu-p2-descriptive/README.md): all four runs completed; original-protocol acceptance rejected, n=2 seed-sensitive collapse.
+
+
 The completed [Banking V10/V11 aggregate package](banking-v10-v11/README.md) contains sealed official-test V10 results, distinct development-only V11 controls, offline reanalysis, costs, failures and source provenance. See the [V10](../reports/banking77-controls-v10.md) and [V11](../reports/banking77-reward-ablation-v11.md) reports for the exact claim boundaries.
 
 ## Original historical table export

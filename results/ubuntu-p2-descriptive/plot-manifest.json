@@ -1,0 +1,17 @@
+{
+  "aggregate_sha256": "00f76516d6f0f62e1bae0b46b5c0048443d0385327e46618e1a3a454b64af027",
+  "files": [
+    {
+      "bytes": 240437,
+      "path": "ubuntu-p2-development.png",
+      "sha256": "107357e93f77f7ccb28a43eb0e533ee8abd19ed3ae3ab09a3d0678f31085325c"
+    },
+    {
+      "bytes": 99826,
+      "path": "ubuntu-p2-development.svg",
+      "sha256": "dd6be41fa51be859fe8e9fec9856e81c5d790d951f981ffc4cead6030ec3a16c"
+    }
+  ],
+  "plot_source_sha256": "6790fab0ee2b66c2cd16bdabdcf27756ecc6a7b381af1cd00925a8d9bdf3dbed",
+  "schema": "p2-descriptive-plot-manifest-v1"
+}

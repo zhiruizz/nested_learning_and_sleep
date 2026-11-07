@@ -8,13 +8,13 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 684,
+  "file_count_excluding_manifests": 695,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
       "path": ".gitattributes",
-      "sha256": "c98d6f044c259b97558aa91035719cab4a672991dc3ff88ac2e50f296e789c25",
-      "bytes": 27760
+      "sha256": "2a7468c320a8cd9719ea184c762ca4cd99415b280e023635ab4a206a151f1301",
+      "bytes": 29155
     },
     {
       "path": ".github/ISSUE_TEMPLATE/reproduction.md",
@@ -53,13 +53,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "33543e3ed25968037637b71b1a3f0f7bf60395c3aa1dd7ac4aa6d2c250c5a373",
-      "bytes": 12970
+      "sha256": "c942c2af104560b30a0d8385d0bf3012d87856f8ec3bb09f5c054fb61e11c3bd",
+      "bytes": 13341
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "a3a9ae71e377dc5e53073b5ebb558b8c7ad9e21a399245319d579b51fe6263e9",
-      "bytes": 9668
+      "sha256": "8f0a223b14c7b6a69d3d4812528da04c01072ece48151435e373d16b50ce5eaf",
+      "bytes": 9996
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -383,8 +383,8 @@
     },
     {
       "path": "docs/reproduction_status.md",
-      "sha256": "8a2f7fbbc3769eddda8069c33594b3354d1fa15d975f473be836f9cbbd3feb8e",
-      "bytes": 4257
+      "sha256": "c0ded1e8627e5be5b0ff80583a4c7c71f7179fb0f68810adf7916194633b454a",
+      "bytes": 4497
     },
     {
       "path": "docs/sleep-paper-alignment-v10-v11.md",
@@ -483,8 +483,8 @@
     },
     {
       "path": "reports/clinc150-lifecycle-v8-development.md",
-      "sha256": "3a33d593381436bbdb76fb777fede437c9726a5ce279c356b98d049342f624a3",
-      "bytes": 14501
+      "sha256": "a5c00d545dbd33959e37927e2e0009957232fb5248ba0820c335c5f20b9d5421",
+      "bytes": 14483
     },
     {
       "path": "reports/clinc150-lifecycle-v8-final.md",
@@ -512,6 +512,11 @@
       "bytes": 5124
     },
     {
+      "path": "reports/ubuntu-p2-formal-descriptive-disposition.md",
+      "sha256": "5714adc48b9298723a9c60e1272760d4267081cbe32e305e863aa7d32a4d7455",
+      "bytes": 7402
+    },
+    {
       "path": "requirements/clinc-v8-observed.txt",
       "sha256": "2a33e94a34a03087eca0ac6a4ae11a69cbf6aec0adc47a1ce5d502b2596cc2e7",
       "bytes": 374
@@ -533,8 +538,8 @@
     },
     {
       "path": "results/README.md",
-      "sha256": "458a555b86d9d5f5076a35c036a050201cdb2456e333c1956a38a264af8fbf2c",
-      "bytes": 6636
+      "sha256": "9b37d5ddb9e20761fa63aae3789ccfc8d95e2a93787ea58a0ed5859f1ed113fd",
+      "bytes": 6798
     },
     {
       "path": "results/agnews-anchored-v5/analysis.json",
@@ -2117,6 +2122,51 @@
       "bytes": 2355
     },
     {
+      "path": "results/ubuntu-p2-descriptive/README.md",
+      "sha256": "f83258dd865928dda893349a9b5407cc13fa779944655cbd2e1fd23ca52ff15d",
+      "bytes": 1025
+    },
+    {
+      "path": "results/ubuntu-p2-descriptive/aggregation-source.py.txt",
+      "sha256": "ed0aa81944a4304f36aa29b8744cd132d184e5cd052784b603a180e5d324d371",
+      "bytes": 5619
+    },
+    {
+      "path": "results/ubuntu-p2-descriptive/artifact-provenance.json",
+      "sha256": "254b0bb16a12bbd0f77c21fb7c17cee9d48c3db5e97c1a0251acc7fb28739fa4",
+      "bytes": 2378
+    },
+    {
+      "path": "results/ubuntu-p2-descriptive/independent-final-disposition.json",
+      "sha256": "9524e0a4d3fdd7e3f639819efcd92fb2bc961d9584142c019e1d21becce93ed9",
+      "bytes": 12876
+    },
+    {
+      "path": "results/ubuntu-p2-descriptive/independent-final-disposition.md",
+      "sha256": "4921a4d119bac35c0ca51c177515767ef4b3188e9511be971ba3501653c010ea",
+      "bytes": 2979
+    },
+    {
+      "path": "results/ubuntu-p2-descriptive/plot-manifest.json",
+      "sha256": "a2a47e868017e4915c1d0bc948a04ada30c135b4650d562ad66f586c789f69dc",
+      "bytes": 589
+    },
+    {
+      "path": "results/ubuntu-p2-descriptive/science-aggregate.json",
+      "sha256": "00f76516d6f0f62e1bae0b46b5c0048443d0385327e46618e1a3a454b64af027",
+      "bytes": 47633
+    },
+    {
+      "path": "results/ubuntu-p2-descriptive/ubuntu-p2-development.png",
+      "sha256": "107357e93f77f7ccb28a43eb0e533ee8abd19ed3ae3ab09a3d0678f31085325c",
+      "bytes": 240437
+    },
+    {
+      "path": "results/ubuntu-p2-descriptive/ubuntu-p2-development.svg",
+      "sha256": "dd6be41fa51be859fe8e9fec9856e81c5d790d951f981ffc4cead6030ec3a16c",
+      "bytes": 99826
+    },
+    {
       "path": "results/update_reset_activation.csv",
       "sha256": "38cde1ea876ee3b93c297c86fd759ed41b4468d15e783309825d18229aceb8df",
       "bytes": 2862
@@ -3020,6 +3070,11 @@
       "path": "tools/plot_clinc_v8_development.py",
       "sha256": "6895a5da5c8b532c81f375afd913c9c767338b106126d386af2d2ebbd3c728c4",
       "bytes": 3473
+    },
+    {
+      "path": "tools/plot_ubuntu_p2_descriptive.py",
+      "sha256": "6790fab0ee2b66c2cd16bdabdcf27756ecc6a7b381af1cd00925a8d9bdf3dbed",
+      "bytes": 4318
     },
     {
       "path": "tools/prepare_agnews_records.py",

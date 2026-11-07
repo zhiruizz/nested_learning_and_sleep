@@ -1,5 +1,8 @@
 # NL/Sleep Reproduction Lab
 
+Ubuntu P2 更新：四次 40 步运行已完成，独立验收裁定原检查点协议不满足；分频更新的两个种子结果不稳定。见[描述性报告](reports/ubuntu-p2-formal-descriptive-disposition.md)与[脱敏聚合](results/ubuntu-p2-descriptive/README.md)。这不是正式验收通过或确认性结论。
+
+
 Banking V10 已完成 Llama-3.2-3B 三个配对类别顺序种子、三组共九次续训。在全部 3,080 条官方测试样本上，全局 77 标签 sum-score 准确率为：CMS **14.21% ± 1.92%**、加法路由 Sleep **22.45% ± 3.23%**、额外标签监督回放 **26.45% ± 1.80%**（均值与样本标准差，共享一次初始化）。Sleep 的标签排名读出提高，但自由生成和 gold-token NLL 更差；主续训墙钟时间约为 CMS 的 4.96 倍。[V10 报告](reports/banking77-controls-v10.md)保留每个种子、独立列出的 3,073 条去重叠子集、旧／新类别终点分组、额外监督与成本。
 
 V11 将两个预先冻结的 LTI 奖励对照与 CMS、Sleep、监督回放一起，在每个种子相同的 220 条 task-1 开发样本上评估。[报告](reports/banking77-reward-ablation-v11.md)列出全部十五个终点与工作量；这是开发集消融，不是新的官方测试确认。[聚合与离线重算](results/banking-v10-v11/README.md)、[执行说明](docs/banking-v10-v11-reproduction.md)和[论文差距审计](docs/sleep-paper-alignment-v10-v11.md)说明本地架构、生命周期、奖励及优化器差异，未声称完成原生 HOPE 或原文准确率复现。

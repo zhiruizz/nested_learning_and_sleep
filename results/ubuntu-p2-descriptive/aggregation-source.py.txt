@@ -1,0 +1,84 @@
+"""Emit only preregistered aggregate metrics from the frozen formal outputs.
+Never prints or serializes per-row identifiers, labels, texts, predictions, or losses.
+"""
+import json
+from pathlib import Path
+ROOT=Path('/mnt/dsm_workspace/Nested_Learning_and_Sleep/p2_formal_alln_20261105')
+ARMS=('All+N-repeat','FastNew-SlowOld-k4'); SEEDS=(402,403)
+STEPS=(1,2,4,6,8,12,16,24,32,40)
+def load(p): return json.loads(p.read_text())
+def safe_endpoint(rows):
+    n=len(rows)
+    assert n>0
+    correct=sum(bool(r['correct']) for r in rows)
+    # The frozen decoder appends EOS before stopping; one token plus EOS means visible empty output.
+    immediate=sum(int(r['generated_tokens'])==1 and bool(r['eos_reached']) for r in rows)
+    eos_any=sum(bool(r.get('eos_reached',False)) for r in rows)
+    return {'n':n,'correct':correct,'accuracy':correct/n,
+            'immediate_eos_empty_output_count':immediate,'immediate_eos_empty_output_rate':immediate/n,
+            'eos_reached_within_cap_count':eos_any,'eos_reached_within_cap_rate':eos_any/n}
+def metrics_endpoint(metric):
+    rows=metric['rows']; result=safe_endpoint(rows)
+    result.update({'target_tokens':metric.get('target_tokens'),
+                   'token_weighted_nll':metric.get('token_weighted_nll')})
+    return result
+runs={}
+for arm in ARMS:
+  for seed in SEEDS:
+    folder=ROOT/'runs'/arm/f'seed-{seed}'
+    rr=load(folder/'run_result.json')
+    assert rr['status']=='RUN_COMPLETE' and rr['checkpoint_steps']==[0,*STEPS]
+    assert rr['arm']==arm and rr['seed']==seed
+    ep={task:metrics_endpoint(rr['endpoint'][task]) for task in ('old','new')}
+    per=[]
+    for step in range(1,41):
+      p=load(folder/f'step-{step:02d}-probe.json')
+      assert p['attempts']==p['completed']==32
+      s=p['summary']['rows']
+      per.append({'step':step,'old':{'n':s['old']['rows'],'first_token_eos_count':s['old']['first_token_eos_count'],'first_token_eos_rate':s['old']['first_token_eos_rate'],'mean_eos_probability':s['old']['mean_eos_probability']},
+                  'new':{'n':s['new']['rows'],'first_token_eos_count':s['new']['first_token_eos_count'],'first_token_eos_rate':s['new']['first_token_eos_rate'],'mean_eos_probability':s['new']['mean_eos_probability']}})
+    collapse={}
+    for task in ('old','new'):
+      rates=[x[task]['first_token_eos_rate'] for x in per]
+      collapse[task]={'first_fully_immediate_eos_step':next((i+1 for i,r in enumerate(rates) if r==1.0),None),
+                      'first_step_of_sustained_full_immediate_eos':next((i+1 for i in range(len(rates)) if all(r==1.0 for r in rates[i:])),None),
+                      'mean_first_token_eos_rate_across_40_probes':sum(rates)/len(rates),
+                      'final_probe_rate':rates[-1],
+                      'final_mean_eos_probability':per[-1][task]['mean_eos_probability']}
+    runs[(arm,seed)]={'arm':arm,'seed':seed,'endpoint':ep,'collapse':collapse,'probes':per,
+                      'endpoint_eval_fw':rr['training_ledger']['EVAL']['attempted'],
+                      'elapsed_seconds':rr['elapsed_seconds'],'physical_adam_steps':rr['physical_adam_completed']}
+
+def delta(arm,task,metric):
+ a=runs[(arm,402)]; b=runs[(arm,403)]
+ return b[task][metric]-a[task][metric]
+summary={'schema':'p2-formal-sanitized-science-aggregate-v1','source_lock_sha256':'80def5fb4ed001b67328ee897796b7c083da9e8bb4b7871c03284b83e5803fd1',
+         'contract_sha256':'28906555f8cf6255fb1caa46b6e20535e76eb020a4e971ff34782a4e65b8a83f',
+         'protocol_sha256':'32554d309336fdeac82df03649421fcc4f3e8a9db7c3742a1755cc7e2cc5cd3d',
+         'privacy':'aggregate-only; no row identifiers, gold labels, text, predictions, or per-row losses emitted',
+         'endpoint_and_probe_metrics':list(runs.values()),
+         'paired_seed_403_minus_402':{},
+         'cross_arm_k4_minus_alln_by_seed':{},
+         'aggregate_costs':{'logical_updates':160,'train_fw':4608,'train_bw':4608,'physical_adam_steps':180,
+                            'dev_fw':11399,'fixed_probe_fw':5120,
+                            'endpoint_eval_fw':sum(x['endpoint_eval_fw'] for x in runs.values()),
+                            'checkpoint_receipts':40,'runs':4,'steps_per_run':40}}
+for arm in ARMS:
+  summary['paired_seed_403_minus_402'][arm]={}
+  for task in ('old','new'):
+    summary['paired_seed_403_minus_402'][arm][task]={
+       'endpoint_accuracy':runs[(arm,403)]['endpoint'][task]['accuracy']-runs[(arm,402)]['endpoint'][task]['accuracy'],
+       'endpoint_immediate_eos_empty_output_rate':runs[(arm,403)]['endpoint'][task]['immediate_eos_empty_output_rate']-runs[(arm,402)]['endpoint'][task]['immediate_eos_empty_output_rate'],
+       'mean_probe_first_token_eos_rate':runs[(arm,403)]['collapse'][task]['mean_first_token_eos_rate_across_40_probes']-runs[(arm,402)]['collapse'][task]['mean_first_token_eos_rate_across_40_probes']}
+for seed in SEEDS:
+  summary['cross_arm_k4_minus_alln_by_seed'][str(seed)]={}
+  for task in ('old','new'):
+    summary['cross_arm_k4_minus_alln_by_seed'][str(seed)][task]={
+       'endpoint_accuracy':runs[(ARMS[1],seed)]['endpoint'][task]['accuracy']-runs[(ARMS[0],seed)]['endpoint'][task]['accuracy'],
+       'endpoint_immediate_eos_empty_output_rate':runs[(ARMS[1],seed)]['endpoint'][task]['immediate_eos_empty_output_rate']-runs[(ARMS[0],seed)]['endpoint'][task]['immediate_eos_empty_output_rate'],
+       'mean_probe_first_token_eos_rate':runs[(ARMS[1],seed)]['collapse'][task]['mean_first_token_eos_rate_across_40_probes']-runs[(ARMS[0],seed)]['collapse'][task]['mean_first_token_eos_rate_across_40_probes']}
+print(json.dumps(summary,sort_keys=True,allow_nan=False))
+
+
+
+

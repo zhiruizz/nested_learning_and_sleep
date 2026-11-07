@@ -1,5 +1,8 @@
 # NL/Sleep Reproduction Lab
 
+Ubuntu P2 update: four 40-step runs completed, but independent review found the original checkpoint protocol was not satisfied. The two-seed k4 result was unstable. See the [descriptive report](reports/ubuntu-p2-formal-descriptive-disposition.md) and [aggregate evidence](results/ubuntu-p2-descriptive/README.md); this is not a formal acceptance or confirmation claim.
+
+
 Banking V10 completed nine local Llama-3.2-3B continuations across three paired class-order seeds. On all 3,080 official test rows, global 77-label sum-score accuracy was **14.21% ± 1.92%** for CMS, **22.45% ± 3.23%** for additive Sleep and **26.45% ± 1.80%** for supervised replay (mean and sample SD, one shared initialization). Sleep improved this ranking readout while worsening free generation and gold-token NLL; its main continuation wall time was about 4.96 times CMS. The [V10 report](reports/banking77-controls-v10.md) preserves every seed, the separate 3,073-row disjoint subset, old/new endpoint partitions, extra supervision and costs.
 
 V11 compared two predeclared LTI reward controls with CMS, Sleep and supervised replay on the same 220 task-1 development requests per seed. Its [report](reports/banking77-reward-ablation-v11.md) gives all fifteen endpoints and work counters; these are development ablations, not new official-test confirmation. [Bundled aggregates and offline analysis](results/banking-v10-v11/README.md), [execution instructions](docs/banking-v10-v11-reproduction.md), and the [paper-alignment audit](docs/sleep-paper-alignment-v10-v11.md) document the local architecture, lifecycle, reward and optimizer gaps. Native HOPE and full manuscript accuracy are not established.

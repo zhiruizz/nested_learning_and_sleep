@@ -1,0 +1,58 @@
+{
+  "files": [
+    {
+      "bytes": 1025,
+      "path": "README.md",
+      "sha256": "f83258dd865928dda893349a9b5407cc13fa779944655cbd2e1fd23ca52ff15d",
+      "source": "capture-generated README"
+    },
+    {
+      "bytes": 5619,
+      "path": "aggregation-source.py.txt",
+      "sha256": "ed0aa81944a4304f36aa29b8744cd132d184e5cd052784b603a180e5d324d371",
+      "source": "outputs/ubuntu-formal-metadata-audit/safe_aggregate_ubuntu_formal.py"
+    },
+    {
+      "bytes": 12876,
+      "path": "independent-final-disposition.json",
+      "sha256": "9524e0a4d3fdd7e3f639819efcd92fb2bc961d9584142c019e1d21becce93ed9",
+      "source": "outputs/ubuntu-formal-metadata-audit/independent-final-disposition-20261108-r1.json"
+    },
+    {
+      "bytes": 2979,
+      "path": "independent-final-disposition.md",
+      "sha256": "4921a4d119bac35c0ca51c177515767ef4b3188e9511be971ba3501653c010ea",
+      "source": "outputs/ubuntu-formal-metadata-audit/independent-final-disposition-20261108-r1.md"
+    },
+    {
+      "bytes": 589,
+      "path": "plot-manifest.json",
+      "sha256": "a2a47e868017e4915c1d0bc948a04ada30c135b4650d562ad66f586c789f69dc",
+      "source": "outputs/ubuntu-formal-metadata-audit/descriptive-figures-a/plot-manifest.json"
+    },
+    {
+      "bytes": 47633,
+      "path": "science-aggregate.json",
+      "sha256": "00f76516d6f0f62e1bae0b46b5c0048443d0385327e46618e1a3a454b64af027",
+      "source": "outputs/ubuntu-formal-metadata-audit/science-aggregate-20261108-r2.json"
+    },
+    {
+      "bytes": 240437,
+      "path": "ubuntu-p2-development.png",
+      "sha256": "107357e93f77f7ccb28a43eb0e533ee8abd19ed3ae3ab09a3d0678f31085325c",
+      "source": "outputs/ubuntu-formal-metadata-audit/descriptive-figures-a/ubuntu-p2-development.png"
+    },
+    {
+      "bytes": 99826,
+      "path": "ubuntu-p2-development.svg",
+      "sha256": "dd6be41fa51be859fe8e9fec9856e81c5d790d951f981ffc4cead6030ec3a16c",
+      "source": "outputs/ubuntu-formal-metadata-audit/descriptive-figures-a/ubuntu-p2-development.svg"
+    }
+  ],
+  "formal_acceptance_or_release": false,
+  "plot_visual_qa": "PNG viewed by root; all three panels, axes, legends, caption and zero values readable, uncropped",
+  "schema": "ubuntu-p2-descriptive-public-capture-v1",
+  "scope": "aggregate_only_original_protocol_not_satisfied",
+  "sealed_confirmation_accessed": false,
+  "source_bytes_preserved": true
+}
