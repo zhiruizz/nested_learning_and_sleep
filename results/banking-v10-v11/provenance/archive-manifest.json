@@ -1,0 +1,109 @@
+{
+  "dev_preflight_repairs_changed_scoring_math_or_training_recipe": false,
+  "files": [
+    {
+      "bytes": 54036,
+      "exact_archived_bytes": true,
+      "file": "official-evaluator-startup-a.py.txt",
+      "purpose": "Unused nonexistent import caused startup A to fail before model loading or test CSV parsing; the payload was already acquired.",
+      "sha256": "fbf5d5406b144826c82fd477e30ddd339fde8bbbb2432cf4c352e92a7e8340a1"
+    },
+    {
+      "bytes": 26337,
+      "exact_archived_bytes": true,
+      "file": "v11-launcher-startup-a.py.txt",
+      "purpose": "CPU-only wrapper compared the complete manifest-file SHA with the legacy producer train-file SHA; no scientific run completed.",
+      "sha256": "9d3daf5c1311e3156a994a95092256dce22e5456dc9cc76777897fa5fa805669"
+    },
+    {
+      "bytes": 17051,
+      "exact_archived_bytes": true,
+      "file": "v11-launcher-startup-a-tests.py.txt",
+      "purpose": "Earlier synthetic wrapper test bytes; the corrected regression explicitly uses unequal manifest and train-file digests.",
+      "sha256": "269d18aa02ef083ca692017d98cba1542112b299226b69216ffe45fc85b8be9f"
+    },
+    {
+      "bytes": 33064,
+      "exact_archived_bytes": true,
+      "file": "reanalyzer-before-actual-task6-schema.py.txt",
+      "purpose": "Offline reader expected nested task_breakdown; the real producer stores it beside the metric aggregates. No derived result was emitted by the failed attempt.",
+      "sha256": "0207edf39954350fdc74d5deca52b1812be2326743385f1e501c214b61c119d7"
+    },
+    {
+      "bytes": 21202,
+      "exact_archived_bytes": true,
+      "file": "reanalyzer-before-actual-task6-schema-tests.py.txt",
+      "purpose": "Earlier synthetic tests had mirrored the mistaken nested shape; current tests match the actual producer and reject the wrong nesting.",
+      "sha256": "030def87fa8f9fe00f14b987c0d44c81914f9480e7382be0f2c3c9a0f4e5ebb2"
+    },
+    {
+      "bytes": 38570,
+      "exact_archived_bytes": true,
+      "file": "accounting-before-actual-evaluator-schema.py.txt",
+      "purpose": "Offline reader rejected the real completed evaluator schema before producing an aggregate; the repair changes only its schema literal.",
+      "sha256": "1241ac776127e5be97e8c5440a2b8021f1fea1ed853a733ec43bc59fa3168539"
+    },
+    {
+      "bytes": 14288,
+      "exact_archived_bytes": true,
+      "file": "accounting-before-actual-evaluator-schema-tests.py.txt",
+      "purpose": "Earlier accounting fixtures used the wrong evaluator schema literal; retained as historical engineering evidence.",
+      "sha256": "2464267756a74f0a60a59a007a6e0678bb9d15a8b5a3057ae615216884cef48a"
+    },
+    {
+      "bytes": 31016,
+      "exact_archived_bytes": true,
+      "file": "v11-parent-before-terminal-field-fix.py.txt",
+      "purpose": "Parent expected official_test_accessed_by_launcher but the actual wrapper records test_data_accessed_by_launcher=false. The first child had exited 0 and completed validly; no completed scientific run was repeated.",
+      "sha256": "83d3e40397fef07b8ea349b54faf6f76d2c91f57e93839d77364fdf247032169"
+    },
+    {
+      "bytes": 10403,
+      "exact_archived_bytes": true,
+      "file": "v11-parent-before-terminal-field-fix-tests.py.txt",
+      "purpose": "Parent expected official_test_accessed_by_launcher but the actual wrapper records test_data_accessed_by_launcher=false. The first child had exited 0 and completed validly; no completed scientific run was repeated.",
+      "sha256": "45a19fb32f1c35f4dd048190ce11ea34d81f6c23ef3b0148764d302cbb917eda"
+    },
+    {
+      "bytes": 43611,
+      "exact_archived_bytes": true,
+      "file": "v11-evaluator-before-cpu-source-keyword-fix.py.txt",
+      "purpose": "CPU reference preparation failed because the helper call omitted a mandatory source_hashes keyword. No development GPU scoring occurred.",
+      "sha256": "a38d68dd5f13c223e1253e25282b65bae92ebb51d8293af2a2992399694e082f"
+    },
+    {
+      "bytes": 5600,
+      "exact_archived_bytes": true,
+      "file": "v11-reference-tests-before-real-producer-gates.py.txt",
+      "purpose": "Earlier test bytes before the actual required-keyword and producer-shaped terminal regressions.",
+      "sha256": "67ec8430d23208847a7e3dcbbdc6eaf4cb76131ce4c737dabfded3c26397d91a"
+    },
+    {
+      "bytes": 43646,
+      "exact_archived_bytes": true,
+      "file": "v11-evaluator-intermediate-cpu-source-keyword-only.py.txt",
+      "purpose": "Intermediate CPU-only patch passed the required-keyword boundary, then terminal protocol/receipt field mismatches were exposed; no scoring occurred.",
+      "sha256": "dffcfd7e469adc88633be7f087912d21caf587bd1516824e6dddda599676d5fa"
+    },
+    {
+      "bytes": 6703,
+      "exact_archived_bytes": true,
+      "file": "v11-reference-tests-intermediate-signature-inspection.py.txt",
+      "purpose": "Intermediate signature/AST check was replaced by actual-call and producer-shaped regressions; retained as engineering history.",
+      "sha256": "1b706accae947ffc7798b8ccdb5cf86c0f0fd9b4b45783ededdea2a77483460b"
+    },
+    {
+      "bytes": 14330,
+      "exact_archived_bytes": true,
+      "file": "v11-evaluator-tests-before-completed-protocol-fixture.py.txt",
+      "purpose": "The old synthetic happy-path fixture used running and the obsolete paired field. Final tests use the real completed producer and reject running/wrong comparison hashes.",
+      "sha256": "6ccff24d148eb0884085eca1f8bec0980f9be42b3c5b9a101be9aae58be24561"
+    }
+  ],
+  "frozen_v10_and_v11_training_graphs_changed": false,
+  "original_failed_parent_status_sha256": "2ae2737b496a4a3208cb9a3144f2e77537303ccb765b10437809a7f332fce368",
+  "parent_manifest_sha256": "e0ad389780426530a230c095b771c22269d21b92ac27ae239cb1e546177e5e99",
+  "schema": "banking-auxiliary-source-failure-archive-v1",
+  "scope": "Historical non-executing source snapshots, not current entry points or scientific results. No raw logs, datasets, weights or checkpoint payloads included.",
+  "valid_completed_first_run_retained": true
+}

@@ -1,0 +1,1506 @@
+{
+  "accounting_rules": {
+    "claim_limits": "No operational attempt is scientific efficacy evidence. Probe B is a single-seed task-0 development transfer probe; original replay is an engineering equivalence proof. The official V10 aggregate is final; no V11 training or 15-context development-evaluation result is included in this revision.",
+    "main_nine_cost_boundary": "The nine-run training seal is the sole boundary for the main experiment. Probe/replay/CPU-test work is separate. A retained seed17 CMS receipt from the interrupted queue is not charged twice. Official V10 test evaluation is a separate post-seal cost and is listed once; the valid seed17/CMS_ONLY run retained from the interrupted queue is not charged again outside the final seal.",
+    "units": {
+      "cpu_test_runtime_seconds": "seconds",
+      "full_backbone_forward_calls": "count",
+      "payload_bytes": "bytes",
+      "physical_adamw_updates": "count of physical optimizer steps",
+      "tail_calls": "count",
+      "wall_seconds": "seconds"
+    },
+    "unknowns": "Unknown or unmeasured work is null; null is never converted to zero. Failure-stage zeros are used only where the evidence explicitly shows no CUDA/model/update or no run."
+  },
+  "created_utc": "2026-11-08",
+  "derived_from": {
+    "artifact_id": "preparation/public-operation-ledger-draft.json",
+    "cohort_balance_sha256": "fbf0ff97f2fadd6043e9166cca4a8843da963304ed4d87aefe4a57897aa2f193",
+    "previous_ledger_id": "public-operation-ledger-v10-b-complete-v11-in-progress-r3.json",
+    "previous_ledger_sha256": "d587aa258008a41a30b2344bf5e1be3be152dcf02c54d240bf0077ec788639e9",
+    "sha256": "183f2eecc17f6e3c4b4848709db2d3bcafc7b57c2edfa9eccd2c580fb202b29c",
+    "software_summary_r4_sha256": "7fd7b95144bf5393b506da44b7cb9f387096a946a2f86e2d1cf848100476afae",
+    "source_status": "draft_pending_official_test_B_and_V11_terminal_evidence",
+    "v11_accounting_sha256": "62d0d0c2cfc902c37da999a120162e295fc329e82eb8c9ea0181f30db4c3911f",
+    "v11_dev_evaluation_sha256": "4b68224a884a435a1262754328af1a39f201c0e71ceab450f6038b611eb7d0d8"
+  },
+  "entries": [
+    {
+      "accounting": {
+        "cpu_seconds": null,
+        "cuda_initialized": null,
+        "gpu_full_backbone_forward_calls": null,
+        "model_loaded": null,
+        "physical_adamw_updates": null,
+        "wall_seconds": null
+      },
+      "cause_code": null,
+      "evidence": [],
+      "evidence_status": "No matching small C receipt/review was located. The attempt label is retained from the parent history; exact cause and work remain unknown.",
+      "id": "balanced32_plus10_initial_metadata_attempt",
+      "main_nine_included": false,
+      "phase": "pre-probe metadata/preflight",
+      "status": "failed_metadata_attempt_reported"
+    },
+    {
+      "accounting": {
+        "active_wall_seconds": 74.516,
+        "backward_calls": 6,
+        "cpu_seconds": null,
+        "cuda_initialized": true,
+        "gpu_full_backbone_forward_calls": 921,
+        "limitations": "Failure ledger says tail-call counters were not merged from external instrumentation; null is unknown, not zero.",
+        "model_loaded": true,
+        "physical_adamw_updates": 6,
+        "tail_calls": null,
+        "units": {
+          "active_wall_seconds": "seconds",
+          "gpu_full_backbone_forward_calls": "full backbone forward invocations",
+          "physical_adamw_updates": "physical optimizer steps"
+        }
+      },
+      "cause_code": "scalar_tensor_byte_view_serialization",
+      "cost_relation": "separate failed probe; do not merge into the nine-run training total",
+      "evidence": [
+        {
+          "artifact_id": "preparation/failed-probe-a/ledger.json",
+          "bytes": 2423,
+          "sha256": "274ea956922070478f1fb8a3afb0ad72c29bbf5519f77e3d91960b0044a2462d",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/probe-memory-launch-a.json",
+          "bytes": 4795,
+          "sha256": "11cee3d27d1a6c2612c4b4e1d853872aed38562b4cdd2ad49c2c1a811ca0f980",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/probe-review-b.json",
+          "bytes": 2578,
+          "sha256": "d349b76180edd32c90ecb0650ba67ad3d4094737bfe712270f48b2a61b018ab6",
+          "status": "present"
+        }
+      ],
+      "id": "probe_a_scalar_tensor_hash_failure",
+      "main_nine_included": false,
+      "phase": "single-seed_task0_development_probe",
+      "probe_source_lock_sha256": "4042084a12e473fb7dd8bdff21cdc49d307339e56000fbd9ea2a4e08dbe4f229",
+      "source_sha256": "fe8f4556aea32d86d6be85b475179fde79e596e54b962ccb95da3479e2473916",
+      "status": "failed_not_a_restore_equivalence_result"
+    },
+    {
+      "accounting": {
+        "active_wall_seconds": 304.078,
+        "backward_calls": 123,
+        "cpu_seconds": null,
+        "cuda_initialized": true,
+        "gpu_full_backbone_forward_calls": 4286,
+        "launcher_elapsed_wall_seconds": 308.546,
+        "model_loaded": true,
+        "notes": "The accepted probe review records the disk-restored SLEEP path and includes three replay Adam steps in its 123-update total.",
+        "physical_adamw_updates": 123,
+        "tail_calls": 4349,
+        "units": {
+          "active_wall_seconds": "seconds",
+          "gpu_full_backbone_forward_calls": "full backbone forward invocations",
+          "launcher_elapsed_wall_seconds": "seconds",
+          "physical_adamw_updates": "physical optimizer steps"
+        }
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/probe-memory-launch-b.json",
+          "bytes": 5116,
+          "sha256": "738945a36e481668b5b21d6d1434930846f746e4a4ce5e7deb96da7b998ef05c",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/probe-result-review-b.json",
+          "bytes": 9801,
+          "sha256": "aee1022a848b1f41867f88e846fd87b2fdc24ad6897265b89e65ad9f7a8add1b",
+          "status": "present"
+        }
+      ],
+      "id": "probe_b_success",
+      "main_nine_included": false,
+      "phase": "single-seed_task0_development_transfer_probe",
+      "probe_artifact_sha256": "bd2a842a6022e844b409244c625538c849ca58b85f61d663be06028a3dcbdb15",
+      "scope": "seed 17; four-arm development transfer probe; not an independent task boundary or confirmatory result",
+      "source_sha256": "062a73798e436531420dea293f4756f0aaae73b100d99223175e6a4da2b80501",
+      "status": "complete_engineering_probe"
+    },
+    {
+      "accounting": {
+        "cuda_initialized": null,
+        "elapsed_seconds": 11.188,
+        "full_backbone_forward_calls": 57,
+        "initial_triplet_updates": 3,
+        "model_loaded": null,
+        "original_continuation_updates": 3,
+        "physical_adamw_updates_total": 9,
+        "restored_replay_updates": 3,
+        "tail_calls": 66,
+        "units": {
+          "elapsed_seconds": "seconds",
+          "full_backbone_forward_calls": "full backbone forward invocations",
+          "physical_adamw_updates_total": "physical optimizer steps"
+        }
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/original-tx-replay-qualification-amendment.json",
+          "bytes": 3416,
+          "sha256": "0b1dde38db303c90947fd94e817731ff49428314935daf518e14c636e82ee72a",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/original-tx-replay-review-b.json",
+          "bytes": 1601,
+          "sha256": "8eed777ebcec8fe427f2894015d495e9e086ad6ebf2d00563e68268a0785b78a",
+          "status": "present"
+        }
+      ],
+      "id": "original_transaction_replay_proof",
+      "main_nine_included": false,
+      "phase": "bounded_serialization_and_disk_resume_engineering_proof",
+      "preflight_sha256": "a671a02979702044df46a08278ec68584f8237fd4dfcce45b7e61468e780ea09",
+      "result_sha256": "4cfce6536f81d00daec1f311dfd31611228aec8af7f8f71ef7ce97bd03ab7185",
+      "review_receipt_sha256": "8eed777ebcec8fe427f2894015d495e9e086ad6ebf2d00563e68268a0785b78a",
+      "scope": "six call opportunities across three triplets; not scientific method evidence and not part of main-nine cost",
+      "source_sha256": "9a8368dfd52b4ab6d4fb03793d79d94b7d85567ca0dbf9bbd86c4ee53ece67d4",
+      "status": "complete_engineering_proof"
+    },
+    {
+      "accounting": {
+        "cpu_seconds": null,
+        "cuda_initialized": false,
+        "gpu_full_backbone_forward_calls": null,
+        "model_loaded": false,
+        "notes": "Pre-launch/path failure, not a training failure. No run cost is allocated from this event.",
+        "physical_adamw_updates": 0,
+        "wall_seconds": null
+      },
+      "cause_code": "queue_output_parent_missing",
+      "evidence": [
+        {
+          "artifact_id": "preparation/main-queue-review-a.json",
+          "bytes": 7257,
+          "sha256": "ae7cfa89b5ed3939f937b76ec0524e862cfa5f7f4dc0bf57446fc37de0b90aed",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/main-queue-review-b.json",
+          "bytes": 10137,
+          "sha256": "d024ccefcbea9dce4f2793eb68a5227021d455cfbce72a7fb783fd0ddd0288b2",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/failed-main-queue-a/stderr.log",
+          "bytes": 1861,
+          "sha256": "09c45e5ba3aca604461a2680f791486c4e0e08f6821a2ffd18b7a151a0d3da5d",
+          "status": "present"
+        }
+      ],
+      "id": "main_queue_a_missing_parent",
+      "main_nine_included": false,
+      "phase": "main_nine_queue_launch",
+      "status": "failed_before_cuda_initialization"
+    },
+    {
+      "accounting": {
+        "cpu_seconds": null,
+        "do_not_double_count": "The retained seed17 CMS run is one main-nine context. Its work must be counted once through the final seal, not added again as a separate queue-B increment.",
+        "first_completed_context": "seed17/CMS_ONLY",
+        "first_completed_launch_record_sha256": "0bdf7b13be92c7034f92f29221b05da2f0d59e034ee8cbb854f8bed5b4e66eff",
+        "first_completed_receipt_sha256": "4c73d9937f538b57bcd073d59c3e21a26edbdffc07ccf5398515a83471133c96",
+        "incremental_gpu_full_backbone_forward_calls": null,
+        "incremental_optimizer_updates": null,
+        "queue_snapshot_counts": {
+          "complete_receipt_verified_checkpoint_bytes_deferred": 1,
+          "pending": 7,
+          "running": 1
+        }
+      },
+      "cause_code": "raw_vs_semantic_queue_parent_contract_mismatch",
+      "evidence": [
+        {
+          "artifact_id": "preparation/main-queue-b-readonly-snapshot-001.json",
+          "bytes": 9444,
+          "sha256": "cefbee602047f9d9811eabf80a45a7ba154649e15f84f981917e1e0ed5464367",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/main-queue-review-b.json",
+          "bytes": 10137,
+          "sha256": "d024ccefcbea9dce4f2793eb68a5227021d455cfbce72a7fb783fd0ddd0288b2",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/seed17-cms-run-reuse-binding.json",
+          "bytes": 2903,
+          "sha256": "b06630b4c9cbd5adbbf5e17a5d91435d93ce45439caa97749bffa9f4f87461b9",
+          "status": "present"
+        }
+      ],
+      "evidence_status": "Snapshot locally verifies the first completed receipt and queue state; exact raw-vs-semantic exception text was not located and is intentionally omitted.",
+      "id": "main_queue_b_parent_raw_semantic_exception",
+      "main_nine_included": false,
+      "phase": "main_nine_queue_launch",
+      "status": "interrupted_after_first_cms_receipt;remaining_jobs_recovered_by_queue_b"
+    },
+    {
+      "accounting": {
+        "attempt_count": 2,
+        "cpu_seconds": null,
+        "cuda_initialized": false,
+        "gpu_full_backbone_forward_calls": 0,
+        "model_loaded": false,
+        "physical_adamw_updates": 0
+      },
+      "cause_code": "output_dir_missing_at_expected_object_level",
+      "evidence": [
+        {
+          "artifact_id": "preparation/main-seal-argument-preparation-failures.json",
+          "bytes": 882,
+          "sha256": "2f48355580ba184e103a6fba141babb34ec3df340a385dcee4c5e11e2a8821f4",
+          "status": "present"
+        }
+      ],
+      "id": "seal_argv_preparation_two_cpu_key_errors",
+      "main_nine_included": false,
+      "phase": "training_seal_argument_preparation",
+      "resolution": "Verified original contract byte SHAs, then extracted output-dir from argv. Failed attempts did not invoke the seal script and did not overwrite artifacts.",
+      "status": "failed_cpu_metadata_preparation_then_resolved"
+    },
+    {
+      "accounting": {
+        "attempt_count": 2,
+        "contract_output_created": false,
+        "cpu_seconds": null,
+        "cuda_initialized": false,
+        "gpu_full_backbone_forward_calls": 0,
+        "model_loaded": false,
+        "physical_adamw_updates": 0,
+        "run_receipts_or_seal_modified": false,
+        "test_csv_present_at_failure": false
+      },
+      "causes": [
+        "receipt_path_separator_representation_mismatch",
+        "logical_config_hash_not_passed_to_constructor"
+      ],
+      "evidence": [
+        {
+          "artifact_id": "preparation/official-contract-builder-cpu-failure-a.json",
+          "bytes": 840,
+          "sha256": "ba658121684708d2729d0d4283747ceaf6c5e89702f981387158c045f195bde0",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/official-contract-builder-cpu-failure-b.json",
+          "bytes": 806,
+          "sha256": "40691e858e46eb33b03510f4d0e3137a76368b1142f50ae66cb81c78606423e7",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/official-contract-builder-logical-hash-review.json",
+          "bytes": 1925,
+          "sha256": "ab2cacac999ff5e634f702942259b9a86c1938a79dc8e60451132b891c63cf28",
+          "status": "present"
+        }
+      ],
+      "id": "official_contract_builder_cpu_failures_a_b",
+      "main_nine_included": false,
+      "phase": "official_test_contract_preparation",
+      "source_sha256_after_review": "bce149ddf59857e8a904e8ecbadd6d178f0f576093c684fba3399baeff7d9646",
+      "status": "two_cpu_metadata_gate_failures_then_narrow_fix"
+    },
+    {
+      "accounting": {
+        "cpu_preflight_runs": 4,
+        "cpu_seconds": null,
+        "cuda_initialized": false,
+        "gpu_full_backbone_forward_calls": 0,
+        "model_loaded": false,
+        "physical_adamw_updates": 0,
+        "test_payload_read_by_preflight": false
+      },
+      "cause_code": "windows_receipt_terminal_checkpoint_path_spelling_normalized_in_evaluator_only",
+      "evidence": [
+        {
+          "artifact_id": "preparation/official-evaluator-terminal-path-fix-review.json",
+          "bytes": 2638,
+          "sha256": "dd47aa5ddcf7263b165e52671d5486e890e67b65c568c08e438457c60b837581",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/official-test-cpu-preflight-a/preflight.json",
+          "bytes": 4564,
+          "sha256": "36f0ade58e1db6da5270f13bcb56070924cfc3a97fb54584bc8e562dcab45995",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/official-test-cpu-preflight-b/preflight.json",
+          "bytes": 4564,
+          "sha256": "d3aed3a69a527f3012cfade489c3ab047bcf98ed75dc39c3fc4fd3b08b298ae9",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/official-test-memory-cpu-preflight-a/preflight.json",
+          "bytes": 4564,
+          "sha256": "36f0ade58e1db6da5270f13bcb56070924cfc3a97fb54584bc8e562dcab45995",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/official-test-memory-cpu-preflight-b/preflight.json",
+          "bytes": 4564,
+          "sha256": "d3aed3a69a527f3012cfade489c3ab047bcf98ed75dc39c3fc4fd3b08b298ae9",
+          "status": "present"
+        }
+      ],
+      "id": "official_evaluator_windows_path_fix_and_cpu_preflights",
+      "main_nine_included": false,
+      "phase": "official_test_cpu_preflight",
+      "review_receipt": "13 focused CPU tests and py_compile passed; actual V10 seal/release/run receipts were read-only validated; no CUDA/model/test access.",
+      "source_hashes": {
+        "post_fix_evaluator_sha256": "2125aa2f422695c131d6220062a4c5cf349201adf9427445aeadf2c1ef84b892",
+        "pre_fix_evaluator_sha256": "fbf5d5406b144826c82fd477e30ddd339fde8bbbb2432cf4c352e92a7e8340a1"
+      },
+      "status": "path_fix_reviewed_and_cpu_preflights_passed"
+    },
+    {
+      "accounting": {
+        "downloaded_bytes": 239961,
+        "evaluation_gpu_work": null,
+        "rows_read_by_later_live_b_evaluator": null,
+        "rows_scored_at_acquisition": 0
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/official-test-acquisition-a.json",
+          "bytes": 1275,
+          "sha256": "27ebf049e779abc8a808ab27558aa05dfb40db56e14d5649dfcefc3f9a237c6c",
+          "status": "present"
+        }
+      ],
+      "id": "official_test_payload_acquisition",
+      "interpretation": "The test payload was downloaded and checksum-verified. This ledger therefore does not claim the payload was never touched. Acquisition metadata said it was not scored then; this audit did not open CSV rows.",
+      "main_nine_included": false,
+      "payload_bytes": 239961,
+      "payload_sha256": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d",
+      "phase": "test_source_acquisition",
+      "source_revision": "9d081458ff52e53cf7e848f414e6e9344e4e6696",
+      "status": "downloaded_and_hash_verified_not_scored_at_acquisition"
+    },
+    {
+      "accounting": {
+        "cpu_seconds": null,
+        "cuda_initialized": false,
+        "gpu_full_backbone_forward_calls": 0,
+        "model_loaded": false,
+        "physical_adamw_updates": 0,
+        "test_csv_parsed": false
+      },
+      "cause_code": "evaluator_importerror_missing_export_recovered_by_removing_unused_import",
+      "evidence": [
+        {
+          "artifact_id": "preparation/official-test-launch-record-a.json",
+          "bytes": 2264,
+          "sha256": "e2ab06323f00b2ee6afb3936cacd40956f1ff35e87140602337437a06958649c",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/official-test-import-recovery-b-review.json",
+          "bytes": 3325,
+          "sha256": "cfb46bbf40f640d555ef45f133fb0031f31dbbc34330f5877e708ebf126e3fbe",
+          "status": "present"
+        }
+      ],
+      "id": "official_test_launch_a_importerror",
+      "interpretation": "Payload had already been acquired/hash-verified. Attempt A itself did not read it and failed at import before CUDA/model/test parsing.",
+      "main_nine_included": false,
+      "phase": "official_test_evaluator_startup",
+      "source_hashes": {
+        "failed_evaluator_sha256": "fbf5d5406b144826c82fd477e30ddd339fde8bbbb2432cf4c352e92a7e8340a1",
+        "recovered_evaluator_sha256": "2125aa2f422695c131d6220062a4c5cf349201adf9427445aeadf2c1ef84b892"
+      },
+      "status": "failed_before_cuda_model_or_csv_parse"
+    },
+    {
+      "accounting": {
+        "cuda_initialized": null,
+        "elapsed_seconds": null,
+        "gpu_full_backbone_forward_calls": null,
+        "model_loaded": null,
+        "notes": "The observed launch record was still evaluating. Its unknowns remain unknown; terminal cost is recorded once in the separate completed-B entry.",
+        "physical_adamw_updates": null,
+        "test_metrics": null,
+        "test_rows_read": null
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/official-test-launch-record-b.json",
+          "bytes": 1964,
+          "sha256": "4bedeb6fad33df66f5ff98fb86723e86e0cad1e12b7fff40bf8595802e0f6fb4",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/official-test-materials-readonly-review-b.json",
+          "bytes": 3627,
+          "sha256": "f8e2525c03597990c8af4454894bff0a09142532f68cb24474e98c8b54e65b7a",
+          "status": "present"
+        }
+      ],
+      "id": "official_test_launch_b_pending",
+      "interpretation": "This ledger does not attach to, poll, or read the running B evaluation. The last local launch metadata says evaluating; work and metrics remain unknown until the terminal artifact is reviewed.",
+      "main_nine_included": false,
+      "phase": "official_test_evaluation",
+      "resolved_by_entry_id": "official_test_launch_b_complete",
+      "status": "preterminal_launch_record_snapshot_superseded_by_completed_B_entry"
+    },
+    {
+      "accounting": {
+        "cpu_test_runtime_seconds": null,
+        "final_failed": 0,
+        "final_passed": 153,
+        "gpu_work": 0,
+        "initial_failed": 2,
+        "initial_passed": 151,
+        "model_training_or_scoring_source_changed": false
+      },
+      "cause_code": "two_public_tests_assumed_two_specific_checkout_roots",
+      "evidence": [
+        {
+          "artifact_id": "preparation/public-core-copy-a.json",
+          "bytes": 19788,
+          "sha256": "8931c3f069d32816734f0100a6d3b00f30cd4e59d853faafc87fcf5e139fa411",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/public-core-test-portability-update-b.json",
+          "bytes": 1143,
+          "sha256": "1033716bb62e26e08387dd77e87eeac0f3442ac65c77f0d91f0b7ed9511ee654",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/public-auxiliary-copy-c.json",
+          "bytes": 3230,
+          "sha256": "6da8e20c67adb8c1d3feea5779f858bf3968d6cb65ddd67a42600a8696030b53",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/software-acceptance-observed-tool-summary.json",
+          "bytes": 3317,
+          "sha256": "b42ca281b0d1200512f20f80e8239b0b732c93fd2c8e08a6c24a6018daa61b4f",
+          "status": "later_tool_console_transcription_not_original_stdout"
+        }
+      ],
+      "evidence_status": "later console transcription located; original stdout remains unavailable; counts are not summed as unique experiments",
+      "id": "public_test_copy_portability_fail_then_pass",
+      "main_nine_included": false,
+      "phase": "public_tree_test_portability_checks",
+      "status": "reported_151_pass_2_fail_then_153_pass_after_test_only_portability_fix"
+    },
+    {
+      "accounting": {
+        "cpu_test_runtime_seconds": null,
+        "final_failed": 0,
+        "final_passed": 65,
+        "gpu_work": 0,
+        "initial_failed": 2,
+        "initial_passed": 62,
+        "model_training_or_scoring_source_changed": false
+      },
+      "cause_code": "guard_preloads_torch_but_test_assumed_no_torch_import",
+      "evidence": [
+        {
+          "artifact_id": "preparation/public-v11-cost-test-fix-copy-d.json",
+          "bytes": 611,
+          "sha256": "bba2b807a98153a0675346c38d043fc20cb00d39bf558a94ebd1420bb4d03c61",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-offline-accounting-source-readiness.json",
+          "bytes": 2395,
+          "sha256": "e68efa4bbd610a13f85b5ccaaadbdfb4de77ea0ca1ed76c9cc5ae5bb178b518b",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-offline-accounting-source-review-final.json",
+          "bytes": 3541,
+          "sha256": "111125d7a9d1018bff8e055ccbdc2d4de356cb6023420586cb94d2e64356d2b7",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/software-acceptance-observed-tool-summary.json",
+          "bytes": 3317,
+          "sha256": "b42ca281b0d1200512f20f80e8239b0b732c93fd2c8e08a6c24a6018daa61b4f",
+          "status": "later_tool_console_transcription_not_original_stdout"
+        }
+      ],
+      "evidence_status": "later console transcription located; original stdout remains unavailable; counts are not summed as unique experiments",
+      "id": "v11_cost_test_guard_preload_conflict",
+      "main_nine_included": false,
+      "phase": "public_v11_cost_accounting_cpu_tests",
+      "resolution": "Test now checks Torch identity is unchanged and torch.load is prohibited, with a separate isolated import check. Accounting source and training/scoring source were not changed by the copy receipt.",
+      "status": "reported_62_pass_2_fail_then_65_pass_after_test_fix"
+    },
+    {
+      "accounting": {
+        "cost_relation": "post-seal inference; whole nine-context joint cost; not per-context latency and not training cost",
+        "cuda_initialized": true,
+        "elapsed_seconds": 8448.562,
+        "full_backbone_forward_calls": 155329,
+        "model_loaded": true,
+        "physical_adamw_updates": 0,
+        "primary_rows_scored": 3080,
+        "raw_test_rows_read": 3080,
+        "retry_count": 0,
+        "secondary_disjoint_rows_scored": 3073,
+        "tail_calls": 301801,
+        "units": {
+          "elapsed_seconds": "seconds",
+          "full_backbone_forward_calls": "forward invocations",
+          "physical_adamw_updates": "optimizer steps",
+          "tail_calls": "tail executions"
+        }
+      },
+      "evidence": [
+        {
+          "artifact_id": "private-output/official-test-B/evaluation.json",
+          "bytes": 508622,
+          "sha256": "3d582ce11bd95b2f0020b69a1508023408410cd0caddfcdc432724443d99823a",
+          "status": "present_aggregate_only_reference"
+        },
+        {
+          "artifact_id": "preparation/official-test-launch-record-b.json",
+          "bytes": 2286,
+          "sha256": "e4cf89a740f08bec1ed024a3b9f682d348ec149c1e88a5f40ef2ec69a04fe5c0",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/actual-v10-scalar-crosscheck-a.json",
+          "bytes": 17406,
+          "sha256": "2708572510c2d2ec21e28d7eb871cf3bf1f8d33ae3e35e6380f0e643e9823344",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/official-v10-result-v11-bundle-review.json",
+          "bytes": 3661,
+          "sha256": "faf5bef787963112dd9f2fd026545b739856b3efc1f9f12c9d377fe2d37dee35",
+          "status": "present"
+        }
+      ],
+      "id": "official_test_launch_b_complete",
+      "main_nine_included": false,
+      "phase": "official_V10_test_evaluation_after_training_seal",
+      "result_sha256": "3d582ce11bd95b2f0020b69a1508023408410cd0caddfcdc432724443d99823a",
+      "status": "complete_terminal_validated"
+    },
+    {
+      "accounting": {
+        "cpu_seconds": null,
+        "cuda_initialized": null,
+        "gpu_full_backbone_forward_calls": null,
+        "model_loaded": false,
+        "notes": "Postprocessor expected task_breakdown under each metric; frozen result stores it alongside metric objects under each context. Raw stdout absent; do not infer elapsed/GPU work.",
+        "physical_adamw_updates": 0,
+        "training_or_scoring_updates": 0
+      },
+      "cause_code": "task_breakdown_nesting_mismatch",
+      "correction_scope": "Read existing evaluation JSON only; preserve metric definitions and original evaluation bytes.",
+      "evidence": [
+        {
+          "artifact_id": "preparation/actual-v10-reanalysis-a-failure.json",
+          "bytes": 1037,
+          "sha256": "985197cbcc216d6e29c71acd162aa5ea6cfdc4420e9f19d66a39284548febb59",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/reanalysis-review-c5a2.json",
+          "bytes": 391381,
+          "sha256": "6ffa5440904b7760517831a8e86100e627a658e54297ad86b57ee62a24b8509c",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/actual-v10-scalar-crosscheck-a.json",
+          "bytes": 17406,
+          "sha256": "2708572510c2d2ec21e28d7eb871cf3bf1f8d33ae3e35e6380f0e643e9823344",
+          "status": "present"
+        }
+      ],
+      "id": "v10_readonly_reanalyzer_top_level_task_breakdown_shape_failure",
+      "input_evaluation_sha256": "3d582ce11bd95b2f0020b69a1508023408410cd0caddfcdc432724443d99823a",
+      "inputs_unchanged_after_reanalysis": true,
+      "main_nine_included": false,
+      "phase": "post_evaluation_aggregate_reanalysis",
+      "status": "failed_before_output_then_readonly_shape_correction_verified"
+    },
+    {
+      "accounting": {
+        "cpu_seconds": null,
+        "cuda_initialized": null,
+        "gpu_full_backbone_forward_calls": null,
+        "model_loaded": null,
+        "notes": "Treat as a postprocessing attempt, not a model run. Exact work/cause detail beyond result-schema mismatch remains unknown.",
+        "physical_adamw_updates": 0,
+        "training_or_scoring_updates": 0
+      },
+      "correction_scope": "Read-only postprocessor/schema compatibility repair; official evaluation bytes and scalar metrics were not changed.",
+      "evidence": [
+        {
+          "artifact_id": "preparation/public-actual-schema-preflight-repair-copy-e.json",
+          "bytes": 3025,
+          "sha256": "a7686d55ac2708ca013906ca4d077fa2a3070c9d3850903521a824dba9562330",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/final-accounting-aggregate-r3-test.json",
+          "bytes": 215719,
+          "sha256": "51c831a18f66591239d8cbe940846a32037615e08d7536f52182233c06b039f0",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/actual-v10-scalar-crosscheck-a.json",
+          "bytes": 17406,
+          "sha256": "2708572510c2d2ec21e28d7eb871cf3bf1f8d33ae3e35e6380f0e643e9823344",
+          "status": "present"
+        }
+      ],
+      "evidence_status": "parent-reported failure; no raw stdout/direct failure artifact located in this C evidence inventory",
+      "id": "v10_offline_accounting_postprocessor_schema_mismatch",
+      "main_nine_included": false,
+      "phase": "read_only_offline_accounting_postprocess",
+      "status": "reported_shape_failure_readonly_postprocessor_corrected_original_metrics_unchanged"
+    },
+    {
+      "accounting": {
+        "cpu_wall_seconds": 3.625,
+        "cuda_initialized": false,
+        "foundation_checkpoint_cpu_deserialized": true,
+        "gpu_full_backbone_forward_calls": null,
+        "job_count": 6,
+        "jobs_completed": 0,
+        "model_loaded": false,
+        "notes": "CPU preflight read train/dev metadata and CPU-deserialized the qualified foundation checkpoint schema; it did not load the base model, initialize CUDA, update parameters, or read official-test CSV. GPU cost is unknown/not applicable to this stopped preflight; do not infer.",
+        "physical_adamw_updates": 0
+      },
+      "cause_code": "training_manifest_field_name_mismatch",
+      "evidence": [
+        {
+          "artifact_id": "preparation/v11-preflight-manifest-name-fix/diagnosis-receipt.json",
+          "bytes": 4721,
+          "sha256": "4bf7f6acdb63123eb145fc3023a9aa4653349ca2fe8d1ed3643aa7b99351852b",
+          "status": "present"
+        }
+      ],
+      "id": "v11_serial_startup_a_manifest_binding_name_failure",
+      "main_nine_included": false,
+      "phase": "V11_serial_launcher_CPU_preflight",
+      "resolution": "Wrapper-only manifest binding name fix; six fresh contracts prepared afterward. The repaired training jobs and 15-context development evaluation are not included in this ledger revision.",
+      "status": "stopped_before_any_training_job_wrapper_contract_binding_mismatch"
+    },
+    {
+      "accounting": {
+        "failed": 0,
+        "gpu_work": 0,
+        "model_training_or_scoring_source_changed": false,
+        "optimizer_updates": 0,
+        "passed": 158
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/relocated-component-v10-e-acceptance.json",
+          "bytes": 3362,
+          "sha256": "53da1169d320b2a5162b7d926da47459bb6af8e93a37a690ae77534fa021f523",
+          "status": "present_receipt"
+        },
+        {
+          "artifact_id": "preparation/software-acceptance-observed-tool-summary-r2.json",
+          "bytes": 4488,
+          "sha256": "65e283429d16d2e8249561316f9188b338caebe8d611f28b20bace1905d0f396",
+          "status": "later_tool_console_transcription_not_original_stdout"
+        }
+      ],
+      "evidence_status": "later console transcription linked to acceptance receipt; not original stdout",
+      "id": "public_v10_e_component_cpu_acceptance",
+      "main_nine_included": false,
+      "phase": "public_component_cpu_acceptance",
+      "status": "passed_158"
+    },
+    {
+      "accounting": {
+        "failed": 0,
+        "gpu_work": 0,
+        "model_training_or_scoring_source_changed": false,
+        "optimizer_updates": 0,
+        "passed": 66
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/relocated-component-v11-e-acceptance.json",
+          "bytes": 1771,
+          "sha256": "2cddabf9d670446c1ea32c268cd2c2279f80253cf5b471b97dd8a1422711de1f",
+          "status": "present_receipt"
+        },
+        {
+          "artifact_id": "preparation/software-acceptance-observed-tool-summary-r2.json",
+          "bytes": 4488,
+          "sha256": "65e283429d16d2e8249561316f9188b338caebe8d611f28b20bace1905d0f396",
+          "status": "later_tool_console_transcription_not_original_stdout"
+        }
+      ],
+      "evidence_status": "later console transcription linked to acceptance receipt; not original stdout",
+      "id": "public_v11_e_component_cpu_acceptance",
+      "main_nine_included": false,
+      "phase": "public_component_cpu_acceptance",
+      "status": "passed_66"
+    },
+    {
+      "accounting": {
+        "active_wall_seconds": 332.985,
+        "counted_once": true,
+        "full_backbone_forward_calls": 6894,
+        "notes": "Counted once; optimizer-step count was not supplied and remains unknown.",
+        "optimizer_updates": null,
+        "physical_run_count": 1,
+        "process_wall_seconds": 344.735,
+        "test_data_accessed_by_launcher": false
+      },
+      "evidence": [
+        {
+          "artifact_id": "v11-first-scientific-run-terminal-receipt",
+          "sha256": "ae4094c0e9965ab78d730ab858aa124f48b580a208f862b2be8e9e9626406e89",
+          "status": "present_parent_verified_terminal_receipt"
+        },
+        {
+          "artifact_id": "v11-first-scientific-run-terminal-checkpoint",
+          "sha256": "b19de93708598aa5a22b9b75d36ffed41939ef1f6e06da4c6961cec0125d281b",
+          "status": "present_parent_verified_checkpoint_hash"
+        }
+      ],
+      "id": "v11_first_scientific_run_completed",
+      "main_nine_included": false,
+      "phase": "V11_serial_training",
+      "seed_and_arm": "not encoded here; terminal receipt hash is the run identity",
+      "status": "one_scientific_run_complete_exit_0"
+    },
+    {
+      "accounting": {
+        "new_scientific_runs_from_reader_failure": 0,
+        "notes": "Original status is preserved unchanged. Its zero completed count is a status-reader artifact, not evidence of zero work for the completed first run. Parent reader expected a different official-test-access field than the launcher emitted; actual launcher field was test_data_accessed_by_launcher=false. Parent reports a reader-only correction and focused tests. Wrapper overhead was not independently timed. The corrected reader checks test_data_accessed_by_launcher; parent reports the fix as source 7f6e9 with focused tests 2c7a9 (prefixes only).",
+        "optimizer_updates": null,
+        "original_status_completed_jobs": 0,
+        "overhead_seconds": null,
+        "reported_status_exit_code": 2,
+        "scientific_runs_completed_by_this_status_record": 0,
+        "test_data_accessed_by_launcher": false
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/v11-orchestrator-launch-record-key-fix/diagnosis-receipt.json",
+          "bytes": 3348,
+          "sha256": "d60d83b0bcf50230beb2efb693660acb3160fafd6458d96aae84c8b046a58166",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-orchestrator-launch-record-key-fix/serial-run-status-b-failed-original.json",
+          "bytes": 859,
+          "sha256": "2ae2737b496a4a3208cb9a3144f2e77537303ccb765b10437809a7f332fce368",
+          "status": "present_preserved_original"
+        }
+      ],
+      "evidence_status": "diagnosis and original status hash-bound; no raw stdout included",
+      "id": "v11_parent_orchestrator_status_reader_key_failure",
+      "main_nine_included": false,
+      "phase": "V11_serial_orchestration",
+      "resolution": "The first valid scientific run remains counted once in the six-run aggregate. The reader looked for an obsolete field name; the actual launcher field test_data_accessed_by_launcher was false. A reader-only correction enabled the remaining manual launches; no training source or run was repeated because of this reader failure.",
+      "status": "resolved_reader_failure_not_a_scientific_run_failure"
+    },
+    {
+      "accounting": {
+        "active_wall_seconds": 1942.9849999996368,
+        "cost_basis": "sum of per-run active-work meters; no unmeasured supervisor/orchestrator overhead is represented as zero",
+        "dev_eval_contexts_included": 15,
+        "executed_input_tokens_including_padding": 5346442,
+        "full_backbone_forward_calls": 38686,
+        "full_backbone_forward_tokens": 5081220,
+        "padded_input_tokens": 265222,
+        "per_arm": {
+          "LTI_CANONICAL_TEACHER": {
+            "active_wall_seconds": 971.155999999959,
+            "physical_adamw_updates": 2370,
+            "runs": 3,
+            "sleep_events": 79,
+            "wake_updates": 992
+          },
+          "LTI_NO_REWARD": {
+            "active_wall_seconds": 971.8289999996778,
+            "physical_adamw_updates": 2370,
+            "runs": 3,
+            "sleep_events": 79,
+            "wake_updates": 992
+          }
+        },
+        "physical_adamw_updates": 4740,
+        "sampled_output_tokens": 28588,
+        "scientific_training_runs_completed": 6,
+        "scientific_training_runs_pending": 0,
+        "scientific_training_runs_running": 0,
+        "sleep_events": 158,
+        "tail_backward_calls": 6724,
+        "tail_backward_tokens": 105097,
+        "tail_calls": 43426,
+        "tail_grad_enabled_calls": 6724,
+        "tail_no_grad_calls": 36702,
+        "update_attempts": 4740,
+        "wake_updates": 1984
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/v11-accounting-aggregate-b.json",
+          "sha256": "62d0d0c2cfc902c37da999a120162e295fc329e82eb8c9ea0181f30db4c3911f",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-development-final-result-review-a.json",
+          "status": "present"
+        },
+        {
+          "artifact_id": "private/v11-training-seal-and-run-receipts",
+          "status": "workspace_only_not_bundled"
+        }
+      ],
+      "id": "v11_all_six_scientific_runs_completed",
+      "interpretation": "Three seeds are three class orders/seeded executions from the same frozen backbone, not three independent model pretraining initializations. V11 objectives do not add gold-target loss; canonical-label validity only gates the fixed reward term. Metrics are dev-only.",
+      "metrics": {
+        "LTI_CANONICAL_TEACHER": {
+          "accuracy_mean": 0.2878787878787879,
+          "accuracy_sample_sd": 0.058622854915615474,
+          "gold_label_token_mean_nll_mean": 2.27825220327147,
+          "gold_label_token_mean_nll_sample_sd": 0.15514449659656768,
+          "per_seed": [
+            {
+              "accuracy": 0.30454545454545456,
+              "correct": 67,
+              "count": 220,
+              "gold_label_token_mean_nll": 2.4540430928495796,
+              "seed": 17
+            },
+            {
+              "accuracy": 0.22272727272727272,
+              "correct": 49,
+              "count": 220,
+              "gold_label_token_mean_nll": 2.1604738673872568,
+              "seed": 29
+            },
+            {
+              "accuracy": 0.33636363636363636,
+              "correct": 74,
+              "count": 220,
+              "gold_label_token_mean_nll": 2.2202396495775742,
+              "seed": 43
+            }
+          ]
+        },
+        "LTI_NO_REWARD": {
+          "accuracy_mean": 0.3242424242424243,
+          "accuracy_sample_sd": 0.025846548650351485,
+          "gold_label_token_mean_nll_mean": 2.1986346212864825,
+          "gold_label_token_mean_nll_sample_sd": 0.29464956157745775,
+          "per_seed": [
+            {
+              "accuracy": 0.29545454545454547,
+              "correct": 65,
+              "count": 220,
+              "gold_label_token_mean_nll": 2.502508121322502,
+              "seed": 17
+            },
+            {
+              "accuracy": 0.33181818181818185,
+              "correct": 73,
+              "count": 220,
+              "gold_label_token_mean_nll": 1.9141684929416938,
+              "seed": 29
+            },
+            {
+              "accuracy": 0.34545454545454546,
+              "correct": 76,
+              "count": 220,
+              "gold_label_token_mean_nll": 2.179227249595252,
+              "seed": 43
+            }
+          ]
+        }
+      },
+      "phase": "V11 scientific training aggregate",
+      "scope": "Two frozen objective arms across seeds 17, 29, 43; each run completes the prescribed task-1 continuation. The aggregate counts each of six runs once; the seed-17 first run previously listed is not added again.",
+      "status": "complete_six_runs"
+    },
+    {
+      "accounting": {
+        "active_wall_seconds": 402.953,
+        "candidate_input_tokens": 1738429,
+        "candidate_input_tokens_note": "candidate-only input count, not total evaluation tokens",
+        "dev_eval_contexts_included": 15,
+        "evaluation_rows_per_context": 220,
+        "forward_calls": 5018,
+        "official_test_accessed": false,
+        "optimizer_updates": 0,
+        "raw_examples_saved": false,
+        "scientific_training_runs_completed": 6,
+        "tail_calls": 11766
+      },
+      "checks": {
+        "3_seeds_x_5_arms_x_220_rows": true,
+        "combined_reanalysis_rows_and_input_hashes": true,
+        "combined_summary_means_sample_sd_and_paired_deltas_recomputed": 56,
+        "development_protocol_and_frozen_pins": true,
+        "frozen_contexts_and_backbone_unchanged": true,
+        "global_77_candidate_set_unmasked": true,
+        "official_test_not_accessed_in_V11": true,
+        "old_current_groups_each_110_and_reconcile": true,
+        "optimizer_updates_zero": true,
+        "six_task1_receipts_accuracy_correct_macro_exact": true,
+        "three_foundation_receipts_bound_by_sha": true
+      },
+      "evaluation_summary": {
+        "CMS_ONLY": {
+          "all77": {
+            "mean": 0.3696969696969697,
+            "sample_sd": 0.02049658978555863
+          },
+          "current": {
+            "mean": 0.7393939393939394,
+            "sample_sd": 0.04099317957111726
+          },
+          "gold_label_token_mean_nll_rowmean": {
+            "count_per_seed": 220,
+            "mean": 1.4848532147232838,
+            "sample_sd": 0.08804628331664911
+          },
+          "greedy_accuracy": {
+            "mean": 0.27424242424242423,
+            "sample_sd": 0.015963111746746566
+          },
+          "length_mean_accuracy": {
+            "mean": 0.36363636363636365,
+            "sample_sd": 0.025308019831045577
+          },
+          "old": {
+            "mean": 0.0,
+            "sample_sd": 0.0
+          }
+        },
+        "GOLD_ADDITIVE": {
+          "all77": {
+            "mean": 0.5621212121212121,
+            "sample_sd": 0.03865863885506993
+          },
+          "current": {
+            "mean": 0.6272727272727272,
+            "sample_sd": 0.0721568539381252
+          },
+          "gold_label_token_mean_nll_rowmean": {
+            "count_per_seed": 220,
+            "mean": 1.009450876729732,
+            "sample_sd": 0.17223891792740426
+          },
+          "greedy_accuracy": {
+            "mean": 0.26515151515151514,
+            "sample_sd": 0.07624088257823712
+          },
+          "length_mean_accuracy": {
+            "mean": 0.5727272727272728,
+            "sample_sd": 0.09843821739867144
+          },
+          "old": {
+            "mean": 0.49696969696969695,
+            "sample_sd": 0.027773186030035372
+          }
+        },
+        "LTI_CANONICAL_TEACHER": {
+          "all77": {
+            "mean": 0.2878787878787879,
+            "sample_sd": 0.058622854915615474
+          },
+          "current": {
+            "mean": 0.5484848484848485,
+            "sample_sd": 0.10959479587894018
+          },
+          "gold_label_token_mean_nll_rowmean": {
+            "count_per_seed": 220,
+            "mean": 2.278351446043587,
+            "sample_sd": 0.1549990799638787
+          },
+          "greedy_accuracy": {
+            "mean": 0.11818181818181818,
+            "sample_sd": 0.02530801983104555
+          },
+          "length_mean_accuracy": {
+            "mean": 0.31363636363636366,
+            "sample_sd": 0.052420739066685436
+          },
+          "old": {
+            "mean": 0.02727272727272727,
+            "sample_sd": 0.03962635403218794
+          }
+        },
+        "LTI_NO_REWARD": {
+          "all77": {
+            "mean": 0.3242424242424243,
+            "sample_sd": 0.025846548650351485
+          },
+          "current": {
+            "mean": 0.5393939393939393,
+            "sample_sd": 0.1240945165420804
+          },
+          "gold_label_token_mean_nll_rowmean": {
+            "count_per_seed": 220,
+            "mean": 2.1986097249682204,
+            "sample_sd": 0.2943365521220382
+          },
+          "greedy_accuracy": {
+            "mean": 0.1303030303030303,
+            "sample_sd": 0.042234423832625316
+          },
+          "length_mean_accuracy": {
+            "mean": 0.31666666666666665,
+            "sample_sd": 0.08459105971035066
+          },
+          "old": {
+            "mean": 0.10909090909090909,
+            "sample_sd": 0.08953507092541914
+          }
+        },
+        "SLEEP_ADDITIVE": {
+          "all77": {
+            "mean": 0.29848484848484846,
+            "sample_sd": 0.06053025562253993
+          },
+          "current": {
+            "mean": 0.5333333333333333,
+            "sample_sd": 0.12106051124507988
+          },
+          "gold_label_token_mean_nll_rowmean": {
+            "count_per_seed": 220,
+            "mean": 2.2107684151071942,
+            "sample_sd": 0.18385806992771359
+          },
+          "greedy_accuracy": {
+            "mean": 0.1409090909090909,
+            "sample_sd": 0.032777738867854456
+          },
+          "length_mean_accuracy": {
+            "mean": 0.30606060606060603,
+            "sample_sd": 0.0670101345075636
+          },
+          "old": {
+            "mean": 0.06363636363636363,
+            "sample_sd": 0.0
+          }
+        }
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/v11-development-final-result-review-a.json",
+          "bytes": 6624,
+          "sha256": "7ed7ea3cf467bb92fd13a96e596727581f30f98a87255436786267b4a4836908",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-development-memory-contract-a.json",
+          "bytes": 4416,
+          "sha256": "dc227e7cbd3b13fcea1d8ce4033fa231f3831096bff29fa4e96857b8e2c8bc17",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-development-launch-record-a.json",
+          "bytes": 1467,
+          "sha256": "a2c57ea60f7fcb76427c0db13fb6f49f3a440032778e64a12eaed5b1affab9b1",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-development-reference-a.json",
+          "bytes": 24442,
+          "sha256": "0fdf1cb21df3e4d7879bfeaa7a517f6b78c82464e5821e673d4ad50ba093166c",
+          "status": "present"
+        }
+      ],
+      "id": "v11_development_evaluation_completed",
+      "interpretation": "Fixed 15 contexts evaluate three seeds \u00d7 five checkpoints/arms on the frozen 220-row clean development cohort; not official-test evidence. No optimizer updates or checkpoint selection were performed.",
+      "phase": "fixed train-derived development evaluation",
+      "status": "complete_fixed_15_contexts_zero_update"
+    },
+    {
+      "accounting": {
+        "base_model_loaded": false,
+        "cuda_initialized": false,
+        "known_wrong_registry_attempt_seconds": 3.625,
+        "official_test_csv_read": false,
+        "optimizer_updates": 0,
+        "other_failed_attempt_wall_seconds": null,
+        "other_failed_attempt_work": null,
+        "scored_contexts_before_successful_reference": 0
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/v11-dev-reference-sourcehash-fix-diagnosis.json",
+          "sha256": "0a7397b6961f18812c4e3d52a6809f797f1594becaf667e51681743ef1e0e5c8",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-dev-reference-source-fix-independent-review.json",
+          "sha256": "01c98272422001d9619ce00f12d24433a42af37e9af121865506b278e030199b",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-dev-reference-debug-b.stderr.txt",
+          "bytes": 1101,
+          "sha256": "ba78d1c533e89c53042c10247546bd48c5dc958ea4823625ad64be26e484a25d",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-dev-reference-debug-b.stdout.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-dev-reference-debug-c.stderr.txt",
+          "bytes": 1024,
+          "sha256": "e9e46e5cd8086964404809c88b893ac9aca27a750c904155170298ddf7f391dc",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-dev-reference-debug-c.stdout.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-dev-reference-debug-d.stderr.txt",
+          "bytes": 1234,
+          "sha256": "b30645621364722993bc2c146e0fb8ee62a1ce86384b31c539bbe74879e62907",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-dev-reference-debug-d.stdout.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": "present"
+        }
+      ],
+      "id": "v11_development_reference_cpu_preparation_failures_and_recovery",
+      "interpretation": "Several preparation attempts failed before any score computation because of source-map, required-argument, and producer-status metadata mismatches. The corrected reference was built from the actual completed producer metadata. Unknown preparation costs remain unknown; no failed attempt is reclassified as a scientific run.",
+      "phase": "CPU-only reference metadata preparation",
+      "status": "resolved_after_multiple_metadata_binding_failures"
+    },
+    {
+      "accounting": {
+        "ordinary_a_deselected": 1,
+        "ordinary_a_failed": 0,
+        "ordinary_a_passed": 363,
+        "scientific_updates": 0,
+        "v10_e_failed": 0,
+        "v10_e_passed": 158,
+        "v11_f_passed": 67,
+        "v11_g_failed": 1,
+        "v11_g_passed": 70,
+        "v11_h_failed": 0,
+        "v11_h_passed": 71
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/software-acceptance-observed-tool-summary-r4.json",
+          "bytes": 6244,
+          "sha256": "7fd7b95144bf5393b506da44b7cb9f387096a946a2f86e2d1cf848100476afae",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/relocated-component-v10-e-acceptance.json",
+          "bytes": 3362,
+          "sha256": "53da1169d320b2a5162b7d926da47459bb6af8e93a37a690ae77534fa021f523",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/relocated-component-v11-h-acceptance.json",
+          "bytes": 1771,
+          "sha256": "18de8713f52ac6f32ef7f4f96e9d139c19c969e3427ca45ab87518d1a9aa50cd",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/relocated-ordinary-a-acceptance.json",
+          "bytes": 8137,
+          "sha256": "4ba55e385e99f06808efbe45eb62f208473b531c777ef32580775d1c70c1039e",
+          "status": "present"
+        }
+      ],
+      "id": "public_component_software_acceptance_latest_h",
+      "interpretation": "Counts are distinct recorded software-suite attempts and overlap; they are not summed as unique tests or science. H is the final V11 component acceptance. The summary is a later transcription, not captured raw stdout.",
+      "phase": "software CPU component acceptance",
+      "status": "complete_latest_attempts_recorded"
+    },
+    {
+      "accounting": {
+        "by_seed": {
+          "17": {
+            "events": {
+              "LTI_CANONICAL_TEACHER": 28,
+              "LTI_NO_REWARD": 28,
+              "full_saved_plan_matches": 28,
+              "mismatches_by_field": {},
+              "missing_from_canonical_teacher": 0,
+              "missing_from_no_reward": 0,
+              "paired_event_keys": 28,
+              "request_digest_matches": 28
+            }
+          },
+          "29": {
+            "events": {
+              "LTI_CANONICAL_TEACHER": 27,
+              "LTI_NO_REWARD": 27,
+              "full_saved_plan_matches": 27,
+              "mismatches_by_field": {},
+              "missing_from_canonical_teacher": 0,
+              "missing_from_no_reward": 0,
+              "paired_event_keys": 27,
+              "request_digest_matches": 27
+            }
+          },
+          "43": {
+            "events": {
+              "LTI_CANONICAL_TEACHER": 24,
+              "LTI_NO_REWARD": 24,
+              "full_saved_plan_matches": 24,
+              "mismatches_by_field": {},
+              "missing_from_canonical_teacher": 0,
+              "missing_from_no_reward": 0,
+              "paired_event_keys": 24,
+              "request_digest_matches": 24
+            }
+          }
+        },
+        "matched_request_digests": 79,
+        "mismatches": 0,
+        "missing": 0,
+        "saved_plans_matched": 79
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/v11-request-cohort-balance-b.json",
+          "sha256": "fbf0ff97f2fadd6043e9166cca4a8843da963304ed4d87aefe4a57897aa2f193",
+          "status": "present"
+        }
+      ],
+      "id": "v11_request_cohort_balance_safe_aggregate",
+      "interpretation": "Audit compares only safe aggregate counts and salted digests; it does not establish RNG or trajectory equivalence and includes no raw request IDs, text, labels, or token IDs. Canonical capture filename: v11-request-cohort-balance.json.",
+      "phase": "request cohort alignment audit",
+      "status": "complete_aggregate_only"
+    },
+    {
+      "accounting": {
+        "new_gpu_forward_calls": 0,
+        "new_scientific_training_runs": 0,
+        "optimizer_updates": 0,
+        "wall_seconds": null
+      },
+      "cause_code": "argparse_dest_final_operation_ledger_vs_operation_ledger",
+      "evidence": [
+        {
+          "artifact_id": "private/capture-helper-before-cli-namespace-fix-bf29.py.txt",
+          "bytes": 40850,
+          "sha256": "bf296eab9392af152470a8df107e31bdf7d9d00ea4d1079cd30539139eef65d8",
+          "status": "preserved_private"
+        }
+      ],
+      "id": "final_capture_cli_namespace_prewrite_failure",
+      "phase": "publication packaging after all science complete",
+      "scope": "Original six-root-file capture and all experiment outputs unchanged; only the local copy-helper CLI attribute was corrected. No scoring or model code changed.",
+      "status": "failed_before_any_new_capture_output"
+    }
+  ],
+  "evidence_provenance_note": "Evidence artifact_id values and status=present describe artifacts observed in the execution workspace; they do not mean every underlying raw log or private artifact is redistributed. The deliverable artifact-provenance inventory is authoritative for files actually bundled. The original training seal is preserved byte-for-byte; historical absolute run paths inside that seal are inert provenance fields and are not followed by the reanalyzer. The software-acceptance-observed-tool-summary-r4 is a later transcription of observed tool-console summaries, not original stdout. Its overlapping CPU suites are not summed as unique scientific runs.",
+  "intended_destination": "D publication after root review; this C JSON is not an executable contract",
+  "no_machine_paths_or_raw_errors": true,
+  "non_executed_candidates": [
+    {
+      "accounting": {
+        "gpu_work": null,
+        "optimizer_updates": null,
+        "scientific_v11_runs": 0
+      },
+      "draft_evidence": {
+        "v11_actual_config_frozen": false,
+        "v11_launch_contracts_created": false,
+        "v11_training_runs_started": 0
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/v11-eos-draft-archive/ledger.json",
+          "bytes": 2785,
+          "sha256": "69cc06d427f84e58995a76299414049192d002cc7ccb75401b33547fcd6bb082",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/original-tx-replay-qualification-amendment.json",
+          "bytes": 3416,
+          "sha256": "0b1dde38db303c90947fd94e817731ff49428314935daf518e14c636e82ee72a",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/v11-final-cpu-acceptance-a.json",
+          "bytes": 1157,
+          "sha256": "4cfbd06b68a6eac92019d4bc938b505c9ec04779995d37e4e0a2efc324e50cc9",
+          "status": "present"
+        },
+        {
+          "artifact_id": "preparation/orchestrator-final-source-review-83d3.json",
+          "bytes": 1876,
+          "sha256": "3e98c6f837dc0fc5d61b65a3df40f720df52cbcf9ccdc3d12a0e1c72063de356",
+          "status": "present"
+        }
+      ],
+      "helper_reuse": "The archived EOS draft notes its old generic memory-policy installer was reused by the separate nine-update original-transaction proof; that proof did not execute the prospective EOS method as a scientific V11 run.",
+      "id": "v11_eos_draft_and_pure_code_qualification",
+      "status": "draft_not_executed_as_v11_training_or_scoring"
+    },
+    {
+      "accounting": {
+        "gpu_work": null,
+        "optimizer_updates": null,
+        "production_aggregate": null
+      },
+      "actual_v11_accounting_run": false,
+      "evidence": [
+        {
+          "artifact_id": "preparation/v11-accounting-candidate-history-note.json",
+          "bytes": 1876,
+          "sha256": "7744ece148da9b96a622555eabdbd63b383f7d2f73b57e0a2a79f891f09c823b",
+          "status": "present"
+        }
+      ],
+      "exact_source_bytes_available": false,
+      "history_note": "The history record explicitly says the prior exact source was not copied, reverse reconstruction did not match, and no production V11 accounting run occurred. The later candidate is separate and must not be substituted as exact 47f bytes.",
+      "id": "v11_cost_accounting_47f_candidate",
+      "source_sha256": "47f595560c98817d2b5e78dcca9669f2e53a0c99b4dc48cd36bcd9ac8235315a",
+      "status": "candidate_only_exact_source_bytes_not_archived_not_scientifically_executed"
+    },
+    {
+      "accounting": {
+        "dev_eval_contexts_included": 0,
+        "gpu_work_for_completed_run": {
+          "active_wall_seconds": 332.985,
+          "forward_calls": 6894,
+          "process_wall_seconds": 344.735
+        },
+        "note": "One completed run is counted only in entries.v11_first_scientific_run_completed. The second run is active and four remain; this is not a six-run aggregate.",
+        "optimizer_updates": null,
+        "scientific_training_runs_completed": 1,
+        "scientific_training_runs_pending": 4,
+        "scientific_training_runs_running": 1
+      },
+      "evidence": [
+        {
+          "artifact_id": "preparation/v11-memory-contracts-b/serial-contract-bundle.json",
+          "bytes": 4444,
+          "sha256": "a7fb02e2c31b67c98ac1037a003c68a914bf1d7c67eec97fc109114bc41f3fa0",
+          "status": "contracts_ready_jobs_launched_0"
+        }
+      ],
+      "id": "v11_repaired_six_training_jobs_and_15_context_dev_evaluation",
+      "note": "The earlier bundle recorded ready state. Current serial execution has one completed run and one active run; 15-context dev evaluation has not started.",
+      "status": "partially_in_progress_one_run_complete_one_running_four_pending"
+    }
+  ],
+  "packaging_cutoff_note": "This ledger records known attempts through the prewrite capture CLI failure. Successful capture, Git-index verification, commit and remote verification have separate release receipts.",
+  "parent_ledger_sha256": "8e6c08892d11e468d82f5bbd2b5d7aa35355de4bb3b8ab2212b9750e528751f3",
+  "prohibited_content_excluded": [
+    "C:/D: absolute local paths",
+    "raw ImportError strings containing workstation paths",
+    "test CSV rows",
+    "checkpoint payloads",
+    "raw training JSONL rows",
+    "model weights",
+    "Ubuntu/P2 records",
+    "absolute C workspace paths and usernames",
+    "raw console/stdout/error logs",
+    "dataset rows or prompts",
+    "checkpoint payloads or model weights"
+  ],
+  "schema": "banking-public-operation-ledger-derived-v2",
+  "scope": "Descriptive operational history only; separates probes, replay proofs, main-nine queue attempts, CPU contract/preflight work, test acquisition/startup, public-tree test portability, and unexecuted code candidates. This derived revision adds the completed V10 official-B aggregate and explicit later postprocessor/V11 startup status; it does not include repaired V11 training or the 15-context V11 dev evaluation. This revision adds one verified V11 terminal run and separately records a parent status-reader failure; it does not claim that all six runs or the 15-context development evaluation are complete. This final derivation adds the complete six-run V11 accounting and fixed development evaluation, safe request-cohort aggregate, and software acceptance H history. It does not replace source receipts or expose training examples, raw logs, model weights, or checkpoints.",
+  "status": "complete_V10_official_B_and_V11_training_and_dev_evaluation",
+  "status_note": "Final operation ledger: V10 official evaluation, all six V11 scientific runs, the fixed 15-context V11 development evaluation, and the official-test scoring workflow are complete. Historical engineering/metadata failures and unexecuted candidates are retained and distinguished.",
+  "study_pins": {
+    "main_release_sha256": "92594a34058f8af6b74423e3241d7e16054e71d12758a936ed97867ce18f0ffe",
+    "main_v10_training_seal": {
+      "artifact_id": "v10-seal-20261107-a/training-seal.json",
+      "sha256": "be51959787d68fe8891ead4d098aa12ca48fa1ae9a4097a416beeb73a2acc593",
+      "use": "read-only lineage pin; not an executable contract"
+    },
+    "official_test_source": {
+      "bytes": 239961,
+      "revision": "9d081458ff52e53cf7e848f414e6e9344e4e6696",
+      "sha256": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d"
+    },
+    "train_development_manifest_sha256": "ed9f4b047768021cbf16a3fa042db12baf212038f89f33a00099f2e32b7300f3",
+    "v10_config_file_sha256": "785ded5cc9d205dc3cbc6d25179abf6fd0d589ce6943a42626aa1692b54dfd9d",
+    "v10_config_semantic_sha256": "f65c55587c3795b83d0d62695dbfc0501aa2927576e492d6185dd18e5558e7e4",
+    "v10_source_lock_sha256": "3fcc2e2cb930149e9ee5204dcf8fa8910888cd7b05cd31f66d10ceb852d6844c",
+    "v11_frozen_config_file_sha256": "82794fc4dbe310e004e131405fd9b8c17b4a4dc310acbb0f22726feae95375c2",
+    "v11_frozen_config_semantic_sha256": "e1393c42c287c339df76b2c896bb6dbb1f09c780e1979fa7942780251ee75959"
+  },
+  "test_access_state": {
+    "acquisition_status": "acquired_hash_verified_and_scored_in_completed_official_B",
+    "attempt_A_read_payload": false,
+    "attempt_B_terminal_row_read_status": "complete_terminal_result_validated_all_nine_contexts",
+    "claim_that_payload_was_never_touched": false,
+    "current_B_metrics_included": true,
+    "official_B_summary": {
+      "backbone_forwards": 155329,
+      "crosscheck_sha256": "2708572510c2d2ec21e28d7eb871cf3bf1f8d33ae3e35e6380f0e643e9823344",
+      "evaluation_sha256": "3d582ce11bd95b2f0020b69a1508023408410cd0caddfcdc432724443d99823a",
+      "optimizer_updates": 0,
+      "primary_rows_scored": 3080,
+      "secondary_disjoint_rows_scored": 3073,
+      "tail_calls": 301801,
+      "work_elapsed_seconds": 8448.562
+    },
+    "official_test_payload_acquired_and_hash_verified": true,
+    "status": "official_test_scored_by_frozen_zero_update_evaluator",
+    "test_payload_sha256": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d",
+    "this_ledger_opened_test_rows": false,
+    "v11_development_test_accessed": false
+  },
+  "unlocated_or_pending_evidence": [
+    {
+      "item": "initial balanced32+10 metadata failure",
+      "state": "no matching small C evidence located; cause/work remain null"
+    },
+    {
+      "item": "151-pass/2-fail then 153-pass public-copy acceptance outputs",
+      "state": "later tool-console transcription located (not original stdout); exact underlying output bytes remain unavailable"
+    },
+    {
+      "item": "62-pass/2-fail then 65-pass V11 cost-test outputs",
+      "state": "Later transcription includes 62-to-65 pass history and a separate V11-E 66-pass attempt; original stdout remains unavailable; see r2 acceptance transcription."
+    },
+    {
+      "item": "V11 startup A direct wrapper-failure evidence",
+      "state": "diagnosis receipt located: 3.625s, 0/6 jobs; CPU foundation checkpoint schema was deserialized; no base model/CUDA/update/test CSV."
+    },
+    {
+      "item": "V10 accounting-schema postprocessor failed-attempt raw stdout",
+      "state": "not located; correction receipt and successful final aggregate/crosscheck are cited, but no exact failed-attempt work is inferred."
+    },
+    {
+      "item": "CPU development-reference attempts before the successful frozen reference",
+      "state": "Several preparation attempts failed on input binding/schema mismatches before scoring. Exact timing for most attempts is unavailable; costs are unknown, not zero. The one reported wrong-registry diagnosis was 3.625 seconds, CPU-only, without base-model load, CUDA, optimizer updates, or official-test CSV access."
+    },
+    {
+      "item": "V11 development-reference failed-attempt stderr/stdout payloads",
+      "state": "Only size/SHA identifiers are recorded in the ledger; original raw logs are not included in the public capture."
+    }
+  ],
+  "updated_utc": "2026-11-07T22:20:27.206773+00:00"
+}

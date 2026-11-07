@@ -1,0 +1,20 @@
+{
+  "task_root": "<CHECKOUT>",
+  "project_root": "<CHECKOUT>",
+  "model_dir": "<PRIVATE_ASSET_ROOT>/models/llama32-3b",
+  "foundation_root": "<PRIVATE_OUTPUT_ROOT>/banking-v10-foundations/foundations",
+  "main_release": "<PRIVATE_OUTPUT_ROOT>/banking-v10-main/main-release.json",
+  "seal_json": "<PRIVATE_OUTPUT_ROOT>/banking-v10-main/training-seal.json",
+  "training_main_root": "<PRIVATE_OUTPUT_ROOT>/banking-v10-main",
+  "training_manifest": "<PRIVATE_ASSET_ROOT>/datasets/banking77-train-dev/pack-manifest.json",
+  "v10_config": "<PRIVATE_OUTPUT_ROOT>/configs/banking_v10_fresh_frozen.json",
+  "v11_config": "<PRIVATE_OUTPUT_ROOT>/configs/banking_v11_fresh_frozen.json",
+  "v11_contract_dir": "<PRIVATE_OUTPUT_ROOT>/banking-v11-preparation/contracts-fresh",
+  "v11_train_root": "<PRIVATE_OUTPUT_ROOT>/banking-v11-canonical-teacher",
+  "test_eval_dir": "<PRIVATE_OUTPUT_ROOT>/banking-v10-official-test-evaluation-readonly",
+  "v11_reference": "<PRIVATE_OUTPUT_ROOT>/banking-v11-preparation/development-reference-fresh.json",
+  "v11_dev_memory_contract": "<PRIVATE_OUTPUT_ROOT>/banking-v11-preparation/development-memory-contract-fresh.json",
+  "v11_dev_preflight_dir": "<PRIVATE_OUTPUT_ROOT>/banking-v11-preparation/development-preflight-fresh",
+  "v11_dev_eval_dir": "<PRIVATE_OUTPUT_ROOT>/banking-v11-development-evaluation",
+  "v11_dev_launch_record": "<PRIVATE_OUTPUT_ROOT>/banking-v11-preparation/development-launch-record-fresh.json"
+}

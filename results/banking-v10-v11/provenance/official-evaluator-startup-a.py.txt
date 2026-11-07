@@ -1,0 +1,891 @@
+"""Sealed-grid-only Banking77 test evaluator for the v10 local ablation.
+
+The dedicated reader in this file is the only v10 component that accepts the
+publisher test CSV. It verifies the complete nine-run seal and every final task-6
+checkpoint byte hash before opening that CSV. This is a local controlled study,
+not native or paper-faithful HOPE/Sleep.
+"""
+from __future__ import annotations
+
+import argparse
+import csv
+import hashlib
+import json
+import math
+import os
+import sys
+import time
+from collections import Counter
+from pathlib import Path, PureWindowsPath
+from typing import Mapping, Sequence
+
+SCHEMA = "banking-cil-v10-test-evaluator-v1"
+CONTRACT_SCHEMA = "banking-cil-v10-test-evaluation-contract-v1"
+SEEDS = (17, 29, 43)
+ARMS = ("CMS_ONLY", "SLEEP_ADDITIVE", "GOLD_ADDITIVE")
+EXPECTED_TEST_REVISION = "9d081458ff52e53cf7e848f414e6e9344e4e6696"
+EXPECTED_TEST_BYTES = 239_961
+EXPECTED_TEST_SHA256 = "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d"
+EXPECTED_TEST_ROWS = 3_080
+EXPECTED_ROWS_PER_CLASS = 40
+MAX_FORWARDS = 600_000
+MAX_WALL_SECONDS = 21_600.0
+CHUNK_ROWS = 32
+EVAL_MAX_SEQUENCE_LENGTH = 128
+EVAL_CANDIDATE_BATCH_SIZE = 32
+EVAL_GREEDY_MAX_NEW_TOKENS = 10
+
+
+def sha256_file(path: str | Path) -> str:
+    h = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def _hex64(value):
+    return isinstance(value, str) and len(value) == 64 and all(c in "0123456789abcdef" for c in value.lower())
+
+
+def validate_evaluation_contract(contract: Mapping, *, evaluator_sha256: str,
+                                 config: Mapping, config_file_sha256: str,
+                                 source_lock_sha256: str, training_manifest_sha256: str,
+                                 training_seal_sha256: str,
+                                 main_release_sha256: str,
+                                 foundation_refs: Mapping[str, Mapping]) -> None:
+    """Bind the evaluator, full helper chain, model, seal, test source, and fixed policy."""
+    required = {"schema", "evaluator_sha256", "training_config_sha256",
+                "training_config_file_sha256", "source_lock_sha256", "source_hashes",
+                "model_revision", "model_assets_sha256", "training_manifest_sha256",
+                "training_seal_sha256", "main_release_sha256", "foundation_refs",
+                "official_test", "evaluation_policy",
+                "training_manifest_excludes_test"}
+    if set(contract) != required or contract.get("schema") != CONTRACT_SCHEMA:
+        raise ValueError("evaluation contract schema/fields mismatch")
+    for field, actual in (("evaluator_sha256", evaluator_sha256),
+                          ("training_config_sha256", config["_logical_sha256"]),
+                          ("training_config_file_sha256", config_file_sha256),
+                          ("source_lock_sha256", source_lock_sha256),
+                          ("training_manifest_sha256", training_manifest_sha256),
+                          ("training_seal_sha256", training_seal_sha256),
+                          ("main_release_sha256", main_release_sha256),
+                          ("model_revision", config["model_revision"])):
+        if contract.get(field) != actual:
+            raise ValueError(f"evaluation contract binding mismatch: {field}")
+    if contract.get("source_hashes") != config["source_hashes"]:
+        raise ValueError("evaluation contract helper/source chain differs from locked training config")
+    if contract.get("model_assets_sha256") != config["model_assets_sha256"]:
+        raise ValueError("evaluation contract model asset map differs from locked config")
+    if contract.get("foundation_refs") != foundation_refs:
+        raise ValueError("evaluation contract foundation receipt/checkpoint map mismatch")
+    if contract.get("training_manifest_excludes_test") is not True:
+        raise ValueError("evaluation contract must explicitly bind a train/dev-only manifest")
+    if contract.get("official_test") != {"revision": EXPECTED_TEST_REVISION,
+                                          "bytes": EXPECTED_TEST_BYTES,
+                                          "sha256": EXPECTED_TEST_SHA256,
+                                          "rows": EXPECTED_TEST_ROWS,
+                                          "classes": 77,
+                                          "rows_per_class": EXPECTED_ROWS_PER_CLASS}:
+        raise ValueError("evaluation contract does not match the fixed official-test source pin")
+    expected_policy = {
+        "primary": "global_77_sum_log_likelihood",
+        "secondary": ["global_77_length_mean_log_likelihood", "unconstrained_greedy_generation"],
+        "include_greedy": True,
+        "max_sequence_length": EVAL_MAX_SEQUENCE_LENGTH,
+        "candidate_batch_size": EVAL_CANDIDATE_BATCH_SIZE,
+        "max_new_tokens": EVAL_GREEDY_MAX_NEW_TOKENS,
+        "primary_includes_every_official_row": True,
+        "secondary_subset": "exclude_normalized_text_overlap_with_training_and_development",
+        "secondary_overlap_roles": ["train", "development"],
+        "secondary_overlap_rule": "exact_common_normalize_text_match_in_either_role",
+        "max_backbone_forwards": MAX_FORWARDS,
+        "max_wall_seconds": MAX_WALL_SECONDS,
+        "optimizer_updates": 0,
+    }
+    if contract.get("evaluation_policy") != expected_policy:
+        raise ValueError("evaluation contract policy differs from the frozen test-evaluation protocol")
+    if int(config["max_sequence_length"]) != EVAL_MAX_SEQUENCE_LENGTH:
+        raise ValueError("training config sequence length differs from frozen evaluator policy")
+
+
+def _safe_under(root: Path, relative: str, *, must_exist=True) -> Path:
+    rel = Path(relative)
+    win = PureWindowsPath(relative)
+    if rel.is_absolute() or win.is_absolute() or win.drive or ".." in rel.parts or ".." in win.parts:
+        raise ValueError("sealed artifact path must be a relative child path")
+    candidate = (root / rel).resolve()
+    if root.resolve() not in candidate.parents:
+        raise ValueError("sealed artifact path escaped its root")
+    if must_exist and not candidate.is_file():
+        raise FileNotFoundError(candidate)
+    return candidate
+
+
+_TERMINAL_CHECKPOINT_PARTS = ("checkpoints", "final-task06.pt")
+
+
+def _is_terminal_checkpoint_relative(value: object) -> bool:
+    """Accept only the fixed terminal CP path, with either OS separator."""
+    if not isinstance(value, str) or not value:
+        return False
+    win = PureWindowsPath(value)
+    normalized_parts = value.replace("\\", "/").split("/")
+    return (not win.is_absolute() and not win.drive and not win.root and
+            ".." not in win.parts and tuple(win.parts) == _TERMINAL_CHECKPOINT_PARTS and
+            tuple(normalized_parts) == _TERMINAL_CHECKPOINT_PARTS)
+
+
+def _resolve_run_dir(root: Path, value: str) -> Path:
+    """Resolve sealed absolute run paths only when they remain under training_root."""
+    rel = Path(value)
+    win = PureWindowsPath(value)
+    root = root.resolve()
+    if rel.is_absolute() or win.is_absolute() or win.drive:
+        candidate = rel.resolve()
+        if root not in candidate.parents:
+            raise ValueError("sealed absolute run directory is outside training_root")
+    else:
+        candidate = _safe_under(root, value, must_exist=False)
+    if not candidate.is_dir():
+        raise FileNotFoundError(candidate)
+    return candidate
+
+
+def validate_training_seal(seal: Mapping, *, config_sha256: str,
+                           source_lock_sha256: str, training_manifest_sha256: str) -> list[dict]:
+    """Require the exact completed 3-seed x 3-arm grid with common frozen pins."""
+    if seal.get("schema") != "banking-cil-v10-training-seal-v1" or seal.get("complete") is not True:
+        raise ValueError("training seal schema or completion gate failed")
+    for key, expected in (("config_sha256", config_sha256),
+                          ("source_lock_sha256", source_lock_sha256),
+                          ("training_manifest_sha256", training_manifest_sha256)):
+        if seal.get(key) != expected:
+            raise ValueError(f"training seal binding mismatch: {key}")
+    runs = seal.get("runs")
+    expected_grid = {(seed, arm) for seed in SEEDS for arm in ARMS}
+    actual = {(row.get("seed"), row.get("arm")) for row in runs} if isinstance(runs, list) else set()
+    if not isinstance(runs, list) or len(runs) != 9 or actual != expected_grid:
+        raise ValueError("training seal must contain exactly the nine expected seed/arm runs")
+    if len(actual) != len(runs):
+        raise ValueError("training seal has duplicate seed/arm entries")
+    required = {"seed", "arm", "status", "tasks_completed", "final_checkpoint",
+                "final_checkpoint_sha256",
+                "run_receipt_sha256", "config_sha256", "source_lock_sha256",
+                "training_manifest_sha256", "run_dir", "endpoint_metrics", "work"}
+    for row in runs:
+        if set(row) != required:
+            raise ValueError("training seal run row fields differ from locked schema")
+        if row["status"] != "complete" or row["tasks_completed"] != 7:
+            raise ValueError("every sealed run must complete all seven tasks")
+        if not _is_terminal_checkpoint_relative(row["final_checkpoint"]):
+            raise ValueError("training seal must select the fixed terminal task-6 checkpoint")
+        if not isinstance(row["endpoint_metrics"], Mapping) or not isinstance(row["work"], Mapping):
+            raise ValueError("training seal endpoint/work aggregates are malformed")
+        if not _hex64(row["final_checkpoint_sha256"]) or not _hex64(row["run_receipt_sha256"]):
+            raise ValueError("training seal checkpoint/receipt hashes must be hex64")
+        if (row["config_sha256"] != config_sha256 or row["source_lock_sha256"] != source_lock_sha256 or
+                row["training_manifest_sha256"] != training_manifest_sha256):
+            raise ValueError("run seal row has a mismatched frozen input binding")
+        if not isinstance(row["run_dir"], str) or not row["run_dir"]:
+            raise ValueError("run directory must be explicitly recorded")
+    if len({str(Path(row["run_dir"]).resolve()).casefold() for row in runs}) != 9:
+        raise ValueError("each sealed seed/arm must have its own run directory")
+    if seal.get("test_data_included") is not False or seal.get("official_test_read") is not False:
+        raise ValueError("training seal must affirm the official test was excluded")
+    return sorted((dict(row) for row in runs), key=lambda r: (int(r["seed"]), ARMS.index(r["arm"])))
+
+
+def verify_run_artifacts(rows: Sequence[Mapping], training_root: str | Path, *,
+                         config_sha256: str, source_lock_sha256: str,
+                         training_manifest_sha256: str,
+                         foundation_refs: Mapping[str, Mapping] | None = None,
+                         source_hashes: Mapping | None = None,
+                         main_release_sha256: str | None = None) -> list[dict]:
+    """Hash-check receipt and task-6 CP bytes before any checkpoint deserialization."""
+    root = Path(training_root).resolve()
+    verified = []
+    for row in rows:
+        run_dir = _resolve_run_dir(root, row["run_dir"])
+        receipt_path = _safe_under(run_dir, "run-receipt.json")
+        receipt_sha = sha256_file(receipt_path)
+        if receipt_sha != row["run_receipt_sha256"]:
+            raise ValueError("sealed run receipt hash mismatch")
+        if (run_dir / "failure.json").exists():
+            raise ValueError("a sealed run directory retains a failure marker")
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        if receipt.get("schema") != "banking-cil-v10-run-receipt" or receipt.get("status") != "complete":
+            raise ValueError("run receipt is not a completed v10 receipt")
+        if (receipt.get("test_data_included") is not False or
+                receipt.get("model_immutable_versions_unchanged") is not True):
+            raise ValueError("run receipt must affirm test exclusion and frozen backbone")
+        for key, expected in (("seed", row["seed"]), ("arm", row["arm"]),
+                              ("tasks_completed", 7), ("config_sha256", config_sha256),
+                              ("source_lock_sha256", source_lock_sha256),
+                              ("training_manifest_sha256", training_manifest_sha256)):
+            if receipt.get(key) != expected:
+                raise ValueError(f"run receipt mismatch: {key}")
+        protocol_path = _safe_under(run_dir, "protocol.json")
+        protocol = json.loads(protocol_path.read_text(encoding="utf-8"))
+        if (protocol.get("schema") != "banking-cil-v10-protocol" or
+                protocol.get("phase") != "main" or
+                (protocol.get("seed"), protocol.get("arm")) != (row["seed"], row["arm"]) or
+                protocol.get("config_sha256") != config_sha256 or
+                protocol.get("source_lock_sha256") != source_lock_sha256 or
+                protocol.get("training_manifest_sha256") != training_manifest_sha256 or
+                protocol.get("test_data_included") is not False or
+                protocol.get("test_reader_available") is not False):
+            raise ValueError("main protocol identity or frozen bindings mismatch")
+        if source_hashes is not None and protocol.get("source_hashes") != source_hashes:
+            raise ValueError("main protocol helper/source graph mismatch")
+        parent = protocol.get("parent")
+        if not isinstance(parent, Mapping):
+            raise ValueError("main protocol lacks a foundation/release parent binding")
+        if foundation_refs is not None:
+            expected_foundation = foundation_refs[str(row["seed"])]
+            if (parent.get("foundation_receipt_sha256"),
+                    parent.get("foundation_checkpoint_sha256"),
+                    receipt.get("foundation_checkpoint_sha256")) != (
+                    expected_foundation["receipt_sha256"],
+                    expected_foundation["checkpoint_sha256"],
+                    expected_foundation["checkpoint_sha256"]):
+                raise ValueError("main run is not bound to its qualified foundation")
+        if main_release_sha256 is not None and parent.get("release_artifact_sha256") != main_release_sha256:
+            raise ValueError("main protocol does not bind the frozen release artifact")
+        checkpoint_rel = receipt.get("final_checkpoint")
+        if (not _is_terminal_checkpoint_relative(checkpoint_rel) or
+                not _is_terminal_checkpoint_relative(row["final_checkpoint"])):
+            raise ValueError("receipt must name the fixed task-6 terminal checkpoint")
+        # Resolve from the fixed canonical path; never join an untrusted metadata spelling.
+        cp_path = _safe_under(run_dir, "/".join(_TERMINAL_CHECKPOINT_PARTS))
+        cp_sha = sha256_file(cp_path)
+        if cp_sha != row["final_checkpoint_sha256"] or receipt.get("final_checkpoint_sha256") != cp_sha:
+            raise ValueError("final task-6 checkpoint bytes do not match seal and receipt")
+        verified.append({"seed": int(row["seed"]), "arm": row["arm"],
+                         "run_dir": run_dir, "receipt_path": receipt_path,
+                         "receipt_sha256": receipt_sha, "checkpoint_path": cp_path,
+                         "checkpoint_sha256": cp_sha, "receipt": receipt})
+    if len({(x["seed"], x["arm"]) for x in verified}) != 9:
+        raise ValueError("verified artifacts do not cover the unique nine-run grid")
+    return verified
+
+
+def validate_checkpoint_payload(payload: Mapping, record: Mapping, *,
+                                config_sha256: str, source_lock_sha256: str,
+                                training_manifest_sha256: str) -> None:
+    if payload.get("schema") != "banking-cil-v10-checkpoint":
+        raise ValueError("checkpoint schema mismatch")
+    for key, expected in (("seed", record["seed"]), ("arm", record["arm"]),
+                          ("task_id", record.get("task_id", 6)), ("config_sha256", config_sha256),
+                          ("source_lock_sha256", source_lock_sha256),
+                          ("training_manifest_sha256", training_manifest_sha256)):
+        if payload.get(key) != expected:
+            raise ValueError(f"checkpoint binding mismatch: {key}")
+    if type(payload.get("step")) is not int or payload["step"] < 1:
+        raise ValueError("task-6 checkpoint step cursor malformed")
+    if not isinstance(payload.get("context"), Mapping):
+        raise ValueError("checkpoint lacks mutable context state")
+    # WakeSnapshot is a dataclass in the shared v8 lifecycle source, not a dict.
+    # Accept its explicit serialized field surface while rejecting arbitrary objects.
+    wake = payload.get("wake")
+    wake_fields = {"context_state", "pending", "clocks", "token_counts", "ticks",
+                   "periods", "base_lr", "fast_lr", "bank_states"}
+    if isinstance(wake, Mapping):
+        if not wake_fields.issubset(wake):
+            raise ValueError("checkpoint wake mapping lacks required snapshot fields")
+    elif not all(hasattr(wake, key) for key in wake_fields):
+        raise ValueError("checkpoint wake state is not a supported WakeSnapshot")
+    wake_get = wake.get if isinstance(wake, Mapping) else lambda key, default=None: getattr(wake, key, default)
+    if wake_get("ticks") != payload["step"]:
+        raise ValueError("checkpoint step differs from wake tick cursor")
+    if tuple(wake_get("periods", ())) != (16, 64, 256, 1024, None):
+        raise ValueError("checkpoint wake periods differ from the frozen Banking schedule")
+    if not _same_tensor_tree(payload["context"], wake_get("context_state")):
+        raise ValueError("checkpoint context differs from its wake snapshot context")
+    if not isinstance(payload.get("rng"), Mapping) or set(payload["rng"]) != {"python", "numpy", "torch_cpu", "torch_cuda"}:
+        raise ValueError("checkpoint RNG schema mismatch")
+
+
+def _same_tensor_tree(left, right) -> bool:
+    """Exact recursive value check for adapter-only CPU checkpoint structures."""
+    try:
+        import torch
+        if isinstance(left, torch.Tensor) or isinstance(right, torch.Tensor):
+            return (isinstance(left, torch.Tensor) and isinstance(right, torch.Tensor) and
+                    left.dtype == right.dtype and tuple(left.shape) == tuple(right.shape) and
+                    bool(torch.equal(left.cpu(), right.cpu())))
+    except ImportError:
+        pass
+    if isinstance(left, Mapping) or isinstance(right, Mapping):
+        return (isinstance(left, Mapping) and isinstance(right, Mapping) and
+                set(left) == set(right) and all(_same_tensor_tree(left[k], right[k]) for k in left))
+    if isinstance(left, (list, tuple)) or isinstance(right, (list, tuple)):
+        return (isinstance(left, (list, tuple)) and isinstance(right, (list, tuple)) and
+                len(left) == len(right) and all(_same_tensor_tree(a, b) for a, b in zip(left, right)))
+    return left == right
+
+
+def preflight_checkpoint_payloads(verified: Sequence[Mapping], *, torch,
+                                  config_sha256: str, source_lock_sha256: str,
+                                  training_manifest_sha256: str) -> list[dict]:
+    """CPU-deserialize all nine trusted CPs and validate task-6 metadata before model/test access."""
+    payload_rows = []
+    for record in verified:
+        if sha256_file(record["checkpoint_path"]) != record["checkpoint_sha256"]:
+            raise ValueError("checkpoint changed after artifact verification")
+        payload = torch.load(record["checkpoint_path"], map_location="cpu", weights_only=False)
+        validate_checkpoint_payload(payload, record, config_sha256=config_sha256,
+                                    source_lock_sha256=source_lock_sha256,
+                                    training_manifest_sha256=training_manifest_sha256)
+        if sha256_file(record["checkpoint_path"]) != record["checkpoint_sha256"]:
+            raise ValueError("checkpoint changed during CPU deserialization")
+        payload_rows.append({**record, "payload": payload})
+    return payload_rows
+
+
+def verify_foundation_grid(release_path: str | Path, foundation_root: str | Path, *,
+                           driver, cfg: Mapping, config_sha256: str,
+                           source_lock_sha256: str, training_manifest_sha256: str,
+                           torch) -> dict:
+    """Revalidate all three qualified foundation gates, receipts, and CP bytes."""
+    root = Path(foundation_root).resolve()
+    release_path = Path(release_path).resolve()
+    release = _load_json(release_path)
+    rows = release.get("foundations")
+    if not isinstance(rows, Mapping) or set(rows) != {str(seed) for seed in SEEDS}:
+        raise ValueError("main release must bind all three seed foundation records")
+    by_seed = {}
+    for key, record in rows.items():
+        run_dir = Path(str(record.get("run_dir", ""))).resolve()
+        if root not in run_dir.parents:
+            raise ValueError("foundation path escaped the declared foundation root")
+        if record.get("status") != "qualified":
+            raise ValueError(f"foundation seed {key} is not qualified")
+        by_seed[key] = {"run_dir": run_dir,
+                        "receipt_sha256": record.get("receipt_sha256"),
+                        "checkpoint_sha256": record.get("checkpoint_sha256")}
+    driver._validate_foundation_release(release_path, cfg, config_sha256,
+                                        source_lock_sha256, training_manifest_sha256,
+                                        17, by_seed["17"]["run_dir"])
+    for key, record in by_seed.items():
+        receipt_path = record["run_dir"] / "foundation-receipt.json"
+        receipt_sha = sha256_file(receipt_path)
+        receipt = _load_json(receipt_path)
+        if receipt_sha != record["receipt_sha256"]:
+            raise ValueError(f"foundation seed {key} receipt hash mismatch")
+        if (receipt.get("schema") != "banking-cil-v10-foundation-receipt" or
+                receipt.get("status") != "qualified" or receipt.get("seed") != int(key) or
+                receipt.get("source_lock_sha256") != source_lock_sha256 or
+                receipt.get("config_sha256") != config_sha256 or
+                receipt.get("training_manifest_sha256") != training_manifest_sha256 or
+                receipt.get("checkpoint_sha256") != record["checkpoint_sha256"]):
+            raise ValueError(f"foundation seed {key} receipt binding mismatch")
+        cp_path = _safe_under(record["run_dir"], receipt.get("checkpoint", ""))
+        audit = driver._validate_foundation_checkpoint_cpu(
+            cp_path, record["checkpoint_sha256"], seed=int(key), cfg=cfg,
+            source_lock=source_lock_sha256, manifest_sha=training_manifest_sha256)
+        if sha256_file(cp_path) != record["checkpoint_sha256"]:
+            raise ValueError(f"foundation seed {key} checkpoint changed during preflight")
+        if audit.get("step", 0) < 1 or audit.get("cpu_deserialized") is not True:
+            raise ValueError(f"foundation seed {key} checkpoint cursor audit failed")
+        payload = torch.load(cp_path, map_location="cpu", weights_only=False)
+        validate_checkpoint_payload(
+            payload, {"seed": int(key), "arm": "FOUNDATION_CMS_ONLY", "task_id": 0},
+            config_sha256=config_sha256, source_lock_sha256=source_lock_sha256,
+            training_manifest_sha256=training_manifest_sha256)
+    return {"release_sha256": sha256_file(release_path),
+            "foundations": {key: {"receipt_sha256": row["receipt_sha256"],
+                                  "checkpoint_sha256": row["checkpoint_sha256"]}
+                            for key, row in by_seed.items()},
+            "all_qualified": True, "all_checkpoints_cpu_deserialized": True}
+
+
+def parse_test_csv(path: str | Path, *, classes: Sequence[str], source_label_to_id: Mapping[str, int],
+                   common, train_rows: Sequence[Mapping], development_rows: Sequence[Mapping],
+                   expected_bytes: int = EXPECTED_TEST_BYTES,
+                   expected_sha256: str = EXPECTED_TEST_SHA256,
+                   expected_rows: int = EXPECTED_TEST_ROWS,
+                   expected_rows_per_class: int = EXPECTED_ROWS_PER_CLASS) -> tuple[list[dict], list[dict], dict]:
+    """Dedicated official-test parser. Caller must complete the nine-run seal gate first."""
+    path = Path(path)
+    if not path.is_file() or path.stat().st_size != expected_bytes:
+        raise ValueError("official test source byte size mismatch")
+    actual_sha = sha256_file(path)
+    if actual_sha != expected_sha256:
+        raise ValueError("official test source SHA256 mismatch")
+    canonical_map = {common.canonical_label(name): int(cid) for name, cid in source_label_to_id.items()}
+    if set(canonical_map.values()) != set(range(77)) or len(canonical_map) != 77:
+        raise ValueError("training manifest source label mapping is not a unique 77-class map")
+    primary, counts = [], Counter()
+    train_texts = {common.normalize_text(row["text"]) for row in train_rows}
+    development_texts = {common.normalize_text(row["text"]) for row in development_rows}
+    train_overlap = development_overlap = union_overlap = 0
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        reader = csv.DictReader(stream)
+        if set(reader.fieldnames or ()) != {"text", "category"}:
+            raise ValueError("official Banking77 test CSV columns must be text/category")
+        for index, row in enumerate(reader):
+            text, label = row.get("text"), row.get("category")
+            if not isinstance(text, str) or not text.strip() or not isinstance(label, str) or not label.strip():
+                raise ValueError("official test CSV contains empty text or category")
+            canonical = common.canonical_label(label)
+            if canonical not in canonical_map:
+                raise ValueError("official test CSV contains a label outside the locked Banking77 vocabulary")
+            cid = canonical_map[canonical]
+            normalized = common.normalize_text(text)
+            train_match = normalized in train_texts
+            development_match = normalized in development_texts
+            train_overlap += int(train_match)
+            development_overlap += int(development_match)
+            union_overlap += int(train_match or development_match)
+            identity = hashlib.sha256(f"test:{index}:{canonical}:{text}".encode("utf-8")).hexdigest()
+            primary.append({"id": identity, "text": text, "intent_id": cid})
+            counts[cid] += 1
+    if len(primary) != expected_rows or set(counts) != set(range(77)) or any(counts[c] != expected_rows_per_class for c in range(77)):
+        raise ValueError("official test CSV row/class counts differ from the pinned 3,080 x 77 x 40 contract")
+    secondary = [row for row in primary
+                 if common.normalize_text(row["text"]) not in train_texts
+                 and common.normalize_text(row["text"]) not in development_texts]
+    reuse_primary = len(secondary) == len(primary) and all(
+        left["id"] == right["id"] for left, right in zip(primary, secondary))
+    audit = {"source_revision": EXPECTED_TEST_REVISION, "source_sha256": actual_sha,
+             "source_bytes": expected_bytes, "raw_rows": len(primary),
+             "classes": len(counts), "rows_per_class": EXPECTED_ROWS_PER_CLASS,
+             "training_rows_considered": len(train_rows),
+             "development_rows_considered": len(development_rows),
+             "train_development_rows_considered": len(train_rows) + len(development_rows),
+             "normalized_train_overlap_rows": train_overlap,
+             "normalized_development_overlap_rows": development_overlap,
+             "normalized_train_or_development_overlap_rows": union_overlap,
+             "train_development_disjoint_secondary_rows": len(secondary),
+             "primary_includes_all_official_rows": True,
+             "secondary_reuses_primary_cohort": reuse_primary}
+    return primary, secondary, audit
+
+
+def _same_ordered_cohort(left: Sequence[Mapping], right: Sequence[Mapping]) -> bool:
+    return len(left) == len(right) and all(a.get("id") == b.get("id") for a, b in zip(left, right))
+
+
+class EvaluationBudget:
+    def __init__(self, max_forwards: int = MAX_FORWARDS, max_wall_seconds: float = MAX_WALL_SECONDS):
+        self.max_forwards = int(max_forwards)
+        self.max_wall_seconds = float(max_wall_seconds)
+        self.started = time.monotonic()
+        self.forwards = self.tail_calls = 0
+        # Legacy work.input_tokens covered candidate scoring only. Keep that
+        # numerator explicit while independently observing every full capture.
+        self.candidate_input_tokens = 0
+        self.observed_forward_calls = 0
+        self.observed_valid_tokens = 0
+        self.observed_executed_tokens = 0
+        self.forward_shape_histogram = Counter()
+
+    def check(self):
+        if self.forwards >= self.max_forwards:
+            raise RuntimeError("test evaluation forward cap exceeded")
+        if time.monotonic() - self.started > self.max_wall_seconds:
+            raise RuntimeError("test evaluation wall-time cap exceeded")
+
+    def add(self, work: Mapping):
+        self.forwards += int(work.get("candidate_backbone_forwards", 0)) + int(work.get("greedy", {}).get("backbone_forwards", 0))
+        self.tail_calls += int(work.get("candidate_tail_calls", 0)) + int(work.get("greedy", {}).get("tail_calls", 0))
+        self.candidate_input_tokens += int(work.get("candidate_input_tokens", 0))
+        self.check()
+
+    def observe_forward(self, tokens, mask=None):
+        """Record the actual token/mask shape at one complete backbone call."""
+        if getattr(tokens, "ndim", None) != 2 or not hasattr(tokens, "numel"):
+            raise ValueError("observed backbone tokens must be a rank-2 tensor")
+        if mask is None:
+            valid = int(tokens.numel())
+        else:
+            if tuple(mask.shape) != tuple(tokens.shape):
+                raise ValueError("observed backbone mask shape differs from token shape")
+            valid = int(mask.sum().item())
+        executed = int(tokens.numel())
+        if valid < 0 or valid > executed:
+            raise ValueError("observed valid token count is outside executed positions")
+        self.observed_forward_calls += 1
+        self.observed_valid_tokens += valid
+        self.observed_executed_tokens += executed
+        shape_key = f"{int(tokens.shape[0])}x{int(tokens.shape[1])}"
+        self.forward_shape_histogram[shape_key] += 1
+
+    def install_logits_observer(self, model):
+        """Temporarily wrap model.logits; caller must restore in a finally block."""
+        original = model.logits
+        budget = self
+
+        def observed_logits(tokens, mask=None):
+            budget.check()
+            budget.observe_forward(tokens, mask)
+            return original(tokens, mask)
+
+        model.logits = observed_logits
+        restored = False
+
+        def restore():
+            nonlocal restored
+            if not restored:
+                model.logits = original
+                restored = True
+        return restore
+
+    def assert_reconciled(self):
+        histogram_calls = sum(self.forward_shape_histogram.values())
+        histogram_executed = sum(int(shape.split("x")[0]) * int(shape.split("x")[1]) * count
+                                 for shape, count in self.forward_shape_histogram.items())
+        if self.observed_forward_calls != self.forwards or histogram_calls != self.observed_forward_calls:
+            raise RuntimeError("observed complete-backbone forwards do not reconcile with evaluator work counters")
+        if histogram_executed != self.observed_executed_tokens:
+            raise RuntimeError("forward shape histogram does not reconcile with observed token positions")
+        if self.observed_valid_tokens > self.observed_executed_tokens:
+            raise RuntimeError("observed valid tokens exceed executed token positions")
+        if self.candidate_input_tokens > self.observed_executed_tokens:
+            raise RuntimeError("candidate-only token count exceeds all observed executed positions")
+
+    def summary(self):
+        self.assert_reconciled()
+        return {"backbone_forwards": self.forwards, "tail_calls": self.tail_calls,
+                "input_tokens": self.candidate_input_tokens,
+                "input_tokens_scope": "candidate_scoring_only_legacy_counter",
+                "candidate_input_tokens": self.candidate_input_tokens,
+                "observed_backbone_forward_calls": self.observed_forward_calls,
+                "observed_backbone_valid_tokens": self.observed_valid_tokens,
+                "observed_backbone_executed_tokens_including_padding": self.observed_executed_tokens,
+                "observed_backbone_forward_shape_histogram": dict(sorted(self.forward_shape_histogram.items())),
+                "elapsed_seconds": time.monotonic() - self.started,
+                "optimizer_updates": 0, "max_backbone_forwards": self.max_forwards,
+                "max_wall_seconds": self.max_wall_seconds}
+
+
+def evaluate_rows(model, contexts: Mapping[str, object], rows: Sequence[Mapping], *,
+                  tokenizer, classes, common, tail_runtime, torch, device,
+                  class_orders: Mapping[str, Sequence[int]], budget: EvaluationBudget,
+                  include_greedy=True) -> dict:
+    """Chunk rows while preserving global 77-way candidates and no per-example output."""
+    from banking_cil_v10_runtime import score_candidates
+    accumulator = {name: {metric: {"correct": 0, "count": 0, "invalid_predictions": 0}
+                          for metric in ("teacher_forced_sum", "teacher_forced_length_mean", "greedy_generation")}
+                   for name in contexts}
+    per_class = {name: {metric: {str(cid): {"correct": 0, "count": 0} for cid in range(77)}
+                        for metric in ("teacher_forced_sum", "teacher_forced_length_mean")}
+                 for name in contexts}
+    nll_sum = {name: 0.0 for name in contexts}
+    nll_count = {name: 0 for name in contexts}
+    for start in range(0, len(rows), CHUNK_ROWS):
+        budget.check()
+        chunk = rows[start:start + CHUNK_ROWS]
+        result = score_candidates(model, contexts, chunk, tokenizer, classes, common, tail_runtime,
+                                  torch=torch, device=device,
+                                  max_sequence_length=EVAL_MAX_SEQUENCE_LENGTH, batch_size=CHUNK_ROWS,
+                                  budget=budget, class_order=None, task_id=None,
+                                  include_greedy=include_greedy, max_new_tokens=EVAL_GREEDY_MAX_NEW_TOKENS)
+        budget.add(result["work"])
+        for name in contexts:
+            row_metrics = result["candidate_metrics"][name]
+            for metric in ("teacher_forced_sum", "teacher_forced_length_mean"):
+                all_rows = row_metrics[metric]["all77"]
+                accumulator[name][metric]["correct"] += int(all_rows["correct"])
+                accumulator[name][metric]["count"] += int(all_rows["count"])
+                for cid, entry in row_metrics[metric]["per_class"].items():
+                    per_class[name][metric][cid]["correct"] += int(entry["correct"])
+                    per_class[name][metric][cid]["count"] += int(entry["count"])
+            nll = row_metrics["gold_label_token_mean_nll"]["all77"]
+            nll_sum[name] += float(nll["mean_token_nll"]) * int(nll["count"])
+            nll_count[name] += int(nll["count"])
+            if include_greedy:
+                greedy = result["greedy_generation_metrics"][name]
+                accumulator[name]["greedy_generation"]["correct"] += int(greedy["correct"])
+                accumulator[name]["greedy_generation"]["count"] += int(greedy["count"])
+                accumulator[name]["greedy_generation"]["invalid_predictions"] += int(greedy["invalid_predictions"])
+    output = {}
+    for name in contexts:
+        output[name] = {}
+        for metric, totals in accumulator[name].items():
+            n = totals["count"]
+            output[name][metric] = {**totals, "accuracy": totals["correct"] / n if n else None}
+            if metric != "greedy_generation":
+                classes_seen = [v for v in per_class[name][metric].values() if v["count"]]
+                output[name][metric]["per_class"] = {
+                    cid: {**v, "accuracy": v["correct"] / v["count"] if v["count"] else None}
+                    for cid, v in per_class[name][metric].items()}
+                output[name][metric]["class_macro_accuracy"] = (
+                    sum(v["correct"] / v["count"] for v in classes_seen) / len(classes_seen)
+                    if classes_seen else None)
+        output[name]["gold_label_token_mean_nll"] = {
+            "count": nll_count[name],
+            "mean": nll_sum[name] / nll_count[name] if nll_count[name] else None}
+        seed = name.split(":", 1)[0].removeprefix("seed")
+        order = tuple(int(x) for x in class_orders[seed])
+        class_task = {cid: task for task in range(7)
+                      for cid in order[task * 11:(task + 1) * 11]}
+        for task in range(7):
+            current = {cid for cid, assigned in class_task.items() if assigned == task}
+            seen = {cid for cid, assigned in class_task.items() if assigned <= task}
+            old = {cid for cid, assigned in class_task.items() if assigned < task}
+            unseen = {cid for cid, assigned in class_task.items() if assigned > task}
+            group_metrics = {}
+            for metric in ("teacher_forced_sum", "teacher_forced_length_mean"):
+                classes_for_metric = output[name][metric]["per_class"]
+                group_metrics[metric] = {}
+                for group, members in (("old", old), ("current", current),
+                                       ("seen", seen), ("unseen", unseen)):
+                    total = sum(int(classes_for_metric[str(cid)]["count"]) for cid in members)
+                    correct = sum(int(classes_for_metric[str(cid)]["correct"]) for cid in members)
+                    group_metrics[metric][group] = {
+                        "correct": correct, "count": total,
+                        "accuracy": correct / total if total else None}
+            output[name].setdefault("task_breakdown", {})[str(task)] = group_metrics
+    return output
+
+
+def _context_state_hash(context) -> str:
+    """Hash the mutable tensor state at evaluation boundaries without storing it."""
+    task_root = Path(__file__).resolve().parents[1]
+    if str(task_root / "tools") not in sys.path:
+        sys.path.insert(0, str(task_root / "tools"))
+    import clinc_lifecycle_v8 as lifecycle
+    from banking_cil_v10_routing import validate_additive_routes
+    return hashlib.sha256((lifecycle._state_hash(context) +
+                           json.dumps(validate_additive_routes(context), sort_keys=True,
+                                      separators=(",", ":"))).encode("utf-8")).hexdigest()
+
+
+def _load_model_contexts(verified_payloads, *, project_root, model_dir, cfg, torch):
+    """Load one frozen model and clone each already-preflighted final context."""
+    task_root = Path(__file__).resolve().parents[1]
+    if str(task_root / "tools") not in sys.path:
+        sys.path.insert(0, str(task_root / "tools"))
+    import run_banking_cil_v10 as driver
+    from clinc_tail_runtime_v8 import clone_mutable_context, immutable_versions
+    import banking_cil_v10_routing as routing
+    loaded_torch, tokenizer, model, immutable_fn = driver._load_model(project_root, model_dir, cfg)
+    if loaded_torch is not torch:
+        raise RuntimeError("checkpoint preflight and model loader use different torch modules")
+    model.eval(); model.requires_grad_(False)
+    frozen_versions = immutable_fn(model)
+    contexts = {}
+    for rec in verified_payloads:
+        payload = rec["payload"]
+        context = clone_mutable_context(model)
+        context.load_state_dict(payload["context"])
+        routing.install_additive_routes(context)
+        for parameter in context.parameters():
+            parameter.requires_grad_(False)
+        key = f"seed{rec['seed']}:{rec['arm']}"
+        contexts[key] = context
+    return tokenizer, model, contexts, frozen_versions, immutable_fn
+
+
+def _load_train_and_development_rows(manifest_path, manifest, common):
+    view = common.make_training_view(manifest)
+    root = Path(manifest_path).parent
+    train_rows = list(common.iter_role(view, "train", root))
+    development_rows = list(common.iter_role(view, "development", root))
+    if len(train_rows) != int(view.train["rows"]) or len(development_rows) != int(view.development["rows"]):
+        raise ValueError("verified training/development role counts differ from manifest metadata")
+    if len(train_rows) != 9_229 or len(development_rows) != 770:
+        raise ValueError("official-test secondary audit requires all 9,229 train and 770 development rows")
+    return view, train_rows, development_rows
+
+
+def _atomic_json(path: Path, payload):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    raw = json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False).encode("utf-8")
+    tmp = path.with_suffix(path.suffix + ".partial")
+    with tmp.open("xb") as stream:
+        stream.write(raw); stream.flush(); os.fsync(stream.fileno())
+    if path.exists():
+        tmp.unlink(missing_ok=True)
+        raise FileExistsError(path)
+    os.replace(tmp, path)
+
+
+def _load_json(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--mode", choices=("preflight", "evaluate"), required=True)
+    parser.add_argument("--project-root", type=Path, required=True)
+    parser.add_argument("--model-dir", type=Path, required=True)
+    parser.add_argument("--config", type=Path, required=True)
+    parser.add_argument("--training-manifest", type=Path, required=True)
+    parser.add_argument("--training-root", type=Path, required=True)
+    parser.add_argument("--seal", type=Path, required=True)
+    parser.add_argument("--main-release-artifact", type=Path, required=True)
+    parser.add_argument("--foundation-root", type=Path, required=True)
+    parser.add_argument("--evaluation-contract", type=Path, required=True)
+    parser.add_argument("--test-csv", type=Path)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--device", choices=("cuda:0", "cuda:1", "cpu"), default="cuda:0")
+    args = parser.parse_args(argv)
+    if args.output_dir.exists():
+        raise FileExistsError("output directory already exists; refusing overwrite/retry")
+    args.output_dir.mkdir(parents=True, exist_ok=False)
+    try:
+        task_root = Path(__file__).resolve().parents[1]
+        sys.path.insert(0, str(task_root / "tools"))
+        import run_banking_cil_v10 as driver
+        import banking_cil_common_v10 as common
+        cfg = driver.validate_config(_load_json(args.config), phase="preflight")
+        config_sha = driver._config_sha(cfg)
+        config_file_sha = sha256_file(args.config)
+        manifest_sha = sha256_file(args.training_manifest)
+        if manifest_sha != cfg["training_manifest_sha256"]:
+            raise ValueError("training manifest hash differs from frozen config")
+        manifest = _load_json(args.training_manifest)
+        common.validate_manifest(manifest)
+        source_hashes = driver._source_hashes(args.project_root, task_root)
+        source_lock = driver._verify_source_lock(cfg, source_hashes)
+        driver._verify_model_assets(args.model_dir, cfg["model_assets_sha256"])
+        seal = _load_json(args.seal)
+        seal_sha = sha256_file(args.seal)
+        seal_rows = validate_training_seal(seal, config_sha256=config_sha,
+                                           source_lock_sha256=source_lock,
+                                           training_manifest_sha256=manifest_sha)
+        import torch
+        foundation_audit = verify_foundation_grid(
+            args.main_release_artifact, args.foundation_root, driver=driver, cfg=cfg,
+            config_sha256=config_sha, source_lock_sha256=source_lock,
+            training_manifest_sha256=manifest_sha, torch=torch)
+        foundation_refs = foundation_audit["foundations"]
+        verified = verify_run_artifacts(
+            seal_rows, args.training_root, config_sha256=config_sha,
+            source_lock_sha256=source_lock, training_manifest_sha256=manifest_sha,
+            foundation_refs=foundation_refs, source_hashes=source_hashes,
+            main_release_sha256=foundation_audit["release_sha256"])
+        contract_path = args.evaluation_contract
+        contract = _load_json(contract_path)
+        contract_sha = sha256_file(contract_path)
+        evaluator_sha = sha256_file(Path(__file__))
+        validate_evaluation_contract(
+            contract, evaluator_sha256=evaluator_sha,
+            config={**cfg, "_logical_sha256": config_sha},
+            config_file_sha256=config_file_sha, source_lock_sha256=source_lock,
+            training_manifest_sha256=manifest_sha,
+            training_seal_sha256=seal_sha,
+            main_release_sha256=foundation_audit["release_sha256"],
+            foundation_refs=foundation_refs)
+        budget = EvaluationBudget() if args.mode == "evaluate" else None
+        payloads = preflight_checkpoint_payloads(verified, torch=torch,
+                                                  config_sha256=config_sha,
+                                                  source_lock_sha256=source_lock,
+                                                  training_manifest_sha256=manifest_sha)
+        checkpoint_audit = {"verified_runs": [{"seed": x["seed"], "arm": x["arm"],
+                                                "receipt_sha256": x["receipt_sha256"],
+                                                "checkpoint_sha256": x["checkpoint_sha256"],
+                                                "task_id": x["payload"]["task_id"],
+                                                "step": x["payload"]["step"]}
+                                             for x in payloads],
+                            "count": len(payloads), "cpu_deserialized": True,
+                            "model_loaded": False, "cuda_initialized": torch.cuda.is_initialized(),
+                            "optimizer_updates": 0}
+        if args.mode == "preflight":
+            _atomic_json(args.output_dir / "preflight.json", {
+                "schema": SCHEMA, "status": "pass", "mode": "preflight",
+                "training_config_sha256": config_sha, "source_lock_sha256": source_lock,
+                "evaluation_contract_sha256": contract_sha,
+                "evaluator_sha256": evaluator_sha,
+                "training_manifest_sha256": manifest_sha, "seal_sha256": seal_sha,
+                "main_release_sha256": foundation_audit["release_sha256"],
+                "foundation_audit": foundation_audit,
+                "test_payload_read": False, "model_loaded": False,
+                "checkpoint_audit": checkpoint_audit})
+            return 0
+        if args.test_csv is None:
+            raise ValueError("evaluate mode requires --test-csv after sealed-grid preflight")
+        view, train_rows, development_rows = _load_train_and_development_rows(
+            args.training_manifest, manifest, common)
+        cfg["device"] = args.device
+        tokenizer, model, contexts, frozen_versions, immutable_fn = _load_model_contexts(
+            payloads, project_root=args.project_root, model_dir=args.model_dir, cfg=cfg, torch=torch)
+        initial_hashes = {name: _context_state_hash(context) for name, context in contexts.items()}
+        if immutable_fn(model) != frozen_versions:
+            raise RuntimeError("frozen backbone changed while loading sealed contexts")
+        budget.check()
+        # Recheck every external binding immediately before the first test-path read.
+        if (sha256_file(args.config) != config_file_sha or
+                sha256_file(args.training_manifest) != manifest_sha or
+                sha256_file(args.seal) != seal_sha or
+                sha256_file(args.main_release_artifact) != foundation_audit["release_sha256"] or
+                sha256_file(contract_path) != contract_sha or
+                sha256_file(Path(__file__)) != evaluator_sha):
+            raise ValueError("frozen evaluation inputs changed before official-test access")
+        if driver._verify_source_lock(cfg, driver._source_hashes(args.project_root, task_root)) != source_lock:
+            raise ValueError("locked helper/source chain changed before official-test access")
+        driver._verify_model_assets(args.model_dir, cfg["model_assets_sha256"])
+        latest_foundation = verify_foundation_grid(
+            args.main_release_artifact, args.foundation_root, driver=driver, cfg=cfg,
+            config_sha256=config_sha, source_lock_sha256=source_lock,
+            training_manifest_sha256=manifest_sha, torch=torch)
+        if latest_foundation != foundation_audit:
+            raise ValueError("qualified foundation artifacts changed before official-test access")
+        latest = verify_run_artifacts(seal_rows, args.training_root,
+                                      config_sha256=config_sha, source_lock_sha256=source_lock,
+                                      training_manifest_sha256=manifest_sha,
+                                      foundation_refs=foundation_refs,
+                                      source_hashes=source_hashes,
+                                      main_release_sha256=foundation_audit["release_sha256"])
+        expected_artifacts = {(x["seed"], x["arm"]): (x["receipt_sha256"], x["checkpoint_sha256"])
+                              for x in payloads}
+        if any(expected_artifacts.get((x["seed"], x["arm"])) !=
+               (x["receipt_sha256"], x["checkpoint_sha256"]) for x in latest):
+            raise ValueError("sealed run receipt/checkpoint bytes changed before official-test access")
+        # All nine payloads have also been CPU-deserialized and cursor-checked here.
+        primary_rows, secondary_rows, test_audit = parse_test_csv(
+            args.test_csv, classes=view.classes, source_label_to_id=manifest["source_label_to_id"],
+            common=common, train_rows=train_rows, development_rows=development_rows)
+        import clinc_tail_runtime_v8 as tail_runtime
+        restore_logits = budget.install_logits_observer(model)
+        try:
+            primary = evaluate_rows(model, contexts, primary_rows, tokenizer=tokenizer, classes=view.classes,
+                                    common=common, tail_runtime=tail_runtime, torch=torch, device=args.device,
+                                    class_orders=view.class_orders, budget=budget, include_greedy=True)
+            secondary_reused_primary = _same_ordered_cohort(primary_rows, secondary_rows)
+            if secondary_reused_primary:
+                # Zero overlaps means the secondary population is exactly the
+                # ordered raw primary cohort; reuse the exact metrics and work.
+                secondary = primary
+            else:
+                secondary = evaluate_rows(model, contexts, secondary_rows, tokenizer=tokenizer, classes=view.classes,
+                                          common=common, tail_runtime=tail_runtime, torch=torch, device=args.device,
+                                          class_orders=view.class_orders, budget=budget, include_greedy=True)
+        finally:
+            restore_logits()
+        budget.assert_reconciled()
+        final_hashes = {name: _context_state_hash(context) for name, context in contexts.items()}
+        if initial_hashes != final_hashes:
+            raise RuntimeError("evaluation mutated a final context")
+        if immutable_fn(model) != frozen_versions:
+            raise RuntimeError("evaluation mutated the frozen backbone")
+        if budget.forwards > MAX_FORWARDS or budget.summary()["elapsed_seconds"] > MAX_WALL_SECONDS:
+            raise RuntimeError("test evaluation exceeded the hard work cap")
+        result = {"schema": SCHEMA, "status": "complete", "claim_scope": "official test evaluation after sealed nine-run grid; local controlled Banking v10 ablation, not paper-faithful HOPE/Sleep",
+                  "training": {"config_sha256": config_sha, "source_lock_sha256": source_lock,
+                               "training_manifest_sha256": manifest_sha, "seal_sha256": seal_sha,
+                               "evaluation_contract_sha256": contract_sha,
+                               "evaluator_sha256": evaluator_sha,
+                               "main_release_sha256": foundation_audit["release_sha256"],
+                               "foundation_audit": foundation_audit,
+                               "verified_contexts": [{"seed": x["seed"], "arm": x["arm"],
+                                                      "checkpoint_sha256": x["checkpoint_sha256"],
+                                                      "receipt_sha256": x["receipt_sha256"]} for x in payloads]},
+                  "test_source": test_audit,
+                  "primary_raw_official_test": primary,
+                  "secondary_train_development_disjoint_subset": secondary,
+                  "secondary_metrics_reused_raw_primary": secondary_reused_primary,
+                  "work": budget.summary(), "optimizer_updates": 0,
+                  "all_contexts_frozen": True, "backbone_unchanged": True,
+                  "raw_prompts_predictions_and_token_ids_saved": False}
+        _atomic_json(args.output_dir / "evaluation.json", result)
+        return 0
+    except BaseException:
+        raise
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

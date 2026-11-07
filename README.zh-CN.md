@@ -1,6 +1,10 @@
 # NL/Sleep Reproduction Lab
 
-V9 已完成单种子、60 条固定验证样本的零更新诊断：标签条件排序能缓解输出格式损失，但新任务后旧标签 NLL 仍上升，固定混合 Sleep 的新类表现仍较弱。这不是新的测试确认。[V9 报告](reports/clinc-readout-and-paper-alignment-v9.md)保留全部读出、失败与成本，提供[复现工具](docs/clinc-readout-v9-reproduction.md)。[Banking77 来源与对照准备](docs/banking77-matched-comparison-draft.md)仍是草案，未获取 Banking 数据文件。
+Banking V10 已完成 Llama-3.2-3B 三个配对类别顺序种子、三组共九次续训。在全部 3,080 条官方测试样本上，全局 77 标签 sum-score 准确率为：CMS **14.21% ± 1.92%**、加法路由 Sleep **22.45% ± 3.23%**、额外标签监督回放 **26.45% ± 1.80%**（均值与样本标准差，共享一次初始化）。Sleep 的标签排名读出提高，但自由生成和 gold-token NLL 更差；主续训墙钟时间约为 CMS 的 4.96 倍。[V10 报告](reports/banking77-controls-v10.md)保留每个种子、独立列出的 3,073 条去重叠子集、旧／新类别终点分组、额外监督与成本。
+
+V11 将两个预先冻结的 LTI 奖励对照与 CMS、Sleep、监督回放一起，在每个种子相同的 220 条 task-1 开发样本上评估。[报告](reports/banking77-reward-ablation-v11.md)列出全部十五个终点与工作量；这是开发集消融，不是新的官方测试确认。[聚合与离线重算](results/banking-v10-v11/README.md)、[执行说明](docs/banking-v10-v11-reproduction.md)和[论文差距审计](docs/sleep-paper-alignment-v10-v11.md)说明本地架构、生命周期、奖励及优化器差异，未声称完成原生 HOPE 或原文准确率复现。
+
+V9 已完成单种子、60 条固定验证样本的零更新诊断：标签条件排序能缓解输出格式损失，但新任务后旧标签 NLL 仍上升，固定混合 Sleep 的新类表现仍较弱。这不是新的测试确认。[V9 报告](reports/clinc-readout-and-paper-alignment-v9.md)保留全部读出、失败与成本，提供[复现工具](docs/clinc-readout-v9-reproduction.md)。[准备草案](docs/banking77-matched-comparison-draft.md)保留当时尚未获取数据的历史状态；已完成的 Banking 结果见上文。
 
 V8 已完成 Llama-3.2-3B / CLINC150 三个配对类别顺序种子、两组各十任务的六次训练，并在封存后用全部 4,500 条域内官方测试样本对最终检查点进行全类别评分。准确率为：本地 `HOPE` 基线 **17.83% ± 0.87%**，`HOPE_SLEEP_FIXEDMIX` **10.76% ± 1.11%**（三种子均值与样本标准差；共享同一适配器初始化）。当前配置未显示 Sleep 的整体收益。[最终报告](reports/clinc150-lifecycle-v8-final.md)保留逐种子结果、开发轨迹、失败尝试、额外回放与标签元数据使用和资源成本。
 

@@ -1,0 +1,375 @@
+{
+  "capture_scope": "aggregate-only; no training, evaluation, data access, or network operation",
+  "excluded": [
+    "dataset files/JSONL/CSV payloads",
+    "checkpoints/weights",
+    "optimizer states",
+    "raw prompts, predictions, token IDs, request rows",
+    "absolute C-drive paths"
+  ],
+  "inputs": [
+    {
+      "artifact_id": "v11-development-evaluation.json",
+      "bytes": 345832,
+      "sha256": "4b68224a884a435a1262754328af1a39f201c0e71ceab450f6038b611eb7d0d8"
+    },
+    {
+      "artifact_id": "combined-v10-v11-reanalysis.json",
+      "bytes": 466685,
+      "sha256": "e0b2093b895bdb3a5d3eb908a74fa95b538db94ad83bd4960a3f5b6270ecb56c"
+    },
+    {
+      "artifact_id": "v11-accounting-source.json",
+      "bytes": 83981,
+      "sha256": "62d0d0c2cfc902c37da999a120162e295fc329e82eb8c9ea0181f30db4c3911f"
+    },
+    {
+      "artifact_id": "final-operation-ledger.json",
+      "bytes": 68284,
+      "sha256": "a58475d121043cdb38bff013eeb27d8e9a38ba7e029d985f240d7da4f6716a0d"
+    },
+    {
+      "artifact_id": "software-acceptance-summary-r4.json",
+      "bytes": 6244,
+      "sha256": "7fd7b95144bf5393b506da44b7cb9f387096a946a2f86e2d1cf848100476afae"
+    },
+    {
+      "artifact_id": "software-v10-component-e.json",
+      "bytes": 3362,
+      "sha256": "53da1169d320b2a5162b7d926da47459bb6af8e93a37a690ae77534fa021f523"
+    },
+    {
+      "artifact_id": "software-v11-component-h.json",
+      "bytes": 1771,
+      "sha256": "18de8713f52ac6f32ef7f4f96e9d139c19c969e3427ca45ab87518d1a9aa50cd"
+    },
+    {
+      "artifact_id": "software-ordinary-suite-a.json",
+      "bytes": 8137,
+      "sha256": "4ba55e385e99f06808efbe45eb62f208473b531c777ef32580775d1c70c1039e"
+    },
+    {
+      "artifact_id": "existing/training-seal.json",
+      "bytes": 187831,
+      "sha256": "be51959787d68fe8891ead4d098aa12ca48fa1ae9a4097a416beeb73a2acc593"
+    },
+    {
+      "artifact_id": "existing/v10-official-evaluation.json",
+      "bytes": 508622,
+      "sha256": "3d582ce11bd95b2f0020b69a1508023408410cd0caddfcdc432724443d99823a"
+    },
+    {
+      "artifact_id": "reports/banking77-reward-ablation-v11.md",
+      "bytes": 17032,
+      "sha256": "5967bbf7acef9bcf4b9f67f29efd4129fb6a4be000142e0db3eb53ebffb0112d"
+    },
+    {
+      "artifact_id": "reports/banking-aggregate-readme.md",
+      "bytes": 3512,
+      "sha256": "a11eb8b09c2d97009552ba37cbdd1d9aae0077c498f92860496fece9d31b79f8"
+    },
+    {
+      "artifact_id": "finalplot-dir/plot-manifest.json",
+      "bytes": 7773,
+      "sha256": "f9d4fa5822586c721c7d3616e4e638c4ae9e819a5c057d161adb88fae4553c75"
+    },
+    {
+      "artifact_id": "teacher-signals-v10-all3-summary.json",
+      "bytes": 35340,
+      "sha256": "3c6715cc82357a9e16714ba8c374cbd8e3e133898a627f46094c75d3633df336"
+    },
+    {
+      "artifact_id": "v11-request-cohort-balance.json",
+      "bytes": 4628,
+      "sha256": "fbf0ff97f2fadd6043e9166cca4a8843da963304ed4d87aefe4a57897aa2f193"
+    },
+    {
+      "artifact_id": "finalplot-dir/banking-v10-official-accuracy.png",
+      "bytes": 79733,
+      "sha256": "3e54dcc398dfcb638be1a3c336b7cb8456fd547c14cfea57373fc0dc8e00873b"
+    },
+    {
+      "artifact_id": "finalplot-dir/banking-v10-official-accuracy.svg",
+      "bytes": 23476,
+      "sha256": "8a1e9073ca1e4d87641efd79a5e52dac2bd9fb91ff8713d3ff93fd62c1bc59a3"
+    },
+    {
+      "artifact_id": "finalplot-dir/banking-v11-development-accuracy.png",
+      "bytes": 108938,
+      "sha256": "966efcac5141a2aa978ef6e7c67d577189de07bd359d389a537cfbcc47b8dc6f"
+    },
+    {
+      "artifact_id": "finalplot-dir/banking-v11-development-accuracy.svg",
+      "bytes": 41952,
+      "sha256": "c8b51fa3eb8ad78519b0e7d110262433f4cb4a6f0fb251b44e01c9ebf5eb1852"
+    }
+  ],
+  "new_outputs": [
+    {
+      "bytes": 3512,
+      "file_id": "README.md",
+      "relation": "exact_copy",
+      "sha256": "a11eb8b09c2d97009552ba37cbdd1d9aae0077c498f92860496fece9d31b79f8",
+      "source_artifact_id": "reports/banking-aggregate-readme.md"
+    },
+    {
+      "bytes": 79733,
+      "file_id": "banking-v10-official-accuracy.png",
+      "relation": "exact_copy",
+      "sha256": "3e54dcc398dfcb638be1a3c336b7cb8456fd547c14cfea57373fc0dc8e00873b",
+      "source_artifact_id": "finalplot-dir/banking-v10-official-accuracy.png"
+    },
+    {
+      "bytes": 23476,
+      "file_id": "banking-v10-official-accuracy.svg",
+      "relation": "exact_copy",
+      "sha256": "8a1e9073ca1e4d87641efd79a5e52dac2bd9fb91ff8713d3ff93fd62c1bc59a3",
+      "source_artifact_id": "finalplot-dir/banking-v10-official-accuracy.svg"
+    },
+    {
+      "bytes": 108938,
+      "file_id": "banking-v11-development-accuracy.png",
+      "relation": "exact_copy",
+      "sha256": "966efcac5141a2aa978ef6e7c67d577189de07bd359d389a537cfbcc47b8dc6f",
+      "source_artifact_id": "finalplot-dir/banking-v11-development-accuracy.png"
+    },
+    {
+      "bytes": 41952,
+      "file_id": "banking-v11-development-accuracy.svg",
+      "relation": "exact_copy",
+      "sha256": "c8b51fa3eb8ad78519b0e7d110262433f4cb4a6f0fb251b44e01c9ebf5eb1852",
+      "source_artifact_id": "finalplot-dir/banking-v11-development-accuracy.svg"
+    },
+    {
+      "bytes": 77483,
+      "file_id": "combined-v10-v11-reanalysis.csv",
+      "relation": "exact_copy",
+      "sha256": "a099efc1b87befa064234121dff7694fba8b9f4a2a1f2a39ff8ee5a28e8b8fc1",
+      "source_artifact_id": "combined-v10-v11-reanalysis.csv"
+    },
+    {
+      "bytes": 449856,
+      "file_id": "combined-v10-v11-reanalysis.json",
+      "relation": "derived_path_redaction_only_metrics_unchanged",
+      "sha256": "d25933a2a5ef2da1b6cb08b7816434a5ba2ff9e4288680d6738018c30275d4c7",
+      "source_artifact_id": "combined-v10-v11-reanalysis.json"
+    },
+    {
+      "bytes": 68284,
+      "file_id": "operation-ledger-final.json",
+      "relation": "exact_copy",
+      "sha256": "a58475d121043cdb38bff013eeb27d8e9a38ba7e029d985f240d7da4f6716a0d",
+      "source_artifact_id": "final-operation-ledger.json"
+    },
+    {
+      "bytes": 7819,
+      "file_id": "plot-manifest.json",
+      "relation": "derived_safe_manifest",
+      "sha256": "9568d2caf1a9a86abfd4cc8795bd7b937fd897ff2eaf11a50f817e671964b107",
+      "source_artifact_id": "finalplot-dir/plot-manifest.json"
+    },
+    {
+      "bytes": 6244,
+      "file_id": "software-acceptance-summary-r4.json",
+      "relation": "exact_copy_later_console_transcription",
+      "sha256": "7fd7b95144bf5393b506da44b7cb9f387096a946a2f86e2d1cf848100476afae",
+      "source_artifact_id": "software-acceptance-summary-r4.json"
+    },
+    {
+      "bytes": 8137,
+      "file_id": "software-ordinary-suite-a.json",
+      "relation": "exact_copy",
+      "sha256": "4ba55e385e99f06808efbe45eb62f208473b531c777ef32580775d1c70c1039e",
+      "source_artifact_id": "software-ordinary-suite-a.json"
+    },
+    {
+      "bytes": 3362,
+      "file_id": "software-v10-component-e.json",
+      "relation": "exact_copy",
+      "sha256": "53da1169d320b2a5162b7d926da47459bb6af8e93a37a690ae77534fa021f523",
+      "source_artifact_id": "software-v10-component-e.json"
+    },
+    {
+      "bytes": 1771,
+      "file_id": "software-v11-component-h.json",
+      "relation": "exact_copy",
+      "sha256": "18de8713f52ac6f32ef7f4f96e9d139c19c969e3427ca45ab87518d1a9aa50cd",
+      "source_artifact_id": "software-v11-component-h.json"
+    },
+    {
+      "bytes": 35340,
+      "file_id": "teacher-signals-v10-all3-summary.json",
+      "relation": "exact_copy_aggregate_only",
+      "sha256": "3c6715cc82357a9e16714ba8c374cbd8e3e133898a627f46094c75d3633df336",
+      "source_artifact_id": "teacher-signals-v10-all3-summary.json"
+    },
+    {
+      "bytes": 82884,
+      "file_id": "v11-accounting-aggregate.json",
+      "relation": "derived_path_omission_projection",
+      "sha256": "1c4ae8bb3c3b2ce299188533d7eea23d8241957eeca7390c266340816e6cae19",
+      "source_artifact_id": "v11-accounting-source.json"
+    },
+    {
+      "bytes": 345832,
+      "file_id": "v11-development-evaluation.json",
+      "relation": "exact_copy",
+      "sha256": "4b68224a884a435a1262754328af1a39f201c0e71ceab450f6038b611eb7d0d8",
+      "source_artifact_id": "v11-development-evaluation.json"
+    },
+    {
+      "bytes": 4628,
+      "file_id": "v11-request-cohort-balance.json",
+      "relation": "exact_copy_safe_aggregate",
+      "sha256": "fbf0ff97f2fadd6043e9166cca4a8843da963304ed4d87aefe4a57897aa2f193",
+      "source_artifact_id": "v11-request-cohort-balance.json"
+    }
+  ],
+  "notes": [
+    "Original V10 seal bytes and its historical D-drive metadata are preserved unchanged in the existing bundle.",
+    "Combined reanalysis JSON is derived only to replace its three absolute input path fields with relative artifact IDs; all rows, paired rows, summaries, and work counters are asserted byte-semantically unchanged.",
+    "V11 accounting is a path-free projection that omits run-row run_dir and provenance.foundation_by_seed[*].run_dir while preserving lineage hashes, sizes, per-run metrics/work, and aggregate summaries.",
+    "The software summary is a later console transcription, not original stdout; acceptance receipts are included as separately hash-bound metadata."
+  ],
+  "preexisting_deliverables_unchanged": [
+    {
+      "artifact_id": "existing/provenance/accounting-before-actual-evaluator-schema-tests.py.txt",
+      "bytes": 14288,
+      "relation": "preexisting_unchanged",
+      "sha256": "2464267756a74f0a60a59a007a6e0678bb9d15a8b5a3057ae615216884cef48a"
+    },
+    {
+      "artifact_id": "existing/provenance/accounting-before-actual-evaluator-schema.py.txt",
+      "bytes": 38570,
+      "relation": "preexisting_unchanged",
+      "sha256": "1241ac776127e5be97e8c5440a2b8021f1fea1ed853a733ec43bc59fa3168539"
+    },
+    {
+      "artifact_id": "existing/provenance/archive-manifest-before-dev-reference-repairs.json",
+      "bytes": 4086,
+      "relation": "preexisting_unchanged",
+      "sha256": "e0ad389780426530a230c095b771c22269d21b92ac27ae239cb1e546177e5e99"
+    },
+    {
+      "artifact_id": "existing/provenance/archive-manifest-before-parent-failure.json",
+      "bytes": 2913,
+      "relation": "preexisting_unchanged",
+      "sha256": "f28eb59bf12a2e7e9c9f98021e7db78c117a800ca181b48c6d93529a26515aa3"
+    },
+    {
+      "artifact_id": "existing/provenance/archive-manifest.json",
+      "bytes": 6112,
+      "relation": "preexisting_unchanged",
+      "sha256": "528a14711fdfd493ec463e41140ec7be8eb9b4b713dcd0b3f0b9640dca37bab3"
+    },
+    {
+      "artifact_id": "existing/provenance/official-evaluator-startup-a.py.txt",
+      "bytes": 54036,
+      "relation": "preexisting_unchanged",
+      "sha256": "fbf5d5406b144826c82fd477e30ddd339fde8bbbb2432cf4c352e92a7e8340a1"
+    },
+    {
+      "artifact_id": "existing/provenance/reanalyzer-before-actual-task6-schema-tests.py.txt",
+      "bytes": 21202,
+      "relation": "preexisting_unchanged",
+      "sha256": "030def87fa8f9fe00f14b987c0d44c81914f9480e7382be0f2c3c9a0f4e5ebb2"
+    },
+    {
+      "artifact_id": "existing/provenance/reanalyzer-before-actual-task6-schema.py.txt",
+      "bytes": 33064,
+      "relation": "preexisting_unchanged",
+      "sha256": "0207edf39954350fdc74d5deca52b1812be2326743385f1e501c214b61c119d7"
+    },
+    {
+      "artifact_id": "existing/provenance/v11-evaluator-before-cpu-source-keyword-fix.py.txt",
+      "bytes": 43611,
+      "relation": "preexisting_unchanged",
+      "sha256": "a38d68dd5f13c223e1253e25282b65bae92ebb51d8293af2a2992399694e082f"
+    },
+    {
+      "artifact_id": "existing/provenance/v11-evaluator-intermediate-cpu-source-keyword-only.py.txt",
+      "bytes": 43646,
+      "relation": "preexisting_unchanged",
+      "sha256": "dffcfd7e469adc88633be7f087912d21caf587bd1516824e6dddda599676d5fa"
+    },
+    {
+      "artifact_id": "existing/provenance/v11-evaluator-tests-before-completed-protocol-fixture.py.txt",
+      "bytes": 14330,
+      "relation": "preexisting_unchanged",
+      "sha256": "6ccff24d148eb0884085eca1f8bec0980f9be42b3c5b9a101be9aae58be24561"
+    },
+    {
+      "artifact_id": "existing/provenance/v11-launcher-startup-a-tests.py.txt",
+      "bytes": 17051,
+      "relation": "preexisting_unchanged",
+      "sha256": "269d18aa02ef083ca692017d98cba1542112b299226b69216ffe45fc85b8be9f"
+    },
+    {
+      "artifact_id": "existing/provenance/v11-launcher-startup-a.py.txt",
+      "bytes": 26337,
+      "relation": "preexisting_unchanged",
+      "sha256": "9d3daf5c1311e3156a994a95092256dce22e5456dc9cc76777897fa5fa805669"
+    },
+    {
+      "artifact_id": "existing/provenance/v11-parent-before-terminal-field-fix-tests.py.txt",
+      "bytes": 10403,
+      "relation": "preexisting_unchanged",
+      "sha256": "45a19fb32f1c35f4dd048190ce11ea34d81f6c23ef3b0148764d302cbb917eda"
+    },
+    {
+      "artifact_id": "existing/provenance/v11-parent-before-terminal-field-fix.py.txt",
+      "bytes": 31016,
+      "relation": "preexisting_unchanged",
+      "sha256": "83d3e40397fef07b8ea349b54faf6f76d2c91f57e93839d77364fdf247032169"
+    },
+    {
+      "artifact_id": "existing/provenance/v11-reference-tests-before-real-producer-gates.py.txt",
+      "bytes": 5600,
+      "relation": "preexisting_unchanged",
+      "sha256": "67ec8430d23208847a7e3dcbbdc6eaf4cb76131ce4c737dabfded3c26397d91a"
+    },
+    {
+      "artifact_id": "existing/provenance/v11-reference-tests-intermediate-signature-inspection.py.txt",
+      "bytes": 6703,
+      "relation": "preexisting_unchanged",
+      "sha256": "1b706accae947ffc7798b8ccdb5cf86c0f0fd9b4b45783ededdea2a77483460b"
+    },
+    {
+      "artifact_id": "existing/training-seal.json",
+      "bytes": 187831,
+      "relation": "preexisting_unchanged",
+      "sha256": "be51959787d68fe8891ead4d098aa12ca48fa1ae9a4097a416beeb73a2acc593"
+    },
+    {
+      "artifact_id": "existing/v10-accounting.json",
+      "bytes": 215719,
+      "relation": "preexisting_unchanged",
+      "sha256": "51c831a18f66591239d8cbe940846a32037615e08d7536f52182233c06b039f0"
+    },
+    {
+      "artifact_id": "existing/v10-independent-scalar-crosscheck.json",
+      "bytes": 17406,
+      "relation": "preexisting_unchanged",
+      "sha256": "2708572510c2d2ec21e28d7eb871cf3bf1f8d33ae3e35e6380f0e643e9823344"
+    },
+    {
+      "artifact_id": "existing/v10-official-evaluation.json",
+      "bytes": 508622,
+      "relation": "preexisting_unchanged",
+      "sha256": "3d582ce11bd95b2f0020b69a1508023408410cd0caddfcdc432724443d99823a"
+    },
+    {
+      "artifact_id": "existing/v10-reanalysis.csv",
+      "bytes": 56583,
+      "relation": "preexisting_unchanged",
+      "sha256": "08b7749e024b1711a0dbd07a6ac29c1056178798cafa70e78fc96080553df2bc"
+    },
+    {
+      "artifact_id": "existing/v10-reanalysis.json",
+      "bytes": 391381,
+      "relation": "preexisting_unchanged",
+      "sha256": "6ffa5440904b7760517831a8e86100e627a658e54297ad86b57ee62a24b8509c"
+    }
+  ],
+  "schema": "banking-v10-v11-final-public-capture-provenance-v1"
+}

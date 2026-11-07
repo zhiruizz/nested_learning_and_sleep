@@ -25,3 +25,9 @@ The subsequent [qualified fresh-role v3](../reports/agnews-qualified-v3.md) pass
 ## V5 mechanism follow-up
 
 [Completed development diagnostics](../reports/agnews-mechanism-v5.md) add component-policy interventions, local gradient probes, exact first16-step replay and real3B anchored-update recovery qualification. The seven-arm follow-up is running under a [frozen configuration](../configs/agnews-anchored-comparison-v5.json); no completed-main or confirmed-method claim is made at this publication. Full-paper fidelity and external confirmation remain unestablished.
+
+## Banking V10 and V11
+
+The [V10 controls](../reports/banking77-controls-v10.md) and [V11 development reward ablation](../reports/banking77-reward-ablation-v11.md) add bounded real-3B runs with bundled [aggregate evidence](../results/banking-v10-v11/README.md). All three task-0 foundations passed the fixed development acquisition gates; later teachers were not individually requalified. V10 has sealed official-test endpoints, and V11 uses a separate matched task-1 development population. Their local periods and multi-level transitions were executed in this last-MLP variant. The earlier UNVERIFIED period-64/native-architecture row remains about its original scope and is not upgraded by these experiments.
+
+These are USER_SUPPLIED_ASSETS_REQUIRED experiments with BUNDLED_RESULTS_REANALYSIS artifacts, not native HOPE/full Sleep reproduction. The reports retain readout disagreements, extra data/labels/parameters/computation, source/recovery limits, operational failures and unknown costs. Offline CPU acceptance certifies the stated engineering checks only.

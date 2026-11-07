@@ -1,0 +1,682 @@
+"""Offline Banking v10 lifecycle, score, and compute-cost aggregation.
+
+Input is an explicit JSON manifest of trusted Banking output artifacts. This
+tool reads aggregate receipts and may CPU-deserialize only SHA-bound Banking
+checkpoints named by that manifest; it never loads the language model, reads
+training/test rows, initializes CUDA, or writes/copies checkpoint/data payloads.
+Missing work is represented as unknown, never as zero.
+
+Manifest shape (paths are absolute or relative to the manifest file)::
+
+    {"schema":"banking-v10-accounting-input-v1",
+     "bindings":{"config_sha256":"...","source_lock_sha256":"...",
+                 "training_manifest_sha256":"..."},
+     "foundations":[{"seed":17,"receipt_path":".../foundation-receipt.json",
+                     "checkpoint_path":".../foundation-final.pt"}],
+     "probe_attempts":[{"label":"attempt-A","failure_path":".../failure.json",
+                         "ledger_path":".../ledger.json",
+                         "unknown_work_fields":["tail_calls"]}],
+     "main":{"seal_path":".../training-seal.json","training_root":"..."},
+     "test_evaluation_path":".../evaluation.json",
+     "model_config_path":".../config.json"}
+
+Main, test, and model-config entries are optional until those artifacts exist.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import math
+import statistics
+import sys
+from collections import defaultdict
+from pathlib import Path, PureWindowsPath
+from typing import Any, Mapping
+
+
+SCHEMA = "banking-v10-offline-accounting-v1"
+MANIFEST_SCHEMA = "banking-v10-accounting-input-v1"
+SEEDS = (17, 29, 43)
+ARMS = ("CMS_ONLY", "SLEEP_ADDITIVE", "GOLD_ADDITIVE")
+WORK_MAP = {
+    "full_backbone_forward_calls": ("full_backbone_forward_calls", "backbone_forwards"),
+    "full_backbone_forward_tokens": ("full_backbone_forward_tokens", "observed_backbone_valid_tokens"),
+    "executed_input_tokens_including_padding": ("executed_input_tokens_including_padding",
+                                                 "observed_backbone_executed_tokens_including_padding"),
+    "padded_input_tokens": ("padded_input_tokens",),
+    "tail_calls": ("tail_calls", "tail_calls"),
+    "tail_backward_calls": ("tail_backward_calls",),
+    "tail_backward_tokens": ("tail_backward_tokens",),
+    "physical_adamw_updates": ("physical_adamw_updates", "optimizer_updates"),
+    "wake_updates": ("wake_updates",),
+    "sleep_events": ("sleep_events",),
+    "sampled_output_tokens": ("sampled_output_tokens",),
+    "active_wall_seconds": ("active_wall_seconds", "elapsed_seconds"),
+    # Older evaluator receipts called the candidate-only counter input_tokens.
+    # It is never interpreted as all forward positions (greedy included).
+    "candidate_input_tokens": ("candidate_input_tokens", "input_tokens"),
+}
+COUNT_FIELDS = {name for name in WORK_MAP if name != "active_wall_seconds"}
+
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1 << 20), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def read_json(path: Path) -> dict:
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise ValueError(f"expected JSON object: {path}")
+    return value
+
+
+def _finite_nonnegative(value, label: str, *, integer: bool = False):
+    if integer:
+        if type(value) is not int or value < 0:
+            raise ValueError(f"{label} must be a nonnegative integer")
+        return value
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(float(value)) or value < 0:
+        raise ValueError(f"{label} must be finite and nonnegative")
+    return float(value)
+
+
+def summarize_values(values: list[float]) -> dict:
+    """Mean/sample SD over observed values; empty and singleton SD stay null."""
+    if not values:
+        return {"n": 0, "mean": None, "sample_sd": None}
+    return {"n": len(values), "mean": statistics.mean(values),
+            "sample_sd": statistics.stdev(values) if len(values) > 1 else None}
+
+
+def normalize_work(work: Mapping, *, unknown_fields=()) -> dict:
+    """Extract typed counters without inventing defaults for absent fields."""
+    if not isinstance(work, Mapping):
+        raise TypeError("work must be an object")
+    unknown = set(unknown_fields)
+    result, absent = {}, []
+    for output, aliases in WORK_MAP.items():
+        value = None
+        for key in aliases:
+            if key in work:
+                value = work[key]
+                break
+        if output in unknown:
+            value = None
+        if value is None:
+            result[output] = None
+            absent.append(output)
+        else:
+            result[output] = _finite_nonnegative(value, f"work.{output}", integer=output in COUNT_FIELDS)
+    hist = work.get("forward_shape_histogram", work.get("forward_input_shape_histogram",
+                           work.get("observed_backbone_forward_shape_histogram")))
+    if hist is None:
+        result["forward_shape_histogram"] = None
+    elif isinstance(hist, Mapping):
+        parsed = {}
+        for shape, count in hist.items():
+            if not isinstance(shape, str) or "x" not in shape:
+                raise ValueError("invalid forward shape histogram key")
+            b, s = (int(x) for x in shape.split("x", 1))
+            if b < 1 or s < 1:
+                raise ValueError("forward shape dimensions must be positive")
+            parsed[f"{b}x{s}"] = _finite_nonnegative(count, "forward shape count", integer=True)
+        result["forward_shape_histogram"] = parsed
+        if result["full_backbone_forward_calls"] is not None and sum(parsed.values()) != result["full_backbone_forward_calls"]:
+            raise ValueError("forward histogram does not sum to recorded full-backbone calls")
+        if result["executed_input_tokens_including_padding"] is not None:
+            tokens = sum(int(k.split("x")[0]) * int(k.split("x")[1]) * v for k, v in parsed.items())
+            if tokens != result["executed_input_tokens_including_padding"]:
+                raise ValueError("forward histogram does not sum to recorded padded input tokens")
+    else:
+        raise TypeError("forward_shape_histogram must be an object")
+    result["missing_work_fields"] = absent
+    if "candidate_input_tokens" in work:
+        result["candidate_input_tokens_source"] = "candidate_input_tokens"
+    elif "input_tokens" in work:
+        result["candidate_input_tokens_source"] = "legacy_input_tokens_candidate_only"
+    else:
+        result["candidate_input_tokens_source"] = None
+    valid = result["full_backbone_forward_tokens"]
+    executed = result["executed_input_tokens_including_padding"]
+    if valid is not None and executed is not None and valid > executed:
+        raise ValueError("valid forward tokens exceed executed padded positions")
+    return result
+
+
+def aggregate_work(records: list[Mapping]) -> dict:
+    fields = list(WORK_MAP)
+    output = {}
+    for field in fields:
+        vals = [r["work"].get(field) for r in records]
+        known = [v for v in vals if v is not None]
+        missing = [r["label"] for r in records if r["work"].get(field) is None]
+        output[field] = {"known_sum": sum(known), "complete": not missing,
+                         "unknown_source_count": len(missing), "unknown_sources": missing}
+        if not missing:
+            output[field]["total"] = sum(known)
+        else:
+            output[field]["total"] = None
+    return output
+
+
+def _safe_relative(root: Path, value: str) -> Path:
+    path = Path(value)
+    candidate = path.resolve() if path.is_absolute() else (root / path).resolve()
+    if not candidate.is_file():
+        raise FileNotFoundError(candidate)
+    return candidate
+
+
+def _resolve_path(root: Path, value: str) -> Path:
+    path = Path(value)
+    return (path.resolve() if path.is_absolute() else (root / path).resolve())
+
+
+_TERMINAL_CHECKPOINT_PARTS = ("checkpoints", "final-task06.pt")
+
+
+def _is_terminal_checkpoint_relative(value: object) -> bool:
+    """Accept only the fixed task-6 checkpoint path using either OS separator."""
+    if not isinstance(value, str) or not value:
+        return False
+    win = PureWindowsPath(value)
+    normalized_parts = tuple(value.replace("\\", "/").split("/"))
+    return (
+        not win.is_absolute()
+        and not win.drive
+        and not win.root
+        and ".." not in win.parts
+        and tuple(win.parts) == _TERMINAL_CHECKPOINT_PARTS
+        and normalized_parts == _TERMINAL_CHECKPOINT_PARTS
+    )
+
+
+def load_pinned_model_config(path: Path, expected_sha256: str) -> dict:
+    """Read dimensions only after verifying the frozen model-config byte pin."""
+    actual = sha256_file(path)
+    if not isinstance(expected_sha256, str) or actual != expected_sha256:
+        raise ValueError("model config bytes differ from their frozen asset SHA-256")
+    cfg = read_json(path)
+    keys = ("hidden_size", "vocab_size", "num_hidden_layers", "intermediate_size",
+            "num_attention_heads", "num_key_value_heads")
+    for key in keys:
+        if type(cfg.get(key)) is not int or cfg[key] < 1:
+            raise ValueError(f"pinned model config has invalid {key}")
+    return {key: cfg[key] for key in keys}
+
+
+def _load_checkpoint_context(path: Path, expected_sha: str, *, seed: int, arm: str,
+                             task_id: int, config_sha: str | None = None,
+                             source_lock_sha: str | None = None,
+                             manifest_sha: str | None = None) -> dict:
+    if sha256_file(path) != expected_sha:
+        raise ValueError(f"checkpoint bytes changed: {path.name}")
+    tools_dir = str(Path(__file__).resolve().parent)
+    if tools_dir not in sys.path:
+        sys.path.insert(0, tools_dir)
+    import torch
+    # This is intentionally limited to explicit SHA-bound Banking output paths.
+    payload = torch.load(path, map_location="cpu", weights_only=False)
+    if not isinstance(payload, Mapping) or payload.get("schema") != "banking-cil-v10-checkpoint":
+        raise ValueError("checkpoint schema is not Banking v10")
+    if (payload.get("seed"), payload.get("arm"), payload.get("task_id")) != (seed, arm, task_id):
+        raise ValueError("checkpoint identity differs from its receipt")
+    for key, expected in (("config_sha256", config_sha), ("source_lock_sha256", source_lock_sha),
+                          ("training_manifest_sha256", manifest_sha)):
+        if expected is not None and payload.get(key) != expected:
+            raise ValueError(f"checkpoint {key} differs from its seal")
+    context = payload.get("context")
+    if not isinstance(context, Mapping):
+        raise ValueError("checkpoint mutable context is missing")
+    return dict(context)
+
+
+def _account_checkpoint(record: Mapping, *, root: Path, binding: Mapping):
+    path = _safe_relative(root, record["checkpoint_path"])
+    context = _load_checkpoint_context(path, record["checkpoint_sha256"], seed=record["seed"],
+        arm=record["arm"], task_id=record["task_id"], config_sha=binding.get("config_sha256"),
+        source_lock_sha=binding.get("source_lock_sha256"), manifest_sha=binding.get("training_manifest_sha256"))
+    from banking_additive_accounting_v10 import account_mutable_state
+    counts = account_mutable_state(context)
+    del context
+    return {"label": record["label"], "seed": record["seed"], "arm": record["arm"],
+            "task_id": record["task_id"], "checkpoint_sha256": record["checkpoint_sha256"],
+            "accounting": counts}
+
+
+def _receipt_work(path: Path, *, kind: str, label: str, unknown_fields=()) -> dict:
+    receipt = read_json(path)
+    expected = {"foundation": ("banking-cil-v10-foundation-receipt", "qualified"),
+                "main": ("banking-cil-v10-run-receipt", "complete")}.get(kind)
+    if expected and (receipt.get("schema"), receipt.get("status")) != expected:
+        raise ValueError(f"{label}: receipt schema/status mismatch")
+    if kind in {"foundation", "main"} and (receipt.get("test_data_included") is not False or
+                                               receipt.get("model_immutable_versions_unchanged") is not True):
+        raise ValueError(f"{label}: receipt does not affirm test exclusion and immutable model")
+    work = normalize_work(receipt.get("work", {}), unknown_fields=unknown_fields)
+    return receipt, {"label": label, "work": work, "source_sha256": sha256_file(path)}
+
+
+def _extract_scalar_metrics(metric: Mapping) -> dict:
+    if not isinstance(metric, Mapping):
+        return {}
+    out = {}
+    for key in ("count", "correct", "accuracy", "task_class_macro_accuracy", "global_candidate_sum_accuracy",
+                "mean", "gold_label_token_mean_nll"):
+        value = metric.get(key)
+        if isinstance(value, Mapping) and "mean_token_nll" in value:
+            value = value.get("mean_token_nll")
+        if value is None:
+            continue
+        if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(float(value)):
+            continue
+        out[key] = value
+    return out
+
+
+def _metric_grid(rows: list[dict], *, metric_path: tuple[str, ...], arms: tuple[str, ...]) -> dict:
+    values = defaultdict(dict)
+    for row in rows:
+        value = row
+        for key in metric_path:
+            if not isinstance(value, Mapping) or key not in value:
+                value = None
+                break
+            value = value[key]
+        if not isinstance(value, Mapping):
+            continue
+        seed, arm = value.get("seed"), value.get("arm")
+        if seed not in SEEDS or arm not in arms:
+            continue
+        for metric, number in value.get("metrics", {}).items():
+            if isinstance(number, (int, float)) and not isinstance(number, bool) and math.isfinite(float(number)):
+                values[metric][(seed, arm)] = float(number)
+    summary = {}
+    for metric, cells in values.items():
+        summary[metric] = {"by_arm": {}, "paired_differences_vs_CMS_ONLY": {}}
+        for arm in arms:
+            scores = [cells[(seed, arm)] for seed in SEEDS if (seed, arm) in cells]
+            summary[metric]["by_arm"][arm] = summarize_values(scores)
+        if "CMS_ONLY" in arms:
+            for arm in arms:
+                if arm == "CMS_ONLY":
+                    continue
+                diffs = [cells[(seed, arm)] - cells[(seed, "CMS_ONLY")] for seed in SEEDS
+                         if (seed, arm) in cells and (seed, "CMS_ONLY") in cells]
+                summary[metric]["paired_differences_vs_CMS_ONLY"][arm] = summarize_values(diffs)
+    return summary
+
+
+def _main_metrics(seal: Mapping) -> dict:
+    rows = []
+    expected = {(s, a) for s in SEEDS for a in ARMS}
+    seen = set()
+    for run in seal.get("runs", []):
+        key = (run.get("seed"), run.get("arm"))
+        if key in seen or key not in expected:
+            raise ValueError("main seal has duplicate or unexpected seed/arm run")
+        seen.add(key)
+        endpoint = run.get("endpoint_metrics")
+        if not isinstance(endpoint, Mapping):
+            raise ValueError("main seal run lacks endpoint_metrics")
+        candidate = endpoint.get("candidate_metrics", endpoint)
+        metrics = _extract_scalar_metrics(candidate)
+        if candidate.get("count") != 770 or "accuracy" not in metrics:
+            raise ValueError("main endpoint must contain a complete 770-row development metric")
+        rows.append({"seed": key[0], "arm": key[1], "metrics": metrics})
+    if seen != expected:
+        raise ValueError("main seal does not contain the exact 3x3 V10 grid")
+    return _metric_grid(rows, metric_path=(), arms=ARMS)
+
+
+def _test_metrics(result: Mapping) -> dict:
+    if result.get("schema") != "banking-cil-v10-test-evaluator-v1" or result.get("status") != "complete":
+        raise ValueError("official test evaluation is not a completed frozen V10 result")
+    if result.get("optimizer_updates") != 0 or result.get("all_contexts_frozen") is not True:
+        raise ValueError("test evaluation is not read-only")
+    verified = result.get("training", {}).get("verified_contexts", [])
+    if {(x.get("seed"), x.get("arm")) for x in verified if isinstance(x, Mapping)} != {
+            (s, a) for s in SEEDS for a in ARMS}:
+        raise ValueError("test evaluation lacks the exact nine sealed training contexts")
+    grids = {}
+    for scope_key in ("primary_raw_official_test", "secondary_train_development_disjoint_subset"):
+        scope = result.get(scope_key)
+        if not isinstance(scope, Mapping):
+            raise ValueError(f"test result lacks {scope_key}")
+        rows = []
+        for name, per_context in scope.items():
+            if not isinstance(name, str) or not isinstance(per_context, Mapping):
+                raise ValueError("malformed test context metric")
+            try:
+                seed_s, arm = name.split(":", 1)
+                seed = int(seed_s.removeprefix("seed"))
+            except Exception as exc:
+                raise ValueError("test context key must be seedN:ARM") from exc
+            metrics = {}
+            for key in ("teacher_forced_sum", "teacher_forced_length_mean", "greedy_generation"):
+                table = per_context.get(key)
+                if isinstance(table, Mapping) and isinstance(table.get("accuracy"), (int, float)):
+                    metrics[key] = float(table["accuracy"])
+            nll = per_context.get("gold_label_token_mean_nll")
+            if isinstance(nll, Mapping) and isinstance(nll.get("mean"), (int, float)):
+                metrics["gold_label_token_mean_nll"] = float(nll["mean"])
+            rows.append({"seed": seed, "arm": arm, "metrics": metrics})
+        if {(r["seed"], r["arm"]) for r in rows} != {(s, a) for s in SEEDS for a in ARMS}:
+            raise ValueError(f"{scope_key} does not contain exact 3x3 context grid")
+        expected_rows = 3080
+        if scope_key == "secondary_train_development_disjoint_subset":
+            overlap = result.get("test_source", {}).get("normalized_train_or_development_overlap_rows")
+            if type(overlap) is not int or not 0 <= overlap <= 3080:
+                raise ValueError("official test result lacks a valid train-overlap count")
+            expected_rows -= overlap
+        for row in rows:
+            name = f"seed{row['seed']}:{row['arm']}"
+            table = scope[name]
+            for key in ("teacher_forced_sum", "teacher_forced_length_mean", "greedy_generation"):
+                if table.get(key, {}).get("count") != expected_rows:
+                    raise ValueError(f"{scope_key}/{name}/{key} has unexpected row count")
+            # V10 runtime `_score_rows` emits one per-example token-mean NLL,
+            # so its count is rows (not answer tokens).
+            if table.get("gold_label_token_mean_nll", {}).get("count") != expected_rows:
+                raise ValueError(f"{scope_key}/{name}/gold NLL has unexpected row count")
+        grids[scope_key] = _metric_grid(rows, metric_path=(), arms=ARMS)
+    source = result.get("test_source", {})
+    if (source.get("source_sha256") != "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d"
+            or source.get("source_bytes") != 239_961 or source.get("raw_rows") != 3_080
+            or source.get("source_revision") != "9d081458ff52e53cf7e848f414e6e9344e4e6696"
+            or (source.get("training_rows_considered"), source.get("development_rows_considered"),
+                source.get("train_development_rows_considered")) != (9_229, 770, 9_999)
+            or source.get("primary_includes_all_official_rows") is not True
+            or type(source.get("normalized_train_overlap_rows")) is not int
+            or type(source.get("normalized_development_overlap_rows")) is not int
+            or type(source.get("normalized_train_or_development_overlap_rows")) is not int
+            or source.get("train_development_disjoint_secondary_rows") !=
+               3080 - source.get("normalized_train_or_development_overlap_rows", -1)):
+        raise ValueError("test result does not match pinned official raw test population")
+    return {"source": {k: source.get(k) for k in ("source_revision", "source_sha256", "source_bytes", "raw_rows",
+                 "training_rows_considered", "development_rows_considered", "train_development_rows_considered",
+                 "normalized_train_overlap_rows", "normalized_development_overlap_rows",
+                 "normalized_train_or_development_overlap_rows", "train_development_disjoint_secondary_rows",
+                 "primary_includes_all_official_rows", "secondary_reuses_primary_cohort")},
+            "primary_raw_official_test": grids["primary_raw_official_test"],
+            "secondary_train_development_disjoint_subset": grids["secondary_train_development_disjoint_subset"],
+            "scope_note": "The raw official test is primary; the secondary subset excludes normalized text seen in either verified training or development roles."}
+
+
+def _probe_summary(path: Path, label: str, *, unknown_work_fields=()) -> tuple[dict, dict]:
+    data = read_json(path)
+    work_raw = data.get("work")
+    if not isinstance(work_raw, Mapping):
+        raise ValueError(f"probe attempt {label} lacks a work object")
+    work = normalize_work(work_raw, unknown_fields=unknown_work_fields)
+    arms = {}
+    for arm, record in data.get("arms", {}).items() if isinstance(data.get("arms"), Mapping) else []:
+        points = record.get("metrics_after_opportunities", {}) if isinstance(record, Mapping) else {}
+        arms[arm] = {}
+        if isinstance(points, Mapping):
+            for step, point in points.items():
+                if not isinstance(point, Mapping):
+                    continue
+                metric = point.get("candidate_metrics", point)
+                if isinstance(metric, Mapping):
+                    by_context = metric.get("student")
+                    if isinstance(by_context, Mapping):
+                        metric = by_context
+                    scalars = _extract_scalar_metrics(metric)
+                    if scalars:
+                        arms[arm][str(step)] = scalars
+    return ({"label": label, "status": data.get("status", "failed_or_unsealed"),
+             "source_sha256": sha256_file(path), "completed_arms": sorted(arms),
+             "arms": arms, "work_scope": data.get("work_scope", "attempt_only")},
+            {"label": label, "work": work, "source_sha256": sha256_file(path)})
+
+
+def aggregate_manifest(manifest_path: str | Path, output_path: str | Path) -> dict:
+    manifest_path, output_path = Path(manifest_path).resolve(), Path(output_path).resolve()
+    if output_path.exists():
+        raise FileExistsError(output_path)
+    manifest = read_json(manifest_path)
+    if manifest.get("schema") != MANIFEST_SCHEMA:
+        raise ValueError("accounting input manifest schema mismatch")
+    base = manifest_path.parent
+    work_records, foundations, probes, main_summary, test_summary = [], [], [], None, None
+    checkpoint_records = []
+    bindings = manifest.get("bindings", {})
+    if not isinstance(bindings, Mapping):
+        raise ValueError("manifest bindings must be an object")
+
+    seen_foundations = set()
+    for entry in manifest.get("foundations", []):
+        receipt_path = _safe_relative(base, entry["receipt_path"])
+        receipt, workrec = _receipt_work(receipt_path, kind="foundation", label=entry.get("label", f"foundation-{entry.get('seed')}"))
+        if receipt.get("seed") != entry.get("seed"):
+            raise ValueError("foundation seed differs from manifest")
+        if receipt["seed"] in seen_foundations:
+            raise ValueError("duplicate foundation seed")
+        seen_foundations.add(receipt["seed"])
+        for key in ("config_sha256", "source_lock_sha256", "training_manifest_sha256"):
+            if bindings.get(key) is not None and receipt.get(key) != bindings.get(key):
+                raise ValueError(f"foundation {key} binding mismatch")
+        foundations.append({"seed": receipt["seed"], "status": receipt["status"],
+            "metric": _extract_scalar_metrics(receipt.get("metric", {})),
+            "legacy_mutable_parameter_counts_preserved": receipt.get("mutable_parameter_counts"),
+            "receipt_sha256": workrec["source_sha256"]})
+        work_records.append(workrec)
+        if entry.get("checkpoint_path"):
+            checkpoint_records.append({"label": workrec["label"], "seed": receipt["seed"],
+                "arm": receipt.get("arm", "FOUNDATION_CMS_ONLY"), "task_id": 0,
+                "checkpoint_path": entry["checkpoint_path"], "checkpoint_sha256": receipt["checkpoint_sha256"]})
+
+    for entry in manifest.get("probe_attempts", []):
+        label = entry.get("label")
+        if not isinstance(label, str) or not label:
+            raise ValueError("each probe attempt needs an explicit label")
+        primary = entry.get("result_path") or entry.get("failure_path")
+        if not primary:
+            raise ValueError(f"probe {label}: result_path or failure_path required")
+        path = _safe_relative(base, primary)
+        unknown = set(entry.get("unknown_work_fields", []))
+        # Archived failure ledger can override zero-valued tail counters only
+        # when the ledger explicitly says those counters were not merged.
+        ledger = None
+        if entry.get("ledger_path"):
+            ledger = read_json(_safe_relative(base, entry["ledger_path"]))
+            if "tail" in str(ledger.get("failure_tail_counter_limitation", "")).casefold():
+                unknown.update({"tail_calls", "tail_backward_tokens"})
+        summary, workrec = _probe_summary(path, label, unknown_work_fields=unknown)
+        if entry.get("ledger_path"):
+            known_ledger = {
+                "known_full_backbone_forwards": "full_backbone_forward_calls",
+                "known_physical_adam_steps": "physical_adamw_updates",
+                "known_backward_calls": "tail_backward_calls",
+                "active_wall_seconds": "active_wall_seconds",
+            }
+            for ledger_key, work_key in known_ledger.items():
+                if ledger_key not in ledger:
+                    continue
+                value = _finite_nonnegative(ledger[ledger_key], f"ledger.{ledger_key}",
+                                            integer=work_key in COUNT_FIELDS)
+                existing = workrec["work"].get(work_key)
+                if existing is not None and existing != value:
+                    raise ValueError(f"probe failure work differs from archived known {ledger_key}")
+                workrec["work"][work_key] = value
+                workrec["work"]["missing_work_fields"] = [
+                    field for field in workrec["work"]["missing_work_fields"] if field != work_key]
+            summary["failure_ledger_sha256"] = sha256_file(_safe_relative(base, entry["ledger_path"]))
+            summary["failure_ledger_limitation"] = ledger.get("failure_tail_counter_limitation")
+        probes.append(summary)
+        work_records.append(workrec)
+
+    main = manifest.get("main")
+    if main:
+        if seen_foundations != set(SEEDS):
+            raise ValueError("main accounting requires all three qualified foundation receipts")
+        seal_path = _safe_relative(base, main["seal_path"])
+        seal = read_json(seal_path)
+        if seal.get("schema") != "banking-cil-v10-training-seal-v1" or seal.get("complete") is not True:
+            raise ValueError("main training seal is not complete")
+        if (seal.get("test_data_included") is not False or seal.get("official_test_read") is not False):
+            raise ValueError("main training seal does not affirm test isolation")
+        for key in ("config_sha256", "source_lock_sha256", "training_manifest_sha256"):
+            if bindings.get(key) is not None and seal.get(key) != bindings[key]:
+                raise ValueError(f"main seal {key} differs from manifest binding")
+        training_root = _resolve_path(base, main["training_root"])
+        if not training_root.is_dir():
+            raise NotADirectoryError(training_root)
+        run_rows = []
+        for row in seal.get("runs", []):
+            run_dir_raw = Path(row["run_dir"])
+            run_dir = run_dir_raw.resolve() if run_dir_raw.is_absolute() else (training_root / run_dir_raw).resolve()
+            if training_root.resolve() not in run_dir.parents:
+                raise ValueError("sealed run directory escapes training root")
+            receipt_path = run_dir / "run-receipt.json"
+            if sha256_file(receipt_path) != row.get("run_receipt_sha256"):
+                raise ValueError("main run receipt hash differs from seal")
+            receipt = read_json(receipt_path)
+            if ((receipt.get("schema"), receipt.get("status")) != ("banking-cil-v10-run-receipt", "complete")
+                    or receipt.get("test_data_included") is not False
+                    or receipt.get("model_immutable_versions_unchanged") is not True):
+                raise ValueError("main run receipt is incomplete or test contaminated")
+            if (receipt.get("seed"), receipt.get("arm"), receipt.get("tasks_completed")) != (
+                    row.get("seed"), row.get("arm"), 7):
+                raise ValueError("main receipt identity differs from seal")
+            for key in ("config_sha256", "source_lock_sha256", "training_manifest_sha256"):
+                if receipt.get(key) != seal.get(key):
+                    raise ValueError(f"main receipt {key} differs from seal")
+            workrec = {"label": f"main-seed{row['seed']}-{row['arm']}",
+                       "work": normalize_work(receipt.get("work", {})),
+                       "source_sha256": sha256_file(receipt_path)}
+            work_records.append(workrec)
+            run_rows.append({"seed": row["seed"], "arm": row["arm"], "receipt": receipt,
+                             "run_dir": run_dir, "seal_row": row})
+            cp_rel = receipt.get("final_checkpoint")
+            if (not _is_terminal_checkpoint_relative(cp_rel)
+                    or not _is_terminal_checkpoint_relative(row.get("final_checkpoint"))):
+                raise ValueError("main receipt terminal checkpoint path mismatch")
+            # Join only the fixed, validated components; do not use the
+            # receipt's platform-specific separator spelling as a path input.
+            cp_path = run_dir.joinpath(*_TERMINAL_CHECKPOINT_PARTS).resolve()
+            if (run_dir not in cp_path.parents or sha256_file(cp_path) != row.get("final_checkpoint_sha256")
+                    or receipt.get("final_checkpoint_sha256") != row.get("final_checkpoint_sha256")):
+                raise ValueError("main terminal checkpoint hash differs from seal")
+            checkpoint_records.append({"label": f"main-seed{row['seed']}-{row['arm']}",
+                "seed": row["seed"], "arm": row["arm"], "task_id": 6,
+                "checkpoint_path": str(cp_path), "checkpoint_sha256": row["final_checkpoint_sha256"]})
+        if {(r["seed"], r["arm"]) for r in run_rows} != {(s, a) for s in SEEDS for a in ARMS}:
+            raise ValueError("main seal does not contain exact nine seed/arm runs")
+        # Preserve all fixed development endpoints; compute 3-seed uncertainty and paired deltas.
+        score_rows = []
+        for item in run_rows:
+            m = item["receipt"].get("endpoint_metrics", {})
+            cm = m.get("candidate_metrics", m)
+            scalars = _extract_scalar_metrics(cm)
+            if cm.get("count") != 770 or "accuracy" not in scalars:
+                raise ValueError("main endpoint must contain a complete 770-row development metric")
+            score_rows.append({"seed": item["seed"], "arm": item["arm"], "metrics": scalars})
+        main_summary = {"population": "fixed development endpoints",
+                        "seal_sha256": sha256_file(seal_path),
+                        "endpoint_metrics": _metric_grid(score_rows, metric_path=(), arms=ARMS),
+                        "runs": [{"seed": r["seed"], "arm": r["arm"],
+                                  "receipt_sha256": r["seal_row"]["run_receipt_sha256"],
+                                  "checkpoint_sha256": r["seal_row"]["final_checkpoint_sha256"]} for r in run_rows]}
+
+    for record in manifest.get("accounting_checkpoints", []):
+        checkpoint_records.append(dict(record))
+    accounting = []
+    for record in checkpoint_records:
+        accounting.append(_account_checkpoint(record, root=base, binding=bindings))
+
+    if manifest.get("test_evaluation_path"):
+        test_path = _safe_relative(base, manifest["test_evaluation_path"])
+        test_result = read_json(test_path)
+        test_summary = {"evaluation_sha256": sha256_file(test_path), **_test_metrics(test_result)}
+        workrec = {"label": "official-test-evaluation",
+                   "work": normalize_work(test_result.get("work", {})),
+                   "source_sha256": sha256_file(test_path)}
+        work_records.append(workrec)
+
+    work_total = aggregate_work(work_records)
+    flop = None
+    model_config_path = manifest.get("model_config_path")
+    if model_config_path:
+        cfg_path = _safe_relative(base, model_config_path)
+        expected_model_config_sha = bindings.get("model_config_sha256")
+        if expected_model_config_sha is None:
+            raise ValueError("model-config FLOP estimate requires bindings.model_config_sha256")
+        model_config = load_pinned_model_config(cfg_path, expected_model_config_sha)
+        from banking_cost_estimates_v10 import frozen_backbone_matmul_estimate
+        flop_rows = []
+        for record in work_records:
+            hist = record["work"].get("forward_shape_histogram")
+            if hist is None:
+                flop_rows.append({"label": record["label"], "estimate": None,
+                                  "reason": "forward shape histogram not recorded"})
+                continue
+            work = {"forward_shape_histogram": hist,
+                    "executed_input_tokens_including_padding": record["work"].get("executed_input_tokens_including_padding")}
+            estimate = frozen_backbone_matmul_estimate(work, model_config)
+            flop_rows.append({"label": record["label"], "estimate": estimate})
+        observed = [row["estimate"] for row in flop_rows if row["estimate"] is not None]
+        missing_shapes = [row["label"] for row in flop_rows if row["estimate"] is None]
+        known_projection = sum(row["dense_projection_flops_estimate"] for row in observed)
+        known_attention = sum(row["attention_qk_av_flops_estimate"] for row in observed)
+        flop = {"by_source": flop_rows,
+                "observed_histogram_sources_subtotal": {
+                    "dense_projection_flops_estimate": known_projection,
+                    "attention_qk_av_flops_estimate": known_attention,
+                    "partial_forward_flops_estimate": known_projection + known_attention,
+                    "complete_for_manifest_sources": not missing_shapes,
+                    "included_sources": [row["label"] for row in flop_rows],
+                    "missing_histogram_sources": missing_shapes},
+                "scope": "recorded full-backbone dense projections and attention QK/AV; incomplete if any source lacks shape histogram"}
+
+    foundation_metric_summary = {}
+    for metric in sorted({key for row in foundations for key in row["metric"]}):
+        vals = [float(row["metric"][metric]) for row in foundations if metric in row["metric"]]
+        foundation_metric_summary[metric] = summarize_values(vals)
+    output = {"schema": SCHEMA, "claim_scope": "offline cost/aggregate accounting for a local controlled Banking77 ablation",
+        "bindings": {k: bindings.get(k) for k in ("config_sha256", "source_lock_sha256", "training_manifest_sha256", "model_config_sha256", "test_source_sha256")},
+        "coverage": {"foundation_receipt_count": len(foundations), "probe_attempt_count": len(probes),
+                     "main_grid_included": main_summary is not None,
+                     "official_test_included": test_summary is not None,
+                     "note": "A complete subtotal covers only artifacts named in this manifest."},
+        "foundations": foundations, "foundation_metric_summary": foundation_metric_summary,
+        "probe_attempts": probes, "main": main_summary,
+        "official_test": test_summary, "work_by_source": work_records,
+        "work_totals": work_total, "mutable_context_accounting": accounting,
+        "frozen_backbone_partial_flop_estimates": flop,
+        "accounting_caveats": [
+            "Legacy receipt parameter counts are preserved verbatim as metadata; corrected additive counts are recomputed from SHA-bound checkpoint context state.",
+            "Additive routing is a local extra-compute intervention. Constant paper active-parameter count is not claimed.",
+            "Unrecorded work remains null/unknown; no absent cost is treated as zero.",
+            "Mutable-tail matmul estimates are separate from frozen-backbone FLOPs and exclude router/norm/nonlinear/backward/optimizer work.",
+            "Probe attempts are reported separately and are not merged into main-grid seed statistics.",
+            "Development, official-test raw primary, and train-disjoint test secondary remain separate populations."]}
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("x", encoding="utf-8", newline="\n") as stream:
+        json.dump(output, stream, ensure_ascii=False, sort_keys=True, indent=2, allow_nan=False)
+        stream.write("\n")
+    return output
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--manifest", type=Path, required=True,
+                        help="explicit JSON file/path manifest; see docstring schema")
+    parser.add_argument("--output", type=Path, required=True, help="new JSON output path; overwrite is refused")
+    args = parser.parse_args(argv)
+    output = aggregate_manifest(args.manifest, args.output)
+    print(json.dumps({"schema": output["schema"], "output": str(args.output),
+                      "foundations": len(output["foundations"]), "probe_attempts": len(output["probe_attempts"]),
+                      "main": output["main"] is not None, "official_test": output["official_test"] is not None,
+                      "accounted_checkpoints": len(output["mutable_context_accounting"])}, sort_keys=True))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

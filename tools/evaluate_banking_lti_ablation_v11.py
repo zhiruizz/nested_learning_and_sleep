@@ -1,0 +1,741 @@
+"""Frozen-development evaluator for the Banking v11 two-task LTI ablation.
+
+This reads only the locked train/development pack and final task-1 adapters.
+It is a local ablation, not a paper-faithful HOPE/Sleep reproduction. The
+official test reader is deliberately absent.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import math
+import os
+import sys
+import time
+from pathlib import Path, PureWindowsPath
+from typing import Mapping, Sequence
+
+SCHEMA = "banking-lti-ablation-v11-dev-evaluator-v1"
+REFERENCE_SCHEMA = "banking-lti-ablation-v11-eval-reference-v1"
+SEEDS = (17, 29, 43)
+ARMS = ("CMS_ONLY", "SLEEP_ADDITIVE", "GOLD_ADDITIVE",
+        "LTI_NO_REWARD", "LTI_CANONICAL_TEACHER")
+V10_ARMS = frozenset(ARMS[:3])
+V11_ARMS = frozenset(ARMS[3:])
+TASK01_ROWS = 220
+ROWS_PER_CLASS = 10
+CLASSES_PER_TASK = 11
+MAX_SEQ = 128
+CANDIDATE_BATCH = 32
+MAX_NEW_TOKENS = 10
+MAX_BACKBONE_FORWARDS = 50_000
+MAX_WALL_SECONDS = 7_200.0
+
+
+def sha256_file(path: str | Path) -> str:
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def canonical_sha(value) -> str:
+    raw = json.dumps(value, sort_keys=True, separators=(",", ":"),
+                     ensure_ascii=False, allow_nan=False).encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()
+
+
+def _is_sha(value) -> bool:
+    return (isinstance(value, str) and len(value) == 64 and
+            all(ch in "0123456789abcdef" for ch in value.lower()))
+
+
+def _resolve_child(root: str | Path, value: str, *, require_file=True) -> Path:
+    root = Path(root).resolve()
+    rel = Path(value)
+    win = PureWindowsPath(value)
+    if rel.is_absolute() or win.is_absolute() or win.drive:
+        path = rel.resolve()
+    else:
+        if ".." in rel.parts or ".." in win.parts:
+            raise ValueError("artifact path cannot traverse out of its declared root")
+        path = (root / rel).resolve()
+    if root not in path.parents:
+        raise ValueError("artifact path escaped its declared root")
+    if require_file and not path.is_file():
+        raise FileNotFoundError(path)
+    return path
+
+
+def validate_reference(reference: Mapping) -> list[dict]:
+    """Strictly require one and only one of the fifteen predeclared contexts."""
+    required = {"schema", "status", "seeds", "arms", "model_revision",
+                "model_assets_sha256", "training_manifest_sha256", "evaluation_policy",
+                "v10_config_file_sha256", "v10_config_sha256",
+                "v10_source_lock_sha256", "v10_source_hashes",
+                "v10_grid_seal_sha256", "v10_release_sha256", "foundation_refs",
+                "v11_config_file_sha256",
+                "v11_config_sha256", "v11_source_lock_sha256",
+                "v11_source_hashes", "evaluator_sha256", "contexts"}
+    if set(reference) != required or reference.get("schema") != REFERENCE_SCHEMA:
+        raise ValueError("v11 evaluation reference schema/fields mismatch")
+    if reference.get("status") != "frozen":
+        raise ValueError("v11 evaluation reference must be frozen")
+    if reference.get("seeds") != list(SEEDS) or reference.get("arms") != list(ARMS):
+        raise ValueError("reference seed/arm grid differs from the fixed 3x5 study")
+    for field in ("training_manifest_sha256", "v10_config_file_sha256", "v10_config_sha256",
+                  "v10_source_lock_sha256", "v10_grid_seal_sha256",
+                  "v10_release_sha256",
+                  "v11_config_file_sha256", "v11_config_sha256",
+                  "v11_source_lock_sha256", "evaluator_sha256"):
+        if not _is_sha(reference.get(field)):
+            raise ValueError(f"reference {field} must be a SHA-256 digest")
+    if not isinstance(reference.get("model_revision"), str) or not reference["model_revision"]:
+        raise ValueError("model revision must be explicitly pinned")
+    assets = reference.get("model_assets_sha256")
+    if not isinstance(assets, Mapping) or not assets or any(not _is_sha(v) for v in assets.values()):
+        raise ValueError("model asset map is missing or malformed")
+    foundation_refs = reference.get("foundation_refs")
+    if not isinstance(foundation_refs, Mapping) or set(foundation_refs) != {str(x) for x in SEEDS}:
+        raise ValueError("reference must bind all three qualified foundation contexts")
+    for record in foundation_refs.values():
+        if not isinstance(record, Mapping) or set(record) != {"receipt_sha256", "checkpoint_sha256"} or any(
+                not _is_sha(record.get(key)) for key in ("receipt_sha256", "checkpoint_sha256")):
+            raise ValueError("malformed foundation receipt/checkpoint reference")
+    expected_policy = {
+        "cohort": "all_10_development_rows_per_class_in_seed_task0_and_task1_blocks",
+        "rows_per_seed": TASK01_ROWS, "classes_per_seed": 22,
+        "primary": "global_77_sum_log_likelihood",
+        "secondary": ["global_77_length_mean_log_likelihood", "unconstrained_greedy_generation"],
+        "candidate_label_mask": None, "max_sequence_length": MAX_SEQ,
+        "candidate_batch_size": CANDIDATE_BATCH, "max_new_tokens": MAX_NEW_TOKENS,
+        "max_backbone_forwards": MAX_BACKBONE_FORWARDS,
+        "max_wall_seconds": MAX_WALL_SECONDS, "optimizer_updates": 0,
+    }
+    if reference.get("evaluation_policy") != expected_policy:
+        raise ValueError("reference evaluation policy differs from frozen v11 dev comparison")
+    for field in ("v10_source_hashes", "v11_source_hashes"):
+        values = reference.get(field)
+        if not isinstance(values, Mapping) or not values or any(not _is_sha(v) for v in values.values()):
+            raise ValueError(f"reference {field} is missing or malformed")
+    contexts = reference.get("contexts")
+    if not isinstance(contexts, list) or len(contexts) != 15:
+        raise ValueError("reference must bind exactly fifteen seed/family/arm contexts")
+    row_fields = {"seed", "family", "arm", "run_dir", "protocol_path",
+                  "protocol_sha256", "receipt_path", "receipt_sha256",
+                  "checkpoint_path", "checkpoint_sha256", "task_id", "step",
+                  "foundation_receipt_sha256", "foundation_checkpoint_sha256",
+                  "baseline_training_seal_sha256",
+                  "comparison_v10_sleep_task1_checkpoint_sha256"}
+    grid = set()
+    for row in contexts:
+        if set(row) != row_fields:
+            raise ValueError("context reference fields differ from the locked schema")
+        seed, family, arm = row["seed"], row["family"], row["arm"]
+        if type(seed) is not int or seed not in SEEDS or family not in ("v10", "v11"):
+            raise ValueError("invalid seed or source family in context reference")
+        valid_arms = V10_ARMS if family == "v10" else V11_ARMS
+        if arm not in valid_arms:
+            raise ValueError("arm/family mismatch in context reference")
+        grid_key = (seed, family, arm)
+        if grid_key in grid:
+            raise ValueError("duplicate context reference")
+        grid.add(grid_key)
+        if row["task_id"] != 1 or type(row["step"]) is not int or row["step"] < 1:
+            raise ValueError("only fixed task-1 terminal checkpoints are eligible")
+        for name in ("protocol_sha256", "receipt_sha256", "checkpoint_sha256",
+                     "foundation_receipt_sha256", "foundation_checkpoint_sha256",
+                     "baseline_training_seal_sha256"):
+            if not _is_sha(row[name]):
+                raise ValueError(f"context {name} must be SHA-256")
+        if row["baseline_training_seal_sha256"] != reference["v10_grid_seal_sha256"]:
+            raise ValueError("context row binds a different V10 baseline training seal")
+        if row["family"] == "v10":
+            if row["comparison_v10_sleep_task1_checkpoint_sha256"] is not None:
+                raise ValueError("V10 context cannot claim a separate V10 comparison checkpoint")
+        elif not _is_sha(row["comparison_v10_sleep_task1_checkpoint_sha256"]):
+            raise ValueError("V11 context must bind its same-seed SLEEP_ADD comparison checkpoint")
+        for name in ("run_dir", "protocol_path", "receipt_path", "checkpoint_path"):
+            if not isinstance(row[name], str) or not row[name]:
+                raise ValueError(f"context {name} must be explicit")
+    expected = {(seed, family, arm) for seed in SEEDS
+                for family, arms in (("v10", V10_ARMS), ("v11", V11_ARMS))
+                for arm in arms}
+    if grid != expected:
+        raise ValueError("reference does not contain the complete fixed 3x5 grid")
+    ordered = sorted(contexts, key=lambda r: (SEEDS.index(r["seed"]), ARMS.index(r["arm"])) )
+    for seed in SEEDS:
+        rows = [r for r in ordered if r["seed"] == seed]
+        if len({(r["foundation_receipt_sha256"], r["foundation_checkpoint_sha256"])
+                for r in rows}) != 1:
+            raise ValueError(f"seed {seed} contexts do not share one qualified foundation")
+    return ordered
+
+
+def verify_source_map(source_hashes: Mapping, *, project_root: str | Path,
+                      task_root: str | Path) -> None:
+    for relative, expected in source_hashes.items():
+        rel = Path(relative)
+        if rel.parts and rel.parts[0] == "src":
+            path = _resolve_child(project_root, relative)
+        elif rel.parts and rel.parts[0] == "tools":
+            path = _resolve_child(task_root, relative)
+        else:
+            raise ValueError(f"source path is outside the explicit source roots: {relative}")
+        if sha256_file(path) != expected:
+            raise ValueError(f"locked source changed: {relative}")
+
+
+def verify_context_artifacts(rows: Sequence[Mapping], *, v10_root: str | Path,
+                             v11_root: str | Path, reference: Mapping,
+                             v10_baseline: Mapping) -> list[dict]:
+    """Verify each bound protocol/receipt/task-1 CP and its lineage hashes."""
+    verified = []
+    seal_sha = reference["v10_grid_seal_sha256"]
+    for row in rows:
+        family = row["family"]
+        root = Path(v10_root if family == "v10" else v11_root).resolve()
+        run_dir = _resolve_child(root, row["run_dir"], require_file=False)
+        if not run_dir.is_dir() or (run_dir / "failure.json").exists():
+            raise ValueError("context run is missing or retains a failure marker")
+        protocol_path = _resolve_child(root, row["protocol_path"])
+        receipt_path = _resolve_child(root, row["receipt_path"])
+        cp_path = _resolve_child(root, row["checkpoint_path"])
+        for path in (protocol_path, receipt_path, cp_path):
+            if run_dir not in path.parents:
+                raise ValueError("context artifact is outside its run directory")
+        if (sha256_file(protocol_path) != row["protocol_sha256"] or
+                sha256_file(receipt_path) != row["receipt_sha256"] or
+                sha256_file(cp_path) != row["checkpoint_sha256"]):
+            raise ValueError("context protocol/receipt/checkpoint hash differs from frozen reference")
+        protocol = _load_json(protocol_path)
+        receipt = _load_json(receipt_path)
+        foundation = reference["foundation_refs"][str(row["seed"])]
+        if family == "v10":
+            baseline = v10_baseline["runs"][(row["seed"], row["arm"])]
+            if cp_path.name != "task01-final.pt" or sha256_file(cp_path) != baseline["task1_checkpoint_sha256"]:
+                raise ValueError("V10 task-1 CP is not the receipt-bound fixed endpoint")
+            if (protocol.get("schema"), protocol.get("phase"),
+                    protocol.get("seed"), protocol.get("arm"),
+                    protocol.get("config_sha256"), protocol.get("source_lock_sha256"),
+                    protocol.get("training_manifest_sha256"), protocol.get("test_data_included"),
+                    protocol.get("test_reader_available")) != (
+                    "banking-cil-v10-protocol", "main", row["seed"], row["arm"],
+                    reference["v10_config_sha256"], reference["v10_source_lock_sha256"],
+                    reference["training_manifest_sha256"], False, False):
+                raise ValueError("V10 task-1 protocol binding mismatch")
+            if protocol.get("source_hashes") != reference["v10_source_hashes"]:
+                raise ValueError("V10 protocol helper graph differs from evaluation reference")
+            parent = protocol.get("parent", {})
+            if (parent.get("release_artifact_sha256"),
+                    parent.get("foundation_receipt_sha256"),
+                    parent.get("foundation_checkpoint_sha256")) != (
+                    reference["v10_release_sha256"], foundation["receipt_sha256"],
+                    foundation["checkpoint_sha256"]):
+                raise ValueError("V10 task-1 protocol foundation/release lineage mismatch")
+            tasks = receipt.get("task_metrics")
+            task1 = [x for x in tasks if x.get("task_id") == 1] if isinstance(tasks, list) else []
+            if (receipt.get("schema") != "banking-cil-v10-run-receipt" or
+                    receipt.get("status") != "complete" or receipt.get("tasks_completed") != 7 or
+                    receipt.get("seed") != row["seed"] or receipt.get("arm") != row["arm"] or
+                    receipt.get("config_sha256") != reference["v10_config_sha256"] or
+                    receipt.get("source_lock_sha256") != reference["v10_source_lock_sha256"] or
+                    receipt.get("training_manifest_sha256") != reference["training_manifest_sha256"] or
+                    receipt.get("foundation_checkpoint_sha256") != foundation["checkpoint_sha256"] or
+                    receipt.get("test_data_included") is not False or
+                    receipt.get("model_immutable_versions_unchanged") is not True or
+                    len(task1) != 1 or task1[0].get("checkpoint_sha256") != row["checkpoint_sha256"]):
+                raise ValueError("V10 task-1 receipt/cursor endpoint mismatch")
+            if task1[0].get("global_wake_tick") != row["step"]:
+                raise ValueError("V10 task-1 endpoint and checkpoint tick differ")
+        else:
+            paired_sleep = v10_baseline["runs"][(row["seed"], "SLEEP_ADDITIVE")]["task1_checkpoint_sha256"]
+            if row["comparison_v10_sleep_task1_checkpoint_sha256"] != paired_sleep:
+                raise ValueError("V11 context comparison target is not the same-seed SLEEP task-1 endpoint")
+            if cp_path.name != "task01-final.pt":
+                raise ValueError("V11 task-1 checkpoint path is not the fixed endpoint")
+            protocol_fields = ("config_sha256", "source_lock_sha256", "v10_source_lock_sha256",
+                               "v10_config_sha256", "training_manifest_sha256",
+                               "baseline_training_seal_sha256", "foundation_receipt_sha256",
+                               "foundation_checkpoint_sha256",
+                               "comparison_v10_sleep_task1_checkpoint_sha256", "seed", "arm",
+                               "task_id", "epochs", "test_data_included", "test_data_read")
+            expected_protocol = (reference["v11_config_sha256"], reference["v11_source_lock_sha256"],
+                                 reference["v10_source_lock_sha256"], reference["v10_config_sha256"],
+                                 reference["training_manifest_sha256"], seal_sha,
+                                 foundation["receipt_sha256"], foundation["checkpoint_sha256"],
+                                 paired_sleep, row["seed"], row["arm"], 1, 2, False, False)
+            if (protocol.get("schema") != "banking-cil-v11-protocol-v1" or
+                    protocol.get("status") != "complete" or
+                    tuple(protocol.get(k) for k in protocol_fields) != expected_protocol or
+                    protocol.get("source_hashes") != reference["v11_source_hashes"]):
+                raise ValueError("V11 task-1 protocol/source/foundation/baseline binding mismatch")
+            tasks = receipt.get("task_metrics")
+            task1 = [x for x in tasks if x.get("task_id") == 1] if isinstance(tasks, list) else []
+            receipt_fields = ("seed", "arm", "task_id", "epochs", "foundation_checkpoint_sha256",
+                              "foundation_receipt_sha256", "baseline_training_seal_sha256",
+                              "comparison_v10_sleep_task1_checkpoint_sha256", "checkpoint", "checkpoint_sha256",
+                              "config_sha256", "source_lock_sha256", "v10_source_lock_sha256",
+                              "training_manifest_sha256", "model_immutable_versions_unchanged",
+                              "test_data_included", "test_data_read")
+            expected_receipt = (row["seed"], row["arm"], 1, 2, foundation["checkpoint_sha256"],
+                                foundation["receipt_sha256"], seal_sha, paired_sleep,
+                                "checkpoints/task01-final.pt", row["checkpoint_sha256"],
+                                reference["v11_config_sha256"], reference["v11_source_lock_sha256"],
+                                reference["v10_source_lock_sha256"], reference["training_manifest_sha256"],
+                                True, False, False)
+            if (receipt.get("schema") != "banking-cil-v11-run-receipt-v1" or
+                    receipt.get("status") != "complete" or
+                    tuple(receipt.get(k) for k in receipt_fields) != expected_receipt or
+                    len(task1) != 1 or task1[0].get("checkpoint_sha256") != row["checkpoint_sha256"] or
+                    task1[0].get("task_step") != receipt.get("task1_wake_ticks") or
+                    task1[0].get("global_wake_tick") != row["step"] or
+                    task1[0].get("evaluation_rows") != TASK01_ROWS):
+                raise ValueError("V11 task-1 receipt/metrics endpoint mismatch")
+        verified.append({**row, "run_dir_resolved": run_dir,
+                         "protocol_path_resolved": protocol_path,
+                         "receipt_path_resolved": receipt_path,
+                         "checkpoint_path_resolved": cp_path,
+                         "protocol": protocol, "receipt": receipt})
+    return verified
+
+
+def select_task01_dev_rows(rows: Sequence[Mapping], class_order: Sequence[int]) -> list[dict]:
+    """Select all ten development rows for the first two task blocks, stably."""
+    if len(class_order) != 77 or set(map(int, class_order)) != set(range(77)):
+        raise ValueError("seed class order must be a permutation of 77 ids")
+    selected_classes = set(map(int, class_order[:2 * CLASSES_PER_TASK]))
+    by_class = {cid: [] for cid in selected_classes}
+    for row in rows:
+        cid = int(row["intent_id"])
+        if cid in selected_classes:
+            by_class[cid].append(dict(row))
+    result = []
+    for cid in class_order[:2 * CLASSES_PER_TASK]:
+        group = sorted(by_class[int(cid)], key=lambda row: str(row["id"]))
+        if len(group) != ROWS_PER_CLASS:
+            raise ValueError("task-0/task-1 development cohort must contain exactly ten rows per class")
+        result.extend(group)
+    if len(result) != TASK01_ROWS or len({str(r["id"]) for r in result}) != TASK01_ROWS:
+        raise ValueError("task-1 evaluation cohort is not exactly 220 unique development rows")
+    return result
+
+
+def validate_task_checkpoint(payload: Mapping, reference_row: Mapping, *,
+                             config_sha256: str, source_lock_sha256: str,
+                             training_manifest_sha256: str,
+                             v10_source_lock_sha256: str | None = None) -> None:
+    family = reference_row["family"]
+    expected_schema = ("banking-cil-v10-checkpoint" if family == "v10"
+                       else "banking-cil-v11-checkpoint-v1")
+    if payload.get("schema") != expected_schema:
+        raise ValueError("task-1 checkpoint schema mismatch")
+    for key, expected in (("seed", reference_row["seed"]), ("arm", reference_row["arm"]),
+                          ("task_id", 1), ("step", reference_row["step"]),
+                          ("config_sha256", config_sha256),
+                          ("training_manifest_sha256", training_manifest_sha256)):
+        if payload.get(key) != expected:
+            raise ValueError(f"task-1 checkpoint binding mismatch: {key}")
+    lock_key = "source_lock_sha256" if family == "v10" else "v11_source_lock_sha256"
+    if payload.get(lock_key) != source_lock_sha256:
+        raise ValueError(f"task-1 checkpoint binding mismatch: {lock_key}")
+    if family == "v11" and (payload.get("v10_source_lock_sha256") != v10_source_lock_sha256 or
+                             payload.get("foundation_checkpoint_sha256") != reference_row["foundation_checkpoint_sha256"] or
+                             payload.get("baseline_training_seal_sha256") != reference_row["baseline_training_seal_sha256"]):
+        raise ValueError("V11 checkpoint baseline/foundation lineage mismatch")
+    if family == "v11" and payload.get("test_data_included") is not False:
+        raise ValueError("V11 checkpoint must affirm official-test exclusion")
+    if not isinstance(payload.get("context"), Mapping):
+        raise ValueError("task-1 checkpoint lacks mutable context state")
+    wake = payload.get("wake")
+    fields = ("context_state", "pending", "clocks", "token_counts", "ticks",
+              "periods", "base_lr", "fast_lr", "bank_states")
+    get = wake.get if isinstance(wake, Mapping) else lambda k, d=None: getattr(wake, k, d)
+    if not all((k in wake) if isinstance(wake, Mapping) else hasattr(wake, k) for k in fields):
+        raise ValueError("task-1 checkpoint lacks the explicit wake snapshot")
+    if get("ticks") != payload["step"] or tuple(get("periods", ())) != (16, 64, 256, 1024, None):
+        raise ValueError("task-1 wake cursor/periods mismatch")
+    if not isinstance(payload.get("rng"), Mapping) or set(payload["rng"]) != {
+            "python", "numpy", "torch_cpu", "torch_cuda"}:
+        raise ValueError("task-1 checkpoint RNG schema mismatch")
+    if not _same_tree(payload["context"], get("context_state")):
+        raise ValueError("task-1 context differs from its wake snapshot")
+
+
+def _same_tree(left, right) -> bool:
+    try:
+        import torch
+        if isinstance(left, torch.Tensor) or isinstance(right, torch.Tensor):
+            return (isinstance(left, torch.Tensor) and isinstance(right, torch.Tensor) and
+                    left.dtype == right.dtype and tuple(left.shape) == tuple(right.shape) and
+                    bool(torch.equal(left.cpu(), right.cpu())))
+    except ImportError:
+        pass
+    if isinstance(left, Mapping) or isinstance(right, Mapping):
+        return (isinstance(left, Mapping) and isinstance(right, Mapping) and set(left) == set(right) and
+                all(_same_tree(left[k], right[k]) for k in left))
+    if isinstance(left, (list, tuple)) or isinstance(right, (list, tuple)):
+        return (isinstance(left, (list, tuple)) and isinstance(right, (list, tuple)) and
+                len(left) == len(right) and all(_same_tree(a, b) for a, b in zip(left, right)))
+    return left == right
+
+
+class EvaluationBudget:
+    def __init__(self):
+        self.started = time.monotonic()
+        self.forwards = self.reported_forwards = self.tail_calls = self.input_tokens = 0
+
+    def check(self):
+        if self.forwards > MAX_BACKBONE_FORWARDS:
+            raise RuntimeError("v11 development evaluator forward cap exceeded")
+        if time.monotonic() - self.started > MAX_WALL_SECONDS:
+            raise RuntimeError("v11 development evaluator wall-time cap exceeded")
+
+    def add(self, work: Mapping):
+        greedy = work.get("greedy", {})
+        self.reported_forwards += int(work.get("candidate_backbone_forwards", 0)) + int(greedy.get("backbone_forwards", 0))
+        self.tail_calls += int(work.get("candidate_tail_calls", 0)) + int(greedy.get("tail_calls", 0))
+        self.input_tokens += int(work.get("candidate_input_tokens", 0))
+        if self.reported_forwards != self.forwards:
+            raise RuntimeError("runtime forward ledger differs from observed model.logits calls")
+        self.check()
+
+    def forward(self):
+        self.check()
+        if self.forwards >= MAX_BACKBONE_FORWARDS:
+            raise RuntimeError("v11 development evaluator forward cap exceeded")
+        self.forwards += 1
+
+    def summary(self):
+        return {"backbone_forwards": self.forwards,
+                "tail_calls": self.tail_calls,
+                "candidate_input_tokens": self.input_tokens,
+                "elapsed_seconds": time.monotonic() - self.started,
+                "max_backbone_forwards": MAX_BACKBONE_FORWARDS,
+                "max_wall_seconds": MAX_WALL_SECONDS,
+                "optimizer_updates": 0}
+
+
+def _load_json(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def _context_fingerprint(context) -> str:
+    task_root = Path(__file__).resolve().parents[1]
+    if str(task_root / "tools") not in sys.path:
+        sys.path.insert(0, str(task_root / "tools"))
+    import clinc_lifecycle_v8 as lifecycle
+    import banking_cil_v10_routing as routing
+    policy = routing.validate_additive_routes(context)
+    return hashlib.sha256((lifecycle._state_hash(context) +
+                           json.dumps(policy, sort_keys=True, separators=(",", ":"))).encode()).hexdigest()
+
+
+def _atomic_json(path: Path, payload: Mapping) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    raw = json.dumps(payload, sort_keys=True, ensure_ascii=False,
+                     indent=2, allow_nan=False).encode("utf-8")
+    temp = path.with_suffix(path.suffix + ".partial")
+    with temp.open("xb") as stream:
+        stream.write(raw)
+        stream.flush()
+        os.fsync(stream.fileno())
+    if path.exists():
+        temp.unlink(missing_ok=True)
+        raise FileExistsError(path)
+    os.replace(temp, path)
+
+
+def _guard_output_path(output: Path, protected: Sequence[Path]) -> None:
+    resolved = output.resolve()
+    for item in protected:
+        root = Path(item).resolve()
+        if resolved == root or root in resolved.parents or resolved in root.parents:
+            raise ValueError("V11 evaluation output must be separate from all frozen inputs")
+
+
+def _score_development(*, payloads, reference, manifest, pack_root,
+                       project_root, model_dir, budget):
+    task_root = Path(__file__).resolve().parents[1]
+    if str(task_root / "tools") not in sys.path:
+        sys.path.insert(0, str(task_root / "tools"))
+    import banking_cil_common_v10 as common
+    import run_banking_cil_v10 as driver
+    import banking_cil_v10_runtime as runtime
+    import banking_cil_v10_routing as routing
+    import clinc_tail_runtime_v8 as tail_runtime
+    v10_cfg = payloads["v10_config"]
+    torch, tokenizer, model, immutable_versions = driver._load_model(
+        Path(project_root), Path(model_dir), v10_cfg)
+    model.eval()
+    model.requires_grad_(False)
+    frozen = immutable_versions(model)
+    original_logits = model.logits
+    observed_forwards = 0
+
+    def counted_logits(tokens, mask=None):
+        nonlocal observed_forwards
+        budget.check()
+        observed_forwards += 1
+        budget.forward()
+        return original_logits(tokens, mask)
+
+    model.logits = counted_logits
+    try:
+        view = common.make_training_view(manifest)
+        dev_rows = list(common.iter_role(view, "development", Path(pack_root)))
+        scored = {}
+        for seed in SEEDS:
+            order = view.class_orders[str(seed)]
+            cohort = select_task01_dev_rows(dev_rows, order)
+            cohort_sha = canonical_sha([str(row["id"]) for row in cohort])
+            contexts = {}
+            refs = [row for row in payloads["contexts"] if row["seed"] == seed]
+            for record in refs:
+                context = tail_runtime.clone_mutable_context(model)
+                context.load_state_dict(record["payload"]["context"])
+                routing.install_additive_routes(context)
+                for parameter in context.parameters():
+                    parameter.requires_grad_(False)
+                contexts[record["arm"]] = context
+            if set(contexts) != set(ARMS):
+                raise ValueError(f"seed {seed} did not load all five contexts")
+            before = {name: _context_fingerprint(context) for name, context in contexts.items()}
+            capture_start = observed_forwards
+            result = runtime.score_candidates(
+                model, contexts, cohort, tokenizer, view.classes, common, tail_runtime,
+                torch=torch, device=next(model.parameters()).device,
+                max_sequence_length=MAX_SEQ, batch_size=CANDIDATE_BATCH,
+                budget=budget, class_order=order, task_id=1,
+                include_greedy=True, max_new_tokens=MAX_NEW_TOKENS)
+            budget.add(result["work"])
+            capture_count = observed_forwards - capture_start
+            expected_capture_count = (int(result["work"]["candidate_backbone_forwards"]) +
+                                      int(result["work"]["greedy"]["backbone_forwards"]))
+            if capture_count != expected_capture_count:
+                raise RuntimeError("runtime work ledger differs from observed model.logits captures")
+            after = {name: _context_fingerprint(context) for name, context in contexts.items()}
+            if before != after:
+                raise RuntimeError("development evaluation changed a task-1 context")
+            scored[str(seed)] = {"cohort_rows": len(cohort), "cohort_ids_sha256": cohort_sha,
+                                 "context_count": len(contexts),
+                                 "candidate_metric_primary": result["candidate_metric_primary"],
+                                 "candidate_metrics": result["candidate_metrics"],
+                                 "greedy_generation_metrics": result["greedy_generation_metrics"],
+                                 "work": result["work"], "observed_backbone_forwards": capture_count}
+            del contexts
+        if immutable_versions(model) != frozen:
+            raise RuntimeError("the frozen backbone changed during development scoring")
+        return scored, torch, observed_forwards
+    finally:
+        model.logits = original_logits
+
+
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--mode", choices=("preflight", "evaluate"), required=True)
+    parser.add_argument("--reference", type=Path, required=True)
+    parser.add_argument("--v10-config", type=Path, required=True)
+    parser.add_argument("--v11-config", type=Path, required=True)
+    parser.add_argument("--training-manifest", type=Path, required=True)
+    parser.add_argument("--v10-grid-seal", type=Path, required=True)
+    parser.add_argument("--v10-release-artifact", type=Path, required=True)
+    parser.add_argument("--v10-runs-root", type=Path, required=True)
+    parser.add_argument("--v11-runs-root", type=Path, required=True)
+    parser.add_argument("--foundation-root", type=Path, required=True)
+    parser.add_argument("--training-pack-root", type=Path, required=True)
+    parser.add_argument("--project-root", type=Path, required=True)
+    parser.add_argument("--model-dir", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    args = parser.parse_args(argv)
+    _guard_output_path(args.output_dir, (
+        args.reference, args.v10_config, args.v11_config, args.training_manifest,
+        args.v10_grid_seal, args.v10_release_artifact, args.v10_runs_root,
+        args.v11_runs_root, args.foundation_root, args.training_pack_root,
+        args.project_root, args.model_dir))
+    if args.output_dir.exists():
+        raise FileExistsError("refusing to overwrite an existing V11 evaluation directory")
+    args.output_dir.mkdir(parents=True, exist_ok=False)
+    budget = EvaluationBudget()
+    try:
+        reference = _load_json(args.reference)
+        ordered = validate_reference(reference)
+        import torch
+        payloads = validate_locked_inputs(
+            reference=reference, evaluator_path=Path(__file__),
+            v10_config_path=args.v10_config, v11_config_path=args.v11_config,
+            manifest_path=args.training_manifest, v10_seal_path=args.v10_grid_seal,
+            v10_release_path=args.v10_release_artifact,
+            v10_runs_root=args.v10_runs_root, v11_runs_root=args.v11_runs_root,
+            foundation_root=args.foundation_root, project_root=args.project_root,
+            model_dir=args.model_dir, task_root=Path(__file__).resolve().parents[1],
+            torch=torch)
+        preflight = {"schema": SCHEMA, "status": "pass", "mode": "preflight",
+                     "reference_sha256": sha256_file(args.reference),
+                     "evaluator_sha256": sha256_file(Path(__file__)),
+                     "v10_seal_sha256": payloads["v10_seal_sha256"],
+                     "v10_release_sha256": payloads["v10_release_sha256"],
+                     "foundation_audit": payloads["foundation_audit"],
+                     "context_count": len(payloads["contexts"]),
+                     "v10_terminal_checkpoint_count": payloads["terminal_payload_count"],
+                     "cpu_checkpoint_deserialization": True,
+                     "model_loaded": False, "cuda_initialized": torch.cuda.is_initialized(),
+                     "official_test_accessed": False, "optimizer_updates": 0}
+        if args.mode == "preflight":
+            _atomic_json(args.output_dir / "preflight.json", preflight)
+            return 0
+        dev_results, torch, observed_forwards = _score_development(
+            payloads=payloads, reference=reference, manifest=payloads["manifest"],
+            pack_root=args.training_pack_root, project_root=args.project_root,
+            model_dir=args.model_dir, budget=budget)
+        if observed_forwards != budget.forwards:
+            raise RuntimeError("total observed logits calls differ from counted evaluator forwards")
+        if budget.forwards > MAX_BACKBONE_FORWARDS or budget.summary()["elapsed_seconds"] > MAX_WALL_SECONDS:
+            raise RuntimeError("frozen v11 development evaluation exceeded its hard budget")
+        result = {"schema": SCHEMA, "status": "complete",
+                  "claim_scope": "development-only local Banking77 LTI reward-term ablation; not paper-faithful HOPE/Sleep",
+                  "protocol": {"seeds": list(SEEDS), "contexts_per_seed": 5,
+                               "arms": list(ARMS), "rows_per_seed": TASK01_ROWS,
+                               "candidate_metric_primary": "global_77_sum_log_likelihood",
+                               "official_test_accessed": False,
+                               "raw_examples_predictions_and_token_ids_saved": False},
+                  "frozen_inputs": {"reference_sha256": sha256_file(args.reference),
+                                    "evaluator_sha256": sha256_file(Path(__file__)),
+                                    "v10_config_sha256": reference["v10_config_sha256"],
+                                    "v11_config_sha256": reference["v11_config_sha256"],
+                                    "v10_grid_seal_sha256": payloads["v10_seal_sha256"],
+                                    "v10_release_sha256": payloads["v10_release_sha256"],
+                                    "training_manifest_sha256": payloads["manifest_sha256"]},
+                  "development": dev_results, "work": budget.summary(),
+                  "observed_model_logits_calls": observed_forwards,
+                  "optimizer_updates": 0, "contexts_unchanged": True,
+                  "frozen_backbone_unchanged": True}
+        _atomic_json(args.output_dir / "development-evaluation.json", result)
+        return 0
+    except BaseException as exc:
+        failure = {"schema": SCHEMA, "status": "failed",
+                   "phase": "evaluation", "error_type": type(exc).__name__,
+                   "error": str(exc), "work": budget.summary(),
+                   "official_test_accessed": False, "optimizer_updates": 0}
+        if not (args.output_dir / "failure.json").exists():
+            _atomic_json(args.output_dir / "failure.json", failure)
+        raise
+
+
+def validate_locked_inputs(*, reference: Mapping, evaluator_path: str | Path,
+                           v10_config_path: str | Path, v11_config_path: str | Path,
+                           manifest_path: str | Path, v10_seal_path: str | Path,
+                           v10_release_path: str | Path, v10_runs_root: str | Path,
+                           v11_runs_root: str | Path,
+                           foundation_root: str | Path, project_root: str | Path,
+                           model_dir: str | Path, task_root: str | Path,
+                           torch) -> dict:
+    """Verify both frozen source/config graphs and every V10/V11 training artifact."""
+    ref = reference
+    if sha256_file(evaluator_path) != ref["evaluator_sha256"]:
+        raise ValueError("frozen V11 evaluation source hash mismatch")
+    manifest_sha = sha256_file(manifest_path)
+    if manifest_sha != ref["training_manifest_sha256"]:
+        raise ValueError("training manifest bytes differ from V11 reference")
+    import banking_cil_common_v10 as common
+    manifest = _load_json(manifest_path)
+    common.validate_manifest(manifest)
+    task_root = Path(task_root).resolve()
+    project_root = Path(project_root).resolve()
+    sys.path.insert(0, str(task_root / "tools")) if str(task_root / "tools") not in sys.path else None
+    import run_banking_cil_v10 as v10_driver
+    import run_banking_lti_ablation_v11 as v11_driver
+    v10_cfg = v10_driver.validate_config(_load_json(v10_config_path), phase="main")
+    if sha256_file(v10_config_path) != ref["v10_config_file_sha256"]:
+        raise ValueError("V10 config file bytes differ from evaluation reference")
+    if v10_driver._config_sha(v10_cfg) != ref["v10_config_sha256"]:
+        raise ValueError("V10 logical config differs from evaluation reference")
+    v10_sources = v10_driver._source_hashes(project_root, task_root)
+    v10_driver._verify_source_lock(v10_cfg, v10_sources)
+    if v10_sources != ref["v10_source_hashes"] or canonical_sha(v10_sources) != ref["v10_source_lock_sha256"]:
+        raise ValueError("V10 helper/source graph differs from evaluation reference")
+    v11_sources = v11_driver.candidate_source_hashes(project_root)
+    verify_source_map(v11_sources, project_root=project_root, task_root=task_root)
+    if (sha256_file(v11_config_path) != ref["v11_config_file_sha256"] or
+            v11_sources != ref["v11_source_hashes"] or canonical_sha(v11_sources) != ref["v11_source_lock_sha256"]):
+        raise ValueError("V11 config/source graph differs from evaluation reference")
+    v11_raw = _load_json(v11_config_path)
+    v11_cfg = v11_driver.validate_config(
+        v11_raw, v10_cfg, actual_source_hashes=v11_sources,
+        actual_seal_sha256=sha256_file(v10_seal_path), actual_manifest_sha256=manifest_sha)
+    if v11_driver._config_hash(v11_cfg) != ref["v11_config_sha256"]:
+        raise ValueError("V11 logical config differs from evaluation reference")
+    if (v10_cfg["training_manifest_sha256"] != manifest_sha or
+            v11_cfg["training_manifest_sha256"] != manifest_sha or
+            v11_cfg["v10_config_sha256"] != ref["v10_config_sha256"] or
+            v11_cfg["v10_source_lock_sha256"] != ref["v10_source_lock_sha256"]):
+        raise ValueError("V11 config is not bound to the frozen V10 inputs")
+    if (v10_cfg["model_revision"] != ref["model_revision"] or
+            v11_cfg["model_revision"] != ref["model_revision"] or
+            v10_cfg["model_assets_sha256"] != ref["model_assets_sha256"] or
+            v11_cfg["model_assets_sha256"] != ref["model_assets_sha256"]):
+        raise ValueError("V10/V11 model revision or asset maps differ")
+    v10_driver._verify_model_assets(Path(model_dir), ref["model_assets_sha256"])
+    seal_sha = sha256_file(v10_seal_path)
+    if seal_sha != ref["v10_grid_seal_sha256"]:
+        raise ValueError("V10 nine-run seal bytes differ from reference")
+    release_sha = sha256_file(v10_release_path)
+    if release_sha != ref["v10_release_sha256"]:
+        raise ValueError("V10 main release artifact differs from reference")
+    from evaluate_banking_test_v10 import verify_foundation_grid
+    foundation_audit = verify_foundation_grid(
+        v10_release_path, foundation_root, driver=v10_driver, cfg=v10_cfg,
+        config_sha256=ref["v10_config_sha256"],
+        source_lock_sha256=ref["v10_source_lock_sha256"],
+        training_manifest_sha256=manifest_sha, torch=torch)
+    if foundation_audit["foundations"] != ref["foundation_refs"]:
+        raise ValueError("qualified foundation receipt/checkpoint hashes differ from reference")
+    baseline = v11_driver.validate_baseline_seal(
+        Path(v10_seal_path), Path(v10_runs_root), expected_seal_sha256=seal_sha,
+        config_sha256=ref["v10_config_sha256"],
+        source_lock_sha256=ref["v10_source_lock_sha256"], manifest_sha256=manifest_sha,
+        source_hashes=v10_sources)
+    from evaluate_banking_test_v10 import (preflight_checkpoint_payloads,
+                                            validate_training_seal,
+                                            verify_run_artifacts)
+    v10_seal = _load_json(v10_seal_path)
+    seal_rows = validate_training_seal(
+        v10_seal, config_sha256=ref["v10_config_sha256"],
+        source_lock_sha256=ref["v10_source_lock_sha256"], training_manifest_sha256=manifest_sha)
+    terminal = verify_run_artifacts(
+        seal_rows, v10_runs_root, config_sha256=ref["v10_config_sha256"],
+        source_lock_sha256=ref["v10_source_lock_sha256"], training_manifest_sha256=manifest_sha,
+        foundation_refs=ref["foundation_refs"], source_hashes=v10_sources,
+        main_release_sha256=release_sha)
+    terminal_payloads = preflight_checkpoint_payloads(
+        terminal, torch=torch, config_sha256=ref["v10_config_sha256"],
+        source_lock_sha256=ref["v10_source_lock_sha256"], training_manifest_sha256=manifest_sha)
+    verified_contexts = verify_context_artifacts(
+        validate_reference(ref), v10_root=v10_runs_root,
+        v11_root=v11_runs_root,
+        reference=ref, v10_baseline=baseline)
+    payloads = []
+    for item in verified_contexts:
+        row = {k: v for k, v in item.items() if not k.endswith("_resolved") and k not in ("protocol", "receipt")}
+        payload = torch.load(item["checkpoint_path_resolved"], map_location="cpu", weights_only=False)
+        family = item["family"]
+        validate_task_checkpoint(
+            payload, row,
+            config_sha256=ref["v10_config_sha256"] if family == "v10" else ref["v11_config_sha256"],
+            source_lock_sha256=ref["v10_source_lock_sha256"] if family == "v10" else ref["v11_source_lock_sha256"],
+            training_manifest_sha256=manifest_sha,
+            v10_source_lock_sha256=ref["v10_source_lock_sha256"])
+        payloads.append({**item, "payload": payload})
+    return {"v10_config": v10_cfg, "v11_config": v11_cfg, "manifest": manifest,
+            "v10_baseline": baseline, "foundation_audit": foundation_audit,
+            "terminal_payload_count": len(terminal_payloads),
+            "contexts": payloads, "v10_source_hashes": v10_sources,
+            "v11_source_hashes": v11_sources,
+            "manifest_sha256": manifest_sha, "v10_seal_sha256": seal_sha,
+            "v10_release_sha256": release_sha}
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

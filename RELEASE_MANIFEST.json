@@ -8,13 +8,13 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 564,
+  "file_count_excluding_manifests": 684,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
       "path": ".gitattributes",
-      "sha256": "48bea810088aca182825fe49f22f5f9bd2b4df4d00b867fa431a46934ca399ec",
-      "bytes": 17976
+      "sha256": "c98d6f044c259b97558aa91035719cab4a672991dc3ff88ac2e50f296e789c25",
+      "bytes": 27760
     },
     {
       "path": ".github/ISSUE_TEMPLATE/reproduction.md",
@@ -53,13 +53,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "ba24fb481b5703379fdc410c0ace5b1e6a12936b0d7708887994d8a45eed34e5",
-      "bytes": 11629
+      "sha256": "33543e3ed25968037637b71b1a3f0f7bf60395c3aa1dd7ac4aa6d2c250c5a373",
+      "bytes": 12970
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "9187b80e1ce0b4e498ab4a1c0b16c4bfcca5248c652db70d221c9b5b521a3718",
-      "bytes": 8419
+      "sha256": "a3a9ae71e377dc5e53073b5ebb558b8c7ad9e21a399245319d579b51fe6263e9",
+      "bytes": 9668
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -155,6 +155,21 @@
       "path": "configs/agnews-single-receiver-v7-r2.json",
       "sha256": "3c91b940ce84672cc17ab65febc30236caad09f9708f0a0e8491738e0c16b7f9",
       "bytes": 5948
+    },
+    {
+      "path": "configs/banking_v10_frozen_k10.json",
+      "sha256": "785ded5cc9d205dc3cbc6d25179abf6fd0d589ce6943a42626aa1692b54dfd9d",
+      "bytes": 5766
+    },
+    {
+      "path": "configs/banking_v10_v11_paths.example.json",
+      "sha256": "0e738b7df877101a248a59d1ee37e1a0f6bf520a786c82f3503e21779ccfd708",
+      "bytes": 1445
+    },
+    {
+      "path": "configs/banking_v11_canonical_teacher_frozen.json",
+      "sha256": "82794fc4dbe310e004e131405fd9b8c17b4a4dc310acbb0f22726feae95375c2",
+      "bytes": 7397
     },
     {
       "path": "configs/clinc_cil_v8_controlled_probe_seed17.json",
@@ -287,9 +302,34 @@
       "bytes": 1865
     },
     {
+      "path": "docs/banking-v10-test-memory-launcher.md",
+      "sha256": "1f329107dbca054e2a49a0931938da8bb42a7bf683b6554ae9608fc1a1720fc7",
+      "bytes": 4248
+    },
+    {
+      "path": "docs/banking-v10-v11-reproduction.md",
+      "sha256": "11fcec645058a134e1cafb92acb12ad73e5aa1d3f04f5e5818ee5ea8f852ec95",
+      "bytes": 9074
+    },
+    {
+      "path": "docs/banking-v11-memory-policy-launch.md",
+      "sha256": "9f7c371d5992de4118095fa7b96afe0d4cf550385f4ed8542723782526935a01",
+      "bytes": 3234
+    },
+    {
+      "path": "docs/banking-v11-serial-orchestration.md",
+      "sha256": "d4ddf95c54bf458f4aae2d85115d3b4500ec2fbcbdba4e2531b50b1eef4a1dfd",
+      "bytes": 3016
+    },
+    {
       "path": "docs/banking77-matched-comparison-draft.md",
-      "sha256": "2eb2d42d30238f3d565ad66e48d96a515616f9340a644413471f329f1a3508a3",
-      "bytes": 6853
+      "sha256": "4580579c7d910cdec924a1166f8684f9cf9ebf150485cf76e83c15867c273dd0",
+      "bytes": 7152
+    },
+    {
+      "path": "docs/banking77-v10-preflight-protocol.md",
+      "sha256": "a9ea2bd28329675fb541828ce9f9575d71b5b0774d3f219f2bc82c29aa2d28d6",
+      "bytes": 8593
     },
     {
       "path": "docs/clinc-cil-v8-protocol.md",
@@ -343,8 +383,13 @@
     },
     {
       "path": "docs/reproduction_status.md",
-      "sha256": "d811db885fa8d7fb750a90e88a68d8798fac32679e250fcc6b2f033768f55f8d",
-      "bytes": 3190
+      "sha256": "8a2f7fbbc3769eddda8069c33594b3354d1fa15d975f473be836f9cbbd3feb8e",
+      "bytes": 4257
+    },
+    {
+      "path": "docs/sleep-paper-alignment-v10-v11.md",
+      "sha256": "eb1969db08665bef52738b5f81ad19816451fb8ec9c44ecfe78f797ad044dcbf",
+      "bytes": 12254
     },
     {
       "path": "docs/wikitext2-lm-pilot-v1.md",
@@ -422,6 +467,16 @@
       "bytes": 12018
     },
     {
+      "path": "reports/banking77-controls-v10.md",
+      "sha256": "f7a21296baccbeb44d02e64f7926ecd71d2eef78bd6b17cad58602cf16f6e56a",
+      "bytes": 21431
+    },
+    {
+      "path": "reports/banking77-reward-ablation-v11.md",
+      "sha256": "5967bbf7acef9bcf4b9f67f29efd4129fb6a4be000142e0db3eb53ebffb0112d",
+      "bytes": 17032
+    },
+    {
       "path": "reports/clinc-readout-and-paper-alignment-v9.md",
       "sha256": "f31f8d3a3f3b5268c5c3620c1563aa09de940e313bad6e1a575295011e4c9b2f",
       "bytes": 10209
@@ -478,8 +533,8 @@
     },
     {
       "path": "results/README.md",
-      "sha256": "cb0362148e7baea12989d98201469e7053f1c335cfc9876c0c86225f746016af",
-      "bytes": 6217
+      "sha256": "458a555b86d9d5f5076a35c036a050201cdb2456e333c1956a38a264af8fbf2c",
+      "bytes": 6636
     },
     {
       "path": "results/agnews-anchored-v5/analysis.json",
@@ -1532,6 +1587,211 @@
       "bytes": 12835
     },
     {
+      "path": "results/banking-v10-v11/README.md",
+      "sha256": "a11eb8b09c2d97009552ba37cbdd1d9aae0077c498f92860496fece9d31b79f8",
+      "bytes": 3512
+    },
+    {
+      "path": "results/banking-v10-v11/artifact-provenance.json",
+      "sha256": "dfe042704c7bbf3faa9becf5269c725d3a0709ee425946d8e1aa355de8449cac",
+      "bytes": 14816
+    },
+    {
+      "path": "results/banking-v10-v11/banking-v10-official-accuracy.png",
+      "sha256": "3e54dcc398dfcb638be1a3c336b7cb8456fd547c14cfea57373fc0dc8e00873b",
+      "bytes": 79733
+    },
+    {
+      "path": "results/banking-v10-v11/banking-v10-official-accuracy.svg",
+      "sha256": "8a1e9073ca1e4d87641efd79a5e52dac2bd9fb91ff8713d3ff93fd62c1bc59a3",
+      "bytes": 23476
+    },
+    {
+      "path": "results/banking-v10-v11/banking-v11-development-accuracy.png",
+      "sha256": "966efcac5141a2aa978ef6e7c67d577189de07bd359d389a537cfbcc47b8dc6f",
+      "bytes": 108938
+    },
+    {
+      "path": "results/banking-v10-v11/banking-v11-development-accuracy.svg",
+      "sha256": "c8b51fa3eb8ad78519b0e7d110262433f4cb4a6f0fb251b44e01c9ebf5eb1852",
+      "bytes": 41952
+    },
+    {
+      "path": "results/banking-v10-v11/combined-v10-v11-reanalysis.csv",
+      "sha256": "a099efc1b87befa064234121dff7694fba8b9f4a2a1f2a39ff8ee5a28e8b8fc1",
+      "bytes": 77483
+    },
+    {
+      "path": "results/banking-v10-v11/combined-v10-v11-reanalysis.json",
+      "sha256": "d25933a2a5ef2da1b6cb08b7816434a5ba2ff9e4288680d6738018c30275d4c7",
+      "bytes": 449856
+    },
+    {
+      "path": "results/banking-v10-v11/operation-ledger-final.json",
+      "sha256": "a58475d121043cdb38bff013eeb27d8e9a38ba7e029d985f240d7da4f6716a0d",
+      "bytes": 68284
+    },
+    {
+      "path": "results/banking-v10-v11/plot-manifest.json",
+      "sha256": "9568d2caf1a9a86abfd4cc8795bd7b937fd897ff2eaf11a50f817e671964b107",
+      "bytes": 7819
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/accounting-before-actual-evaluator-schema-tests.py.txt",
+      "sha256": "2464267756a74f0a60a59a007a6e0678bb9d15a8b5a3057ae615216884cef48a",
+      "bytes": 14288
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/accounting-before-actual-evaluator-schema.py.txt",
+      "sha256": "1241ac776127e5be97e8c5440a2b8021f1fea1ed853a733ec43bc59fa3168539",
+      "bytes": 38570
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/archive-manifest-before-dev-reference-repairs.json",
+      "sha256": "e0ad389780426530a230c095b771c22269d21b92ac27ae239cb1e546177e5e99",
+      "bytes": 4086
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/archive-manifest-before-parent-failure.json",
+      "sha256": "f28eb59bf12a2e7e9c9f98021e7db78c117a800ca181b48c6d93529a26515aa3",
+      "bytes": 2913
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/archive-manifest.json",
+      "sha256": "528a14711fdfd493ec463e41140ec7be8eb9b4b713dcd0b3f0b9640dca37bab3",
+      "bytes": 6112
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/official-evaluator-startup-a.py.txt",
+      "sha256": "fbf5d5406b144826c82fd477e30ddd339fde8bbbb2432cf4c352e92a7e8340a1",
+      "bytes": 54036
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/reanalyzer-before-actual-task6-schema-tests.py.txt",
+      "sha256": "030def87fa8f9fe00f14b987c0d44c81914f9480e7382be0f2c3c9a0f4e5ebb2",
+      "bytes": 21202
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/reanalyzer-before-actual-task6-schema.py.txt",
+      "sha256": "0207edf39954350fdc74d5deca52b1812be2326743385f1e501c214b61c119d7",
+      "bytes": 33064
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/v11-evaluator-before-cpu-source-keyword-fix.py.txt",
+      "sha256": "a38d68dd5f13c223e1253e25282b65bae92ebb51d8293af2a2992399694e082f",
+      "bytes": 43611
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/v11-evaluator-intermediate-cpu-source-keyword-only.py.txt",
+      "sha256": "dffcfd7e469adc88633be7f087912d21caf587bd1516824e6dddda599676d5fa",
+      "bytes": 43646
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/v11-evaluator-tests-before-completed-protocol-fixture.py.txt",
+      "sha256": "6ccff24d148eb0884085eca1f8bec0980f9be42b3c5b9a101be9aae58be24561",
+      "bytes": 14330
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/v11-launcher-startup-a-tests.py.txt",
+      "sha256": "269d18aa02ef083ca692017d98cba1542112b299226b69216ffe45fc85b8be9f",
+      "bytes": 17051
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/v11-launcher-startup-a.py.txt",
+      "sha256": "9d3daf5c1311e3156a994a95092256dce22e5456dc9cc76777897fa5fa805669",
+      "bytes": 26337
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/v11-parent-before-terminal-field-fix-tests.py.txt",
+      "sha256": "45a19fb32f1c35f4dd048190ce11ea34d81f6c23ef3b0148764d302cbb917eda",
+      "bytes": 10403
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/v11-parent-before-terminal-field-fix.py.txt",
+      "sha256": "83d3e40397fef07b8ea349b54faf6f76d2c91f57e93839d77364fdf247032169",
+      "bytes": 31016
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/v11-reference-tests-before-real-producer-gates.py.txt",
+      "sha256": "67ec8430d23208847a7e3dcbbdc6eaf4cb76131ce4c737dabfded3c26397d91a",
+      "bytes": 5600
+    },
+    {
+      "path": "results/banking-v10-v11/provenance/v11-reference-tests-intermediate-signature-inspection.py.txt",
+      "sha256": "1b706accae947ffc7798b8ccdb5cf86c0f0fd9b4b45783ededdea2a77483460b",
+      "bytes": 6703
+    },
+    {
+      "path": "results/banking-v10-v11/software-acceptance-summary-r4.json",
+      "sha256": "7fd7b95144bf5393b506da44b7cb9f387096a946a2f86e2d1cf848100476afae",
+      "bytes": 6244
+    },
+    {
+      "path": "results/banking-v10-v11/software-ordinary-suite-a.json",
+      "sha256": "4ba55e385e99f06808efbe45eb62f208473b531c777ef32580775d1c70c1039e",
+      "bytes": 8137
+    },
+    {
+      "path": "results/banking-v10-v11/software-v10-component-e.json",
+      "sha256": "53da1169d320b2a5162b7d926da47459bb6af8e93a37a690ae77534fa021f523",
+      "bytes": 3362
+    },
+    {
+      "path": "results/banking-v10-v11/software-v11-component-h.json",
+      "sha256": "18de8713f52ac6f32ef7f4f96e9d139c19c969e3427ca45ab87518d1a9aa50cd",
+      "bytes": 1771
+    },
+    {
+      "path": "results/banking-v10-v11/teacher-signals-v10-all3-summary.json",
+      "sha256": "3c6715cc82357a9e16714ba8c374cbd8e3e133898a627f46094c75d3633df336",
+      "bytes": 35340
+    },
+    {
+      "path": "results/banking-v10-v11/training-seal.json",
+      "sha256": "be51959787d68fe8891ead4d098aa12ca48fa1ae9a4097a416beeb73a2acc593",
+      "bytes": 187831
+    },
+    {
+      "path": "results/banking-v10-v11/v10-accounting.json",
+      "sha256": "51c831a18f66591239d8cbe940846a32037615e08d7536f52182233c06b039f0",
+      "bytes": 215719
+    },
+    {
+      "path": "results/banking-v10-v11/v10-independent-scalar-crosscheck.json",
+      "sha256": "2708572510c2d2ec21e28d7eb871cf3bf1f8d33ae3e35e6380f0e643e9823344",
+      "bytes": 17406
+    },
+    {
+      "path": "results/banking-v10-v11/v10-official-evaluation.json",
+      "sha256": "3d582ce11bd95b2f0020b69a1508023408410cd0caddfcdc432724443d99823a",
+      "bytes": 508622
+    },
+    {
+      "path": "results/banking-v10-v11/v10-reanalysis.csv",
+      "sha256": "08b7749e024b1711a0dbd07a6ac29c1056178798cafa70e78fc96080553df2bc",
+      "bytes": 56583
+    },
+    {
+      "path": "results/banking-v10-v11/v10-reanalysis.json",
+      "sha256": "6ffa5440904b7760517831a8e86100e627a658e54297ad86b57ee62a24b8509c",
+      "bytes": 391381
+    },
+    {
+      "path": "results/banking-v10-v11/v11-accounting-aggregate.json",
+      "sha256": "1c4ae8bb3c3b2ce299188533d7eea23d8241957eeca7390c266340816e6cae19",
+      "bytes": 82884
+    },
+    {
+      "path": "results/banking-v10-v11/v11-development-evaluation.json",
+      "sha256": "4b68224a884a435a1262754328af1a39f201c0e71ceab450f6038b611eb7d0d8",
+      "bytes": 345832
+    },
+    {
+      "path": "results/banking-v10-v11/v11-request-cohort-balance.json",
+      "sha256": "fbf0ff97f2fadd6043e9166cca4a8843da963304ed4d87aefe4a57897aa2f193",
+      "bytes": 4628
+    },
+    {
       "path": "results/banking77-preparation/source-audit.json",
       "sha256": "242d780d245242d7ac4d4acfbb30889a08240bd7ca18ff01b6d239cbc965c287",
       "bytes": 15016
@@ -1957,6 +2217,16 @@
       "bytes": 5199
     },
     {
+      "path": "tests/check_aggregate_banking_v10_accounting_cpu.py",
+      "sha256": "4e30df5bfac31251f52f7e650b823a660e543a6159f82098e84ba0336f5cb1d5",
+      "bytes": 14287
+    },
+    {
+      "path": "tests/check_aggregate_banking_v11_lti_accounting_cpu.py",
+      "sha256": "cc5d8bb24203972d8ef8ba09e34309794bbb60e7f5d8e88cc55ad84d62d259fc",
+      "bytes": 19154
+    },
+    {
       "path": "tests/check_agnews_anchored_wake_v5_cpu.py",
       "sha256": "c924733873d8e51103893787349a1bdd09e9d2f539cefcddfb9563081a8951c6",
       "bytes": 5576
@@ -1977,9 +2247,154 @@
       "bytes": 5423
     },
     {
+      "path": "tests/check_analyze_banking_teacher_signals_v10_cpu.py",
+      "sha256": "2e638aeb5db7ce9b9d3ca56465c58991d69d15cc066c4cde71c2eb7ba01bb1d5",
+      "bytes": 9322
+    },
+    {
+      "path": "tests/check_banking_additive_accounting_v10_cpu.py",
+      "sha256": "9330664e7d4afc4dffb4c46d2683aee109e1f04c828c1781128aa03e5a644aef",
+      "bytes": 6185
+    },
+    {
+      "path": "tests/check_banking_cil_common_v10_cpu.py",
+      "sha256": "2ea19213bcebd07a0262bbaf7acff317899e11f538a2370b58bdcd15400183d4",
+      "bytes": 8456
+    },
+    {
+      "path": "tests/check_banking_cil_v10_lifecycle_cpu.py",
+      "sha256": "76f5996c5c387386ae97feceab864365be0027b62736d4147e6497658a4638a4",
+      "bytes": 12588
+    },
+    {
+      "path": "tests/check_banking_cil_v10_lti_cpu.py",
+      "sha256": "de7ec06c76a93d8b2a85b7d44be77a0ac452e38a9e790cb4342186b3c22f16e5",
+      "bytes": 2248
+    },
+    {
+      "path": "tests/check_banking_cil_v10_routing_cpu.py",
+      "sha256": "80edacded78e46e98f22f7f1a6361ef44543e7a59ea7301ac482ed74be802ee0",
+      "bytes": 4989
+    },
+    {
+      "path": "tests/check_banking_cil_v10_runtime_cpu.py",
+      "sha256": "f442cbc592d3bff59909042bb1ab1cbf7954104ea1a96b9f7f820ef3ff264b7b",
+      "bytes": 12510
+    },
+    {
+      "path": "tests/check_banking_cost_estimates_v10_cpu.py",
+      "sha256": "86a688d0e6d25f8cad6f608853db93ad41698b9bea70f0f2b657038d63af43c4",
+      "bytes": 862
+    },
+    {
+      "path": "tests/check_banking_queue_v10_cpu.py",
+      "sha256": "e9d01e442cfd2027eb12550e3df66440ed676adbc0393fb257ea03e8ca3198f0",
+      "bytes": 2474
+    },
+    {
+      "path": "tests/check_banking_v10_queue_config_hash_domains_cpu.py",
+      "sha256": "6cbfdac79f1b3478c6b7b21c5d56c62fcf0002cee21a33549f8e2172b6e52fc6",
+      "bytes": 1353
+    },
+    {
+      "path": "tests/check_build_banking_memory_queue_v10_cpu.py",
+      "sha256": "ee0b347bbd9da3a478993f2ba942cd670cd85f177f6cbffca7d7cfd3cbdc14d7",
+      "bytes": 4475
+    },
+    {
+      "path": "tests/check_build_banking_test_contract_v10_cpu.py",
+      "sha256": "5326fd18d32e4b9ac301649834fed571b58138c95e88672040495b0f8917f704",
+      "bytes": 8387
+    },
+    {
+      "path": "tests/check_build_banking_v11_dev_reference_cpu.py",
+      "sha256": "e05a93ed6ba05f5c458d48a400d02be78b12a3f62e285d8a4d9b74e5f5c51e5c",
+      "bytes": 15049
+    },
+    {
+      "path": "tests/check_collect_banking_main_queue_receipts_v10_cpu.py",
+      "sha256": "5ae552f4016ad2ef331f9f6b2a20c4756255050c1b61929d8db82ddf900076df",
+      "bytes": 10608
+    },
+    {
+      "path": "tests/check_evaluate_banking_lti_ablation_v11_cpu.py",
+      "sha256": "8bcc9896cb2094702d5eee87d4b63c652445793561547d7a4d8ff8a3a1f8d9ef",
+      "bytes": 16239
+    },
+    {
+      "path": "tests/check_evaluate_banking_test_v10_cpu.py",
+      "sha256": "d5cf5dd6c5ccb6c162ef70a764030d5ddfd0c5efb17ef80873a721183efa2f07",
+      "bytes": 28016
+    },
+    {
+      "path": "tests/check_launch_banking_checked_queue_v10_cpu.py",
+      "sha256": "318ea6e76215d2b0edeb02ffa6a396691093cbf7accd52d46f2d843b0d2256d0",
+      "bytes": 6804
+    },
+    {
+      "path": "tests/check_launch_banking_memory_policy_v10_cpu.py",
+      "sha256": "c18dc541750503643a3f6b80b3ab57b3f08eab40dc3ab15f5ddd0910d58c153d",
+      "bytes": 14492
+    },
+    {
+      "path": "tests/check_launch_banking_memory_policy_v11_cpu.py",
+      "sha256": "c54c104ac95b523fda93fc906e11550fbf0328b285b27f15e9f4fc3ffb305b27",
+      "bytes": 19723
+    },
+    {
+      "path": "tests/check_launch_banking_test_memory_policy_v10_cpu.py",
+      "sha256": "ba903b75004b6b5b545acad5de5c669b8b9aeee4c8f3972a00a5e60fce50c644",
+      "bytes": 9905
+    },
+    {
+      "path": "tests/check_launch_banking_v11_dev_evaluation_cpu.py",
+      "sha256": "e40f53daa21be6ea239392a5cecb76e338d3ccc9671b5c990bd2a7dc00d68470",
+      "bytes": 6761
+    },
+    {
+      "path": "tests/check_orchestrate_banking_v11_canonical_teacher_cpu.py",
+      "sha256": "2c7a663a8de8dc84faaa3a897f9dbc040a923961b5f5ce30f47f408943fc1018",
+      "bytes": 10908
+    },
+    {
+      "path": "tests/check_prepare_banking_train_v10_cpu.py",
+      "sha256": "6fe9e9fc60710a64eded54df805ae757fbc591c058b55d532af02e08db865431",
+      "bytes": 2071
+    },
+    {
+      "path": "tests/check_prepare_banking_v11_launch_materials_cpu.py",
+      "sha256": "3e2d16aaaad96eea0d5347f17c408d99151e8c105c486020af3aa3ad469ee29f",
+      "bytes": 3401
+    },
+    {
+      "path": "tests/check_probe_banking_transfer_v10_cpu.py",
+      "sha256": "8d35807279d7039c5a5585ddf6ae1bce2aba8739c10f7b0a98491c810cfb1ac6",
+      "bytes": 10208
+    },
+    {
+      "path": "tests/check_reanalyze_banking_v10_v11_cpu.py",
+      "sha256": "fd9ecf60fe27c0013ec7686ed7f9933b90b4a097165baae36e40d14dc1dece33",
+      "bytes": 22094
+    },
+    {
+      "path": "tests/check_run_banking_cil_v10_cpu.py",
+      "sha256": "389e2d40234d66794b61ce44845a4d3572f3f2a92ca6b569b3606e812e39ab43",
+      "bytes": 18753
+    },
+    {
+      "path": "tests/check_run_banking_lti_ablation_v11_cpu.py",
+      "sha256": "cf9fb04bd198b0395d49c8697cde6f8ac7be35deb4e86e4b14d8dae65fab6e52",
+      "bytes": 12494
+    },
+    {
       "path": "tests/check_summarize_agnews_mechanism_v5.py",
       "sha256": "025aa86add8922f3502cf48deccf48cc62d7d10e998fbd49c9e5a64ded684150",
       "bytes": 4688
+    },
+    {
+      "path": "tests/check_verify_banking_tx_replay_v10_cpu.py",
+      "sha256": "2c811a165035cee58bfd61ccda0364a4addfa5915a12124e47defbda3a8f6332",
+      "bytes": 2734
     },
     {
       "path": "tests/conftest.py",
@@ -2322,6 +2737,16 @@
       "bytes": 7175
     },
     {
+      "path": "tools/aggregate_banking_v10_accounting.py",
+      "sha256": "6aab2c7b1e28529c3abcb6a81092c66999c9caf10fb82cca7cb8dcd98fb40444",
+      "bytes": 38569
+    },
+    {
+      "path": "tools/aggregate_banking_v11_lti_accounting.py",
+      "sha256": "c51b3d8a2818d98b55a0a75debc87cf5dc4d00cda53a9d9391d7727351fca33d",
+      "bytes": 37726
+    },
+    {
       "path": "tools/agnews_anchored_wake_v5.py",
       "sha256": "3a90e122be597314514036a0e1fbbb91befae5d7df0425919c786f86c11b34a6",
       "bytes": 8978
@@ -2352,9 +2777,19 @@
       "bytes": 5753
     },
     {
+      "path": "tools/analyze_banking_teacher_signals_v10.py",
+      "sha256": "1a1d18175adb3641afda0d0572b4cc59ee11135f852b4de244c9032fda1483df",
+      "bytes": 22391
+    },
+    {
       "path": "tools/audit_agnews_context_storage_v6.py",
       "sha256": "f1b76e89b5ac39ddd7d9aa3cd333e62a5130aec8fa8829fb263422bb5c47e19b",
       "bytes": 4895
+    },
+    {
+      "path": "tools/audit_banking_tokens_v10.py",
+      "sha256": "324e3ab2d187f1bce4df1b4a2beeb280aca7d40d62a665fb98dab37875b4cd2e",
+      "bytes": 3319
     },
     {
       "path": "tools/audit_clinc_input_protocol_v9.py",
@@ -2370,6 +2805,56 @@
       "path": "tools/audit_intent_label_tokens_v9.py",
       "sha256": "b2dc18faffc5160a938bdaf9063fa0c3c9686b82bc86a3545fe6e56345e198e8",
       "bytes": 3266
+    },
+    {
+      "path": "tools/banking_additive_accounting_v10.py",
+      "sha256": "2055c9c0b8245b38d33c8c216ffdc5a7fda956759839056d00222c4db98ecf39",
+      "bytes": 13576
+    },
+    {
+      "path": "tools/banking_cil_common_v10.py",
+      "sha256": "1e4102dd2df80554c7463466546909ef95e9d6256b53f6affa39722e491ba0ab",
+      "bytes": 20628
+    },
+    {
+      "path": "tools/banking_cil_v10_lifecycle.py",
+      "sha256": "24822dec63d05cabd05523a901d44aa2cb3d9197154de12eea2198f41552f98c",
+      "bytes": 12104
+    },
+    {
+      "path": "tools/banking_cil_v10_routing.py",
+      "sha256": "3ca898efc3b006277b7dce3e9e8424d6e0f671a54b487be764fe609562f5df34",
+      "bytes": 8981
+    },
+    {
+      "path": "tools/banking_cil_v10_runtime.py",
+      "sha256": "53d9ba99952f8968261818f8a0da3e07daac8e6e8bbf0649ee4f7000c8d05638",
+      "bytes": 30277
+    },
+    {
+      "path": "tools/banking_cost_estimates_v10.py",
+      "sha256": "0e3eb594ac662271b0897b6b885894d818d4b111407debff69ddc9d05efcdd65",
+      "bytes": 2432
+    },
+    {
+      "path": "tools/benchmark_banking_allocator_v10.py",
+      "sha256": "f287443f8111c4843827119f770031402d8b6a58d4722d7bee05297b775d62de",
+      "bytes": 4604
+    },
+    {
+      "path": "tools/build_banking_memory_queue_v10.py",
+      "sha256": "c01e4a100983a608b1f8561101c9b1271eb89c7f4f36a7154715a53f6cc060f6",
+      "bytes": 13925
+    },
+    {
+      "path": "tools/build_banking_test_contract_v10.py",
+      "sha256": "bce149ddf59857e8a904e8ecbadd6d178f0f576093c684fba3399baeff7d9646",
+      "bytes": 10966
+    },
+    {
+      "path": "tools/build_banking_v11_dev_reference.py",
+      "sha256": "b4cb81b589f00b2d10ff002305cf4a6907927b2b2f4f53a59a2e50aeaa78b4fe",
+      "bytes": 12681
     },
     {
       "path": "tools/clinc_cil_common_v8.py",
@@ -2390,6 +2875,11 @@
       "path": "tools/clinc_tail_runtime_v8.py",
       "sha256": "057de386734ff128d1fb0147dd83b1c14009cc36d8ed7c77740cbb497ee6f6d9",
       "bytes": 19811
+    },
+    {
+      "path": "tools/collect_banking_main_queue_receipts_v10.py",
+      "sha256": "aee56b29f7b9a6f0d8e81b1db8e6e55e17cc0ec1e43a40f85672a70224114007",
+      "bytes": 16642
     },
     {
       "path": "tools/complete_agnews_evaluation_v2.py",
@@ -2442,6 +2932,16 @@
       "bytes": 21258
     },
     {
+      "path": "tools/evaluate_banking_lti_ablation_v11.py",
+      "sha256": "c90f0a849798199833945f46a60e10894e23f48de923f64447ed6b256912f8a7",
+      "bytes": 43657
+    },
+    {
+      "path": "tools/evaluate_banking_test_v10.py",
+      "sha256": "2125aa2f422695c131d6220062a4c5cf349201adf9427445aeadf2c1ef84b892",
+      "bytes": 54016
+    },
+    {
       "path": "tools/evaluate_clinc_checkpoints_v8.py",
       "sha256": "eb4996e33dd58cfafd737dacb10b0fcb7e7edb8e2221f46352302794e8c2388e",
       "bytes": 23330
@@ -2462,6 +2962,31 @@
       "bytes": 26017
     },
     {
+      "path": "tools/launch_banking_checked_queue_v10.py",
+      "sha256": "cc02afd1b86b2c123efca1990a895ef0b2764df4b1a2b261cb3047b271e4ae04",
+      "bytes": 14095
+    },
+    {
+      "path": "tools/launch_banking_memory_policy_v10.py",
+      "sha256": "c3530c1db097ccaeeb53bfed30a880696f7f5fe508651182cb0ac68d61754281",
+      "bytes": 37026
+    },
+    {
+      "path": "tools/launch_banking_memory_policy_v11.py",
+      "sha256": "ae54c93999ac49b14f3d6d7bc9353fcfb963532b263f280a83ec9ea9cfa55f78",
+      "bytes": 27709
+    },
+    {
+      "path": "tools/launch_banking_test_memory_policy_v10.py",
+      "sha256": "b24e169f72439f8454aa93596048f361b7e3177088ca396c75251158969027d8",
+      "bytes": 28359
+    },
+    {
+      "path": "tools/launch_banking_v11_dev_evaluation.py",
+      "sha256": "12889c215d067eff2ca092c699b8e80d908f79df9ec349d465265cc2db8720a7",
+      "bytes": 20831
+    },
+    {
       "path": "tools/matmul_work_v7.py",
       "sha256": "a42f230f32b6baa04683587283f9c2364dc2d60afeea7de2a420447fb0911e75",
       "bytes": 4576
@@ -2470,6 +2995,16 @@
       "path": "tools/native_retention.py",
       "sha256": "e6a7eaff0a5a21ad523f486c85cdb427cf571daea69a5a69907263266874a0b3",
       "bytes": 13369
+    },
+    {
+      "path": "tools/orchestrate_banking_v11_canonical_teacher.py",
+      "sha256": "7f6e9ded8ab113d5ab07ac83ddcaf1d5a0722418ac46445c1e560e8da92421d7",
+      "bytes": 31012
+    },
+    {
+      "path": "tools/plot_banking_v10_v11.py",
+      "sha256": "6e41a044fe9284750a122f4484799fa38b0abd58c11f0f648d89a99fb6a87ad8",
+      "bytes": 6921
     },
     {
       "path": "tools/plot_clinc_readout_v9.py",
@@ -2497,6 +3032,26 @@
       "bytes": 8024
     },
     {
+      "path": "tools/prepare_banking_config_v10.py",
+      "sha256": "f5e52093ac2392b0560389859f00e43c62ac5b9b5ffaae32fc3c571402bc4f28",
+      "bytes": 3868
+    },
+    {
+      "path": "tools/prepare_banking_main_release_v10.py",
+      "sha256": "83bc2b26baf7de5033030080cf4345609a2d30f46afa60fe2aeadd1d888223d5",
+      "bytes": 5371
+    },
+    {
+      "path": "tools/prepare_banking_train_v10.py",
+      "sha256": "88bb49bee9af2ee6d3197ff970f5b4e2c5d5ed3091135173fac2b27ea111bdc8",
+      "bytes": 7381
+    },
+    {
+      "path": "tools/prepare_banking_v11_launch_materials.py",
+      "sha256": "6ddcc9bc358931737bc893b561c96a45662670c45744e6f51eeb8cdb22398e68",
+      "bytes": 18351
+    },
+    {
       "path": "tools/prepare_clinc_readout_contexts_v9.py",
       "sha256": "d0488c42d75aef82d067ad55f0660a87f145efb7cb1df31b6400dd821c4d2a0c",
       "bytes": 15771
@@ -2520,6 +3075,11 @@
       "path": "tools/probe_agnews_task_router_v5.py",
       "sha256": "6659b2a66a1f470661d820a8bace8ed5fe2adae851d8f9006fbd5064be5c9a96",
       "bytes": 24689
+    },
+    {
+      "path": "tools/probe_banking_transfer_v10.py",
+      "sha256": "062a73798e436531420dea293f4756f0aaae73b100d99223175e6a4da2b80501",
+      "bytes": 45646
     },
     {
       "path": "tools/qualify_agnews_anchored_resume_v5.py",
@@ -2552,9 +3112,19 @@
       "bytes": 7439
     },
     {
+      "path": "tools/read_banking_v10_status.py",
+      "sha256": "e09a0e81002cc5da773d8c05dc852d09a2d0070bd5deb7a04bd6ab24dd9d6d36",
+      "bytes": 2461
+    },
+    {
       "path": "tools/reanalyze.py",
       "sha256": "e50ca2385c6ba28d8539df2c8b46baeaf9ab71f83efe062441a6c80136a147b8",
       "bytes": 2758
+    },
+    {
+      "path": "tools/reanalyze_banking_v10_v11.py",
+      "sha256": "c5a2b19d428a17212bb1d646162a2d1ce3bce47b0b802ea9a64f4d2da89dd039",
+      "bytes": 33396
     },
     {
       "path": "tools/reanalyze_clinc_readout_v9.py",
@@ -2645,6 +3215,26 @@
       "path": "tools/run_agnews_sleep_fixture_v1.py",
       "sha256": "b633de0fe8cad1dda159951d2ee4e5444de44fe07127f99775de68d09fd35088",
       "bytes": 7759
+    },
+    {
+      "path": "tools/run_banking_cil_v10.py",
+      "sha256": "3ca271ed8cf57aa1b5cdb8531da4052fc18ca6ff6083741fdf5b666dc4600f74",
+      "bytes": 80469
+    },
+    {
+      "path": "tools/run_banking_component_cpu_acceptance.py",
+      "sha256": "046a825ec724416d20e39c0bcbb72ca6f734b46149989c20073c8c230d9a5bae",
+      "bytes": 3402
+    },
+    {
+      "path": "tools/run_banking_lti_ablation_v11.py",
+      "sha256": "eabebc1a6ca307e63d209afa95117dcafc2f888c267d09e7c0ed757cf1ff8db2",
+      "bytes": 39096
+    },
+    {
+      "path": "tools/run_banking_queue_v10.py",
+      "sha256": "c715dcfe5207c75f3efc14e12b33ac9c2e61d2c398dc40c81b673c5e6fcf3b22",
+      "bytes": 4946
     },
     {
       "path": "tools/run_clinc_cil_v8.py",
@@ -2757,6 +3347,11 @@
       "bytes": 13685
     },
     {
+      "path": "tools/summarize_banking_v11_request_cohort_balance.py",
+      "sha256": "51e967bc7929ce6adbd1aa2b94338fddcc224b9ee672d50453162c80eae9683d",
+      "bytes": 9281
+    },
+    {
       "path": "tools/summarize_clinc_v8_artifact_storage.py",
       "sha256": "9dacf3dc7ec4aba525242850c1e665c3a8b635c767fc0ad739aa70c60333afe5",
       "bytes": 2906
@@ -2830,6 +3425,11 @@
       "path": "tools/verify_agnews_warm_alias_v6.py",
       "sha256": "ac1b85ab547ddc2f2ddeb01dfbafcd1c7a9752bf444b2d7c4b3c397636119a29",
       "bytes": 4111
+    },
+    {
+      "path": "tools/verify_banking_tx_replay_v10.py",
+      "sha256": "9a8368dfd52b4ab6d4fb03793d79d94b7d85567ca0dbf9bbd86c4ee53ece67d4",
+      "bytes": 15599
     }
   ]
 }

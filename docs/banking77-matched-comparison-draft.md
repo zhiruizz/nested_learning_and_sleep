@@ -1,5 +1,7 @@
 # Banking77 comparison preparation (not a frozen experiment)
 
+> Historical V9 pre-acquisition preparation snapshot. Its pending/no-payload statements describe that earlier stage. The subsequently completed [V10 controls](../reports/banking77-controls-v10.md) and [V11 development ablation](../reports/banking77-reward-ablation-v11.md) are reported separately.
+
 Status on 2026-11-07: source metadata audited; no Banking77 train/test files
 have been acquired. No Banking77 model run or accuracy result is claimed.
 

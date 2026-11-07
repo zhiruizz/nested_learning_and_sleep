@@ -1,0 +1,241 @@
+{
+  "combined_reanalysis_source_sha256": "e0b2093b895bdb3a5d3eb908a74fa95b538db94ad83bd4960a3f5b6270ecb56c",
+  "figures": {
+    "banking-v10-official-accuracy.png": {
+      "bytes": 79733,
+      "sha256": "3e54dcc398dfcb638be1a3c336b7cb8456fd547c14cfea57373fc0dc8e00873b"
+    },
+    "banking-v10-official-accuracy.svg": {
+      "bytes": 23476,
+      "sha256": "8a1e9073ca1e4d87641efd79a5e52dac2bd9fb91ff8713d3ff93fd62c1bc59a3"
+    },
+    "banking-v11-development-accuracy.png": {
+      "bytes": 108938,
+      "sha256": "966efcac5141a2aa978ef6e7c67d577189de07bd359d389a537cfbcc47b8dc6f"
+    },
+    "banking-v11-development-accuracy.svg": {
+      "bytes": 41952,
+      "sha256": "c8b51fa3eb8ad78519b0e7d110262433f4cb4a6f0fb251b44e01c9ebf5eb1852"
+    }
+  },
+  "interval": "sample SD across three paired order/data seeds, not a confidence interval",
+  "panels": {
+    "banking-v10-official-accuracy/Raw official test": {
+      "arms": {
+        "CMS_ONLY": {
+          "mean_percent": 14.20995670995671,
+          "per_seed_percent": {
+            "17": 16.103896103896105,
+            "29": 14.253246753246755,
+            "43": 12.272727272727273
+          },
+          "sample_sd_percentage_points": 1.9159512452345775
+        },
+        "GOLD_ADDITIVE": {
+          "mean_percent": 26.450216450216452,
+          "per_seed_percent": {
+            "17": 26.396103896103895,
+            "29": 28.279220779220783,
+            "43": 24.675324675324674
+          },
+          "sample_sd_percentage_points": 1.8025573245541529
+        },
+        "SLEEP_ADDITIVE": {
+          "mean_percent": 22.445887445887447,
+          "per_seed_percent": {
+            "17": 19.155844155844157,
+            "29": 22.564935064935064,
+            "43": 25.616883116883116
+          },
+          "sample_sd_percentage_points": 3.232164192258266
+        }
+      },
+      "examples_per_seed": 3080
+    },
+    "banking-v10-official-accuracy/Train/development-disjoint test": {
+      "arms": {
+        "CMS_ONLY": {
+          "mean_percent": 14.23147846838052,
+          "per_seed_percent": {
+            "17": 16.108037748128865,
+            "29": 14.285714285714285,
+            "43": 12.300683371298406
+          },
+          "sample_sd_percentage_points": 1.904256542749403
+        },
+        "GOLD_ADDITIVE": {
+          "mean_percent": 26.434537368478143,
+          "per_seed_percent": {
+            "17": 26.456231695411645,
+            "29": 28.246013667425967,
+            "43": 24.601366742596813
+          },
+          "sample_sd_percentage_points": 1.822420309514925
+        },
+        "SLEEP_ADDITIVE": {
+          "mean_percent": 22.421086885779367,
+          "per_seed_percent": {
+            "17": 19.134396355353076,
+            "29": 22.48616986657989,
+            "43": 25.64269443540514
+          },
+          "sample_sd_percentage_points": 3.2546371257783497
+        }
+      },
+      "examples_per_seed": 3073
+    },
+    "banking-v11-development-accuracy/Both tasks": {
+      "arms": {
+        "CMS_ONLY": {
+          "mean_percent": 36.96969696969697,
+          "per_seed_percent": {
+            "17": 39.09090909090909,
+            "29": 35.0,
+            "43": 36.81818181818181
+          },
+          "sample_sd_percentage_points": 2.0496589785558625
+        },
+        "GOLD_ADDITIVE": {
+          "mean_percent": 56.21212121212121,
+          "per_seed_percent": {
+            "17": 51.81818181818182,
+            "29": 57.72727272727273,
+            "43": 59.09090909090909
+          },
+          "sample_sd_percentage_points": 3.865863885506992
+        },
+        "LTI_CANONICAL_TEACHER": {
+          "mean_percent": 28.78787878787879,
+          "per_seed_percent": {
+            "17": 30.454545454545457,
+            "29": 22.272727272727273,
+            "43": 33.63636363636363
+          },
+          "sample_sd_percentage_points": 5.862285491561545
+        },
+        "LTI_NO_REWARD": {
+          "mean_percent": 32.42424242424243,
+          "per_seed_percent": {
+            "17": 29.545454545454547,
+            "29": 33.18181818181819,
+            "43": 34.54545454545455
+          },
+          "sample_sd_percentage_points": 2.5846548650351493
+        },
+        "SLEEP_ADDITIVE": {
+          "mean_percent": 29.848484848484848,
+          "per_seed_percent": {
+            "17": 26.81818181818182,
+            "29": 25.90909090909091,
+            "43": 36.81818181818181
+          },
+          "sample_sd_percentage_points": 6.05302556225399
+        }
+      },
+      "examples_per_seed": 220
+    },
+    "banking-v11-development-accuracy/New task": {
+      "arms": {
+        "CMS_ONLY": {
+          "mean_percent": 73.93939393939394,
+          "per_seed_percent": {
+            "17": 78.18181818181819,
+            "29": 70.0,
+            "43": 73.63636363636363
+          },
+          "sample_sd_percentage_points": 4.099317957111725
+        },
+        "GOLD_ADDITIVE": {
+          "mean_percent": 62.72727272727272,
+          "per_seed_percent": {
+            "17": 54.54545454545454,
+            "29": 68.18181818181817,
+            "43": 65.45454545454545
+          },
+          "sample_sd_percentage_points": 7.215685393812519
+        },
+        "LTI_CANONICAL_TEACHER": {
+          "mean_percent": 54.84848484848485,
+          "per_seed_percent": {
+            "17": 53.63636363636364,
+            "29": 44.54545454545455,
+            "43": 66.36363636363637
+          },
+          "sample_sd_percentage_points": 10.95947958789402
+        },
+        "LTI_NO_REWARD": {
+          "mean_percent": 53.93939393939394,
+          "per_seed_percent": {
+            "17": 45.45454545454545,
+            "29": 48.18181818181818,
+            "43": 68.18181818181817
+          },
+          "sample_sd_percentage_points": 12.409451654208038
+        },
+        "SLEEP_ADDITIVE": {
+          "mean_percent": 53.33333333333333,
+          "per_seed_percent": {
+            "17": 47.27272727272727,
+            "29": 45.45454545454545,
+            "43": 67.27272727272727
+          },
+          "sample_sd_percentage_points": 12.106051124507983
+        }
+      },
+      "examples_per_seed": 110
+    },
+    "banking-v11-development-accuracy/Old task": {
+      "arms": {
+        "CMS_ONLY": {
+          "mean_percent": 0.0,
+          "per_seed_percent": {
+            "17": 0.0,
+            "29": 0.0,
+            "43": 0.0
+          },
+          "sample_sd_percentage_points": 0.0
+        },
+        "GOLD_ADDITIVE": {
+          "mean_percent": 49.696969696969695,
+          "per_seed_percent": {
+            "17": 49.09090909090909,
+            "29": 47.27272727272727,
+            "43": 52.72727272727272
+          },
+          "sample_sd_percentage_points": 2.7773186030035344
+        },
+        "LTI_CANONICAL_TEACHER": {
+          "mean_percent": 2.727272727272727,
+          "per_seed_percent": {
+            "17": 7.2727272727272725,
+            "29": 0.0,
+            "43": 0.9090909090909091
+          },
+          "sample_sd_percentage_points": 3.962635403218794
+        },
+        "LTI_NO_REWARD": {
+          "mean_percent": 10.909090909090908,
+          "per_seed_percent": {
+            "17": 13.636363636363635,
+            "29": 18.181818181818183,
+            "43": 0.9090909090909091
+          },
+          "sample_sd_percentage_points": 8.953507092541914
+        },
+        "SLEEP_ADDITIVE": {
+          "mean_percent": 6.363636363636363,
+          "per_seed_percent": {
+            "17": 6.363636363636363,
+            "29": 6.363636363636363,
+            "43": 6.363636363636363
+          },
+          "sample_sd_percentage_points": 0.0
+        }
+      },
+      "examples_per_seed": 110
+    }
+  },
+  "schema": "banking-v10-v11-final-capture-plot-manifest-v1",
+  "shared_initialization_seed": 1907008,
+  "source_plot_manifest_sha256": "f9d4fa5822586c721c7d3616e4e638c4ae9e819a5c057d161adb88fae4553c75"
+}

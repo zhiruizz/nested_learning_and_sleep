@@ -1,0 +1,170 @@
+{
+  "by_seed": [
+    {
+      "events": {
+        "LTI_CANONICAL_TEACHER": 28,
+        "LTI_NO_REWARD": 28,
+        "full_saved_plan_matches": 28,
+        "mismatches_by_field": {},
+        "missing_from_canonical_teacher": 0,
+        "missing_from_no_reward": 0,
+        "paired_event_keys": 28,
+        "request_digest_matches": 28
+      },
+      "role_request_totals": {
+        "LTI_CANONICAL_TEACHER": {
+          "current": 420,
+          "old": 420
+        },
+        "LTI_NO_REWARD": {
+          "current": 420,
+          "old": 420
+        }
+      },
+      "seed": 17
+    },
+    {
+      "events": {
+        "LTI_CANONICAL_TEACHER": 27,
+        "LTI_NO_REWARD": 27,
+        "full_saved_plan_matches": 27,
+        "mismatches_by_field": {},
+        "missing_from_canonical_teacher": 0,
+        "missing_from_no_reward": 0,
+        "paired_event_keys": 27,
+        "request_digest_matches": 27
+      },
+      "role_request_totals": {
+        "LTI_CANONICAL_TEACHER": {
+          "current": 405,
+          "old": 405
+        },
+        "LTI_NO_REWARD": {
+          "current": 405,
+          "old": 405
+        }
+      },
+      "seed": 29
+    },
+    {
+      "events": {
+        "LTI_CANONICAL_TEACHER": 24,
+        "LTI_NO_REWARD": 24,
+        "full_saved_plan_matches": 24,
+        "mismatches_by_field": {},
+        "missing_from_canonical_teacher": 0,
+        "missing_from_no_reward": 0,
+        "paired_event_keys": 24,
+        "request_digest_matches": 24
+      },
+      "role_request_totals": {
+        "LTI_CANONICAL_TEACHER": {
+          "current": 360,
+          "old": 360
+        },
+        "LTI_NO_REWARD": {
+          "current": 360,
+          "old": 360
+        }
+      },
+      "seed": 43
+    }
+  ],
+  "input_logs": [
+    {
+      "arm": "LTI_NO_REWARD",
+      "jsonl_rows": 370,
+      "logical_file": "seed17/LTI_NO_REWARD/metrics.jsonl",
+      "saved_cohort_events": 28,
+      "seed": 17,
+      "sha256": "ffcbfc1eae8628b717e1ef8c5b36637fd3b3943c2af1fa926a4b15c070049538"
+    },
+    {
+      "arm": "LTI_CANONICAL_TEACHER",
+      "jsonl_rows": 370,
+      "logical_file": "seed17/LTI_CANONICAL_TEACHER/metrics.jsonl",
+      "saved_cohort_events": 28,
+      "seed": 17,
+      "sha256": "2cb0df7b1650648dba5bec0c2feccb00ed531de781e962a76b87ee19fb94e761"
+    },
+    {
+      "arm": "LTI_NO_REWARD",
+      "jsonl_rows": 365,
+      "logical_file": "seed29/LTI_NO_REWARD/metrics.jsonl",
+      "saved_cohort_events": 27,
+      "seed": 29,
+      "sha256": "d9fb276bcf2c27ad0f3ba1a1791dcb2d33799bd9d9bb772138425f1b51bb235e"
+    },
+    {
+      "arm": "LTI_CANONICAL_TEACHER",
+      "jsonl_rows": 365,
+      "logical_file": "seed29/LTI_CANONICAL_TEACHER/metrics.jsonl",
+      "saved_cohort_events": 27,
+      "seed": 29,
+      "sha256": "19e6e13519cfccce5c62819e03639c40bdd779668a1fb4cbbd128e6eccc80f75"
+    },
+    {
+      "arm": "LTI_NO_REWARD",
+      "jsonl_rows": 336,
+      "logical_file": "seed43/LTI_NO_REWARD/metrics.jsonl",
+      "saved_cohort_events": 24,
+      "seed": 43,
+      "sha256": "4f7a6cc2d1cb36b65519a14a9515010d4f6301f7eb7b94253ca0bd97cf450f91"
+    },
+    {
+      "arm": "LTI_CANONICAL_TEACHER",
+      "jsonl_rows": 336,
+      "logical_file": "seed43/LTI_CANONICAL_TEACHER/metrics.jsonl",
+      "saved_cohort_events": 24,
+      "seed": 43,
+      "sha256": "6e4f02e4d2bae8d7a1126a181e01d5c7f4c4724d3fc5cc9769aa75dfd7bf9909"
+    }
+  ],
+  "schema": "banking-v11-request-cohort-balance-v1",
+  "scope": {
+    "compared_arms": [
+      "LTI_NO_REWARD",
+      "LTI_CANONICAL_TEACHER"
+    ],
+    "compared_saved_fields": [
+      "request_ids_sha256",
+      "event",
+      "global_selector_event_index",
+      "global_wake_tick",
+      "requests_by_role.old/current"
+    ],
+    "comparison_key": [
+      "seed",
+      "level",
+      "task_id",
+      "event_index"
+    ],
+    "no_sampling_or_rng_trajectory_equivalence_claim": true,
+    "raw_request_ids_or_text_exported": false,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "token_ids_or_labels_exported": false
+  },
+  "summary": {
+    "event_kind_counts": {
+      "LTI_CANONICAL_TEACHER": {
+        "sleep": 79
+      },
+      "LTI_NO_REWARD": {
+        "sleep": 79
+      }
+    },
+    "events_missing_from_canonical_teacher": 0,
+    "events_missing_from_no_reward": 0,
+    "matching_request_digest_events": 79,
+    "matching_saved_plan_events": 79,
+    "paired_event_keys": 79,
+    "total_events_per_arm": {
+      "LTI_CANONICAL_TEACHER": 79,
+      "LTI_NO_REWARD": 79
+    }
+  }
+}

@@ -1,0 +1,580 @@
+"""Offline reanalysis of sealed Banking v10 test and optional v11 dev summaries.
+
+This module uses only the Python standard library. It never resolves paths found
+inside input JSON, imports model frameworks, or opens datasets/checkpoints.
+"""
+from __future__ import annotations
+
+import argparse
+import csv
+import hashlib
+import json
+import math
+import statistics
+from pathlib import Path
+from typing import Mapping, Sequence
+
+SEEDS = (17, 29, 43)
+V10_ARMS = ("CMS_ONLY", "SLEEP_ADDITIVE", "GOLD_ADDITIVE")
+V11_ARMS = ("CMS_ONLY", "SLEEP_ADDITIVE", "GOLD_ADDITIVE",
+            "LTI_NO_REWARD", "LTI_CANONICAL_TEACHER")
+V10_SCHEMA = "banking-cil-v10-test-evaluator-v1"
+V11_SCHEMA = "banking-lti-ablation-v11-dev-evaluator-v1"
+V10_CONTRASTS = (("SLEEP_ADDITIVE", "CMS_ONLY"),
+                 ("GOLD_ADDITIVE", "CMS_ONLY"),
+                 ("GOLD_ADDITIVE", "SLEEP_ADDITIVE"))
+V11_CONTRASTS = (("LTI_NO_REWARD", "SLEEP_ADDITIVE"),
+                 ("LTI_CANONICAL_TEACHER", "SLEEP_ADDITIVE"),
+                 ("LTI_CANONICAL_TEACHER", "LTI_NO_REWARD"))
+EXPECTED_TEST_REVISION = "9d081458ff52e53cf7e848f414e6e9344e4e6696"
+EXPECTED_TEST_SHA256 = "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d"
+EXPECTED_TEST_BYTES = 239_961
+EXPECTED_TEST_ROWS = 3_080
+
+
+def _sha256(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def read_json_snapshot(path: str | Path) -> tuple[dict, dict]:
+    """Read one explicit JSON input snapshot and report its byte identity."""
+    p = Path(path).expanduser().resolve(strict=True)
+    if not p.is_file():
+        raise ValueError(f"input is not a regular file: {p}")
+    raw = p.read_bytes()
+    try:
+        value = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError(f"invalid UTF-8 JSON input: {p}") from exc
+    if not isinstance(value, dict):
+        raise ValueError(f"top-level JSON must be an object: {p}")
+    return value, {"path": str(p), "bytes": len(raw), "sha256": _sha256(raw)}
+
+
+def verify_inputs_unchanged(inputs: Mapping[str, Mapping]) -> None:
+    for name, record in inputs.items():
+        raw = Path(record["path"]).read_bytes()
+        if len(raw) != record["bytes"] or _sha256(raw) != record["sha256"]:
+            raise RuntimeError(f"input changed during analysis: {name}")
+
+
+def summarize(values: Sequence[float]) -> dict:
+    vals = [float(x) for x in values]
+    if not vals or any(not math.isfinite(x) for x in vals):
+        raise ValueError("summary values must be a nonempty finite sequence")
+    return {"n": len(vals), "mean": statistics.fmean(vals),
+            "sample_sd": statistics.stdev(vals) if len(vals) > 1 else None}
+
+
+def _require(condition: bool, message: str) -> None:
+    if not condition:
+        raise ValueError(message)
+
+
+def _number(value, where: str) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"{where} must be numeric")
+    value = float(value)
+    if not math.isfinite(value):
+        raise ValueError(f"{where} must be finite")
+    return value
+
+
+def _count(record: Mapping, where: str, *, exact: int | None = None,
+           maximum: int | None = None) -> int:
+    value = record.get("count")
+    if type(value) is not int or value < 0:
+        raise ValueError(f"{where}.count must be a nonnegative integer")
+    if exact is not None and value != exact:
+        raise ValueError(f"{where}.count expected {exact}, got {value}")
+    if maximum is not None and value > maximum:
+        raise ValueError(f"{where}.count exceeds {maximum}")
+    return value
+
+
+def _metric_value(record: Mapping, where: str) -> float:
+    if "accuracy" in record:
+        val = _number(record["accuracy"], f"{where}.accuracy")
+        if not 0 <= val <= 1:
+            raise ValueError(f"{where}.accuracy is outside [0,1]")
+        if "correct" in record:
+            correct = record["correct"]
+            if type(correct) is not int or correct < 0 or correct > int(record["count"]):
+                raise ValueError(f"{where}.correct is inconsistent with count")
+            if not math.isclose(val, correct / int(record["count"]), abs_tol=1e-12):
+                raise ValueError(f"{where}.accuracy does not reconcile with correct/count")
+        return val
+    if "mean" in record:
+        return _number(record["mean"], f"{where}.mean")
+    raise ValueError(f"{where} has no supported aggregate value")
+
+
+def _validated_correct_accuracy(record: Mapping, where: str,
+                                *, exact: int | None = None,
+                                maximum: int | None = None) -> tuple[int, int, float | None]:
+    count = _count(record, where, exact=exact, maximum=maximum)
+    correct = record.get("correct")
+    if type(correct) is not int or correct < 0 or correct > count:
+        raise ValueError(f"{where}.correct must be an integer within count")
+    accuracy = record.get("accuracy")
+    if count == 0:
+        if accuracy is not None:
+            raise ValueError(f"{where}.accuracy must be null when count is zero")
+        return count, correct, None
+    value = _number(accuracy, f"{where}.accuracy")
+    if not 0 <= value <= 1 or not math.isclose(value, correct / count, abs_tol=1e-12):
+        raise ValueError(f"{where}.accuracy does not reconcile with correct/count")
+    return count, correct, value
+
+
+def _validate_v10_task6_subgroups(metric_record: Mapping, *, metric: str,
+                                  where: str, population: str,
+                                  all_count: int, all_correct: int) -> dict[str, tuple[int, int, float]]:
+    """Cross-check evaluator task-6 old/current partition with all/per-class totals.
+
+    The aggregate does not contain class membership, so this validates the
+    emitted partition algebra and per-class whole-cohort totals, not membership
+    assignment independently.
+    """
+    per_class = metric_record.get("per_class")
+    expected_class_keys = {str(cid) for cid in range(77)}
+    _require(isinstance(per_class, dict) and set(per_class) == expected_class_keys,
+             f"{where}/{metric} must include per-class aggregates for all 77 classes")
+    per_class_count = 0
+    per_class_correct = 0
+    macro_values = []
+    for cid in sorted(expected_class_keys, key=int):
+        item = per_class[cid]
+        _require(isinstance(item, dict), f"{where}/{metric}/per_class/{cid} is malformed")
+        class_count, class_correct, class_accuracy = _validated_correct_accuracy(
+            item, f"{where}/{metric}/per_class/{cid}", maximum=40)
+        if population == "official_test_raw" and class_count != 40:
+            raise ValueError(f"{where}/{metric}/per_class/{cid} raw count must be 40")
+        per_class_count += class_count
+        per_class_correct += class_correct
+        if class_count:
+            macro_values.append(float(class_accuracy))
+    _require(per_class_count == all_count,
+             f"{where}/{metric} per-class counts do not sum to all-cohort count")
+    _require(per_class_correct == all_correct,
+             f"{where}/{metric} per-class correct totals do not sum to all-cohort correct")
+    macro = metric_record.get("class_macro_accuracy")
+    _require(bool(macro_values), f"{where}/{metric} has no nonempty classes for macro accuracy")
+    macro_value = _number(macro, f"{where}/{metric}.class_macro_accuracy")
+    expected_macro = sum(macro_values) / len(macro_values)
+    _require(math.isclose(macro_value, expected_macro, abs_tol=1e-12),
+             f"{where}/{metric} class_macro_accuracy does not reconcile with per-class output")
+
+    breakdown = metric_record.get("task_breakdown")
+    _require(isinstance(breakdown, dict) and "6" in breakdown,
+             f"{where}/{metric} missing task_breakdown['6']")
+    task6 = breakdown["6"]
+    _require(isinstance(task6, dict) and isinstance(task6.get(metric), dict),
+             f"{where}/{metric} task_breakdown['6'] metric missing")
+    groups = task6[metric]
+    _require(all(group in groups for group in ("old", "current", "seen", "unseen")),
+             f"{where}/{metric} task-6 partition groups are incomplete")
+    parsed = {}
+    for group in ("old", "current", "seen", "unseen"):
+        parsed[group] = _validated_correct_accuracy(groups[group],
+            f"{where}/{metric}/task6/{group}", maximum=all_count)
+    old_count, old_correct, _ = parsed["old"]
+    current_count, current_correct, _ = parsed["current"]
+    seen_count, seen_correct, _ = parsed["seen"]
+    unseen_count, unseen_correct, _ = parsed["unseen"]
+    _require(old_count + current_count == all_count and
+             old_correct + current_correct == all_correct,
+             f"{where}/{metric} task-6 old/current counts or correct do not sum to all")
+    _require((seen_count, seen_correct) == (all_count, all_correct),
+             f"{where}/{metric} task-6 seen does not reconcile with all")
+    _require((unseen_count, unseen_correct) == (0, 0),
+             f"{where}/{metric} task-6 unseen must be empty")
+    if population == "official_test_raw":
+        _require((old_count, current_count) == (2_640, 440),
+                 f"{where}/{metric} raw final old/current counts must be 2640/440")
+    else:
+        _require(0 < old_count <= 2_640 and 0 < current_count <= 440,
+                 f"{where}/{metric} disjoint final old/current counts exceed class capacity")
+    return {"final_old66": (old_count, old_correct, float(parsed["old"][2])),
+            "final_current11": (current_count, current_correct, float(parsed["current"][2]))}
+
+
+def _grid_names(arms: Sequence[str]) -> set[tuple[int, str]]:
+    return {(seed, arm) for seed in SEEDS for arm in arms}
+
+
+def _validate_seal(seal: Mapping) -> dict[tuple[int, str], Mapping]:
+    _require(seal.get("schema") == "banking-cil-v10-training-seal-v1" and
+             seal.get("complete") is True, "V10 training seal schema/completion gate failed")
+    _require(seal.get("seeds") == list(SEEDS) and seal.get("arms") == list(V10_ARMS),
+             "V10 seal seed/arm declaration differs from fixed grid")
+    _require(seal.get("test_data_included") is False and
+             seal.get("official_test_read") is False,
+             "V10 training seal does not affirm exclusion of official test")
+    runs = seal.get("runs")
+    _require(isinstance(runs, list) and len(runs) == 9,
+             "V10 seal must contain exactly nine runs")
+    out: dict[tuple[int, str], Mapping] = {}
+    for row in runs:
+        _require(isinstance(row, dict), "V10 seal run row must be an object")
+        key = (row.get("seed"), row.get("arm"))
+        _require(key not in out, "duplicate V10 seed/arm in seal")
+        _require(row.get("status") == "complete" and row.get("tasks_completed") == 7,
+                 "V10 seal contains an incomplete run")
+        for field in ("config_sha256", "source_lock_sha256", "training_manifest_sha256",
+                      "final_checkpoint_sha256", "run_receipt_sha256"):
+            value = row.get(field)
+            _require(isinstance(value, str) and len(value) == 64 and
+                     all(c in "0123456789abcdef" for c in value.lower()),
+                     f"V10 seal run has invalid {field}")
+        _require(isinstance(row.get("endpoint_metrics"), dict) and
+                 isinstance(row.get("work"), dict), "V10 seal aggregates are malformed")
+        out[key] = row
+    _require(set(out) == _grid_names(V10_ARMS), "V10 seal does not match the fixed 3x3 grid")
+    for field in ("config_sha256", "source_lock_sha256", "training_manifest_sha256"):
+        _require(len({row[field] for row in out.values()}) == 1,
+                 f"V10 seal has inconsistent {field}")
+    return out
+
+
+def _validate_v10_eval(evaluation: Mapping, seal: Mapping,
+                       seal_sha: str) -> tuple[list[dict], dict]:
+    _require(evaluation.get("schema") == V10_SCHEMA and evaluation.get("status") == "complete",
+             "V10 evaluation schema/completion gate failed")
+    _require(evaluation.get("optimizer_updates") == 0 and
+             evaluation.get("all_contexts_frozen") is True and
+             evaluation.get("backbone_unchanged") is True,
+             "V10 evaluation update/frozen-state gate failed")
+    training = evaluation.get("training")
+    _require(isinstance(training, dict), "V10 evaluation training binding missing")
+    for key in ("config_sha256", "source_lock_sha256", "training_manifest_sha256"):
+        _require(training.get(key) == seal.get(key), f"V10 evaluation/seal {key} mismatch")
+    _require(training.get("seal_sha256") == seal_sha,
+             "V10 evaluation does not bind the supplied training seal bytes")
+    expected_contexts = {}
+    for row in seal["runs"]:
+        expected_contexts[(row["seed"], row["arm"])] = (
+            row["final_checkpoint_sha256"], row["run_receipt_sha256"])
+    verified = training.get("verified_contexts")
+    _require(isinstance(verified, list) and len(verified) == 9,
+             "V10 eval must verify exactly nine contexts")
+    actual = {}
+    for row in verified:
+        _require(isinstance(row, dict), "V10 verified context must be an object")
+        key = (row.get("seed"), row.get("arm"))
+        _require(key not in actual, "duplicate V10 verified context")
+        actual[key] = (row.get("checkpoint_sha256"), row.get("receipt_sha256"))
+    _require(actual == expected_contexts, "V10 verified contexts differ from sealed 3x3 runs")
+
+    test_source = evaluation.get("test_source")
+    _require(isinstance(test_source, dict), "V10 official-test source metadata missing")
+    _require(test_source.get("source_revision") == EXPECTED_TEST_REVISION and
+             test_source.get("source_sha256") == EXPECTED_TEST_SHA256 and
+             test_source.get("source_bytes") == EXPECTED_TEST_BYTES and
+             test_source.get("raw_rows") == EXPECTED_TEST_ROWS and
+             test_source.get("classes") == 77 and test_source.get("rows_per_class") == 40 and
+             test_source.get("primary_includes_all_official_rows") is True,
+             "V10 evaluation official-test source pin mismatch")
+    primary = evaluation.get("primary_raw_official_test")
+    secondary = evaluation.get("secondary_train_development_disjoint_subset")
+    _require(isinstance(primary, dict) and isinstance(secondary, dict),
+             "V10 primary/secondary aggregate maps missing")
+    expected_names = {f"seed{s}:{a}" for s, a in _grid_names(V10_ARMS)}
+    _require(set(primary) == expected_names and set(secondary) == expected_names,
+             "V10 primary/secondary context grid mismatch")
+    rows: list[dict] = []
+    secondary_counts: set[int] = set()
+    for name in sorted(expected_names):
+        pmetrics, smetrics = primary[name], secondary[name]
+        _require(isinstance(pmetrics, dict) and isinstance(smetrics, dict),
+                 f"V10 context metrics malformed: {name}")
+        required = ("teacher_forced_sum", "teacher_forced_length_mean",
+                    "greedy_generation", "gold_label_token_mean_nll")
+        _require(all(k in pmetrics and k in smetrics for k in required),
+                 f"V10 context missing required aggregate metrics: {name}")
+        seed_text, arm = name.split(":", 1)
+        seed = int(seed_text.removeprefix("seed"))
+        for metric in required:
+            p = pmetrics[metric]
+            s = smetrics[metric]
+            _require(isinstance(p, dict) and isinstance(s, dict),
+                     f"V10 {name}/{metric} must be an aggregate object")
+            pc = _count(p, f"V10 primary {name}/{metric}", exact=EXPECTED_TEST_ROWS)
+            sc = _count(s, f"V10 secondary {name}/{metric}", maximum=EXPECTED_TEST_ROWS)
+            secondary_counts.add(sc)
+            rows.append({"version": "v10", "population": "official_test_raw",
+                         "seed": seed, "arm": arm, "metric": metric, "subgroup": "all",
+                         "n": pc, "correct": p.get("correct"), "value": _metric_value(p, f"{name}/{metric}"),
+                         "work_scope": "evaluation_global"})
+            rows.append({"version": "v10", "population": "official_test_train_development_disjoint",
+                         "seed": seed, "arm": arm, "metric": metric, "subgroup": "all",
+                         "n": sc, "correct": s.get("correct"), "value": _metric_value(s, f"{name}/{metric} secondary"),
+                         "work_scope": "evaluation_global"})
+            if metric in ("teacher_forced_sum", "teacher_forced_length_mean"):
+                for population_name, record, cohort_n in (
+                        ("official_test_raw", p, pc),
+                        ("official_test_train_development_disjoint", s, sc)):
+                    subgroups = _validate_v10_task6_subgroups(
+                        record, metric=metric, where=f"V10 {name}/{population_name}",
+                        population=population_name, all_count=cohort_n,
+                        all_correct=record["correct"])
+                    for subgroup, (sub_n, sub_correct, sub_accuracy) in subgroups.items():
+                        rows.append({"version": "v10", "population": population_name,
+                                     "seed": seed, "arm": arm, "metric": metric,
+                                     "subgroup": subgroup, "n": sub_n,
+                                     "correct": sub_correct, "value": sub_accuracy,
+                                     "work_scope": "evaluation_global",
+                                     "interpretation": "final-task class-subset accuracy; cross-sectional, not before/after forgetting",
+                                     "partition_source": "frozen_evaluator.task_breakdown.6"})
+    _require(len(secondary_counts) <= 1,
+             "V10 secondary metrics/contexts do not share one disjoint cohort size")
+    disjoint_n = test_source.get("train_development_disjoint_secondary_rows")
+    _require(type(disjoint_n) is int and 0 < disjoint_n <= EXPECTED_TEST_ROWS and
+             secondary_counts == {disjoint_n},
+             "V10 secondary counts disagree with the evaluator's disjoint-cohort audit")
+    _require(evaluation.get("secondary_metrics_reused_raw_primary") is False or
+             (secondary_counts == {EXPECTED_TEST_ROWS}),
+             "V10 secondary reuse flag conflicts with aggregate row counts")
+    work = evaluation.get("work")
+    _require(isinstance(work, dict) and work.get("optimizer_updates") == 0,
+             "V10 evaluation aggregate work missing or updates nonzero")
+    run_work = {f"seed{row['seed']}:{row['arm']}": row["work"] for row in seal["runs"]}
+    return rows, {"evaluation_global": work, "sealed_training_runs": run_work}
+
+
+def _validate_v11_eval(evaluation: Mapping, seal: Mapping,
+                       seal_sha: str) -> tuple[list[dict], dict]:
+    _require(evaluation.get("schema") == V11_SCHEMA and evaluation.get("status") == "complete",
+             "V11 development evaluation schema/completion gate failed")
+    _require(evaluation.get("optimizer_updates") == 0 and
+             evaluation.get("contexts_unchanged") is True and
+             evaluation.get("frozen_backbone_unchanged") is True,
+             "V11 update/frozen-state gate failed")
+    protocol = evaluation.get("protocol")
+    frozen_inputs = evaluation.get("frozen_inputs")
+    _require(isinstance(protocol, dict) and isinstance(frozen_inputs, dict),
+             "V11 protocol or frozen-input metadata missing")
+    _require(protocol.get("official_test_accessed") is False,
+             "V11 protocol does not affirm official test exclusion")
+    _require(protocol.get("seeds") == list(SEEDS) and protocol.get("arms") == list(V11_ARMS) and
+             protocol.get("contexts_per_seed") == 5 and protocol.get("rows_per_seed") == 220 and
+             protocol.get("candidate_metric_primary") == "global_77_sum_log_likelihood",
+             "V11 protocol differs from locked 3x5, 220-row development evaluation")
+    _require(frozen_inputs.get("v10_grid_seal_sha256") == seal_sha,
+             "V11 evaluation does not bind the supplied V10 seal")
+    _require(frozen_inputs.get("v10_config_sha256") == seal.get("config_sha256"),
+             "V11 evaluation V10 config hash differs from supplied training seal")
+    _require(frozen_inputs.get("training_manifest_sha256") == seal.get("training_manifest_sha256"),
+             "V11 evaluation training manifest hash differs from supplied training seal")
+    dev = evaluation.get("development")
+    _require(isinstance(dev, dict) and set(dev) == {str(s) for s in SEEDS},
+             "V11 development result must contain exactly the three seeds")
+    rows: list[dict] = []
+    for seed in SEEDS:
+        rec = dev[str(seed)]
+        _require(isinstance(rec, dict) and rec.get("cohort_rows") == 220 and
+                 rec.get("context_count") == 5 and
+                 rec.get("candidate_metric_primary") == "global_77_sum_log_likelihood",
+                 f"V11 seed {seed} cohort/context/primary metadata mismatch")
+        candidates = rec.get("candidate_metrics")
+        greedy = rec.get("greedy_generation_metrics")
+        _require(isinstance(candidates, dict) and set(candidates) == set(V11_ARMS) and
+                 isinstance(greedy, dict) and set(greedy) == set(V11_ARMS),
+                 f"V11 seed {seed} does not contain exactly five candidate and generation contexts")
+        for arm in V11_ARMS:
+            for metric in ("teacher_forced_sum", "teacher_forced_length_mean"):
+                groups = candidates[arm].get(metric)
+                _require(isinstance(groups, dict), f"V11 {seed}/{arm}/{metric} missing")
+                for group, expected_n in (("all77", 220), ("old", 110), ("current", 110)):
+                    value = groups.get(group)
+                    _require(isinstance(value, dict), f"V11 {seed}/{arm}/{metric}/{group} missing")
+                    _count(value, f"V11 {seed}/{arm}/{metric}/{group}", exact=expected_n)
+                    rows.append({"version": "v11", "population": "development_task01",
+                                 "seed": seed, "arm": arm, "metric": metric,
+                                 "subgroup": group, "n": expected_n,
+                                 "correct": value.get("correct"),
+                                 "value": _metric_value(value, f"V11 {seed}/{arm}/{metric}/{group}"),
+                                 "work_scope": "evaluation_seed"})
+            gm = greedy[arm]
+            _require(isinstance(gm, dict), f"V11 {seed}/{arm} greedy metric malformed")
+            _count(gm, f"V11 {seed}/{arm} greedy", exact=220)
+            rows.append({"version": "v11", "population": "development_task01",
+                         "seed": seed, "arm": arm, "metric": "greedy_generation",
+                         "subgroup": "all", "n": 220, "correct": gm.get("correct"),
+                         "value": _metric_value(gm, f"V11 {seed}/{arm} greedy"),
+                         "work_scope": "evaluation_seed"})
+    work = evaluation.get("work")
+    _require(isinstance(work, dict) and work.get("optimizer_updates") == 0,
+             "V11 aggregate work missing or updates nonzero")
+    per_seed = {seed: dev[str(seed)].get("work") for seed in SEEDS}
+    _require(all(isinstance(value, dict) for value in per_seed.values()),
+             "V11 per-seed work ledgers missing")
+    for seed, work_row in per_seed.items():
+        if "optimizer_updates" in work_row:
+            _require(work_row["optimizer_updates"] == 0,
+                     f"V11 seed {seed} work ledger reports optimizer updates")
+    return rows, {"evaluation_global": work, "development_by_seed": per_seed}
+
+
+def _summaries(rows: Sequence[Mapping]) -> dict:
+    result = {}
+    for version, arms, contrasts in (("v10", V10_ARMS, V10_CONTRASTS),
+                                     ("v11", V11_ARMS, V11_CONTRASTS)):
+        version_rows = [r for r in rows if r["version"] == version]
+        if not version_rows:
+            continue
+        populations = sorted({r["population"] for r in version_rows})
+        blocks = {}
+        for pop in populations:
+            pop_rows = [r for r in version_rows if r["population"] == pop]
+            metrics = sorted({(r["metric"], r["subgroup"]) for r in pop_rows})
+            metric_summaries = {}
+            for metric, subgroup in metrics:
+                selected = [r for r in pop_rows if r["metric"] == metric and r["subgroup"] == subgroup]
+                by_arm = {a: {r["seed"]: r["value"] for r in selected if r["arm"] == a} for a in arms}
+                arm_stats = {}
+                for arm, seed_values in by_arm.items():
+                    if seed_values:
+                        _require(set(seed_values) == set(SEEDS),
+                                 f"{version}/{pop}/{metric}/{subgroup}/{arm} missing seed")
+                        arm_stats[arm] = summarize([seed_values[s] for s in SEEDS])
+                paired = {}
+                for left, right in contrasts:
+                    if left in by_arm and right in by_arm and by_arm[left] and by_arm[right]:
+                        _require(set(by_arm[left]) == set(SEEDS) and set(by_arm[right]) == set(SEEDS),
+                                 f"paired contrast lacks seed in {version}/{pop}/{metric}/{subgroup}")
+                        diffs = {str(s): by_arm[left][s] - by_arm[right][s] for s in SEEDS}
+                        paired[f"{left}-minus-{right}"] = {**summarize(list(diffs.values())),
+                                                           "per_seed": diffs,
+                                                           "direction": f"{left} minus {right}"}
+                metric_summaries[f"{metric}/{subgroup}"] = {
+                    "arm_mean_sample_sd": arm_stats, "paired_differences": paired}
+            blocks[pop] = metric_summaries
+        result[version] = {"populations": blocks,
+                           "interpretation": "descriptive only; paired across the three fixed seeds; no p-values or confidence intervals"}
+    return result
+
+
+def _paired_long_rows(rows: Sequence[Mapping]) -> list[dict]:
+    contrasts = []
+    for version, arms, pairs in (("v10", V10_ARMS, V10_CONTRASTS),
+                                 ("v11", V11_ARMS, V11_CONTRASTS)):
+        selected = [r for r in rows if r["version"] == version]
+        for population in sorted({r["population"] for r in selected}):
+            pop_rows = [r for r in selected if r["population"] == population]
+            keys = sorted({(r["metric"], r["subgroup"]) for r in pop_rows})
+            for metric, subgroup in keys:
+                block = [r for r in pop_rows if (r["metric"], r["subgroup"]) == (metric, subgroup)]
+                by_arm = {arm: {r["seed"]: r["value"] for r in block if r["arm"] == arm}
+                          for arm in arms}
+                n_by_seed = {r["seed"]: r["n"] for r in block}
+                for left, right in pairs:
+                    if not by_arm[left] or not by_arm[right]:
+                        continue
+                    _require(set(by_arm[left]) == set(SEEDS) and set(by_arm[right]) == set(SEEDS),
+                             f"paired contrast lacks seed in {version}/{population}/{metric}/{subgroup}")
+                    for seed in SEEDS:
+                        subgroup_metadata = ({
+                            "interpretation": "final-task class-subset accuracy; cross-sectional, not before/after forgetting",
+                            "partition_source": "frozen_evaluator.task_breakdown.6"}
+                            if subgroup in ("final_old66", "final_current11") else {})
+                        contrasts.append({"version": version, "population": population,
+                                          "seed": seed, "arm": "", "contrast": f"{left}-minus-{right}",
+                                          "metric": metric, "subgroup": subgroup,
+                                          "n": n_by_seed[seed], "correct": None,
+                                          "value": by_arm[left][seed] - by_arm[right][seed],
+                                          "work_scope": "paired_descriptive", **subgroup_metadata})
+    return contrasts
+
+
+def analyze(seal_path: str | Path, test_path: str | Path,
+            v11_path: str | Path | None = None) -> dict:
+    seal, seal_meta = read_json_snapshot(seal_path)
+    test, test_meta = read_json_snapshot(test_path)
+    v11 = None
+    v11_meta = None
+    if v11_path is not None:
+        v11, v11_meta = read_json_snapshot(v11_path)
+    _validate_seal(seal)
+    seal_rows = seal["runs"]
+    for field in ("config_sha256", "source_lock_sha256", "training_manifest_sha256"):
+        _require(isinstance(seal.get(field), str) and len(seal[field]) == 64,
+                 f"seal top-level {field} missing")
+    rows, v10_work = _validate_v10_eval(test, seal, seal_meta["sha256"])
+    v11_work = None
+    if v11 is not None:
+        v11_rows, v11_work = _validate_v11_eval(v11, seal, seal_meta["sha256"])
+        rows.extend(v11_rows)
+    inputs = {"v10_seal": seal_meta, "v10_test": test_meta}
+    if v11_meta is not None:
+        inputs["v11_evaluation"] = v11_meta
+    verify_inputs_unchanged(inputs)
+    return {"schema": "banking-v10-v11-public-reanalysis-v1",
+            "inputs": inputs, "input_bytes_unchanged_after_analysis": True,
+            "payloads_downloaded": False,
+            "scope": {"v10": "official test; sealed 3-seed x 3-arm grid",
+                      "v11": "development task-0/task-1 cohort only; optional; distinct population",
+                      "v10_task6_subgroups": "final_old66 and final_current11 are final-task-6 class-subset accuracies from the evaluator's precomputed task_breakdown; they are not before/after forgetting estimates. The aggregate does not contain class membership, so subgroup membership is not independently reconstructed.",
+                      "notes": ["Only explicit aggregate JSON fields were used.",
+                                "No checkpoint path, dataset row, model, or cache was opened.",
+                                "Arm summaries are descriptive over three seeds; no inferential statistics."]},
+            "work": {"v10_evaluation": v10_work, "v11_evaluation": v11_work},
+            "rows": rows, "paired_rows": _paired_long_rows(rows),
+            "summaries": _summaries(rows)}
+
+
+def write_outputs(result: Mapping, output_path: str | Path, csv_path: str | Path) -> None:
+    out = Path(output_path).expanduser().resolve()
+    csv_out = Path(csv_path).expanduser().resolve()
+    if out == csv_out:
+        raise ValueError("summary and CSV outputs must be separate files")
+    if out.exists() or csv_out.exists():
+        raise FileExistsError("refusing to overwrite an existing output")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    csv_out.parent.mkdir(parents=True, exist_ok=True)
+    for path in (out, csv_out):
+        if path.exists():
+            raise FileExistsError(f"refusing to overwrite {path}")
+    temp_json = out.with_name(out.name + ".partial")
+    temp_csv = csv_out.with_name(csv_out.name + ".partial")
+    if temp_json.exists() or temp_csv.exists():
+        raise FileExistsError("partial output already exists; inspect before retry")
+    try:
+        temp_json.write_text(json.dumps(result, indent=2, sort_keys=True, allow_nan=False) + "\n",
+                             encoding="utf-8")
+        fields = ("version", "population", "seed", "arm", "contrast", "metric", "subgroup",
+                  "interpretation", "partition_source", "n", "correct", "value", "work_scope")
+        with temp_csv.open("w", encoding="utf-8", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=fields)
+            writer.writeheader()
+            writer.writerows([{**row, "contrast": ""} for row in result["rows"]])
+            writer.writerows([{**row, "contrast": row["contrast"]} for row in result["paired_rows"]])
+        temp_json.rename(out)
+        temp_csv.rename(csv_out)
+    except BaseException:
+        for path in (temp_json, temp_csv):
+            if path.exists():
+                path.unlink()
+        raise
+
+
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--v10-seal", required=True, type=Path)
+    parser.add_argument("--v10-test", required=True, type=Path)
+    parser.add_argument("--v11-evaluation", type=Path)
+    parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--csv", required=True, type=Path)
+    args = parser.parse_args(argv)
+    result = analyze(args.v10_seal, args.v10_test, args.v11_evaluation)
+    # Recheck input snapshots immediately before publishing derived outputs.
+    verify_inputs_unchanged(result["inputs"])
+    write_outputs(result, args.output, args.csv)
+    print(json.dumps({"status": "complete", "rows": len(result["rows"]),
+                      "output": str(args.output.resolve()), "csv": str(args.csv.resolve()),
+                      "input_bytes_unchanged_after_analysis": True}, sort_keys=True))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

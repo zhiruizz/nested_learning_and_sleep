@@ -161,3 +161,156 @@ results/clinc-v9-readout/release-validation.json -text -eol whitespace=blank-at-
 
 # Preserve the reviewed diagnostic-test EOF bytes and its frozen SHA.
 tests/test_diagnose_clinc_label_readout_v9_cpu.py whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve Banking V10/V11 executed source, config and CPU-check bytes.
+tools/aggregate_banking_v10_accounting.py -text -eol
+tools/analyze_banking_teacher_signals_v10.py -text -eol
+tools/audit_banking_tokens_v10.py -text -eol
+tools/banking_additive_accounting_v10.py -text -eol
+tools/banking_cil_common_v10.py -text -eol
+tools/banking_cil_v10_lifecycle.py -text -eol
+tools/banking_cil_v10_routing.py -text -eol
+tools/banking_cil_v10_runtime.py -text -eol
+tools/banking_cost_estimates_v10.py -text -eol
+tools/benchmark_banking_allocator_v10.py -text -eol
+tools/build_banking_memory_queue_v10.py -text -eol
+tools/build_banking_test_contract_v10.py -text -eol
+tools/build_banking_v11_dev_reference.py -text -eol
+tools/collect_banking_main_queue_receipts_v10.py -text -eol
+tools/evaluate_banking_lti_ablation_v11.py -text -eol
+tools/evaluate_banking_test_v10.py -text -eol
+tools/launch_banking_checked_queue_v10.py -text -eol
+tools/launch_banking_memory_policy_v10.py -text -eol
+tools/launch_banking_memory_policy_v11.py -text -eol
+tools/launch_banking_test_memory_policy_v10.py -text -eol
+tools/launch_banking_v11_dev_evaluation.py -text -eol
+tools/orchestrate_banking_v11_canonical_teacher.py -text -eol
+tools/plot_banking_v10_v11.py -text -eol
+tools/prepare_banking_config_v10.py -text -eol
+tools/prepare_banking_main_release_v10.py -text -eol
+tools/prepare_banking_train_v10.py -text -eol
+tools/prepare_banking_v11_launch_materials.py -text -eol
+tools/probe_banking_transfer_v10.py -text -eol
+tools/read_banking_v10_status.py -text -eol
+tools/reanalyze_banking_v10_v11.py -text -eol
+tools/run_banking_cil_v10.py -text -eol
+tools/run_banking_component_cpu_acceptance.py -text -eol
+tools/run_banking_lti_ablation_v11.py -text -eol
+tools/run_banking_queue_v10.py -text -eol
+tools/verify_banking_tx_replay_v10.py -text -eol
+tests/check_aggregate_banking_v10_accounting_cpu.py -text -eol
+tests/check_analyze_banking_teacher_signals_v10_cpu.py -text -eol
+tests/check_banking_additive_accounting_v10_cpu.py -text -eol
+tests/check_banking_cil_common_v10_cpu.py -text -eol
+tests/check_banking_cil_v10_lifecycle_cpu.py -text -eol
+tests/check_banking_cil_v10_lti_cpu.py -text -eol
+tests/check_banking_cil_v10_routing_cpu.py -text -eol
+tests/check_banking_cil_v10_runtime_cpu.py -text -eol
+tests/check_banking_cost_estimates_v10_cpu.py -text -eol
+tests/check_banking_queue_v10_cpu.py -text -eol
+tests/check_banking_v10_queue_config_hash_domains_cpu.py -text -eol
+tests/check_build_banking_memory_queue_v10_cpu.py -text -eol
+tests/check_build_banking_test_contract_v10_cpu.py -text -eol
+tests/check_build_banking_v11_dev_reference_cpu.py -text -eol
+tests/check_collect_banking_main_queue_receipts_v10_cpu.py -text -eol
+tests/check_evaluate_banking_lti_ablation_v11_cpu.py -text -eol
+tests/check_evaluate_banking_test_v10_cpu.py -text -eol
+tests/check_launch_banking_checked_queue_v10_cpu.py -text -eol
+tests/check_launch_banking_memory_policy_v10_cpu.py -text -eol
+tests/check_launch_banking_memory_policy_v11_cpu.py -text -eol
+tests/check_launch_banking_test_memory_policy_v10_cpu.py -text -eol
+tests/check_launch_banking_v11_dev_evaluation_cpu.py -text -eol
+tests/check_prepare_banking_train_v10_cpu.py -text -eol
+tests/check_prepare_banking_v11_launch_materials_cpu.py -text -eol
+tests/check_probe_banking_transfer_v10_cpu.py -text -eol
+tests/check_reanalyze_banking_v10_v11_cpu.py -text -eol
+tests/check_run_banking_cil_v10_cpu.py -text -eol
+tests/check_run_banking_lti_ablation_v11_cpu.py -text -eol
+tests/check_verify_banking_tx_replay_v10_cpu.py -text -eol
+configs/banking_v10_frozen_k10.json -text -eol
+configs/banking_v11_canonical_teacher_frozen.json -text -eol
+
+# Reviewed Banking follow-up and aggregate analysis.
+tests/check_orchestrate_banking_v11_canonical_teacher_cpu.py -text -eol
+configs/banking_v10_v11_paths.example.json -text -eol
+docs/banking-v11-serial-orchestration.md -text -eol
+tools/aggregate_banking_v11_lti_accounting.py -text -eol
+tests/check_aggregate_banking_v11_lti_accounting_cpu.py -text -eol
+
+# Banking methods and completed V10 evidence.
+docs/banking-v10-v11-reproduction.md -text -eol
+docs/sleep-paper-alignment-v10-v11.md -text -eol
+docs/banking77-v10-preflight-protocol.md -text -eol
+docs/banking-v10-test-memory-launcher.md -text -eol
+docs/banking-v11-memory-policy-launch.md -text -eol
+reports/banking77-controls-v10.md -text -eol
+
+# Preserve exact reviewed executed bytes with existing final blank lines.
+tests/check_analyze_banking_teacher_signals_v10_cpu.py whitespace=-blank-at-eof
+tests/check_banking_cil_v10_runtime_cpu.py whitespace=-blank-at-eof
+tests/check_banking_v10_queue_config_hash_domains_cpu.py whitespace=-blank-at-eof
+tests/check_launch_banking_test_memory_policy_v10_cpu.py whitespace=-blank-at-eof
+tools/banking_additive_accounting_v10.py whitespace=-blank-at-eof
+
+# Aggregate-only V11 request-cohort audit.
+tools/summarize_banking_v11_request_cohort_balance.py -text -eol
+
+# Final Banking development report.
+reports/banking77-reward-ablation-v11.md -text -eol
+
+# Exact Banking aggregate evidence and archived auxiliary source bytes.
+results/banking-v10-v11/README.md -text -eol
+results/banking-v10-v11/artifact-provenance.json -text -eol
+results/banking-v10-v11/banking-v10-official-accuracy.png -text -eol
+results/banking-v10-v11/banking-v10-official-accuracy.svg -text -eol whitespace=-trailing-space
+results/banking-v10-v11/banking-v11-development-accuracy.png -text -eol
+results/banking-v10-v11/banking-v11-development-accuracy.svg -text -eol whitespace=-trailing-space
+results/banking-v10-v11/combined-v10-v11-reanalysis.csv -text -eol
+results/banking-v10-v11/combined-v10-v11-reanalysis.json -text -eol
+results/banking-v10-v11/operation-ledger-final.json -text -eol
+results/banking-v10-v11/plot-manifest.json -text -eol
+results/banking-v10-v11/provenance/accounting-before-actual-evaluator-schema-tests.py.txt -text -eol
+results/banking-v10-v11/provenance/accounting-before-actual-evaluator-schema.py.txt -text -eol
+results/banking-v10-v11/provenance/archive-manifest-before-dev-reference-repairs.json -text -eol
+results/banking-v10-v11/provenance/archive-manifest-before-parent-failure.json -text -eol
+results/banking-v10-v11/provenance/archive-manifest.json -text -eol
+results/banking-v10-v11/provenance/official-evaluator-startup-a.py.txt -text -eol
+results/banking-v10-v11/provenance/reanalyzer-before-actual-task6-schema-tests.py.txt -text -eol
+results/banking-v10-v11/provenance/reanalyzer-before-actual-task6-schema.py.txt -text -eol
+results/banking-v10-v11/provenance/v11-evaluator-before-cpu-source-keyword-fix.py.txt -text -eol
+results/banking-v10-v11/provenance/v11-evaluator-intermediate-cpu-source-keyword-only.py.txt -text -eol
+results/banking-v10-v11/provenance/v11-evaluator-tests-before-completed-protocol-fixture.py.txt -text -eol
+results/banking-v10-v11/provenance/v11-launcher-startup-a-tests.py.txt -text -eol
+results/banking-v10-v11/provenance/v11-launcher-startup-a.py.txt -text -eol
+results/banking-v10-v11/provenance/v11-parent-before-terminal-field-fix-tests.py.txt -text -eol
+results/banking-v10-v11/provenance/v11-parent-before-terminal-field-fix.py.txt -text -eol
+results/banking-v10-v11/provenance/v11-reference-tests-before-real-producer-gates.py.txt -text -eol
+results/banking-v10-v11/provenance/v11-reference-tests-intermediate-signature-inspection.py.txt -text -eol
+results/banking-v10-v11/software-acceptance-summary-r4.json -text -eol
+results/banking-v10-v11/software-ordinary-suite-a.json -text -eol
+results/banking-v10-v11/software-v10-component-e.json -text -eol
+results/banking-v10-v11/software-v11-component-h.json -text -eol
+results/banking-v10-v11/teacher-signals-v10-all3-summary.json -text -eol
+results/banking-v10-v11/training-seal.json -text -eol
+results/banking-v10-v11/v10-accounting.json -text -eol
+results/banking-v10-v11/v10-independent-scalar-crosscheck.json -text -eol
+results/banking-v10-v11/v10-official-evaluation.json -text -eol
+results/banking-v10-v11/v10-reanalysis.csv -text -eol
+results/banking-v10-v11/v10-reanalysis.json -text -eol
+results/banking-v10-v11/v11-accounting-aggregate.json -text -eol
+results/banking-v10-v11/v11-development-evaluation.json -text -eol
+results/banking-v10-v11/v11-request-cohort-balance.json -text -eol
+
+# Native CRLF in exact historical/provenance evidence; retain normal whitespace checks.
+docs/banking77-v10-preflight-protocol.md whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/sleep-paper-alignment-v10-v11.md whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/banking-v10-v11/combined-v10-v11-reanalysis.csv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/banking-v10-v11/operation-ledger-final.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/banking-v10-v11/provenance/archive-manifest-before-dev-reference-repairs.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/banking-v10-v11/provenance/archive-manifest-before-parent-failure.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/banking-v10-v11/provenance/archive-manifest.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/banking-v10-v11/software-acceptance-summary-r4.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/banking-v10-v11/teacher-signals-v10-all3-summary.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/banking-v10-v11/v10-reanalysis.csv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/banking-v10-v11/v10-reanalysis.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/banking-v10-v11/v11-request-cohort-balance.json whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

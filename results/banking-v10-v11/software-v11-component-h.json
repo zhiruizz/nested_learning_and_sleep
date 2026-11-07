@@ -1,0 +1,31 @@
+{
+  "actual_model_loaded": false,
+  "component": "v11",
+  "cuda_initialization_prohibited": true,
+  "guard_loaded_once": true,
+  "ledger": {
+    "controller_attempts": 0,
+    "functional_cms_attempts": 0,
+    "last_session_seconds": 2.547000000020489,
+    "limit": 256,
+    "optimizer_attempts": 0
+  },
+  "ledger_sha256": "8ca74d353c82fb2c99197ccc2fe89bd0f811fe5ceaec4d33a77574447b6d32a8",
+  "network_prohibited": true,
+  "public_guard_sha256": "c22f07489d40ed5c3b49c6e9c6790ff15f97cae3bbdd9d65e388b853ef2f4fd9",
+  "pytest_exit_code": 0,
+  "schema": "banking-component-cpu-acceptance-v1",
+  "status": "pass",
+  "test_sources_sha256": {
+    "check_aggregate_banking_v11_lti_accounting_cpu.py": "cc5d8bb24203972d8ef8ba09e34309794bbb60e7f5d8e88cc55ad84d62d259fc",
+    "check_build_banking_v11_dev_reference_cpu.py": "e05a93ed6ba05f5c458d48a400d02be78b12a3f62e285d8a4d9b74e5f5c51e5c",
+    "check_evaluate_banking_lti_ablation_v11_cpu.py": "8bcc9896cb2094702d5eee87d4b63c652445793561547d7a4d8ff8a3a1f8d9ef",
+    "check_launch_banking_memory_policy_v11_cpu.py": "c54c104ac95b523fda93fc906e11550fbf0328b285b27f15e9f4fc3ffb305b27",
+    "check_launch_banking_v11_dev_evaluation_cpu.py": "e40f53daa21be6ea239392a5cecb76e338d3ccc9671b5c990bd2a7dc00d68470",
+    "check_orchestrate_banking_v11_canonical_teacher_cpu.py": "2c7a663a8de8dc84faaa3a897f9dbc040a923961b5f5ce30f47f408943fc1018",
+    "check_prepare_banking_v11_launch_materials_cpu.py": "3e2d16aaaad96eea0d5347f17c408d99151e8c105c486020af3aa3ad469ee29f",
+    "check_reanalyze_banking_v10_v11_cpu.py": "fd9ecf60fe27c0013ec7686ed7f9933b90b4a097165baae36e40d14dc1dece33",
+    "check_run_banking_lti_ablation_v11_cpu.py": "cf9fb04bd198b0395d49c8697cde6f8ac7be35deb4e86e4b14d8dae65fab6e52"
+  },
+  "unchanged_attempt_limit": 256
+}

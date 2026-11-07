@@ -1,0 +1,121 @@
+import json
+import sys
+from pathlib import Path
+
+import pytest
+
+ROOT = Path(__file__).resolve().parents[1]
+TOOLS = ROOT / "tools"
+if str(TOOLS) not in sys.path:
+    sys.path.insert(0, str(TOOLS))
+
+import build_banking_v11_dev_reference as builder
+import evaluate_banking_lti_ablation_v11 as evaluator
+
+
+def _sha(ch):
+    return ch * 64
+
+
+def _write(path, payload):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if isinstance(payload, dict):
+        path.write_text(json.dumps(payload), encoding="utf-8")
+    else:
+        path.write_bytes(payload)
+
+
+@pytest.fixture
+def artifact_grid(tmp_path):
+    v10_root, v11_root = tmp_path / "v10", tmp_path / "v11"
+    foundation = {str(seed): {"receipt_sha256": _sha("a"),
+                              "checkpoint_sha256": _sha("b")}
+                  for seed in evaluator.SEEDS}
+    baseline_runs = {}
+    for seed in evaluator.SEEDS:
+        for arm in evaluator.V10_ARMS:
+            run_dir = v10_root / f"seed{seed}-{arm}"
+            cp = run_dir / "checkpoints" / "task01-final.pt"
+            _write(run_dir / "protocol.json", {"seed": seed, "arm": arm})
+            _write(cp, f"v10-{seed}-{arm}".encode())
+            _write(run_dir / "run-receipt.json", {
+                "task_metrics": [{"task_id": 1, "global_wake_tick": 123,
+                                  "checkpoint_sha256": builder.sha256_file(cp)}]})
+            baseline_runs[(seed, arm)] = {
+                "run_dir": str(run_dir), "task1_checkpoint": "checkpoints/task01-final.pt",
+                "task1_checkpoint_sha256": builder.sha256_file(cp),
+                "task1_metrics": {"candidate": 0.5}}
+    for seed in evaluator.SEEDS:
+        for arm in evaluator.V11_ARMS:
+            run_dir = builder._v11_run_dir(v11_root, seed, arm)
+            cp = run_dir / "checkpoints" / "task01-final.pt"
+            _write(run_dir / "protocol.json", {"seed": seed, "arm": arm})
+            _write(cp, f"v11-{seed}-{arm}".encode())
+            _write(run_dir / "run-receipt.json", {
+                "task_metrics": [{"task_id": 1, "global_wake_tick": 456,
+                                  "checkpoint_sha256": builder.sha256_file(cp)}]})
+    baseline = {"runs": baseline_runs}
+    rows = builder.assemble_context_rows(v10_root=v10_root, v11_root=v11_root,
+        baseline=baseline, foundation_refs=foundation, seal_sha256=_sha("c"))
+    ref = {
+        "schema": evaluator.REFERENCE_SCHEMA, "status": "frozen",
+        "seeds": list(evaluator.SEEDS), "arms": list(evaluator.ARMS),
+        "model_revision": "pinned-rev", "model_assets_sha256": {"asset": _sha("d")},
+        "training_manifest_sha256": _sha("e"),
+        "evaluation_policy": {
+            "cohort": "all_10_development_rows_per_class_in_seed_task0_and_task1_blocks",
+            "rows_per_seed": 220, "classes_per_seed": 22,
+            "primary": "global_77_sum_log_likelihood",
+            "secondary": ["global_77_length_mean_log_likelihood", "unconstrained_greedy_generation"],
+            "candidate_label_mask": None, "max_sequence_length": 128,
+            "candidate_batch_size": 32, "max_new_tokens": 10,
+            "max_backbone_forwards": 50000, "max_wall_seconds": 7200.0,
+            "optimizer_updates": 0,
+        },
+        "v10_config_file_sha256": _sha("f"), "v10_config_sha256": _sha("1"),
+        "v10_source_lock_sha256": _sha("2"), "v10_source_hashes": {"src/a.py": _sha("3")},
+        "v10_grid_seal_sha256": _sha("c"), "v10_release_sha256": _sha("4"),
+        "foundation_refs": foundation,
+        "v11_config_file_sha256": _sha("5"), "v11_config_sha256": _sha("6"),
+        "v11_source_lock_sha256": _sha("7"), "v11_source_hashes": {"src/a.py": _sha("8")},
+        "evaluator_sha256": _sha("9"), "contexts": rows,
+    }
+    return ref, baseline_runs
+
+
+def test_builds_exact_fifteen_contexts_with_fixed_task1_checkpoints(artifact_grid):
+    reference, _ = artifact_grid
+    rows = evaluator.validate_reference(reference)
+    assert len(rows) == 15
+    assert {(r["seed"], r["family"], r["arm"]) for r in rows} == {
+        (seed, family, arm) for seed in evaluator.SEEDS
+        for family, arms in (("v10", evaluator.V10_ARMS), ("v11", evaluator.V11_ARMS))
+        for arm in arms}
+    assert {r["step"] for r in rows if r["family"] == "v10"} == {123}
+    assert {r["step"] for r in rows if r["family"] == "v11"} == {456}
+
+
+def test_rejects_missing_v10_context(artifact_grid, tmp_path):
+    reference, baseline_runs = artifact_grid
+    baseline_runs.pop((17, "CMS_ONLY"))
+    with pytest.raises(ValueError, match="missing sealed V10 run"):
+        builder.assemble_context_rows(v10_root=tmp_path / "v10",
+            v11_root=tmp_path / "v11", baseline={"runs": baseline_runs},
+            foundation_refs=reference["foundation_refs"],
+            seal_sha256=reference["v10_grid_seal_sha256"])
+
+
+def test_binds_v11_rows_to_same_seed_v10_sleep_endpoint(artifact_grid):
+    reference, baseline_runs = artifact_grid
+    for row in (r for r in reference["contexts"] if r["family"] == "v11"):
+        expected = baseline_runs[(row["seed"], "SLEEP_ADDITIVE")]["task1_checkpoint_sha256"]
+        assert row["comparison_v10_sleep_task1_checkpoint_sha256"] == expected
+    evaluator.validate_reference(reference)
+
+
+def test_rejects_shared_foundation_mismatch_within_seed(artifact_grid):
+    reference, _ = artifact_grid
+    row = next(r for r in reference["contexts"] if r["seed"] == 29 and r["family"] == "v11")
+    row["foundation_checkpoint_sha256"] = _sha("0")
+    with pytest.raises(ValueError, match="share one qualified foundation"):
+        evaluator.validate_reference(reference)
