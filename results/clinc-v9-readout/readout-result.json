@@ -1,0 +1,408 @@
+{
+  "_public_capture": {
+    "normalization": "Paths normalized and exact raw-text/token/example fields excluded; aggregate schema and counters retained.",
+    "schema": "clinc-v9-public-capture-reference-v1",
+    "scope": "accepted_d",
+    "source_artifact": "outputs/clinc-v9-mechanism-preparation/accepted-readout-result.json",
+    "source_artifact_sha256_raw": "99e70cd071de47c6dc854a12416255d583d70a424fa4961171c4be817f2d8609"
+  },
+  "context_map_sha256": "6fd908e7e95e62122491fa374b7eae4548e5d197dce3019f128dbdc679bbfb64",
+  "development_only": true,
+  "fixed_cohort": {
+    "classes": 30,
+    "rows": 60,
+    "rows_per_class": 2,
+    "stable_id_set_sha256": "08e621fb6d5a331bcf4e0941c046cab9ee96f13e7e48b98076a0f137fc7a485c",
+    "task0_rows": 30,
+    "task1_rows": 30
+  },
+  "immutability": {
+    "all_adapters_frozen": true,
+    "backbone_versions_unchanged": true,
+    "context_hashes_after": {
+      "FROZEN_BASE": "b2f209a244ffd99767383413b7a1ccb3ff189faffcb2f6e8b8ef550bae4caa4e",
+      "HOPE_TASK1": "7694757ddcefdd4a54e7f87aab217990407c268813dce565aba03206a56bd5eb",
+      "SLEEP_TASK1": "fa1f235d8b420bcafedf29886696a014959ab55de4873fee81759e18dd3e4a30",
+      "TASK0_FOUNDATION": "d25c973f682728265d0f7d9598c11b5b920a10ec4a9acc710910617a9d18cd3f"
+    },
+    "context_hashes_before": {
+      "FROZEN_BASE": "b2f209a244ffd99767383413b7a1ccb3ff189faffcb2f6e8b8ef550bae4caa4e",
+      "HOPE_TASK1": "7694757ddcefdd4a54e7f87aab217990407c268813dce565aba03206a56bd5eb",
+      "SLEEP_TASK1": "fa1f235d8b420bcafedf29886696a014959ab55de4873fee81759e18dd3e4a30",
+      "TASK0_FOUNDATION": "d25c973f682728265d0f7d9598c11b5b920a10ec4a9acc710910617a9d18cd3f"
+    }
+  },
+  "label_vocabulary": {
+    "all_labels_as_candidates": true,
+    "candidate_sequences": 9000,
+    "canonical_order_sha256": "f4b11963a29da5b27a4aeb4d41ffaa5a9a82167da24320165446eda6b180b42a",
+    "count": 150,
+    "label_dictionary_disclosure": "All 150 canonical labels were scored as candidates; this diagnostic intentionally exposes the label set and adds 150-way inference per example. It is not the v8 primary metric."
+  },
+  "master_config_sha256": "ec8a9bfadde15a6b0bed202f1ad5eb621805e50b92151a6747827c0f177bc32f",
+  "methods": {
+    "candidate_scoring_work": {
+      "backbone_forwards": 1136,
+      "tail_calls": 4544
+    },
+    "teacher_forced_length_mean": {
+      "candidate_constrained": true,
+      "includes_eos": true
+    },
+    "teacher_forced_sum": {
+      "candidate_constrained": true,
+      "includes_eos": true
+    },
+    "v8_greedy_generation": {
+      "candidate_constrained": false,
+      "primary_reference": true,
+      "work": {
+        "backbone_forwards": 303,
+        "tail_calls": 303
+      }
+    }
+  },
+  "metrics": {
+    "FROZEN_BASE": {
+      "gold_length_mean_nll": {
+        "all60": {
+          "count": 60,
+          "mean": 6.310666970411936
+        },
+        "task0": {
+          "count": 30,
+          "mean": 6.456368136405945
+        },
+        "task1": {
+          "count": 30,
+          "mean": 6.164965804417928
+        }
+      },
+      "teacher_forced_length_mean": {
+        "all60": {
+          "accuracy": 0.13333333333333333,
+          "correct": 8,
+          "count": 60,
+          "delta_correct_vs_v8_generation": 8,
+          "invalid_predictions": 0
+        },
+        "task0": {
+          "accuracy": 0.13333333333333333,
+          "correct": 4,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 4,
+          "invalid_predictions": 0
+        },
+        "task1": {
+          "accuracy": 0.13333333333333333,
+          "correct": 4,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 4,
+          "invalid_predictions": 0
+        }
+      },
+      "teacher_forced_sum": {
+        "all60": {
+          "accuracy": 0.4666666666666667,
+          "correct": 28,
+          "count": 60,
+          "delta_correct_vs_v8_generation": 28,
+          "invalid_predictions": 0
+        },
+        "task0": {
+          "accuracy": 0.43333333333333335,
+          "correct": 13,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 13,
+          "invalid_predictions": 0
+        },
+        "task1": {
+          "accuracy": 0.5,
+          "correct": 15,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 15,
+          "invalid_predictions": 0
+        }
+      },
+      "v8_greedy_generation": {
+        "all60": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "count": 60,
+          "invalid_predictions": 60
+        },
+        "task0": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "count": 30,
+          "invalid_predictions": 30
+        },
+        "task1": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "count": 30,
+          "invalid_predictions": 30
+        }
+      }
+    },
+    "HOPE_TASK1": {
+      "gold_length_mean_nll": {
+        "all60": {
+          "count": 60,
+          "mean": 1.1765647284065683
+        },
+        "task0": {
+          "count": 30,
+          "mean": 2.0620022892951964
+        },
+        "task1": {
+          "count": 30,
+          "mean": 0.2911271675179402
+        }
+      },
+      "teacher_forced_length_mean": {
+        "all60": {
+          "accuracy": 0.6,
+          "correct": 36,
+          "count": 60,
+          "delta_correct_vs_v8_generation": 11,
+          "invalid_predictions": 0
+        },
+        "task0": {
+          "accuracy": 0.2,
+          "correct": 6,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 2,
+          "invalid_predictions": 0
+        },
+        "task1": {
+          "accuracy": 1.0,
+          "correct": 30,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 9,
+          "invalid_predictions": 0
+        }
+      },
+      "teacher_forced_sum": {
+        "all60": {
+          "accuracy": 0.6,
+          "correct": 36,
+          "count": 60,
+          "delta_correct_vs_v8_generation": 11,
+          "invalid_predictions": 0
+        },
+        "task0": {
+          "accuracy": 0.23333333333333334,
+          "correct": 7,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 3,
+          "invalid_predictions": 0
+        },
+        "task1": {
+          "accuracy": 0.9666666666666667,
+          "correct": 29,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 8,
+          "invalid_predictions": 0
+        }
+      },
+      "v8_greedy_generation": {
+        "all60": {
+          "accuracy": 0.4166666666666667,
+          "correct": 25,
+          "count": 60,
+          "invalid_predictions": 27
+        },
+        "task0": {
+          "accuracy": 0.13333333333333333,
+          "correct": 4,
+          "count": 30,
+          "invalid_predictions": 18
+        },
+        "task1": {
+          "accuracy": 0.7,
+          "correct": 21,
+          "count": 30,
+          "invalid_predictions": 9
+        }
+      }
+    },
+    "SLEEP_TASK1": {
+      "gold_length_mean_nll": {
+        "all60": {
+          "count": 60,
+          "mean": 2.31325948589171
+        },
+        "task0": {
+          "count": 30,
+          "mean": 3.0276967716092864
+        },
+        "task1": {
+          "count": 30,
+          "mean": 1.598822200174133
+        }
+      },
+      "teacher_forced_length_mean": {
+        "all60": {
+          "accuracy": 0.4166666666666667,
+          "correct": 25,
+          "count": 60,
+          "delta_correct_vs_v8_generation": 15,
+          "invalid_predictions": 0
+        },
+        "task0": {
+          "accuracy": 0.26666666666666666,
+          "correct": 8,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 6,
+          "invalid_predictions": 0
+        },
+        "task1": {
+          "accuracy": 0.5666666666666667,
+          "correct": 17,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 9,
+          "invalid_predictions": 0
+        }
+      },
+      "teacher_forced_sum": {
+        "all60": {
+          "accuracy": 0.31666666666666665,
+          "correct": 19,
+          "count": 60,
+          "delta_correct_vs_v8_generation": 9,
+          "invalid_predictions": 0
+        },
+        "task0": {
+          "accuracy": 0.16666666666666666,
+          "correct": 5,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 3,
+          "invalid_predictions": 0
+        },
+        "task1": {
+          "accuracy": 0.4666666666666667,
+          "correct": 14,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 6,
+          "invalid_predictions": 0
+        }
+      },
+      "v8_greedy_generation": {
+        "all60": {
+          "accuracy": 0.16666666666666666,
+          "correct": 10,
+          "count": 60,
+          "invalid_predictions": 42
+        },
+        "task0": {
+          "accuracy": 0.06666666666666667,
+          "correct": 2,
+          "count": 30,
+          "invalid_predictions": 22
+        },
+        "task1": {
+          "accuracy": 0.26666666666666666,
+          "correct": 8,
+          "count": 30,
+          "invalid_predictions": 20
+        }
+      }
+    },
+    "TASK0_FOUNDATION": {
+      "gold_length_mean_nll": {
+        "all60": {
+          "count": 60,
+          "mean": 1.8749515278885762
+        },
+        "task0": {
+          "count": 30,
+          "mean": 0.39390099917848903
+        },
+        "task1": {
+          "count": 30,
+          "mean": 3.3560020565986632
+        }
+      },
+      "teacher_forced_length_mean": {
+        "all60": {
+          "accuracy": 0.45,
+          "correct": 27,
+          "count": 60,
+          "delta_correct_vs_v8_generation": 8,
+          "invalid_predictions": 0
+        },
+        "task0": {
+          "accuracy": 0.8333333333333334,
+          "correct": 25,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 6,
+          "invalid_predictions": 0
+        },
+        "task1": {
+          "accuracy": 0.06666666666666667,
+          "correct": 2,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 2,
+          "invalid_predictions": 0
+        }
+      },
+      "teacher_forced_sum": {
+        "all60": {
+          "accuracy": 0.43333333333333335,
+          "correct": 26,
+          "count": 60,
+          "delta_correct_vs_v8_generation": 7,
+          "invalid_predictions": 0
+        },
+        "task0": {
+          "accuracy": 0.8,
+          "correct": 24,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 5,
+          "invalid_predictions": 0
+        },
+        "task1": {
+          "accuracy": 0.06666666666666667,
+          "correct": 2,
+          "count": 30,
+          "delta_correct_vs_v8_generation": 2,
+          "invalid_predictions": 0
+        }
+      },
+      "v8_greedy_generation": {
+        "all60": {
+          "accuracy": 0.31666666666666665,
+          "correct": 19,
+          "count": 60,
+          "invalid_predictions": 24
+        },
+        "task0": {
+          "accuracy": 0.6333333333333333,
+          "correct": 19,
+          "count": 30,
+          "invalid_predictions": 5
+        },
+        "task1": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "count": 30,
+          "invalid_predictions": 19
+        }
+      }
+    }
+  },
+  "mode": "evaluate",
+  "schema": "clinc-label-readout-diagnostic-v9",
+  "source_lock_sha256": "0de1aadd3328089807f872a60b1b297a671bfb99ceac137d04faa08e2da2eb5a",
+  "training_manifest_sha256": "21b3651a3dce8534fa7363d7f31674c3d86dda735b0d896a60d03ffb055c9123",
+  "work": {
+    "backbone_forwards": 1439,
+    "elapsed_seconds": 89.73500000010245,
+    "input_tokens": 269538,
+    "max_backbone_forwards": 10000,
+    "max_elapsed_seconds": 1800.0,
+    "optimizer_updates": 0,
+    "tail_calls": 4847
+  }
+}

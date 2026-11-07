@@ -1,0 +1,247 @@
+{
+  "accepted_attempt": "d",
+  "accepted_raw_result_sha256": "99e70cd071de47c6dc854a12416255d583d70a424fa4961171c4be817f2d8609",
+  "banking77_payload_downloaded": false,
+  "new_test_confirmation": false,
+  "nonaccepted_attempts": [
+    "a",
+    "b",
+    "c"
+  ],
+  "schema": "clinc-v9-public-capture-v1",
+  "scope": "Exploratory one-seed 60-row development; Banking preparation only",
+  "source_artifacts": [
+    {
+      "bytes": 43374,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "tools/diagnose_clinc_label_readout_v9.py",
+      "public_artifact_sha256": "211d3c9d499838fa8372f59f99559abc20f045f5e91cd0baf9c0ed91c2a6e687",
+      "source_artifact": "tools/diagnose_clinc_label_readout_v9.py",
+      "source_artifact_sha256_raw": "211d3c9d499838fa8372f59f99559abc20f045f5e91cd0baf9c0ed91c2a6e687"
+    },
+    {
+      "bytes": 15771,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "tools/prepare_clinc_readout_contexts_v9.py",
+      "public_artifact_sha256": "d0488c42d75aef82d067ad55f0660a87f145efb7cb1df31b6400dd821c4d2a0c",
+      "source_artifact": "tools/prepare_clinc_readout_contexts_v9.py",
+      "source_artifact_sha256_raw": "d0488c42d75aef82d067ad55f0660a87f145efb7cb1df31b6400dd821c4d2a0c"
+    },
+    {
+      "bytes": 17131,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "tools/reanalyze_clinc_readout_v9.py",
+      "public_artifact_sha256": "0241f67dc55206451adab1c0a4c959ec563649fa730208d8afe14ea4838ec1ad",
+      "source_artifact": "tools/reanalyze_clinc_readout_v9.py",
+      "source_artifact_sha256_raw": "0241f67dc55206451adab1c0a4c959ec563649fa730208d8afe14ea4838ec1ad"
+    },
+    {
+      "bytes": 3266,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "tools/audit_intent_label_tokens_v9.py",
+      "public_artifact_sha256": "b2dc18faffc5160a938bdaf9063fa0c3c9686b82bc86a3545fe6e56345e198e8",
+      "source_artifact": "tools/audit_intent_label_tokens_v9.py",
+      "source_artifact_sha256_raw": "b2dc18faffc5160a938bdaf9063fa0c3c9686b82bc86a3545fe6e56345e198e8"
+    },
+    {
+      "bytes": 3959,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "tools/audit_clinc_input_protocol_v9.py",
+      "public_artifact_sha256": "1ef7123e8c6612f1320b607502804657f5531496463d6164fe6227977b0f833c",
+      "source_artifact": "tools/audit_clinc_input_protocol_v9.py",
+      "source_artifact_sha256_raw": "1ef7123e8c6612f1320b607502804657f5531496463d6164fe6227977b0f833c"
+    },
+    {
+      "bytes": 2959,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "tools/plot_clinc_readout_v9.py",
+      "public_artifact_sha256": "589b22051a187f59bd9c6c5b81628004840a0f2799e4e7c5bd760cbdf985b8cb",
+      "source_artifact": "tools/plot_clinc_readout_v9.py",
+      "source_artifact_sha256_raw": "589b22051a187f59bd9c6c5b81628004840a0f2799e4e7c5bd760cbdf985b8cb"
+    },
+    {
+      "bytes": 11279,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "tests/test_diagnose_clinc_label_readout_v9_cpu.py",
+      "public_artifact_sha256": "3e52514913b2f04492a62b9f427f04980fe0b9873106dfa927d9c3380468e902",
+      "source_artifact": "tests/test_diagnose_clinc_label_readout_v9_cpu.py",
+      "source_artifact_sha256_raw": "3e52514913b2f04492a62b9f427f04980fe0b9873106dfa927d9c3380468e902"
+    },
+    {
+      "bytes": 1838,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "tests/test_prepare_clinc_readout_contexts_v9_cpu.py",
+      "public_artifact_sha256": "3688fdca9a7783a5479e0e4b31a827e67aab40a8e9f64e16a6f196694f52d549",
+      "source_artifact": "tests/test_prepare_clinc_readout_contexts_v9_cpu.py",
+      "source_artifact_sha256_raw": "3688fdca9a7783a5479e0e4b31a827e67aab40a8e9f64e16a6f196694f52d549"
+    },
+    {
+      "bytes": 6280,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "tests/test_reanalyze_clinc_readout_v9_cpu.py",
+      "public_artifact_sha256": "ce6942406db33446c6b9a763ac4dc6cb89e9531f31d170eaa4447e019fa166ec",
+      "source_artifact": "tests/test_reanalyze_clinc_readout_v9_cpu.py",
+      "source_artifact_sha256_raw": "ce6942406db33446c6b9a763ac4dc6cb89e9531f31d170eaa4447e019fa166ec"
+    },
+    {
+      "bytes": 1779,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "configs/clinc_readout_v9_development_frozen.json",
+      "public_artifact_sha256": "9bff9bf9ae768e48dec2cf686ba088a0983d44c656b524c8d99e77896c9c7605",
+      "source_artifact": "configs/clinc_readout_v9_development_frozen.json",
+      "source_artifact_sha256_raw": "9bff9bf9ae768e48dec2cf686ba088a0983d44c656b524c8d99e77896c9c7605"
+    },
+    {
+      "bytes": 1256,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "configs/clinc_readout_v9_development_recovery.json",
+      "public_artifact_sha256": "5bd03f6ccf1775d54db1bf99d872b7ec099cc95da6a55b695144805390aa1937",
+      "source_artifact": "configs/clinc_readout_v9_development_recovery.json",
+      "source_artifact_sha256_raw": "5bd03f6ccf1775d54db1bf99d872b7ec099cc95da6a55b695144805390aa1937"
+    },
+    {
+      "bytes": 1555,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "configs/clinc_readout_v9_development_recovery_d.json",
+      "public_artifact_sha256": "91a10f16ea6c3cd31a491742e6e3d5e51958b878bb3a1df2bc04d748bbd864dc",
+      "source_artifact": "configs/clinc_readout_v9_development_recovery_d.json",
+      "source_artifact_sha256_raw": "91a10f16ea6c3cd31a491742e6e3d5e51958b878bb3a1df2bc04d748bbd864dc"
+    },
+    {
+      "bytes": 4867,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "docs/clinc-readout-v9-reproduction.md",
+      "public_artifact_sha256": "7d1cc0c70ef0903e2a8c7a53553517b911ebe96020e8cff6066c95d1370137a5",
+      "source_artifact": "docs/clinc-readout-v9-reproduction.md",
+      "source_artifact_sha256_raw": "7d1cc0c70ef0903e2a8c7a53553517b911ebe96020e8cff6066c95d1370137a5"
+    },
+    {
+      "bytes": 6853,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "docs/banking77-matched-comparison-draft.md",
+      "public_artifact_sha256": "2eb2d42d30238f3d565ad66e48d96a515616f9340a644413471f329f1a3508a3",
+      "source_artifact": "docs/banking77-matched-comparison-draft.md",
+      "source_artifact_sha256_raw": "2eb2d42d30238f3d565ad66e48d96a515616f9340a644413471f329f1a3508a3"
+    },
+    {
+      "bytes": 10209,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "reports/clinc-readout-and-paper-alignment-v9.md",
+      "public_artifact_sha256": "f31f8d3a3f3b5268c5c3620c1563aa09de940e313bad6e1a575295011e4c9b2f",
+      "source_artifact": "reports/clinc-readout-and-paper-alignment-v9.md",
+      "source_artifact_sha256_raw": "f31f8d3a3f3b5268c5c3620c1563aa09de940e313bad6e1a575295011e4c9b2f"
+    },
+    {
+      "bytes": 1995,
+      "category": "code_config_doc_or_test",
+      "public_artifact": "results/clinc-v9-readout/README.md",
+      "public_artifact_sha256": "318ab931b5d3e36b650bff9b584eed343800201243b2f9895b84164ac76a002c",
+      "source_artifact": "results/clinc-v9-readout/README.md",
+      "source_artifact_sha256_raw": "318ab931b5d3e36b650bff9b584eed343800201243b2f9895b84164ac76a002c"
+    },
+    {
+      "bytes": 11619,
+      "category": "accepted_d",
+      "public_artifact": "results/clinc-v9-readout/readout-result.json",
+      "public_artifact_sha256": "1097b15ca98d39a64777f92d4d50e0ac34f8119061ca1bb6678ba454fbdd68df",
+      "source_artifact": "outputs/clinc-v9-mechanism-preparation/accepted-readout-result.json",
+      "source_artifact_sha256_raw": "99e70cd071de47c6dc854a12416255d583d70a424fa4961171c4be817f2d8609"
+    },
+    {
+      "bytes": 7304,
+      "category": "attempt_costs",
+      "public_artifact": "results/clinc-v9-readout/operational-costs.json",
+      "public_artifact_sha256": "4bd126fcddd2c2fcd666bd85e213822dfddf76b08b6b203b3c48619b7ff91e3e",
+      "source_artifact": "outputs/clinc-v9-mechanism-preparation/operational-costs.json",
+      "source_artifact_sha256_raw": "9e77e0b163eaf66266ccc68596c495b14d58c86875534c21ec9b6d7023da81c6"
+    },
+    {
+      "bytes": 2315,
+      "category": "metadata_only",
+      "public_artifact": "results/clinc-v9-readout/intent-label-token-audit.json",
+      "public_artifact_sha256": "74f043be5447ce8838569899ea506a374e4b503d026429e4d31f57c019465363",
+      "source_artifact": "outputs/clinc-v9-mechanism-preparation/intent-label-token-audit.json",
+      "source_artifact_sha256_raw": "43d2b76c0c87b137b39ebd59ddb387464924348e1407fcf8ef449f63b47ca562"
+    },
+    {
+      "bytes": 2094,
+      "category": "train_dev_only",
+      "public_artifact": "results/clinc-v9-readout/input-protocol-audit.json",
+      "public_artifact_sha256": "7511c609cb71c80c226be2e892d035c7dc1748a35521cc714314e14c0e54c88c",
+      "source_artifact": "outputs/clinc-v9-mechanism-preparation/input-protocol-audit.json",
+      "source_artifact_sha256_raw": "5f0c822d7d3458537f0ba71b6dc57e860e0959cd827e30e8a4cd24beece338b9"
+    },
+    {
+      "bytes": 7097,
+      "category": "provenance_not_runtime_input",
+      "public_artifact": "results/clinc-v9-readout/context-bindings.json",
+      "public_artifact_sha256": "55fa6273760e7f38053f837fc72e03d23992a18f70df72a39a81f445a7b05c50",
+      "source_artifact": "outputs/clinc-v9-mechanism-preparation/readout-contexts.json",
+      "source_artifact_sha256_raw": "6fd908e7e95e62122491fa374b7eae4548e5d197dce3019f128dbdc679bbfb64"
+    },
+    {
+      "bytes": 828,
+      "category": "cpu_qualification",
+      "public_artifact": "results/clinc-v9-readout/portable-builder-qualification.json",
+      "public_artifact_sha256": "bb057dc6875dff9a180e6adcfb35ee77f648419bb2d2603a8d40af6d6a885885",
+      "source_artifact": "outputs/clinc-v9-mechanism-preparation/portable-builder-qualification.json",
+      "source_artifact_sha256_raw": "de32d0b7eade3ac64232373b8812176d7a77d1e01825c9182c9b097702240c5e"
+    },
+    {
+      "bytes": 1629,
+      "category": "cpu_qualification",
+      "public_artifact": "results/clinc-v9-readout/checkpoint-preflight.json",
+      "public_artifact_sha256": "9516fcd8a35d940bcf9703a5d1cc89c68a7f4b22a7dd6237635d97ebf7443073",
+      "source_artifact": "outputs/clinc-v9-checkpoint-preflight-211d/checkpoint-preflight.json",
+      "source_artifact_sha256_raw": "2ac580ae7ce823f1b4e79207f641ebb1830b7b319cc5432c215cc06d67593a0f"
+    },
+    {
+      "bytes": 10103,
+      "category": "historical_pre_v9_audit",
+      "public_artifact": "results/clinc-v9-readout/existing-development-audit.json",
+      "public_artifact_sha256": "2afb8f486f0e271112edc78130e9c2a098c8c975b6c9ae4cd498ee1711e64582",
+      "source_artifact": "outputs/clinc-v9-mechanism-preparation/local-mechanism-audit.json",
+      "source_artifact_sha256_raw": "16f360cd15b008a2ab8023cfa56d9ed780a5cf09b88fffd92df7ab2ce8c9d423"
+    },
+    {
+      "bytes": 15016,
+      "category": "metadata_only_no_payload",
+      "public_artifact": "results/banking77-preparation/source-audit.json",
+      "public_artifact_sha256": "242d780d245242d7ac4d4acfbb30889a08240bd7ca18ff01b6d239cbc965c287",
+      "source_artifact": "outputs/banking77-source-preparation/source-audit.json",
+      "source_artifact_sha256_raw": "683538663dba066fc19c335e9adf56293391acfbafe6f8c39026d9a0cc85f08a"
+    },
+    {
+      "bytes": 102185,
+      "category": "figure_or_historical_source",
+      "public_artifact": "results/clinc-v9-readout/clinc-v9-readout-comparison.png",
+      "public_artifact_sha256": "b5967908e5555b7fc2e085270d90f78b98be961a6e2d14d86252ec125185a72a",
+      "source_artifact": "outputs/clinc-v9-figures/clinc-v9-readout-comparison.png",
+      "source_artifact_sha256_raw": "b5967908e5555b7fc2e085270d90f78b98be961a6e2d14d86252ec125185a72a"
+    },
+    {
+      "bytes": 78933,
+      "category": "figure_or_historical_source",
+      "public_artifact": "results/clinc-v9-readout/clinc-v9-readout-comparison.svg",
+      "public_artifact_sha256": "3b073059e130a6b2ec8edfb932aed6b9989e97daffbbaf689641d2510e2b0841",
+      "source_artifact": "outputs/clinc-v9-figures/clinc-v9-readout-comparison.svg",
+      "source_artifact_sha256_raw": "3b073059e130a6b2ec8edfb932aed6b9989e97daffbbaf689641d2510e2b0841"
+    },
+    {
+      "bytes": 39150,
+      "category": "figure_or_historical_source",
+      "public_artifact": "results/clinc-v9-readout/attempt-a-source.py.txt",
+      "public_artifact_sha256": "d6a3d4e0ff0f2ae349c785000ac9c61f57658c31eba5f62c05f6c9c42cfab712",
+      "source_artifact": "outputs/clinc-v9-mechanism-preparation/attempt-a-source.py.txt",
+      "source_artifact_sha256_raw": "d6a3d4e0ff0f2ae349c785000ac9c61f57658c31eba5f62c05f6c9c42cfab712"
+    },
+    {
+      "bytes": 39209,
+      "category": "figure_or_historical_source",
+      "public_artifact": "results/clinc-v9-readout/attempt-b-source.py.txt",
+      "public_artifact_sha256": "ff88f8ea3db939cb88df3aee11fbfce004f11ff72fb504252fd01e0784e95c15",
+      "source_artifact": "outputs/clinc-v9-mechanism-preparation/attempt-b-source.py.txt",
+      "source_artifact_sha256_raw": "ff88f8ea3db939cb88df3aee11fbfce004f11ff72fb504252fd01e0784e95c15"
+    }
+  ]
+}

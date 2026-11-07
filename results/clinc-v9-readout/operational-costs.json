@@ -1,0 +1,128 @@
+{
+  "_public_capture": {
+    "normalization": "Paths normalized and exact raw-text/token/example fields excluded; aggregate schema and counters retained.",
+    "schema": "clinc-v9-public-capture-reference-v1",
+    "scope": "attempt_costs",
+    "source_artifact": "outputs/clinc-v9-mechanism-preparation/operational-costs.json",
+    "source_artifact_sha256_raw": "9e77e0b163eaf66266ccc68596c495b14d58c86875534c21ec9b6d7023da81c6"
+  },
+  "a_b_setup_elapsed_seconds": null,
+  "all_attempt_optimizer_updates": 0,
+  "attempts": [
+    {
+      "attempt": "clinc-v9-readout-20261107-a",
+      "automatic_retry": false,
+      "backbone_forwards": 0,
+      "context_map_sha256": "6fd908e7e95e62122491fa374b7eae4548e5d197dce3019f128dbdc679bbfb64",
+      "diagnostic_source_sha256": "d6a3d4e0ff0f2ae349c785000ac9c61f57658c31eba5f62c05f6c9c42cfab712",
+      "elapsed_seconds": null,
+      "exception": "KeyError: checkpoint_sha256",
+      "model_loaded": true,
+      "model_scoring_started": false,
+      "optimizer_updates": 0,
+      "original_protocol_sha256": "9bff9bf9ae768e48dec2cf686ba088a0983d44c656b524c8d99e77896c9c7605",
+      "phase": "_load_context_states metadata binding lookup before torch.load",
+      "recovery_policy": "Fix metadata producer/consumer seam, add integration regression and independent review, then manually run the same four contexts and 60 development rows in a fresh output directory under unchanged limits.",
+      "schema": "clinc-v9-operational-attempt-failure-v1",
+      "scores_produced": false,
+      "status": "failed_before_any_model_scoring",
+      "tail_calls": 0,
+      "test_payload_read": false,
+      "training_or_frozen_v8_source_modified": false,
+      "work_count_basis": "Exception control flow before first capture/tail; inference budget was not yet constructed, so zeros are inferred from the verified failure location, not a completed work-counter receipt.",
+      "work_counter_receipt_available": false
+    },
+    {
+      "attempt": "clinc-v9-readout-20261107-b",
+      "automatic_retry": false,
+      "backbone_forwards": 0,
+      "cause": "Diagnostic incorrectly expected cursor task_id=2,next_step=1; the original v8 task-1 end checkpoint uses task_id=1,next_step=189,tasks_completed=2.",
+      "context_map_sha256": "6fd908e7e95e62122491fa374b7eae4548e5d197dce3019f128dbdc679bbfb64",
+      "diagnostic_source_sha256": "ff88f8ea3db939cb88df3aee11fbfce004f11ff72fb504252fd01e0784e95c15",
+      "elapsed_seconds": null,
+      "exception": "ValueError: HOPE_TASK1 checkpoint is not task-1 terminal safe point",
+      "model_loaded": true,
+      "model_scoring_started": false,
+      "optimizer_updates": 0,
+      "phase": "CPU checkpoint boundary validation after model setup, before any capture",
+      "recovery_policy": "Verify all three real checkpoint payloads on CPU before model setup; correct the diagnostic guard to the actual v8 producer contract; rerun the same scientific inputs in a fresh directory only after regression tests and independent review.",
+      "schema": "clinc-v9-operational-attempt-failure-v1",
+      "scores_produced": false,
+      "status": "failed_before_any_model_scoring",
+      "tail_calls": 0,
+      "technical_recovery_sha256": "5bd03f6ccf1775d54db1bf99d872b7ec099cc95da6a55b695144805390aa1937",
+      "test_payload_read": false,
+      "training_or_frozen_v8_source_modified": false,
+      "work_count_basis": "Exception control flow before first capture/tail; inference counters were not constructed yet. These are inferred zeros, not completed counter receipts.",
+      "work_counter_receipt_available": false
+    },
+    {
+      "acceptance_status": "not_accepted_provenance_review_gate_failed",
+      "actual_source_sha256": "211d3c9d499838fa8372f59f99559abc20f045f5e91cd0baf9c0ed91c2a6e687",
+      "attempt": "clinc-v9-readout-20261107-c",
+      "cause": "Source changed after independent review. Freeze helper correctly failed its hash assertion, but PowerShell's semicolon chain did not short-circuit and launched the next command.",
+      "context_map_sha256": "6fd908e7e95e62122491fa374b7eae4548e5d197dce3019f128dbdc679bbfb64",
+      "cost_only_extraction_after_accepted_d_complete": true,
+      "independent_review_disposition": "Retain this attempt as non-success; review and freeze the actual provenance contract before a fresh attempt.",
+      "optimizer_updates": 0,
+      "original_outputs_retained": true,
+      "program_exit_code": 0,
+      "program_result_file_exists": true,
+      "recovery_policy": "Freeze actual source and verify imported-helper bytes match the checked project tree; run the new CPU preflight and independent review; launch only in a separate tool call after checking freeze exit code. Retain all costs and artifacts.",
+      "reviewed_source_sha256": "c6d8049095a32d118256c0d1d963515670fe0667798cd6e407741723ded1e317",
+      "schema": "clinc-v9-operational-attempt-quarantine-v1",
+      "scientific_rows_contexts_and_readouts_changed": false,
+      "scores_inspected_or_used_for_selection": false,
+      "source_artifact_sha256": "5df67f10f580cfbd85248b5323dd57f3f0422ebd4775cd0f42f692bc50b1a379",
+      "source_changes": [
+        "Source-lock directory changed from the task tools to the public project's tools in evaluate and checkpoint-preflight.",
+        "A CPU checkpoint-preflight CLI mode was added."
+      ],
+      "test_payload_read": false,
+      "work": {
+        "backbone_forwards": 1439,
+        "elapsed_seconds": 90.45300000021234,
+        "input_tokens": 269538,
+        "max_backbone_forwards": 10000,
+        "max_elapsed_seconds": 1800.0,
+        "optimizer_updates": 0,
+        "tail_calls": 4847
+      }
+    },
+    {
+      "acceptance_status": "accepted",
+      "attempt": "clinc-v9-readout-20261107-d",
+      "diagnostic_source_sha256": "211d3c9d499838fa8372f59f99559abc20f045f5e91cd0baf9c0ed91c2a6e687",
+      "launch_freeze_sha256": "91a10f16ea6c3cd31a491742e6e3d5e51958b878bb3a1df2bc04d748bbd864dc",
+      "original_outputs_retained": true,
+      "program_exit_code": 0,
+      "source_artifact_sha256": "99e70cd071de47c6dc854a12416255d583d70a424fa4961171c4be817f2d8609",
+      "test_payload_read": false,
+      "work": {
+        "backbone_forwards": 1439,
+        "elapsed_seconds": 89.73500000010245,
+        "input_tokens": 269538,
+        "max_backbone_forwards": 10000,
+        "max_elapsed_seconds": 1800.0,
+        "optimizer_updates": 0,
+        "tail_calls": 4847
+      }
+    }
+  ],
+  "c_is_not_an_independent_repeat_or_accepted_result": true,
+  "limitations": [
+    "Known completed-program work includes a quarantined, nonaccepted execution, separately identified.",
+    "Two earlier attempts loaded the model but failed before inference counters existed; their setup elapsed is unknown, not zero.",
+    "CLI overhead, source research, CPU tests and all preparation work are not complete end-to-end wall/FLOP accounting.",
+    "Input-token counts are executed token positions, not unique examples; no complete or measured FLOPs claim."
+  ],
+  "measured_completed_program_work_c_plus_d": {
+    "backbone_forwards": 2878,
+    "elapsed_seconds": 180.1880000003148,
+    "input_tokens": 539076,
+    "optimizer_updates": 0,
+    "tail_calls": 9694
+  },
+  "quarantined_c_scores_used_for_selection": false,
+  "schema": "clinc-v9-operational-costs-v1"
+}

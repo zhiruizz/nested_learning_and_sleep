@@ -1,0 +1,30 @@
+{
+  "schema": "clinc-v9-development-technical-recovery-v1",
+  "status": "frozen_before_manual_rerun",
+  "attempt": "clinc-v9-readout-20261107-d",
+  "recorded_at_utc": "2026-11-07T11:04:57.692575+00:00",
+  "original_protocol_sha256": "9bff9bf9ae768e48dec2cf686ba088a0983d44c656b524c8d99e77896c9c7605",
+  "tool_sha256": "211d3c9d499838fa8372f59f99559abc20f045f5e91cd0baf9c0ed91c2a6e687",
+  "cpu_tests_sha256": "3e52514913b2f04492a62b9f427f04980fe0b9873106dfa927d9c3380468e902",
+  "context_map_sha256": "6fd908e7e95e62122491fa374b7eae4548e5d197dce3019f128dbdc679bbfb64",
+  "real_cpu_preflight_sha256": "2ac580ae7ce823f1b4e79207f641ebb1830b7b319cc5432c215cc06d67593a0f",
+  "focused_cpu_tests_passed": 8,
+  "independent_agent_review": "clear_for_211d_project_source_binding_after_real_cpu_preflight",
+  "source_binding": "Frozen helpers checked under project-root/tools; root verified all 11 hashes equal actual C-loaded helper hashes and canonical source lock 0de1aadd3328089807f872a60b1b297a671bfb99ceac137d04faa08e2da2eb5a.",
+  "same_rows_contexts_methods_and_limits": true,
+  "scientific_protocol_changed": false,
+  "limits": {
+    "full_backbone_forwards": 10000,
+    "wall_seconds_from_evaluate_entry": 1800,
+    "optimizer_updates": 0
+  },
+  "automatic_retry": false,
+  "prior_attempts_retained": [
+    "a",
+    "b",
+    "c"
+  ],
+  "prior_c_not_accepted": true,
+  "prior_c_scores_inspected_or_used": false,
+  "launch_policy": "Separate tool call after successful freeze exit code; launcher rechecks all frozen file hashes before subprocess creation."
+}

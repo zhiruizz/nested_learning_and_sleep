@@ -1,0 +1,48 @@
+{
+  "schema": "clinc-v9-readout-development-protocol-v1",
+  "status": "frozen",
+  "frozen_at_utc": "2026-11-07T10:47:49.413935+00:00",
+  "development_only": true,
+  "tool_sha256": "d6a3d4e0ff0f2ae349c785000ac9c61f57658c31eba5f62c05f6c9c42cfab712",
+  "cpu_tests_sha256": "b332358df602b9db9abeb94e1c7a29cdde2f1f52b746726c62bb390c10f42c78",
+  "contexts_sha256": "6fd908e7e95e62122491fa374b7eae4548e5d197dce3019f128dbdc679bbfb64",
+  "focused_cpu_tests_passed": 7,
+  "independent_agent_review": "clear_to_run",
+  "seed": 17,
+  "contexts": [
+    "FROZEN_BASE",
+    "TASK0_FOUNDATION",
+    "HOPE_TASK1",
+    "SLEEP_TASK1"
+  ],
+  "cohort": {
+    "source": "Existing normalized train-disjoint CLINC development split",
+    "tasks": [
+      0,
+      1
+    ],
+    "classes": 30,
+    "rows_per_class": 2,
+    "rows": 60,
+    "selection": "First two stable-ID-sorted rows per class, no prediction-based selection"
+  },
+  "readouts": [
+    "v8_free_generation",
+    "all150_candidate_sum_log_likelihood",
+    "all150_candidate_length_mean_log_likelihood",
+    "gold_label_token_mean_nll_including_eos"
+  ],
+  "candidate_count_per_row": 150,
+  "candidate_sequences": 9000,
+  "checkpoint_selection_after_scoring": false,
+  "limits": {
+    "full_backbone_forwards": 10000,
+    "wall_seconds_from_evaluate_entry": 1800,
+    "optimizer_updates": 0
+  },
+  "initial_cli_manifest_parse_excluded_from_timer": true,
+  "extra_access": "All-label likelihood ranking uses the public 150-class dictionary and additional inference; it is not a replacement for v8 free-generation results.",
+  "test_policy": "No official test payload access. The already scored v8 test is not an independent confirmation set for this follow-up.",
+  "training_or_evaluation_code_of_v8_modified": false,
+  "auto_retry": false
+}

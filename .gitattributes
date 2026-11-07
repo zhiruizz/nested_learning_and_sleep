@@ -124,3 +124,40 @@ results/clinc-v8-main/final-test-evaluation.json -text -eol whitespace=blank-at-
 results/clinc-v8-main/public-capture.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 results/clinc-v8-main/clinc-v8-main-six-development.svg -whitespace
 results/clinc-v8-main/release-validation.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the CLINC V9 development diagnosis bundle.
+configs/clinc_readout_v9_development_frozen.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/clinc_readout_v9_development_recovery.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/clinc_readout_v9_development_recovery_d.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/banking77-matched-comparison-draft.md -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/clinc-readout-v9-reproduction.md -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+reports/clinc-readout-and-paper-alignment-v9.md -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/banking77-preparation/source-audit.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/README.md -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/attempt-a-source.py.txt -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/attempt-b-source.py.txt -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/checkpoint-preflight.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/clinc-v9-readout-comparison.png -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/clinc-v9-readout-comparison.svg -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/context-bindings.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/existing-development-audit.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/input-protocol-audit.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/intent-label-token-audit.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/operational-costs.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/portable-builder-qualification.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/public-capture.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/readout-result.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_diagnose_clinc_label_readout_v9_cpu.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_prepare_clinc_readout_contexts_v9_cpu.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_reanalyze_clinc_readout_v9_cpu.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/audit_clinc_input_protocol_v9.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/audit_intent_label_tokens_v9.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/diagnose_clinc_label_readout_v9.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/plot_clinc_readout_v9.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/prepare_clinc_readout_contexts_v9.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/reanalyze_clinc_readout_v9.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+results/clinc-v9-readout/clinc-v9-readout-comparison.svg -whitespace
+results/clinc-v9-readout/release-validation.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the reviewed diagnostic-test EOF bytes and its frozen SHA.
+tests/test_diagnose_clinc_label_readout_v9_cpu.py whitespace=blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol

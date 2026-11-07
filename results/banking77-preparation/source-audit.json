@@ -1,0 +1,220 @@
+{
+  "_public_capture": {
+    "normalization": "Paths normalized and exact raw-text/token/example fields excluded; aggregate schema and counters retained.",
+    "schema": "clinc-v9-public-capture-reference-v1",
+    "scope": "metadata_only_no_payload",
+    "source_artifact": "outputs/banking77-source-preparation/source-audit.json",
+    "source_artifact_sha256_raw": "683538663dba066fc19c335e9adf56293391acfbafe6f8c39026d9a0cc85f08a"
+  },
+  "audited_utc_date": "2026-11-07",
+  "capacity_estimate": {
+    "archive_compressed_bytes_for_publisher_direct_csvs": 0,
+    "derived_arrow_cache_bytes_hf_metadata_estimate": 919050,
+    "hf_metadata_json_bytes": 5892,
+    "minimal_cache_budget_bytes": 4194304,
+    "minimal_cache_budget_human": "4 MiB lower-bound for raw CSV plus one Arrow-derived cache copy and small cache metadata only.",
+    "modelscope_manifest_or_archive_bytes": "unknown: file inventory/manifest/storage target not exposed.",
+    "modelscope_mteb_actual_payload_bytes": "Unknown: repository file listing/API query failed before returning metadata; HF MTEB metadata reports derived download_size 385744 B and serialized dataset_size 1244216 B, not verified ModelScope object-store payload sizes.",
+    "modelscope_mteb_practical_cache_budget": "Unknown pending ModelScope file inventory/revision; do not substitute HF derived-size values as actual ModelScope storage sizes.",
+    "modelscope_payload_bytes": "unknown: 2.04 KB card display is not a verified payload measurement.",
+    "mteb_hf_reference_download_size_bytes": 385744,
+    "mteb_hf_reference_serialized_size_bytes": 1244216,
+    "note": "All file sizes/checksums are metadata-reported unless noted. No HTTP payload or rows were fetched. The pinned GitHub commit files were not independently downloaded/hash-verified.",
+    "practical_preparation_budget_bytes": 25000000,
+    "practical_preparation_budget_human": "25 MB budget for raw files, Arrow cache, one JSONL-derived working copy, temporary/intermediate files and provenance; a planning allowance, not measured size.",
+    "publisher_raw_csv_transfer_bytes_hf_metadata_reported": 1079034,
+    "raw_plus_one_arrow_copy_bytes_estimate": 1998084,
+    "raw_uncompressed_csv_storage_bytes_hf_metadata_reported": 1079034
+  },
+  "citations": {
+    "hf_dataset_card": "https://huggingface.co/datasets/PolyAI/banking77",
+    "hf_metadata_revision": "https://huggingface.co/datasets/PolyAI/banking77/tree/96a234bd25c04939c4a79213eb764ae90e4d0d81",
+    "inca_paper": "https://aclanthology.org/2025.coling-main.487/",
+    "modelscope_candidate": "https://www.modelscope.cn/datasets/modelscope/banking77/summary",
+    "modelscope_card_search_metadata": "https://modelscope.cn/datasets/modelscope/banking77",
+    "modelscope_mteb_candidate": "https://modelscope.cn/datasets/mteb/banking77",
+    "mteb_hf_pinned_metadata": "https://huggingface.co/datasets/mteb/banking77/blob/18072d2685ea682290f7b8924d94c62acc19c0b2/README.md",
+    "official_paper": "https://arxiv.org/abs/2003.04807",
+    "publisher_license": "https://github.com/PolyAI-LDN/task-specific-datasets/blob/master/LICENSE",
+    "publisher_readme": "https://github.com/PolyAI-LDN/task-specific-datasets#banking",
+    "publisher_repo": "https://github.com/PolyAI-LDN/task-specific-datasets",
+    "sleep_paper": "https://arxiv.org/html/2606.03979v2"
+  },
+  "modelscope": {
+    "availability": "Public ModelScope candidate card located via web metadata; an additional configured read-only MCP catalog retry was attempted but timed out before tools/list completed.",
+    "capacity_status": "Unknown. Displayed 2.04 KB is not established as payload size; likely card/repository metadata only. Archive-vs-files-vs-external-storage target and actual object sizes remain unverified.",
+    "card_metadata": {
+      "class_count": 77,
+      "displayed_size": "2.04 KB",
+      "downloads_displayed": 2390,
+      "license": "CC BY 4.0",
+      "owner": "modelscope",
+      "test_examples_card_claim": 3084,
+      "title": "银行领域意图分类",
+      "total_examples_card_claim": 13260,
+      "train_examples_card_claim": 8632,
+      "updated_displayed": "2022-10-18",
+      "upstream_card_label": "dialoglue",
+      "valid_examples_card_claim": 1544
+    },
+    "card_url": "https://www.modelscope.cn/datasets/modelscope/banking77/summary",
+    "equivalence": "Not established. Card split counts differ from publisher split. Treat as transformed, provenance-unverified candidate; not an equivalent/hash-verified mirror.",
+    "format_claim": "Card describes SPACE-compatible case dictionaries/turn records with text, intent_label, and default_domain.",
+    "metadata_access": "Web search metadata readable; page body and legacy repo tree/API endpoints did not expose file listing/revision metadata.",
+    "payload_downloaded": false,
+    "payload_rows_read": false,
+    "previous_helper_retry": "Timed out during initialize/tools-list; this is not evidence the dataset or MCP source does not exist.",
+    "provenance_status": "Card cites Casanueva et al. but exposes no verifiable source commit, conversion script, file inventory, manifest, or checksums in the metadata accessible to this audit."
+  },
+  "modelscope_mteb_candidate": {
+    "assessment": "Stronger benchmark-maintainer provenance than modelscope/banking77 dialoglue/SPACE card, but available MTEB HF metadata describes corrected/processed v2-like data with 13,069 rows and an MIT metadata license. This is not the exact 13,083-row publisher corpus and cannot be called an exact source mirror. ModelScope-specific commit, actual files, hashes, storage sizes, and whether it mirrors this precise MTEB revision remain unknown.",
+    "bounded_local_api_query": {
+      "methods_attempted": [
+        "HubApi.get_dataset_id_and_type",
+        "HubApi.get_dataset",
+        "HubApi.get_dataset_files"
+      ],
+      "payload_requested": false,
+      "result": "ConnectionError before usable metadata returned",
+      "revision_requested": "master"
+    },
+    "comparison_to_polyai": {
+      "classes": 77,
+      "test_diff": -4,
+      "total_diff": -14,
+      "train_diff": -10
+    },
+    "modelscope_card_url": "https://modelscope.cn/datasets/mteb/banking77",
+    "mteb_hf_metadata_crosscheck": {
+      "card_note": "Card says data may include additional processing under MMTEB contribution; MTEB docs identify Banking77Classification.v2 as correcting errors in original data.",
+      "dataset_url": "https://huggingface.co/datasets/mteb/banking77",
+      "license": "MIT per MTEB/HF card metadata; distinct from PolyAI publisher repository CC BY 4.0 and should be reviewed before redistribution.",
+      "metadata_download_size_bytes": 385744,
+      "metadata_pin": "18072d2685ea682290f7b8924d94c62acc19c0b2",
+      "pinned_readme_url": "https://huggingface.co/datasets/mteb/banking77/blob/18072d2685ea682290f7b8924d94c62acc19c0b2/README.md",
+      "readme_metadata_bytes": 16600,
+      "schema": [
+        "text:string",
+        "label:int64",
+        "label_text:string"
+      ],
+      "serialized_dataset_size_bytes": 1244216,
+      "splits": {
+        "test": 3076,
+        "total": 13069,
+        "train": 9993
+      }
+    },
+    "payload_downloaded": false,
+    "payload_rows_read": false,
+    "preview_handling": "The MTEB HF card page rendered a public data preview when opened; no preview content is used or reproduced in this audit. No dataset payload was downloaded.",
+    "rank": "best ModelScope candidate located so far; likely more benchmark-curated than SPACE-format candidate, but not confirmed exact raw mirror",
+    "search_index_claim": "Dataset details page titled Banking77Classification; task category t2c; reference linked to the Casanueva paper; searchable metadata includes train count 10003 and unique_labels 77. ModelScope page itself is not readable by web open."
+  },
+  "payload_downloaded": false,
+  "payload_rows_read": false,
+  "protocol_alignment": {
+    "conclusion": "Treat raw-source identity as aligned with the benchmark family, not as proof of exact InCA/Sleep protocol replication. Preserve the untouched official test set and explicitly freeze any derived validation/train-to-incremental-task mapping before experiments.",
+    "inca": {
+      "alignment": "Underlying dataset aligns. Exact reproduction is not automatic: official raw split is 10,003 train / 3,080 test, while InCA reports 10k / 1k, and this audit did not find an exact selection seed/procedure to equate those counts.",
+      "paper_url": "https://arxiv.org/html/2412.15563",
+      "public_protocol": "Paper states 10k train / 1k test for Banking, seven disjoint-class tasks for the baseline CIL setup, three different task splits averaged; it also says InCA can add one class at a time."
+    },
+    "modelscope_candidate": "ModelScope card claims same 77 intents and cites same paper, but provides train/valid/test totals of 13,260 versus original 13,083 and does not explain conversion or split derivation. Not currently equivalent to the official raw split.",
+    "shared_corpus": "Yes: original PolyAI Banking77, 77 intent classes, and official publisher train/test split are the relevant underlying dataset used by both InCA and Sleep papers.",
+    "sleep": {
+      "alignment": "Underlying corpus aligns, but split/task-protocol equivalence cannot be established from the public paper details audited.",
+      "paper_url": "https://arxiv.org/html/2606.03979v2",
+      "public_protocol": "Appendix B.1 describes Banking77 as 77 intents / 13,083 examples; the audited paper does not specify train/validation/test counts, class order, phase boundaries, or evaluation denominator for Banking."
+    },
+    "validation": "No native validation split. Any validation data must be declared as a derived subset of training data, with seed and stratification policy recorded."
+  },
+  "purpose": "Source and metadata audit only for prospective Banking77 comparison; no data payload was downloaded or read.",
+  "schema": "banking77-source-audit-v1",
+  "source_policy": "ModelScope mteb/banking77 is the strongest hub candidate identified so far for benchmark-curated use, but its accessible linked MTEB snapshot has corrected/processed data (13,069 rows, MIT card metadata) and ModelScope revision/files remain unverified. For exact original-paper/raw-corpus fidelity, PolyAI stays canonical. The older modelscope/banking77 SPACE card (13,260 rows) has weaker provenance.",
+  "source_priority": [
+    {
+      "combined_payload_bytes": 1079034,
+      "file_size_status": "Byte lengths are HF metadata-reported for the upstream raw URLs, not independently HEAD-verified or downloaded in this audit.",
+      "files": [
+        {
+          "bytes": 839073,
+          "hash_verification_status": "Reported by pinned HF dataset_infos metadata; no data payload downloaded and no independent hash computation on the pinned GitHub bytes was performed.",
+          "path": "banking_data/train.csv",
+          "rows": 10003,
+          "sha256_hf_metadata_reported": "b06e26ac675513959a63135f11b94ea7786ed02da65db93a5650d8838cbc664b",
+          "url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/9d081458ff52e53cf7e848f414e6e9344e4e6696/banking_data/train.csv"
+        },
+        {
+          "bytes": 239961,
+          "hash_verification_status": "Reported by pinned HF dataset_infos metadata; no data payload downloaded and no independent hash computation on the pinned GitHub bytes was performed.",
+          "path": "banking_data/test.csv",
+          "rows": 3080,
+          "sha256_hf_metadata_reported": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d",
+          "url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/9d081458ff52e53cf7e848f414e6e9344e4e6696/banking_data/test.csv"
+        }
+      ],
+      "license": "CC BY 4.0 (repository LICENSE; cite Casanueva et al. 2020 and attribute PolyAI).",
+      "native_validation_split": false,
+      "official_classes": 77,
+      "rank": 1,
+      "role": "Canonical publisher source; preferred for any future acquisition.",
+      "source": "PolyAI-LDN/task-specific-datasets, banking_data directory, pinned source commit 9d081458ff52e53cf7e848f414e6e9344e4e6696"
+    },
+    {
+      "actual_payload_bytes": "Unknown",
+      "archive_or_external_storage": "Unknown",
+      "assessment": "Same label taxonomy and citation, but split counts and total rows differ; provenance/conversion is undocumented in accessible metadata. Do not call equivalent or hash-verified.",
+      "card_url": "https://www.modelscope.cn/datasets/modelscope/banking77/summary",
+      "class_count_card_claim": 77,
+      "difference_vs_publisher": {
+        "test": 4,
+        "total": 177,
+        "train_plus_valid": 173
+      },
+      "displayed_size": "2.04 KB",
+      "displayed_size_interpretation": "Not payload size; actual files, manifest and storage targets were not exposed.",
+      "files_manifest_checksums": "Unknown / not exposed",
+      "format_card_claim": "SPACE case-dictionary / turn format",
+      "license": "CC BY 4.0 (card claim)",
+      "payload_downloaded": false,
+      "payload_rows_read": false,
+      "publisher_split_counts": {
+        "test": 3080,
+        "total": 13083,
+        "train": 10003
+      },
+      "rank": 2,
+      "revision": "Unknown from accessible metadata",
+      "role": "Preferred-hub candidate by user preference, conditional on provenance/split-equivalence and actual storage sizes being resolved; current metadata is insufficient to treat as a canonical equivalent.",
+      "source": "ModelScope modelscope/banking77 public dataset card",
+      "split_counts_card_claim": {
+        "test": 3084,
+        "total": 13260,
+        "train": 8632,
+        "valid": 1544
+      }
+    },
+    {
+      "license": "CC BY 4.0",
+      "metadata_bytes": 5892,
+      "metadata_download_url": "https://huggingface.co/datasets/PolyAI/banking77/resolve/96a234bd25c04939c4a79213eb764ae90e4d0d81/dataset_infos.json",
+      "metadata_reports": {
+        "class_count": 77,
+        "combined_download_plus_dataset_bytes": 1998084,
+        "dataset_size_serialized_bytes": 919050,
+        "download_size_raw_sources_bytes": 1079034,
+        "test_examples": 3080,
+        "test_num_bytes_arrow": 204014,
+        "train_examples": 10003,
+        "train_num_bytes_arrow": 715036
+      },
+      "pinned_metadata_url": "https://huggingface.co/datasets/PolyAI/banking77/blob/96a234bd25c04939c4a79213eb764ae90e4d0d81/dataset_infos.json",
+      "pinned_revision": "96a234bd25c04939c4a79213eb764ae90e4d0d81",
+      "rank": 3,
+      "role": "Trusted publisher-named mirror/card and metadata cross-check; not preferred over publisher files for acquisition.",
+      "scope_note": "Pinned HF dataset_infos metadata snapshot used to cross-check row counts, byte lengths, and upstream checksums. The CSV checksums are metadata-reported, not independently verified against downloaded pinned-GitHub bytes.",
+      "source": "Hugging Face PolyAI/banking77 metadata snapshot"
+    }
+  ]
+}

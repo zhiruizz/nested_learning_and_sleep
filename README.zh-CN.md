@@ -1,5 +1,7 @@
 # NL/Sleep Reproduction Lab
 
+V9 已完成单种子、60 条固定验证样本的零更新诊断：标签条件排序能缓解输出格式损失，但新任务后旧标签 NLL 仍上升，固定混合 Sleep 的新类表现仍较弱。这不是新的测试确认。[V9 报告](reports/clinc-readout-and-paper-alignment-v9.md)保留全部读出、失败与成本，提供[复现工具](docs/clinc-readout-v9-reproduction.md)。[Banking77 来源与对照准备](docs/banking77-matched-comparison-draft.md)仍是草案，未获取 Banking 数据文件。
+
 V8 已完成 Llama-3.2-3B / CLINC150 三个配对类别顺序种子、两组各十任务的六次训练，并在封存后用全部 4,500 条域内官方测试样本对最终检查点进行全类别评分。准确率为：本地 `HOPE` 基线 **17.83% ± 0.87%**，`HOPE_SLEEP_FIXEDMIX` **10.76% ± 1.11%**（三种子均值与样本标准差；共享同一适配器初始化）。当前配置未显示 Sleep 的整体收益。[最终报告](reports/clinc150-lifecycle-v8-final.md)保留逐种子结果、开发轨迹、失败尝试、额外回放与标签元数据使用和资源成本。
 
 两组共享起点与主要 wake 预算；固定混合组另做 Sleep 更新，续训活跃时间约为基线的 2.97 倍。这是加入持续 0.5 接收分支混合的本地 CMS 最后 MLP 消融，尚非原生 HOPE 或论文完整复现。参见[汇总与离线重算](results/clinc-v8-main/README.md)、[冻结协议](docs/clinc-cil-v8-protocol.md)、[资产与恢复说明](docs/clinc-v8-reproduction.md)。[此前开发报告](reports/clinc150-lifecycle-v8-development.md)作为诊断、失败和负结果的历史快照保留。

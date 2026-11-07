@@ -1,0 +1,52 @@
+{
+  "_public_capture": {
+    "normalization": "Paths normalized and exact raw-text/token/example fields excluded; aggregate schema and counters retained.",
+    "schema": "clinc-v9-public-capture-reference-v1",
+    "scope": "train_dev_only",
+    "source_artifact": "outputs/clinc-v9-mechanism-preparation/input-protocol-audit.json",
+    "source_artifact_sha256_raw": "5f0c822d7d3458537f0ba71b6dc57e860e0959cd827e30e8a4cd24beece338b9"
+  },
+  "body_budget_tokens": 106,
+  "development_only": true,
+  "gpu_initialized": false,
+  "interpretation": [
+    "No accuracy or optimization performed; length checks do not establish a cause of low scores.",
+    "Both frozen training and generation use the same segmented, gold-independent prompt prefix.",
+    "Different token segmentation from standard joint encoding is a model-format assumption; its performance effect requires a new train/dev control.",
+    "Any prompt or BOS change would be a new protocol, not a correction to the exposed v8 test result."
+  ],
+  "master_config_sha256": "ec8a9bfadde15a6b0bed202f1ad5eb621805e50b92151a6747827c0f177bc32f",
+  "max_label_plus_eos": 7,
+  "max_sequence_length": 128,
+  "model_loaded": false,
+  "normalized_train_dev_overlap_rows_excluded": 3,
+  "optimizer_steps": 0,
+  "prefix_probe": {
+    "actual_train_eval_prefix_matches": 100,
+    "sample_rows": 100,
+    "segmented_vs_joint_decoded_text_different": 0,
+    "segmented_vs_joint_tokenization_different": 100
+  },
+  "prepend_bos": false,
+  "prompt_head_tokens": 12,
+  "prompt_tail_tokens": 3,
+  "row_length_audit": {
+    "development": {
+      "body_tokens_max": 32,
+      "body_tokens_mean": 9.034,
+      "body_tokens_min": 1,
+      "rows": 3000,
+      "rows_with_truncated_body": 0
+    },
+    "train": {
+      "body_tokens_max": 36,
+      "body_tokens_mean": 9.052066666666667,
+      "body_tokens_min": 1,
+      "rows": 15000,
+      "rows_with_truncated_body": 0
+    }
+  },
+  "schema": "clinc-v9-input-protocol-audit-v1",
+  "test_payload_read": false,
+  "training_manifest_sha256": "21b3651a3dce8534fa7363d7f31674c3d86dda735b0d896a60d03ffb055c9123"
+}

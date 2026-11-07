@@ -1,0 +1,47 @@
+{
+  "_public_capture": {
+    "normalization": "Paths normalized and exact raw-text/token/example fields excluded; aggregate schema and counters retained.",
+    "schema": "clinc-v9-public-capture-reference-v1",
+    "scope": "cpu_qualification",
+    "source_artifact": "outputs/clinc-v9-checkpoint-preflight-211d/checkpoint-preflight.json",
+    "source_artifact_sha256_raw": "2ac580ae7ce823f1b4e79207f641ebb1830b7b319cc5432c215cc06d67593a0f"
+  },
+  "contexts": {
+    "HOPE_TASK1": {
+      "checkpoint_sha256": "b74511424ecaf3838d5c7ec0e61a1a38e56092ca3d338e0d4aa8cb64f49f8c9b",
+      "cursor": {
+        "mode": "continuation",
+        "next_step": 189,
+        "safe_point": "post_all_due_events",
+        "task_id": 1,
+        "tasks_completed": 2
+      }
+    },
+    "SLEEP_TASK1": {
+      "checkpoint_sha256": "69672629121a23121fbb4e56ed890face9bf07f547d6e4d6e5ae730a0a7a8604",
+      "cursor": {
+        "mode": "continuation",
+        "next_step": 189,
+        "safe_point": "post_all_due_events",
+        "task_id": 1,
+        "tasks_completed": 2
+      }
+    },
+    "TASK0_FOUNDATION": {
+      "checkpoint_sha256": "474a5b4b2753d83aa40b5d039b46c8124a7bf10cb7e822c2ac8440b41c43934a",
+      "cursor": {
+        "mode": "foundation",
+        "next_step": 189,
+        "safe_point": "post_all_due_events",
+        "task_id": 0,
+        "tasks_completed": 1
+      }
+    }
+  },
+  "cpu_only": true,
+  "mode": "checkpoint-preflight",
+  "optimizer_updates": 0,
+  "schema": "clinc-label-readout-diagnostic-v9",
+  "source_lock_sha256": "0de1aadd3328089807f872a60b1b297a671bfb99ceac137d04faa08e2da2eb5a",
+  "test_data_accessed": false
+}

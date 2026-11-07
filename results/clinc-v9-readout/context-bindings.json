@@ -1,0 +1,118 @@
+{
+  "_public_capture": {
+    "normalization": "Paths normalized and exact raw-text/token/example fields excluded; aggregate schema and counters retained.",
+    "runtime_input_reusable": false,
+    "schema": "clinc-v9-public-capture-reference-v1",
+    "scope": "provenance_not_runtime_input",
+    "source_artifact": "outputs/clinc-v9-mechanism-preparation/readout-contexts.json",
+    "source_artifact_sha256_raw": "6fd908e7e95e62122491fa374b7eae4548e5d197dce3019f128dbdc679bbfb64"
+  },
+  "contexts": [
+    {
+      "kind": "zero_adapter",
+      "name": "FROZEN_BASE"
+    },
+    {
+      "checkpoint_path": "<PRIMARY_PROJECT>\\outputs\\clinc-v8-full-k10-20261107-a\\foundations\\seed17\\checkpoints\\task00-next0189-safe.pt",
+      "checkpoint_sha256": "474a5b4b2753d83aa40b5d039b46c8124a7bf10cb7e822c2ac8440b41c43934a",
+      "expected_arm": null,
+      "expected_child_config_sha256": "f72cef2593941ed0e4dc89d5cc82f4c271a3ad1b8e426a43f11b9d8ce5a09b96",
+      "expected_foundation_checkpoint_sha256": null,
+      "expected_mode": "foundation",
+      "expected_tasks_completed": 1,
+      "kind": "checkpoint",
+      "name": "TASK0_FOUNDATION",
+      "receipt_path": "<PRIMARY_PROJECT>\\outputs\\clinc-v8-full-k10-20261107-a\\foundations\\seed17\\foundation-receipt.json",
+      "receipt_sha256": "1de235bfb154d66282d8b52e3dc67197d8f4479e293345c169e354f8a75de16c"
+    },
+    {
+      "checkpoint_path": "<PRIMARY_PROJECT>\\outputs\\clinc-v8-full-k10-20261107-a\\runs\\seed17\\HOPE\\checkpoints\\task01-next0189-safe.pt",
+      "checkpoint_sha256": "b74511424ecaf3838d5c7ec0e61a1a38e56092ca3d338e0d4aa8cb64f49f8c9b",
+      "expected_arm": "HOPE",
+      "expected_child_config_sha256": "40c5139b0089888ba5c4d525ca04cd04502862091cc794d23e688177c2be7cf2",
+      "expected_foundation_checkpoint_sha256": "474a5b4b2753d83aa40b5d039b46c8124a7bf10cb7e822c2ac8440b41c43934a",
+      "expected_mode": "continuation",
+      "expected_tasks_completed": 2,
+      "kind": "checkpoint",
+      "metrics_path": "<PRIMARY_PROJECT>\\outputs\\clinc-v8-full-k10-20261107-a\\runs\\seed17\\HOPE\\metrics.jsonl",
+      "metrics_sha256": "f715de79ce8b78eeca66b5b82285ef70945dd3d1e49b8ae067131a579b37b5e3",
+      "name": "HOPE_TASK1",
+      "receipt_path": "<PRIMARY_PROJECT>\\outputs\\clinc-v8-full-k10-20261107-a\\runs\\seed17\\HOPE\\run-receipt.json",
+      "receipt_sha256": "2f2353ff2e8dec9ff68de2b017471d08b538a9185e445dda6ec387c8a88175a3"
+    },
+    {
+      "checkpoint_path": "<PRIMARY_PROJECT>\\outputs\\clinc-v8-full-k10-20261107-a\\runs\\seed17\\HOPE_SLEEP_FIXEDMIX\\checkpoints\\task01-next0189-safe.pt",
+      "checkpoint_sha256": "69672629121a23121fbb4e56ed890face9bf07f547d6e4d6e5ae730a0a7a8604",
+      "expected_arm": "HOPE_SLEEP_FIXEDMIX",
+      "expected_child_config_sha256": "739b6595c00e1b1951e26630739815c26f9cbb8f19542aecfa6e02de91e041ef",
+      "expected_foundation_checkpoint_sha256": "474a5b4b2753d83aa40b5d039b46c8124a7bf10cb7e822c2ac8440b41c43934a",
+      "expected_mode": "continuation",
+      "expected_tasks_completed": 2,
+      "kind": "checkpoint",
+      "metrics_path": "<PRIMARY_PROJECT>\\outputs\\clinc-v8-full-k10-20261107-a\\runs\\seed17\\HOPE_SLEEP_FIXEDMIX\\metrics.jsonl",
+      "metrics_sha256": "f114c8b669cd1b86d5da69632a70f780ae605df0324247be16c4b977ba22ffda",
+      "name": "SLEEP_TASK1",
+      "receipt_path": "<PRIMARY_PROJECT>\\outputs\\clinc-v8-full-k10-20261107-a\\runs\\seed17\\HOPE_SLEEP_FIXEDMIX\\run-receipt.json",
+      "receipt_sha256": "e0bd35baf31ac6cecac43f4691f8bceac10f4e66295927ab42b67b77d885a687"
+    }
+  ],
+  "development_only": true,
+  "frozen_training_source_hashes": {
+    "candidate_runner": "b056ca44597cc04e042ed7ccf82361cff54001320ed017db8b0eb7c5d58e4193",
+    "common": "7dbc2f84df1921d3de1dd390bde2acf2e94cae027316089b01fa3d5d1125f135",
+    "controlled_lifecycle": "37f240530d96e5e0525d9b0fd6d67b5eaba37720d7b170479a3181eeee107562",
+    "controlled_probe": "693f0edf7352c3e874613dd128ca4398035d5064d4a606c440e526ddb386151d",
+    "lifecycle": "3e270a6df0359f495fc09d5aaf4fd6e108f37c36da41373b70fc16a26fca14a2",
+    "public_accounting": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96",
+    "public_experts": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094",
+    "public_lm": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+    "public_native": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57",
+    "r2_runner": "71fb703d83ff23cfc8d9e27be2fa5cd119510c7aa350837bd927c5c037b64fb3",
+    "tail_runtime": "057de386734ff128d1fb0147dd83b1c14009cc36d8ed7c77740cbb497ee6f6d9"
+  },
+  "limits": {
+    "max_full_backbone_forwards": 10000,
+    "max_optimizer_steps": 0,
+    "max_wall_seconds": 1800
+  },
+  "master_config_path": "<SOURCE_ROOT>\\configs\\clinc_cil_v8_full_master_frozen_k10.json",
+  "master_config_sha256": "ec8a9bfadde15a6b0bed202f1ad5eb621805e50b92151a6747827c0f177bc32f",
+  "model_assets_sha256": {
+    "LICENSE.txt": "0b4284c1f87029e67654c7953afa16279961632cf73dcfe33374c4c2f298fa35",
+    "USE_POLICY.md": "40e2777d7faa6beaf98400654170f414d8ab29b921b5163ad4ea0a1d39894201",
+    "config.json": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d",
+    "generation_config.json": "da81b0dd4001a8e19fb5840d2b524f6957f44ddde6f5c3fe32b1f36cef5205bf",
+    "model-00001-of-00002.safetensors": "584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002",
+    "model-00002-of-00002.safetensors": "4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb",
+    "model.safetensors.index.json": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c",
+    "special_tokens_map.json": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535",
+    "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+    "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+  },
+  "model_revision": "LLM-Research/Llama-3.2-3B@48d84dd14886f01964f72e7f742a404dd86f9fb6",
+  "official_test_used_for_selection": false,
+  "prepared_at_utc": "2026-11-07T10:35:51.863671+00:00",
+  "readouts": [
+    "v8_free_generation",
+    "all150_candidate_sum_log_likelihood",
+    "all150_candidate_length_mean_log_likelihood"
+  ],
+  "schema": "clinc-v9-readout-contexts-v1",
+  "scope": "Exploratory readout diagnosis on existing validation; candidate labels and added inference compute are extra access, not a replacement for frozen v8 primary scores.",
+  "seed": 17,
+  "selection": {
+    "class_order_seed": 17,
+    "policy": "Stable ID sort per class on normalized train-disjoint development; do not choose by predictions",
+    "rows_per_class": 2,
+    "tasks": [
+      0,
+      1
+    ],
+    "total_rows": 60
+  },
+  "source_lock_sha256": "0de1aadd3328089807f872a60b1b297a671bfb99ceac137d04faa08e2da2eb5a",
+  "test_payload_access_permitted": false,
+  "training_manifest_sha256": "21b3651a3dce8534fa7363d7f31674c3d86dda735b0d896a60d03ffb055c9123",
+  "v8_main_seal_sha256": "13cb53aa440d1ec00d00b3059dc0fbb3c96e42405a984340a71b31fc56c73268",
+  "v8_public_commit": "3b19527617f22d18615a0a9f2520f443e24ffb2a"
+}

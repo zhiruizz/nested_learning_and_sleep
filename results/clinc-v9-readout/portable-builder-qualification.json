@@ -1,0 +1,18 @@
+{
+  "_public_capture": {
+    "normalization": "Paths normalized and exact raw-text/token/example fields excluded; aggregate schema and counters retained.",
+    "schema": "clinc-v9-public-capture-reference-v1",
+    "scope": "cpu_qualification",
+    "source_artifact": "outputs/clinc-v9-mechanism-preparation/portable-builder-qualification.json",
+    "source_artifact_sha256_raw": "de32d0b7eade3ac64232373b8812176d7a77d1e01825c9182c9b097702240c5e"
+  },
+  "builder_source_sha256": "d0488c42d75aef82d067ad55f0660a87f145efb7cb1df31b6400dd821c4d2a0c",
+  "cpu_tests_passed": 2,
+  "driver_context_contract_passed": true,
+  "exact_context_rows_equal_launch_map": true,
+  "model_loaded": false,
+  "optimizer_updates": 0,
+  "real_grid_passed": true,
+  "schema": "clinc-v9-portable-builder-qualification-v1",
+  "test_payload_read": false
+}

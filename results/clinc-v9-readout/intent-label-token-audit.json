@@ -1,0 +1,62 @@
+{
+  "_public_capture": {
+    "normalization": "Paths normalized and exact raw-text/token/example fields excluded; aggregate schema and counters retained.",
+    "schema": "clinc-v9-public-capture-reference-v1",
+    "scope": "metadata_only",
+    "source_artifact": "outputs/clinc-v9-mechanism-preparation/intent-label-token-audit.json",
+    "source_artifact_sha256_raw": "43d2b76c0c87b137b39ebd59ddb387464924348e1407fcf8ef449f63b47ca562"
+  },
+  "banking77": {
+    "class_count": 77,
+    "class_names_unique_after_normalization": true,
+    "label_token_length_histogram": {
+      "2": 11,
+      "3": 25,
+      "4": 14,
+      "5": 16,
+      "6": 6,
+      "7": 1,
+      "8": 3,
+      "9": 1
+    },
+    "labels_longer_than_v8_sleep_cap8": 1,
+    "labels_plus_eos_longer_than_cap8": 4,
+    "longest_label_plus_eos": 10,
+    "longest_label_tokens": 9,
+    "normalized_label_roundtrip_failures": 0
+  },
+  "clinc": {
+    "class_count": 150,
+    "class_names_unique_after_normalization": true,
+    "label_token_length_histogram": {
+      "1": 30,
+      "2": 72,
+      "3": 36,
+      "4": 6,
+      "5": 5,
+      "6": 1
+    },
+    "labels_longer_than_v8_sleep_cap8": 0,
+    "labels_plus_eos_longer_than_cap8": 0,
+    "longest_label_plus_eos": 7,
+    "longest_label_tokens": 6,
+    "normalized_label_roundtrip_failures": 0
+  },
+  "dataset_payload_rows_read": false,
+  "development_diagnostic_only": true,
+  "gpu_initialized": false,
+  "interpretation": [
+    "Token-length coverage is a necessary reachability check, not an accuracy result.",
+    "V8 primary greedy evaluation uses longest canonical label plus EOS; its Sleep rollout cap is separately eight.",
+    "Banking metadata is public schema only; this does not download or parse any train/test payload.",
+    "Any future task-specific token cap must be frozen before validation scoring; do not tune it on exposed CLINC test."
+  ],
+  "model_loaded": false,
+  "optimizer_steps": 0,
+  "schema": "intent-label-token-metadata-audit-v9",
+  "source_metadata_sha256": {
+    "banking77_dataset_infos": "402fed10f4894f8989dffeca0a81572ca488e6488fac3f18a33d9fd32422acc7",
+    "clinc_train_development_manifest": "21b3651a3dce8534fa7363d7f31674c3d86dda735b0d896a60d03ffb055c9123",
+    "local_tokenizer_json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+  }
+}

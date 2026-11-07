@@ -1,0 +1,233 @@
+{
+  "_public_capture": {
+    "normalization": "Paths normalized and exact raw-text/token/example fields excluded; aggregate schema and counters retained.",
+    "schema": "clinc-v9-public-capture-reference-v1",
+    "scope": "historical_pre_v9_audit",
+    "source_artifact": "outputs/clinc-v9-mechanism-preparation/local-mechanism-audit.json",
+    "source_artifact_sha256_raw": "16f360cd15b008a2ab8023cfa56d9ed780a5cf09b88fffd92df7ab2ce8c9d423"
+  },
+  "alignment_audit": {
+    "evaluation": "unconstrained greedy generation over the full vocabulary; EOS stop; exact normalized canonical-label match over all 150 classes; no task mask",
+    "formatting_or_synonym_false_invalid_risk": "possible; raw predictions were not opened",
+    "historical_R1_eval_row_alignment_bug_applies_to_frozen_main_summary": false,
+    "normalization": [
+      "NFKC",
+      "casefold",
+      "trim/collapse whitespace",
+      "underscore-to-space"
+    ],
+    "prompt_template": "Classify the intent of this user request.\\nRequest: {text}\\nIntent:",
+    "structural_train_eval_prompt_mismatch_found": false,
+    "training_and_eval_use_same_gold_independent_prompt_helper": true,
+    "training_target": "canonical_intent_label_tokens followed by EOS; prompt tokens masked from causal CE"
+  },
+  "boundary_diagnostic": {
+    "artifact": "controlled-boundary-analysis-v1.json",
+    "gold_ce_mix_16_point_pooled_seen": {
+      "base_only_correct_over_960": 155,
+      "optimized_post_correct_over_960": 92,
+      "reset_expanded_correct_over_960": 54,
+      "teacher_pre_correct_over_960": 155
+    },
+    "main_mechanism_implication": "sender reset and new receiver/persistent 0.5 mix are a high-priority candidate for immediate behavior change; the probe is repeated single-seed evidence, not a full-run causal estimate",
+    "scope": {
+      "arm_objectives_match": false,
+      "arms": [
+        "SLEEP_MIX",
+        "GOLD_CE_MIX"
+      ],
+      "current_rows": 30,
+      "event_points_per_arm": 16,
+      "four_contexts": [
+        "teacher_pre",
+        "base_only_reconstruction",
+        "initial_reset_expanded_reconstruction",
+        "optimized_post"
+      ],
+      "old_rows": 30,
+      "reconstruction_states_are_training_checkpoints": false,
+      "repeated_points_are_independent_runs": false,
+      "rows_per_context": 60,
+      "seed": 17,
+      "test_data_read": false
+    },
+    "sleep_mix_16_point_pooled_seen": {
+      "base_only_correct_over_960": 157,
+      "optimized_post_correct_over_960": 90,
+      "reset_expanded_correct_over_960": 39,
+      "teacher_pre_correct_over_960": 158
+    },
+    "sleep_mix_first_boundary": {
+      "base_only_correct_over_60": 17,
+      "global_wake_tick": 192,
+      "initial_reset_expanded_correct_over_60": 0
+    }
+  },
+  "development_observations": {
+    "sleep_compute": {
+      "HOPE_SLEEP_FIXEDMIX_events_per_run": 141,
+      "compute_matched_to_HOPE": false,
+      "continuation_wake_steps_per_run": 1692,
+      "old_current_sleep_prompt_roles_are_balanced": true,
+      "physical_adamw_steps_per_event": 30,
+      "physical_adamw_steps_per_run": 4230,
+      "seed17_receipt_reports_both_roles_class_coverage": true,
+      "working_pool_prompts_per_class": 4
+    },
+    "task0_aggregate_clean_accuracy": {
+      "HOPE_and_fixedmix_shared_starting_context": {
+        "all_seeds_pass_gate": true,
+        "gate": 0.5,
+        "mean": 0.6177777777777778,
+        "seed17": 0.7233333333333334,
+        "seed29": 0.5466666666666666,
+        "seed43": 0.5833333333333334
+      }
+    },
+    "task1": {
+      "HOPE": {
+        "current_accuracy_mean": 0.7664,
+        "old_accuracy_mean": 0.0611
+      },
+      "HOPE_SLEEP_FIXEDMIX": {
+        "current_accuracy_mean": 0.4038,
+        "old_accuracy_mean": 0.0411
+      },
+      "HOPE_old_accuracy_by_seed": [
+        0.13,
+        0.0,
+        0.053
+      ],
+      "interpretation": "large old-class decline after one new-task schedule; no old-label replay in HOPE; fixed-mix also has weak new-class acquisition"
+    },
+    "task9": {
+      "HOPE": {
+        "current_accuracy_mean": 0.8553,
+        "earlier_accuracy_mean": 0.1013,
+        "seen_accuracy_mean": 0.1767
+      },
+      "HOPE_SLEEP_FIXEDMIX": {
+        "current_accuracy_mean": 0.2469,
+        "earlier_accuracy_mean": 0.096,
+        "seen_accuracy_mean": 0.1111
+      },
+      "class_order_seeds_are_independent_model_initializations": false
+    }
+  },
+  "frozen_schedule": {
+    "batch_size": 8,
+    "capacity": 8,
+    "class_order_seeds": [
+      17,
+      29,
+      43
+    ],
+    "classes_per_task": 15,
+    "epochs_per_task": 1,
+    "levels": 5,
+    "periods": [
+      16,
+      64,
+      256,
+      1024,
+      null
+    ],
+    "rank": 64,
+    "shared_initialization_seed": 1907008,
+    "sleep_gkd_updates_per_event": 20,
+    "sleep_lti_updates_per_event": 10,
+    "sleep_objective_main": "canonical_agreement_plus_thresholded_length_normalized_edit_v1",
+    "tasks": 10,
+    "training_examples_per_task": 1500,
+    "wake_updates_per_task": 188
+  },
+  "mechanism_hypotheses": [
+    {
+      "causal_status": "not isolated",
+      "hypothesis": "HOPE earlier-class behavior deteriorates from sequential interference without old-label replay",
+      "support": "high descriptive support; task1 already shows low old and high current accuracy"
+    },
+    {
+      "causal_status": "not isolated; boundary stages are reconstructions and the arm changes multiple factors",
+      "hypothesis": "fixedmix sender reset/receiver expansion/mix harms immediate behavior and task acquisition",
+      "support": "moderate; boundary stages show a large reset-expanded drop and full fixedmix current accuracy is low"
+    },
+    {
+      "causal_status": "not measured on the six-run main teacher stream",
+      "hypothesis": "teacher-generated targets are often invalid or do not match prompt intent, reducing useful GKD/LTI signal",
+      "support": "moderate for separate two-task diagnostics; k10 is 63/320 valid, 49/320 gold-match"
+    },
+    {
+      "causal_status": "unresolved pending same-row constrained-label/NLL comparison",
+      "hypothesis": "strict free-generation exact-label scoring contributes to invalid errors",
+      "support": "possible; invalid counts are high, but raw outputs were not inspected"
+    }
+  ],
+  "next_checks_train_dev_only": [
+    "Complete the already planned four-context v4 read-only development score on the fixed 60 rows; pair open greedy label accuracy with gold-label NLL and constrained 150-label scoring.",
+    "If later training is authorized, use the same task0 checkpoint and task1 schedule for new-only versus predeclared old-gold replay, matched on update count and report old/current metrics.",
+    "For any Sleep train contrast, separately vary proposal-only, sender reset/receiver expansion, and receiver optimization; record selected route positions, receiver gradients, teacher validity/gold match, dev likelihood, exact generation, compute, and runtime."
+  ],
+  "provenance": {
+    "development_aggregate": "outputs/clinc-v8-main-development-complete/clinc-v8-main-six-summary.json",
+    "development_aggregate_status": "complete_training_test_pending",
+    "diagnostic_artifacts": [
+      "outputs/clinc-v8-preparation/controlled-probe-analysis-clean-primary.json",
+      "outputs/clinc-v8-preparation/transfer-budget-analysis-v1.json",
+      "outputs/clinc-v8-preparation/controlled-boundary-analysis-v1.json",
+      "outputs/clinc-v8-preparation/full-completed-seed17-SLEEP-receipt.json"
+    ],
+    "frozen_master_config_sha256": "ec8a9bfadde15a6b0bed202f1ad5eb621805e50b92151a6747827c0f177bc32f",
+    "model_revision": "LLM-Research/Llama-3.2-3B@48d84dd14886f01964f72e7f742a404dd86f9fb6",
+    "training_manifest_sha256": "21b3651a3dce8534fa7363d7f31674c3d86dda735b0d896a60d03ffb055c9123",
+    "v8_source_lock_sha256": "0de1aadd3328089807f872a60b1b297a671bfb99ceac137d04faa08e2da2eb5a",
+    "verified_local_source_sha256": {
+      "configs/clinc_cil_v8_full_master_frozen_k10.json": "ec8a9bfadde15a6b0bed202f1ad5eb621805e50b92151a6747827c0f177bc32f",
+      "tools/clinc_cil_common_v8.py": "7dbc2f84df1921d3de1dd390bde2acf2e94cae027316089b01fa3d5d1125f135",
+      "tools/clinc_controlled_routing_v8.py": "37f240530d96e5e0525d9b0fd6d67b5eaba37720d7b170479a3181eeee107562",
+      "tools/clinc_lifecycle_v8.py": "3e270a6df0359f495fc09d5aaf4fd6e108f37c36da41373b70fc16a26fca14a2",
+      "tools/clinc_tail_runtime_v8.py": "057de386734ff128d1fb0147dd83b1c14009cc36d8ed7c77740cbb497ee6f6d9",
+      "tools/run_clinc_cil_v8_full.py": "b056ca44597cc04e042ed7ccf82361cff54001320ed017db8b0eb7c5d58e4193",
+      "tools/run_clinc_cil_v8_r2.py": "71fb703d83ff23cfc8d9e27be2fa5cd119510c7aa350837bd927c5c037b64fb3"
+    }
+  },
+  "schema": "clinc-v9-local-mechanism-audit-v1",
+  "scope": {
+    "analysis_type": "read-only source and existing aggregate audit",
+    "frozen_v8_sources_or_config_changed": false,
+    "gpu_started": false,
+    "model_or_checkpoint_loaded": false,
+    "official_test_payload_accessed": false
+  },
+  "status": "preliminary_train_dev_only",
+  "teacher_diagnostics_separate_from_main_grid": [
+    {
+      "artifact": "controlled-probe-analysis-clean-primary.json",
+      "canonical_valid": 3,
+      "is_main_sixrun_teacher_statistic": false,
+      "n": 32,
+      "prompt_gold_matches": 0,
+      "scope": "seed17 task1 controlled probe, teacher-owned sample subset"
+    },
+    {
+      "artifact": "transfer-budget-analysis-v1.json#/budgets/k1/teacher_owned_sample_quality",
+      "canonical_valid": 2,
+      "is_main_sixrun_teacher_statistic": false,
+      "n": 32,
+      "prompt_gold_matches": 0,
+      "scope": "seed17 separate corrected k1 two-task diagnostic"
+    },
+    {
+      "artifact": "transfer-budget-analysis-v1.json#/budgets/k10/teacher_owned_sample_quality",
+      "canonical_valid": 63,
+      "is_main_sixrun_teacher_statistic": false,
+      "n": 320,
+      "prompt_gold_matches": 49,
+      "scope": "seed17 separate corrected k10 two-task diagnostic; paper-bounded-token-edit-v1 objective"
+    }
+  ],
+  "v4_followup": {
+    "results_added": false,
+    "status": "pending_root_run"
+  }
+}

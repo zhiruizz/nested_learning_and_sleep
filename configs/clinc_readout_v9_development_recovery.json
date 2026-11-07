@@ -1,0 +1,22 @@
+{
+  "schema": "clinc-v9-development-technical-recovery-v1",
+  "status": "frozen_before_manual_rerun",
+  "recorded_at_utc": "2026-11-07T10:53:02.264832+00:00",
+  "original_protocol_sha256": "9bff9bf9ae768e48dec2cf686ba088a0983d44c656b524c8d99e77896c9c7605",
+  "contexts_sha256": "6fd908e7e95e62122491fa374b7eae4548e5d197dce3019f128dbdc679bbfb64",
+  "tool_sha256": "ff88f8ea3db939cb88df3aee11fbfce004f11ff72fb504252fd01e0784e95c15",
+  "cpu_tests_sha256": "f3a3293dc18d1b256c1effb78b0f17f265b05220b9044c01451224e51cce2ab0",
+  "focused_cpu_tests_passed": 8,
+  "independent_agent_review": "clear_after_metadata_seam_regression",
+  "technical_change": "Carry the verified checkpoint hash into the loader expected metadata before deserialization.",
+  "failed_attempt": "clinc-v9-readout-20261107-a",
+  "failed_attempt_model_scoring_started": false,
+  "fresh_attempt": "clinc-v9-readout-20261107-b",
+  "automatic_retry": false,
+  "same_rows_contexts_methods_and_limits": true,
+  "optimizer_updates": 0,
+  "scientific_protocol_changed": false,
+  "original_failure_retained": true,
+  "failed_attempt_setup_elapsed_seconds": null,
+  "cost_note": "The failed model-loading/setup attempt has unknown total elapsed time; it is additional cost, not zero elapsed time."
+}
