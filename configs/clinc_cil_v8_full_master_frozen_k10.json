@@ -1,0 +1,88 @@
+{
+  "schema": "clinc-cil-v8-full-master-candidate",
+  "status": "frozen",
+  "decision_note": "Frozen before any full-run foundation or continuation. k=10 repeats [GKD,GKD,LTI] ten times; this is a coverage/budget stress test following negative two-task development, not a selected positive result. All three task-0 foundations must pass the fixed >=0.50 clean-dev gate before either arm continues; no automatic retry or test tuning.",
+  "seed_grid": [
+    17,
+    29,
+    43
+  ],
+  "arms": [
+    "HOPE",
+    "HOPE_SLEEP_FIXEDMIX"
+  ],
+  "tasks": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "source_revision": "d443e35311a0b835ad2a201bdd97c0fd18517b4a+clinc-full-b056ca44597cc04e042ed7ccf82361cff54001320ed017db8b0eb7c5d58e4193",
+  "model_revision": "LLM-Research/Llama-3.2-3B@48d84dd14886f01964f72e7f742a404dd86f9fb6",
+  "model_assets_sha256": {
+    "model-00001-of-00002.safetensors": "584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002",
+    "model-00002-of-00002.safetensors": "4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb",
+    "config.json": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d",
+    "generation_config.json": "da81b0dd4001a8e19fb5840d2b524f6957f44ddde6f5c3fe32b1f36cef5205bf",
+    "LICENSE.txt": "0b4284c1f87029e67654c7953afa16279961632cf73dcfe33374c4c2f298fa35",
+    "model.safetensors.index.json": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c",
+    "special_tokens_map.json": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535",
+    "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+    "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a",
+    "USE_POLICY.md": "40e2777d7faa6beaf98400654170f414d8ab29b921b5163ad4ea0a1d39894201"
+  },
+  "training_manifest_sha256": "21b3651a3dce8534fa7363d7f31674c3d86dda735b0d896a60d03ffb055c9123",
+  "expected_normalized_train_dev_duplicates": 3,
+  "initialization_seed": 1907008,
+  "rank": 64,
+  "capacity": 8,
+  "levels": 5,
+  "periods": [
+    16,
+    64,
+    256,
+    1024,
+    null
+  ],
+  "batch_size": 8,
+  "examples_per_task": 1500,
+  "epochs_per_task": 1,
+  "max_steps_per_task": 188,
+  "base_lr": 0.001,
+  "fast_lr": 0.1,
+  "sleep_lr": 0.001,
+  "sleep_weight_decay": 0.0,
+  "sleep_clip_norm": 1.0,
+  "gkd_calls_per_event": 20,
+  "lti_calls_per_event": 10,
+  "inner_cycles_per_event": 10,
+  "objective_version": "canonical_agreement_plus_thresholded_length_normalized_edit_v1",
+  "max_new_tokens": 8,
+  "lti_edit_distance_z0": 8,
+  "lti_semantic_weight": 0.5,
+  "lti_edit_weight": 0.5,
+  "temperature": 0.8,
+  "max_sequence_length": 128,
+  "task0_clean_accuracy_gate": 0.5,
+  "fixed_mix_fraction": 0.5,
+  "resume_policy": "manual_safe_checkpoint_only",
+  "evaluation_policy": "one_clean_seen_sweep_at_each_task_end",
+  "budgets": {
+    "foundation": {
+      "max_wall_seconds": 1800,
+      "max_forward_calls": 10000,
+      "max_update_steps": 500
+    },
+    "continuation": {
+      "max_wall_seconds": 7200,
+      "max_forward_calls": 100000,
+      "max_update_steps": 7000
+    }
+  }
+}

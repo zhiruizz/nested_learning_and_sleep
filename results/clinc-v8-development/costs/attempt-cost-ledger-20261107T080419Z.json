@@ -1,0 +1,767 @@
+{
+  "_public_capture": {
+    "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+    "normalization": "Original aggregate schema retained; only exact raw-text/token/example-identity fields removed; paths normalized; raw source artifact SHA recorded in public-capture.json.",
+    "schema": "clinc-v8-public-development-capture-reference-v1",
+    "source_artifact": "outputs/clinc-v8-attempt-cost-ledger-20261107.json",
+    "source_artifact_sha256_raw": "9e80512d3fb77fa288e0ee581f4ffba8acdacab4e94ebd5385ad8ed3f295b419"
+  },
+  "accounting_rules": [
+    "Each attempt references one canonical artifact; mirrored metrics/receipt views are not added a second time.",
+    "optimizer_or_lifecycle_update_steps is the artifact's logical/update counter, not automatically a physical AdamW count.",
+    "physical_adamw_steps is populated only where a receipt explicitly reports it; otherwise it remains absent or null.",
+    "Repeated qualifications, rescoring passes, and bounded failure replays are separate compute attempts but are not independent scientific seeds.",
+    "Missing counters are unknown, never zero. Intentional zero-work sentinel receipts may report exact zeros.",
+    "The three task-0 foundation receipts are unique shared starting work, counted once across future arms.",
+    "The full-grid current continuation is in progress and excluded from completed-run totals."
+  ],
+  "as_of_utc": "2026-11-07T08:04:19+00:00",
+  "attempts": [
+    {
+      "artifact": {
+        "file": "check-result.json",
+        "output_id": "clinc-v8-real3b-qualification-20261107-a",
+        "sha256": "f64c44ace512d3faed0e691075598a8f296cb0e9305b6603058de17fb2e7434c"
+      },
+      "cost": {
+        "full_backbone_forward_calls": 3,
+        "physical_adamw_steps_completed": 0,
+        "reported_elapsed_seconds": 4.986286500003189
+      },
+      "error": null,
+      "id": "real3b-tail-qualification",
+      "notes": "3 full forwards, no optimizer updates; exact full-vs-tail output and gradient qualification.",
+      "output_id": "clinc-v8-real3b-qualification-20261107-a",
+      "phase": "engineering-qualification",
+      "status": "complete"
+    },
+    {
+      "artifact": {
+        "file": "check-result.json",
+        "output_id": "clinc-v8-real3b-resume-20261107-a",
+        "sha256": "61b76ef56be9dc8014fc54e8c80d17e279efe14a8b2acf27d52516bd525197a9"
+      },
+      "cost": {
+        "full_backbone_forward_calls": 24,
+        "logical_resume_updates": 8,
+        "physical_adamw_steps_completed": 8,
+        "reported_elapsed_seconds": 9.206808800110593
+      },
+      "error": null,
+      "id": "real3b-resume-memory",
+      "notes": "Actual 3B lifecycle resume fixture; two pre-steps, three reference and three restored replay AdamW steps.",
+      "output_id": "clinc-v8-real3b-resume-20261107-a",
+      "phase": "engineering-resume-qualification",
+      "status": "complete"
+    },
+    {
+      "artifact": {
+        "file": "failure.json",
+        "output_id": "clinc-v8-real3b-resume-20261107-b-disk",
+        "sha256": "290e8cedeec01e981954290b0ad88fb62fcaec684dd0119ea6457329cd480c94"
+      },
+      "cost": {
+        "full_backbone_forward_calls": 6,
+        "logical_resume_updates": 2,
+        "physical_adamw_steps_completed": 2,
+        "reported_elapsed_seconds": 11.11955269984901,
+        "wake_ticks_observed": 7
+      },
+      "error": "[Errno 9] Bad file descriptor",
+      "id": "real3b-resume-disk-attempt-b",
+      "notes": "Disk roundtrip attempt failed with Bad file descriptor during the sleep-pre-updates phase; preserve its partial cost (2 AdamW steps, 6 forwards).",
+      "output_id": "clinc-v8-real3b-resume-20261107-b-disk",
+      "phase": "engineering-resume-disk-roundtrip",
+      "status": "failed"
+    },
+    {
+      "artifact": {
+        "file": "check-result.json",
+        "output_id": "clinc-v8-real3b-resume-20261107-c-disk",
+        "sha256": "d42c226aa9549e2dd2e6a324bf87fa753e14687c3ad089e45598b860f6f64300"
+      },
+      "cost": {
+        "full_backbone_forward_calls": 24,
+        "logical_resume_updates": 8,
+        "physical_adamw_steps_completed": 8,
+        "reported_elapsed_seconds": 8.212663499871269
+      },
+      "error": null,
+      "id": "real3b-resume-disk-attempt-c",
+      "notes": "Fresh disk roundtrip replay qualification after attempt B; counts are for this attempt only.",
+      "output_id": "clinc-v8-real3b-resume-20261107-c-disk",
+      "phase": "engineering-resume-disk-roundtrip",
+      "status": "complete"
+    },
+    {
+      "artifact": {
+        "file": "failure.json",
+        "output_id": "clinc-v8-dev-seed17-seen-replay-20261107-r1",
+        "sha256": "018149078c7e05626a1aa6c36975d26df343589bf134bdcc2b3a6ddc95c1a62b"
+      },
+      "cost": {
+        "active_wall_seconds": 374.3599999998696,
+        "executed_input_tokens_including_padding": 1702389,
+        "full_backbone_forward_calls": 8364,
+        "full_backbone_forward_tokens": 1669798,
+        "logical_update_counter_decomposition": {
+          "sleep_update_attempts": 10,
+          "wake_updates": 252
+        },
+        "optimizer_or_lifecycle_update_steps": 262,
+        "padded_input_tokens": 32591,
+        "physical_adamw_step_failed_before_update": 1,
+        "physical_adamw_steps_completed": 9,
+        "reported_elapsed_seconds": 374.3599999998696,
+        "sampled_answer_tokens_including_first_eos": 64,
+        "sleep_events": 3,
+        "tail_backward_calls": 262,
+        "tail_backward_tokens": 6375,
+        "tail_calls": 8374
+      },
+      "error": "sleep requires finite differentiable scalar loss",
+      "id": "r1-task0-sleep-failure",
+      "notes": "R1 run failed the finite differentiable-loss guard at task 0. Work counter 262 comprises 252 wake updates plus 10 Sleep optimizer attempts; 9 physical Sleep AdamW steps completed and the tenth failed before step. R1 evaluation metric (3.33%) is invalid due to row/length alignment and is not a valid score.",
+      "output_id": "clinc-v8-dev-seed17-seen-replay-20261107-r1",
+      "phase": "training-attempt",
+      "status": "failed"
+    },
+    {
+      "artifact": {
+        "file": "evaluation.json",
+        "output_id": "clinc-v8-r1-hope-corrected-eval-20261107-a",
+        "sha256": "a4271a33ecb912473f0ff2564978800ef5cf258cd42939e3f1ddb3d9c1017635"
+      },
+      "cost": {
+        "active_wall_seconds": 23.54700000002049,
+        "executed_input_tokens_including_padding": 41918,
+        "full_backbone_forward_calls": 278,
+        "full_backbone_forward_tokens": 40149,
+        "optimizer_or_lifecycle_update_steps": 0,
+        "padded_input_tokens": 1769,
+        "sampled_answer_tokens_including_first_eos": 0,
+        "sleep_events": 0,
+        "tail_backward_calls": 0,
+        "tail_backward_tokens": 0,
+        "tail_calls": 278
+      },
+      "error": null,
+      "id": "r1-corrected-rescore-a",
+      "notes": "No training or optimizer update; rescored sealed R1 checkpoint on clean task-0 development after row alignment correction.",
+      "output_id": "clinc-v8-r1-hope-corrected-eval-20261107-a",
+      "phase": "evaluation-repair",
+      "status": "complete"
+    },
+    {
+      "artifact": {
+        "file": "evaluation.json",
+        "output_id": "clinc-v8-r1-hope-corrected-eval-20261107-b-finalsource",
+        "sha256": "6bc1a5d6b79e17d25f9c4ed6bb380df744b6d5ddd2abe15d75e3fdb99d622e67"
+      },
+      "cost": {
+        "active_wall_seconds": 23.625,
+        "executed_input_tokens_including_padding": 41918,
+        "full_backbone_forward_calls": 278,
+        "full_backbone_forward_tokens": 40149,
+        "optimizer_or_lifecycle_update_steps": 0,
+        "padded_input_tokens": 1769,
+        "sampled_answer_tokens_including_first_eos": 0,
+        "sleep_events": 0,
+        "tail_backward_calls": 0,
+        "tail_backward_tokens": 0,
+        "tail_calls": 278
+      },
+      "error": null,
+      "id": "r1-corrected-rescore-b",
+      "notes": "Repeated engineering rescore under final source binding; same checkpoint and fixed clean development subset.",
+      "output_id": "clinc-v8-r1-hope-corrected-eval-20261107-b-finalsource",
+      "phase": "evaluation-repair",
+      "status": "complete"
+    },
+    {
+      "artifact": {
+        "file": "evaluation.json",
+        "output_id": "clinc-v8-r1-hope-corrected-eval-20261107-c-hashdomain",
+        "sha256": "89dc2ab693c01d7ceb11edd15d21da948c8f3c68b495e4de99eccc4309c1f225"
+      },
+      "cost": {
+        "active_wall_seconds": 23.484999999869615,
+        "executed_input_tokens_including_padding": 41918,
+        "full_backbone_forward_calls": 278,
+        "full_backbone_forward_tokens": 40149,
+        "optimizer_or_lifecycle_update_steps": 0,
+        "padded_input_tokens": 1769,
+        "sampled_answer_tokens_including_first_eos": 0,
+        "sleep_events": 0,
+        "tail_backward_calls": 0,
+        "tail_backward_tokens": 0,
+        "tail_calls": 278
+      },
+      "error": null,
+      "id": "r1-corrected-rescore-c",
+      "notes": "Repeated source/hash-domain validation rescore; no training. Three rescoring attempts are separate costs, not independent model seeds.",
+      "output_id": "clinc-v8-r1-hope-corrected-eval-20261107-c-hashdomain",
+      "phase": "evaluation-repair",
+      "status": "complete"
+    },
+    {
+      "artifact": {
+        "file": "development-sealed.json",
+        "output_id": "clinc-v8-hope-task1-resume-20261107-r2",
+        "sha256": "a5d82504a5ec82c9a2b7f394c87cfe0eb1595be428ff8fabc3b2ebe868417ba2"
+      },
+      "cost": {
+        "active_wall_seconds": 76.10899999993853,
+        "executed_input_tokens_including_padding": 247552,
+        "full_backbone_forward_calls": 1296,
+        "full_backbone_forward_tokens": 234068,
+        "optimizer_or_lifecycle_update_steps": 188,
+        "padded_input_tokens": 13484,
+        "reported_elapsed_seconds": 76.10899999993853,
+        "sampled_answer_tokens_including_first_eos": 0,
+        "sleep_events": 0,
+        "tail_backward_calls": 188,
+        "tail_backward_tokens": 4800,
+        "tail_calls": 1296
+      },
+      "error": null,
+      "id": "no-sleep-task1-resume-r2",
+      "notes": "Seed 17 HOPE task-1 continuation, no Sleep events; 188 update-counter steps.",
+      "output_id": "clinc-v8-hope-task1-resume-20261107-r2",
+      "phase": "training-resume",
+      "status": "complete"
+    },
+    {
+      "artifact": {
+        "file": "routing-diagnostic.json",
+        "output_id": "clinc-v8-sparse-sleep-diagnostic-20261107-a",
+        "sha256": "6bb547204d2b107f42d49ca27bc812cde159ab36902655abf9b494aa98b32cea"
+      },
+      "cost": {
+        "active_wall_seconds": 19.79700000002049,
+        "diagnostic_outer_elapsed_seconds": 23.75,
+        "executed_input_tokens_including_padding": 24326,
+        "full_backbone_forward_calls": 222,
+        "full_backbone_forward_tokens": 21006,
+        "optimizer_or_lifecycle_update_steps": 74,
+        "padded_input_tokens": 3320,
+        "physical_adamw_steps_attempted": 9,
+        "physical_adamw_steps_completed": 9,
+        "reported_elapsed_seconds": 23.75,
+        "sampled_answer_tokens_including_first_eos": 64,
+        "sleep_events": 3,
+        "tail_backward_calls": 74,
+        "tail_backward_tokens": 1675,
+        "tail_calls": 232,
+        "wake_updates_observed": 64
+      },
+      "error": null,
+      "id": "natural-routing-sleep-failure-replay",
+      "notes": "Bounded deterministic replay isolated natural routing starvation: all 8 answer positions missed receiving slot 3; finite scalar loss had requires_grad=false. Embedded r1_failure_work is this replay's 64-wake prefix, not a second copy of the earlier R1 failure.",
+      "output_id": "clinc-v8-sparse-sleep-diagnostic-20261107-a",
+      "phase": "failure-diagnostic-replay",
+      "status": "failed-expected"
+    },
+    {
+      "artifact": {
+        "file": "failure.json",
+        "output_id": "clinc-v8-controlled-real3b-qualification-20261107-a",
+        "sha256": "dd06328c699271cc423dc327c2d3c072de685f147ffb3e9e782a02a98f36f87f"
+      },
+      "cost": {
+        "full_backbone_forward_calls": 0,
+        "physical_adamw_steps_completed": 0,
+        "reported_elapsed_seconds": 7.417032500030473
+      },
+      "error": "name 'load_module' is not defined",
+      "id": "controlled-real3b-qualification-a",
+      "notes": "Interface NameError before successful qualification; receipt explicitly records zero model forwards and zero AdamW calls.",
+      "output_id": "clinc-v8-controlled-real3b-qualification-20261107-a",
+      "phase": "engineering-qualification",
+      "status": "failed"
+    },
+    {
+      "artifact": {
+        "file": "check-result.json",
+        "output_id": "clinc-v8-controlled-real3b-qualification-20261107-b",
+        "sha256": "ec62a541e7bd74b9dba794b267ca25d480561612a157a0c36cf394b2119934c5"
+      },
+      "cost": {
+        "full_backbone_forward_calls": 24,
+        "logical_resume_updates": 8,
+        "physical_adamw_steps_completed": 8,
+        "reported_elapsed_seconds": 7.416081600124016
+      },
+      "error": null,
+      "id": "controlled-real3b-qualification-b",
+      "notes": "Controlled-route 3B resume qualification; 8 AdamW replay fixture steps, 24 forwards, exact state/RNG checks.",
+      "output_id": "clinc-v8-controlled-real3b-qualification-20261107-b",
+      "phase": "engineering-qualification",
+      "status": "complete"
+    },
+    {
+      "artifact": {
+        "file": "qualification-result.json",
+        "output_id": "clinc-v8-controlled-launch-qualification-20261107-b",
+        "sha256": "553506f941035da5ad4e17b9886f5f2a73103dd9303fc54818a08a8c10dd0f39"
+      },
+      "cost": {
+        "full_backbone_forward_calls": 0,
+        "gpu_initialized": false,
+        "model_loaded": false,
+        "physical_adamw_steps_completed": 0,
+        "reported_elapsed_seconds": 0.016
+      },
+      "error": null,
+      "id": "controlled-launch-sentinel",
+      "notes": "Startup/source/data binding reached; intentional stop before model load and GPU work. Failure JSON mirrors the zero-work qualification result and is not counted again.",
+      "output_id": "clinc-v8-controlled-launch-qualification-20261107-b",
+      "phase": "host-launch-qualification",
+      "status": "intentional-sentinel-stop"
+    },
+    {
+      "artifact": {
+        "file": "host-launch-failure.json",
+        "output_id": "clinc-v8-controlled-seed17-task1-20261107-r1",
+        "sha256": "d280a03bb42f4beb20ea3b3971d88661331d4ad6016b09026827f34d6ff0f4a9"
+      },
+      "cost": {
+        "full_backbone_forward_calls": 0,
+        "optimizer_or_lifecycle_update_steps": 0,
+        "physical_adamw_steps_completed": 0
+      },
+      "error": "local torch assignment shadows module at torch.manual_seed",
+      "id": "controlled-task1-launch-r1",
+      "notes": "Python local-name shadowing stopped startup before model load; zero forwards, AdamW calls, and wake updates are explicit in the receipt.",
+      "output_id": "clinc-v8-controlled-seed17-task1-20261107-r1",
+      "phase": "host-launch-failure",
+      "status": "failed"
+    },
+    {
+      "artifact": {
+        "file": "development-sealed.json",
+        "output_id": "clinc-v8-controlled-seed17-task1-20261107-r2",
+        "sha256": "63367bfc4b19420d0c6f17de7057804fbdfefba7825f27acb3b742d895dee75a"
+      },
+      "cost": {
+        "active_wall_seconds": 239.0930000001099,
+        "executed_input_tokens_including_padding": 636837,
+        "full_backbone_forward_calls": 3690,
+        "full_backbone_forward_tokens": 604293,
+        "optimizer_or_lifecycle_update_steps": 472,
+        "padded_input_tokens": 32544,
+        "reported_elapsed_seconds": 239.0930000001099,
+        "sampled_answer_tokens_including_first_eos": 261,
+        "sleep_events": 32,
+        "tail_backward_calls": 472,
+        "tail_backward_tokens": 9989,
+        "tail_calls": 3834
+      },
+      "error": null,
+      "id": "controlled-task1-r2",
+      "notes": "Seed-17 two-arm controlled route probe; shared paired task, 32 Sleep events across both arms. Counters are aggregate for the pair.",
+      "output_id": "clinc-v8-controlled-seed17-task1-20261107-r2",
+      "phase": "training-probe",
+      "status": "complete"
+    },
+    {
+      "artifact": {
+        "file": "failure.json",
+        "output_id": "clinc-v8-controlled-boundaries-20261107-a",
+        "sha256": "87a0429934f338077ad6e6929488025dff018cb224a1999d49ab99dd0df55379"
+      },
+      "cost": {
+        "active_wall_seconds": 22.436999999918044,
+        "executed_input_tokens_including_padding": 0,
+        "full_backbone_forward_calls": 0,
+        "full_backbone_forward_tokens": 0,
+        "optimizer_or_lifecycle_update_steps": 0,
+        "padded_input_tokens": 0,
+        "reported_elapsed_seconds": 22.436999999918044,
+        "sampled_answer_tokens_including_first_eos": 0,
+        "sleep_events": 0,
+        "tail_backward_calls": 0,
+        "tail_backward_tokens": 0,
+        "tail_calls": 0
+      },
+      "error": "'MutableContext' object has no attribute 'eval'",
+      "id": "controlled-boundary-a",
+      "notes": "Evaluator API error before any backbone forward; 22.437 seconds recorded.",
+      "output_id": "clinc-v8-controlled-boundaries-20261107-a",
+      "phase": "boundary-scorer-attempt",
+      "status": "failed"
+    },
+    {
+      "artifact": {
+        "file": "failure.json",
+        "output_id": "clinc-v8-controlled-boundaries-20261107-b",
+        "sha256": "b91a17736908437a2675da40bd9811a2f53eaf7b88197683eb137fe26b23303f"
+      },
+      "cost": {
+        "active_wall_seconds": 659.5779999999795,
+        "executed_input_tokens_including_padding": 993571,
+        "full_backbone_forward_calls": 10000,
+        "full_backbone_forward_tokens": 978011,
+        "optimizer_or_lifecycle_update_steps": 0,
+        "padded_input_tokens": 15560,
+        "reported_elapsed_seconds": 659.5779999999795,
+        "sampled_answer_tokens_including_first_eos": 0,
+        "sleep_events": 0,
+        "tail_backward_calls": 0,
+        "tail_backward_tokens": 0,
+        "tail_calls": 10000
+      },
+      "error": "full-backbone forward cap reached before next call",
+      "id": "controlled-boundary-b",
+      "notes": "Reached configured forward cap before finishing; output retains exactly 10,000 full-backbone forwards and 978,011 forward tokens. Not a completed score.",
+      "output_id": "clinc-v8-controlled-boundaries-20261107-b",
+      "phase": "boundary-scorer-attempt",
+      "status": "failed-budget-cap"
+    },
+    {
+      "artifact": {
+        "file": "evaluation.json",
+        "output_id": "clinc-v8-controlled-boundaries-20261107-c",
+        "sha256": "82e19829325ade68b2c7ca9ef375e91885f8a10b434bf75ec9b59d77fc619e4f"
+      },
+      "cost": {
+        "active_wall_seconds": 684.094000000041,
+        "executed_input_tokens_including_padding": 1027289,
+        "full_backbone_forward_calls": 10347,
+        "full_backbone_forward_tokens": 1010973,
+        "optimizer_or_lifecycle_update_steps": 0,
+        "padded_input_tokens": 16316,
+        "reported_elapsed_seconds": 684.094000000041,
+        "sampled_answer_tokens_including_first_eos": 0,
+        "sleep_events": 0,
+        "tail_backward_calls": 0,
+        "tail_backward_tokens": 0,
+        "tail_calls": 10347
+      },
+      "error": null,
+      "id": "controlled-boundary-c",
+      "notes": "Read-only boundary score completed with 10,347 full-backbone forwards; this observed count exceeds the earlier failed attempt's 10,000 cap. Zero wake and optimizer updates. Not an independent seed.",
+      "output_id": "clinc-v8-controlled-boundaries-20261107-c",
+      "phase": "boundary-scorer-attempt",
+      "status": "complete"
+    },
+    {
+      "artifact": {
+        "file": "qualification-result.json",
+        "output_id": "clinc-v8-transfer-startup-k1-20261107-a",
+        "sha256": "ac64f4864f540f719b2e3e367275bcca61263856d0ef1af815fac2deee68cda0"
+      },
+      "cost": {
+        "full_backbone_forward_calls": 0,
+        "model_loaded": false,
+        "physical_adamw_steps_completed": 0,
+        "reported_elapsed_seconds": 0.0
+      },
+      "error": null,
+      "id": "transfer-startup-k1",
+      "notes": "k=1 startup binding sentinel; zero model forward and optimizer work.",
+      "output_id": "clinc-v8-transfer-startup-k1-20261107-a",
+      "phase": "host-launch-qualification",
+      "status": "intentional-sentinel-stop"
+    },
+    {
+      "artifact": {
+        "file": "qualification-result.json",
+        "output_id": "clinc-v8-transfer-startup-k10-20261107-a",
+        "sha256": "48c153593ae0086c25e4f9a63bf528a7b891d445568bea56cbbfb1b64d7923ca"
+      },
+      "cost": {
+        "full_backbone_forward_calls": 0,
+        "model_loaded": false,
+        "physical_adamw_steps_completed": 0,
+        "reported_elapsed_seconds": 0.0
+      },
+      "error": null,
+      "id": "transfer-startup-k10",
+      "notes": "k=10 startup binding sentinel; zero model forward and optimizer work.",
+      "output_id": "clinc-v8-transfer-startup-k10-20261107-a",
+      "phase": "host-launch-qualification",
+      "status": "intentional-sentinel-stop"
+    },
+    {
+      "artifact": {
+        "file": "development-sealed.json",
+        "output_id": "clinc-v8-transfer-k1-corrected-20261107-a",
+        "sha256": "b077d4a439af7c4fcc46382ad947668fccf7b24d14f5ccb49ec27d3c411f57f5"
+      },
+      "cost": {
+        "active_wall_seconds": 434.8599999998696,
+        "executed_input_tokens_including_padding": 704510,
+        "full_backbone_forward_calls": 4084,
+        "full_backbone_forward_tokens": 669645,
+        "optimizer_or_lifecycle_update_steps": 472,
+        "padded_input_tokens": 34865,
+        "reported_elapsed_seconds": 434.8599999998696,
+        "sampled_answer_tokens_including_first_eos": 308,
+        "sleep_events": 32,
+        "tail_backward_calls": 472,
+        "tail_backward_tokens": 10021,
+        "tail_calls": 4228
+      },
+      "error": null,
+      "id": "transfer-k1-corrected",
+      "notes": "Corrected two-arm transfer probe, k=1, seed 17; 472 aggregate update-counter steps and 32 Sleep events across both arms.",
+      "output_id": "clinc-v8-transfer-k1-corrected-20261107-a",
+      "phase": "training-probe",
+      "status": "complete"
+    },
+    {
+      "artifact": {
+        "file": "development-sealed.json",
+        "output_id": "clinc-v8-transfer-k10-corrected-20261107-a",
+        "sha256": "4bbaa15ae8039012b92f8c0963acdecb3cc9db3003b14edb92506eef1565fa9f"
+      },
+      "cost": {
+        "active_wall_seconds": 573.280999999959,
+        "executed_input_tokens_including_padding": 767938,
+        "full_backbone_forward_calls": 6734,
+        "full_backbone_forward_tokens": 733719,
+        "optimizer_or_lifecycle_update_steps": 1336,
+        "padded_input_tokens": 34219,
+        "reported_elapsed_seconds": 573.280999999959,
+        "sampled_answer_tokens_including_first_eos": 2094,
+        "sleep_events": 32,
+        "tail_backward_calls": 1336,
+        "tail_backward_tokens": 13029,
+        "tail_calls": 8174
+      },
+      "error": null,
+      "id": "transfer-k10-corrected",
+      "notes": "Corrected two-arm transfer probe, k=10, seed 17; 1,336 aggregate update-counter steps and 32 Sleep events across both arms.",
+      "output_id": "clinc-v8-transfer-k10-corrected-20261107-a",
+      "phase": "training-probe",
+      "status": "complete"
+    },
+    {
+      "arm": "HOPE",
+      "cost": {
+        "active_wall_seconds": 601.313000000082,
+        "adamw_step_attempts_this_process": 0,
+        "adamw_step_completions_this_process": 0,
+        "executed_input_tokens_including_padding": 2539781,
+        "full_backbone_forward_calls": 12178,
+        "full_backbone_forward_tokens": 2416389,
+        "optimizer_or_lifecycle_update_steps": 1692,
+        "padded_input_tokens": 123392,
+        "physical_sleep_adamw_steps": 0,
+        "physical_wake_updates_including_shared_foundation": 1880,
+        "reported_elapsed_seconds": 601.313000000082,
+        "sampled_answer_tokens_including_first_eos": 0,
+        "sleep_events": 0,
+        "tail_backward_calls": 1692,
+        "tail_backward_tokens": 44000,
+        "tail_calls": 12178,
+        "tasks_completed": 10
+      },
+      "id": "full-grid-seed17-HOPE",
+      "latest_observed": {
+        "global_wake_tick": 1880,
+        "last_queue_event": "child_end",
+        "last_queue_utc": "2026-11-07T08:01:08.636429+00:00",
+        "task_id": 9,
+        "task_step": 188,
+        "tasks_cleanly_ended": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "tasks_started": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "wake_updates_seen": 1692
+      },
+      "metrics_artifact": {
+        "file": "runs/seed17/HOPE/metrics.jsonl",
+        "sha256": "f715de79ce8b78eeca66b5b82285ef70945dd3d1e49b8ae067131a579b37b5e3"
+      },
+      "notes": "Run receipt is canonical for this arm. Its physical_wake_updates includes the shared foundation; work.optimizer_or_lifecycle_update_steps is the run's own per-process continuation counter. Foundation receipt is listed separately and must not be re-added.",
+      "output_id": "clinc-v8-full-k10-20261107-a",
+      "phase": "full-grid-continuation",
+      "protocol_config_sha256": null,
+      "receipt_artifact": {
+        "file": "runs/seed17/HOPE/run-receipt.json",
+        "sha256": "2f2353ff2e8dec9ff68de2b017471d08b538a9185e445dda6ec387c8a88175a3"
+      },
+      "seed": 17,
+      "status": "complete"
+    },
+    {
+      "arm": "HOPE_SLEEP_FIXEDMIX",
+      "cost": {
+        "full_backbone_forward_calls": null,
+        "optimizer_or_lifecycle_update_steps": 212,
+        "physical_adamw_calls": null,
+        "reported_elapsed_seconds": null,
+        "sleep_events": null,
+        "wake_update_events_observed": 212
+      },
+      "id": "full-grid-seed17-HOPE_SLEEP_FIXEDMIX",
+      "latest_observed": {
+        "global_wake_tick": 400,
+        "last_queue_event": "child_start",
+        "last_queue_utc": "2026-11-07T08:01:08.642544+00:00",
+        "task_id": 2,
+        "task_step": 24,
+        "tasks_cleanly_ended": [
+          1
+        ],
+        "tasks_started": [
+          1,
+          2
+        ],
+        "wake_updates_seen": 212
+      },
+      "metrics_artifact": {
+        "file": "runs/seed17/HOPE_SLEEP_FIXEDMIX/metrics.jsonl",
+        "sha256": "b8420f5a471a14d5a7c79ccfd6b8fba65d609afaa9721798702608ca162d42f4"
+      },
+      "notes": "No terminal run receipt yet. Wake-update event count is observed so far; missing forward/Adam/Sleep/wall totals remain unknown, not zero.",
+      "output_id": "clinc-v8-full-k10-20261107-a",
+      "phase": "full-grid-continuation",
+      "protocol_config_sha256": null,
+      "receipt_artifact": null,
+      "seed": 17,
+      "status": "in_progress"
+    }
+  ],
+  "known_results": {
+    "controlled_boundary_readonly": {
+      "optimizer_steps": 0,
+      "paired_event_count": 32,
+      "status": "completed_read_only_score",
+      "wake_updates": 0
+    },
+    "invalid_original_r1_task0_metric": {
+      "accuracy": 0.03333333333333333,
+      "replacement_score_scope": "300-row clean task-0 development subset, seen 15 classes",
+      "replacement_valid_score": 0.7233333333333334,
+      "rescore_attempts": 3,
+      "status": "invalid_row_length_alignment"
+    },
+    "natural_routing_failure": {
+      "answer_tokens": 8,
+      "loss_finite": true,
+      "loss_requires_grad": false,
+      "physical_adamw_steps_completed": 9,
+      "receiver_answer_coverage": 0.0,
+      "status": "guard_failure_reproduced"
+    }
+  },
+  "limitations": [
+    "The ledger is an as-of snapshot; in-progress full-grid counters can advance after generation.",
+    "Failure replay and engineering qualification costs are reported separately from main scientific runs.",
+    "No evaluation/test result is inferred from missing, partial, or failed artifacts.",
+    "The full-run receipt's sleep_text_replay availability flag is not treated as actual exposure; actual arm losses and Sleep events govern accounting. HOPE has no replay-loss exposure where no Sleep commit occurred."
+  ],
+  "schema": "clinc-v8-attempt-cost-ledger-v1",
+  "scope": "V8 CLINC development, engineering, correction, and current full-grid execution attempts through the as-of time",
+  "shared_starting_assets": {
+    "foundations": [
+      {
+        "artifact": {
+          "file": "foundations/seed17/foundation-receipt.json",
+          "sha256": "1de235bfb154d66282d8b52e3dc67197d8f4479e293345c169e354f8a75de16c"
+        },
+        "qualification": null,
+        "receipt_elapsed_seconds": 30.312000000150874,
+        "seed": 17,
+        "status": "complete",
+        "work": {
+          "active_wall_seconds": 30.265000000130385,
+          "executed_input_tokens_including_padding": 85257,
+          "full_backbone_forward_calls": 400,
+          "full_backbone_forward_tokens": 73599,
+          "optimizer_or_lifecycle_update_steps": 188,
+          "padded_input_tokens": 11658,
+          "sampled_answer_tokens_including_first_eos": 0,
+          "sleep_events": 0,
+          "tail_backward_calls": 188,
+          "tail_backward_tokens": 4700,
+          "tail_calls": 400
+        }
+      },
+      {
+        "artifact": {
+          "file": "foundations/seed29/foundation-receipt.json",
+          "sha256": "642bd986a845b6256e30f9b44edc06d942307d851a1b7bb6cbf8975abe9449a9"
+        },
+        "qualification": null,
+        "receipt_elapsed_seconds": 28.780999999959022,
+        "seed": 29,
+        "status": "complete",
+        "work": {
+          "active_wall_seconds": 28.734000000171363,
+          "executed_input_tokens_including_padding": 76548,
+          "full_backbone_forward_calls": 361,
+          "full_backbone_forward_tokens": 67958,
+          "optimizer_or_lifecycle_update_steps": 188,
+          "padded_input_tokens": 8590,
+          "sampled_answer_tokens_including_first_eos": 0,
+          "sleep_events": 0,
+          "tail_backward_calls": 188,
+          "tail_backward_tokens": 4800,
+          "tail_calls": 361
+        }
+      },
+      {
+        "artifact": {
+          "file": "foundations/seed43/foundation-receipt.json",
+          "sha256": "e7f25b8ccbaa2d3623223706a78929fd507f34ba1ed2e6d7a3f2243345f41b5b"
+        },
+        "qualification": null,
+        "receipt_elapsed_seconds": 30.686999999918044,
+        "seed": 43,
+        "status": "complete",
+        "work": {
+          "active_wall_seconds": 30.640000000130385,
+          "executed_input_tokens_including_padding": 84606,
+          "full_backbone_forward_calls": 389,
+          "full_backbone_forward_tokens": 75569,
+          "optimizer_or_lifecycle_update_steps": 188,
+          "padded_input_tokens": 9037,
+          "sampled_answer_tokens_including_first_eos": 0,
+          "sleep_events": 0,
+          "tail_backward_calls": 188,
+          "tail_backward_tokens": 5200,
+          "tail_calls": 389
+        }
+      }
+    ],
+    "notes": "Each seed's task-0 foundation is a shared starting checkpoint and is counted once, not once per future arm.",
+    "output_id": "clinc-v8-full-k10-20261107-a",
+    "unique_shared_foundation_work_total": {
+      "active_wall_seconds": 89.63900000043213,
+      "executed_input_tokens_including_padding": 246411,
+      "full_backbone_forward_calls": 1150,
+      "full_backbone_forward_tokens": 217126,
+      "optimizer_or_lifecycle_update_steps": 564,
+      "padded_input_tokens": 29285,
+      "sampled_answer_tokens_including_first_eos": 0,
+      "sleep_events": 0,
+      "tail_backward_calls": 564,
+      "tail_backward_tokens": 14700,
+      "tail_calls": 1150
+    }
+  },
+  "source_policy": "Explicit JSON/JSONL metadata receipts only; no model checkpoints, test files, dataset text, prompts, predictions, or token arrays read.",
+  "source_root_label": "Nested_Learning_and_Sleep/outputs"
+}

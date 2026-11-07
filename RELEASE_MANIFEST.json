@@ -8,13 +8,13 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 422,
+  "file_count_excluding_manifests": 506,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
       "path": ".gitattributes",
-      "sha256": "dcd643b4c003225160d75b85613a953c3ffcab30f032e2b932fd38a3c87e1a6b",
-      "bytes": 417
+      "sha256": "45b58daffdbff366d07459854911bfe6d2f7c89a029a34e6220694c4c850b0f4",
+      "bytes": 10621
     },
     {
       "path": ".github/ISSUE_TEMPLATE/reproduction.md",
@@ -53,13 +53,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "96f15103239452a7ba65757626dd1fc3895b65e76d250ff1f109ed4b0022a3ed",
-      "bytes": 9794
+      "sha256": "e6f5d4971c5be296bbd838b2a54f902f895d71b2c02fdc65ec7827fabd0f2c27",
+      "bytes": 10672
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "7b8110f8502b43443bb4bb6b2240437681b897606df5d18d52dd2ffc22913484",
-      "bytes": 6771
+      "sha256": "dd000022602940115fc0c70645cd8ce065bee18bac3eb4ed39c0bf06f33fc12d",
+      "bytes": 7570
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -67,9 +67,44 @@
       "bytes": 2030
     },
     {
+      "path": "checks/check_clinc_controlled_real3b_v8.py",
+      "sha256": "b7e65e446ebf32f0f8556c1b55438d89881d06124700dd5da990175eeb9013a0",
+      "bytes": 27786
+    },
+    {
+      "path": "checks/check_clinc_full_startup_v8.py",
+      "sha256": "e3fec53f7e9b75574afb4afbef42e3adc67a3d5626e87dd0630c6061e79d499b",
+      "bytes": 2504
+    },
+    {
+      "path": "checks/check_clinc_lifecycle_resume_v8.py",
+      "sha256": "6fed0ce6580413bb09a7cf872d284b21ee7f5eb70a88847c6bbd39a1705a33a1",
+      "bytes": 7290
+    },
+    {
+      "path": "checks/check_clinc_real3b_resume_v8.py",
+      "sha256": "693ef48d7dce8b33cd69f9dcb68b8f6def0eadc65e012c5ba2d3e4a32159a065",
+      "bytes": 32506
+    },
+    {
+      "path": "checks/check_clinc_real3b_v8.py",
+      "sha256": "8b795ec0d96ef4e04dfac4e695fab8b3d76a9fd2b47ce690274ae3f9714e2f75",
+      "bytes": 15733
+    },
+    {
       "path": "checks/check_wake_stress_v7.py",
       "sha256": "de1e2ccc3e1c8def908762c5d44849539acc4c3d1ec9eafb0dda8f09241a1a59",
       "bytes": 2700
+    },
+    {
+      "path": "checks/compare_clinc_gold_control_v8_public.py",
+      "sha256": "38b8fe0ede0181c5f46f5bcac060c17c355ddaeea3e3901ac1a26784c44d265c",
+      "bytes": 4083
+    },
+    {
+      "path": "checks/freeze_clinc_controlled_probe_v8.py",
+      "sha256": "6ae957c317d387027cae0fb972bd494f9a1168f9d84267ce68f0f5475f5e37ce",
+      "bytes": 2786
     },
     {
       "path": "configs/agnews-acquisition-diagnostic-v3.json",
@@ -120,6 +155,46 @@
       "path": "configs/agnews-single-receiver-v7-r2.json",
       "sha256": "3c91b940ce84672cc17ab65febc30236caad09f9708f0a0e8491738e0c16b7f9",
       "bytes": 5948
+    },
+    {
+      "path": "configs/clinc_cil_v8_controlled_probe_seed17.json",
+      "sha256": "fecce61199cb2bdf7530f1a3fe7b0e468079c3e41e2b480b12452ba3868f7aed",
+      "bytes": 2918
+    },
+    {
+      "path": "configs/clinc_cil_v8_controlled_transfer_k10_seed17.json",
+      "sha256": "37931ac2b5dd3606db3f0ca709b7831cfb8f125e365171b6c06c24c15e57883c",
+      "bytes": 3017
+    },
+    {
+      "path": "configs/clinc_cil_v8_controlled_transfer_k1_seed17.json",
+      "sha256": "5fd616034b72aeadb1e13d6049f4c94b527f6acae46f48290abe60a0fd83c1dd",
+      "bytes": 3011
+    },
+    {
+      "path": "configs/clinc_cil_v8_development_pilot.json",
+      "sha256": "78cd34387c52d30fe5a8eba12ff5fe281c7d9373a711f837cc055cfb99f5fd90",
+      "bytes": 1535
+    },
+    {
+      "path": "configs/clinc_cil_v8_development_seed17_locked.json",
+      "sha256": "6fceaae50632df7e6a551969da2f6d400da3e9651012fe97624e56e03a864f01",
+      "bytes": 1641
+    },
+    {
+      "path": "configs/clinc_cil_v8_development_seed17_seen_replay.json",
+      "sha256": "cf70e64dd0ae0d2c25f20b29f301a88420eb1a26ae1ceffd1788491490db4aef",
+      "bytes": 2829
+    },
+    {
+      "path": "configs/clinc_cil_v8_full_master_frozen_k10.json",
+      "sha256": "ec8a9bfadde15a6b0bed202f1ad5eb621805e50b92151a6747827c0f177bc32f",
+      "bytes": 3145
+    },
+    {
+      "path": "configs/clinc_cil_v8_hope_task1_resume_r2.json",
+      "sha256": "08cbb7c3e5168102fda39b9ce61db9f5ab4177a4ec2b903a5a5650045581fe9a",
+      "bytes": 2620
     },
     {
       "path": "configs/historical_protocols.json",
@@ -190,6 +265,16 @@
       "path": "docs/agnews-v3-qualification-plan.md",
       "sha256": "182b579365d07d3e2afd88204377e383e57b67dc1863c32f32e6636dfbd8893c",
       "bytes": 1865
+    },
+    {
+      "path": "docs/clinc-cil-v8-protocol.md",
+      "sha256": "5340e27e6f2b3ea9bb78571091db02a315892ba44b9ac683b3bde6aa609bb947",
+      "bytes": 9792
+    },
+    {
+      "path": "docs/clinc-v8-reproduction.md",
+      "sha256": "b46019a69db1028071e827841cee55ba7532ec2a9e0c53c5b003caeea742a273",
+      "bytes": 5869
     },
     {
       "path": "docs/limitations.md",
@@ -302,6 +387,11 @@
       "bytes": 12018
     },
     {
+      "path": "reports/clinc150-lifecycle-v8-development.md",
+      "sha256": "3a33d593381436bbdb76fb777fede437c9726a5ce279c356b98d049342f624a3",
+      "bytes": 14501
+    },
+    {
       "path": "reports/local_acceptance.md",
       "sha256": "bed243c61ccea200cfd10d2b05d19acee1d47c7f4d067f010bb84f170b22886e",
       "bytes": 2078
@@ -320,6 +410,11 @@
       "path": "reports/technical_report.md",
       "sha256": "34ece97fd29ad4e2f834ff3b7cb5bd790643982cecfa74bc00480c85c02ceb14",
       "bytes": 5124
+    },
+    {
+      "path": "requirements/clinc-v8-observed.txt",
+      "sha256": "2a33e94a34a03087eca0ac6a4ae11a69cbf6aec0adc47a1ce5d502b2596cc2e7",
+      "bytes": 374
     },
     {
       "path": "requirements/cpu-acceptance-lock.txt",
@@ -1392,6 +1487,116 @@
       "bytes": 12835
     },
     {
+      "path": "results/clinc-v8-development/README.md",
+      "sha256": "6acdac839673aea435196486ecd8ef16b84bce8c1f3c230062d2e1189792b515",
+      "bytes": 1493
+    },
+    {
+      "path": "results/clinc-v8-development/acquisition-summary.json",
+      "sha256": "c772cbec054202b0384c7b7e21454dc7aed9f5f1a99e7d27e3d359ab0e542f27",
+      "bytes": 796
+    },
+    {
+      "path": "results/clinc-v8-development/controlled-boundary-analysis.json",
+      "sha256": "0a301ec386338ca4e893948287577046b1293689dadb3e4f87128219032e411f",
+      "bytes": 21397
+    },
+    {
+      "path": "results/clinc-v8-development/controlled-probe-analysis.json",
+      "sha256": "f1ec0a2a0322100f4dcea8dd65094afdc66ed4cac87c47eae14e85855b9d2bde",
+      "bytes": 19036
+    },
+    {
+      "path": "results/clinc-v8-development/costs/attempt-cost-ledger-20261107T080419Z.json",
+      "sha256": "2a278269b81a32ac87786c4632eac236f9e39fc09b9e28cfeabac009debe9782",
+      "bytes": 31860
+    },
+    {
+      "path": "results/clinc-v8-development/costs/controlled-probe-covered-work.json",
+      "sha256": "242be32f1b704ae6c6f99ccee58e06ea89cd941c99ac2b8e24fead5541e2b12e",
+      "bytes": 3980
+    },
+    {
+      "path": "results/clinc-v8-development/costs/hope-task1-r2-covered-work.json",
+      "sha256": "c75fa1270298feed24ab545500f7b234f151905ee3ed85dd22e594d6f4b9f9f8",
+      "bytes": 3152
+    },
+    {
+      "path": "results/clinc-v8-development/costs/transfer-k1-covered-work.json",
+      "sha256": "a0d66b7b4b9886bcfd2a302a3ebcb3ea0382680e32f301a3c2e25bd783f8bf7a",
+      "bytes": 3975
+    },
+    {
+      "path": "results/clinc-v8-development/costs/transfer-k10-covered-work.json",
+      "sha256": "6478a3bfe6a866397f075f59985cacf7e82f02931719ae462aa5ff3f6ce59122",
+      "bytes": 3974
+    },
+    {
+      "path": "results/clinc-v8-development/development-summary.json",
+      "sha256": "a26a8c271c6d816eeebcbe3aef6e84c86eb7f6e0af50e4c86b5ccb7f3d6b56e0",
+      "bytes": 36433
+    },
+    {
+      "path": "results/clinc-v8-development/protocol/full-protocol-pretraining-freeze.json",
+      "sha256": "541f00120efcc01133402da954d674e5dd677895d04029930b7996a48b63a484",
+      "bytes": 2671
+    },
+    {
+      "path": "results/clinc-v8-development/public-capture.json",
+      "sha256": "7f81d3ea1e1791919f0ed9b170cb0639495dbe2f3fd69772b32cf32d030c0557",
+      "bytes": 32962
+    },
+    {
+      "path": "results/clinc-v8-development/qualifications/controlled-resume.json",
+      "sha256": "03f08b77b2d89975353960690e3d6cf3319c90241ec20d0cd891a9619c39d61b",
+      "bytes": 3319
+    },
+    {
+      "path": "results/clinc-v8-development/qualifications/gold-control-equivalence.json",
+      "sha256": "00b511079bd72e9d669a929b6d8348f76e41c23c4e33920c91c1862bcdcd71c4",
+      "bytes": 1832
+    },
+    {
+      "path": "results/clinc-v8-development/qualifications/host-startup.json",
+      "sha256": "9ddfe38f2f47e1cae7fe9789e6c8309634fe2201abdb01c661babe250dca8ff8",
+      "bytes": 1020
+    },
+    {
+      "path": "results/clinc-v8-development/qualifications/tail-parity.json",
+      "sha256": "abf909a25916fa57004ab5f2f2b0bb8e84f4725a8132cb199a6abc0f04ff07c2",
+      "bytes": 3914
+    },
+    {
+      "path": "results/clinc-v8-development/release-validation.json",
+      "sha256": "9ddfe23b6e7428f440b877ab50cb157adb1c195b727ca9ffaf4cd8aed4d45040",
+      "bytes": 1265
+    },
+    {
+      "path": "results/clinc-v8-development/transfer-budget-analysis.json",
+      "sha256": "94abd80218506512733c1c3d7e3b6d00c2470023bd624b4900a6d83f7139a9ab",
+      "bytes": 161995
+    },
+    {
+      "path": "results/figures/clinc-v8-corrected-transfer-budgets.png",
+      "sha256": "786c65097898b6ab3e5bd04a629c3cfca3631ac10e4fbb9602f5e2b9a95c5414",
+      "bytes": 145314
+    },
+    {
+      "path": "results/figures/clinc-v8-corrected-transfer-budgets.svg",
+      "sha256": "1a3b229bfe7ec752457ae2d209f8f589a058d03c61bb60b852f9a7f001880cdf",
+      "bytes": 38885
+    },
+    {
+      "path": "results/figures/clinc-v8-development-endpoints.png",
+      "sha256": "0aec1fe2350274d56c69106145538f6ad3722f7763be05fb4abd2ecc8a520b22",
+      "bytes": 118507
+    },
+    {
+      "path": "results/figures/clinc-v8-development-endpoints.svg",
+      "sha256": "8c36a49b264a6302a81964b33ec8eb64dcf62391558c575c9e8f1b77c36668e5",
+      "bytes": 75008
+    },
+    {
       "path": "results/historical_summary.md",
       "sha256": "7360bb034c5d517149b3c8a26c8ec1b7195a536daf7d258ca6807dd51183a586",
       "bytes": 1208
@@ -1587,6 +1792,11 @@
       "bytes": 1959
     },
     {
+      "path": "tests/test_acquire_clinc_v8_cpu.py",
+      "sha256": "433c5db9c4b9a089b1e675c26c9d2072d0f757469a2b0339d84aa9a3404b0c17",
+      "bytes": 3162
+    },
+    {
       "path": "tests/test_agnews_acquisition_diagnostic_v3_cpu.py",
       "sha256": "ea9836203fe6d654c7b2e8c7e54aec8072646878c016597b7ae1bfea5296f659",
       "bytes": 2347
@@ -1682,6 +1892,76 @@
       "bytes": 2411
     },
     {
+      "path": "tests/test_clinc_cil_common_v8_cpu.py",
+      "sha256": "e24c6d3e51f7bc5d3b91b4226080935f3556ef0b7e5e65ef14ed384103fe1be2",
+      "bytes": 9096
+    },
+    {
+      "path": "tests/test_clinc_cil_v8_driver_cpu.py",
+      "sha256": "908f9e1fcea582f8427dd6ceef01123c0dc83e81a600a7a516ee11b3e78750b5",
+      "bytes": 4922
+    },
+    {
+      "path": "tests/test_clinc_cil_v8_full_cpu.py",
+      "sha256": "e8ed2009856c4ee84f343cc8c3cb86c96311e777b8a6cfb97cf661e88a51fa18",
+      "bytes": 15192
+    },
+    {
+      "path": "tests/test_clinc_controlled_boundaries_v8_cpu.py",
+      "sha256": "5b1070b4d7439755420f6730e3322ba5a66cd03e5ec6e8aba380fbb8cdaece8a",
+      "bytes": 7884
+    },
+    {
+      "path": "tests/test_clinc_controlled_probe_v8_cpu.py",
+      "sha256": "fa40307c902b27a5b308cb1bb888870f13ef1907db433c6d06445b0a47624c70",
+      "bytes": 9012
+    },
+    {
+      "path": "tests/test_clinc_controlled_routing_v8_cpu.py",
+      "sha256": "01ebb272ea5f626786c739c18931475b22b034d7813e96a5b114020c554e1c8f",
+      "bytes": 4915
+    },
+    {
+      "path": "tests/test_clinc_controlled_transfer_v8_cpu.py",
+      "sha256": "d79d9e695abf2c0e2bdfc17eddd95bf08f4a5127e4332eff5e2ed486176f9d45",
+      "bytes": 5821
+    },
+    {
+      "path": "tests/test_clinc_eval_alignment_v8_cpu.py",
+      "sha256": "68e82acd3e1e73a2a73e2596aafc2f5cc0a9a07cce80bd9c9c17dabac30ec59e",
+      "bytes": 3470
+    },
+    {
+      "path": "tests/test_clinc_lifecycle_v8_cpu.py",
+      "sha256": "ef6b3170d0a814f49fd7b540bca33747a317bf6f9e13540e518dd8d4ed68353e",
+      "bytes": 8916
+    },
+    {
+      "path": "tests/test_clinc_nested_capacity_v8_cpu.py",
+      "sha256": "3b18850132c999de2fd72a675845ef75e26b30f7a8d93577e57bc93d1a64c0e9",
+      "bytes": 2356
+    },
+    {
+      "path": "tests/test_clinc_resume_v8_cpu.py",
+      "sha256": "8a8a77f88498ba8c02ad2bcbf84b7072507c844af0f21c6a481e473a93d32506",
+      "bytes": 11835
+    },
+    {
+      "path": "tests/test_clinc_tail_runtime_v8_cpu.py",
+      "sha256": "e44533be0a63c81cf9c28f754c6d154c612e857bc697256d986ca91d31f59730",
+      "bytes": 14237
+    },
+    {
+      "path": "tests/test_clinc_v8_public_bundle_validator_cpu.py",
+      "sha256": "d68dcabc3dba2fc2bd7df41be6cc517cfe9c282084b34210b2a62c7a7334e8b2",
+      "bytes": 3354
+    },
+    {
+      "path": "tests/test_estimate_clinc_v8_work_cpu.py",
+      "sha256": "eb4115610801701ccb970bf63d4d0004fc395f2d7e96b538802e380a617e621b",
+      "bytes": 2897
+    },
+    {
       "path": "tests/test_late_context_router_v6_cpu.py",
       "sha256": "4339a904d267ecedecc563bb90a5e710a6454fe5c18a6f0220e7284c6a6592c1",
       "bytes": 24174
@@ -1767,6 +2047,26 @@
       "bytes": 3732
     },
     {
+      "path": "tests/test_summarize_clinc_v8_controlled_boundaries_cpu.py",
+      "sha256": "d905a6bb93f175fbe3af58f0c8269cddf165693c146bdb2882e933f522ad41a4",
+      "bytes": 2442
+    },
+    {
+      "path": "tests/test_summarize_clinc_v8_controlled_probe_cpu.py",
+      "sha256": "abe19297f519d3c0dc6f33f49a046cb3d88f3d83e6d63acb2e090f4a007f53c1",
+      "bytes": 3859
+    },
+    {
+      "path": "tests/test_summarize_clinc_v8_development_cpu.py",
+      "sha256": "b428a90cfec245e37dd0921481adddb8499cce90616ae04b00c99a1aa9501285",
+      "bytes": 3025
+    },
+    {
+      "path": "tests/test_summarize_clinc_v8_transfer_budgets_cpu.py",
+      "sha256": "62c4e043758d36b36912d77d5ba5fe07990ee156cde2702a8fc3acea93aeaed6",
+      "bytes": 5866
+    },
+    {
       "path": "tests/test_verify_agnews_routing_fairness_v6_release_cpu.py",
       "sha256": "e10b433298cd0c04787ad5ce9118284b6a759a402a1eada6a2156560d142c706",
       "bytes": 2934
@@ -1780,6 +2080,11 @@
       "path": "tools/acquire_agnews.py",
       "sha256": "df71376ae93ad51ceff6000b46758b47d60f7d7fa24e416ca1bed5ce5735cd86",
       "bytes": 4343
+    },
+    {
+      "path": "tools/acquire_clinc_v8.py",
+      "sha256": "878adc25ca62c215f83ebfd02248828c56be6bad3f2359d2346fdb4f0e738362",
+      "bytes": 7175
     },
     {
       "path": "tools/agnews_anchored_wake_v5.py",
@@ -1817,6 +2122,26 @@
       "bytes": 4895
     },
     {
+      "path": "tools/clinc_cil_common_v8.py",
+      "sha256": "7dbc2f84df1921d3de1dd390bde2acf2e94cae027316089b01fa3d5d1125f135",
+      "bytes": 18043
+    },
+    {
+      "path": "tools/clinc_controlled_routing_v8.py",
+      "sha256": "37f240530d96e5e0525d9b0fd6d67b5eaba37720d7b170479a3181eeee107562",
+      "bytes": 9360
+    },
+    {
+      "path": "tools/clinc_lifecycle_v8.py",
+      "sha256": "3e270a6df0359f495fc09d5aaf4fd6e108f37c36da41373b70fc16a26fca14a2",
+      "bytes": 21211
+    },
+    {
+      "path": "tools/clinc_tail_runtime_v8.py",
+      "sha256": "057de386734ff128d1fb0147dd83b1c14009cc36d8ed7c77740cbb497ee6f6d9",
+      "bytes": 19811
+    },
+    {
       "path": "tools/complete_agnews_evaluation_v2.py",
       "sha256": "46cb5bb77fa51602ce4881f650033d96f6fc617c9fe453f1d66ff07932dbc718",
       "bytes": 3820
@@ -1837,6 +2162,16 @@
       "bytes": 15349
     },
     {
+      "path": "tools/diagnose_clinc_sparse_sleep_v8.py",
+      "sha256": "7c2132ff91ad14b8f129041d8cd8a789a78385c149ace7c546a81e4c37ce66ba",
+      "bytes": 15028
+    },
+    {
+      "path": "tools/estimate_clinc_v8_work.py",
+      "sha256": "72f404ee2d58edb5a005c5322aa8618b66191d07a4975fbfbd697ca726ad0e88",
+      "bytes": 7361
+    },
+    {
       "path": "tools/evaluate_agnews_qualified_v3.py",
       "sha256": "96530f10b4331f59ae9a0a85608f07c75e8d5732257c72739136ecf07e077f41",
       "bytes": 5900
@@ -1852,6 +2187,16 @@
       "bytes": 21258
     },
     {
+      "path": "tools/evaluate_clinc_checkpoints_v8.py",
+      "sha256": "eb4996e33dd58cfafd737dacb10b0fcb7e7edb8e2221f46352302794e8c2388e",
+      "bytes": 23330
+    },
+    {
+      "path": "tools/evaluate_clinc_controlled_boundaries_v8.py",
+      "sha256": "c670a365492afbd177ef9a161d570a5065d851b2ad028e8877bb76cd1a5cb9a5",
+      "bytes": 37057
+    },
+    {
       "path": "tools/late_context_router_v6.py",
       "sha256": "fa549672ed143d161930699de8a22e6cbe99404ae9f7b00ac30f75b1ed53d76d",
       "bytes": 26017
@@ -1865,6 +2210,16 @@
       "path": "tools/native_retention.py",
       "sha256": "e6a7eaff0a5a21ad523f486c85cdb427cf571daea69a5a69907263266874a0b3",
       "bytes": 13369
+    },
+    {
+      "path": "tools/plot_clinc_v8_corrected_transfer_budgets.py",
+      "sha256": "5f229129306e78e37d076a0b654c09648e0e775edd83e5864cef43bb8800e992",
+      "bytes": 7212
+    },
+    {
+      "path": "tools/plot_clinc_v8_development.py",
+      "sha256": "6895a5da5c8b532c81f375afd913c9c767338b106126d386af2d2ebbd3c728c4",
+      "bytes": 3473
     },
     {
       "path": "tools/prepare_agnews_records.py",
@@ -2012,6 +2367,36 @@
       "bytes": 7759
     },
     {
+      "path": "tools/run_clinc_cil_v8.py",
+      "sha256": "05b0b979667906602ae526b5a393427efa3a1458facf405470e0dd385e7343e5",
+      "bytes": 63116
+    },
+    {
+      "path": "tools/run_clinc_cil_v8_full.py",
+      "sha256": "b056ca44597cc04e042ed7ccf82361cff54001320ed017db8b0eb7c5d58e4193",
+      "bytes": 90700
+    },
+    {
+      "path": "tools/run_clinc_cil_v8_r2.py",
+      "sha256": "71fb703d83ff23cfc8d9e27be2fa5cd119510c7aa350837bd927c5c037b64fb3",
+      "bytes": 81156
+    },
+    {
+      "path": "tools/run_clinc_controlled_probe_v8.py",
+      "sha256": "693f0edf7352c3e874613dd128ca4398035d5064d4a606c440e526ddb386151d",
+      "bytes": 53879
+    },
+    {
+      "path": "tools/run_clinc_controlled_transfer_v8.py",
+      "sha256": "9a82794478e875c50895eb400be074810f26895791368ac053016190947d869d",
+      "bytes": 60491
+    },
+    {
+      "path": "tools/run_clinc_v8_full_queue.py",
+      "sha256": "ba7321eef8d61baedae443389edf64a1dd6c53f608910594d2861c0df4b70c35",
+      "bytes": 5546
+    },
+    {
       "path": "tools/run_wikitext2_lm_pilot.py",
       "sha256": "393ce1a66688d1215a47ba554bd272f70971306899b09eb8722406897347b335",
       "bytes": 34439
@@ -2025,6 +2410,11 @@
       "path": "tools/single_receiver_probes_v7.py",
       "sha256": "f4de267989e1b019bdc6303c734017c2de2ffc55749d9e91f50287663fd9d8f2",
       "bytes": 3384
+    },
+    {
+      "path": "tools/status_clinc_v8_full.py",
+      "sha256": "5d9b1403e772fa5f6984bf0253d65945cae2e178c74b6e1fb1002e2220780ac5",
+      "bytes": 3011
     },
     {
       "path": "tools/stress_agnews_single_receiver_v7.py",
@@ -2087,6 +2477,31 @@
       "bytes": 13685
     },
     {
+      "path": "tools/summarize_clinc_v8_attempts.py",
+      "sha256": "908eae6c81b7c9da2b6d82e4edddd90ea40750d32adf3ff0371ea24867eaa027",
+      "bytes": 22527
+    },
+    {
+      "path": "tools/summarize_clinc_v8_controlled_boundaries.py",
+      "sha256": "f0aa2a37eb7a35d61eb2767ae62db6d7af141a607218c14b31b26c7ca6d2cd48",
+      "bytes": 5910
+    },
+    {
+      "path": "tools/summarize_clinc_v8_controlled_probe.py",
+      "sha256": "7eee5d026ca6528711a15658760d75a423de9d14fe8dc30bd85b0d14d258f897",
+      "bytes": 9086
+    },
+    {
+      "path": "tools/summarize_clinc_v8_development.py",
+      "sha256": "7edf14b2dac598c520112e86d1a4e018d90a9e0f5238bc18e8ab20cb2ea79722",
+      "bytes": 7131
+    },
+    {
+      "path": "tools/summarize_clinc_v8_transfer_budgets.py",
+      "sha256": "9510c32be42a74d8ccfa7e0749f0d1cbcaa6b90ead881d848ccc082c160c37c9",
+      "bytes": 16025
+    },
+    {
       "path": "tools/summarize_native_retention.py",
       "sha256": "f3934b528ec7b8ca3f9dd1c128a6fadf6f83acc45d10de755d4096f24ac9a9b4",
       "bytes": 8623
@@ -2095,6 +2510,11 @@
       "path": "tools/validate_agnews_v7_release.py",
       "sha256": "504a57dd1ab2b4c15bf36ffda28fae9dd67827673c0f2b14d78dedd45790596b",
       "bytes": 4392
+    },
+    {
+      "path": "tools/validate_clinc_v8_public_bundle.py",
+      "sha256": "10fcb14d37dc47175e130a4f65bdc7bbd9bc552ab0c09a67d1b0be9dabe3292d",
+      "bytes": 3262
     },
     {
       "path": "tools/verify_agnews_anchored_v5_release.py",

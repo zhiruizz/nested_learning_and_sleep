@@ -1,0 +1,578 @@
+{
+  "capture_note": "Records SHA-256 of each raw source artifact; it is not a raw-seal or training-result seal.",
+  "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+  "full_grid_status": "in_progress; no completed six-run result in this release",
+  "model_weights_or_checkpoints_included": false,
+  "raw_dataset_rows_included": false,
+  "schema": "clinc-v8-public-development-capture-v1",
+  "source_artifacts": [
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/acquire_clinc_v8.py",
+      "public_artifact_sha256": "878adc25ca62c215f83ebfd02248828c56be6bad3f2359d2346fdb4f0e738362",
+      "source_artifact": "tools/acquire_clinc_v8.py",
+      "source_artifact_sha256_raw": "878adc25ca62c215f83ebfd02248828c56be6bad3f2359d2346fdb4f0e738362"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/clinc_cil_common_v8.py",
+      "public_artifact_sha256": "7dbc2f84df1921d3de1dd390bde2acf2e94cae027316089b01fa3d5d1125f135",
+      "source_artifact": "tools/clinc_cil_common_v8.py",
+      "source_artifact_sha256_raw": "7dbc2f84df1921d3de1dd390bde2acf2e94cae027316089b01fa3d5d1125f135"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/clinc_lifecycle_v8.py",
+      "public_artifact_sha256": "3e270a6df0359f495fc09d5aaf4fd6e108f37c36da41373b70fc16a26fca14a2",
+      "source_artifact": "tools/clinc_lifecycle_v8.py",
+      "source_artifact_sha256_raw": "3e270a6df0359f495fc09d5aaf4fd6e108f37c36da41373b70fc16a26fca14a2"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/clinc_tail_runtime_v8.py",
+      "public_artifact_sha256": "057de386734ff128d1fb0147dd83b1c14009cc36d8ed7c77740cbb497ee6f6d9",
+      "source_artifact": "tools/clinc_tail_runtime_v8.py",
+      "source_artifact_sha256_raw": "057de386734ff128d1fb0147dd83b1c14009cc36d8ed7c77740cbb497ee6f6d9"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/clinc_controlled_routing_v8.py",
+      "public_artifact_sha256": "37f240530d96e5e0525d9b0fd6d67b5eaba37720d7b170479a3181eeee107562",
+      "source_artifact": "tools/clinc_controlled_routing_v8.py",
+      "source_artifact_sha256_raw": "37f240530d96e5e0525d9b0fd6d67b5eaba37720d7b170479a3181eeee107562"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/run_clinc_cil_v8.py",
+      "public_artifact_sha256": "05b0b979667906602ae526b5a393427efa3a1458facf405470e0dd385e7343e5",
+      "source_artifact": "tools/run_clinc_cil_v8.py",
+      "source_artifact_sha256_raw": "05b0b979667906602ae526b5a393427efa3a1458facf405470e0dd385e7343e5"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/run_clinc_cil_v8_r2.py",
+      "public_artifact_sha256": "71fb703d83ff23cfc8d9e27be2fa5cd119510c7aa350837bd927c5c037b64fb3",
+      "source_artifact": "tools/run_clinc_cil_v8_r2.py",
+      "source_artifact_sha256_raw": "71fb703d83ff23cfc8d9e27be2fa5cd119510c7aa350837bd927c5c037b64fb3"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/run_clinc_controlled_probe_v8.py",
+      "public_artifact_sha256": "693f0edf7352c3e874613dd128ca4398035d5064d4a606c440e526ddb386151d",
+      "source_artifact": "tools/run_clinc_controlled_probe_v8.py",
+      "source_artifact_sha256_raw": "693f0edf7352c3e874613dd128ca4398035d5064d4a606c440e526ddb386151d"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/run_clinc_controlled_transfer_v8.py",
+      "public_artifact_sha256": "9a82794478e875c50895eb400be074810f26895791368ac053016190947d869d",
+      "source_artifact": "tools/run_clinc_controlled_transfer_v8.py",
+      "source_artifact_sha256_raw": "9a82794478e875c50895eb400be074810f26895791368ac053016190947d869d"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/run_clinc_cil_v8_full.py",
+      "public_artifact_sha256": "b056ca44597cc04e042ed7ccf82361cff54001320ed017db8b0eb7c5d58e4193",
+      "source_artifact": "tools/run_clinc_cil_v8_full.py",
+      "source_artifact_sha256_raw": "b056ca44597cc04e042ed7ccf82361cff54001320ed017db8b0eb7c5d58e4193"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/run_clinc_v8_full_queue.py",
+      "public_artifact_sha256": "ba7321eef8d61baedae443389edf64a1dd6c53f608910594d2861c0df4b70c35",
+      "source_artifact": "tools/run_clinc_v8_full_queue.py",
+      "source_artifact_sha256_raw": "ba7321eef8d61baedae443389edf64a1dd6c53f608910594d2861c0df4b70c35"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/status_clinc_v8_full.py",
+      "public_artifact_sha256": "5d9b1403e772fa5f6984bf0253d65945cae2e178c74b6e1fb1002e2220780ac5",
+      "source_artifact": "tools/status_clinc_v8_full.py",
+      "source_artifact_sha256_raw": "5d9b1403e772fa5f6984bf0253d65945cae2e178c74b6e1fb1002e2220780ac5"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/diagnose_clinc_sparse_sleep_v8.py",
+      "public_artifact_sha256": "7c2132ff91ad14b8f129041d8cd8a789a78385c149ace7c546a81e4c37ce66ba",
+      "source_artifact": "tools/diagnose_clinc_sparse_sleep_v8.py",
+      "source_artifact_sha256_raw": "7c2132ff91ad14b8f129041d8cd8a789a78385c149ace7c546a81e4c37ce66ba"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/estimate_clinc_v8_work.py",
+      "public_artifact_sha256": "72f404ee2d58edb5a005c5322aa8618b66191d07a4975fbfbd697ca726ad0e88",
+      "source_artifact": "tools/estimate_clinc_v8_work.py",
+      "source_artifact_sha256_raw": "72f404ee2d58edb5a005c5322aa8618b66191d07a4975fbfbd697ca726ad0e88"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/evaluate_clinc_checkpoints_v8.py",
+      "public_artifact_sha256": "eb4996e33dd58cfafd737dacb10b0fcb7e7edb8e2221f46352302794e8c2388e",
+      "source_artifact": "tools/evaluate_clinc_checkpoints_v8.py",
+      "source_artifact_sha256_raw": "eb4996e33dd58cfafd737dacb10b0fcb7e7edb8e2221f46352302794e8c2388e"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/evaluate_clinc_controlled_boundaries_v8.py",
+      "public_artifact_sha256": "c670a365492afbd177ef9a161d570a5065d851b2ad028e8877bb76cd1a5cb9a5",
+      "source_artifact": "tools/evaluate_clinc_controlled_boundaries_v8.py",
+      "source_artifact_sha256_raw": "c670a365492afbd177ef9a161d570a5065d851b2ad028e8877bb76cd1a5cb9a5"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/summarize_clinc_v8_development.py",
+      "public_artifact_sha256": "7edf14b2dac598c520112e86d1a4e018d90a9e0f5238bc18e8ab20cb2ea79722",
+      "source_artifact": "tools/summarize_clinc_v8_development.py",
+      "source_artifact_sha256_raw": "7edf14b2dac598c520112e86d1a4e018d90a9e0f5238bc18e8ab20cb2ea79722"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/summarize_clinc_v8_controlled_probe.py",
+      "public_artifact_sha256": "7eee5d026ca6528711a15658760d75a423de9d14fe8dc30bd85b0d14d258f897",
+      "source_artifact": "tools/summarize_clinc_v8_controlled_probe.py",
+      "source_artifact_sha256_raw": "7eee5d026ca6528711a15658760d75a423de9d14fe8dc30bd85b0d14d258f897"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/summarize_clinc_v8_transfer_budgets.py",
+      "public_artifact_sha256": "9510c32be42a74d8ccfa7e0749f0d1cbcaa6b90ead881d848ccc082c160c37c9",
+      "source_artifact": "tools/summarize_clinc_v8_transfer_budgets.py",
+      "source_artifact_sha256_raw": "9510c32be42a74d8ccfa7e0749f0d1cbcaa6b90ead881d848ccc082c160c37c9"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/summarize_clinc_v8_controlled_boundaries.py",
+      "public_artifact_sha256": "f0aa2a37eb7a35d61eb2767ae62db6d7af141a607218c14b31b26c7ca6d2cd48",
+      "source_artifact": "tools/summarize_clinc_v8_controlled_boundaries.py",
+      "source_artifact_sha256_raw": "f0aa2a37eb7a35d61eb2767ae62db6d7af141a607218c14b31b26c7ca6d2cd48"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/summarize_clinc_v8_attempts.py",
+      "public_artifact_sha256": "908eae6c81b7c9da2b6d82e4edddd90ea40750d32adf3ff0371ea24867eaa027",
+      "source_artifact": "tools/summarize_clinc_v8_attempts.py",
+      "source_artifact_sha256_raw": "908eae6c81b7c9da2b6d82e4edddd90ea40750d32adf3ff0371ea24867eaa027"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/validate_clinc_v8_public_bundle.py",
+      "public_artifact_sha256": "10fcb14d37dc47175e130a4f65bdc7bbd9bc552ab0c09a67d1b0be9dabe3292d",
+      "source_artifact": "tools/validate_clinc_v8_public_bundle.py",
+      "source_artifact_sha256_raw": "10fcb14d37dc47175e130a4f65bdc7bbd9bc552ab0c09a67d1b0be9dabe3292d"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/plot_clinc_v8_development.py",
+      "public_artifact_sha256": "6895a5da5c8b532c81f375afd913c9c767338b106126d386af2d2ebbd3c728c4",
+      "source_artifact": "tools/plot_clinc_v8_development.py",
+      "source_artifact_sha256_raw": "6895a5da5c8b532c81f375afd913c9c767338b106126d386af2d2ebbd3c728c4"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tools/plot_clinc_v8_corrected_transfer_budgets.py",
+      "public_artifact_sha256": "5f229129306e78e37d076a0b654c09648e0e775edd83e5864cef43bb8800e992",
+      "source_artifact": "tools/plot_clinc_v8_corrected_transfer_budgets.py",
+      "source_artifact_sha256_raw": "5f229129306e78e37d076a0b654c09648e0e775edd83e5864cef43bb8800e992"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "checks/check_clinc_full_startup_v8.py",
+      "public_artifact_sha256": "e3fec53f7e9b75574afb4afbef42e3adc67a3d5626e87dd0630c6061e79d499b",
+      "source_artifact": "checks/check_clinc_full_startup_v8.py",
+      "source_artifact_sha256_raw": "e3fec53f7e9b75574afb4afbef42e3adc67a3d5626e87dd0630c6061e79d499b"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "checks/check_clinc_lifecycle_resume_v8.py",
+      "public_artifact_sha256": "6fed0ce6580413bb09a7cf872d284b21ee7f5eb70a88847c6bbd39a1705a33a1",
+      "source_artifact": "checks/check_clinc_lifecycle_resume_v8.py",
+      "source_artifact_sha256_raw": "6fed0ce6580413bb09a7cf872d284b21ee7f5eb70a88847c6bbd39a1705a33a1"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "checks/check_clinc_real3b_v8.py",
+      "public_artifact_sha256": "8b795ec0d96ef4e04dfac4e695fab8b3d76a9fd2b47ce690274ae3f9714e2f75",
+      "source_artifact": "checks/check_clinc_real3b_v8.py",
+      "source_artifact_sha256_raw": "8b795ec0d96ef4e04dfac4e695fab8b3d76a9fd2b47ce690274ae3f9714e2f75"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "checks/check_clinc_real3b_resume_v8.py",
+      "public_artifact_sha256": "693ef48d7dce8b33cd69f9dcb68b8f6def0eadc65e012c5ba2d3e4a32159a065",
+      "source_artifact": "checks/check_clinc_real3b_resume_v8.py",
+      "source_artifact_sha256_raw": "693ef48d7dce8b33cd69f9dcb68b8f6def0eadc65e012c5ba2d3e4a32159a065"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "checks/check_clinc_controlled_real3b_v8.py",
+      "public_artifact_sha256": "b7e65e446ebf32f0f8556c1b55438d89881d06124700dd5da990175eeb9013a0",
+      "source_artifact": "checks/check_clinc_controlled_real3b_v8.py",
+      "source_artifact_sha256_raw": "b7e65e446ebf32f0f8556c1b55438d89881d06124700dd5da990175eeb9013a0"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "checks/compare_clinc_gold_control_v8_public.py",
+      "public_artifact_sha256": "38b8fe0ede0181c5f46f5bcac060c17c355ddaeea3e3901ac1a26784c44d265c",
+      "source_artifact": "checks/compare_clinc_gold_control_v8_public.py",
+      "source_artifact_sha256_raw": "38b8fe0ede0181c5f46f5bcac060c17c355ddaeea3e3901ac1a26784c44d265c"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "checks/freeze_clinc_controlled_probe_v8.py",
+      "public_artifact_sha256": "6ae957c317d387027cae0fb972bd494f9a1168f9d84267ce68f0f5475f5e37ce",
+      "source_artifact": "checks/freeze_clinc_controlled_probe_v8.py",
+      "source_artifact_sha256_raw": "6ae957c317d387027cae0fb972bd494f9a1168f9d84267ce68f0f5475f5e37ce"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "configs/clinc_cil_v8_full_master_frozen_k10.json",
+      "public_artifact_sha256": "ec8a9bfadde15a6b0bed202f1ad5eb621805e50b92151a6747827c0f177bc32f",
+      "source_artifact": "configs/clinc_cil_v8_full_master_frozen_k10.json",
+      "source_artifact_sha256_raw": "ec8a9bfadde15a6b0bed202f1ad5eb621805e50b92151a6747827c0f177bc32f"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "configs/clinc_cil_v8_controlled_probe_seed17.json",
+      "public_artifact_sha256": "fecce61199cb2bdf7530f1a3fe7b0e468079c3e41e2b480b12452ba3868f7aed",
+      "source_artifact": "configs/clinc_cil_v8_controlled_probe_seed17.json",
+      "source_artifact_sha256_raw": "fecce61199cb2bdf7530f1a3fe7b0e468079c3e41e2b480b12452ba3868f7aed"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "configs/clinc_cil_v8_controlled_transfer_k1_seed17.json",
+      "public_artifact_sha256": "5fd616034b72aeadb1e13d6049f4c94b527f6acae46f48290abe60a0fd83c1dd",
+      "source_artifact": "configs/clinc_cil_v8_controlled_transfer_k1_seed17.json",
+      "source_artifact_sha256_raw": "5fd616034b72aeadb1e13d6049f4c94b527f6acae46f48290abe60a0fd83c1dd"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "configs/clinc_cil_v8_controlled_transfer_k10_seed17.json",
+      "public_artifact_sha256": "37931ac2b5dd3606db3f0ca709b7831cfb8f125e365171b6c06c24c15e57883c",
+      "source_artifact": "configs/clinc_cil_v8_controlled_transfer_k10_seed17.json",
+      "source_artifact_sha256_raw": "37931ac2b5dd3606db3f0ca709b7831cfb8f125e365171b6c06c24c15e57883c"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "configs/clinc_cil_v8_development_pilot.json",
+      "public_artifact_sha256": "78cd34387c52d30fe5a8eba12ff5fe281c7d9373a711f837cc055cfb99f5fd90",
+      "source_artifact": "configs/clinc_cil_v8_development_pilot.json",
+      "source_artifact_sha256_raw": "78cd34387c52d30fe5a8eba12ff5fe281c7d9373a711f837cc055cfb99f5fd90"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "configs/clinc_cil_v8_development_seed17_locked.json",
+      "public_artifact_sha256": "6fceaae50632df7e6a551969da2f6d400da3e9651012fe97624e56e03a864f01",
+      "source_artifact": "configs/clinc_cil_v8_development_seed17_locked.json",
+      "source_artifact_sha256_raw": "6fceaae50632df7e6a551969da2f6d400da3e9651012fe97624e56e03a864f01"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "configs/clinc_cil_v8_development_seed17_seen_replay.json",
+      "public_artifact_sha256": "cf70e64dd0ae0d2c25f20b29f301a88420eb1a26ae1ceffd1788491490db4aef",
+      "source_artifact": "configs/clinc_cil_v8_development_seed17_seen_replay.json",
+      "source_artifact_sha256_raw": "cf70e64dd0ae0d2c25f20b29f301a88420eb1a26ae1ceffd1788491490db4aef"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "configs/clinc_cil_v8_hope_task1_resume_r2.json",
+      "public_artifact_sha256": "08cbb7c3e5168102fda39b9ce61db9f5ab4177a4ec2b903a5a5650045581fe9a",
+      "source_artifact": "configs/clinc_cil_v8_hope_task1_resume_r2.json",
+      "source_artifact_sha256_raw": "08cbb7c3e5168102fda39b9ce61db9f5ab4177a4ec2b903a5a5650045581fe9a"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "docs/clinc-cil-v8-protocol.md",
+      "public_artifact_sha256": "5340e27e6f2b3ea9bb78571091db02a315892ba44b9ac683b3bde6aa609bb947",
+      "source_artifact": "docs/clinc-cil-v8-protocol.md",
+      "source_artifact_sha256_raw": "5340e27e6f2b3ea9bb78571091db02a315892ba44b9ac683b3bde6aa609bb947"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "docs/clinc-v8-reproduction.md",
+      "public_artifact_sha256": "b46019a69db1028071e827841cee55ba7532ec2a9e0c53c5b003caeea742a273",
+      "source_artifact": "docs/clinc-v8-reproduction.md",
+      "source_artifact_sha256_raw": "b46019a69db1028071e827841cee55ba7532ec2a9e0c53c5b003caeea742a273"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "reports/clinc150-lifecycle-v8-development.md",
+      "public_artifact_sha256": "3a33d593381436bbdb76fb777fede437c9726a5ce279c356b98d049342f624a3",
+      "source_artifact": "reports/clinc150-lifecycle-v8-development.md",
+      "source_artifact_sha256_raw": "3a33d593381436bbdb76fb777fede437c9726a5ce279c356b98d049342f624a3"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "requirements/clinc-v8-observed.txt",
+      "public_artifact_sha256": "2a33e94a34a03087eca0ac6a4ae11a69cbf6aec0adc47a1ce5d502b2596cc2e7",
+      "source_artifact": "requirements/clinc-v8-observed.txt",
+      "source_artifact_sha256_raw": "2a33e94a34a03087eca0ac6a4ae11a69cbf6aec0adc47a1ce5d502b2596cc2e7"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_acquire_clinc_v8_cpu.py",
+      "public_artifact_sha256": "433c5db9c4b9a089b1e675c26c9d2072d0f757469a2b0339d84aa9a3404b0c17",
+      "source_artifact": "tests/test_acquire_clinc_v8_cpu.py",
+      "source_artifact_sha256_raw": "433c5db9c4b9a089b1e675c26c9d2072d0f757469a2b0339d84aa9a3404b0c17"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_cil_common_v8_cpu.py",
+      "public_artifact_sha256": "e24c6d3e51f7bc5d3b91b4226080935f3556ef0b7e5e65ef14ed384103fe1be2",
+      "source_artifact": "tests/test_clinc_cil_common_v8_cpu.py",
+      "source_artifact_sha256_raw": "e24c6d3e51f7bc5d3b91b4226080935f3556ef0b7e5e65ef14ed384103fe1be2"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_cil_v8_driver_cpu.py",
+      "public_artifact_sha256": "908f9e1fcea582f8427dd6ceef01123c0dc83e81a600a7a516ee11b3e78750b5",
+      "source_artifact": "tests/test_clinc_cil_v8_driver_cpu.py",
+      "source_artifact_sha256_raw": "908f9e1fcea582f8427dd6ceef01123c0dc83e81a600a7a516ee11b3e78750b5"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_cil_v8_full_cpu.py",
+      "public_artifact_sha256": "e8ed2009856c4ee84f343cc8c3cb86c96311e777b8a6cfb97cf661e88a51fa18",
+      "source_artifact": "tests/test_clinc_cil_v8_full_cpu.py",
+      "source_artifact_sha256_raw": "e8ed2009856c4ee84f343cc8c3cb86c96311e777b8a6cfb97cf661e88a51fa18"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_controlled_boundaries_v8_cpu.py",
+      "public_artifact_sha256": "5b1070b4d7439755420f6730e3322ba5a66cd03e5ec6e8aba380fbb8cdaece8a",
+      "source_artifact": "tests/test_clinc_controlled_boundaries_v8_cpu.py",
+      "source_artifact_sha256_raw": "5b1070b4d7439755420f6730e3322ba5a66cd03e5ec6e8aba380fbb8cdaece8a"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_controlled_probe_v8_cpu.py",
+      "public_artifact_sha256": "fa40307c902b27a5b308cb1bb888870f13ef1907db433c6d06445b0a47624c70",
+      "source_artifact": "tests/test_clinc_controlled_probe_v8_cpu.py",
+      "source_artifact_sha256_raw": "fa40307c902b27a5b308cb1bb888870f13ef1907db433c6d06445b0a47624c70"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_controlled_routing_v8_cpu.py",
+      "public_artifact_sha256": "01ebb272ea5f626786c739c18931475b22b034d7813e96a5b114020c554e1c8f",
+      "source_artifact": "tests/test_clinc_controlled_routing_v8_cpu.py",
+      "source_artifact_sha256_raw": "01ebb272ea5f626786c739c18931475b22b034d7813e96a5b114020c554e1c8f"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_controlled_transfer_v8_cpu.py",
+      "public_artifact_sha256": "d79d9e695abf2c0e2bdfc17eddd95bf08f4a5127e4332eff5e2ed486176f9d45",
+      "source_artifact": "tests/test_clinc_controlled_transfer_v8_cpu.py",
+      "source_artifact_sha256_raw": "d79d9e695abf2c0e2bdfc17eddd95bf08f4a5127e4332eff5e2ed486176f9d45"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_eval_alignment_v8_cpu.py",
+      "public_artifact_sha256": "68e82acd3e1e73a2a73e2596aafc2f5cc0a9a07cce80bd9c9c17dabac30ec59e",
+      "source_artifact": "tests/test_clinc_eval_alignment_v8_cpu.py",
+      "source_artifact_sha256_raw": "68e82acd3e1e73a2a73e2596aafc2f5cc0a9a07cce80bd9c9c17dabac30ec59e"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_lifecycle_v8_cpu.py",
+      "public_artifact_sha256": "ef6b3170d0a814f49fd7b540bca33747a317bf6f9e13540e518dd8d4ed68353e",
+      "source_artifact": "tests/test_clinc_lifecycle_v8_cpu.py",
+      "source_artifact_sha256_raw": "ef6b3170d0a814f49fd7b540bca33747a317bf6f9e13540e518dd8d4ed68353e"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_nested_capacity_v8_cpu.py",
+      "public_artifact_sha256": "3b18850132c999de2fd72a675845ef75e26b30f7a8d93577e57bc93d1a64c0e9",
+      "source_artifact": "tests/test_clinc_nested_capacity_v8_cpu.py",
+      "source_artifact_sha256_raw": "3b18850132c999de2fd72a675845ef75e26b30f7a8d93577e57bc93d1a64c0e9"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_resume_v8_cpu.py",
+      "public_artifact_sha256": "8a8a77f88498ba8c02ad2bcbf84b7072507c844af0f21c6a481e473a93d32506",
+      "source_artifact": "tests/test_clinc_resume_v8_cpu.py",
+      "source_artifact_sha256_raw": "8a8a77f88498ba8c02ad2bcbf84b7072507c844af0f21c6a481e473a93d32506"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_tail_runtime_v8_cpu.py",
+      "public_artifact_sha256": "e44533be0a63c81cf9c28f754c6d154c612e857bc697256d986ca91d31f59730",
+      "source_artifact": "tests/test_clinc_tail_runtime_v8_cpu.py",
+      "source_artifact_sha256_raw": "e44533be0a63c81cf9c28f754c6d154c612e857bc697256d986ca91d31f59730"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_estimate_clinc_v8_work_cpu.py",
+      "public_artifact_sha256": "eb4115610801701ccb970bf63d4d0004fc395f2d7e96b538802e380a617e621b",
+      "source_artifact": "tests/test_estimate_clinc_v8_work_cpu.py",
+      "source_artifact_sha256_raw": "eb4115610801701ccb970bf63d4d0004fc395f2d7e96b538802e380a617e621b"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_summarize_clinc_v8_controlled_boundaries_cpu.py",
+      "public_artifact_sha256": "d905a6bb93f175fbe3af58f0c8269cddf165693c146bdb2882e933f522ad41a4",
+      "source_artifact": "tests/test_summarize_clinc_v8_controlled_boundaries_cpu.py",
+      "source_artifact_sha256_raw": "d905a6bb93f175fbe3af58f0c8269cddf165693c146bdb2882e933f522ad41a4"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_summarize_clinc_v8_controlled_probe_cpu.py",
+      "public_artifact_sha256": "abe19297f519d3c0dc6f33f49a046cb3d88f3d83e6d63acb2e090f4a007f53c1",
+      "source_artifact": "tests/test_summarize_clinc_v8_controlled_probe_cpu.py",
+      "source_artifact_sha256_raw": "abe19297f519d3c0dc6f33f49a046cb3d88f3d83e6d63acb2e090f4a007f53c1"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_summarize_clinc_v8_development_cpu.py",
+      "public_artifact_sha256": "b428a90cfec245e37dd0921481adddb8499cce90616ae04b00c99a1aa9501285",
+      "source_artifact": "tests/test_summarize_clinc_v8_development_cpu.py",
+      "source_artifact_sha256_raw": "b428a90cfec245e37dd0921481adddb8499cce90616ae04b00c99a1aa9501285"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_summarize_clinc_v8_transfer_budgets_cpu.py",
+      "public_artifact_sha256": "62c4e043758d36b36912d77d5ba5fe07990ee156cde2702a8fc3acea93aeaed6",
+      "source_artifact": "tests/test_summarize_clinc_v8_transfer_budgets_cpu.py",
+      "source_artifact_sha256_raw": "62c4e043758d36b36912d77d5ba5fe07990ee156cde2702a8fc3acea93aeaed6"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "tests/test_clinc_v8_public_bundle_validator_cpu.py",
+      "public_artifact_sha256": "d68dcabc3dba2fc2bd7df41be6cc517cfe9c282084b34210b2a62c7a7334e8b2",
+      "source_artifact": "tests/test_clinc_v8_public_bundle_validator_cpu.py",
+      "source_artifact_sha256_raw": "d68dcabc3dba2fc2bd7df41be6cc517cfe9c282084b34210b2a62c7a7334e8b2"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/acquisition-summary.json",
+      "public_artifact_sha256": "c772cbec054202b0384c7b7e21454dc7aed9f5f1a99e7d27e3d359ab0e542f27",
+      "source_artifact": "outputs/clinc-v8-preparation/acquisition-receipt.json",
+      "source_artifact_sha256_raw": "fff471d2f58caddf1b78e702b17622b969d49625b4028fbb618c65073cd67cb7"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/development-summary.json",
+      "public_artifact_sha256": "a26a8c271c6d816eeebcbe3aef6e84c86eb7f6e0af50e4c86b5ccb7f3d6b56e0",
+      "source_artifact": "outputs/clinc-v8-preparation/development-summary-v1.json",
+      "source_artifact_sha256_raw": "623d6a67157d848f13cefdd3aa130e96ab583bcc2808da6a3378a18af8ad0473"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/controlled-probe-analysis.json",
+      "public_artifact_sha256": "f1ec0a2a0322100f4dcea8dd65094afdc66ed4cac87c47eae14e85855b9d2bde",
+      "source_artifact": "outputs/clinc-v8-preparation/controlled-probe-analysis-clean-primary.json",
+      "source_artifact_sha256_raw": "addf300c681970a829d0f52583bbc8c2ce721b44aaa40aca188d346d12f81c78"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/controlled-boundary-analysis.json",
+      "public_artifact_sha256": "0a301ec386338ca4e893948287577046b1293689dadb3e4f87128219032e411f",
+      "source_artifact": "outputs/clinc-v8-preparation/controlled-boundary-analysis-v1.json",
+      "source_artifact_sha256_raw": "2adc927949d6b0cf4e7dfde2fd6493eed96c5a7d30ee6b23da29dcd097c02dbc"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/transfer-budget-analysis.json",
+      "public_artifact_sha256": "94abd80218506512733c1c3d7e3b6d00c2470023bd624b4900a6d83f7139a9ab",
+      "source_artifact": "outputs/clinc-v8-preparation/transfer-budget-analysis-v1.json",
+      "source_artifact_sha256_raw": "470282bdda8dc8d00d70350fb8c77c38829a9ee85b77bfc3c83b1b25e652a4a6"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/costs/controlled-probe-covered-work.json",
+      "public_artifact_sha256": "242be32f1b704ae6c6f99ccee58e06ea89cd941c99ac2b8e24fead5541e2b12e",
+      "source_artifact": "outputs/clinc-v8-preparation/controlled-probe-covered-work-v4.json",
+      "source_artifact_sha256_raw": "b894acd75ef0e2b0c40c71c55c7c6f0c6c5af4b392d28aeae9094cb0e72b08cc"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/costs/transfer-k1-covered-work.json",
+      "public_artifact_sha256": "a0d66b7b4b9886bcfd2a302a3ebcb3ea0382680e32f301a3c2e25bd783f8bf7a",
+      "source_artifact": "outputs/clinc-v8-preparation/transfer-k1-covered-work-v4.json",
+      "source_artifact_sha256_raw": "e05978b4a4dcf9ed39d159acdcd9c44063b0710412812cb02b87e3ab5c28ba04"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/costs/transfer-k10-covered-work.json",
+      "public_artifact_sha256": "6478a3bfe6a866397f075f59985cacf7e82f02931719ae462aa5ff3f6ce59122",
+      "source_artifact": "outputs/clinc-v8-preparation/transfer-k10-covered-work-v4.json",
+      "source_artifact_sha256_raw": "fc8a4d08d0a18f1afd1add7ba869ebc87911da6f39087a871ce5074d6bf4c683"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/costs/hope-task1-r2-covered-work.json",
+      "public_artifact_sha256": "c75fa1270298feed24ab545500f7b234f151905ee3ed85dd22e594d6f4b9f9f8",
+      "source_artifact": "outputs/clinc-v8-preparation/hope-task1-r2-covered-work.json",
+      "source_artifact_sha256_raw": "be713d175ee5c12bf1928e36d73cba1c6ebe90d88c150529c4f6025063a77e46"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/qualifications/tail-parity.json",
+      "public_artifact_sha256": "abf909a25916fa57004ab5f2f2b0bb8e84f4725a8132cb199a6abc0f04ff07c2",
+      "source_artifact": "outputs/clinc-v8-preparation/real3b-tail-parity.json",
+      "source_artifact_sha256_raw": "f64c44ace512d3faed0e691075598a8f296cb0e9305b6603058de17fb2e7434c"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/qualifications/controlled-resume.json",
+      "public_artifact_sha256": "03f08b77b2d89975353960690e3d6cf3319c90241ec20d0cd891a9619c39d61b",
+      "source_artifact": "outputs/clinc-v8-preparation/controlled-real3b-qualification-b.json",
+      "source_artifact_sha256_raw": "ec62a541e7bd74b9dba794b267ca25d480561612a157a0c36cf394b2119934c5"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/qualifications/gold-control-equivalence.json",
+      "public_artifact_sha256": "00b511079bd72e9d669a929b6d8348f76e41c23c4e33920c91c1862bcdcd71c4",
+      "source_artifact": "outputs/clinc-v8-preparation/gold-k1-control-equivalence.json",
+      "source_artifact_sha256_raw": "97512eb8b682e9a01101c77b1c4301b42cf3c659f4d6894951d254e4c8a71208"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/qualifications/host-startup.json",
+      "public_artifact_sha256": "9ddfe38f2f47e1cae7fe9789e6c8309634fe2201abdb01c661babe250dca8ff8",
+      "source_artifact": "outputs/clinc-v8-full-startup-20261107-a/startup-qualification.json",
+      "source_artifact_sha256_raw": "0263cbc24f6d1568bc83d0d0309a5b4010755af2c0395b8118d944f7c347a244"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/protocol/full-protocol-pretraining-freeze.json",
+      "public_artifact_sha256": "541f00120efcc01133402da954d674e5dd677895d04029930b7996a48b63a484",
+      "source_artifact": "outputs/clinc-v8-preparation/full-protocol-freeze.json",
+      "source_artifact_sha256_raw": "0bb08a2c2adf9a644e98c01876e9ca6f07626fdd9d48650e220b08768ae9539d"
+    },
+    {
+      "normalization": "curated_json",
+      "public_artifact": "results/clinc-v8-development/costs/attempt-cost-ledger-20261107T080419Z.json",
+      "public_artifact_sha256": "2a278269b81a32ac87786c4632eac236f9e39fc09b9e28cfeabac009debe9782",
+      "source_artifact": "outputs/clinc-v8-attempt-cost-ledger-20261107.json",
+      "source_artifact_sha256_raw": "9e80512d3fb77fa288e0ee581f4ffba8acdacab4e94ebd5385ad8ed3f295b419"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "results/figures/clinc-v8-development-endpoints.svg",
+      "public_artifact_sha256": "8c36a49b264a6302a81964b33ec8eb64dcf62391558c575c9e8f1b77c36668e5",
+      "source_artifact": "outputs/clinc-v8-figures/clinc-v8-development-endpoints.svg",
+      "source_artifact_sha256_raw": "8c36a49b264a6302a81964b33ec8eb64dcf62391558c575c9e8f1b77c36668e5"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "results/figures/clinc-v8-development-endpoints.png",
+      "public_artifact_sha256": "0aec1fe2350274d56c69106145538f6ad3722f7763be05fb4abd2ecc8a520b22",
+      "source_artifact": "outputs/clinc-v8-figures/clinc-v8-development-endpoints.png",
+      "source_artifact_sha256_raw": "0aec1fe2350274d56c69106145538f6ad3722f7763be05fb4abd2ecc8a520b22"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "results/figures/clinc-v8-corrected-transfer-budgets.svg",
+      "public_artifact_sha256": "1a3b229bfe7ec752457ae2d209f8f589a058d03c61bb60b852f9a7f001880cdf",
+      "source_artifact": "outputs/clinc-v8-figures/clinc-v8-corrected-transfer-budgets.svg",
+      "source_artifact_sha256_raw": "1a3b229bfe7ec752457ae2d209f8f589a058d03c61bb60b852f9a7f001880cdf"
+    },
+    {
+      "normalization": "byte_copy",
+      "public_artifact": "results/figures/clinc-v8-corrected-transfer-budgets.png",
+      "public_artifact_sha256": "786c65097898b6ab3e5bd04a629c3cfca3631ac10e4fbb9602f5e2b9a95c5414",
+      "source_artifact": "outputs/clinc-v8-figures/clinc-v8-corrected-transfer-budgets.png",
+      "source_artifact_sha256_raw": "786c65097898b6ab3e5bd04a629c3cfca3631ac10e4fbb9602f5e2b9a95c5414"
+    }
+  ],
+  "test_data_included": false
+}

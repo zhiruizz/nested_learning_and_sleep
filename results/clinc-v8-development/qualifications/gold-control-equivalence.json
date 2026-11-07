@@ -1,0 +1,35 @@
+{
+  "_public_capture": {
+    "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+    "normalization": "Original aggregate schema retained; only exact raw-text/token/example-identity fields removed; paths normalized; raw source artifact SHA recorded in public-capture.json.",
+    "schema": "clinc-v8-public-development-capture-reference-v1",
+    "source_artifact": "outputs/clinc-v8-preparation/gold-k1-control-equivalence.json",
+    "source_artifact_sha256_raw": "97512eb8b682e9a01101c77b1c4301b42cf3c659f4d6894951d254e4c8a71208"
+  },
+  "complete": true,
+  "context_exact": true,
+  "cuda_initialized": false,
+  "interpretation": "Same development control reused across objective variants; not an independent experimental seed.",
+  "model_loaded": false,
+  "optimizer_steps": 0,
+  "records": [
+    {
+      "checkpoint_sha256": "086be4ddd07d4e2e8db2780652fc2d944c11ab45188f2514a208f980adf36d0b",
+      "context_sha256": "c007ba5fd217a55e735ad1bc9ce5eec93622158b06003ff31851455f81a2a355",
+      "rng_sha256": "72fa6bb38efb8ee0747f8754e4c6b0d32de8b69b636a80ff795307f8ba32afa0",
+      "run": "clinc-v8-controlled-seed17-task1-20261107-r2",
+      "wake_sha256": "980327cbfe02278f94bdd5daecc36c05a2768fb2f0b6490cd2616d893f079187"
+    },
+    {
+      "checkpoint_sha256": "11b7f03f33b1ccacd5e4305ca4bb1dff7950cda108fd4940a0aeedb5979059b6",
+      "context_sha256": "c007ba5fd217a55e735ad1bc9ce5eec93622158b06003ff31851455f81a2a355",
+      "rng_sha256": "72fa6bb38efb8ee0747f8754e4c6b0d32de8b69b636a80ff795307f8ba32afa0",
+      "run": "clinc-v8-transfer-k1-corrected-20261107-a",
+      "wake_sha256": "980327cbfe02278f94bdd5daecc36c05a2768fb2f0b6490cd2616d893f079187"
+    }
+  ],
+  "rng_exact": true,
+  "schema": "clinc-v8-gold-control-equivalence-v1",
+  "test_data_read": false,
+  "wake_exact": true
+}

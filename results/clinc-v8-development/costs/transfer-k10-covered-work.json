@@ -1,0 +1,104 @@
+{
+  "_public_capture": {
+    "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+    "normalization": "Original aggregate schema retained; only exact raw-text/token/example-identity fields removed; paths normalized; raw source artifact SHA recorded in public-capture.json.",
+    "schema": "clinc-v8-public-development-capture-reference-v1",
+    "source_artifact": "outputs/clinc-v8-preparation/transfer-k10-covered-work-v4.json",
+    "source_artifact_sha256_raw": "fc8a4d08d0a18f1afd1add7ba869ebc87911da6f39087a871ce5074d6bf4c683"
+  },
+  "arms": {
+    "seed17/GOLD_CE_MIX": {
+      "capture_original_head_and_readout_lora": 260631302012928,
+      "capture_transformer_gemm_attention": 1866322828984320,
+      "capture_zero_output_memory_matrices": 1299688980480,
+      "covered_total_interval": [
+        2449507363160064,
+        2453678913060864
+      ],
+      "covered_total_teraflops_interval": [
+        2449.507363160064,
+        2453.678913060864
+      ],
+      "expert_branches_per_level_upper_bound": 2,
+      "frozen_backbone_forward": 2128253819977728,
+      "tail_backward_frozen_head_input_grad": 49182204137472,
+      "tail_backward_mutable_interval": [
+        0,
+        1471540101120
+      ],
+      "tail_forward_expert_branches_interval": [
+        0,
+        2700009799680
+      ],
+      "tail_forward_head_and_memory": 272071339044864
+    },
+    "seed17/SLEEP_MIX": {
+      "capture_original_head_and_readout_lora": 344910984284160,
+      "capture_transformer_gemm_attention": 2469848661590016,
+      "capture_zero_output_memory_matrices": 1719966105600,
+      "covered_total_interval": [
+        3232917613562880,
+        3238036051184640
+      ],
+      "covered_total_teraflops_interval": [
+        3232.91761356288,
+        3238.03605118464
+      ],
+      "expert_branches_per_level_upper_bound": 2,
+      "frozen_backbone_forward": 2816479611979776,
+      "tail_backward_frozen_head_input_grad": 49296541012992,
+      "tail_backward_mutable_interval": [
+        0,
+        1474961080320
+      ],
+      "tail_forward_expert_branches_interval": [
+        0,
+        3643476541440
+      ],
+      "tail_forward_head_and_memory": 367141460570112
+    }
+  },
+  "classification": "analytical covered GEMM+attention estimate; not measured FLOPs and not complete FLOPs",
+  "dimensions": {
+    "Dh": 128,
+    "H": 3072,
+    "I": 8192,
+    "L": 28,
+    "V": 128256,
+    "heads": 24,
+    "kvheads": 8
+  },
+  "excluded_operators": [
+    "RMSNorm",
+    "activation",
+    "RoPE",
+    "softmax",
+    "router",
+    "CE/KL",
+    "sampling",
+    "adds/copies",
+    "optimizer",
+    "I/O"
+  ],
+  "formula_version": "clinc-v8-gemm-attention-estimate-4",
+  "model_config_sha256": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d",
+  "mutable_dimensions": {
+    "head_lora_rank": 2,
+    "levels": 5,
+    "rank": 64
+  },
+  "notes": [
+    "FLOPs assume 2 per multiply-accumulate.",
+    "Padding is counted using recorded BxS shapes.",
+    "No frozen-backbone backward is included.",
+    "Capture executes its frozen zero-output memory and readout matrices; tail recomputes the LM head.",
+    "Per-bank expert forward upper bounds are one branch for natural routing or two for an explicitly configured controlled mix.",
+    "Mutable gradient GEMMs use lower bound 0 and upper bound 2x listed forward GEMMs.",
+    "Every gradient-enabled tail call is assumed to reach backward; failed/unused diagnostic graphs require separate accounting.",
+    "The interval bounds the covered sparse/mutable GEMMs only; omitted operators are outside both endpoints.",
+    "Generation prefix recapture is included only insofar as present in the forward shape histogram; no KV-cache savings are assumed."
+  ],
+  "run_config_sha256": "37931ac2b5dd3606db3f0ca709b7831cfb8f125e365171b6c06c24c15e57883c",
+  "schema": "clinc-v8-covered-flops-estimate-v4",
+  "seal_sha256": "4bbaa15ae8039012b92f8c0963acdecb3cc9db3003b14edb92506eef1565fa9f"
+}

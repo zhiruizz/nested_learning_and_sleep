@@ -1,5 +1,9 @@
 # NL/Sleep Reproduction Lab
 
+V8 adds Llama-3.2-3B / CLINC150 lifecycle experiments. On one two-task development seed, the corrected k=10 controlled Sleep arm scored 7.67% old / 31.33% new, versus 13.00% / 70.67% without Sleep. No overall Sleep benefit is established. The [development report](reports/clinc150-lifecycle-v8-development.md) retains both budgets, the extra-label Gold CE controls, invalid historical evaluations, failure replays and cost limits.
+
+A separately frozen three-class-order-seed, ten-task comparison is in progress; the official test remains sealed until all six final runs and three shared foundations pass artifact verification. This is a local CMS last-MLP ablation with an extra 0.5 receiver mixture, not native HOPE or a faithful reproduction of the paper. See the [V8 protocol](docs/clinc-cil-v8-protocol.md) and [asset/recovery instructions](docs/clinc-v8-reproduction.md).
+
 V7 completed 30 fixed one-context training runs and 12 wake-stress branches. Protected teachers and prompt diversity help retention, but no arm passes both task gates across all three seeds. See the [v7 report](reports/agnews-single-receiver-v7.md) for mixed/negative results, extra supervision, cost limits and the explicitly recovered main run.
 
 An unofficial, partial implementation and diagnostic study of Nested Learning and

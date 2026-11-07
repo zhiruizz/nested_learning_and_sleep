@@ -1,0 +1,136 @@
+{
+  "_public_capture": {
+    "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+    "normalization": "Original aggregate schema retained; only exact raw-text/token/example-identity fields removed; paths normalized; raw source artifact SHA recorded in public-capture.json.",
+    "schema": "clinc-v8-public-development-capture-reference-v1",
+    "source_artifact": "outputs/clinc-v8-preparation/real3b-tail-parity.json",
+    "source_artifact_sha256_raw": "f64c44ace512d3faed0e691075598a8f296cb0e9305b6603058de17fb2e7434c"
+  },
+  "architecture_scope": "LlamaCMSLM last MLP only; rank64, levels5, test capacity2; not native HOPE",
+  "complete": true,
+  "context_restore_tail_max_abs": 0.0,
+  "context_state_roundtrip_exact": true,
+  "device": "cuda:0",
+  "dtype_backbone": "bfloat16",
+  "dtype_mutables": "float32",
+  "elapsed_seconds": 4.986286500003189,
+  "frozen_backbone_versions_unchanged": true,
+  "full_sequence_forward_calls": 3,
+  "gradient_parity_tolerance": 0.0001,
+  "logit_parity_tolerance": 0.0001,
+  "mutable_gradient_comparisons": [
+    {
+      "max_abs": 0.0,
+      "name": "backbone.lm_head.a",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.lm_head.b",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.0.a",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.0.b",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.0.experts.slots.0.a",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.0.experts.slots.0.b",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.1.a",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.1.b",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.1.experts.slots.0.a",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.1.experts.slots.0.b",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.2.a",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.2.b",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.2.experts.slots.0.a",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.2.experts.slots.0.b",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.3.a",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.3.b",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.3.experts.slots.0.a",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.3.experts.slots.0.b",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.4.a",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.4.b",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.4.experts.slots.0.a",
+      "relative_l2": 0.0
+    },
+    {
+      "max_abs": 0.0,
+      "name": "backbone.model.layers.27.mlp.memory.4.experts.slots.0.b",
+      "relative_l2": 0.0
+    }
+  ],
+  "mutated_adapter_full_tail_max_abs": 0.0,
+  "schema": "clinc-real3b-tail-v8-check-v1",
+  "zero_adapter_full_tail_max_abs": 0.0
+}

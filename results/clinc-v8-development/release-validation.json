@@ -1,0 +1,33 @@
+{
+  "cpu_seconds": 10.4,
+  "cpu_tests_deselected": 1,
+  "cpu_tests_passed": 321,
+  "cpu_update_attempts": 255,
+  "cpu_update_limit_unchanged": 256,
+  "deselected_test": "test_all_exported_modules_import_without_optional_llama_dependency",
+  "deselection_reason": "Existing CPU-wheel-only test premise does not hold for the installed CUDA wheel.",
+  "full_six_grid_complete": false,
+  "network_and_cuda_initialization_prohibited_in_tests": true,
+  "passed": true,
+  "plotting_version": "matplotlib 3.11.2",
+  "prior_acceptance_attempts": [
+    {
+      "reason": "Environment imported pre-existing private editable package; explicit public PYTHONPATH fixed it.",
+      "stage": "collection",
+      "status": "failed",
+      "update_attempts": 0
+    },
+    {
+      "failed": 1,
+      "passed": 320,
+      "reason": "One placeholder guard test referred to an unpublished candidate fixture; changed test to derive from published frozen config.",
+      "stage": "tests",
+      "status": "failed"
+    }
+  ],
+  "public_aggregate_chart_rebuilt": true,
+  "schema": "clinc-v8-development-release-validation-v1",
+  "scope": "Completed one-seed development release; full three-seed grid continues separately.",
+  "test_payload_read": false,
+  "verified_capture_artifacts": 81
+}

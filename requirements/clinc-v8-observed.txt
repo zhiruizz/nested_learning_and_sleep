@@ -1,0 +1,11 @@
+# Observed environment for the CLINC V8 experiments; not a portable wheel lock.
+# Python 3.11.17, Windows, RTX 5090D. torch was 2.8.0+cu128 from the CUDA index.
+# Model weights, datasets, CUDA driver and transitive wheels are not included.
+torch==2.8.0
+numpy==2.2.6
+transformers==4.57.1
+accelerate==1.10.1
+pyarrow==20.0.0
+safetensors==0.8.0
+tokenizers==0.22.2
+pytest==8.4.2

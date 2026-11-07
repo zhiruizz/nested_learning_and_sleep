@@ -1,0 +1,79 @@
+{
+  "_public_capture": {
+    "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+    "normalization": "Original aggregate schema retained; only exact raw-text/token/example-identity fields removed; paths normalized; raw source artifact SHA recorded in public-capture.json.",
+    "schema": "clinc-v8-public-development-capture-reference-v1",
+    "source_artifact": "outputs/clinc-v8-preparation/hope-task1-r2-covered-work.json",
+    "source_artifact_sha256_raw": "be713d175ee5c12bf1928e36d73cba1c6ebe90d88c150529c4f6025063a77e46"
+  },
+  "arms": {
+    "seed17/HOPE": {
+      "capture_original_head_and_readout_lora": 195202222129152,
+      "capture_transformer_gemm_attention": 1397827945070592,
+      "capture_zero_output_memory_matrices": 973414072320,
+      "covered_total_interval": [
+        1829271389478912,
+        1831024566607872
+      ],
+      "covered_total_teraflops_interval": [
+        1829.271389478912,
+        1831.024566607872
+      ],
+      "expert_branches_per_level_upper_bound": 1,
+      "frozen_backbone_forward": 1594003581272064,
+      "tail_backward_frozen_head_input_grad": 39092172005376,
+      "tail_backward_mutable_interval": [
+        0,
+        779763056640
+      ],
+      "tail_forward_expert_branches_interval": [
+        0,
+        973414072320
+      ],
+      "tail_forward_head_and_memory": 196175636201472
+    }
+  },
+  "classification": "analytical covered GEMM+attention estimate; not measured FLOPs and not complete FLOPs",
+  "dimensions": {
+    "Dh": 128,
+    "H": 3072,
+    "I": 8192,
+    "L": 28,
+    "V": 128256,
+    "heads": 24,
+    "kvheads": 8
+  },
+  "excluded_operators": [
+    "RMSNorm",
+    "activation",
+    "RoPE",
+    "softmax",
+    "router",
+    "CE/KL",
+    "sampling",
+    "adds/copies",
+    "optimizer",
+    "I/O"
+  ],
+  "formula_version": "clinc-v8-gemm-attention-estimate-3",
+  "model_config_sha256": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d",
+  "mutable_dimensions": {
+    "head_lora_rank": 2,
+    "levels": 5,
+    "rank": 64
+  },
+  "notes": [
+    "FLOPs assume 2 per multiply-accumulate.",
+    "Padding is counted using recorded BxS shapes.",
+    "No frozen-backbone backward is included.",
+    "Capture executes its frozen zero-output memory and readout matrices; tail recomputes the LM head.",
+    "Per-bank expert forward upper bounds are one branch for natural routing or two for an explicitly configured controlled mix.",
+    "Mutable gradient GEMMs use lower bound 0 and upper bound 2x listed forward GEMMs.",
+    "Every gradient-enabled tail call is assumed to reach backward; failed/unused diagnostic graphs require separate accounting.",
+    "The interval bounds the covered sparse/mutable GEMMs only; omitted operators are outside both endpoints.",
+    "Generation prefix recapture is included only insofar as present in the forward shape histogram; no KV-cache savings are assumed."
+  ],
+  "run_config_sha256": "08cbb7c3e5168102fda39b9ce61db9f5ab4177a4ec2b903a5a5650045581fe9a",
+  "schema": "clinc-v8-covered-flops-estimate-v3",
+  "seal_sha256": "a5d82504a5ec82c9a2b7f394c87cfe0eb1595be428ff8fabc3b2ebe868417ba2"
+}

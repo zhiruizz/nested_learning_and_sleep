@@ -1,0 +1,19 @@
+{
+  "_public_capture": {
+    "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+    "normalization": "Original aggregate schema retained; only exact raw-text/token/example-identity fields removed; paths normalized; raw source artifact SHA recorded in public-capture.json.",
+    "schema": "clinc-v8-public-development-capture-reference-v1",
+    "source_artifact": "outputs/clinc-v8-full-startup-20261107-a/startup-qualification.json",
+    "source_artifact_sha256_raw": "0263cbc24f6d1568bc83d0d0309a5b4010755af2c0395b8118d944f7c347a244"
+  },
+  "forward_calls": 0,
+  "master_config_sha256": "ec8a9bfadde15a6b0bed202f1ad5eb621805e50b92151a6747827c0f177bc32f",
+  "model_loaded": false,
+  "optimizer_steps": 0,
+  "passed": true,
+  "real_model_assets_verified": true,
+  "real_training_pack_verified": true,
+  "runner_sha256": "b056ca44597cc04e042ed7ccf82361cff54001320ed017db8b0eb7c5d58e4193",
+  "schema": "clinc-v8-full-host-startup-qualification-v1",
+  "test_data_accessed": false
+}

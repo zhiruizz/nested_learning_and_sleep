@@ -1,0 +1,15 @@
+{
+  "_public_capture": {
+    "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+    "normalization": "Original aggregate schema retained; only exact raw-text/token/example-identity fields removed; paths normalized; raw source artifact SHA recorded in public-capture.json.",
+    "schema": "clinc-v8-public-development-capture-reference-v1",
+    "source_artifact": "outputs/clinc-v8-preparation/acquisition-receipt.json",
+    "source_artifact_sha256_raw": "fff471d2f58caddf1b78e702b17622b969d49625b4028fbb618c65073cd67cb7"
+  },
+  "config": "plus",
+  "development_bytes": 77789,
+  "revision": "155b9c710419136e17307b80d0a13e68cd46b4ec",
+  "schema": "clinc-v8-raw-train-development-acquisition",
+  "test_payload_downloaded": false,
+  "train_bytes": 312096
+}

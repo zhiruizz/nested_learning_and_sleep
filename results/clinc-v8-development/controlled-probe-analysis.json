@@ -1,0 +1,706 @@
+{
+  "_public_capture": {
+    "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+    "normalization": "Original aggregate schema retained; only exact raw-text/token/example-identity fields removed; paths normalized; raw source artifact SHA recorded in public-capture.json.",
+    "schema": "clinc-v8-public-development-capture-reference-v1",
+    "source_artifact": "outputs/clinc-v8-preparation/controlled-probe-analysis-clean-primary.json",
+    "source_artifact_sha256_raw": "addf300c681970a829d0f52583bbc8c2ce721b44aaa40aca188d346d12f81c78"
+  },
+  "by_arm_role_owner_kind": {
+    "GOLD_CE_MIX|current|gold_label|gold_ce": {
+      "controlled_fresh_branch_executed_coverage": {
+        "mean": 1.0,
+        "n": 24,
+        "sd": 0.0
+      },
+      "kind": "gold_ce",
+      "n": 24,
+      "natural_top1_fresh_receiver_coverage": {
+        "mean": 0.9249999999999999,
+        "n": 24,
+        "sd": 0.21473497877875206
+      },
+      "same_sample_ce_after": {
+        "mean": 3.014520754416784,
+        "n": 24,
+        "sd": 1.3790051299612058
+      },
+      "same_sample_ce_before": {
+        "mean": 3.8392430742581687,
+        "n": 24,
+        "sd": 1.4240220422065248
+      },
+      "same_sample_kl_after": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_kl_before": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_kl_delta_after_minus_before": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_objective_after": {
+        "mean": 3.014520754416784,
+        "n": 24,
+        "sd": 1.3790051299612058
+      },
+      "same_sample_objective_before": {
+        "mean": 3.8392430742581687,
+        "n": 24,
+        "sd": 1.4240220422065248
+      },
+      "sample_owner": "gold_label",
+      "sampled_answer_matches_prompt_gold_diagnostic_rate": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "sampled_answer_valid_rate": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "sampling_diagnostic_note": "not applicable: gold CE emits no sampled-answer diagnostic fields"
+    },
+    "GOLD_CE_MIX|old|gold_label|gold_ce": {
+      "controlled_fresh_branch_executed_coverage": {
+        "mean": 1.0,
+        "n": 24,
+        "sd": 0.0
+      },
+      "kind": "gold_ce",
+      "n": 24,
+      "natural_top1_fresh_receiver_coverage": {
+        "mean": 0.8472222222222222,
+        "n": 24,
+        "sd": 0.31051098087371426
+      },
+      "same_sample_ce_after": {
+        "mean": 3.671695902943611,
+        "n": 24,
+        "sd": 1.474299833236302
+      },
+      "same_sample_ce_before": {
+        "mean": 4.610930070281029,
+        "n": 24,
+        "sd": 1.654398505887055
+      },
+      "same_sample_kl_after": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_kl_before": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_kl_delta_after_minus_before": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_objective_after": {
+        "mean": 3.671695902943611,
+        "n": 24,
+        "sd": 1.474299833236302
+      },
+      "same_sample_objective_before": {
+        "mean": 4.610930070281029,
+        "n": 24,
+        "sd": 1.654398505887055
+      },
+      "sample_owner": "gold_label",
+      "sampled_answer_matches_prompt_gold_diagnostic_rate": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "sampled_answer_valid_rate": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "sampling_diagnostic_note": "not applicable: gold CE emits no sampled-answer diagnostic fields"
+    },
+    "SLEEP_MIX|current|student|gkd": {
+      "controlled_fresh_branch_executed_coverage": {
+        "mean": 1.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "kind": "gkd",
+      "n": 8,
+      "natural_top1_fresh_receiver_coverage": {
+        "mean": 0.6666666666666667,
+        "n": 8,
+        "sd": 0.35843021946010944
+      },
+      "same_sample_ce_after": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_ce_before": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_kl_after": {
+        "mean": 0.38942716736346483,
+        "n": 8,
+        "sd": 0.4236482446597829
+      },
+      "same_sample_kl_before": {
+        "mean": 0.7757930853404105,
+        "n": 8,
+        "sd": 0.6860908219100805
+      },
+      "same_sample_kl_delta_after_minus_before": {
+        "mean": -0.38636591797694564,
+        "n": 8,
+        "sd": 0.28853831748068554
+      },
+      "same_sample_objective_after": {
+        "mean": 0.38942716736346483,
+        "n": 8,
+        "sd": 0.4236482446597829
+      },
+      "same_sample_objective_before": {
+        "mean": 0.7757930853404105,
+        "n": 8,
+        "sd": 0.6860908219100805
+      },
+      "sample_owner": "student",
+      "sampled_answer_matches_prompt_gold_diagnostic_rate": {
+        "mean": 0.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "sampled_answer_valid_rate": {
+        "mean": 0.0,
+        "n": 8,
+        "sd": 0.0
+      }
+    },
+    "SLEEP_MIX|current|teacher|gkd": {
+      "controlled_fresh_branch_executed_coverage": {
+        "mean": 1.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "kind": "gkd",
+      "n": 8,
+      "natural_top1_fresh_receiver_coverage": {
+        "mean": 1.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "same_sample_ce_after": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_ce_before": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_kl_after": {
+        "mean": 1.5140039846301079,
+        "n": 8,
+        "sd": 0.88055501272849
+      },
+      "same_sample_kl_before": {
+        "mean": 1.9264773353934288,
+        "n": 8,
+        "sd": 0.8491124573509408
+      },
+      "same_sample_kl_delta_after_minus_before": {
+        "mean": -0.4124733507633209,
+        "n": 8,
+        "sd": 0.16697366550835852
+      },
+      "same_sample_objective_after": {
+        "mean": 1.5140039846301079,
+        "n": 8,
+        "sd": 0.88055501272849
+      },
+      "same_sample_objective_before": {
+        "mean": 1.9264773353934288,
+        "n": 8,
+        "sd": 0.8491124573509408
+      },
+      "sample_owner": "teacher",
+      "sampled_answer_matches_prompt_gold_diagnostic_rate": {
+        "mean": 0.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "sampled_answer_valid_rate": {
+        "mean": 0.0,
+        "n": 8,
+        "sd": 0.0
+      }
+    },
+    "SLEEP_MIX|current|teacher|lti": {
+      "controlled_fresh_branch_executed_coverage": {
+        "mean": 1.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "kind": "lti",
+      "n": 8,
+      "natural_top1_fresh_receiver_coverage": {
+        "mean": 1.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "same_sample_ce_after": {
+        "mean": 2.432987853884697,
+        "n": 8,
+        "sd": 1.0501863537846772
+      },
+      "same_sample_ce_before": {
+        "mean": 2.7177719473838806,
+        "n": 8,
+        "sd": 1.334933955749558
+      },
+      "same_sample_kl_after": {
+        "mean": 0.418119790032506,
+        "n": 8,
+        "sd": 0.22254156844358597
+      },
+      "same_sample_kl_before": {
+        "mean": 0.5998518150299788,
+        "n": 8,
+        "sd": 0.3237945400321755
+      },
+      "same_sample_kl_delta_after_minus_before": {
+        "mean": -0.18173202499747276,
+        "n": 8,
+        "sd": 0.32877894697302745
+      },
+      "same_sample_objective_after": {
+        "mean": 0.6934728529304266,
+        "n": 8,
+        "sd": 0.29051003167834344
+      },
+      "same_sample_objective_before": {
+        "mean": 0.8109481856226921,
+        "n": 8,
+        "sd": 0.32515201769784097
+      },
+      "sample_owner": "teacher",
+      "sampled_answer_matches_prompt_gold_diagnostic_rate": {
+        "mean": 0.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "sampled_answer_valid_rate": {
+        "mean": 0.125,
+        "n": 8,
+        "sd": 0.3535533905932738
+      }
+    },
+    "SLEEP_MIX|old|student|gkd": {
+      "controlled_fresh_branch_executed_coverage": {
+        "mean": 1.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "kind": "gkd",
+      "n": 8,
+      "natural_top1_fresh_receiver_coverage": {
+        "mean": 0.96875,
+        "n": 8,
+        "sd": 0.08838834764831845
+      },
+      "same_sample_ce_after": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_ce_before": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_kl_after": {
+        "mean": 0.5553632471710443,
+        "n": 8,
+        "sd": 0.7373154336965432
+      },
+      "same_sample_kl_before": {
+        "mean": 1.116493184119463,
+        "n": 8,
+        "sd": 0.8937610252766073
+      },
+      "same_sample_kl_delta_after_minus_before": {
+        "mean": -0.5611299369484186,
+        "n": 8,
+        "sd": 0.3966053643968161
+      },
+      "same_sample_objective_after": {
+        "mean": 0.5553632471710443,
+        "n": 8,
+        "sd": 0.7373154336965432
+      },
+      "same_sample_objective_before": {
+        "mean": 1.116493184119463,
+        "n": 8,
+        "sd": 0.8937610252766073
+      },
+      "sample_owner": "student",
+      "sampled_answer_matches_prompt_gold_diagnostic_rate": {
+        "mean": 0.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "sampled_answer_valid_rate": {
+        "mean": 0.0,
+        "n": 8,
+        "sd": 0.0
+      }
+    },
+    "SLEEP_MIX|old|teacher|gkd": {
+      "controlled_fresh_branch_executed_coverage": {
+        "mean": 1.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "kind": "gkd",
+      "n": 8,
+      "natural_top1_fresh_receiver_coverage": {
+        "mean": 0.625,
+        "n": 8,
+        "sd": 0.5175491695067657
+      },
+      "same_sample_ce_after": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_ce_before": {
+        "mean": null,
+        "n": 0,
+        "sd": null
+      },
+      "same_sample_kl_after": {
+        "mean": 0.865347633138299,
+        "n": 8,
+        "sd": 0.8497328796779008
+      },
+      "same_sample_kl_before": {
+        "mean": 1.12052346393466,
+        "n": 8,
+        "sd": 0.9266993979764755
+      },
+      "same_sample_kl_delta_after_minus_before": {
+        "mean": -0.25517583079636097,
+        "n": 8,
+        "sd": 0.09969949167002899
+      },
+      "same_sample_objective_after": {
+        "mean": 0.865347633138299,
+        "n": 8,
+        "sd": 0.8497328796779008
+      },
+      "same_sample_objective_before": {
+        "mean": 1.12052346393466,
+        "n": 8,
+        "sd": 0.9266993979764755
+      },
+      "sample_owner": "teacher",
+      "sampled_answer_matches_prompt_gold_diagnostic_rate": {
+        "mean": 0.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "sampled_answer_valid_rate": {
+        "mean": 0.25,
+        "n": 8,
+        "sd": 0.4629100498862757
+      }
+    },
+    "SLEEP_MIX|old|teacher|lti": {
+      "controlled_fresh_branch_executed_coverage": {
+        "mean": 1.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "kind": "lti",
+      "n": 8,
+      "natural_top1_fresh_receiver_coverage": {
+        "mean": 0.6875,
+        "n": 8,
+        "sd": 0.37201190457142247
+      },
+      "same_sample_ce_after": {
+        "mean": 2.5083446353673935,
+        "n": 8,
+        "sd": 0.8404803385064135
+      },
+      "same_sample_ce_before": {
+        "mean": 2.888560488820076,
+        "n": 8,
+        "sd": 0.8809606855134738
+      },
+      "same_sample_kl_after": {
+        "mean": 0.2088493425399065,
+        "n": 8,
+        "sd": 0.18887590774351382
+      },
+      "same_sample_kl_before": {
+        "mean": 0.7100452296435833,
+        "n": 8,
+        "sd": 0.9002778045544502
+      },
+      "same_sample_kl_delta_after_minus_before": {
+        "mean": -0.5011958871036768,
+        "n": 8,
+        "sd": 0.7619276666397847
+      },
+      "same_sample_objective_after": {
+        "mean": 0.589830603916198,
+        "n": 8,
+        "sd": 0.2584601816607964
+      },
+      "same_sample_objective_before": {
+        "mean": 0.9168233498930931,
+        "n": 8,
+        "sd": 0.6011614872929413
+      },
+      "sample_owner": "teacher",
+      "sampled_answer_matches_prompt_gold_diagnostic_rate": {
+        "mean": 0.0,
+        "n": 8,
+        "sd": 0.0
+      },
+      "sampled_answer_valid_rate": {
+        "mean": 0.0,
+        "n": 8,
+        "sd": 0.0
+      }
+    }
+  },
+  "cost": {
+    "active_wall_seconds": 239.0930000001099,
+    "full_backbone_forward_tokens": 604293,
+    "optimizer_or_lifecycle_update_steps": 472,
+    "per_arm": {
+      "GOLD_CE_MIX": {
+        "active_seconds": 112.32799999997951,
+        "forward_calls": 1772,
+        "forward_tokens": 310188,
+        "physical_sleep_adamw_steps": 48,
+        "sleep_events": 16
+      },
+      "SLEEP_MIX": {
+        "active_seconds": 120.45299999997951,
+        "forward_calls": 1918,
+        "forward_tokens": 294105,
+        "physical_sleep_adamw_steps": 48,
+        "sleep_events": 16
+      }
+    },
+    "sleep_events": 32,
+    "tail_backward_calls": 472,
+    "tail_grad_enabled_calls": 472,
+    "total_full_backbone_forward_calls": 3690,
+    "total_tail_calls": 3834
+  },
+  "endpoint_seen_clean_development": {
+    "GOLD_CE_MIX": {
+      "current": {
+        "accuracy": 0.12333333333333334,
+        "correct": 37,
+        "count": 300,
+        "invalid": 257,
+        "predictions_sha256": "0489be9622f902294fed7607a2c5223b0b01e2bf7fbf9a7b39ad56ab072a05b6"
+      },
+      "old": {
+        "accuracy": 0.21666666666666667,
+        "correct": 65,
+        "count": 300,
+        "invalid": 219,
+        "predictions_sha256": "454dd9897a4c34c4849a85c23c0a64d4a30fe90ddf92192543c685ddee69dc6b"
+      },
+      "seen": {
+        "accuracy": 0.17,
+        "correct": 102,
+        "count": 600,
+        "invalid": 476,
+        "predictions_sha256": "ebbe51f874753ae8ecffdbb5274be4c83ed025d69866169768cfd0bb1caaa665"
+      }
+    },
+    "SLEEP_MIX": {
+      "current": {
+        "accuracy": 0.11333333333333333,
+        "correct": 34,
+        "count": 300,
+        "invalid": 254,
+        "predictions_sha256": "06b03bc17eeab6879f8e4717a907009f2631ae0932f2cb944e98c81640e58178"
+      },
+      "old": {
+        "accuracy": 0.19,
+        "correct": 57,
+        "count": 300,
+        "invalid": 217,
+        "predictions_sha256": "19336d1c2a9a9b30e867ecc96ac51f8dd3102ba5314508b6fbab2faaa4f5feaa"
+      },
+      "seen": {
+        "accuracy": 0.15166666666666667,
+        "correct": 91,
+        "count": 600,
+        "invalid": 471,
+        "predictions_sha256": "f13541369beb2cffee1f10139a58e977b52b6dd577d0b6c07845ee1b67b6d8dd"
+      }
+    }
+  },
+  "exposure": {
+    "GOLD_CE_MIX": {
+      "calls": 48,
+      "covered_class_indices": {
+        "current": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "old": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "role_counts": {
+        "current": 24,
+        "old": 24
+      },
+      "unique_prompt_hashes": 48
+    },
+    "SLEEP_MIX": {
+      "calls": 48,
+      "covered_class_indices": {
+        "current": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "old": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      "role_counts": {
+        "current": 24,
+        "old": 24
+      },
+      "unique_prompt_hashes": 48
+    }
+  },
+  "observations": [
+    "Single seed and development data only; diagnostic, not a multi-seed claim.",
+    "Same-sample loss changes show local fit, not held-out transfer.",
+    "Natural top-1 receiver coverage is distinct from forced 0.5 branch execution.",
+    "GOLD_CE_MIX uses extra gold labels and is not FLOP- or information-matched.",
+    "Only protocol, metrics, and development seal were read; no test data or checkpoint contents."
+  ],
+  "schema": "clinc-v8-controlled-probe-analysis-v1",
+  "scope": {
+    "arms": [
+      "SLEEP_MIX",
+      "GOLD_CE_MIX"
+    ],
+    "sampled_sleep_requests": 96,
+    "seed": 17,
+    "sleep_commits": 32,
+    "source_arm": "qualified HOPE task0; task1 continuation only",
+    "test_data_read": false
+  },
+  "source": {
+    "metrics_sha256": "8f4385f869ed957418ef181324bbbce46c555acd900559bf4df61781dafe576c",
+    "parent_checkpoint_sha256": "a783919bf91cb14c5b64d6f9397f3947fc63d42752eb470dd94d0b76d9c05a20",
+    "protocol_sha256": "3da2fd218536961afb6b05ab290eb6822304da355192f0fcc7ff777f80706d72",
+    "run_dir": "<PRIVATE_ARTIFACT>/clinc-v8-controlled-seed17-task1-20261107-r2",
+    "seal_sha256": "63367bfc4b19420d0c6f17de7057804fbdfefba7825f27acb3b742d895dee75a",
+    "source_hashes": {
+      "<PUBLIC_REPO>/src/nested_sleep/accounting.py": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96",
+      "<PUBLIC_REPO>/src/nested_sleep/experts.py": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094",
+      "<PUBLIC_REPO>/src/nested_sleep/lm.py": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+      "<PUBLIC_REPO>/src/nested_sleep/native.py": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57",
+      "<SOURCE_ROOT>/tools/clinc_cil_common_v8.py": "7dbc2f84df1921d3de1dd390bde2acf2e94cae027316089b01fa3d5d1125f135",
+      "<SOURCE_ROOT>/tools/clinc_controlled_routing_v8.py": "37f240530d96e5e0525d9b0fd6d67b5eaba37720d7b170479a3181eeee107562",
+      "<SOURCE_ROOT>/tools/clinc_lifecycle_v8.py": "3e270a6df0359f495fc09d5aaf4fd6e108f37c36da41373b70fc16a26fca14a2",
+      "<SOURCE_ROOT>/tools/clinc_tail_runtime_v8.py": "057de386734ff128d1fb0147dd83b1c14009cc36d8ed7c77740cbb497ee6f6d9",
+      "<SOURCE_ROOT>/tools/run_clinc_cil_v8_r2.py": "71fb703d83ff23cfc8d9e27be2fa5cd119510c7aa350837bd927c5c037b64fb3",
+      "<SOURCE_ROOT>/tools/run_clinc_controlled_probe_v8.py": "693f0edf7352c3e874613dd128ca4398035d5064d4a606c440e526ddb386151d"
+    },
+    "source_lock_sha256": "9319eaeae3a66177eeccd53ed4e5be1f1636809f3d86295bf4154f7981c5a7ff",
+    "training_manifest_sha256": "21b3651a3dce8534fa7363d7f31674c3d86dda735b0d896a60d03ffb055c9123"
+  },
+  "status": "complete",
+  "teacher_sample_summary": {
+    "canonical_label_valid_count": 3,
+    "canonical_label_valid_rate": 0.09375,
+    "matches_prompt_gold_count": 0,
+    "matches_prompt_gold_rate": 0.0,
+    "n": 32,
+    "owner": "teacher only; excludes student-owned GKD samples"
+  }
+}

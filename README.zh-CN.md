@@ -1,5 +1,9 @@
 # NL/Sleep Reproduction Lab
 
+V8 已加入 Llama-3.2-3B / CLINC150 生命周期实验。单种子、两任务开发集中，修正目标后的 k=10 受控 Sleep 旧类/新类准确率为 7.67% / 31.33%，无 Sleep 为 13.00% / 70.67%；尚未显示总体收益。[开发报告](reports/clinc150-lifecycle-v8-development.md)保留两种预算、额外使用已知标签的 Gold CE 对照、无效旧评估、失败重放与成本限制。
+
+另行冻结的三个类别顺序种子、十任务对照正在运行；六次正式续训和三份共同起点完成实物校验前，官方测试集继续封存。当前方法是 CMS 最后 MLP 扩展与额外的 0.5 接收器混合，不是原生 HOPE 或论文完整复现。参见 [V8 协议](docs/clinc-cil-v8-protocol.md)及[资产与恢复说明](docs/clinc-v8-reproduction.md)。
+
 V7 已完成 30 组单上下文训练与 12 组后续压力测试：合格旧教师和样本多样性有助保留，但没有方案在三个种子上全部通过旧新任务门槛。[v7 报告](reports/agnews-single-receiver-v7.md)保留负结果、额外监督/成本限制及主运行中断恢复记录；预留确认集未读取。
 
 这是 Nested Learning 与 Language Models Need Sleep 的非官方、局部实现与诊断研究。

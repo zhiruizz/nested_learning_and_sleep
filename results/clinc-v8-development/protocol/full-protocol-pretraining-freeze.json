@@ -1,0 +1,41 @@
+{
+  "_public_capture": {
+    "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+    "normalization": "Historical pretraining-freeze capture at 2026-11-07T07:48Z; full_training_started=false is status at that time only; this is not a current queue status or raw seal.",
+    "schema": "clinc-v8-public-development-capture-reference-v1",
+    "source_artifact": "outputs/clinc-v8-preparation/full-protocol-freeze.json",
+    "source_artifact_sha256_raw": "0bb08a2c2adf9a644e98c01876e9ca6f07626fdd9d48650e220b08768ae9539d"
+  },
+  "claim_scope": "local CMS last-MLP fixed-mixture ablation; not native HOPE or paper-faithful Sleep",
+  "frozen_at_utc": "2026-11-07T07:48:15.758263+00:00",
+  "full_training_started": false,
+  "independent_review": {
+    "conclusion": "three blockers fixed; no remaining source blocker",
+    "reviewer": "x870e_lm_pilot",
+    "runner_sha256": "b056ca44597cc04e042ed7ccf82361cff54001320ed017db8b0eb7c5d58e4193"
+  },
+  "master_config_path": "configs/clinc_cil_v8_full_master_frozen_k10.json",
+  "master_config_sha256": "ec8a9bfadde15a6b0bed202f1ad5eb621805e50b92151a6747827c0f177bc32f",
+  "root_cpu_tests": {
+    "passed": 10,
+    "test_file": "tests/test_clinc_cil_v8_full_cpu.py"
+  },
+  "schema": "clinc-v8-full-protocol-freeze-v1",
+  "selection_basis": "k10 expands controlled transfer coverage; both corrected development Sleep budgets were negative",
+  "source_hashes": {
+    "candidate_runner": "b056ca44597cc04e042ed7ccf82361cff54001320ed017db8b0eb7c5d58e4193",
+    "common": "7dbc2f84df1921d3de1dd390bde2acf2e94cae027316089b01fa3d5d1125f135",
+    "controlled_lifecycle": "37f240530d96e5e0525d9b0fd6d67b5eaba37720d7b170479a3181eeee107562",
+    "controlled_probe": "693f0edf7352c3e874613dd128ca4398035d5064d4a606c440e526ddb386151d",
+    "lifecycle": "3e270a6df0359f495fc09d5aaf4fd6e108f37c36da41373b70fc16a26fca14a2",
+    "public_accounting": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96",
+    "public_experts": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094",
+    "public_lm": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+    "public_native": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57",
+    "r2_runner": "71fb703d83ff23cfc8d9e27be2fa5cd119510c7aa350837bd927c5c037b64fb3",
+    "tail_runtime": "057de386734ff128d1fb0147dd83b1c14009cc36d8ed7c77740cbb497ee6f6d9"
+  },
+  "source_lock_sha256": "0de1aadd3328089807f872a60b1b297a671bfb99ceac137d04faa08e2da2eb5a",
+  "test_data_accessed": false,
+  "test_policy": "No test acquisition before exact six-run seal with verified three foundations and actual checkpoint bytes"
+}

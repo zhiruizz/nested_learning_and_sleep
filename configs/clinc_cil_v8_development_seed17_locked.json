@@ -1,0 +1,58 @@
+{
+  "schema": "clinc-cil-v8-pilot",
+  "source_revision": "d443e35311a0b835ad2a201bdd97c0fd18517b4a+CLINC-v8-source-file-lock",
+  "model_revision": "LLM-Research/Llama-3.2-3B@48d84dd14886f01964f72e7f742a404dd86f9fb6",
+  "model_assets_sha256": {
+    "model-00001-of-00002.safetensors": "584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002",
+    "model-00002-of-00002.safetensors": "4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb"
+  },
+  "training_manifest_sha256": "21b3651a3dce8534fa7363d7f31674c3d86dda735b0d896a60d03ffb055c9123",
+  "expected_normalized_train_dev_duplicates": 3,
+  "seed": 17,
+  "initialization_seed": 1907008,
+  "tasks": [
+    0,
+    1
+  ],
+  "arms": [
+    "HOPE",
+    "HOPE_SLEEP"
+  ],
+  "rank": 64,
+  "capacity": 8,
+  "levels": 5,
+  "periods": [
+    16,
+    64,
+    256,
+    1024,
+    null
+  ],
+  "epochs_per_task": 1,
+  "examples_per_task": 1500,
+  "batch_size": 8,
+  "max_steps_per_task": 188,
+  "base_lr": 0.001,
+  "fast_lr": 0.1,
+  "sleep_lr": 0.001,
+  "sleep_weight_decay": 0.0,
+  "sleep_clip_norm": 1.0,
+  "sleep_prompt_policy": "current",
+  "gkd_calls_per_event": 2,
+  "lti_calls_per_event": 1,
+  "max_new_tokens": 8,
+  "lti_edit_distance_z0": 8,
+  "lti_semantic_weight": 0.5,
+  "lti_edit_weight": 0.5,
+  "temperature": 0.8,
+  "eval_examples_per_class": 2,
+  "task0_acquisition_gate": 0.5,
+  "endpoint_full_clean": true,
+  "eval_full_development": true,
+  "checkpoint_every_steps": 64,
+  "max_wall_seconds": 3600,
+  "max_forward_calls": 20000,
+  "max_update_steps": 4000,
+  "device": "cuda:0",
+  "max_sequence_length": 128
+}

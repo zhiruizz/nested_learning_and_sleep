@@ -1,0 +1,760 @@
+{
+  "_public_capture": {
+    "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+    "normalization": "Original aggregate schema retained; only exact raw-text/token/example-identity fields removed; paths normalized; raw source artifact SHA recorded in public-capture.json.",
+    "schema": "clinc-v8-public-development-capture-reference-v1",
+    "source_artifact": "outputs/clinc-v8-preparation/controlled-boundary-analysis-v1.json",
+    "source_artifact_sha256_raw": "2adc927949d6b0cf4e7dfde2fd6493eed96c5a7d30ee6b23da29dcd097c02dbc"
+  },
+  "aggregate_by_arm_sender_stage_cohort": {
+    "GOLD_CE_MIX|sender0|base_only_reconstruction|current": {
+      "accuracy": 0.18888888888888888,
+      "correct": 68,
+      "count": 360,
+      "invalid": 280,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender0|base_only_reconstruction|old": {
+      "accuracy": 0.20555555555555555,
+      "correct": 74,
+      "count": 360,
+      "invalid": 268,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender0|base_only_reconstruction|seen": {
+      "accuracy": 0.19722222222222222,
+      "correct": 142,
+      "count": 720,
+      "invalid": 548,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender0|initial_reset_expanded_reconstruction|current": {
+      "accuracy": 0.041666666666666664,
+      "correct": 15,
+      "count": 360,
+      "invalid": 345,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender0|initial_reset_expanded_reconstruction|old": {
+      "accuracy": 0.10833333333333334,
+      "correct": 39,
+      "count": 360,
+      "invalid": 317,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender0|initial_reset_expanded_reconstruction|seen": {
+      "accuracy": 0.075,
+      "correct": 54,
+      "count": 720,
+      "invalid": 662,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender0|optimized_post|current": {
+      "accuracy": 0.05277777777777778,
+      "correct": 19,
+      "count": 360,
+      "invalid": 337,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender0|optimized_post|old": {
+      "accuracy": 0.16111111111111112,
+      "correct": 58,
+      "count": 360,
+      "invalid": 295,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender0|optimized_post|seen": {
+      "accuracy": 0.10694444444444444,
+      "correct": 77,
+      "count": 720,
+      "invalid": 632,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender0|teacher_pre|current": {
+      "accuracy": 0.18888888888888888,
+      "correct": 68,
+      "count": 360,
+      "invalid": 280,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender0|teacher_pre|old": {
+      "accuracy": 0.20555555555555555,
+      "correct": 74,
+      "count": 360,
+      "invalid": 268,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender0|teacher_pre|seen": {
+      "accuracy": 0.19722222222222222,
+      "correct": 142,
+      "count": 720,
+      "invalid": 548,
+      "pairs": 12
+    },
+    "GOLD_CE_MIX|sender1|base_only_reconstruction|current": {
+      "accuracy": 0.03333333333333333,
+      "correct": 3,
+      "count": 90,
+      "invalid": 87,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender1|base_only_reconstruction|old": {
+      "accuracy": 0.08888888888888889,
+      "correct": 8,
+      "count": 90,
+      "invalid": 81,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender1|base_only_reconstruction|seen": {
+      "accuracy": 0.06111111111111111,
+      "correct": 11,
+      "count": 180,
+      "invalid": 168,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender1|initial_reset_expanded_reconstruction|current": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 90,
+      "invalid": 90,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender1|initial_reset_expanded_reconstruction|old": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 90,
+      "invalid": 90,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender1|initial_reset_expanded_reconstruction|seen": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 180,
+      "invalid": 180,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender1|optimized_post|current": {
+      "accuracy": 0.044444444444444446,
+      "correct": 4,
+      "count": 90,
+      "invalid": 86,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender1|optimized_post|old": {
+      "accuracy": 0.12222222222222222,
+      "correct": 11,
+      "count": 90,
+      "invalid": 77,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender1|optimized_post|seen": {
+      "accuracy": 0.08333333333333333,
+      "correct": 15,
+      "count": 180,
+      "invalid": 163,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender1|teacher_pre|current": {
+      "accuracy": 0.03333333333333333,
+      "correct": 3,
+      "count": 90,
+      "invalid": 87,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender1|teacher_pre|old": {
+      "accuracy": 0.08888888888888889,
+      "correct": 8,
+      "count": 90,
+      "invalid": 81,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender1|teacher_pre|seen": {
+      "accuracy": 0.06111111111111111,
+      "correct": 11,
+      "count": 180,
+      "invalid": 168,
+      "pairs": 3
+    },
+    "GOLD_CE_MIX|sender2|base_only_reconstruction|current": {
+      "accuracy": 0.03333333333333333,
+      "correct": 1,
+      "count": 30,
+      "invalid": 29,
+      "pairs": 1
+    },
+    "GOLD_CE_MIX|sender2|base_only_reconstruction|old": {
+      "accuracy": 0.03333333333333333,
+      "correct": 1,
+      "count": 30,
+      "invalid": 28,
+      "pairs": 1
+    },
+    "GOLD_CE_MIX|sender2|base_only_reconstruction|seen": {
+      "accuracy": 0.03333333333333333,
+      "correct": 2,
+      "count": 60,
+      "invalid": 57,
+      "pairs": 1
+    },
+    "GOLD_CE_MIX|sender2|initial_reset_expanded_reconstruction|current": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 30,
+      "invalid": 30,
+      "pairs": 1
+    },
+    "GOLD_CE_MIX|sender2|initial_reset_expanded_reconstruction|old": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 30,
+      "invalid": 30,
+      "pairs": 1
+    },
+    "GOLD_CE_MIX|sender2|initial_reset_expanded_reconstruction|seen": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 60,
+      "invalid": 60,
+      "pairs": 1
+    },
+    "GOLD_CE_MIX|sender2|optimized_post|current": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 30,
+      "invalid": 30,
+      "pairs": 1
+    },
+    "GOLD_CE_MIX|sender2|optimized_post|old": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 30,
+      "invalid": 30,
+      "pairs": 1
+    },
+    "GOLD_CE_MIX|sender2|optimized_post|seen": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 60,
+      "invalid": 60,
+      "pairs": 1
+    },
+    "GOLD_CE_MIX|sender2|teacher_pre|current": {
+      "accuracy": 0.03333333333333333,
+      "correct": 1,
+      "count": 30,
+      "invalid": 29,
+      "pairs": 1
+    },
+    "GOLD_CE_MIX|sender2|teacher_pre|old": {
+      "accuracy": 0.03333333333333333,
+      "correct": 1,
+      "count": 30,
+      "invalid": 28,
+      "pairs": 1
+    },
+    "GOLD_CE_MIX|sender2|teacher_pre|seen": {
+      "accuracy": 0.03333333333333333,
+      "correct": 2,
+      "count": 60,
+      "invalid": 57,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender0|base_only_reconstruction|current": {
+      "accuracy": 0.1361111111111111,
+      "correct": 49,
+      "count": 360,
+      "invalid": 299,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender0|base_only_reconstruction|old": {
+      "accuracy": 0.23055555555555557,
+      "correct": 83,
+      "count": 360,
+      "invalid": 264,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender0|base_only_reconstruction|seen": {
+      "accuracy": 0.18333333333333332,
+      "correct": 132,
+      "count": 720,
+      "invalid": 563,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender0|initial_reset_expanded_reconstruction|current": {
+      "accuracy": 0.03888888888888889,
+      "correct": 14,
+      "count": 360,
+      "invalid": 346,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender0|initial_reset_expanded_reconstruction|old": {
+      "accuracy": 0.058333333333333334,
+      "correct": 21,
+      "count": 360,
+      "invalid": 336,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender0|initial_reset_expanded_reconstruction|seen": {
+      "accuracy": 0.04861111111111111,
+      "correct": 35,
+      "count": 720,
+      "invalid": 682,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender0|optimized_post|current": {
+      "accuracy": 0.09722222222222222,
+      "correct": 35,
+      "count": 360,
+      "invalid": 319,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender0|optimized_post|old": {
+      "accuracy": 0.1111111111111111,
+      "correct": 40,
+      "count": 360,
+      "invalid": 313,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender0|optimized_post|seen": {
+      "accuracy": 0.10416666666666667,
+      "correct": 75,
+      "count": 720,
+      "invalid": 632,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender0|teacher_pre|current": {
+      "accuracy": 0.1388888888888889,
+      "correct": 50,
+      "count": 360,
+      "invalid": 298,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender0|teacher_pre|old": {
+      "accuracy": 0.23055555555555557,
+      "correct": 83,
+      "count": 360,
+      "invalid": 264,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender0|teacher_pre|seen": {
+      "accuracy": 0.18472222222222223,
+      "correct": 133,
+      "count": 720,
+      "invalid": 562,
+      "pairs": 12
+    },
+    "SLEEP_MIX|sender1|base_only_reconstruction|current": {
+      "accuracy": 0.1,
+      "correct": 9,
+      "count": 90,
+      "invalid": 80,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender1|base_only_reconstruction|old": {
+      "accuracy": 0.12222222222222222,
+      "correct": 11,
+      "count": 90,
+      "invalid": 77,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender1|base_only_reconstruction|seen": {
+      "accuracy": 0.1111111111111111,
+      "correct": 20,
+      "count": 180,
+      "invalid": 157,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender1|initial_reset_expanded_reconstruction|current": {
+      "accuracy": 0.011111111111111112,
+      "correct": 1,
+      "count": 90,
+      "invalid": 89,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender1|initial_reset_expanded_reconstruction|old": {
+      "accuracy": 0.03333333333333333,
+      "correct": 3,
+      "count": 90,
+      "invalid": 87,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender1|initial_reset_expanded_reconstruction|seen": {
+      "accuracy": 0.022222222222222223,
+      "correct": 4,
+      "count": 180,
+      "invalid": 176,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender1|optimized_post|current": {
+      "accuracy": 0.06666666666666667,
+      "correct": 6,
+      "count": 90,
+      "invalid": 84,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender1|optimized_post|old": {
+      "accuracy": 0.044444444444444446,
+      "correct": 4,
+      "count": 90,
+      "invalid": 86,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender1|optimized_post|seen": {
+      "accuracy": 0.05555555555555555,
+      "correct": 10,
+      "count": 180,
+      "invalid": 170,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender1|teacher_pre|current": {
+      "accuracy": 0.1,
+      "correct": 9,
+      "count": 90,
+      "invalid": 80,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender1|teacher_pre|old": {
+      "accuracy": 0.12222222222222222,
+      "correct": 11,
+      "count": 90,
+      "invalid": 77,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender1|teacher_pre|seen": {
+      "accuracy": 0.1111111111111111,
+      "correct": 20,
+      "count": 180,
+      "invalid": 157,
+      "pairs": 3
+    },
+    "SLEEP_MIX|sender2|base_only_reconstruction|current": {
+      "accuracy": 0.1,
+      "correct": 3,
+      "count": 30,
+      "invalid": 27,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender2|base_only_reconstruction|old": {
+      "accuracy": 0.06666666666666667,
+      "correct": 2,
+      "count": 30,
+      "invalid": 28,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender2|base_only_reconstruction|seen": {
+      "accuracy": 0.08333333333333333,
+      "correct": 5,
+      "count": 60,
+      "invalid": 55,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender2|initial_reset_expanded_reconstruction|current": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 30,
+      "invalid": 30,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender2|initial_reset_expanded_reconstruction|old": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 30,
+      "invalid": 30,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender2|initial_reset_expanded_reconstruction|seen": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "count": 60,
+      "invalid": 60,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender2|optimized_post|current": {
+      "accuracy": 0.1,
+      "correct": 3,
+      "count": 30,
+      "invalid": 27,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender2|optimized_post|old": {
+      "accuracy": 0.06666666666666667,
+      "correct": 2,
+      "count": 30,
+      "invalid": 28,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender2|optimized_post|seen": {
+      "accuracy": 0.08333333333333333,
+      "correct": 5,
+      "count": 60,
+      "invalid": 55,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender2|teacher_pre|current": {
+      "accuracy": 0.1,
+      "correct": 3,
+      "count": 30,
+      "invalid": 27,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender2|teacher_pre|old": {
+      "accuracy": 0.06666666666666667,
+      "correct": 2,
+      "count": 30,
+      "invalid": 28,
+      "pairs": 1
+    },
+    "SLEEP_MIX|sender2|teacher_pre|seen": {
+      "accuracy": 0.08333333333333333,
+      "correct": 5,
+      "count": 60,
+      "invalid": 55,
+      "pairs": 1
+    }
+  },
+  "aggregate_by_arm_stage_cohort": {
+    "GOLD_CE_MIX|base_only_reconstruction|current": {
+      "accuracy": 0.15,
+      "correct": 72,
+      "count": 480,
+      "invalid": 396,
+      "pairs": 16
+    },
+    "GOLD_CE_MIX|base_only_reconstruction|old": {
+      "accuracy": 0.17291666666666666,
+      "correct": 83,
+      "count": 480,
+      "invalid": 377,
+      "pairs": 16
+    },
+    "GOLD_CE_MIX|base_only_reconstruction|seen": {
+      "accuracy": 0.16145833333333334,
+      "correct": 155,
+      "count": 960,
+      "invalid": 773,
+      "pairs": 16
+    },
+    "GOLD_CE_MIX|initial_reset_expanded_reconstruction|current": {
+      "accuracy": 0.03125,
+      "correct": 15,
+      "count": 480,
+      "invalid": 465,
+      "pairs": 16
+    },
+    "GOLD_CE_MIX|initial_reset_expanded_reconstruction|old": {
+      "accuracy": 0.08125,
+      "correct": 39,
+      "count": 480,
+      "invalid": 437,
+      "pairs": 16
+    },
+    "GOLD_CE_MIX|initial_reset_expanded_reconstruction|seen": {
+      "accuracy": 0.05625,
+      "correct": 54,
+      "count": 960,
+      "invalid": 902,
+      "pairs": 16
+    },
+    "GOLD_CE_MIX|optimized_post|current": {
+      "accuracy": 0.04791666666666667,
+      "correct": 23,
+      "count": 480,
+      "invalid": 453,
+      "pairs": 16
+    },
+    "GOLD_CE_MIX|optimized_post|old": {
+      "accuracy": 0.14375,
+      "correct": 69,
+      "count": 480,
+      "invalid": 402,
+      "pairs": 16
+    },
+    "GOLD_CE_MIX|optimized_post|seen": {
+      "accuracy": 0.09583333333333334,
+      "correct": 92,
+      "count": 960,
+      "invalid": 855,
+      "pairs": 16
+    },
+    "GOLD_CE_MIX|teacher_pre|current": {
+      "accuracy": 0.15,
+      "correct": 72,
+      "count": 480,
+      "invalid": 396,
+      "pairs": 16
+    },
+    "GOLD_CE_MIX|teacher_pre|old": {
+      "accuracy": 0.17291666666666666,
+      "correct": 83,
+      "count": 480,
+      "invalid": 377,
+      "pairs": 16
+    },
+    "GOLD_CE_MIX|teacher_pre|seen": {
+      "accuracy": 0.16145833333333334,
+      "correct": 155,
+      "count": 960,
+      "invalid": 773,
+      "pairs": 16
+    },
+    "SLEEP_MIX|base_only_reconstruction|current": {
+      "accuracy": 0.12708333333333333,
+      "correct": 61,
+      "count": 480,
+      "invalid": 406,
+      "pairs": 16
+    },
+    "SLEEP_MIX|base_only_reconstruction|old": {
+      "accuracy": 0.2,
+      "correct": 96,
+      "count": 480,
+      "invalid": 369,
+      "pairs": 16
+    },
+    "SLEEP_MIX|base_only_reconstruction|seen": {
+      "accuracy": 0.16354166666666667,
+      "correct": 157,
+      "count": 960,
+      "invalid": 775,
+      "pairs": 16
+    },
+    "SLEEP_MIX|initial_reset_expanded_reconstruction|current": {
+      "accuracy": 0.03125,
+      "correct": 15,
+      "count": 480,
+      "invalid": 465,
+      "pairs": 16
+    },
+    "SLEEP_MIX|initial_reset_expanded_reconstruction|old": {
+      "accuracy": 0.05,
+      "correct": 24,
+      "count": 480,
+      "invalid": 453,
+      "pairs": 16
+    },
+    "SLEEP_MIX|initial_reset_expanded_reconstruction|seen": {
+      "accuracy": 0.040625,
+      "correct": 39,
+      "count": 960,
+      "invalid": 918,
+      "pairs": 16
+    },
+    "SLEEP_MIX|optimized_post|current": {
+      "accuracy": 0.09166666666666666,
+      "correct": 44,
+      "count": 480,
+      "invalid": 430,
+      "pairs": 16
+    },
+    "SLEEP_MIX|optimized_post|old": {
+      "accuracy": 0.09583333333333334,
+      "correct": 46,
+      "count": 480,
+      "invalid": 427,
+      "pairs": 16
+    },
+    "SLEEP_MIX|optimized_post|seen": {
+      "accuracy": 0.09375,
+      "correct": 90,
+      "count": 960,
+      "invalid": 857,
+      "pairs": 16
+    },
+    "SLEEP_MIX|teacher_pre|current": {
+      "accuracy": 0.12916666666666668,
+      "correct": 62,
+      "count": 480,
+      "invalid": 405,
+      "pairs": 16
+    },
+    "SLEEP_MIX|teacher_pre|old": {
+      "accuracy": 0.2,
+      "correct": 96,
+      "count": 480,
+      "invalid": 369,
+      "pairs": 16
+    },
+    "SLEEP_MIX|teacher_pre|seen": {
+      "accuracy": 0.16458333333333333,
+      "correct": 158,
+      "count": 960,
+      "invalid": 774,
+      "pairs": 16
+    }
+  },
+  "cost": {
+    "active_wall_seconds": 684.094000000041,
+    "forward_cap": 16000,
+    "full_backbone_forward_calls": 10347,
+    "full_backbone_forward_tokens": 1010973,
+    "optimizer_or_lifecycle_update_steps": 0,
+    "tail_backward_calls": 0,
+    "wall_cap_seconds": 900
+  },
+  "limitations": [
+    "The four contexts include two reconstructions and two captured boundary states; reconstructed contexts are not training checkpoints.",
+    "Metrics are fixed development probes only and cannot establish a training trajectory or causal retention effect.",
+    "This is a single development seed; no official test data was read."
+  ],
+  "schema": "clinc-v8-boundary-counterfactual-summary-v1",
+  "scope": {
+    "arms": [
+      "GOLD_CE_MIX",
+      "SLEEP_MIX"
+    ],
+    "counterfactuals_are_reconstructions_not_training_checkpoints": true,
+    "immutable_backbone_unchanged": true,
+    "pairs": 32,
+    "scoring_scope": {
+      "current_class_ids_sha256": "e16d6f829485ac2f0b38d1f8df1a41be10fb723ccb608f76d23f7c2db68cfba0",
+      "current_count": 30,
+      "label_map_size": 150,
+      "old_class_ids_sha256": "1c33228719ccff43e1dc373c2cad0193389eb8066827afc1d0127686839dfbe2",
+      "old_count": 30,
+      "row_ids_sha256": "c5c82b568d27fddc8747fe0223aecf25500c7254f0a6cff8a25f53f3429d4ef2",
+      "seen_count": 60,
+      "selection": "first two clean development rows per seen class sorted by stable record ID",
+      "task_id_or_candidate_mask": false,
+      "test_data_read": false
+    },
+    "test_data_read": false,
+    "zero_optimizer_steps": true,
+    "zero_wake_updates_or_resume": true
+  },
+  "source": {
+    "config_sha256": "5c5fd7b736fbb2efa1a78de6c58a8d1b7e1283496387f027073e354acd3e21fb",
+    "evaluation_source_sha256": "c670a365492afbd177ef9a161d570a5065d851b2ad028e8877bb76cd1a5cb9a5",
+    "model_assets_sha256": {
+      "LICENSE.txt": "0b4284c1f87029e67654c7953afa16279961632cf73dcfe33374c4c2f298fa35",
+      "USE_POLICY.md": "40e2777d7faa6beaf98400654170f414d8ab29b921b5163ad4ea0a1d39894201",
+      "config.json": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d",
+      "generation_config.json": "da81b0dd4001a8e19fb5840d2b524f6957f44ddde6f5c3fe32b1f36cef5205bf",
+      "model-00001-of-00002.safetensors": "584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002",
+      "model-00002-of-00002.safetensors": "4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb",
+      "model.safetensors.index.json": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c",
+      "special_tokens_map.json": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535",
+      "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+      "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+    },
+    "model_revision": "LLM-Research/Llama-3.2-3B@48d84dd14886f01964f72e7f742a404dd86f9fb6",
+    "parent_task0_checkpoint_sha256": "a783919bf91cb14c5b64d6f9397f3947fc63d42752eb470dd94d0b76d9c05a20",
+    "path": "<PRIVATE_ARTIFACT>/evaluation.json",
+    "probe_metrics_sha256": "8f4385f869ed957418ef181324bbbce46c555acd900559bf4df61781dafe576c",
+    "probe_protocol_sha256": "3da2fd218536961afb6b05ab290eb6822304da355192f0fcc7ff777f80706d72",
+    "probe_seal_sha256": "63367bfc4b19420d0c6f17de7057804fbdfefba7825f27acb3b742d895dee75a",
+    "sha256": "82e19829325ade68b2c7ca9ef375e91885f8a10b434bf75ec9b59d77fc619e4f",
+    "source_lock_sha256": "9319eaeae3a66177eeccd53ed4e5be1f1636809f3d86295bf4154f7981c5a7ff",
+    "training_manifest_sha256": "21b3651a3dce8534fa7363d7f31674c3d86dda735b0d896a60d03ffb055c9123"
+  },
+  "status": "complete",
+  "teacher_base_only_digest_identity": {
+    "GOLD_CE_MIX": {
+      "pair_count": 16,
+      "teacher_pre_equals_base_only_by_all_cohort_digests": 11
+    },
+    "SLEEP_MIX": {
+      "pair_count": 16,
+      "teacher_pre_equals_base_only_by_all_cohort_digests": 10
+    }
+  }
+}

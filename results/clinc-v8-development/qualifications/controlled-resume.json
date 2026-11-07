@@ -1,0 +1,113 @@
+{
+  "_public_capture": {
+    "claim_scope": "single-seed CLINC150 two-task development; exploratory, not six-run result",
+    "normalization": "Original aggregate schema retained; only exact raw-text/token/example-identity fields removed; paths normalized; raw source artifact SHA recorded in public-capture.json.",
+    "schema": "clinc-v8-public-development-capture-reference-v1",
+    "source_artifact": "outputs/clinc-v8-preparation/controlled-real3b-qualification-b.json",
+    "source_artifact_sha256_raw": "ec62a541e7bd74b9dba794b267ca25d480561612a157a0c36cf394b2119934c5"
+  },
+  "active_compute_note": "The controlled 0.5 mix can evaluate the natural and selected expert branches (at most one additional selected branch per token; selected may equal natural). This is a routing ablation, not a FLOP-matched or paper-algorithm claim.",
+  "active_slot_counts_live_teacher_student_replay": [
+    [
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      0
+    ]
+  ],
+  "all_rng_streams_exact": true,
+  "claim_scope": "controlled 0.5 route-mix engineering ablation; not natural Sleep or a paper algorithm",
+  "complete": true,
+  "data_accessed": false,
+  "elapsed_seconds": 7.416081600124016,
+  "exact_resume": true,
+  "mix_policy": {
+    "live_bank1": {
+      "fraction": 0.5,
+      "mix": 0
+    },
+    "student_bank1": {
+      "fraction": 0.5,
+      "mix": 1
+    },
+    "student_sender_bank0": null,
+    "teacher_bank1": {
+      "fraction": 0.5,
+      "mix": 0
+    },
+    "teacher_retains_old_mixed_policy": true
+  },
+  "mix_semantics_checks": {
+    "student_bank1": {
+      "fraction": 0.5,
+      "max_abs_error": 0.0,
+      "passed": true,
+      "selected_slot": 1
+    },
+    "teacher_bank1": {
+      "fraction": 0.5,
+      "max_abs_error": 0.0,
+      "passed": true,
+      "selected_slot": 0
+    }
+  },
+  "schema": "clinc-controlled-routing-real3b-v8-qualification-v1",
+  "source_hashes": {
+    "controlled_routing": "37f240530d96e5e0525d9b0fd6d67b5eaba37720d7b170479a3181eeee107562",
+    "experts": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094",
+    "lm": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c",
+    "natural_lifecycle": "3e270a6df0359f495fc09d5aaf4fd6e108f37c36da41373b70fc16a26fca14a2",
+    "qualification_script": "b7e65e446ebf32f0f8556c1b55438d89881d06124700dd5da990175eeb9013a0",
+    "reference_script": "693ef48d7dce8b33cd69f9dcb68b8f6def0eadc65e012c5ba2d3e4a32159a065",
+    "resume_reference": "693ef48d7dce8b33cd69f9dcb68b8f6def0eadc65e012c5ba2d3e4a32159a065",
+    "tail_runtime": "057de386734ff128d1fb0147dd83b1c14009cc36d8ed7c77740cbb497ee6f6d9"
+  },
+  "steps": {
+    "actual_adamw_calls": 8,
+    "backbone_forwards": 24,
+    "forward_cap": 64,
+    "pre_snapshot": 2,
+    "receiver_b_grad_norms_reference": [
+      0.05347360670566559,
+      0.18516191840171814,
+      0.07960792630910873
+    ],
+    "receiver_b_grad_norms_replay": [
+      0.05347360670566559,
+      0.18516191840171814,
+      0.07960792630910873
+    ],
+    "reference_after_snapshot": 3,
+    "restored_replay": 3
+  },
+  "teacher_live_frozen_and_policy_unchanged": true
+}
