@@ -93,3 +93,9 @@ results/clinc-v8-development/public-capture.json -text -eol whitespace=blank-at-
 # Matplotlib path-data spacing is part of the captured SVG bytes.
 results/figures/clinc-v8-development-endpoints.svg -whitespace
 results/figures/clinc-v8-corrected-transfer-budgets.svg -whitespace
+
+# Preserve the independently frozen pre-data CLINC evaluator contract.
+tools/evaluate_clinc_test_v8.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_clinc_test_v8_gate_cpu.py -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/fixtures/clinc_oos_plus_test_pin_v1.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+configs/clinc_cil_v8_test_evaluation_frozen.json -text -eol whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

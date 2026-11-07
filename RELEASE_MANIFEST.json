@@ -8,13 +8,13 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 506,
+  "file_count_excluding_manifests": 511,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
       "path": ".gitattributes",
-      "sha256": "45b58daffdbff366d07459854911bfe6d2f7c89a029a34e6220694c4c850b0f4",
-      "bytes": 10621
+      "sha256": "c8ce14996cf097ede8d2cb59944f5d35d67bafd10fd0b489e428a07afbd16258",
+      "bytes": 11158
     },
     {
       "path": ".github/ISSUE_TEMPLATE/reproduction.md",
@@ -195,6 +195,11 @@
       "path": "configs/clinc_cil_v8_hope_task1_resume_r2.json",
       "sha256": "08cbb7c3e5168102fda39b9ce61db9f5ab4177a4ec2b903a5a5650045581fe9a",
       "bytes": 2620
+    },
+    {
+      "path": "configs/clinc_cil_v8_test_evaluation_frozen.json",
+      "sha256": "a278944e333894ddc3d2f4faa5adaadae3d6eaf2c5002133f1c88d97e8939c1a",
+      "bytes": 1719
     },
     {
       "path": "configs/historical_protocols.json",
@@ -1542,6 +1547,11 @@
       "bytes": 2671
     },
     {
+      "path": "results/clinc-v8-development/protocol/test-evaluation-review.json",
+      "sha256": "db4cfbac87b82bf2c32ceb61236b06c5f16c0da142d6863be0fbe49b73186348",
+      "bytes": 968
+    },
+    {
       "path": "results/clinc-v8-development/public-capture.json",
       "sha256": "7f81d3ea1e1791919f0ed9b170cb0639495dbe2f3fd69772b32cf32d030c0557",
       "bytes": 32962
@@ -1792,6 +1802,11 @@
       "bytes": 1959
     },
     {
+      "path": "tests/fixtures/clinc_oos_plus_test_pin_v1.json",
+      "sha256": "af43d17d29ef261774d7784cea6a171ff7404a01cf53c5230fa4ccc0f351fe14",
+      "bytes": 525
+    },
+    {
       "path": "tests/test_acquire_clinc_v8_cpu.py",
       "sha256": "433c5db9c4b9a089b1e675c26c9d2072d0f757469a2b0339d84aa9a3404b0c17",
       "bytes": 3162
@@ -1950,6 +1965,11 @@
       "path": "tests/test_clinc_tail_runtime_v8_cpu.py",
       "sha256": "e44533be0a63c81cf9c28f754c6d154c612e857bc697256d986ca91d31f59730",
       "bytes": 14237
+    },
+    {
+      "path": "tests/test_clinc_test_v8_gate_cpu.py",
+      "sha256": "a3b3f7abd3550782019e9311e701f324efe81a48b6de9b18d6e13ff9ff4ba2e7",
+      "bytes": 18078
     },
     {
       "path": "tests/test_clinc_v8_public_bundle_validator_cpu.py",
@@ -2195,6 +2215,11 @@
       "path": "tools/evaluate_clinc_controlled_boundaries_v8.py",
       "sha256": "c670a365492afbd177ef9a161d570a5065d851b2ad028e8877bb76cd1a5cb9a5",
       "bytes": 37057
+    },
+    {
+      "path": "tools/evaluate_clinc_test_v8.py",
+      "sha256": "402ac9bc733354edf2fd52542eeb55aa5187faffaced16d2b620a0e9ba56501c",
+      "bytes": 50574
     },
     {
       "path": "tools/late_context_router_v6.py",

@@ -1,0 +1,39 @@
+{
+  "schema": "clinc-v8-test-evaluation-contract-v1",
+  "status": "frozen",
+  "frozen_at_utc": "2026-11-07T08:33:02.002329+00:00",
+  "evaluator_sha256": "402ac9bc733354edf2fd52542eeb55aa5187faffaced16d2b620a0e9ba56501c",
+  "training_master_sha256": "ec8a9bfadde15a6b0bed202f1ad5eb621805e50b92151a6747827c0f177bc32f",
+  "source_lock_sha256": "0de1aadd3328089807f872a60b1b297a671bfb99ceac137d04faa08e2da2eb5a",
+  "test_source": {
+    "repo_id": "clinc/clinc_oos",
+    "revision": "155b9c710419136e17307b80d0a13e68cd46b4ec",
+    "path": "plus/test-00000-of-00001.parquet",
+    "bytes": 135844,
+    "sha256": "3e60e45b25bf86543aa5df8ba4fcc674114164e6184f0197690648c2908d0102",
+    "metadata_sha256": "957dedb294471540ac0ca1571195d147e4922ce20a38678193e07fee06771149"
+  },
+  "evaluation_policy": "score all 4500 in-scope test rows on the six sealed final checkpoints; free generation, no task mask, no updates, no checkpoint selection",
+  "forward_cap": 40000,
+  "wall_cap_seconds": 3600,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "arms": [
+    "HOPE",
+    "HOPE_SLEEP_FIXEDMIX"
+  ],
+  "secondary_duplicate_policy": "Flag normalized train-text duplicates separately, retain all 4500 primary rows",
+  "statistical_scope": "Three class-order seeds with one adapter initialization; no pretraining-contamination exclusion claim",
+  "independent_review": {
+    "reviewer": "review_experiment",
+    "passed": true,
+    "cpu_tests_passed": 13,
+    "test_payload_read": false
+  },
+  "main_six_complete_at_freeze": false,
+  "test_payload_downloaded_at_freeze": false,
+  "code_publication_before_main_completion": "Development commit 11256c5d60852e882cf6a926c91975bada7c3c5c; evaluator publication follows this capture separately"
+}

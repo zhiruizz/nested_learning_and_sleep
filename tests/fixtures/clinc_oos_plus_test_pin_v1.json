@@ -1,0 +1,12 @@
+{
+  "schema": "clinc-oos-hf-metadata-pin-v1",
+  "metadata_source": "https://huggingface.co/api/datasets/clinc/clinc_oos/revision/155b9c710419136e17307b80d0a13e68cd46b4ec",
+  "metadata_sha256": "957dedb294471540ac0ca1571195d147e4922ce20a38678193e07fee06771149",
+  "repo_id": "clinc/clinc_oos",
+  "revision": "155b9c710419136e17307b80d0a13e68cd46b4ec",
+  "sibling": {
+    "path": "plus/test-00000-of-00001.parquet",
+    "size": 135844,
+    "lfs_sha256": "3e60e45b25bf86543aa5df8ba4fcc674114164e6184f0197690648c2908d0102"
+  }
+}

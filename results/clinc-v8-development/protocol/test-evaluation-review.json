@@ -1,0 +1,19 @@
+{
+  "actual_test_payload_downloaded": false,
+  "actual_test_payload_read": false,
+  "actual_test_scoring_started": false,
+  "cpu_deselected": 1,
+  "cpu_seconds": 10.82,
+  "cpu_update_attempts": 255,
+  "deselected_test": "test_all_exported_modules_import_without_optional_llama_dependency",
+  "deselection_reason": "Existing installed-CUDA-wheel versus CPU-wheel-only premise exclusion",
+  "evaluation_contract_sha256": "a278944e333894ddc3d2f4faa5adaadae3d6eaf2c5002133f1c88d97e8939c1a",
+  "evaluator_sha256": "402ac9bc733354edf2fd52542eeb55aa5187faffaced16d2b620a0e9ba56501c",
+  "focused_cpu_tests_passed": 13,
+  "independent_review_passed": true,
+  "policy": "Real test access still requires the independently verified exact six-run seal.",
+  "public_cpu_tests_passed": 334,
+  "schema": "clinc-v8-pre-data-evaluation-review-v1",
+  "source_fixture": "Metadata-only pinned sibling record; no dataset row or label sample included",
+  "unchanged_cpu_update_limit": 256
+}
