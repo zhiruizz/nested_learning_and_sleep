@@ -1,0 +1,20 @@
+{
+  "schema": "banking-v12-fixed-fit-preflight-engineering-failure-v1",
+  "status": "failed_before_cuda",
+  "record_created_utc": "2026-11-08T00:10:08.386459+00:00",
+  "evaluator_sha256": "6d20c242422003c84559971b2f2985c92b02e181bfd9c2c62d7d3a082eea71af",
+  "gate_source_sha256": "053f8a06b9ff83dc14ff5c71c22f5bd72c9df00f2e7fe6718ead5d13c557d715",
+  "error_type": "ValueError",
+  "error_message": "seed 17: training-manifest lineage mismatch",
+  "diagnosis": "Evaluator expected training_manifest_sha256 in final receipt, but actual final receipt schema has no such field; validate binding through frozen config and actual protocol/preflight metadata instead.",
+  "optimizer_updates": 0,
+  "generation_updates": 0,
+  "model_loaded": false,
+  "cuda_initialized": false,
+  "checkpoint_payloads_loaded": false,
+  "official_test_read": false,
+  "P2_read": false,
+  "raw_rows_read": false,
+  "engineering_wall_seconds": null,
+  "missing_cost_is_unknown_not_zero": true
+}

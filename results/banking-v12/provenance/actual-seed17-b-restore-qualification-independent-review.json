@@ -1,0 +1,62 @@
+{
+  "schema": "banking-v12-seed17-restore-qualification-independent-review-v1",
+  "review_status": "pass",
+  "review_scope": "metadata_only_restore_qualification_and_current_progress",
+  "scientific_result_claim": false,
+  "reviewed_utc": "2026-11-07T23:21:43Z",
+  "seed": 17,
+  "source_and_run_binding": {
+    "config_sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25",
+    "runner_sha256": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f",
+    "batch_helper_sha256": "99e0163c333fe1fdec1928bb2f932c79d88c7f0683b8d917883f2c79e8b0c829",
+    "source_lock_sha256": "3fcc2e2cb930149e9ee5204dcf8fa8910888cd7b05cd31f66d10ceb852d6844c",
+    "training_manifest_sha256": "ed9f4b047768021cbf16a3fa042db12baf212038f89f33a00099f2e32b7300f3",
+    "foundation_checkpoint_sha256": "668e8b979cf22fe29db827202d0a18b819864b6f36cf65d01d9b78e0138feeb2",
+    "foundation_receipt_sha256": "11813c0b68dd829cd57052f2c18897699a21ab83aacb38f9f63520392848f7c4",
+    "protocol_sha256": "936cde5abd62214f52db4d738c05aff61047340b81f9a25eb5c0017373296727",
+    "launch_record_sha256": "9bd938eb382ffc66c5521e3329c700f100cf5554136a138c7593e71e8dc18074",
+    "qualification_receipt_sha256": "55603e4b8b77b7aa9d29bb07d4ccf43afe2a6a6421d7d7e22bf206bf8d19c0d0",
+    "qualification_snapshot_file_sha256_as_recorded": "a8f624c24286fe8b4b9331c6657df73c642805a68c24063a7903f15770e2c735",
+    "qualification_snapshot_content_sha256": "5c6436800d53abc7ae4bd46dc9cebaef0cda7780da6d15f78461bf2bbdb87146"
+  },
+  "qualification": {
+    "status": "pass",
+    "comparison": "original_transaction_continuation_vs_disk_restored_branch",
+    "original_request_range": [32, 64],
+    "restored_request_range": [32, 64],
+    "original_and_restored_metrics_equal": true,
+    "original_and_restored_post_range_content_sha256_equal": true,
+    "original_post_range_content_sha256": "cae68d0a0b536f2adc9b1828847a7f973ac2f4d9abae9d2a30e159741f8493ea",
+    "restored_post_range_content_sha256": "cae68d0a0b536f2adc9b1828847a7f973ac2f4d9abae9d2a30e159741f8493ea",
+    "extra_request_evaluations": 32,
+    "extra_physical_adamw_steps": 1,
+    "restored_branch_extra_work": {
+      "full_backbone_forward_calls": 32,
+      "tail_calls": 64,
+      "tail_backward_calls": 32,
+      "physical_adamw_updates": 1,
+      "update_attempts": 1,
+      "full_backbone_forward_tokens": 1195,
+      "active_wall_seconds": 1.422000000020489
+    },
+    "interpretation": "This validates serialization/restoration and deterministic continuation only; it is not a performance or scientific result."
+  },
+  "observed_run_state_at_review": {
+    "protocol_status": "running",
+    "launcher_status": "running",
+    "active_arm": "B32_LOW",
+    "arm_requests_completed": 1408,
+    "arm_adamw_steps": 44,
+    "global_physical_adamw_updates": 45,
+    "prefix_wake_updates": 4,
+    "official_test_read": false,
+    "automatic_retries": 0
+  },
+  "access_limits_observed": {
+    "aggregate_metadata_json_only": ["qualification", "protocol", "progress", "launcher_record"],
+    "read_checkpoint_or_rollout_bytes": false,
+    "read_raw_examples": false,
+    "gpu_or_model_execution": false
+  },
+  "next_gate": "Qualification gate passed. Wait for seed-17 run to finish before starting seeds 29/43 to avoid shared-GPU overlap; root should still review the full seed-17 terminal receipt and ledger."
+}

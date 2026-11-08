@@ -1,0 +1,87 @@
+{
+  "P2_accessed": false,
+  "alias_finding": "CPU-only reconstruction bug; reset baselines formerly shared the fitted B32_LOW_960 object; corrected with deepcopy and all-seven fitted-state nonmutation checks before any fit GPU run.",
+  "archive_identity_correction": {
+    "archived_source_file": "evaluate_banking_v12_fixed_teacher_fit.pre-manifest-fix.py",
+    "archived_source_sha256": "c0bfb9dacef9842408d7d27318f8cb80a2e0c4386f3c062e8d60c1b4473f9c63",
+    "classification": "post-fix archival copy; the archive was mislabeled pre-manifest-fix",
+    "correction_of": "archive-record.json",
+    "identity": "the archived bytes are the post protocol-lineage-fix source c0bfb9dacef9842408d7d27318f8cb80a2e0c4386f3c062e8d60c1b4473f9c63",
+    "missing_preimage_sha256": "6d20c242422003c84559971b2f2985c92b02e181bfd9c2c62d7d3a082eea71af",
+    "missing_preimage_status": "exact 6d20 source bytes are not present in the located archive files and are not claimed preserved",
+    "schema": "banking-v12-fixed-fit-protocol-lineage-archive-correction-v1",
+    "scope": "metadata correction only; original archive-record.json remains unchanged"
+  },
+  "fixed_fit_A": {
+    "automatic_retries": 0,
+    "evaluator_sha256": "c0bfb9dacef9842408d7d27318f8cb80a2e0c4386f3c062e8d60c1b4473f9c63",
+    "exit_code": 1,
+    "full_process_wall_seconds_including_cpu_preflight_model_load_and_shutdown": 57.39100000006147,
+    "independent_review_sha256": "286ff70e0f482ba03979e747b9c802f0e3c53c1f06915d92c0b75c1a154af7e8",
+    "material_freeze_sha256": "7fd796fcb706cf5f14e5d0910dd3151c13fd46350c6bb547504db28a2b22213d",
+    "schema": "root-banking-v12-fixed-fit-launch-v1",
+    "status": "failed"
+  },
+  "fixed_fit_A_failure_receipt_sha256": "98ceb040f2f19884187aba193756936740129d5de4536dc177e5a1cc6b94188b",
+  "fixed_fit_A_scoring_work": {
+    "active_wall_seconds": 31.57799999997951,
+    "executed_input_tokens_including_padding": 6664,
+    "full_backbone_forward_calls": 192,
+    "full_backbone_forward_tokens": 6664,
+    "padded_input_tokens": 0,
+    "physical_adamw_updates": 0,
+    "sampled_output_tokens": 0,
+    "tail_backward_calls": 0,
+    "tail_backward_tokens": 0,
+    "tail_calls": 1920,
+    "update_attempts": 0,
+    "wake_updates": 0
+  },
+  "fixed_fit_B": {
+    "automatic_retries": 0,
+    "evaluator_sha256": "91039fbefe26c1210f79af9639df44740817c671fe3ca63f70040e5a9be9a7ee",
+    "exit_code": 0,
+    "full_process_wall_seconds_including_cpu_preflight_model_load_and_shutdown": 57.375,
+    "independent_review_sha256": "df3bbfc0b16866afb4dd5f3b8df17d7f383356bf61052257c7bb3e18ad1f95d7",
+    "material_freeze_sha256": "5650ae1174f230dac5465a13c205dff06a6698cc8a2621a4f59d81ed58dee07c",
+    "read_only_recomputation_after_preserved_serialization_failure_A": true,
+    "result_sha256": "a6b45be15453d1370e31ea3f8fd94272ca3e5e8d712b66b51a5ccacd6c7fd629",
+    "schema": "root-banking-v12-fixed-fit-launch-v1",
+    "status": "complete",
+    "work": {
+      "P2_accessed": false,
+      "full_backbone_forwards": 192,
+      "full_backbone_input_tokens": 6664,
+      "generation_updates": 0,
+      "official_test_read": false,
+      "optimizer_updates": 0,
+      "stored_fit_wall_seconds": 31.733999999938533,
+      "tail_calls": 1920
+    }
+  },
+  "no_main_training_repeated": true,
+  "no_new_outcome_selection": true,
+  "official_test_read": false,
+  "preflight_schema_failure_receipt_sha256": "369ed115e0711314b44644449f80a0416aeb1e1d808ff0b2143a18abdc4203d8",
+  "primary_complete_launcher_wall_seconds": 2086.3900000001304,
+  "primary_complete_launchers": [
+    {
+      "launcher_wall_seconds_including_preflight": 714.9220000000205,
+      "seed": 17,
+      "source_sha256": "037fa10157b883f96b606c51960fa795d2e44dedfeae26d9bbc2fcac9260f70d"
+    },
+    {
+      "launcher_wall_seconds_including_preflight": 678.8430000001099,
+      "seed": 29,
+      "source_sha256": "9ed2a1bb6ddc96f781cd229338cd6c69df190f3a401b0fd86f5a80c5895425b9"
+    },
+    {
+      "launcher_wall_seconds_including_preflight": 692.625,
+      "seed": 43,
+      "source_sha256": "c1cccf159be94b31fc3b8fe0bf10290402cb42ed89589c322aba1106099e0867"
+    }
+  ],
+  "schema": "banking-v12-fixed-fit-engineering-history-v1",
+  "scope": "safe retained engineering facts; separate from scientific main arms",
+  "unknown_costs": "Preparatory focused CPU checks are nonexhaustive; missing timing is unknown, not zero."
+}

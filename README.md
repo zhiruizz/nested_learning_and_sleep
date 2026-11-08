@@ -1,5 +1,7 @@
 # NL/Sleep Reproduction Lab
 
+Banking V12 completed a three-seed, one-boundary receiver optimizer diagnostic. At 960 shared teacher-request exposures, batch 1/32 at 1e-3 reach 53.79%/52.27% global sum-score development accuracy, versus 43.03%/28.18% at 5e-6; the no-reset CMS reference is 56.06%. This is a local development mechanism study, not full Sleep or independent confirmation. See the [V12 report](reports/banking77-optimizer-boundary-v12.md), [aggregate evidence](results/banking-v12/README.md) and [execution guide](docs/banking-v12-reproduction.md).
+
 Ubuntu P2 update: four 40-step runs completed, but independent review found the original checkpoint protocol was not satisfied. The two-seed k4 result was unstable. See the [descriptive report](reports/ubuntu-p2-formal-descriptive-disposition.md) and [aggregate evidence](results/ubuntu-p2-descriptive/README.md); this is not a formal acceptance or confirmation claim.
 
 

@@ -1,5 +1,7 @@
 # Reproduction status
 
+Banking V12: [three-seed receiver optimizer diagnostic completed](../reports/banking77-optimizer-boundary-v12.md). Its one-boundary development accuracy and fixed-training-trajectory fit are local mechanism evidence; full lifecycle, native HOPE, long-term retention and independent confirmation remain unestablished.
+
 Ubuntu P2 final disposition: [completed but not accepted under the original protocol](../reports/ubuntu-p2-formal-descriptive-disposition.md). Aggregate-only development reporting, not a formal acceptance/release or blinded confirmation.
 
 

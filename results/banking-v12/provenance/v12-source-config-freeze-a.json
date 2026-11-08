@@ -1,0 +1,26 @@
+{
+  "additional_seed17_disk_qualification_adam_steps": 1,
+  "additional_seed17_disk_qualification_requests": 32,
+  "config_file_sha256": "50632b6622fbabee05ca07b29f64769eaf53916950526819557ddd70ecfb5758",
+  "design_audit_sha256": "35d7a8e1c3bf6e5535583f1c2f5bbb4828f5e743038fe4388cb3e31302c10625",
+  "frozen_utc": "2026-11-07T23:04:23.244879+00:00",
+  "independent_design_review_sha256": "987b9cfd3e035ab0513a9cf07efc4d11af3ecd037a4f800eb7e6ec50ba52253d",
+  "parent_release": "363c2a1184b59cc14b3bcd2610424dafab7be846",
+  "paths_file_sha256": "e30e94e7602e89b272c0ec737706a04122255b1e81048f6b8b8a766fd024262f",
+  "planned_receiver_adam_steps": 6150,
+  "planned_receiver_request_exposures": 18240,
+  "protocol_draft_sha256": "c37b378841023eb792e66a941f1a473d854707386d744d9528761ad72da42525",
+  "schema": "banking-v12-source-config-freeze-v1",
+  "source_hashes": {
+    "tools/banking_cil_v12_batching.py": "99e0163c333fe1fdec1928bb2f932c79d88c7f0683b8d917883f2c79e8b0c829",
+    "tools/launch_banking_optimizer_boundary_v12.py": "e45cf1fdad02d335138394cfa28fc0a82779952c11c87bb0ddf6263bc8de9874",
+    "tools/run_banking_optimizer_boundary_v12.py": "c46aed9f40157cd2d26604d9bb477028c0e4ea3f19d21acc3d823cc533337609",
+    "tools/run_banking_v12_cpu_acceptance.py": "9d0a9fc5bbca4f953bbcd3d8e0e1bba687a207a4e987c2f462b7e1e650aadd39"
+  },
+  "test_source_hashes": {
+    "test_banking_cil_v12_batching_cpu.py": "3e0daaf5c9460abd3c82251f4d0e82a570c06259ff0dba9f4a82a812e3553d7e",
+    "test_banking_optimizer_boundary_v12_cpu.py": "68338c2a63870a0d0348660fee8a7cc087d892f7b3abe4d5da9df0da040a6d05",
+    "test_banking_v12_launcher_cpu.py": "b2b9b4540eccf1c94ffcec4055711f8f20a9d308f9ce2a79d1779652e4adb170"
+  },
+  "training_started": false
+}

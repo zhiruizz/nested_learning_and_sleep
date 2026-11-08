@@ -1,0 +1,9 @@
+{
+  "schema": "banking-v12-unpublished-packaging-draft-correction-v1",
+  "unpublished_r1_manifest_sha256": "ceb4e52964f1cfac589256871f029d6382ae62c9d1f630dbb9023639b7fea201",
+  "finding": "An unpublished packaging draft mislabeled auxiliary pre-closure evaluator 985d as the main startup-A runner, and used nonexistent shorthand freeze filenames.",
+  "correction": "Fresh R2 captures the actual main startup-A c46 runner and 68338 tests from their verified original archive; lineage filenames match the included v12-source-config-freeze files.",
+  "unpublished_r1_retained_privately": true,
+  "scientific_execution_or_metrics_changed": false,
+  "auxiliary_archives_are_not_main_startup_evidence": true
+}

@@ -1,0 +1,217 @@
+{
+  "schema": "banking-v12-seed17-terminal-independent-review-v1",
+  "review_scope": "terminal metadata and aggregate counters only; no checkpoint/teacher tensors, rollouts, or example rows opened",
+  "status": "pass",
+  "seed": 17,
+  "reviewed_utc": "2026-11-07T23:36:27.3208841Z",
+  "artifacts": {
+    "final_receipt_sha256": "85a8130e2e7d361657d960a2649ed2a071e06576e591c0683937d29c11e79da4",
+    "protocol_sha256": "82320a3fef6dcd9a25d2740f10d72d20c6a0f2d1f71a159a47fd3e646d021e9f",
+    "development_evaluation_sha256": "0c58a45dda0ffaaa01194ce5ab7dd92e499e8c6621e9e4f92590af4b319d0721",
+    "launch_record_sha256": "037fa10157b883f96b606c51960fa795d2e44dedfeae26d9bbc2fcac9260f70d",
+    "config_sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25",
+    "freeze_receipt_sha256": "922fcc3ccd4011ece149d428422a421b0b2ded3d62d81d79ca745bf9ef3b283c"
+  },
+  "terminal": {
+    "receipt_status": "complete",
+    "protocol_status": "complete",
+    "launch_status": "complete",
+    "protocol_binds_receipt": true,
+    "test_data_read": false,
+    "official_test_read": false,
+    "launch_retries": 0,
+    "active_wall_seconds": 699.125,
+    "launch_wall_seconds_including_preflight": 714.9220000000205
+  },
+  "provenance": {
+    "frozen_config_sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25",
+    "protocol_config_sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25",
+    "v10_source_lock_sha256": "3fcc2e2cb930149e9ee5204dcf8fa8910888cd7b05cd31f66d10ceb852d6844c",
+    "training_manifest_sha256": "ed9f4b047768021cbf16a3fa042db12baf212038f89f33a00099f2e32b7300f3",
+    "v12_source_hashes_still_match_freeze": true,
+    "source_files": [
+      {
+        "path": "tools/banking_cil_v12_batching.py",
+        "sha256": "99e0163c333fe1fdec1928bb2f932c79d88c7f0683b8d917883f2c79e8b0c829",
+        "matches_freeze": true
+      },
+      {
+        "path": "tools/launch_banking_optimizer_boundary_v12.py",
+        "sha256": "e45cf1fdad02d335138394cfa28fc0a82779952c11c87bb0ddf6263bc8de9874",
+        "matches_freeze": true
+      },
+      {
+        "path": "tools/run_banking_optimizer_boundary_v12.py",
+        "sha256": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f",
+        "matches_freeze": true
+      },
+      {
+        "path": "tools/run_banking_v12_cpu_acceptance.py",
+        "sha256": "9d0a9fc5bbca4f953bbcd3d8e0e1bba687a207a4e987c2f462b7e1e650aadd39",
+        "matches_freeze": true
+      }
+    ]
+  },
+  "work": {
+    "full_backbone_forwards": 13521,
+    "tail_calls": 24619,
+    "backward_calls": 6116,
+    "physical_adamw_updates": 2051,
+    "wake_updates": 4,
+    "no_grad_tail_calls": 18503,
+    "grad_enabled_tail_calls": 6116,
+    "active_wall_seconds": 699.125,
+    "reconciliation": "6,116 backward = 6,080 core + 32 restore qualification + 4 boundary wake; 2,051 AdamW = 2,050 core + 1 restore qualification"
+  },
+  "optimizer_arms": [
+    {
+      "arm": "B1_HIGH",
+      "requests": 960,
+      "adamw_steps": 960,
+      "backward_calls": 960,
+      "batch_commits": 960,
+      "learning_rate": 0.001,
+      "effective_batch_size": 1,
+      "initial_student_state_sha256": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04"
+    },
+    {
+      "arm": "B1_LOW",
+      "requests": 960,
+      "adamw_steps": 960,
+      "backward_calls": 960,
+      "batch_commits": 960,
+      "learning_rate": 5E-06,
+      "effective_batch_size": 1,
+      "initial_student_state_sha256": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04"
+    },
+    {
+      "arm": "B32_HIGH",
+      "requests": 960,
+      "adamw_steps": 30,
+      "backward_calls": 960,
+      "batch_commits": 30,
+      "learning_rate": 0.001,
+      "effective_batch_size": 32,
+      "initial_student_state_sha256": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04"
+    },
+    {
+      "arm": "B32_LOW",
+      "requests": 3200,
+      "adamw_steps": 100,
+      "backward_calls": 3200,
+      "batch_commits": 100,
+      "learning_rate": 5E-06,
+      "effective_batch_size": 32,
+      "initial_student_state_sha256": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04"
+    }
+  ],
+  "shared_initial_student_state_verified": true,
+  "restore_qualification": {
+    "status": "pass",
+    "request_range": [
+      32,
+      64
+    ],
+    "original_post_range_content_sha256": "cae68d0a0b536f2adc9b1828847a7f973ac2f4d9abae9d2a30e159741f8493ea",
+    "restored_post_range_content_sha256": "cae68d0a0b536f2adc9b1828847a7f973ac2f4d9abae9d2a30e159741f8493ea",
+    "post_range_state_equal": true,
+    "extra_restore_requests": 32,
+    "extra_restore_adamw": 1
+  },
+  "development": {
+    "population": "first_task0_plus_task1_development_only",
+    "old_rows": 110,
+    "current_rows": 110,
+    "global_candidate_labels": 77,
+    "context_count": 10,
+    "contexts": [
+      {
+        "name": "B1_HIGH_30",
+        "sum_rows": 220,
+        "mean_rows": 220,
+        "gold_token_mean_nll_rows": 220,
+        "old_rows": 110,
+        "current_rows": 110
+      },
+      {
+        "name": "B1_HIGH_960",
+        "sum_rows": 220,
+        "mean_rows": 220,
+        "gold_token_mean_nll_rows": 220,
+        "old_rows": 110,
+        "current_rows": 110
+      },
+      {
+        "name": "B1_LOW_30",
+        "sum_rows": 220,
+        "mean_rows": 220,
+        "gold_token_mean_nll_rows": 220,
+        "old_rows": 110,
+        "current_rows": 110
+      },
+      {
+        "name": "B1_LOW_960",
+        "sum_rows": 220,
+        "mean_rows": 220,
+        "gold_token_mean_nll_rows": 220,
+        "old_rows": 110,
+        "current_rows": 110
+      },
+      {
+        "name": "B32_HIGH_960",
+        "sum_rows": 220,
+        "mean_rows": 220,
+        "gold_token_mean_nll_rows": 220,
+        "old_rows": 110,
+        "current_rows": 110
+      },
+      {
+        "name": "B32_LOW_3200",
+        "sum_rows": 220,
+        "mean_rows": 220,
+        "gold_token_mean_nll_rows": 220,
+        "old_rows": 110,
+        "current_rows": 110
+      },
+      {
+        "name": "B32_LOW_960",
+        "sum_rows": 220,
+        "mean_rows": 220,
+        "gold_token_mean_nll_rows": 220,
+        "old_rows": 110,
+        "current_rows": 110
+      },
+      {
+        "name": "CMS_NO_RESET",
+        "sum_rows": 220,
+        "mean_rows": 220,
+        "gold_token_mean_nll_rows": 220,
+        "old_rows": 110,
+        "current_rows": 110
+      },
+      {
+        "name": "RESET_ZERO",
+        "sum_rows": 220,
+        "mean_rows": 220,
+        "gold_token_mean_nll_rows": 220,
+        "old_rows": 110,
+        "current_rows": 110
+      },
+      {
+        "name": "TEACHER",
+        "sum_rows": 220,
+        "mean_rows": 220,
+        "gold_token_mean_nll_rows": 220,
+        "old_rows": 110,
+        "current_rows": 110
+      }
+    ]
+  },
+  "integrity_observations": {
+    "terminal_completion_and_launch_record_agree": true,
+    "no_recorded_teacher_or_immutability_guard_failure": true,
+    "scientific_outcome_reviewed": false,
+    "permission_for_subsequent_seed_runs": "already authorized by parent/user task"
+  },
+  "readiness": "No correctness blocker found for starting seeds 29 and 43 with the same frozen source/config and serial-run protocol."
+}

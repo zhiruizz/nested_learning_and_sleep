@@ -28,6 +28,18 @@ data and order identities are hash-bound in the private protocol. No model or
 dataset identity is guessed from a runtime version or a neighboring experiment.
 This unresolved provenance limits external reproduction and comparison.
 
+A subsequent metadata-only follow-up matched the locked model-config hash
+`35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d`.
+It identifies a Llama-family configuration (28 layers, hidden size 3,072 and
+vocabulary 128,256); it does not establish the upstream repository or immutable
+model revision. A candidate historical data contract describes CLINC OOS-eval
+same-source grouped held-out data and records the same train/dev payload digest.
+That candidate contract's SHA `082b06e7…6444` differs from the formally bound
+P2 contract's SHA `002c6690…cdb40`. Their shared payload digest does not prove
+contract equivalence, upstream dataset release/version or the old/new mapping.
+The [follow-up evidence](../results/ubuntu-p2-provenance-followup/README.md)
+preserves these limits rather than replacing them with an inferred identity.
+
 ## Results and readout definitions
 
 Endpoint accuracy is the frozen exact-match readout on development examples:
@@ -94,6 +106,19 @@ The incident record reports no tuning or selection based on the exposed values.
 The completed computation was not changed by later exposure, but review is no
 longer blind and these development examples must not be reused as unseen
 confirmation data. The separate sealed confirmation set was not opened.
+
+A later read-only provenance query accidentally serialized a nested training
+schedule object. Truncated stdout briefly exposed some training sample
+identifiers and token/hash/count metadata; the visible number is unknown.
+The query branch was stopped. No training text, gold labels, endpoint payload,
+sealed/confirmation data or checkpoint weights were read in that query, and
+the exposed metadata was not used for tuning. This is a separate data-minimization
+failure from the earlier development-endpoint incident. It occurred after the
+formal runs, did not change their computation or aggregate results, and did not
+affect the independent Banking experiments. Neither identifiers nor raw stdout
+are included here. The [corrected incident record](../results/ubuntu-p2-provenance-followup/incident-corrected.json)
+leaves the exact event UTC timestamp unknown; its creation timestamp is not
+presented as the event time. The original-protocol rejection remains unchanged.
 
 An initial local aggregation draft incorrectly defined empty output as zero
 generated tokens. Source review showed that the decoder appends EOS before

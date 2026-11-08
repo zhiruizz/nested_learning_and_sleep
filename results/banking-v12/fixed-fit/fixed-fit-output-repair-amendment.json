@@ -1,0 +1,29 @@
+{
+  "schema": "banking-v12-fixed-fit-output-repair-amendment-v1",
+  "record_created_utc": "2026-11-08T00:21:25.097860+00:00",
+  "scope": "one bounded read-only recomputation after engineering serialization failure, not another scientific training trial",
+  "failed_attempt_evaluator_sha256": "c0bfb9dacef9842408d7d27318f8cb80a2e0c4386f3c062e8d60c1b4473f9c63",
+  "failed_attempt_launch_sha256": "854d31c219d3330d516828a4e212af28c4f8c029a3cb64f90212d1675ba3d038",
+  "corrected_evaluator_sha256": "91039fbefe26c1210f79af9639df44740817c671fe3ca63f70040e5a9be9a7ee",
+  "same_selection_and_math": true,
+  "selected_requests_per_seed": 64,
+  "same_ten_contexts": true,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "extra_planned_full_backbone_forwards": 192,
+  "extra_planned_tail_calls": 1920,
+  "extra_optimizer_updates": 0,
+  "extra_generation_updates": 0,
+  "max_additional_scoring_active_seconds": 1800,
+  "automatic_retries": 0,
+  "required_before_start": "current-source actual all3 CPU gate, unchanged offline component acceptance and independent source/material readiness",
+  "why_recomputation_needed": "A scored all three seeds but failed before persisting any metric aggregate; in-memory scores are unavailable and are not claimed as results. B persists each complete seed independently.",
+  "failed_cost_is_retained_separately": true,
+  "no_main_training_repeated": true,
+  "no_new_data_or_outcome_selection": true,
+  "official_test_read": false,
+  "P2_accessed": false
+}

@@ -1,0 +1,94 @@
+{
+  "schema": "banking-v12-boundary-plot-manifest-v1",
+  "status": "descriptive_development_plots",
+  "input_artifacts": {
+    "aggregate_json": {
+      "file": "v12-boundary-aggregate.json",
+      "sha256": "00bc7ee2a973c1048f87dcef73a368985a2d698abb0c43db0b39a7fa89a9a3df"
+    },
+    "metrics_csv": {
+      "file": "v12-boundary-metrics.csv",
+      "sha256": "bac729fc40336c98957ee0e63f05e633ba8b59e523fd06997bbd37eb306348bd",
+      "note": "CSV SHA is recorded here; source analyzer currently does not embed it in the JSON."
+    },
+    "analyzer_source": {
+      "file": "reanalyze_banking_optimizer_boundary_v12.py",
+      "sha256": "ed76528dcf19a512630e34b556e1618df30e0b2a2aff835d015a9eee17b93c60"
+    },
+    "frozen_config": {
+      "file": "banking_v12_optimizer_boundary_frozen_b.json",
+      "sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25"
+    }
+  },
+  "source_provenance": {
+    "analysis_tool_sha256": "ed76528dcf19a512630e34b556e1618df30e0b2a2aff835d015a9eee17b93c60",
+    "config_sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25",
+    "config_status": "frozen",
+    "training_manifest_sha256": "ed9f4b047768021cbf16a3fa042db12baf212038f89f33a00099f2e32b7300f3",
+    "v10_source_lock_sha256": "3fcc2e2cb930149e9ee5204dcf8fa8910888cd7b05cd31f66d10ceb852d6844c",
+    "source_hashes": {
+      "tools/banking_cil_v12_batching.py": "99e0163c333fe1fdec1928bb2f932c79d88c7f0683b8d917883f2c79e8b0c829",
+      "tools/launch_banking_optimizer_boundary_v12.py": "e45cf1fdad02d335138394cfa28fc0a82779952c11c87bb0ddf6263bc8de9874",
+      "tools/run_banking_optimizer_boundary_v12.py": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f",
+      "tools/run_banking_v12_cpu_acceptance.py": "9d0a9fc5bbca4f953bbcd3d8e0e1bba687a207a4e987c2f462b7e1e650aadd39"
+    },
+    "runs": [
+      {
+        "seed": 17,
+        "result_sha256": "85a8130e2e7d361657d960a2649ed2a071e06576e591c0683937d29c11e79da4",
+        "protocol_sha256": "82320a3fef6dcd9a25d2740f10d72d20c6a0f2d1f71a159a47fd3e646d021e9f",
+        "optimizer_batch_log_sha256": "85c614ab8d561caf5a5c1d05d20b16a93263c3960d463350c1c89457c508be3d",
+        "boundary_proposal_sha256": "1e46f1177e225244d0617da8577c5fa0f70a92cabe2964da6a5244250750baa5",
+        "foundation_receipt_sha256": "11813c0b68dd829cd57052f2c18897699a21ab83aacb38f9f63520392848f7c4",
+        "foundation_checkpoint_sha256": "668e8b979cf22fe29db827202d0a18b819864b6f36cf65d01d9b78e0138feeb2"
+      },
+      {
+        "seed": 29,
+        "result_sha256": "b0ebf971400564e8aaddbddf7d94ef786bfa168745a043b5fba87ca24ad59369",
+        "protocol_sha256": "142720485e3e5bc813ba921217ba663e6aad6a6b640077ab921d38dc799a4337",
+        "optimizer_batch_log_sha256": "0b814e279372f543ca0053d7a83b16360746886dfb071afc0d155a94c5727ae8",
+        "boundary_proposal_sha256": "4c54235ece146c6ec8a181d3177e0a9588a05f37c8dec442a68ead0ef3dc17eb",
+        "foundation_receipt_sha256": "dd5f867789469d4836d42c1ea0ede960ffc0e7dd7dfbc56d2f779ff2ab49d13d",
+        "foundation_checkpoint_sha256": "167c6c48ad168fc7271a08aa10c18a0518d8dbf5a825eb9165745f282ec24782"
+      },
+      {
+        "seed": 43,
+        "result_sha256": "c4e49f31604a4764146b4cfcdf9bf2a9768af0727598a79f240a5df5999bff75",
+        "protocol_sha256": "222a902bf54cc5c2638ecfc1b9942ba1f5203ac446051a47f8e1b2e08d52eed1",
+        "optimizer_batch_log_sha256": "dba38d1204e5062ea27e7a4eb1d1b4da851804cfbe83311a2329f013853eaf08",
+        "boundary_proposal_sha256": "a922f2cc18a03d5eabd00ab5603c6891e40cdb08736d3b6edc907ce9fb48e7c2",
+        "foundation_receipt_sha256": "36aaeb56d2035357ab04a4a75ca91f5438491583ea962dc07b15ba23a5c72cf5",
+        "foundation_checkpoint_sha256": "99c5faf58e517be01d6959c98558a29786ed48a57fc980fa46baec797ea55ea8"
+      }
+    ]
+  },
+  "plots": [
+    {
+      "file": "banking-v12-boundary-primary-accuracy.png",
+      "sha256": "608c9328ab0c7b663c9c1f65af2d3db85c84ec4632a0786767769a0195c2c470",
+      "bytes": 302390
+    },
+    {
+      "file": "banking-v12-boundary-primary-accuracy.svg",
+      "sha256": "b26078984db16f5bd7d0fc7a038a421ff873bc43f0ccbf53dc7fdf16b2b7e552",
+      "bytes": 202670
+    },
+    {
+      "file": "banking-v12-boundary-greedy-delta.png",
+      "sha256": "6fa403e1a6f97caea2c5fc6f2d18d9031b92e5c19957d1e6cae060976f2f3236",
+      "bytes": 160364
+    },
+    {
+      "file": "banking-v12-boundary-greedy-delta.svg",
+      "sha256": "d04d397b4995865b7a3742c8891e33626b88657b4163b5911b30eb1bd879541c",
+      "bytes": 103141
+    }
+  ],
+  "interpretation": {
+    "n": 3,
+    "error_bars": "mean plus/minus raw sample standard deviation; not confidence intervals",
+    "population": "task-1 development, 110 old + 110 current, 77-label global candidate set",
+    "scope": "one first-due boundary; shared foundation lineage; local partial diagnostic; not paper-faithful reproduction",
+    "official_test_read": false
+  }
+}

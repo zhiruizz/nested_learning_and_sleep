@@ -1,0 +1,147 @@
+{
+  "events": [
+    {
+      "active_runner_seconds": 2.859999999869615,
+      "automatic_retries": 0,
+      "cost_scope": "startup total includes preflight and model loading; not an isolated GPU-time measurement",
+      "error_message": "'MutableContext' object has no attribute 'eval'",
+      "error_type": "AttributeError",
+      "event": "seed17_gpu_startup_A",
+      "evidence": [
+        {
+          "artifact_id": "execution:seed17-launch-record-a.json",
+          "sha256": "a973990acb136d5b988f01be15709372aace6a8e80fe610bc0050d2128e59eb9"
+        },
+        {
+          "artifact_id": "execution:attempt-a/seed17/failure.json",
+          "sha256": "31b4cd979c6a0d57e62e00299e9a3fe6b140269180b34088a050c8890af1af88"
+        }
+      ],
+      "launcher_seconds_including_preflight_model_load_and_active_runner": 19.0,
+      "official_test_accessed": false,
+      "runner_sha256": "c46aed9f40157cd2d26604d9bb477028c0e4ea3f19d21acc3d823cc533337609",
+      "scientific_receiver_arms_completed": 0,
+      "source_config_sha256": "50632b6622fbabee05ca07b29f64769eaf53916950526819557ddd70ecfb5758",
+      "status": "failed_engineering_interface",
+      "work": {
+        "active_wall_seconds": 2.859999999869615,
+        "executed_input_tokens_including_padding": 1408,
+        "forward_shape_histogram": {
+          "8x37": 1,
+          "8x41": 1,
+          "8x45": 1,
+          "8x53": 1
+        },
+        "full_backbone_forward_calls": 4,
+        "full_backbone_forward_tokens": 1039,
+        "padded_input_tokens": 369,
+        "physical_adamw_updates": 0,
+        "sampled_output_tokens": 0,
+        "sleep_events": 0,
+        "tail_backward_calls": 4,
+        "tail_backward_tokens": 198,
+        "tail_calls": 4,
+        "tail_grad_enabled_calls": 4,
+        "tail_no_grad_calls": 0,
+        "tail_shape_histogram": {
+          "8x37": 1,
+          "8x41": 1,
+          "8x45": 1,
+          "8x53": 1
+        },
+        "update_attempts": 0,
+        "wake_updates": 4
+      }
+    },
+    {
+      "cuda_initialization_prohibited": true,
+      "elapsed_wall_seconds": 3.8909999998286366,
+      "event": "combined_guarded_cpu_A",
+      "evidence": [
+        {
+          "artifact_id": "execution:combined-cpu-acceptance-a.json",
+          "sha256": "af82811bbcfc711ef9a244cb21265a43aefeb7648fed9edbd74a5d876e275690"
+        },
+        {
+          "artifact_id": "execution:combined-cpu-pytest-a.txt",
+          "sha256": "7eb998cb2d7c3da146b8c4899483c8d9b4526efbbad252035c197fc353196cf6"
+        }
+      ],
+      "failed": 2,
+      "guard_sha256": "c22f07489d40ed5c3b49c6e9c6790ff15f97cae3bbdd9d65e388b853ef2f4fd9",
+      "ledger": {
+        "controller_attempts": 0,
+        "functional_cms_attempts": 0,
+        "last_session_seconds": 1.8590000001713634,
+        "limit": 256,
+        "optimizer_attempts": 12
+      },
+      "passed": 27,
+      "pytest_exit_code": 1,
+      "real_model_loaded": false,
+      "status": "failed"
+    },
+    {
+      "cuda_initialization_prohibited": true,
+      "elapsed_wall_seconds": 3.6409999998286366,
+      "event": "combined_guarded_cpu_B",
+      "evidence": [
+        {
+          "artifact_id": "execution:combined-cpu-acceptance-b.json",
+          "sha256": "0959c8e1013949de78dd272ab09c221cd2bfbe4610d48b6035aacfd0df8c2300"
+        },
+        {
+          "artifact_id": "execution:combined-cpu-pytest-b.txt",
+          "sha256": "684efba1f9aaac09d99a7375d09fe508a34a39ebcd82e4de4633185531f68d07"
+        }
+      ],
+      "failed": 0,
+      "guard_sha256": "c22f07489d40ed5c3b49c6e9c6790ff15f97cae3bbdd9d65e388b853ef2f4fd9",
+      "ledger": {
+        "controller_attempts": 0,
+        "functional_cms_attempts": 0,
+        "last_session_seconds": 1.672000000020489,
+        "limit": 256,
+        "optimizer_attempts": 13
+      },
+      "passed": 29,
+      "pytest_exit_code": 0,
+      "real_model_loaded": false,
+      "status": "pass"
+    },
+    {
+      "cuda_initialization_prohibited": true,
+      "elapsed_wall_seconds": 3.6869999999180436,
+      "event": "combined_guarded_cpu_C",
+      "evidence": [
+        {
+          "artifact_id": "execution:combined-cpu-acceptance-c.json",
+          "sha256": "eeda8705bd661bdf8077af868a24fe0f5c4b126c1ff7ed2cc3e8949914c200f5"
+        },
+        {
+          "artifact_id": "execution:combined-cpu-pytest-c.txt",
+          "sha256": "3b8cd803d3929202760db3aa0a670b971afac02d5f6ad0b00cb4d697d5ff8585"
+        }
+      ],
+      "failed": 0,
+      "guard_sha256": "c22f07489d40ed5c3b49c6e9c6790ff15f97cae3bbdd9d65e388b853ef2f4fd9",
+      "ledger": {
+        "controller_attempts": 0,
+        "functional_cms_attempts": 0,
+        "last_session_seconds": 1.7189999998081475,
+        "limit": 256,
+        "optimizer_attempts": 13
+      },
+      "passed": 30,
+      "pytest_exit_code": 0,
+      "real_model_loaded": false,
+      "status": "pass"
+    }
+  ],
+  "raw_rows_or_model_data_included": false,
+  "schema": "banking-v12-safe-engineering-history-v1",
+  "scope": "preserved engineering attempts; separate from successful receiver science costs",
+  "sealed_confirmation_accessed": false,
+  "source_id_scope": "execution workspace artifact identifiers; not every referenced file is bundled",
+  "unknown_or_unrecorded_costs": "Do not infer zero from absence. Focused development checks and other preparatory CPU work are not an exhaustive total."
+}

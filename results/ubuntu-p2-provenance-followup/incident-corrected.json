@@ -1,0 +1,33 @@
+{
+  "schema": "p2-provenance-followup-incident-v1",
+  "status": "RECORDED; NO FURTHER SCHEDULE READS",
+  "action": "A read-only provenance query unintentionally serialized the nested paired_schedules.seeds object in its stdout while attempting to list non-row contract metadata.",
+  "exposure": {
+    "scope": "A truncated portion of training schedule entries, including some training sample identifiers and token/hash/count metadata fields.",
+    "visible_entry_count": "Unknown; stdout was truncated.",
+    "raw_stdout_saved": false,
+    "identifiers_reproduced_in_record": false
+  },
+  "response": {
+    "schedule_queries_stopped_immediately": true,
+    "exposed_values_used_for_tuning_or_selection": false,
+    "remote_files_modified": false,
+    "remote_job_started": false,
+    "released_reports_or_aggregates_modified": false,
+    "banking_experiment_affected": false
+  },
+  "disposition": "Treat the briefly exposed schedule identifiers and associated metadata as disclosed. No attempt was made to recover or enumerate further entries. No raw output or row identifiers were copied into local artifacts.",
+  "event_timestamp_utc": "UNKNOWN",
+  "exact_utc_timestamp_unknown": true,
+  "original_record_date": "2026-11-08",
+  "original_record_date_timezone": "UNKNOWN",
+  "original_record_date_source": "Prior local incident note date; workstation timezone/date basis was not captured.",
+  "record_created_utc": "2026-11-07T23:36:54Z",
+  "access_flags": {
+    "training_text_read": false,
+    "gold_labels_read": false,
+    "endpoint_rows_or_payload_read": false,
+    "confirmation_or_sealed_data_read": false,
+    "checkpoint_weights_or_state_payload_read": false
+  }
+}

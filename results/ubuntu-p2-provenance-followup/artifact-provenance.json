@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "bytes": 1450,
+      "path": "README.md",
+      "sha256": "a53bc4a7781c350245d969e9238b562cfca1ace674dd7ffde372ae0d3f6d1ff9"
+    },
+    {
+      "bytes": 1520,
+      "path": "correction-review.json",
+      "sha256": "8424ac1dd71e2bd2c8f012a3135c8cf64b2fb2b29a490acaf94c7df83b9c500e"
+    },
+    {
+      "bytes": 1708,
+      "path": "incident-corrected.json",
+      "sha256": "a6fa52c391608eb4683eec7aef7cc19baf1ca3fe9600de8f6ceede2e00ace1c8"
+    },
+    {
+      "bytes": 6608,
+      "path": "independent-followup-review.json",
+      "sha256": "6dc50180ffeb5b1f6b80fe27b08af8c9ce9dd26e12e922c05ae53c39d96bcf65"
+    },
+    {
+      "bytes": 4169,
+      "path": "source-metadata.json",
+      "sha256": "f9f4c23f0c3ff3dbbc55db366a9bc86513467894955cff92c7629e8ea9bcfb42"
+    }
+  ],
+  "formal_acceptance_or_release": false,
+  "original_evidence_sha256": {
+    "correction": "8424ac1dd71e2bd2c8f012a3135c8cf64b2fb2b29a490acaf94c7df83b9c500e",
+    "incident": "a6fa52c391608eb4683eec7aef7cc19baf1ca3fe9600de8f6ceede2e00ace1c8",
+    "review": "93626e37557f3fbaac7c0fe74364916f2b20f3f812761dc69ea451dbfa52dd2b",
+    "source": "6457d679dc1fba459f9bcb809c6b48202235d33bf3bb9fcbd4128f36fe0cc8f8"
+  },
+  "schema": "p2-provenance-followup-public-capture-v1",
+  "science_aggregate_changed": false,
+  "transformations": {
+    "correction-review.json": "exact reviewed correction bytes",
+    "incident-corrected.json": "exact reviewed r2 bytes",
+    "independent-followup-review.json": {
+      "correction_review_sha256": "8424ac1dd71e2bd2c8f012a3135c8cf64b2fb2b29a490acaf94c7df83b9c500e",
+      "source_sha256": "93626e37557f3fbaac7c0fe74364916f2b20f3f812761dc69ea451dbfa52dd2b",
+      "transform": "replace prior ambiguous incident date/access-field representation and its record binding with reviewed r2; scientific and provenance conclusions unchanged"
+    },
+    "source-metadata.json": {
+      "source_sha256": "6457d679dc1fba459f9bcb809c6b48202235d33bf3bb9fcbd4128f36fe0cc8f8",
+      "transform": "omit only model_config.path (private absolute filesystem path); all scientific scalar fields and hashes preserved"
+    }
+  }
+}

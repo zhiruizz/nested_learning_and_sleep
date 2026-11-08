@@ -8,13 +8,13 @@
     "documentation_and_results_compilation": "CC-BY-4.0",
     "prior_and_third_party_notices": "retained; see LICENSE.md"
   },
-  "file_count_excluding_manifests": 695,
+  "file_count_excluding_manifests": 766,
   "manifest_policy": "RELEASE_MANIFEST.json lists payload files; SHA256SUMS.txt additionally hashes this manifest and excludes itself.",
   "files": [
     {
       "path": ".gitattributes",
-      "sha256": "2a7468c320a8cd9719ea184c762ca4cd99415b280e023635ab4a206a151f1301",
-      "bytes": 29155
+      "sha256": "d03b36164986dbda7d46b659626dcafea628fb4a58f1e19994b654fe2c9d6ce8",
+      "bytes": 39526
     },
     {
       "path": ".github/ISSUE_TEMPLATE/reproduction.md",
@@ -53,13 +53,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "c942c2af104560b30a0d8385d0bf3012d87856f8ec3bb09f5c054fb61e11c3bd",
-      "bytes": 13341
+      "sha256": "1cee2ce1db3fb2218c60dc83741f82b91a38bbfea294363cbd44e9ba30bd9492",
+      "bytes": 13874
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "8f0a223b14c7b6a69d3d4812528da04c01072ece48151435e373d16b50ce5eaf",
-      "bytes": 9996
+      "sha256": "5a1d133459dd50c8cf2224dba014f582ed6468de46004b2fb073ac96308b3471",
+      "bytes": 10515
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -170,6 +170,26 @@
       "path": "configs/banking_v11_canonical_teacher_frozen.json",
       "sha256": "82794fc4dbe310e004e131405fd9b8c17b4a4dc310acbb0f22726feae95375c2",
       "bytes": 7397
+    },
+    {
+      "path": "configs/banking_v12_fixed_teacher_fit_eval_plan.json",
+      "sha256": "56b7faeef9c1bf86443391a22efe387e59850e1490510f6771ed816c6b335153",
+      "bytes": 1474
+    },
+    {
+      "path": "configs/banking_v12_optimizer_boundary_draft.json",
+      "sha256": "94292e1d62bb651cb8544ce401559531eea0e64e8019d5525525d0aa48239639",
+      "bytes": 2210
+    },
+    {
+      "path": "configs/banking_v12_optimizer_boundary_frozen_a.json",
+      "sha256": "50632b6622fbabee05ca07b29f64769eaf53916950526819557ddd70ecfb5758",
+      "bytes": 2992
+    },
+    {
+      "path": "configs/banking_v12_optimizer_boundary_frozen_b.json",
+      "sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25",
+      "bytes": 2992
     },
     {
       "path": "configs/clinc_cil_v8_controlled_probe_seed17.json",
@@ -322,6 +342,21 @@
       "bytes": 3016
     },
     {
+      "path": "docs/banking-v12-fixed-teacher-fit-evaluation-plan.md",
+      "sha256": "d20e3da0a6f676a0e728ad7aa6347771411dc12c2c5bc2843222e2d1a3237297",
+      "bytes": 2717
+    },
+    {
+      "path": "docs/banking-v12-launcher-independent-review.md",
+      "sha256": "57b80db98f0457f7b95af11990c6a2aea0d6d0c7649fa54e3d777a06ff761c4a",
+      "bytes": 5883
+    },
+    {
+      "path": "docs/banking-v12-reproduction.md",
+      "sha256": "569022f403549384c817bd72aefc8e7192c39a925f8c6e7e0f1cec41e5d50102",
+      "bytes": 8294
+    },
+    {
       "path": "docs/banking77-matched-comparison-draft.md",
       "sha256": "4580579c7d910cdec924a1166f8684f9cf9ebf150485cf76e83c15867c273dd0",
       "bytes": 7152
@@ -383,8 +418,8 @@
     },
     {
       "path": "docs/reproduction_status.md",
-      "sha256": "c0ded1e8627e5be5b0ff80583a4c7c71f7179fb0f68810adf7916194633b454a",
-      "bytes": 4497
+      "sha256": "192c42be9b69deb64ec1d6849e68cded06e52a4be98ab2fb1aa7968008fc0f32",
+      "bytes": 4815
     },
     {
       "path": "docs/sleep-paper-alignment-v10-v11.md",
@@ -472,6 +507,11 @@
       "bytes": 21431
     },
     {
+      "path": "reports/banking77-optimizer-boundary-v12.md",
+      "sha256": "e916ce64709518f739841ef59c6fcfb3bbbfe33e17ca4462b14ecede537ea063",
+      "bytes": 12734
+    },
+    {
       "path": "reports/banking77-reward-ablation-v11.md",
       "sha256": "5967bbf7acef9bcf4b9f67f29efd4129fb6a4be000142e0db3eb53ebffb0112d",
       "bytes": 17032
@@ -513,8 +553,8 @@
     },
     {
       "path": "reports/ubuntu-p2-formal-descriptive-disposition.md",
-      "sha256": "5714adc48b9298723a9c60e1272760d4267081cbe32e305e863aa7d32a4d7455",
-      "bytes": 7402
+      "sha256": "03bbe3f18dea19d4825c1a1fe16e446bc9e19459d2405937553695a46f5526ac",
+      "bytes": 9226
     },
     {
       "path": "requirements/clinc-v8-observed.txt",
@@ -538,8 +578,8 @@
     },
     {
       "path": "results/README.md",
-      "sha256": "9b37d5ddb9e20761fa63aae3789ccfc8d95e2a93787ea58a0ed5859f1ed113fd",
-      "bytes": 6798
+      "sha256": "982c991bdfa9e725ed0a67caf946265c958ecb164b6f402d3c0ce656bb40c3a9",
+      "bytes": 7036
     },
     {
       "path": "results/agnews-anchored-v5/analysis.json",
@@ -1797,6 +1837,221 @@
       "bytes": 4628
     },
     {
+      "path": "results/banking-v12/README.md",
+      "sha256": "14ee0205ad1bacd79ad7da132ec1b60692325f3508421c4110d15074b1228be1",
+      "bytes": 2860
+    },
+    {
+      "path": "results/banking-v12/figures/banking-v12-boundary-greedy-delta.png",
+      "sha256": "6fa403e1a6f97caea2c5fc6f2d18d9031b92e5c19957d1e6cae060976f2f3236",
+      "bytes": 160364
+    },
+    {
+      "path": "results/banking-v12/figures/banking-v12-boundary-greedy-delta.svg",
+      "sha256": "d04d397b4995865b7a3742c8891e33626b88657b4163b5911b30eb1bd879541c",
+      "bytes": 103141
+    },
+    {
+      "path": "results/banking-v12/figures/banking-v12-boundary-primary-accuracy.png",
+      "sha256": "608c9328ab0c7b663c9c1f65af2d3db85c84ec4632a0786767769a0195c2c470",
+      "bytes": 302390
+    },
+    {
+      "path": "results/banking-v12/figures/banking-v12-boundary-primary-accuracy.svg",
+      "sha256": "b26078984db16f5bd7d0fc7a038a421ff873bc43f0ccbf53dc7fdf16b2b7e552",
+      "bytes": 202670
+    },
+    {
+      "path": "results/banking-v12/figures/plot-manifest.json",
+      "sha256": "f9d07e9284a90dc7787067c312a14936fb802032f85828900a534ff9c7a87cbc",
+      "bytes": 4901
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/actual-all3-fixed-fit-material-freeze-c.json",
+      "sha256": "5650ae1174f230dac5465a13c205dff06a6698cc8a2621a4f59d81ed58dee07c",
+      "bytes": 40177
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/attempt-a-failure.json",
+      "sha256": "98ceb040f2f19884187aba193756936740129d5de4536dc177e5a1cc6b94188b",
+      "bytes": 1328
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/fixed-fit-all3-preflight-schema-failure-a.json",
+      "sha256": "369ed115e0711314b44644449f80a0416aeb1e1d808ff0b2143a18abdc4203d8",
+      "bytes": 986
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/fixed-fit-engineering-history-final.json",
+      "sha256": "abcc66fab90039b6ccfab1ace586889ce8f0f2fa7ecc4c80493abdb990dd2af2",
+      "bytes": 4455
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/fixed-fit-output-repair-amendment.json",
+      "sha256": "8f228f9222ba4f482e15ac7b2274058cde1c4a2ac3e7493ff45640e6f9b08d17",
+      "bytes": 1505
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/fixed-fit-root-launch-record-a.json",
+      "sha256": "854d31c219d3330d516828a4e212af28c4f8c029a3cb64f90212d1675ba3d038",
+      "bytes": 514
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/fixed-fit-root-launch-record-b.json",
+      "sha256": "457af59f9072def9132bc4e8963f2de52bbfb7572933481f2efe613653af71df",
+      "bytes": 961
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/fixed-teacher-fit-aggregate.json",
+      "sha256": "a6b45be15453d1370e31ea3f8fd94272ca3e5e8d712b66b51a5ccacd6c7fd629",
+      "bytes": 114200
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/independent-outcome-review.json",
+      "sha256": "f968725220a5eedf8d298c1adaff4ceef11b521f632896617706361d95b9d05f",
+      "bytes": 13151
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/independent-source-and-material-review.json",
+      "sha256": "df3bbfc0b16866afb4dd5f3b8df17d7f383356bf61052257c7bb3e18ad1f95d7",
+      "bytes": 3085
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/preflight-archive-correction.json",
+      "sha256": "c28008af6d4cf54f4a18ab10618b7355025072b7530958e5b21783e0eeee0106",
+      "bytes": 864
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/seed-17-fixed-teacher-fit-aggregate.json",
+      "sha256": "f6f866c532b33aee89d92a4c8137ad5cd34b7eaeab42cf7c6003d8f5a7274c62",
+      "bytes": 22211
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/seed-29-fixed-teacher-fit-aggregate.json",
+      "sha256": "8e292e0af470ab5080f3855272511d0b769301ef960b83a9099ec2f41a42c645",
+      "bytes": 22223
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/seed-43-fixed-teacher-fit-aggregate.json",
+      "sha256": "ffc1c813c31ffd784b896decc8c3b2723e048cd42a26d224b466db66b23c1ac2",
+      "bytes": 22216
+    },
+    {
+      "path": "results/banking-v12/fixed-fit/serialization-failed-source-c0.py.txt",
+      "sha256": "c0bfb9dacef9842408d7d27318f8cb80a2e0c4386f3c062e8d60c1b4473f9c63",
+      "bytes": 65987
+    },
+    {
+      "path": "results/banking-v12/independent-crosscheck-r1.json",
+      "sha256": "ce82561bfff48ad71ba08bc750054ac2c1045b8aaab1f00c4f852057505ca471",
+      "bytes": 4404
+    },
+    {
+      "path": "results/banking-v12/provenance/README.md",
+      "sha256": "a9b8959da921fff1b4f7e2d566e2bfb47b8ee72928673fef1558d3106f052b24",
+      "bytes": 1263
+    },
+    {
+      "path": "results/banking-v12/provenance/actual-all-three-cpu-preflight-b.json",
+      "sha256": "2583f7c5e9f8a152ea4b6e889f58173855d23e3b79962467785f810fc36c18c5",
+      "bytes": 885
+    },
+    {
+      "path": "results/banking-v12/provenance/actual-seed17-b-restore-qualification-independent-review.json",
+      "sha256": "ad55d3198c3a1538a872eb049bc4e86519fbb59e851656f818e732241eff9ace",
+      "bytes": 3354
+    },
+    {
+      "path": "results/banking-v12/provenance/actual-seed17-b-terminal-independent-review.json",
+      "sha256": "13a3e8c3a1753a8ad5165087aa718b8b255716308befd2fc04abb1901c8a507d",
+      "bytes": 7433
+    },
+    {
+      "path": "results/banking-v12/provenance/capture-manifest.json",
+      "sha256": "a3e6191a9b2902f7ddc6bedb4cf2767f672aaa159e6d4e163ed0904b16437997",
+      "bytes": 5450
+    },
+    {
+      "path": "results/banking-v12/provenance/engineering-history-a.json",
+      "sha256": "5ce3dd0e9f4ff68178049c74e5c2599faf09186e0727a49cabab28370c182fe8",
+      "bytes": 5480
+    },
+    {
+      "path": "results/banking-v12/provenance/executed-test-banking-optimizer-boundary-v12.py.txt",
+      "sha256": "7f07e47bde64a5416f9f8bf2a87c9bf265e6c8d42d239149579d1b89b2773857",
+      "bytes": 6663
+    },
+    {
+      "path": "results/banking-v12/provenance/packaging-correction.json",
+      "sha256": "4878e0aef77c062d16b07897d891b024bc94e4c3d8af2c76541939e3f180e292",
+      "bytes": 713
+    },
+    {
+      "path": "results/banking-v12/provenance/public-test-portability-receipt.json",
+      "sha256": "2674a6ba339148595526316d2a71f8f7743ce2f5f21955314279090f00320488",
+      "bytes": 550
+    },
+    {
+      "path": "results/banking-v12/provenance/root-seed17-terminal-metadata-review-b.json",
+      "sha256": "95677abc39c1d921e2f532613ad77440d7862a57d2379fed122b74bc60bd5817",
+      "bytes": 863
+    },
+    {
+      "path": "results/banking-v12/provenance/root-seed29-terminal-metadata-review-b.json",
+      "sha256": "5c8868078c9ecd1193ae1ed59f0bc3e50e47353e380b19b2da4adfcfdc60fcfb",
+      "bytes": 872
+    },
+    {
+      "path": "results/banking-v12/provenance/root-seed43-terminal-metadata-review-b.json",
+      "sha256": "5099cd1fca5720b69bd857d053517464edb9f83cba0887bec85d846a76f09439",
+      "bytes": 873
+    },
+    {
+      "path": "results/banking-v12/provenance/startup-A-failure-archive-note.json",
+      "sha256": "d0584d4fbbea29dda33aaa875cf1443e91b3a5ef54b60c362d60628cb00bf09d",
+      "bytes": 702
+    },
+    {
+      "path": "results/banking-v12/provenance/startup-A-runner.py.txt",
+      "sha256": "c46aed9f40157cd2d26604d9bb477028c0e4ea3f19d21acc3d823cc533337609",
+      "bytes": 49538
+    },
+    {
+      "path": "results/banking-v12/provenance/startup-A-tests.py.txt",
+      "sha256": "68338c2a63870a0d0348660fee8a7cc087d892f7b3abe4d5da9df0da040a6d05",
+      "bytes": 5543
+    },
+    {
+      "path": "results/banking-v12/provenance/v12-source-config-freeze-a.json",
+      "sha256": "e96a118af2d4e32c4cd06750006b8797adc5e05133862aa682bc73ffc145c5da",
+      "bytes": 1731
+    },
+    {
+      "path": "results/banking-v12/provenance/v12-source-config-freeze-b.json",
+      "sha256": "922fcc3ccd4011ece149d428422a421b0b2ded3d62d81d79ca745bf9ef3b283c",
+      "bytes": 1746
+    },
+    {
+      "path": "results/banking-v12/software-acceptance-execution.json",
+      "sha256": "04b01a32a70e0d0ee07aaa798c057cacd19f11bf0f37fbf192a528e874b65df8",
+      "bytes": 1630
+    },
+    {
+      "path": "results/banking-v12/software-acceptance-public.json",
+      "sha256": "4f8f27e378703cb0f9340f8a9cf273d5e17b7a9e7a20ce2faf2f15728f06c723",
+      "bytes": 1639
+    },
+    {
+      "path": "results/banking-v12/v12-boundary-aggregate.json",
+      "sha256": "00bc7ee2a973c1048f87dcef73a368985a2d698abb0c43db0b39a7fa89a9a3df",
+      "bytes": 474849
+    },
+    {
+      "path": "results/banking-v12/v12-boundary-metrics.csv",
+      "sha256": "bac729fc40336c98957ee0e63f05e633ba8b59e523fd06997bbd37eb306348bd",
+      "bytes": 20697
+    },
+    {
       "path": "results/banking77-preparation/source-audit.json",
       "sha256": "242d780d245242d7ac4d4acfbb30889a08240bd7ca18ff01b6d239cbc965c287",
       "bytes": 15016
@@ -2167,6 +2422,36 @@
       "bytes": 99826
     },
     {
+      "path": "results/ubuntu-p2-provenance-followup/README.md",
+      "sha256": "a53bc4a7781c350245d969e9238b562cfca1ace674dd7ffde372ae0d3f6d1ff9",
+      "bytes": 1450
+    },
+    {
+      "path": "results/ubuntu-p2-provenance-followup/artifact-provenance.json",
+      "sha256": "f186fdfbe597660f2aeb5fed3789ba5a4ed50d823d993fd725a64f19db6ba4b9",
+      "bytes": 2137
+    },
+    {
+      "path": "results/ubuntu-p2-provenance-followup/correction-review.json",
+      "sha256": "8424ac1dd71e2bd2c8f012a3135c8cf64b2fb2b29a490acaf94c7df83b9c500e",
+      "bytes": 1520
+    },
+    {
+      "path": "results/ubuntu-p2-provenance-followup/incident-corrected.json",
+      "sha256": "a6fa52c391608eb4683eec7aef7cc19baf1ca3fe9600de8f6ceede2e00ace1c8",
+      "bytes": 1708
+    },
+    {
+      "path": "results/ubuntu-p2-provenance-followup/independent-followup-review.json",
+      "sha256": "6dc50180ffeb5b1f6b80fe27b08af8c9ce9dd26e12e922c05ae53c39d96bcf65",
+      "bytes": 6608
+    },
+    {
+      "path": "results/ubuntu-p2-provenance-followup/source-metadata.json",
+      "sha256": "f9f4c23f0c3ff3dbbc55db366a9bc86513467894955cff92c7629e8ea9bcfb42",
+      "bytes": 4169
+    },
+    {
       "path": "results/update_reset_activation.csv",
       "sha256": "38cde1ea876ee3b93c297c86fd759ed41b4468d15e783309825d18229aceb8df",
       "bytes": 2862
@@ -2332,9 +2617,19 @@
       "bytes": 12510
     },
     {
+      "path": "tests/check_banking_cil_v12_batching_cpu.py",
+      "sha256": "3e0daaf5c9460abd3c82251f4d0e82a570c06259ff0dba9f4a82a812e3553d7e",
+      "bytes": 14484
+    },
+    {
       "path": "tests/check_banking_cost_estimates_v10_cpu.py",
       "sha256": "86a688d0e6d25f8cad6f608853db93ad41698b9bea70f0f2b657038d63af43c4",
       "bytes": 862
+    },
+    {
+      "path": "tests/check_banking_optimizer_boundary_v12_cpu.py",
+      "sha256": "83c110936e9fe5510b3b4fd287226aade51136346abb57808779cf038d692660",
+      "bytes": 6864
     },
     {
       "path": "tests/check_banking_queue_v10_cpu.py",
@@ -2345,6 +2640,16 @@
       "path": "tests/check_banking_v10_queue_config_hash_domains_cpu.py",
       "sha256": "6cbfdac79f1b3478c6b7b21c5d56c62fcf0002cee21a33549f8e2172b6e52fc6",
       "bytes": 1353
+    },
+    {
+      "path": "tests/check_banking_v12_launcher_cpu.py",
+      "sha256": "b2b9b4540eccf1c94ffcec4055711f8f20a9d308f9ce2a79d1779652e4adb170",
+      "bytes": 5012
+    },
+    {
+      "path": "tests/check_banking_v12_runtime_interfaces_cpu.py",
+      "sha256": "0b9c499eece8ab253ee1a66509e69c12ea4644b49a6e0f741969e4c4dceb4044",
+      "bytes": 11828
     },
     {
       "path": "tests/check_build_banking_memory_queue_v10_cpu.py",
@@ -2377,6 +2682,11 @@
       "bytes": 28016
     },
     {
+      "path": "tests/check_evaluate_banking_v12_fixed_teacher_fit_cpu.py",
+      "sha256": "8f9e100101310d0c62f8227df5373b3d02c2c3fd97775234d6baa62c71faeb67",
+      "bytes": 14686
+    },
+    {
       "path": "tests/check_launch_banking_checked_queue_v10_cpu.py",
       "sha256": "318ea6e76215d2b0edeb02ffa6a396691093cbf7accd52d46f2d843b0d2256d0",
       "bytes": 6804
@@ -2407,6 +2717,11 @@
       "bytes": 10908
     },
     {
+      "path": "tests/check_plot_banking_optimizer_boundary_v12_cpu.py",
+      "sha256": "083296a352d9a479bc015417ec69fe366b512641ed1bc605bd1dd7fd90c78e8f",
+      "bytes": 4481
+    },
+    {
       "path": "tests/check_prepare_banking_train_v10_cpu.py",
       "sha256": "6fe9e9fc60710a64eded54df805ae757fbc591c058b55d532af02e08db865431",
       "bytes": 2071
@@ -2420,6 +2735,11 @@
       "path": "tests/check_probe_banking_transfer_v10_cpu.py",
       "sha256": "8d35807279d7039c5a5585ddf6ae1bce2aba8739c10f7b0a98491c810cfb1ac6",
       "bytes": 10208
+    },
+    {
+      "path": "tests/check_reanalyze_banking_optimizer_boundary_v12.py",
+      "sha256": "4d9485544b705e6173faa48d91509d4e911c6fa985b34f188fa6cbd0842225ed",
+      "bytes": 10111
     },
     {
       "path": "tests/check_reanalyze_banking_v10_v11_cpu.py",
@@ -2882,6 +3202,11 @@
       "bytes": 30277
     },
     {
+      "path": "tools/banking_cil_v12_batching.py",
+      "sha256": "99e0163c333fe1fdec1928bb2f932c79d88c7f0683b8d917883f2c79e8b0c829",
+      "bytes": 10664
+    },
+    {
       "path": "tools/banking_cost_estimates_v10.py",
       "sha256": "0e3eb594ac662271b0897b6b885894d818d4b111407debff69ddc9d05efcdd65",
       "bytes": 2432
@@ -2992,6 +3317,11 @@
       "bytes": 54016
     },
     {
+      "path": "tools/evaluate_banking_v12_fixed_teacher_fit.py",
+      "sha256": "91039fbefe26c1210f79af9639df44740817c671fe3ca63f70040e5a9be9a7ee",
+      "bytes": 67190
+    },
+    {
       "path": "tools/evaluate_clinc_checkpoints_v8.py",
       "sha256": "eb4996e33dd58cfafd737dacb10b0fcb7e7edb8e2221f46352302794e8c2388e",
       "bytes": 23330
@@ -3027,6 +3357,11 @@
       "bytes": 27709
     },
     {
+      "path": "tools/launch_banking_optimizer_boundary_v12.py",
+      "sha256": "e45cf1fdad02d335138394cfa28fc0a82779952c11c87bb0ddf6263bc8de9874",
+      "bytes": 6287
+    },
+    {
       "path": "tools/launch_banking_test_memory_policy_v10.py",
       "sha256": "b24e169f72439f8454aa93596048f361b7e3177088ca396c75251158969027d8",
       "bytes": 28359
@@ -3050,6 +3385,11 @@
       "path": "tools/orchestrate_banking_v11_canonical_teacher.py",
       "sha256": "7f6e9ded8ab113d5ab07ac83ddcaf1d5a0722418ac46445c1e560e8da92421d7",
       "bytes": 31012
+    },
+    {
+      "path": "tools/plot_banking_optimizer_boundary_v12.py",
+      "sha256": "74aab2ddc9430f7bfc9b06ccd479c5d5dc63e70a11bf9e2429628c5fde2accda",
+      "bytes": 20024
     },
     {
       "path": "tools/plot_banking_v10_v11.py",
@@ -3177,6 +3517,11 @@
       "bytes": 2758
     },
     {
+      "path": "tools/reanalyze_banking_optimizer_boundary_v12.py",
+      "sha256": "ed76528dcf19a512630e34b556e1618df30e0b2a2aff835d015a9eee17b93c60",
+      "bytes": 35555
+    },
+    {
       "path": "tools/reanalyze_banking_v10_v11.py",
       "sha256": "c5a2b19d428a17212bb1d646162a2d1ce3bce47b0b802ea9a64f4d2da89dd039",
       "bytes": 33396
@@ -3287,9 +3632,19 @@
       "bytes": 39096
     },
     {
+      "path": "tools/run_banking_optimizer_boundary_v12.py",
+      "sha256": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f",
+      "bytes": 50363
+    },
+    {
       "path": "tools/run_banking_queue_v10.py",
       "sha256": "c715dcfe5207c75f3efc14e12b33ac9c2e61d2c398dc40c81b673c5e6fcf3b22",
       "bytes": 4946
+    },
+    {
+      "path": "tools/run_banking_v12_cpu_acceptance.py",
+      "sha256": "9d0a9fc5bbca4f953bbcd3d8e0e1bba687a207a4e987c2f462b7e1e650aadd39",
+      "bytes": 3958
     },
     {
       "path": "tools/run_clinc_cil_v8.py",

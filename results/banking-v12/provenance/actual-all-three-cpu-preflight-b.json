@@ -1,0 +1,27 @@
+{
+  "completed_utc": "2026-11-07T23:14:04.341029+00:00",
+  "config_sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25",
+  "cuda_initialized": false,
+  "model_loaded": false,
+  "optimizer_updates": 0,
+  "results": [
+    {
+      "path": "actual-seed17-cpu-preflight-b.json",
+      "seed": 17,
+      "sha256": "b9fbdb4c2b5091a56d896fa5af2bb4d54babe9423ff27a334226fd54534e5513"
+    },
+    {
+      "path": "actual-seed29-cpu-preflight-b.json",
+      "seed": 29,
+      "sha256": "9fbec8a6a389b763dbb62bc39c48b60fbca65fe1f80ec73230045dfecb23479e"
+    },
+    {
+      "path": "actual-seed43-cpu-preflight-b.json",
+      "seed": 43,
+      "sha256": "5c3f6556d20458857ff0896bb721318b622aea4945d8ee75ee423c3afaef9ea9"
+    }
+  ],
+  "schema": "banking-v12-actual-three-seed-cpu-preflight-v1",
+  "status": "pass",
+  "test_payload_accessed": false
+}

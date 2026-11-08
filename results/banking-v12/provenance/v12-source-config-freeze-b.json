@@ -1,0 +1,25 @@
+{
+  "automatic_retries": 0,
+  "config_file_sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25",
+  "frozen_utc": "2026-11-07T23:13:27.655200+00:00",
+  "parent_release": "363c2a1184b59cc14b3bcd2610424dafab7be846",
+  "paths_file_sha256": "8f6fa3abc2cffecbc95f3ef013d68c7036031930690b4bb4b15d70f84f425c68",
+  "previous_config_sha256": "50632b6622fbabee05ca07b29f64769eaf53916950526819557ddd70ecfb5758",
+  "prior_failed_output_preserved": true,
+  "repair_scope": "MutableContext has no eval method; eval its memory modules and freeze receiver-teacher parameters through a real-type-tested helper; scientific settings unchanged",
+  "schema": "banking-v12-source-config-freeze-v1",
+  "scientific_settings_unchanged": true,
+  "source_hashes": {
+    "tools/banking_cil_v12_batching.py": "99e0163c333fe1fdec1928bb2f932c79d88c7f0683b8d917883f2c79e8b0c829",
+    "tools/launch_banking_optimizer_boundary_v12.py": "e45cf1fdad02d335138394cfa28fc0a82779952c11c87bb0ddf6263bc8de9874",
+    "tools/run_banking_optimizer_boundary_v12.py": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f",
+    "tools/run_banking_v12_cpu_acceptance.py": "9d0a9fc5bbca4f953bbcd3d8e0e1bba687a207a4e987c2f462b7e1e650aadd39"
+  },
+  "test_source_hashes": {
+    "test_banking_cil_v12_batching_cpu.py": "3e0daaf5c9460abd3c82251f4d0e82a570c06259ff0dba9f4a82a812e3553d7e",
+    "test_banking_optimizer_boundary_v12_cpu.py": "7f07e47bde64a5416f9f8bf2a87c9bf265e6c8d42d239149579d1b89b2773857",
+    "test_banking_v12_launcher_cpu.py": "b2b9b4540eccf1c94ffcec4055711f8f20a9d308f9ce2a79d1779652e4adb170",
+    "test_banking_v12_runtime_interfaces_cpu.py": "0b9c499eece8ab253ee1a66509e69c12ea4644b49a6e0f741969e4c4dceb4044"
+  },
+  "training_started": false
+}

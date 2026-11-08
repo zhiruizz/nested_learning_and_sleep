@@ -1,0 +1,31 @@
+{
+  "cuda_initialization_prohibited": true,
+  "elapsed_wall_seconds": 5.3280000002123415,
+  "guard_sha256": "c22f07489d40ed5c3b49c6e9c6790ff15f97cae3bbdd9d65e388b853ef2f4fd9",
+  "guard_unchanged": true,
+  "ledger": {
+    "controller_attempts": 0,
+    "functional_cms_attempts": 0,
+    "last_session_seconds": 3.3909999998286366,
+    "limit": 256,
+    "optimizer_attempts": 13
+  },
+  "ledger_sha256": "5e66c1f93a3cd26d0dc5f4debe3a4ca348c1b52c63479b2dca1a5ef4744b25b1",
+  "log_sha256": "178c683ba106d9d1c11a5819b371095b10aa443cf641907c59be8af7420789ce",
+  "network_prohibited": true,
+  "pytest_exit_code": 0,
+  "real_model_loaded": false,
+  "schema": "banking-v12-cpu-acceptance-v1",
+  "setup_or_integrity_error": null,
+  "status": "pass",
+  "test_source_hashes": {
+    "check_banking_cil_v12_batching_cpu.py": "3e0daaf5c9460abd3c82251f4d0e82a570c06259ff0dba9f4a82a812e3553d7e",
+    "check_banking_optimizer_boundary_v12_cpu.py": "83c110936e9fe5510b3b4fd287226aade51136346abb57808779cf038d692660",
+    "check_banking_v12_launcher_cpu.py": "b2b9b4540eccf1c94ffcec4055711f8f20a9d308f9ce2a79d1779652e4adb170",
+    "check_banking_v12_runtime_interfaces_cpu.py": "0b9c499eece8ab253ee1a66509e69c12ea4644b49a6e0f741969e4c4dceb4044",
+    "check_evaluate_banking_v12_fixed_teacher_fit_cpu.py": "8f9e100101310d0c62f8227df5373b3d02c2c3fd97775234d6baa62c71faeb67",
+    "check_plot_banking_optimizer_boundary_v12_cpu.py": "083296a352d9a479bc015417ec69fe366b512641ed1bc605bd1dd7fd90c78e8f",
+    "check_reanalyze_banking_optimizer_boundary_v12.py": "4d9485544b705e6173faa48d91509d4e911c6fa985b34f188fa6cbd0842225ed"
+  },
+  "test_sources_unchanged": true
+}

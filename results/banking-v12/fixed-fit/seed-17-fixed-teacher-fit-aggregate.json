@@ -1,0 +1,685 @@
+{
+  "aggregate": {
+    "budget_delta": {
+      "full_backbone_forwards": 64,
+      "full_backbone_input_tokens": 2325,
+      "generation_updates": 0,
+      "optimizer_updates": 0,
+      "tail_backward_calls": 0,
+      "tail_calls": 640
+    },
+    "checkpoint_manifest": [
+      {
+        "adamw_steps": 30,
+        "bytes": 147467581,
+        "context": "B1_HIGH_30",
+        "requests": 30,
+        "sha256": "2617cb75b6bb07217c8db358730de3e618309a42f53ee1a4a3b585b9ecabaaee"
+      },
+      {
+        "adamw_steps": 960,
+        "bytes": 147467581,
+        "context": "B1_HIGH_960",
+        "requests": 960,
+        "sha256": "5ec9a6dbc82740ea57b066a36c85a0f0627987c9e1035def4b6ad8c7de518cd1"
+      },
+      {
+        "adamw_steps": 30,
+        "bytes": 147467581,
+        "context": "B1_LOW_30",
+        "requests": 30,
+        "sha256": "1729adfbeb6edc09a1844cbb448b26cfa025166088dba7717cd3de66f20fe9bd"
+      },
+      {
+        "adamw_steps": 960,
+        "bytes": 147467581,
+        "context": "B1_LOW_960",
+        "requests": 960,
+        "sha256": "a62098fb62524675f17d137d7c98d21edd48d72eb80e7147f6587af0a6c11428"
+      },
+      {
+        "adamw_steps": 30,
+        "bytes": 147467581,
+        "context": "B32_HIGH_960",
+        "requests": 960,
+        "sha256": "f62f337715477bb02ce030e827ba382edc8da0983f1b5d5f7ffdf77e0f1339e2"
+      },
+      {
+        "adamw_steps": 30,
+        "bytes": 147467581,
+        "context": "B32_LOW_960",
+        "requests": 960,
+        "sha256": "55cf60a9cf11b63e4226d6c4c76b5cc1252258affb42e8b93a43573138732909"
+      },
+      {
+        "adamw_steps": 100,
+        "bytes": 147467581,
+        "context": "B32_LOW_3200",
+        "requests": 3200,
+        "sha256": "02fb11e2ff441a53d72546c1f1e3c46ddfe658a57a43c39e72a0cef0e7cd96af"
+      }
+    ],
+    "context_hashes_before_after_identical": true,
+    "context_reconstruction": {
+      "baseline_state_sha256": {
+        "CMS_NO_RESET": "37940dd7fa84761374da8ce5cbeab3df837198bb367cc7c22112b369780987a9",
+        "RESET_ZERO": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+        "TEACHER": "099fb53b6c295510f5df5041ebf47c580e82811590fa1802f040946a2ea53041"
+      },
+      "initial_state_hashes_verified": true,
+      "student_state_sha256": {
+        "B1_HIGH_30": "88001339c6c70432d9967f16b7352e9aef3ca74ffc78f085f4b99f7d53fc8a51",
+        "B1_HIGH_960": "22c851033ad1b3bc078c45648326a35ee2c10535716e122c8fffd3d411b36457",
+        "B1_LOW_30": "f1a8cceea7e128b3e7de48b7bfb137328a932437e059a47c8b5512032c188112",
+        "B1_LOW_960": "dfa7cb13a4cde88a00fc8eb46f01fd9eb8426f46abb4fd86d2c80861d61878dd",
+        "B32_HIGH_960": "afa63cf6243a55e07c522cd3417ebab66dc648621d4b220b9042e4d62d05cd19",
+        "B32_LOW_3200": "e4acb02c9d2ebc7d9a77743fc69c25bdec97c1c0531c78120c46ebc1b765d344",
+        "B32_LOW_960": "136d3b276a543bd95c83103b5080204578adfca8c2740b182aeaaa8f7ecb9c14"
+      },
+      "teacher_state_sha256": "099fb53b6c295510f5df5041ebf47c580e82811590fa1802f040946a2ea53041"
+    },
+    "fixed_trajectory_fit": {
+      "B1_HIGH_30": {
+        "all": {
+          "answer_tokens": 346,
+          "mean_request_token_mean_kl": 0.48169666645117104,
+          "minimum_request_mean_kl": 0.14502885937690735,
+          "negative_request_values": 0,
+          "request_count": 64,
+          "sum_per_request_mean_kl": 30.828586652874947
+        },
+        "current": {
+          "answer_tokens": 193,
+          "mean_request_token_mean_kl": 0.4314317018724978,
+          "minimum_request_mean_kl": 0.14502885937690735,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 13.80581445991993
+        },
+        "old": {
+          "answer_tokens": 153,
+          "mean_request_token_mean_kl": 0.5319616310298443,
+          "minimum_request_mean_kl": 0.15754006803035736,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 17.022772192955017
+        }
+      },
+      "B1_HIGH_960": {
+        "all": {
+          "answer_tokens": 346,
+          "mean_request_token_mean_kl": 0.07791215533507057,
+          "minimum_request_mean_kl": 0.011138700880110264,
+          "negative_request_values": 0,
+          "request_count": 64,
+          "sum_per_request_mean_kl": 4.986377941444516
+        },
+        "current": {
+          "answer_tokens": 193,
+          "mean_request_token_mean_kl": 0.06241278926609084,
+          "minimum_request_mean_kl": 0.011138700880110264,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 1.9972092565149069
+        },
+        "old": {
+          "answer_tokens": 153,
+          "mean_request_token_mean_kl": 0.09341152140405029,
+          "minimum_request_mean_kl": 0.017856188118457794,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 2.9891686849296093
+        }
+      },
+      "B1_LOW_30": {
+        "all": {
+          "answer_tokens": 346,
+          "mean_request_token_mean_kl": 4.2316062562167645,
+          "minimum_request_mean_kl": 2.3940093517303467,
+          "negative_request_values": 0,
+          "request_count": 64,
+          "sum_per_request_mean_kl": 270.8228003978729
+        },
+        "current": {
+          "answer_tokens": 193,
+          "mean_request_token_mean_kl": 3.9925970062613487,
+          "minimum_request_mean_kl": 2.3940093517303467,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 127.76310420036316
+        },
+        "old": {
+          "answer_tokens": 153,
+          "mean_request_token_mean_kl": 4.47061550617218,
+          "minimum_request_mean_kl": 2.5040969848632812,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 143.05969619750977
+        }
+      },
+      "B1_LOW_960": {
+        "all": {
+          "answer_tokens": 346,
+          "mean_request_token_mean_kl": 0.735392629634589,
+          "minimum_request_mean_kl": 0.2506960332393646,
+          "negative_request_values": 0,
+          "request_count": 64,
+          "sum_per_request_mean_kl": 47.06512829661369
+        },
+        "current": {
+          "answer_tokens": 193,
+          "mean_request_token_mean_kl": 0.634009656496346,
+          "minimum_request_mean_kl": 0.2506960332393646,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 20.288309007883072
+        },
+        "old": {
+          "answer_tokens": 153,
+          "mean_request_token_mean_kl": 0.8367756027728319,
+          "minimum_request_mean_kl": 0.3123738765716553,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 26.77681928873062
+        }
+      },
+      "B32_HIGH_960": {
+        "all": {
+          "answer_tokens": 346,
+          "mean_request_token_mean_kl": 0.05493311773170717,
+          "minimum_request_mean_kl": 0.018132448196411133,
+          "negative_request_values": 0,
+          "request_count": 64,
+          "sum_per_request_mean_kl": 3.515719534829259
+        },
+        "current": {
+          "answer_tokens": 193,
+          "mean_request_token_mean_kl": 0.05418729764642194,
+          "minimum_request_mean_kl": 0.018132448196411133,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 1.733993524685502
+        },
+        "old": {
+          "answer_tokens": 153,
+          "mean_request_token_mean_kl": 0.0556789378169924,
+          "minimum_request_mean_kl": 0.024109123274683952,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 1.7817260101437569
+        }
+      },
+      "B32_LOW_3200": {
+        "all": {
+          "answer_tokens": 346,
+          "mean_request_token_mean_kl": 3.9511164762079716,
+          "minimum_request_mean_kl": 2.250964641571045,
+          "negative_request_values": 0,
+          "request_count": 64,
+          "sum_per_request_mean_kl": 252.87145447731018
+        },
+        "current": {
+          "answer_tokens": 193,
+          "mean_request_token_mean_kl": 3.726319156587124,
+          "minimum_request_mean_kl": 2.250964641571045,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 119.24221301078796
+        },
+        "old": {
+          "answer_tokens": 153,
+          "mean_request_token_mean_kl": 4.175913795828819,
+          "minimum_request_mean_kl": 2.418959379196167,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 133.62924146652222
+        }
+      },
+      "B32_LOW_960": {
+        "all": {
+          "answer_tokens": 346,
+          "mean_request_token_mean_kl": 4.2090944647789,
+          "minimum_request_mean_kl": 2.3880155086517334,
+          "negative_request_values": 0,
+          "request_count": 64,
+          "sum_per_request_mean_kl": 269.3820457458496
+        },
+        "current": {
+          "answer_tokens": 193,
+          "mean_request_token_mean_kl": 3.9724489897489548,
+          "minimum_request_mean_kl": 2.3880155086517334,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 127.11836767196655
+        },
+        "old": {
+          "answer_tokens": 153,
+          "mean_request_token_mean_kl": 4.4457399398088455,
+          "minimum_request_mean_kl": 2.4980313777923584,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 142.26367807388306
+        }
+      },
+      "CMS_NO_RESET": {
+        "all": {
+          "answer_tokens": 346,
+          "mean_request_token_mean_kl": 4.966312122989258e-06,
+          "minimum_request_mean_kl": -2.051933023494712e-08,
+          "negative_request_values": 3,
+          "request_count": 64,
+          "sum_per_request_mean_kl": 0.0003178439758713125
+        },
+        "current": {
+          "answer_tokens": 193,
+          "mean_request_token_mean_kl": 6.985469794829058e-06,
+          "minimum_request_mean_kl": -2.051933023494712e-08,
+          "negative_request_values": 1,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 0.00022353503343452985
+        },
+        "old": {
+          "answer_tokens": 153,
+          "mean_request_token_mean_kl": 2.9471544511494585e-06,
+          "minimum_request_mean_kl": -5.841482852986246e-09,
+          "negative_request_values": 2,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 9.430894243678267e-05
+        }
+      },
+      "RESET_ZERO": {
+        "all": {
+          "answer_tokens": 346,
+          "mean_request_token_mean_kl": 4.262621216475964,
+          "minimum_request_mean_kl": 2.4095778465270996,
+          "negative_request_values": 0,
+          "request_count": 64,
+          "sum_per_request_mean_kl": 272.80775785446167
+        },
+        "current": {
+          "answer_tokens": 193,
+          "mean_request_token_mean_kl": 4.022902689874172,
+          "minimum_request_mean_kl": 2.4095778465270996,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 128.7328860759735
+        },
+        "old": {
+          "answer_tokens": 153,
+          "mean_request_token_mean_kl": 4.502339743077755,
+          "minimum_request_mean_kl": 2.5252525806427,
+          "negative_request_values": 0,
+          "request_count": 32,
+          "sum_per_request_mean_kl": 144.07487177848816
+        }
+      },
+      "TEACHER": {
+        "all": {
+          "answer_tokens": 346,
+          "mean_request_token_mean_kl": -3.385816387674323e-09,
+          "minimum_request_mean_kl": -4.1137596440421476e-08,
+          "negative_request_values": 41,
+          "request_count": 64,
+          "sum_per_request_mean_kl": -2.1669224881115667e-07
+        },
+        "current": {
+          "answer_tokens": 193,
+          "mean_request_token_mean_kl": -6.6991331752752625e-09,
+          "minimum_request_mean_kl": -4.1137596440421476e-08,
+          "negative_request_values": 22,
+          "request_count": 32,
+          "sum_per_request_mean_kl": -2.143722616088084e-07
+        },
+        "old": {
+          "answer_tokens": 153,
+          "mean_request_token_mean_kl": -7.249960007338352e-11,
+          "minimum_request_mean_kl": -2.8899043158503446e-08,
+          "negative_request_values": 19,
+          "request_count": 32,
+          "sum_per_request_mean_kl": -2.3199872023482726e-09
+        }
+      },
+      "_teacher_self_kl_diagnostic": {
+        "maximum_absolute_request_mean_kl": 4.3700708829419455e-08,
+        "negative_roundoff_request_count": 41,
+        "passed": true,
+        "tolerance": 1e-06
+      }
+    },
+    "rollout_manifest": {
+      "bytes": 404461,
+      "full_payload_deserialized": true,
+      "records_deserialized_from_private_payload": 3200,
+      "records_scored": 64,
+      "sha256": "35507af4accd32f31a8feffa80468ef443902b6778eea70db743935d439bd0d3",
+      "total_records_in_source": 3200
+    },
+    "stored_parameter_inventory": {
+      "all_context_stored_mutable_bytes": 718295040,
+      "all_context_stored_mutable_parameters": 179573760,
+      "contexts": {
+        "B1_HIGH_30": {
+          "active_slots_by_level": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "logical_receiver_bytes": 1572864,
+          "logical_receiver_parameters": 393216,
+          "preallocated_slots_by_level": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "receiver_allowed_parameter_inventory": [
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.a",
+              "numel": 196608
+            },
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.b",
+              "numel": 196608
+            }
+          ],
+          "stored_mutable_bytes": 71829504,
+          "stored_mutable_parameters": 17957376
+        },
+        "B1_HIGH_960": {
+          "active_slots_by_level": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "logical_receiver_bytes": 1572864,
+          "logical_receiver_parameters": 393216,
+          "preallocated_slots_by_level": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "receiver_allowed_parameter_inventory": [
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.a",
+              "numel": 196608
+            },
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.b",
+              "numel": 196608
+            }
+          ],
+          "stored_mutable_bytes": 71829504,
+          "stored_mutable_parameters": 17957376
+        },
+        "B1_LOW_30": {
+          "active_slots_by_level": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "logical_receiver_bytes": 1572864,
+          "logical_receiver_parameters": 393216,
+          "preallocated_slots_by_level": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "receiver_allowed_parameter_inventory": [
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.a",
+              "numel": 196608
+            },
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.b",
+              "numel": 196608
+            }
+          ],
+          "stored_mutable_bytes": 71829504,
+          "stored_mutable_parameters": 17957376
+        },
+        "B1_LOW_960": {
+          "active_slots_by_level": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "logical_receiver_bytes": 1572864,
+          "logical_receiver_parameters": 393216,
+          "preallocated_slots_by_level": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "receiver_allowed_parameter_inventory": [
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.a",
+              "numel": 196608
+            },
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.b",
+              "numel": 196608
+            }
+          ],
+          "stored_mutable_bytes": 71829504,
+          "stored_mutable_parameters": 17957376
+        },
+        "B32_HIGH_960": {
+          "active_slots_by_level": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "logical_receiver_bytes": 1572864,
+          "logical_receiver_parameters": 393216,
+          "preallocated_slots_by_level": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "receiver_allowed_parameter_inventory": [
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.a",
+              "numel": 196608
+            },
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.b",
+              "numel": 196608
+            }
+          ],
+          "stored_mutable_bytes": 71829504,
+          "stored_mutable_parameters": 17957376
+        },
+        "B32_LOW_3200": {
+          "active_slots_by_level": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "logical_receiver_bytes": 1572864,
+          "logical_receiver_parameters": 393216,
+          "preallocated_slots_by_level": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "receiver_allowed_parameter_inventory": [
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.a",
+              "numel": 196608
+            },
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.b",
+              "numel": 196608
+            }
+          ],
+          "stored_mutable_bytes": 71829504,
+          "stored_mutable_parameters": 17957376
+        },
+        "B32_LOW_960": {
+          "active_slots_by_level": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "logical_receiver_bytes": 1572864,
+          "logical_receiver_parameters": 393216,
+          "preallocated_slots_by_level": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "receiver_allowed_parameter_inventory": [
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.a",
+              "numel": 196608
+            },
+            {
+              "bytes": 786432,
+              "name": "memory.1.experts.slots.0.b",
+              "numel": 196608
+            }
+          ],
+          "stored_mutable_bytes": 71829504,
+          "stored_mutable_parameters": 17957376
+        },
+        "CMS_NO_RESET": {
+          "active_slots_by_level": [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "logical_receiver_bytes": 0,
+          "logical_receiver_parameters": 0,
+          "preallocated_slots_by_level": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "receiver_allowed_parameter_inventory": [],
+          "stored_mutable_bytes": 71829504,
+          "stored_mutable_parameters": 17957376
+        },
+        "RESET_ZERO": {
+          "active_slots_by_level": [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "logical_receiver_bytes": 0,
+          "logical_receiver_parameters": 0,
+          "preallocated_slots_by_level": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "receiver_allowed_parameter_inventory": [],
+          "stored_mutable_bytes": 71829504,
+          "stored_mutable_parameters": 17957376
+        },
+        "TEACHER": {
+          "active_slots_by_level": [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "logical_receiver_bytes": 0,
+          "logical_receiver_parameters": 0,
+          "preallocated_slots_by_level": [
+            8,
+            8,
+            8,
+            8,
+            8
+          ],
+          "receiver_allowed_parameter_inventory": [],
+          "stored_mutable_bytes": 71829504,
+          "stored_mutable_parameters": 17957376
+        }
+      },
+      "fixed_backbone": {
+        "bytes": 6425499648,
+        "parameters": 3212749824
+      },
+      "interpretation": "parameter-object numel and bytes (buffers excluded); contexts are separately materialized views, slot activation is not execution count; no FLOPs inferred",
+      "model_owned_mutable_adapter": {
+        "bytes": 71829504,
+        "parameters": 17957376
+      }
+    },
+    "work": {
+      "answer_tokens_scored": 3460,
+      "full_backbone_forwards": 64,
+      "full_backbone_input_tokens": 2325,
+      "generation_updates": 0,
+      "optimizer_updates": 0,
+      "tail_calls": 640
+    }
+  },
+  "input_bindings": {
+    "final_receipt_sha256": "85a8130e2e7d361657d960a2649ed2a071e06576e591c0683937d29c11e79da4",
+    "initial_state_hashes": {
+      "B1_HIGH": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+      "B1_LOW": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+      "B32_HIGH": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+      "B32_LOW": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+      "CMS_NO_RESET": "37940dd7fa84761374da8ce5cbeab3df837198bb367cc7c22112b369780987a9",
+      "RESET_ZERO": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+      "TEACHER": "099fb53b6c295510f5df5041ebf47c580e82811590fa1802f040946a2ea53041"
+    },
+    "protocol_sha256": "82320a3fef6dcd9a25d2740f10d72d20c6a0f2d1f71a159a47fd3e646d021e9f"
+  },
+  "raw_examples_or_request_content_written": false,
+  "schema": "banking-v12-fixed-teacher-fit-seed-aggregate-v1",
+  "seed": 17,
+  "status": "complete"
+}

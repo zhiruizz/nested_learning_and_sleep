@@ -1,0 +1,9 @@
+{
+  "after_sha256": "83c110936e9fe5510b3b4fd287226aade51136346abb57808779cf038d692660",
+  "before_sha256": "7f07e47bde64a5416f9f8bf2a87c9bf265e6c8d42d239149579d1b89b2773857",
+  "change_scope": "fixture module import supports execution test_ name and published check_ name; assertions and numerical test logic unchanged",
+  "executed_test_preimage_archived": true,
+  "four_training_execution_sources_unchanged": true,
+  "path": "tests/test_banking_optimizer_boundary_v12_cpu.py",
+  "schema": "banking-v12-public-test-layout-portability-v1"
+}

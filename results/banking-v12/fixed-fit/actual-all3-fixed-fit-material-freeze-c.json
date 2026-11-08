@@ -1,0 +1,1301 @@
+{
+  "P2_read": false,
+  "cpu_snapshot_reconstruction": {
+    "cuda_initialized_before_after": false,
+    "development_scores_read": false,
+    "generation_updates": 0,
+    "official_test_read": false,
+    "optimizer_updates": 0,
+    "rollout_rows_loaded": 0,
+    "seeds": {
+      "17": {
+        "checkpoint_manifest": [
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_30",
+            "sha256": "2617cb75b6bb07217c8db358730de3e618309a42f53ee1a4a3b585b9ecabaaee"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_960",
+            "sha256": "5ec9a6dbc82740ea57b066a36c85a0f0627987c9e1035def4b6ad8c7de518cd1"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_30",
+            "sha256": "1729adfbeb6edc09a1844cbb448b26cfa025166088dba7717cd3de66f20fe9bd"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_960",
+            "sha256": "a62098fb62524675f17d137d7c98d21edd48d72eb80e7147f6587af0a6c11428"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_HIGH_960",
+            "sha256": "f62f337715477bb02ce030e827ba382edc8da0983f1b5d5f7ffdf77e0f1339e2"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_960",
+            "sha256": "55cf60a9cf11b63e4226d6c4c76b5cc1252258affb42e8b93a43573138732909"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_3200",
+            "sha256": "02fb11e2ff441a53d72546c1f1e3c46ddfe658a57a43c39e72a0cef0e7cd96af"
+          }
+        ],
+        "context_state_hashes": {
+          "B1_HIGH_30": "88001339c6c70432d9967f16b7352e9aef3ca74ffc78f085f4b99f7d53fc8a51",
+          "B1_HIGH_960": "22c851033ad1b3bc078c45648326a35ee2c10535716e122c8fffd3d411b36457",
+          "B1_LOW_30": "f1a8cceea7e128b3e7de48b7bfb137328a932437e059a47c8b5512032c188112",
+          "B1_LOW_960": "dfa7cb13a4cde88a00fc8eb46f01fd9eb8426f46abb4fd86d2c80861d61878dd",
+          "B32_HIGH_960": "afa63cf6243a55e07c522cd3417ebab66dc648621d4b220b9042e4d62d05cd19",
+          "B32_LOW_3200": "e4acb02c9d2ebc7d9a77743fc69c25bdec97c1c0531c78120c46ebc1b765d344",
+          "B32_LOW_960": "136d3b276a543bd95c83103b5080204578adfca8c2740b182aeaaa8f7ecb9c14",
+          "CMS_NO_RESET": "37940dd7fa84761374da8ce5cbeab3df837198bb367cc7c22112b369780987a9",
+          "RESET_ZERO": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+          "TEACHER": "099fb53b6c295510f5df5041ebf47c580e82811590fa1802f040946a2ea53041"
+        },
+        "initial_state_hashes_verified": true,
+        "mutable_parameter_inventory": {
+          "B1_HIGH_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_3200": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "CMS_NO_RESET": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "RESET_ZERO": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "TEACHER": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          }
+        }
+      },
+      "29": {
+        "checkpoint_manifest": [
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_30",
+            "sha256": "6f462e244cd6554b7e240a7d94cd89b54b76772a9b2e3046262f452abbf79426"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_960",
+            "sha256": "ed784ff4d26a0375f8081105aec700483f642ed7b7a87f797ebf3cb3ffec48e9"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_30",
+            "sha256": "f1cc33a7632b35e309de8a65029d9f5e571cb767df752b758dc1b59701eac83f"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_960",
+            "sha256": "339c6b1084a6fbae4cbd002275080ddb3a08720822f2cd5de6506bf2073326eb"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_HIGH_960",
+            "sha256": "a73cbc3bb27950be979a545474ac8900b9cd4e13f7dd487f9c461fcabfa51113"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_960",
+            "sha256": "f87c0c88e86417a99c5587a299b5dde616ed50ede50ad51d0e7e5349615e4d36"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_3200",
+            "sha256": "8b37511ea2ca597e5f66d4e35942f8fae356f6d379039bcece482e0aeaf5a804"
+          }
+        ],
+        "context_state_hashes": {
+          "B1_HIGH_30": "2ba20523121f48e4e25a5c5e7b07596da0d752f58d17ce9f9c1fef4621145d60",
+          "B1_HIGH_960": "e5965ddfb8d5904aece3932b76a7c44f4ea45ad4e765490ffb6d6ddc7d858e0d",
+          "B1_LOW_30": "888e898949be095bd75480fd093dc6558ddc6e0926ae5e7c86e7a608ed6a9f0b",
+          "B1_LOW_960": "7417f51a6ff9436b069c4de02b527e992548ffac7b78e935c33c03e93a6f7cf6",
+          "B32_HIGH_960": "45c69aef9d7f6a309cefe272df56ab5566b7d466763f82e99a0587e55aaa953c",
+          "B32_LOW_3200": "d02e5d0b2ad06a0a7c06bf757ef297f93f36a46c8f0ba0713b5353332fda62aa",
+          "B32_LOW_960": "d22643d5b37a98605749918b4bfac05acf261c792dd262af2cb2111890cb3722",
+          "CMS_NO_RESET": "d74a396b7c2bf9778d064aa31159d6f2ed8da2aac29dde4e8431b2d6ef7f4235",
+          "RESET_ZERO": "42015a9a66f353ae72cfc9d85f424504fdc16a92230967e450b8b3c0dd9ac48f",
+          "TEACHER": "0ba6deb21fc85c69781e31c14350311ed4ebd1f24ee785ec050460a1f6517716"
+        },
+        "initial_state_hashes_verified": true,
+        "mutable_parameter_inventory": {
+          "B1_HIGH_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_3200": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "CMS_NO_RESET": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "RESET_ZERO": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "TEACHER": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          }
+        }
+      },
+      "43": {
+        "checkpoint_manifest": [
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_30",
+            "sha256": "ac25b97aa35e50854093fe6fe0275b36bef90dd27c06c95e70ca97eababc7de9"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_960",
+            "sha256": "9d5bc8ec4c6f2c09c16f102858371694215a9f808cb5c7b5661727b8e71be61c"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_30",
+            "sha256": "d5ebdef48f0caba38acff5ef6efa0e585a18b15b811805d614e2daf577ec66d7"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_960",
+            "sha256": "1ecfe792b1de1ed24af84b5582a6773cc49b6009ff55eeea8080ca1d0beed86c"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_HIGH_960",
+            "sha256": "fcf4b1acef610f58813243cb78ed7eb3ff254ddec158d1806e680cf6bd1561ee"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_960",
+            "sha256": "e584a8c4de54f82e18787adbf5a747eae9dc44a2cb66f1146d78910729f14d1b"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_3200",
+            "sha256": "1314f9630f573d1ecf2f838d74ea211707dd0a43f064297ac95e4b923617a248"
+          }
+        ],
+        "context_state_hashes": {
+          "B1_HIGH_30": "08447293b3169bc322c7bfcd64c0a97246a503291bea7631da63941c12c33f26",
+          "B1_HIGH_960": "569cfafd6c50a847b9373da4bc1d6342fd46df46d77f1a05feaaedc754fcd1f7",
+          "B1_LOW_30": "36aed6a47830df82e33a93ec665a849d30b4d1224364cab044b3daabc0629e54",
+          "B1_LOW_960": "8238aaab35c69791aab80aa1dee064ec761a0d7b57343b7e770de42bf09d580c",
+          "B32_HIGH_960": "74278bc55cd02b380caa2c122351a258b01733c54b2920d085c95b642bdaf41b",
+          "B32_LOW_3200": "cbd66f15a923967bc4ec9d63150c6d1a5733f27a91fd84c6233cd03e6f49794f",
+          "B32_LOW_960": "1a5d7113f39954a07092ca220f79c60eb908cc8e73a5d584feed45fdebb6e52b",
+          "CMS_NO_RESET": "10e79e00d3e326dc03a6c05e99b42050dd214efe49ea423e23ef14457fa9b4e7",
+          "RESET_ZERO": "5fa64e9f338e48abdde3d49569d77ab5766105ced72bcd740fef907966913c83",
+          "TEACHER": "c3bf754fe816e476cb76a3e2f15c2a6835fd3447209c2e6a21d47a52ec6035e6"
+        },
+        "initial_state_hashes_verified": true,
+        "mutable_parameter_inventory": {
+          "B1_HIGH_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_3200": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "CMS_NO_RESET": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "RESET_ZERO": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "TEACHER": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          }
+        }
+      }
+    },
+    "status": "cpu_snapshot_reconstruction_pass"
+  },
+  "cuda_initialized": false,
+  "evaluator_sha256": "91039fbefe26c1210f79af9639df44740817c671fe3ca63f70040e5a9be9a7ee",
+  "gate_source_sha256": "053f8a06b9ff83dc14ff5c71c22f5bd72c9df00f2e7fe6718ead5d13c557d715",
+  "generation_updates": 0,
+  "input_manifest": [
+    {
+      "bytes": 1474,
+      "logical_path": "plan",
+      "sha256": "56b7faeef9c1bf86443391a22efe387e59850e1490510f6771ed816c6b335153"
+    },
+    {
+      "bytes": 2992,
+      "logical_path": "v12-training-config",
+      "sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25"
+    },
+    {
+      "bytes": 5766,
+      "logical_path": "v10-training-config",
+      "sha256": "785ded5cc9d205dc3cbc6d25179abf6fd0d589ce6943a42626aa1692b54dfd9d"
+    },
+    {
+      "bytes": 67190,
+      "logical_path": "aux-fixed-fit-evaluator",
+      "sha256": "91039fbefe26c1210f79af9639df44740817c671fe3ca63f70040e5a9be9a7ee"
+    },
+    {
+      "bytes": 394,
+      "logical_path": "v10-source/src/nested_sleep/__init__.py",
+      "sha256": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5"
+    },
+    {
+      "bytes": 951,
+      "logical_path": "v10-source/src/nested_sleep/accounting.py",
+      "sha256": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96"
+    },
+    {
+      "bytes": 1850,
+      "logical_path": "v10-source/src/nested_sleep/clocks.py",
+      "sha256": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d"
+    },
+    {
+      "bytes": 5364,
+      "logical_path": "v10-source/src/nested_sleep/consolidation.py",
+      "sha256": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb"
+    },
+    {
+      "bytes": 2004,
+      "logical_path": "v10-source/src/nested_sleep/dreaming.py",
+      "sha256": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45"
+    },
+    {
+      "bytes": 609,
+      "logical_path": "v10-source/src/nested_sleep/execution.py",
+      "sha256": "9791e4f85a24d9eedc72760316de5de2d4c7045272506998f83844743e8f1677"
+    },
+    {
+      "bytes": 16473,
+      "logical_path": "v10-source/src/nested_sleep/executor_v13.py",
+      "sha256": "0befa81ca6cc28379526a31064b6ad55293d57e0ad3c9444859799ef7f4173ed"
+    },
+    {
+      "bytes": 8785,
+      "logical_path": "v10-source/src/nested_sleep/experts.py",
+      "sha256": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094"
+    },
+    {
+      "bytes": 24916,
+      "logical_path": "v10-source/src/nested_sleep/lifecycle.py",
+      "sha256": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02"
+    },
+    {
+      "bytes": 1972,
+      "logical_path": "v10-source/src/nested_sleep/llama_entry.py",
+      "sha256": "b0538010eaf56c0a212f424e7e977b6de96c052ce5918278966e7234f4e47f69"
+    },
+    {
+      "bytes": 9234,
+      "logical_path": "v10-source/src/nested_sleep/lm.py",
+      "sha256": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c"
+    },
+    {
+      "bytes": 3556,
+      "logical_path": "v10-source/src/nested_sleep/memory.py",
+      "sha256": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f"
+    },
+    {
+      "bytes": 10094,
+      "logical_path": "v10-source/src/nested_sleep/native.py",
+      "sha256": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57"
+    },
+    {
+      "bytes": 1894,
+      "logical_path": "v10-source/src/nested_sleep/objectives.py",
+      "sha256": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654"
+    },
+    {
+      "bytes": 3976,
+      "logical_path": "v10-source/src/nested_sleep/optim.py",
+      "sha256": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817"
+    },
+    {
+      "bytes": 2933,
+      "logical_path": "v10-source/src/nested_sleep/parameter_drift.py",
+      "sha256": "073cc7549ec5786910b2716cbf28d7d6c91173b70b731fc8fc53134915a90598"
+    },
+    {
+      "bytes": 5199,
+      "logical_path": "v10-source/src/nested_sleep/repairability.py",
+      "sha256": "b91fbec03113ac1b02549b58f23e035378a05c2b90ffe4bdd6c4593984866d87"
+    },
+    {
+      "bytes": 20628,
+      "logical_path": "v10-source/tools/banking_cil_common_v10.py",
+      "sha256": "1e4102dd2df80554c7463466546909ef95e9d6256b53f6affa39722e491ba0ab"
+    },
+    {
+      "bytes": 12104,
+      "logical_path": "v10-source/tools/banking_cil_v10_lifecycle.py",
+      "sha256": "24822dec63d05cabd05523a901d44aa2cb3d9197154de12eea2198f41552f98c"
+    },
+    {
+      "bytes": 8981,
+      "logical_path": "v10-source/tools/banking_cil_v10_routing.py",
+      "sha256": "3ca898efc3b006277b7dce3e9e8424d6e0f671a54b487be764fe609562f5df34"
+    },
+    {
+      "bytes": 30277,
+      "logical_path": "v10-source/tools/banking_cil_v10_runtime.py",
+      "sha256": "53d9ba99952f8968261818f8a0da3e07daac8e6e8bbf0649ee4f7000c8d05638"
+    },
+    {
+      "bytes": 21211,
+      "logical_path": "v10-source/tools/clinc_lifecycle_v8.py",
+      "sha256": "3e270a6df0359f495fc09d5aaf4fd6e108f37c36da41373b70fc16a26fca14a2"
+    },
+    {
+      "bytes": 19811,
+      "logical_path": "v10-source/tools/clinc_tail_runtime_v8.py",
+      "sha256": "057de386734ff128d1fb0147dd83b1c14009cc36d8ed7c77740cbb497ee6f6d9"
+    },
+    {
+      "bytes": 80469,
+      "logical_path": "v10-source/tools/run_banking_cil_v10.py",
+      "sha256": "3ca271ed8cf57aa1b5cdb8531da4052fc18ca6ff6083741fdf5b666dc4600f74"
+    },
+    {
+      "bytes": 10664,
+      "logical_path": "v12-source/tools/banking_cil_v12_batching.py",
+      "sha256": "99e0163c333fe1fdec1928bb2f932c79d88c7f0683b8d917883f2c79e8b0c829"
+    },
+    {
+      "bytes": 6287,
+      "logical_path": "v12-source/tools/launch_banking_optimizer_boundary_v12.py",
+      "sha256": "e45cf1fdad02d335138394cfa28fc0a82779952c11c87bb0ddf6263bc8de9874"
+    },
+    {
+      "bytes": 50363,
+      "logical_path": "v12-source/tools/run_banking_optimizer_boundary_v12.py",
+      "sha256": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f"
+    },
+    {
+      "bytes": 3958,
+      "logical_path": "v12-source/tools/run_banking_v12_cpu_acceptance.py",
+      "sha256": "9d0a9fc5bbca4f953bbcd3d8e0e1bba687a207a4e987c2f462b7e1e650aadd39"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed17/receiver-checkpoints/B1_HIGH_30.pt",
+      "sha256": "2617cb75b6bb07217c8db358730de3e618309a42f53ee1a4a3b585b9ecabaaee"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed17/receiver-checkpoints/B1_HIGH_960.pt",
+      "sha256": "5ec9a6dbc82740ea57b066a36c85a0f0627987c9e1035def4b6ad8c7de518cd1"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed17/receiver-checkpoints/B1_LOW_30.pt",
+      "sha256": "1729adfbeb6edc09a1844cbb448b26cfa025166088dba7717cd3de66f20fe9bd"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed17/receiver-checkpoints/B1_LOW_960.pt",
+      "sha256": "a62098fb62524675f17d137d7c98d21edd48d72eb80e7147f6587af0a6c11428"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed17/receiver-checkpoints/B32_HIGH_960.pt",
+      "sha256": "f62f337715477bb02ce030e827ba382edc8da0983f1b5d5f7ffdf77e0f1339e2"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed17/receiver-checkpoints/B32_LOW_960.pt",
+      "sha256": "55cf60a9cf11b63e4226d6c4c76b5cc1252258affb42e8b93a43573138732909"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed17/receiver-checkpoints/B32_LOW_3200.pt",
+      "sha256": "02fb11e2ff441a53d72546c1f1e3c46ddfe658a57a43c39e72a0cef0e7cd96af"
+    },
+    {
+      "bytes": 404461,
+      "logical_path": "seed17/teacher-rollouts-private.pt",
+      "sha256": "35507af4accd32f31a8feffa80468ef443902b6778eea70db743935d439bd0d3"
+    },
+    {
+      "bytes": 1280,
+      "logical_path": "seed17/protocol.json",
+      "sha256": "82320a3fef6dcd9a25d2740f10d72d20c6a0f2d1f71a159a47fd3e646d021e9f"
+    },
+    {
+      "bytes": 371041,
+      "logical_path": "seed17/final-receipt.json",
+      "sha256": "85a8130e2e7d361657d960a2649ed2a071e06576e591c0683937d29c11e79da4"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed29/receiver-checkpoints/B1_HIGH_30.pt",
+      "sha256": "6f462e244cd6554b7e240a7d94cd89b54b76772a9b2e3046262f452abbf79426"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed29/receiver-checkpoints/B1_HIGH_960.pt",
+      "sha256": "ed784ff4d26a0375f8081105aec700483f642ed7b7a87f797ebf3cb3ffec48e9"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed29/receiver-checkpoints/B1_LOW_30.pt",
+      "sha256": "f1cc33a7632b35e309de8a65029d9f5e571cb767df752b758dc1b59701eac83f"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed29/receiver-checkpoints/B1_LOW_960.pt",
+      "sha256": "339c6b1084a6fbae4cbd002275080ddb3a08720822f2cd5de6506bf2073326eb"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed29/receiver-checkpoints/B32_HIGH_960.pt",
+      "sha256": "a73cbc3bb27950be979a545474ac8900b9cd4e13f7dd487f9c461fcabfa51113"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed29/receiver-checkpoints/B32_LOW_960.pt",
+      "sha256": "f87c0c88e86417a99c5587a299b5dde616ed50ede50ad51d0e7e5349615e4d36"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed29/receiver-checkpoints/B32_LOW_3200.pt",
+      "sha256": "8b37511ea2ca597e5f66d4e35942f8fae356f6d379039bcece482e0aeaf5a804"
+    },
+    {
+      "bytes": 398189,
+      "logical_path": "seed29/teacher-rollouts-private.pt",
+      "sha256": "d0572aa7170d61130bced52ba6fb67d84de2a8e978089d27962cbe8af34dbdd5"
+    },
+    {
+      "bytes": 1280,
+      "logical_path": "seed29/protocol.json",
+      "sha256": "142720485e3e5bc813ba921217ba663e6aad6a6b640077ab921d38dc799a4337"
+    },
+    {
+      "bytes": 354082,
+      "logical_path": "seed29/final-receipt.json",
+      "sha256": "b0ebf971400564e8aaddbddf7d94ef786bfa168745a043b5fba87ca24ad59369"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed43/receiver-checkpoints/B1_HIGH_30.pt",
+      "sha256": "ac25b97aa35e50854093fe6fe0275b36bef90dd27c06c95e70ca97eababc7de9"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed43/receiver-checkpoints/B1_HIGH_960.pt",
+      "sha256": "9d5bc8ec4c6f2c09c16f102858371694215a9f808cb5c7b5661727b8e71be61c"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed43/receiver-checkpoints/B1_LOW_30.pt",
+      "sha256": "d5ebdef48f0caba38acff5ef6efa0e585a18b15b811805d614e2daf577ec66d7"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed43/receiver-checkpoints/B1_LOW_960.pt",
+      "sha256": "1ecfe792b1de1ed24af84b5582a6773cc49b6009ff55eeea8080ca1d0beed86c"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed43/receiver-checkpoints/B32_HIGH_960.pt",
+      "sha256": "fcf4b1acef610f58813243cb78ed7eb3ff254ddec158d1806e680cf6bd1561ee"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed43/receiver-checkpoints/B32_LOW_960.pt",
+      "sha256": "e584a8c4de54f82e18787adbf5a747eae9dc44a2cb66f1146d78910729f14d1b"
+    },
+    {
+      "bytes": 147467581,
+      "logical_path": "seed43/receiver-checkpoints/B32_LOW_3200.pt",
+      "sha256": "1314f9630f573d1ecf2f838d74ea211707dd0a43f064297ac95e4b923617a248"
+    },
+    {
+      "bytes": 389229,
+      "logical_path": "seed43/teacher-rollouts-private.pt",
+      "sha256": "3dee398a78f41b0308b77152a5ac2af09eee2baf9cf324dd4976bb5ab39a2704"
+    },
+    {
+      "bytes": 1280,
+      "logical_path": "seed43/protocol.json",
+      "sha256": "222a902bf54cc5c2638ecfc1b9942ba1f5203ac446051a47f8e1b2e08d52eed1"
+    },
+    {
+      "bytes": 357390,
+      "logical_path": "seed43/final-receipt.json",
+      "sha256": "c4e49f31604a4764146b4cfcdf9bf2a9768af0727598a79f240a5df5999bff75"
+    }
+  ],
+  "model_loaded": false,
+  "no_raw_rows_tokens_text_labels_or_predictions_written": true,
+  "official_test_read": false,
+  "optimizer_updates": 0,
+  "plan_sha256": "56b7faeef9c1bf86443391a22efe387e59850e1490510f6771ed816c6b335153",
+  "schema": "root-banking-v12-fixed-fit-actual-material-freeze-v1",
+  "status": "pass",
+  "training_config_sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25"
+}

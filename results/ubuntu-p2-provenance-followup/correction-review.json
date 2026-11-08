@@ -1,0 +1,24 @@
+{
+  "assessment": "The r2 schema distinguishes the unknown event time from the record creation time and explicitly marks the relevant data/payload read flags false. The earlier local-date note is retained as provenance with timezone unknown; it is not treated as an event timestamp.",
+  "decision_unchanged": true,
+  "field_checks": {
+    "access_flags_all_false": true,
+    "event_timestamp_utc": "UNKNOWN",
+    "exact_utc_timestamp_unknown": true,
+    "no_remote_write_or_job": true,
+    "no_tuning_or_selection": true,
+    "original_record_date": "2026-11-08",
+    "original_record_date_timezone": "UNKNOWN",
+    "record_created_utc": "2026-11-07T23:36:54Z"
+  },
+  "formal_disposition": "NOT_ACCEPTED_UNDER_FROZEN_PROTOCOL; DESCRIPTIVE_REPORTING_ONLY",
+  "incident_record_path": "outputs/ubuntu-formal-metadata-audit/provenance-followup-incident-20261108-r2.json",
+  "incident_record_sha256": "a6fa52c391608eb4683eec7aef7cc19baf1ca3fe9600de8f6ceede2e00ace1c8",
+  "note": "This is a metadata-schema correction review only; it adds no new incident facts or acceptance claims.",
+  "prior_review_path": "outputs/ubuntu-formal-metadata-audit/provenance-followup-independent-review-20261108-r1.json",
+  "prior_review_sha256": "93626e37557f3fbaac7c0fe74364916f2b20f3f812761dc69ea451dbfa52dd2b",
+  "remote_or_payload_access_performed": false,
+  "reviewed_at_utc": "2026-11-07T23:51:18.314072+00:00",
+  "schema": "p2-provenance-followup-r2-correction-review-v1",
+  "science_aggregate_changed": false
+}

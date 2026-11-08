@@ -1,0 +1,81 @@
+{
+  "data_contract": {
+    "artifact_id": "experiment_contract.json",
+    "bytes": 11549,
+    "claim_status": "P2 contract self-description only; upstream provenance/version not independently established.",
+    "dataset_release_or_version": null,
+    "endpoint_new_denominator": 300,
+    "endpoint_old_denominator": 298,
+    "human_old_new_task_mapping": null,
+    "payload_bytes": 544398,
+    "payload_opened": false,
+    "payload_sha256": "4ecae68b836482da0af3a4079e732cad58945a08bcae1f3ac2f97074d95b5f49",
+    "sha256": "082b06e7acdb25f1456f0bf7838ee8f10a64d23bb66f2efbf2cbd5fa780e6444",
+    "source_text": "CLINC OOS-eval same-source grouped heldout; no source-independent claim."
+  },
+  "final_bindings": {
+    "birth_source_lock_sha256": "d001a1a3989d3ac03d3e30c1caae3c736a7d7bc76bc6309444022ba61fd76b45",
+    "formal_contract_sha256": "28906555f8cf6255fb1caa46b6e20535e76eb020a4e971ff34782a4e65b8a83f",
+    "formal_protocol_sha256": "32554d309336fdeac82df03649421fcc4f3e8a9db7c3742a1755cc7e2cc5cd3d",
+    "formal_source_lock_sha256": "80def5fb4ed001b67328ee897796b7c083da9e8bb4b7871c03284b83e5803fd1",
+    "m00_native_fingerprint": "008a0d44eadb1362bccb91f26b23d489ffd25d56267606623e92faf040f6de1b",
+    "m00_sha256": "26bfd21f8765bb6c1ffe546be65af7105848c2296112a26f25dd7ca9f5ead450",
+    "p2_contract_sha256": "002c669055c2137b44458d1933b6db96673a16cd21c9d8d080844320d52cdb40",
+    "p2_stage_source_lock_sha256": "72321ae310b89d5863896c95603c02097e96b45c68fcca58f74396dfe8d4a84e",
+    "paired_schedule_sha256": "fad350c576ef526671421286e51ab194ba86c7a75ce79e5b233c06b34843c94d",
+    "train_dev_payload_sha256": "4ecae68b836482da0af3a4079e732cad58945a08bcae1f3ac2f97074d95b5f49"
+  },
+  "incident_record": "outputs/ubuntu-formal-metadata-audit/provenance-followup-incident-20261108.json",
+  "model_config": {
+    "architecture": "LlamaForCausalLM",
+    "artifact_id": "config.json",
+    "attention_heads": 24,
+    "bytes": 844,
+    "config_transformers_version": "4.45.0.dev0",
+    "hidden_size": 3072,
+    "kv_heads": 8,
+    "layers": 28,
+    "limitation": "Config and local path do not prove exact upstream repo/revision.",
+    "max_position_embeddings": 131072,
+    "model_type": "llama",
+    "repo_id": null,
+    "revision": null,
+    "sha256": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d",
+    "torch_dtype": "bfloat16",
+    "vocab_size": 128256
+  },
+  "model_policy": {
+    "artifact_id": "USE_POLICY.md",
+    "metadata": "Llama 3.2 use policy",
+    "not_an_immutable_model_revision": true,
+    "sha256": "40e2777d7faa6beaf98400654170f414d8ab29b921b5163ad4ea0a1d39894201"
+  },
+  "public_projection": {
+    "source_sha256": "6457d679dc1fba459f9bcb809c6b48202235d33bf3bb9fcbd4128f36fe0cc8f8",
+    "transform": "omit only model_config.path (private absolute filesystem path); all scientific scalar fields and hashes preserved"
+  },
+  "review_scope": "Only hash-locked model config, source metadata, P2 experiment contract, and scope manifests; no sample/schedule contents retained.",
+  "schema": "p2-provenance-followup-safe-metadata-v1",
+  "scope": {
+    "all_parameter_tensor_count": 261,
+    "all_scope_manifest_sha256": "8f9037fbaa00a87ea6b88b378eb750c288d8a29411f7219a7a11c320f43ee635",
+    "arm_scope_manifest_sha256": "d40dedf9eb7fea66160e62b028477e986dcd03f350b3db3685532c7b861f7c90",
+    "data_schedule": "8 new-only + 32 RN",
+    "factory_rng": 401,
+    "interpretation": "These bind the experiment configuration, not the upstream dataset release.",
+    "new_group_tensor_count": 9,
+    "old_group_tensor_count": 252
+  },
+  "source_metadata_hashes": {
+    "asset_lock_json": "a2c38fd18e9a94f9700a535cd54e2907aff190c0b8ddf4ebe608a2255c9ba51f",
+    "model_config_hash_matches_lock": true,
+    "tokenizer_config_json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a",
+    "vendor_provenance_json": "66dac0eaaacd9a723db81dce33c5093c686d68619473a15d68fc9839c18851da"
+  },
+  "status": "LIMITED_PROVENANCE_VERIFIED; EXACT_REPOSITORY_REVISION_UNRESOLVED",
+  "unknowns": [
+    "Exact model repository ID and immutable revision",
+    "Human-readable old/new task mapping",
+    "Upstream dataset release/version"
+  ]
+}

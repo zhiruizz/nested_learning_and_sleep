@@ -1,0 +1,15 @@
+{
+  "schema": "v12-startup-a-failure-archive-v1",
+  "archived_files": {
+    "runner_sha256": "C46AED9F40157CD2D26604D9BB477028C0E4EA3F19D21ACC3D823CC533337609",
+    "test_sha256": "68338C2A63870A0D0348660FEE8A7CC087D892F7B3ABE4D5DA9DF0DA040A6D05"
+  },
+  "rollouts": 0,
+  "receiver_adamw_steps": 0,
+  "test_data_read": false,
+  "model_load_occurred": true,
+  "attempt": "startup A; failed, not automatically retried",
+  "reason": "Seed 17 A failed before rollout generation and receiver updates: MutableContext dataclass has no eval() method. Archive is the pre-fix source/test bytes.",
+  "prefix_wake_ticks": 4,
+  "seed17_launch_record": "outputs/v12-prep/seed17-launch-record-a.json"
+}

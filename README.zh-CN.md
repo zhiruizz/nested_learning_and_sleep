@@ -1,5 +1,7 @@
 # NL/Sleep Reproduction Lab
 
+Banking V12 已完成三个 seed 的单次巩固边界优化诊断。在相同的 960 条教师请求下，学习率 1e-3、有效批量 1/32 的全 77 类排序开发集准确率为 53.79%/52.27%；5e-6 对应为 43.03%/28.18%，不重置的 CMS 参照为 56.06%。这是本地开发集机制实验，尚未建立完整 Sleep 收益或独立确认。详见 [V12 报告](reports/banking77-optimizer-boundary-v12.md)、[汇总证据](results/banking-v12/README.md)及[复现说明](docs/banking-v12-reproduction.md)。
+
 Ubuntu P2 更新：四次 40 步运行已完成，独立验收裁定原检查点协议不满足；分频更新的两个种子结果不稳定。见[描述性报告](reports/ubuntu-p2-formal-descriptive-disposition.md)与[脱敏聚合](results/ubuntu-p2-descriptive/README.md)。这不是正式验收通过或确认性结论。
 
 

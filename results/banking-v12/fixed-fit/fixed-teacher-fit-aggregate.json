@@ -1,0 +1,3417 @@
+{
+  "cpu_snapshot_reconstruction": {
+    "cuda_initialized_before_after": false,
+    "development_scores_read": false,
+    "generation_updates": 0,
+    "official_test_read": false,
+    "optimizer_updates": 0,
+    "rollout_rows_loaded": 0,
+    "seeds": {
+      "17": {
+        "checkpoint_manifest": [
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_30",
+            "sha256": "2617cb75b6bb07217c8db358730de3e618309a42f53ee1a4a3b585b9ecabaaee"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_960",
+            "sha256": "5ec9a6dbc82740ea57b066a36c85a0f0627987c9e1035def4b6ad8c7de518cd1"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_30",
+            "sha256": "1729adfbeb6edc09a1844cbb448b26cfa025166088dba7717cd3de66f20fe9bd"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_960",
+            "sha256": "a62098fb62524675f17d137d7c98d21edd48d72eb80e7147f6587af0a6c11428"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_HIGH_960",
+            "sha256": "f62f337715477bb02ce030e827ba382edc8da0983f1b5d5f7ffdf77e0f1339e2"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_960",
+            "sha256": "55cf60a9cf11b63e4226d6c4c76b5cc1252258affb42e8b93a43573138732909"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_3200",
+            "sha256": "02fb11e2ff441a53d72546c1f1e3c46ddfe658a57a43c39e72a0cef0e7cd96af"
+          }
+        ],
+        "context_state_hashes": {
+          "B1_HIGH_30": "88001339c6c70432d9967f16b7352e9aef3ca74ffc78f085f4b99f7d53fc8a51",
+          "B1_HIGH_960": "22c851033ad1b3bc078c45648326a35ee2c10535716e122c8fffd3d411b36457",
+          "B1_LOW_30": "f1a8cceea7e128b3e7de48b7bfb137328a932437e059a47c8b5512032c188112",
+          "B1_LOW_960": "dfa7cb13a4cde88a00fc8eb46f01fd9eb8426f46abb4fd86d2c80861d61878dd",
+          "B32_HIGH_960": "afa63cf6243a55e07c522cd3417ebab66dc648621d4b220b9042e4d62d05cd19",
+          "B32_LOW_3200": "e4acb02c9d2ebc7d9a77743fc69c25bdec97c1c0531c78120c46ebc1b765d344",
+          "B32_LOW_960": "136d3b276a543bd95c83103b5080204578adfca8c2740b182aeaaa8f7ecb9c14",
+          "CMS_NO_RESET": "37940dd7fa84761374da8ce5cbeab3df837198bb367cc7c22112b369780987a9",
+          "RESET_ZERO": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+          "TEACHER": "099fb53b6c295510f5df5041ebf47c580e82811590fa1802f040946a2ea53041"
+        },
+        "initial_state_hashes_verified": true,
+        "mutable_parameter_inventory": {
+          "B1_HIGH_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_3200": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "CMS_NO_RESET": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "RESET_ZERO": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "TEACHER": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          }
+        }
+      },
+      "29": {
+        "checkpoint_manifest": [
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_30",
+            "sha256": "6f462e244cd6554b7e240a7d94cd89b54b76772a9b2e3046262f452abbf79426"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_960",
+            "sha256": "ed784ff4d26a0375f8081105aec700483f642ed7b7a87f797ebf3cb3ffec48e9"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_30",
+            "sha256": "f1cc33a7632b35e309de8a65029d9f5e571cb767df752b758dc1b59701eac83f"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_960",
+            "sha256": "339c6b1084a6fbae4cbd002275080ddb3a08720822f2cd5de6506bf2073326eb"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_HIGH_960",
+            "sha256": "a73cbc3bb27950be979a545474ac8900b9cd4e13f7dd487f9c461fcabfa51113"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_960",
+            "sha256": "f87c0c88e86417a99c5587a299b5dde616ed50ede50ad51d0e7e5349615e4d36"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_3200",
+            "sha256": "8b37511ea2ca597e5f66d4e35942f8fae356f6d379039bcece482e0aeaf5a804"
+          }
+        ],
+        "context_state_hashes": {
+          "B1_HIGH_30": "2ba20523121f48e4e25a5c5e7b07596da0d752f58d17ce9f9c1fef4621145d60",
+          "B1_HIGH_960": "e5965ddfb8d5904aece3932b76a7c44f4ea45ad4e765490ffb6d6ddc7d858e0d",
+          "B1_LOW_30": "888e898949be095bd75480fd093dc6558ddc6e0926ae5e7c86e7a608ed6a9f0b",
+          "B1_LOW_960": "7417f51a6ff9436b069c4de02b527e992548ffac7b78e935c33c03e93a6f7cf6",
+          "B32_HIGH_960": "45c69aef9d7f6a309cefe272df56ab5566b7d466763f82e99a0587e55aaa953c",
+          "B32_LOW_3200": "d02e5d0b2ad06a0a7c06bf757ef297f93f36a46c8f0ba0713b5353332fda62aa",
+          "B32_LOW_960": "d22643d5b37a98605749918b4bfac05acf261c792dd262af2cb2111890cb3722",
+          "CMS_NO_RESET": "d74a396b7c2bf9778d064aa31159d6f2ed8da2aac29dde4e8431b2d6ef7f4235",
+          "RESET_ZERO": "42015a9a66f353ae72cfc9d85f424504fdc16a92230967e450b8b3c0dd9ac48f",
+          "TEACHER": "0ba6deb21fc85c69781e31c14350311ed4ebd1f24ee785ec050460a1f6517716"
+        },
+        "initial_state_hashes_verified": true,
+        "mutable_parameter_inventory": {
+          "B1_HIGH_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_3200": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "CMS_NO_RESET": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "RESET_ZERO": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "TEACHER": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          }
+        }
+      },
+      "43": {
+        "checkpoint_manifest": [
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_30",
+            "sha256": "ac25b97aa35e50854093fe6fe0275b36bef90dd27c06c95e70ca97eababc7de9"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_HIGH_960",
+            "sha256": "9d5bc8ec4c6f2c09c16f102858371694215a9f808cb5c7b5661727b8e71be61c"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_30",
+            "sha256": "d5ebdef48f0caba38acff5ef6efa0e585a18b15b811805d614e2daf577ec66d7"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B1_LOW_960",
+            "sha256": "1ecfe792b1de1ed24af84b5582a6773cc49b6009ff55eeea8080ca1d0beed86c"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_HIGH_960",
+            "sha256": "fcf4b1acef610f58813243cb78ed7eb3ff254ddec158d1806e680cf6bd1561ee"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_960",
+            "sha256": "e584a8c4de54f82e18787adbf5a747eae9dc44a2cb66f1146d78910729f14d1b"
+          },
+          {
+            "bytes": 147467581,
+            "context": "B32_LOW_3200",
+            "sha256": "1314f9630f573d1ecf2f838d74ea211707dd0a43f064297ac95e4b923617a248"
+          }
+        ],
+        "context_state_hashes": {
+          "B1_HIGH_30": "08447293b3169bc322c7bfcd64c0a97246a503291bea7631da63941c12c33f26",
+          "B1_HIGH_960": "569cfafd6c50a847b9373da4bc1d6342fd46df46d77f1a05feaaedc754fcd1f7",
+          "B1_LOW_30": "36aed6a47830df82e33a93ec665a849d30b4d1224364cab044b3daabc0629e54",
+          "B1_LOW_960": "8238aaab35c69791aab80aa1dee064ec761a0d7b57343b7e770de42bf09d580c",
+          "B32_HIGH_960": "74278bc55cd02b380caa2c122351a258b01733c54b2920d085c95b642bdaf41b",
+          "B32_LOW_3200": "cbd66f15a923967bc4ec9d63150c6d1a5733f27a91fd84c6233cd03e6f49794f",
+          "B32_LOW_960": "1a5d7113f39954a07092ca220f79c60eb908cc8e73a5d584feed45fdebb6e52b",
+          "CMS_NO_RESET": "10e79e00d3e326dc03a6c05e99b42050dd214efe49ea423e23ef14457fa9b4e7",
+          "RESET_ZERO": "5fa64e9f338e48abdde3d49569d77ab5766105ced72bcd740fef907966913c83",
+          "TEACHER": "c3bf754fe816e476cb76a3e2f15c2a6835fd3447209c2e6a21d47a52ec6035e6"
+        },
+        "initial_state_hashes_verified": true,
+        "mutable_parameter_inventory": {
+          "B1_HIGH_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_3200": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "CMS_NO_RESET": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "RESET_ZERO": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "TEACHER": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameters": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          }
+        }
+      }
+    },
+    "status": "cpu_snapshot_reconstruction_pass"
+  },
+  "gpu_policy": {
+    "allocator_conf": "garbage_collection_threshold:0.7",
+    "cuda_initialized_after_policy": true,
+    "cuda_version": "12.8",
+    "device_index": 0,
+    "memory_fraction": 0.8,
+    "torch_version": "2.8.0+cu128"
+  },
+  "input_manifest": {
+    "model_assets": [
+      {
+        "bytes": 7712,
+        "logical_path": "model-assets/LICENSE.txt",
+        "sha256": "0b4284c1f87029e67654c7953afa16279961632cf73dcfe33374c4c2f298fa35"
+      },
+      {
+        "bytes": 6021,
+        "logical_path": "model-assets/USE_POLICY.md",
+        "sha256": "40e2777d7faa6beaf98400654170f414d8ab29b921b5163ad4ea0a1d39894201"
+      },
+      {
+        "bytes": 844,
+        "logical_path": "model-assets/config.json",
+        "sha256": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d"
+      },
+      {
+        "bytes": 185,
+        "logical_path": "model-assets/generation_config.json",
+        "sha256": "da81b0dd4001a8e19fb5840d2b524f6957f44ddde6f5c3fe32b1f36cef5205bf"
+      },
+      {
+        "bytes": 4965799096,
+        "logical_path": "model-assets/model-00001-of-00002.safetensors",
+        "sha256": "584d8d3e3f82f7964955174dfe5e3b1cf117a9d859f022cfdf7fcb884856e002"
+      },
+      {
+        "bytes": 1459729952,
+        "logical_path": "model-assets/model-00002-of-00002.safetensors",
+        "sha256": "4719a04514ec2f060240711b7c33ab21187cac730ecaba3040b7a0fd95a9cefb"
+      },
+      {
+        "bytes": 20919,
+        "logical_path": "model-assets/model.safetensors.index.json",
+        "sha256": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c"
+      },
+      {
+        "bytes": 301,
+        "logical_path": "model-assets/special_tokens_map.json",
+        "sha256": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535"
+      },
+      {
+        "bytes": 9085657,
+        "logical_path": "model-assets/tokenizer.json",
+        "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+      },
+      {
+        "bytes": 50500,
+        "logical_path": "model-assets/tokenizer_config.json",
+        "sha256": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+      }
+    ],
+    "scientific_inputs": [
+      {
+        "bytes": 1474,
+        "logical_path": "plan",
+        "sha256": "56b7faeef9c1bf86443391a22efe387e59850e1490510f6771ed816c6b335153"
+      },
+      {
+        "bytes": 2992,
+        "logical_path": "v12-training-config",
+        "sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25"
+      },
+      {
+        "bytes": 5766,
+        "logical_path": "v10-training-config",
+        "sha256": "785ded5cc9d205dc3cbc6d25179abf6fd0d589ce6943a42626aa1692b54dfd9d"
+      },
+      {
+        "bytes": 67190,
+        "logical_path": "aux-fixed-fit-evaluator",
+        "sha256": "91039fbefe26c1210f79af9639df44740817c671fe3ca63f70040e5a9be9a7ee"
+      },
+      {
+        "bytes": 394,
+        "logical_path": "v10-source/src/nested_sleep/__init__.py",
+        "sha256": "255709ccb09f7816a60db8ef81d7a541ababc50b9c4996ded0532c3060bcd0a5"
+      },
+      {
+        "bytes": 951,
+        "logical_path": "v10-source/src/nested_sleep/accounting.py",
+        "sha256": "7990c3baa638efbcb7afefe71de881872ea646cc7fa67a8c467bb0997ff38e96"
+      },
+      {
+        "bytes": 1850,
+        "logical_path": "v10-source/src/nested_sleep/clocks.py",
+        "sha256": "8f85879416cf8ef5e922a30576b2cef08f0d984175d86dd21a368e4ed57a606d"
+      },
+      {
+        "bytes": 5364,
+        "logical_path": "v10-source/src/nested_sleep/consolidation.py",
+        "sha256": "6fd1af862ee9b50613ace7de534b0400b85c56765b726d1bc4827c44ff4bfedb"
+      },
+      {
+        "bytes": 2004,
+        "logical_path": "v10-source/src/nested_sleep/dreaming.py",
+        "sha256": "7d7c25551ce89b3be71f4a2392785d15fa8a822596ad72d9c4b5f7a16fed9b45"
+      },
+      {
+        "bytes": 609,
+        "logical_path": "v10-source/src/nested_sleep/execution.py",
+        "sha256": "9791e4f85a24d9eedc72760316de5de2d4c7045272506998f83844743e8f1677"
+      },
+      {
+        "bytes": 16473,
+        "logical_path": "v10-source/src/nested_sleep/executor_v13.py",
+        "sha256": "0befa81ca6cc28379526a31064b6ad55293d57e0ad3c9444859799ef7f4173ed"
+      },
+      {
+        "bytes": 8785,
+        "logical_path": "v10-source/src/nested_sleep/experts.py",
+        "sha256": "f7ce8cb08ac51d81941e651989181e7602a083a7adf6256317d71d3adda96094"
+      },
+      {
+        "bytes": 24916,
+        "logical_path": "v10-source/src/nested_sleep/lifecycle.py",
+        "sha256": "1fd3164e705c79d30d9c5666c055ef64b027672e547b8374708263066275df02"
+      },
+      {
+        "bytes": 1972,
+        "logical_path": "v10-source/src/nested_sleep/llama_entry.py",
+        "sha256": "b0538010eaf56c0a212f424e7e977b6de96c052ce5918278966e7234f4e47f69"
+      },
+      {
+        "bytes": 9234,
+        "logical_path": "v10-source/src/nested_sleep/lm.py",
+        "sha256": "25c26fe79c4d84a16bdaf2d321fee570eb99dc146d041ea2fa0e406400bd227c"
+      },
+      {
+        "bytes": 3556,
+        "logical_path": "v10-source/src/nested_sleep/memory.py",
+        "sha256": "f7faa7a24dc0278fa90fb6e3c0b39396f4078c66f1dd4ade62ee088c68ec260f"
+      },
+      {
+        "bytes": 10094,
+        "logical_path": "v10-source/src/nested_sleep/native.py",
+        "sha256": "29c05b4787c184f727865be1deb1ca219f5a497c66893666c354c68330773c57"
+      },
+      {
+        "bytes": 1894,
+        "logical_path": "v10-source/src/nested_sleep/objectives.py",
+        "sha256": "0df732fe5f1f1e6c99c964f10db5785e7283e104e3d01514d0558eea622a9654"
+      },
+      {
+        "bytes": 3976,
+        "logical_path": "v10-source/src/nested_sleep/optim.py",
+        "sha256": "44ea0afdf81e779d3c7cb0b38faaab648bf900b4771c061d7021175078e13817"
+      },
+      {
+        "bytes": 2933,
+        "logical_path": "v10-source/src/nested_sleep/parameter_drift.py",
+        "sha256": "073cc7549ec5786910b2716cbf28d7d6c91173b70b731fc8fc53134915a90598"
+      },
+      {
+        "bytes": 5199,
+        "logical_path": "v10-source/src/nested_sleep/repairability.py",
+        "sha256": "b91fbec03113ac1b02549b58f23e035378a05c2b90ffe4bdd6c4593984866d87"
+      },
+      {
+        "bytes": 20628,
+        "logical_path": "v10-source/tools/banking_cil_common_v10.py",
+        "sha256": "1e4102dd2df80554c7463466546909ef95e9d6256b53f6affa39722e491ba0ab"
+      },
+      {
+        "bytes": 12104,
+        "logical_path": "v10-source/tools/banking_cil_v10_lifecycle.py",
+        "sha256": "24822dec63d05cabd05523a901d44aa2cb3d9197154de12eea2198f41552f98c"
+      },
+      {
+        "bytes": 8981,
+        "logical_path": "v10-source/tools/banking_cil_v10_routing.py",
+        "sha256": "3ca898efc3b006277b7dce3e9e8424d6e0f671a54b487be764fe609562f5df34"
+      },
+      {
+        "bytes": 30277,
+        "logical_path": "v10-source/tools/banking_cil_v10_runtime.py",
+        "sha256": "53d9ba99952f8968261818f8a0da3e07daac8e6e8bbf0649ee4f7000c8d05638"
+      },
+      {
+        "bytes": 21211,
+        "logical_path": "v10-source/tools/clinc_lifecycle_v8.py",
+        "sha256": "3e270a6df0359f495fc09d5aaf4fd6e108f37c36da41373b70fc16a26fca14a2"
+      },
+      {
+        "bytes": 19811,
+        "logical_path": "v10-source/tools/clinc_tail_runtime_v8.py",
+        "sha256": "057de386734ff128d1fb0147dd83b1c14009cc36d8ed7c77740cbb497ee6f6d9"
+      },
+      {
+        "bytes": 80469,
+        "logical_path": "v10-source/tools/run_banking_cil_v10.py",
+        "sha256": "3ca271ed8cf57aa1b5cdb8531da4052fc18ca6ff6083741fdf5b666dc4600f74"
+      },
+      {
+        "bytes": 10664,
+        "logical_path": "v12-source/tools/banking_cil_v12_batching.py",
+        "sha256": "99e0163c333fe1fdec1928bb2f932c79d88c7f0683b8d917883f2c79e8b0c829"
+      },
+      {
+        "bytes": 6287,
+        "logical_path": "v12-source/tools/launch_banking_optimizer_boundary_v12.py",
+        "sha256": "e45cf1fdad02d335138394cfa28fc0a82779952c11c87bb0ddf6263bc8de9874"
+      },
+      {
+        "bytes": 50363,
+        "logical_path": "v12-source/tools/run_banking_optimizer_boundary_v12.py",
+        "sha256": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f"
+      },
+      {
+        "bytes": 3958,
+        "logical_path": "v12-source/tools/run_banking_v12_cpu_acceptance.py",
+        "sha256": "9d0a9fc5bbca4f953bbcd3d8e0e1bba687a207a4e987c2f462b7e1e650aadd39"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed17/receiver-checkpoints/B1_HIGH_30.pt",
+        "sha256": "2617cb75b6bb07217c8db358730de3e618309a42f53ee1a4a3b585b9ecabaaee"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed17/receiver-checkpoints/B1_HIGH_960.pt",
+        "sha256": "5ec9a6dbc82740ea57b066a36c85a0f0627987c9e1035def4b6ad8c7de518cd1"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed17/receiver-checkpoints/B1_LOW_30.pt",
+        "sha256": "1729adfbeb6edc09a1844cbb448b26cfa025166088dba7717cd3de66f20fe9bd"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed17/receiver-checkpoints/B1_LOW_960.pt",
+        "sha256": "a62098fb62524675f17d137d7c98d21edd48d72eb80e7147f6587af0a6c11428"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed17/receiver-checkpoints/B32_HIGH_960.pt",
+        "sha256": "f62f337715477bb02ce030e827ba382edc8da0983f1b5d5f7ffdf77e0f1339e2"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed17/receiver-checkpoints/B32_LOW_960.pt",
+        "sha256": "55cf60a9cf11b63e4226d6c4c76b5cc1252258affb42e8b93a43573138732909"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed17/receiver-checkpoints/B32_LOW_3200.pt",
+        "sha256": "02fb11e2ff441a53d72546c1f1e3c46ddfe658a57a43c39e72a0cef0e7cd96af"
+      },
+      {
+        "bytes": 404461,
+        "logical_path": "seed17/teacher-rollouts-private.pt",
+        "sha256": "35507af4accd32f31a8feffa80468ef443902b6778eea70db743935d439bd0d3"
+      },
+      {
+        "bytes": 1280,
+        "logical_path": "seed17/protocol.json",
+        "sha256": "82320a3fef6dcd9a25d2740f10d72d20c6a0f2d1f71a159a47fd3e646d021e9f"
+      },
+      {
+        "bytes": 371041,
+        "logical_path": "seed17/final-receipt.json",
+        "sha256": "85a8130e2e7d361657d960a2649ed2a071e06576e591c0683937d29c11e79da4"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed29/receiver-checkpoints/B1_HIGH_30.pt",
+        "sha256": "6f462e244cd6554b7e240a7d94cd89b54b76772a9b2e3046262f452abbf79426"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed29/receiver-checkpoints/B1_HIGH_960.pt",
+        "sha256": "ed784ff4d26a0375f8081105aec700483f642ed7b7a87f797ebf3cb3ffec48e9"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed29/receiver-checkpoints/B1_LOW_30.pt",
+        "sha256": "f1cc33a7632b35e309de8a65029d9f5e571cb767df752b758dc1b59701eac83f"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed29/receiver-checkpoints/B1_LOW_960.pt",
+        "sha256": "339c6b1084a6fbae4cbd002275080ddb3a08720822f2cd5de6506bf2073326eb"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed29/receiver-checkpoints/B32_HIGH_960.pt",
+        "sha256": "a73cbc3bb27950be979a545474ac8900b9cd4e13f7dd487f9c461fcabfa51113"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed29/receiver-checkpoints/B32_LOW_960.pt",
+        "sha256": "f87c0c88e86417a99c5587a299b5dde616ed50ede50ad51d0e7e5349615e4d36"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed29/receiver-checkpoints/B32_LOW_3200.pt",
+        "sha256": "8b37511ea2ca597e5f66d4e35942f8fae356f6d379039bcece482e0aeaf5a804"
+      },
+      {
+        "bytes": 398189,
+        "logical_path": "seed29/teacher-rollouts-private.pt",
+        "sha256": "d0572aa7170d61130bced52ba6fb67d84de2a8e978089d27962cbe8af34dbdd5"
+      },
+      {
+        "bytes": 1280,
+        "logical_path": "seed29/protocol.json",
+        "sha256": "142720485e3e5bc813ba921217ba663e6aad6a6b640077ab921d38dc799a4337"
+      },
+      {
+        "bytes": 354082,
+        "logical_path": "seed29/final-receipt.json",
+        "sha256": "b0ebf971400564e8aaddbddf7d94ef786bfa168745a043b5fba87ca24ad59369"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed43/receiver-checkpoints/B1_HIGH_30.pt",
+        "sha256": "ac25b97aa35e50854093fe6fe0275b36bef90dd27c06c95e70ca97eababc7de9"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed43/receiver-checkpoints/B1_HIGH_960.pt",
+        "sha256": "9d5bc8ec4c6f2c09c16f102858371694215a9f808cb5c7b5661727b8e71be61c"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed43/receiver-checkpoints/B1_LOW_30.pt",
+        "sha256": "d5ebdef48f0caba38acff5ef6efa0e585a18b15b811805d614e2daf577ec66d7"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed43/receiver-checkpoints/B1_LOW_960.pt",
+        "sha256": "1ecfe792b1de1ed24af84b5582a6773cc49b6009ff55eeea8080ca1d0beed86c"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed43/receiver-checkpoints/B32_HIGH_960.pt",
+        "sha256": "fcf4b1acef610f58813243cb78ed7eb3ff254ddec158d1806e680cf6bd1561ee"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed43/receiver-checkpoints/B32_LOW_960.pt",
+        "sha256": "e584a8c4de54f82e18787adbf5a747eae9dc44a2cb66f1146d78910729f14d1b"
+      },
+      {
+        "bytes": 147467581,
+        "logical_path": "seed43/receiver-checkpoints/B32_LOW_3200.pt",
+        "sha256": "1314f9630f573d1ecf2f838d74ea211707dd0a43f064297ac95e4b923617a248"
+      },
+      {
+        "bytes": 389229,
+        "logical_path": "seed43/teacher-rollouts-private.pt",
+        "sha256": "3dee398a78f41b0308b77152a5ac2af09eee2baf9cf324dd4976bb5ab39a2704"
+      },
+      {
+        "bytes": 1280,
+        "logical_path": "seed43/protocol.json",
+        "sha256": "222a902bf54cc5c2638ecfc1b9942ba1f5203ac446051a47f8e1b2e08d52eed1"
+      },
+      {
+        "bytes": 357390,
+        "logical_path": "seed43/final-receipt.json",
+        "sha256": "c4e49f31604a4764146b4cfcdf9bf2a9768af0727598a79f240a5df5999bff75"
+      }
+    ],
+    "v12_evaluator_sha256": "91039fbefe26c1210f79af9639df44740817c671fe3ca63f70040e5a9be9a7ee"
+  },
+  "metric_definition": "T=1 teacher-to-student full-vocabulary KL; mean over answer tokens within each request, then mean of request means; train-fit only, not held-out or confirmatory.",
+  "model_state_integrity": {
+    "fixed_fit_evaluator_sha256_before_after": "91039fbefe26c1210f79af9639df44740817c671fe3ca63f70040e5a9be9a7ee",
+    "immutable_backbone_parameter_versions_unchanged": true,
+    "model_adapter_state_sha256_after": "e63f68d2ba0cf74949800bf0aad2a76e5e12cdf2e88001aad9fbce1edc6a3e5a",
+    "model_adapter_state_sha256_before": "e63f68d2ba0cf74949800bf0aad2a76e5e12cdf2e88001aad9fbce1edc6a3e5a",
+    "model_asset_stat_before_after_unchanged": true
+  },
+  "plan_sha256": "56b7faeef9c1bf86443391a22efe387e59850e1490510f6771ed816c6b335153",
+  "raw_requests_tokens_labels_or_predictions_written": false,
+  "schema": "banking-v12-fixed-teacher-fit-result-v1",
+  "scope": "supplementary_training_fit_diagnostic_on_identical_teacher_trajectories_not_heldout_accuracy",
+  "seed_protocol_bindings": {
+    "17": {
+      "final_receipt_sha256": "85a8130e2e7d361657d960a2649ed2a071e06576e591c0683937d29c11e79da4",
+      "initial_state_hashes": {
+        "B1_HIGH": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+        "B1_LOW": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+        "B32_HIGH": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+        "B32_LOW": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+        "CMS_NO_RESET": "37940dd7fa84761374da8ce5cbeab3df837198bb367cc7c22112b369780987a9",
+        "RESET_ZERO": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+        "TEACHER": "099fb53b6c295510f5df5041ebf47c580e82811590fa1802f040946a2ea53041"
+      },
+      "protocol_sha256": "82320a3fef6dcd9a25d2740f10d72d20c6a0f2d1f71a159a47fd3e646d021e9f"
+    },
+    "29": {
+      "final_receipt_sha256": "b0ebf971400564e8aaddbddf7d94ef786bfa168745a043b5fba87ca24ad59369",
+      "initial_state_hashes": {
+        "B1_HIGH": "42015a9a66f353ae72cfc9d85f424504fdc16a92230967e450b8b3c0dd9ac48f",
+        "B1_LOW": "42015a9a66f353ae72cfc9d85f424504fdc16a92230967e450b8b3c0dd9ac48f",
+        "B32_HIGH": "42015a9a66f353ae72cfc9d85f424504fdc16a92230967e450b8b3c0dd9ac48f",
+        "B32_LOW": "42015a9a66f353ae72cfc9d85f424504fdc16a92230967e450b8b3c0dd9ac48f",
+        "CMS_NO_RESET": "d74a396b7c2bf9778d064aa31159d6f2ed8da2aac29dde4e8431b2d6ef7f4235",
+        "RESET_ZERO": "42015a9a66f353ae72cfc9d85f424504fdc16a92230967e450b8b3c0dd9ac48f",
+        "TEACHER": "0ba6deb21fc85c69781e31c14350311ed4ebd1f24ee785ec050460a1f6517716"
+      },
+      "protocol_sha256": "142720485e3e5bc813ba921217ba663e6aad6a6b640077ab921d38dc799a4337"
+    },
+    "43": {
+      "final_receipt_sha256": "c4e49f31604a4764146b4cfcdf9bf2a9768af0727598a79f240a5df5999bff75",
+      "initial_state_hashes": {
+        "B1_HIGH": "5fa64e9f338e48abdde3d49569d77ab5766105ced72bcd740fef907966913c83",
+        "B1_LOW": "5fa64e9f338e48abdde3d49569d77ab5766105ced72bcd740fef907966913c83",
+        "B32_HIGH": "5fa64e9f338e48abdde3d49569d77ab5766105ced72bcd740fef907966913c83",
+        "B32_LOW": "5fa64e9f338e48abdde3d49569d77ab5766105ced72bcd740fef907966913c83",
+        "CMS_NO_RESET": "10e79e00d3e326dc03a6c05e99b42050dd214efe49ea423e23ef14457fa9b4e7",
+        "RESET_ZERO": "5fa64e9f338e48abdde3d49569d77ab5766105ced72bcd740fef907966913c83",
+        "TEACHER": "c3bf754fe816e476cb76a3e2f15c2a6835fd3447209c2e6a21d47a52ec6035e6"
+      },
+      "protocol_sha256": "222a902bf54cc5c2638ecfc1b9942ba1f5203ac446051a47f8e1b2e08d52eed1"
+    }
+  },
+  "seeds": {
+    "17": {
+      "budget_delta": {
+        "full_backbone_forwards": 64,
+        "full_backbone_input_tokens": 2325,
+        "generation_updates": 0,
+        "optimizer_updates": 0,
+        "tail_backward_calls": 0,
+        "tail_calls": 640
+      },
+      "checkpoint_manifest": [
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B1_HIGH_30",
+          "requests": 30,
+          "sha256": "2617cb75b6bb07217c8db358730de3e618309a42f53ee1a4a3b585b9ecabaaee"
+        },
+        {
+          "adamw_steps": 960,
+          "bytes": 147467581,
+          "context": "B1_HIGH_960",
+          "requests": 960,
+          "sha256": "5ec9a6dbc82740ea57b066a36c85a0f0627987c9e1035def4b6ad8c7de518cd1"
+        },
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B1_LOW_30",
+          "requests": 30,
+          "sha256": "1729adfbeb6edc09a1844cbb448b26cfa025166088dba7717cd3de66f20fe9bd"
+        },
+        {
+          "adamw_steps": 960,
+          "bytes": 147467581,
+          "context": "B1_LOW_960",
+          "requests": 960,
+          "sha256": "a62098fb62524675f17d137d7c98d21edd48d72eb80e7147f6587af0a6c11428"
+        },
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B32_HIGH_960",
+          "requests": 960,
+          "sha256": "f62f337715477bb02ce030e827ba382edc8da0983f1b5d5f7ffdf77e0f1339e2"
+        },
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B32_LOW_960",
+          "requests": 960,
+          "sha256": "55cf60a9cf11b63e4226d6c4c76b5cc1252258affb42e8b93a43573138732909"
+        },
+        {
+          "adamw_steps": 100,
+          "bytes": 147467581,
+          "context": "B32_LOW_3200",
+          "requests": 3200,
+          "sha256": "02fb11e2ff441a53d72546c1f1e3c46ddfe658a57a43c39e72a0cef0e7cd96af"
+        }
+      ],
+      "context_hashes_before_after_identical": true,
+      "context_reconstruction": {
+        "baseline_state_sha256": {
+          "CMS_NO_RESET": "37940dd7fa84761374da8ce5cbeab3df837198bb367cc7c22112b369780987a9",
+          "RESET_ZERO": "a24896feeb5ce63d3fb63940e006096e11f3c4b20e81d2f96b6f36e0c4199f04",
+          "TEACHER": "099fb53b6c295510f5df5041ebf47c580e82811590fa1802f040946a2ea53041"
+        },
+        "initial_state_hashes_verified": true,
+        "student_state_sha256": {
+          "B1_HIGH_30": "88001339c6c70432d9967f16b7352e9aef3ca74ffc78f085f4b99f7d53fc8a51",
+          "B1_HIGH_960": "22c851033ad1b3bc078c45648326a35ee2c10535716e122c8fffd3d411b36457",
+          "B1_LOW_30": "f1a8cceea7e128b3e7de48b7bfb137328a932437e059a47c8b5512032c188112",
+          "B1_LOW_960": "dfa7cb13a4cde88a00fc8eb46f01fd9eb8426f46abb4fd86d2c80861d61878dd",
+          "B32_HIGH_960": "afa63cf6243a55e07c522cd3417ebab66dc648621d4b220b9042e4d62d05cd19",
+          "B32_LOW_3200": "e4acb02c9d2ebc7d9a77743fc69c25bdec97c1c0531c78120c46ebc1b765d344",
+          "B32_LOW_960": "136d3b276a543bd95c83103b5080204578adfca8c2740b182aeaaa8f7ecb9c14"
+        },
+        "teacher_state_sha256": "099fb53b6c295510f5df5041ebf47c580e82811590fa1802f040946a2ea53041"
+      },
+      "fixed_trajectory_fit": {
+        "B1_HIGH_30": {
+          "all": {
+            "answer_tokens": 346,
+            "mean_request_token_mean_kl": 0.48169666645117104,
+            "minimum_request_mean_kl": 0.14502885937690735,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 30.828586652874947
+          },
+          "current": {
+            "answer_tokens": 193,
+            "mean_request_token_mean_kl": 0.4314317018724978,
+            "minimum_request_mean_kl": 0.14502885937690735,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 13.80581445991993
+          },
+          "old": {
+            "answer_tokens": 153,
+            "mean_request_token_mean_kl": 0.5319616310298443,
+            "minimum_request_mean_kl": 0.15754006803035736,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 17.022772192955017
+          }
+        },
+        "B1_HIGH_960": {
+          "all": {
+            "answer_tokens": 346,
+            "mean_request_token_mean_kl": 0.07791215533507057,
+            "minimum_request_mean_kl": 0.011138700880110264,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 4.986377941444516
+          },
+          "current": {
+            "answer_tokens": 193,
+            "mean_request_token_mean_kl": 0.06241278926609084,
+            "minimum_request_mean_kl": 0.011138700880110264,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 1.9972092565149069
+          },
+          "old": {
+            "answer_tokens": 153,
+            "mean_request_token_mean_kl": 0.09341152140405029,
+            "minimum_request_mean_kl": 0.017856188118457794,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 2.9891686849296093
+          }
+        },
+        "B1_LOW_30": {
+          "all": {
+            "answer_tokens": 346,
+            "mean_request_token_mean_kl": 4.2316062562167645,
+            "minimum_request_mean_kl": 2.3940093517303467,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 270.8228003978729
+          },
+          "current": {
+            "answer_tokens": 193,
+            "mean_request_token_mean_kl": 3.9925970062613487,
+            "minimum_request_mean_kl": 2.3940093517303467,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 127.76310420036316
+          },
+          "old": {
+            "answer_tokens": 153,
+            "mean_request_token_mean_kl": 4.47061550617218,
+            "minimum_request_mean_kl": 2.5040969848632812,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 143.05969619750977
+          }
+        },
+        "B1_LOW_960": {
+          "all": {
+            "answer_tokens": 346,
+            "mean_request_token_mean_kl": 0.735392629634589,
+            "minimum_request_mean_kl": 0.2506960332393646,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 47.06512829661369
+          },
+          "current": {
+            "answer_tokens": 193,
+            "mean_request_token_mean_kl": 0.634009656496346,
+            "minimum_request_mean_kl": 0.2506960332393646,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 20.288309007883072
+          },
+          "old": {
+            "answer_tokens": 153,
+            "mean_request_token_mean_kl": 0.8367756027728319,
+            "minimum_request_mean_kl": 0.3123738765716553,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 26.77681928873062
+          }
+        },
+        "B32_HIGH_960": {
+          "all": {
+            "answer_tokens": 346,
+            "mean_request_token_mean_kl": 0.05493311773170717,
+            "minimum_request_mean_kl": 0.018132448196411133,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 3.515719534829259
+          },
+          "current": {
+            "answer_tokens": 193,
+            "mean_request_token_mean_kl": 0.05418729764642194,
+            "minimum_request_mean_kl": 0.018132448196411133,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 1.733993524685502
+          },
+          "old": {
+            "answer_tokens": 153,
+            "mean_request_token_mean_kl": 0.0556789378169924,
+            "minimum_request_mean_kl": 0.024109123274683952,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 1.7817260101437569
+          }
+        },
+        "B32_LOW_3200": {
+          "all": {
+            "answer_tokens": 346,
+            "mean_request_token_mean_kl": 3.9511164762079716,
+            "minimum_request_mean_kl": 2.250964641571045,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 252.87145447731018
+          },
+          "current": {
+            "answer_tokens": 193,
+            "mean_request_token_mean_kl": 3.726319156587124,
+            "minimum_request_mean_kl": 2.250964641571045,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 119.24221301078796
+          },
+          "old": {
+            "answer_tokens": 153,
+            "mean_request_token_mean_kl": 4.175913795828819,
+            "minimum_request_mean_kl": 2.418959379196167,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 133.62924146652222
+          }
+        },
+        "B32_LOW_960": {
+          "all": {
+            "answer_tokens": 346,
+            "mean_request_token_mean_kl": 4.2090944647789,
+            "minimum_request_mean_kl": 2.3880155086517334,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 269.3820457458496
+          },
+          "current": {
+            "answer_tokens": 193,
+            "mean_request_token_mean_kl": 3.9724489897489548,
+            "minimum_request_mean_kl": 2.3880155086517334,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 127.11836767196655
+          },
+          "old": {
+            "answer_tokens": 153,
+            "mean_request_token_mean_kl": 4.4457399398088455,
+            "minimum_request_mean_kl": 2.4980313777923584,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 142.26367807388306
+          }
+        },
+        "CMS_NO_RESET": {
+          "all": {
+            "answer_tokens": 346,
+            "mean_request_token_mean_kl": 4.966312122989258e-06,
+            "minimum_request_mean_kl": -2.051933023494712e-08,
+            "negative_request_values": 3,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 0.0003178439758713125
+          },
+          "current": {
+            "answer_tokens": 193,
+            "mean_request_token_mean_kl": 6.985469794829058e-06,
+            "minimum_request_mean_kl": -2.051933023494712e-08,
+            "negative_request_values": 1,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 0.00022353503343452985
+          },
+          "old": {
+            "answer_tokens": 153,
+            "mean_request_token_mean_kl": 2.9471544511494585e-06,
+            "minimum_request_mean_kl": -5.841482852986246e-09,
+            "negative_request_values": 2,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 9.430894243678267e-05
+          }
+        },
+        "RESET_ZERO": {
+          "all": {
+            "answer_tokens": 346,
+            "mean_request_token_mean_kl": 4.262621216475964,
+            "minimum_request_mean_kl": 2.4095778465270996,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 272.80775785446167
+          },
+          "current": {
+            "answer_tokens": 193,
+            "mean_request_token_mean_kl": 4.022902689874172,
+            "minimum_request_mean_kl": 2.4095778465270996,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 128.7328860759735
+          },
+          "old": {
+            "answer_tokens": 153,
+            "mean_request_token_mean_kl": 4.502339743077755,
+            "minimum_request_mean_kl": 2.5252525806427,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 144.07487177848816
+          }
+        },
+        "TEACHER": {
+          "all": {
+            "answer_tokens": 346,
+            "mean_request_token_mean_kl": -3.385816387674323e-09,
+            "minimum_request_mean_kl": -4.1137596440421476e-08,
+            "negative_request_values": 41,
+            "request_count": 64,
+            "sum_per_request_mean_kl": -2.1669224881115667e-07
+          },
+          "current": {
+            "answer_tokens": 193,
+            "mean_request_token_mean_kl": -6.6991331752752625e-09,
+            "minimum_request_mean_kl": -4.1137596440421476e-08,
+            "negative_request_values": 22,
+            "request_count": 32,
+            "sum_per_request_mean_kl": -2.143722616088084e-07
+          },
+          "old": {
+            "answer_tokens": 153,
+            "mean_request_token_mean_kl": -7.249960007338352e-11,
+            "minimum_request_mean_kl": -2.8899043158503446e-08,
+            "negative_request_values": 19,
+            "request_count": 32,
+            "sum_per_request_mean_kl": -2.3199872023482726e-09
+          }
+        },
+        "_teacher_self_kl_diagnostic": {
+          "maximum_absolute_request_mean_kl": 4.3700708829419455e-08,
+          "negative_roundoff_request_count": 41,
+          "passed": true,
+          "tolerance": 1e-06
+        }
+      },
+      "rollout_manifest": {
+        "bytes": 404461,
+        "full_payload_deserialized": true,
+        "records_deserialized_from_private_payload": 3200,
+        "records_scored": 64,
+        "sha256": "35507af4accd32f31a8feffa80468ef443902b6778eea70db743935d439bd0d3",
+        "total_records_in_source": 3200
+      },
+      "stored_parameter_inventory": {
+        "all_context_stored_mutable_bytes": 718295040,
+        "all_context_stored_mutable_parameters": 179573760,
+        "contexts": {
+          "B1_HIGH_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_3200": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "CMS_NO_RESET": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 0,
+            "logical_receiver_parameters": 0,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "RESET_ZERO": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 0,
+            "logical_receiver_parameters": 0,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "TEACHER": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 0,
+            "logical_receiver_parameters": 0,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          }
+        },
+        "fixed_backbone": {
+          "bytes": 6425499648,
+          "parameters": 3212749824
+        },
+        "interpretation": "parameter-object numel and bytes (buffers excluded); contexts are separately materialized views, slot activation is not execution count; no FLOPs inferred",
+        "model_owned_mutable_adapter": {
+          "bytes": 71829504,
+          "parameters": 17957376
+        }
+      },
+      "work": {
+        "answer_tokens_scored": 3460,
+        "full_backbone_forwards": 64,
+        "full_backbone_input_tokens": 2325,
+        "generation_updates": 0,
+        "optimizer_updates": 0,
+        "tail_calls": 640
+      }
+    },
+    "29": {
+      "budget_delta": {
+        "full_backbone_forwards": 64,
+        "full_backbone_input_tokens": 2249,
+        "generation_updates": 0,
+        "optimizer_updates": 0,
+        "tail_backward_calls": 0,
+        "tail_calls": 640
+      },
+      "checkpoint_manifest": [
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B1_HIGH_30",
+          "requests": 30,
+          "sha256": "6f462e244cd6554b7e240a7d94cd89b54b76772a9b2e3046262f452abbf79426"
+        },
+        {
+          "adamw_steps": 960,
+          "bytes": 147467581,
+          "context": "B1_HIGH_960",
+          "requests": 960,
+          "sha256": "ed784ff4d26a0375f8081105aec700483f642ed7b7a87f797ebf3cb3ffec48e9"
+        },
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B1_LOW_30",
+          "requests": 30,
+          "sha256": "f1cc33a7632b35e309de8a65029d9f5e571cb767df752b758dc1b59701eac83f"
+        },
+        {
+          "adamw_steps": 960,
+          "bytes": 147467581,
+          "context": "B1_LOW_960",
+          "requests": 960,
+          "sha256": "339c6b1084a6fbae4cbd002275080ddb3a08720822f2cd5de6506bf2073326eb"
+        },
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B32_HIGH_960",
+          "requests": 960,
+          "sha256": "a73cbc3bb27950be979a545474ac8900b9cd4e13f7dd487f9c461fcabfa51113"
+        },
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B32_LOW_960",
+          "requests": 960,
+          "sha256": "f87c0c88e86417a99c5587a299b5dde616ed50ede50ad51d0e7e5349615e4d36"
+        },
+        {
+          "adamw_steps": 100,
+          "bytes": 147467581,
+          "context": "B32_LOW_3200",
+          "requests": 3200,
+          "sha256": "8b37511ea2ca597e5f66d4e35942f8fae356f6d379039bcece482e0aeaf5a804"
+        }
+      ],
+      "context_hashes_before_after_identical": true,
+      "context_reconstruction": {
+        "baseline_state_sha256": {
+          "CMS_NO_RESET": "d74a396b7c2bf9778d064aa31159d6f2ed8da2aac29dde4e8431b2d6ef7f4235",
+          "RESET_ZERO": "42015a9a66f353ae72cfc9d85f424504fdc16a92230967e450b8b3c0dd9ac48f",
+          "TEACHER": "0ba6deb21fc85c69781e31c14350311ed4ebd1f24ee785ec050460a1f6517716"
+        },
+        "initial_state_hashes_verified": true,
+        "student_state_sha256": {
+          "B1_HIGH_30": "2ba20523121f48e4e25a5c5e7b07596da0d752f58d17ce9f9c1fef4621145d60",
+          "B1_HIGH_960": "e5965ddfb8d5904aece3932b76a7c44f4ea45ad4e765490ffb6d6ddc7d858e0d",
+          "B1_LOW_30": "888e898949be095bd75480fd093dc6558ddc6e0926ae5e7c86e7a608ed6a9f0b",
+          "B1_LOW_960": "7417f51a6ff9436b069c4de02b527e992548ffac7b78e935c33c03e93a6f7cf6",
+          "B32_HIGH_960": "45c69aef9d7f6a309cefe272df56ab5566b7d466763f82e99a0587e55aaa953c",
+          "B32_LOW_3200": "d02e5d0b2ad06a0a7c06bf757ef297f93f36a46c8f0ba0713b5353332fda62aa",
+          "B32_LOW_960": "d22643d5b37a98605749918b4bfac05acf261c792dd262af2cb2111890cb3722"
+        },
+        "teacher_state_sha256": "0ba6deb21fc85c69781e31c14350311ed4ebd1f24ee785ec050460a1f6517716"
+      },
+      "fixed_trajectory_fit": {
+        "B1_HIGH_30": {
+          "all": {
+            "answer_tokens": 314,
+            "mean_request_token_mean_kl": 0.39911721693351865,
+            "minimum_request_mean_kl": 0.08370740711688995,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 25.543501883745193
+          },
+          "current": {
+            "answer_tokens": 160,
+            "mean_request_token_mean_kl": 0.40680076624266803,
+            "minimum_request_mean_kl": 0.09359056502580643,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 13.017624519765377
+          },
+          "old": {
+            "answer_tokens": 154,
+            "mean_request_token_mean_kl": 0.39143366762436926,
+            "minimum_request_mean_kl": 0.08370740711688995,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 12.525877363979816
+          }
+        },
+        "B1_HIGH_960": {
+          "all": {
+            "answer_tokens": 314,
+            "mean_request_token_mean_kl": 0.10737515370419715,
+            "minimum_request_mean_kl": 0.008034158498048782,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 6.872009837068617
+          },
+          "current": {
+            "answer_tokens": 160,
+            "mean_request_token_mean_kl": 0.12096985470270738,
+            "minimum_request_mean_kl": 0.028504060581326485,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 3.871035350486636
+          },
+          "old": {
+            "answer_tokens": 154,
+            "mean_request_token_mean_kl": 0.09378045270568691,
+            "minimum_request_mean_kl": 0.008034158498048782,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 3.000974486581981
+          }
+        },
+        "B1_LOW_30": {
+          "all": {
+            "answer_tokens": 314,
+            "mean_request_token_mean_kl": 3.7332650013267994,
+            "minimum_request_mean_kl": 1.3553589582443237,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 238.92896008491516
+          },
+          "current": {
+            "answer_tokens": 160,
+            "mean_request_token_mean_kl": 3.6796990260481834,
+            "minimum_request_mean_kl": 1.737675428390503,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 117.75036883354187
+          },
+          "old": {
+            "answer_tokens": 154,
+            "mean_request_token_mean_kl": 3.7868309766054153,
+            "minimum_request_mean_kl": 1.3553589582443237,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 121.17859125137329
+          }
+        },
+        "B1_LOW_960": {
+          "all": {
+            "answer_tokens": 314,
+            "mean_request_token_mean_kl": 0.4064486254937947,
+            "minimum_request_mean_kl": 0.08688238263130188,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 26.01271203160286
+          },
+          "current": {
+            "answer_tokens": 160,
+            "mean_request_token_mean_kl": 0.4007442411966622,
+            "minimum_request_mean_kl": 0.13140128552913666,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 12.82381571829319
+          },
+          "old": {
+            "answer_tokens": 154,
+            "mean_request_token_mean_kl": 0.41215300979092717,
+            "minimum_request_mean_kl": 0.08688238263130188,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 13.18889631330967
+          }
+        },
+        "B32_HIGH_960": {
+          "all": {
+            "answer_tokens": 314,
+            "mean_request_token_mean_kl": 0.04297494620550424,
+            "minimum_request_mean_kl": 0.00985989160835743,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 2.7503965571522713
+          },
+          "current": {
+            "answer_tokens": 160,
+            "mean_request_token_mean_kl": 0.042861630965489894,
+            "minimum_request_mean_kl": 0.013287091627717018,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 1.3715721908956766
+          },
+          "old": {
+            "answer_tokens": 154,
+            "mean_request_token_mean_kl": 0.04308826144551858,
+            "minimum_request_mean_kl": 0.00985989160835743,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 1.3788243662565947
+          }
+        },
+        "B32_LOW_3200": {
+          "all": {
+            "answer_tokens": 314,
+            "mean_request_token_mean_kl": 3.407658390700817,
+            "minimum_request_mean_kl": 1.2755873203277588,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 218.0901370048523
+          },
+          "current": {
+            "answer_tokens": 160,
+            "mean_request_token_mean_kl": 3.374409355223179,
+            "minimum_request_mean_kl": 1.6228320598602295,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 107.98109936714172
+          },
+          "old": {
+            "answer_tokens": 154,
+            "mean_request_token_mean_kl": 3.4409074261784554,
+            "minimum_request_mean_kl": 1.2755873203277588,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 110.10903763771057
+          }
+        },
+        "B32_LOW_960": {
+          "all": {
+            "answer_tokens": 314,
+            "mean_request_token_mean_kl": 3.7083085123449564,
+            "minimum_request_mean_kl": 1.347119927406311,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 237.3317447900772
+          },
+          "current": {
+            "answer_tokens": 160,
+            "mean_request_token_mean_kl": 3.658512771129608,
+            "minimum_request_mean_kl": 1.7325878143310547,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 117.07240867614746
+          },
+          "old": {
+            "answer_tokens": 154,
+            "mean_request_token_mean_kl": 3.7581042535603046,
+            "minimum_request_mean_kl": 1.347119927406311,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 120.25933611392975
+          }
+        },
+        "CMS_NO_RESET": {
+          "all": {
+            "answer_tokens": 314,
+            "mean_request_token_mean_kl": 5.308670729925469e-06,
+            "minimum_request_mean_kl": -5.685750537054446e-09,
+            "negative_request_values": 1,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 0.00033975492671523
+          },
+          "current": {
+            "answer_tokens": 160,
+            "mean_request_token_mean_kl": 6.920578241143005e-06,
+            "minimum_request_mean_kl": 1.5998540447981213e-07,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 0.00022145850371657616
+          },
+          "old": {
+            "answer_tokens": 154,
+            "mean_request_token_mean_kl": 3.6967632187079325e-06,
+            "minimum_request_mean_kl": -5.685750537054446e-09,
+            "negative_request_values": 1,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 0.00011829642299865384
+          }
+        },
+        "RESET_ZERO": {
+          "all": {
+            "answer_tokens": 314,
+            "mean_request_token_mean_kl": 3.7715663872659206,
+            "minimum_request_mean_kl": 1.36408531665802,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 241.38024878501892
+          },
+          "current": {
+            "answer_tokens": 160,
+            "mean_request_token_mean_kl": 3.7157812640070915,
+            "minimum_request_mean_kl": 1.7536206245422363,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 118.90500044822693
+          },
+          "old": {
+            "answer_tokens": 154,
+            "mean_request_token_mean_kl": 3.8273515105247498,
+            "minimum_request_mean_kl": 1.36408531665802,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 122.47524833679199
+          }
+        },
+        "TEACHER": {
+          "all": {
+            "answer_tokens": 314,
+            "mean_request_token_mean_kl": -1.1597319250766791e-09,
+            "minimum_request_mean_kl": -4.4529485876410035e-08,
+            "negative_request_values": 33,
+            "request_count": 64,
+            "sum_per_request_mean_kl": -7.422284320490746e-08
+          },
+          "current": {
+            "answer_tokens": 160,
+            "mean_request_token_mean_kl": -1.279100575457548e-09,
+            "minimum_request_mean_kl": -2.670239318547374e-08,
+            "negative_request_values": 16,
+            "request_count": 32,
+            "sum_per_request_mean_kl": -4.0931218414641535e-08
+          },
+          "old": {
+            "answer_tokens": 154,
+            "mean_request_token_mean_kl": -1.0403632746958102e-09,
+            "minimum_request_mean_kl": -4.4529485876410035e-08,
+            "negative_request_values": 17,
+            "request_count": 32,
+            "sum_per_request_mean_kl": -3.329162479026593e-08
+          }
+        },
+        "_teacher_self_kl_diagnostic": {
+          "maximum_absolute_request_mean_kl": 4.839057510253042e-08,
+          "negative_roundoff_request_count": 33,
+          "passed": true,
+          "tolerance": 1e-06
+        }
+      },
+      "rollout_manifest": {
+        "bytes": 398189,
+        "full_payload_deserialized": true,
+        "records_deserialized_from_private_payload": 3200,
+        "records_scored": 64,
+        "sha256": "d0572aa7170d61130bced52ba6fb67d84de2a8e978089d27962cbe8af34dbdd5",
+        "total_records_in_source": 3200
+      },
+      "stored_parameter_inventory": {
+        "all_context_stored_mutable_bytes": 718295040,
+        "all_context_stored_mutable_parameters": 179573760,
+        "contexts": {
+          "B1_HIGH_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_3200": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "CMS_NO_RESET": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 0,
+            "logical_receiver_parameters": 0,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "RESET_ZERO": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 0,
+            "logical_receiver_parameters": 0,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "TEACHER": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 0,
+            "logical_receiver_parameters": 0,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          }
+        },
+        "fixed_backbone": {
+          "bytes": 6425499648,
+          "parameters": 3212749824
+        },
+        "interpretation": "parameter-object numel and bytes (buffers excluded); contexts are separately materialized views, slot activation is not execution count; no FLOPs inferred",
+        "model_owned_mutable_adapter": {
+          "bytes": 71829504,
+          "parameters": 17957376
+        }
+      },
+      "work": {
+        "answer_tokens_scored": 3140,
+        "full_backbone_forwards": 64,
+        "full_backbone_input_tokens": 2249,
+        "generation_updates": 0,
+        "optimizer_updates": 0,
+        "tail_calls": 640
+      }
+    },
+    "43": {
+      "budget_delta": {
+        "full_backbone_forwards": 64,
+        "full_backbone_input_tokens": 2090,
+        "generation_updates": 0,
+        "optimizer_updates": 0,
+        "tail_backward_calls": 0,
+        "tail_calls": 640
+      },
+      "checkpoint_manifest": [
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B1_HIGH_30",
+          "requests": 30,
+          "sha256": "ac25b97aa35e50854093fe6fe0275b36bef90dd27c06c95e70ca97eababc7de9"
+        },
+        {
+          "adamw_steps": 960,
+          "bytes": 147467581,
+          "context": "B1_HIGH_960",
+          "requests": 960,
+          "sha256": "9d5bc8ec4c6f2c09c16f102858371694215a9f808cb5c7b5661727b8e71be61c"
+        },
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B1_LOW_30",
+          "requests": 30,
+          "sha256": "d5ebdef48f0caba38acff5ef6efa0e585a18b15b811805d614e2daf577ec66d7"
+        },
+        {
+          "adamw_steps": 960,
+          "bytes": 147467581,
+          "context": "B1_LOW_960",
+          "requests": 960,
+          "sha256": "1ecfe792b1de1ed24af84b5582a6773cc49b6009ff55eeea8080ca1d0beed86c"
+        },
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B32_HIGH_960",
+          "requests": 960,
+          "sha256": "fcf4b1acef610f58813243cb78ed7eb3ff254ddec158d1806e680cf6bd1561ee"
+        },
+        {
+          "adamw_steps": 30,
+          "bytes": 147467581,
+          "context": "B32_LOW_960",
+          "requests": 960,
+          "sha256": "e584a8c4de54f82e18787adbf5a747eae9dc44a2cb66f1146d78910729f14d1b"
+        },
+        {
+          "adamw_steps": 100,
+          "bytes": 147467581,
+          "context": "B32_LOW_3200",
+          "requests": 3200,
+          "sha256": "1314f9630f573d1ecf2f838d74ea211707dd0a43f064297ac95e4b923617a248"
+        }
+      ],
+      "context_hashes_before_after_identical": true,
+      "context_reconstruction": {
+        "baseline_state_sha256": {
+          "CMS_NO_RESET": "10e79e00d3e326dc03a6c05e99b42050dd214efe49ea423e23ef14457fa9b4e7",
+          "RESET_ZERO": "5fa64e9f338e48abdde3d49569d77ab5766105ced72bcd740fef907966913c83",
+          "TEACHER": "c3bf754fe816e476cb76a3e2f15c2a6835fd3447209c2e6a21d47a52ec6035e6"
+        },
+        "initial_state_hashes_verified": true,
+        "student_state_sha256": {
+          "B1_HIGH_30": "08447293b3169bc322c7bfcd64c0a97246a503291bea7631da63941c12c33f26",
+          "B1_HIGH_960": "569cfafd6c50a847b9373da4bc1d6342fd46df46d77f1a05feaaedc754fcd1f7",
+          "B1_LOW_30": "36aed6a47830df82e33a93ec665a849d30b4d1224364cab044b3daabc0629e54",
+          "B1_LOW_960": "8238aaab35c69791aab80aa1dee064ec761a0d7b57343b7e770de42bf09d580c",
+          "B32_HIGH_960": "74278bc55cd02b380caa2c122351a258b01733c54b2920d085c95b642bdaf41b",
+          "B32_LOW_3200": "cbd66f15a923967bc4ec9d63150c6d1a5733f27a91fd84c6233cd03e6f49794f",
+          "B32_LOW_960": "1a5d7113f39954a07092ca220f79c60eb908cc8e73a5d584feed45fdebb6e52b"
+        },
+        "teacher_state_sha256": "c3bf754fe816e476cb76a3e2f15c2a6835fd3447209c2e6a21d47a52ec6035e6"
+      },
+      "fixed_trajectory_fit": {
+        "B1_HIGH_30": {
+          "all": {
+            "answer_tokens": 302,
+            "mean_request_token_mean_kl": 0.5254123373888433,
+            "minimum_request_mean_kl": 0.09942003339529037,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 33.62638959288597
+          },
+          "current": {
+            "answer_tokens": 141,
+            "mean_request_token_mean_kl": 0.5232494007796049,
+            "minimum_request_mean_kl": 0.13863150775432587,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 16.743980824947357
+          },
+          "old": {
+            "answer_tokens": 161,
+            "mean_request_token_mean_kl": 0.5275752739980817,
+            "minimum_request_mean_kl": 0.09942003339529037,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 16.882408767938614
+          }
+        },
+        "B1_HIGH_960": {
+          "all": {
+            "answer_tokens": 302,
+            "mean_request_token_mean_kl": 0.10168871606583707,
+            "minimum_request_mean_kl": 0.006854584440588951,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 6.5080778282135725
+          },
+          "current": {
+            "answer_tokens": 141,
+            "mean_request_token_mean_kl": 0.11957454943330958,
+            "minimum_request_mean_kl": 0.006854584440588951,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 3.8263855818659067
+          },
+          "old": {
+            "answer_tokens": 161,
+            "mean_request_token_mean_kl": 0.08380288269836456,
+            "minimum_request_mean_kl": 0.024225767701864243,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 2.681692246347666
+          }
+        },
+        "B1_LOW_30": {
+          "all": {
+            "answer_tokens": 302,
+            "mean_request_token_mean_kl": 4.0150903556495905,
+            "minimum_request_mean_kl": 1.2914130687713623,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 256.9657827615738
+          },
+          "current": {
+            "answer_tokens": 141,
+            "mean_request_token_mean_kl": 4.0887336283922195,
+            "minimum_request_mean_kl": 1.2914130687713623,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 130.83947610855103
+          },
+          "old": {
+            "answer_tokens": 161,
+            "mean_request_token_mean_kl": 3.9414470829069614,
+            "minimum_request_mean_kl": 1.886120080947876,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 126.12630665302277
+          }
+        },
+        "B1_LOW_960": {
+          "all": {
+            "answer_tokens": 302,
+            "mean_request_token_mean_kl": 0.48544704215601087,
+            "minimum_request_mean_kl": 0.1219797432422638,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 31.068610697984695
+          },
+          "current": {
+            "answer_tokens": 141,
+            "mean_request_token_mean_kl": 0.4527257839217782,
+            "minimum_request_mean_kl": 0.1219797432422638,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 14.487225085496902
+          },
+          "old": {
+            "answer_tokens": 161,
+            "mean_request_token_mean_kl": 0.5181683003902435,
+            "minimum_request_mean_kl": 0.18294784426689148,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 16.581385612487793
+          }
+        },
+        "B32_HIGH_960": {
+          "all": {
+            "answer_tokens": 302,
+            "mean_request_token_mean_kl": 0.049080084907473065,
+            "minimum_request_mean_kl": 0.0044423658400774,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 3.141125434078276
+          },
+          "current": {
+            "answer_tokens": 141,
+            "mean_request_token_mean_kl": 0.046932788944104686,
+            "minimum_request_mean_kl": 0.0044423658400774,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 1.50184924621135
+          },
+          "old": {
+            "answer_tokens": 161,
+            "mean_request_token_mean_kl": 0.051227380870841444,
+            "minimum_request_mean_kl": 0.019431114196777344,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 1.6392761878669262
+          }
+        },
+        "B32_LOW_3200": {
+          "all": {
+            "answer_tokens": 302,
+            "mean_request_token_mean_kl": 3.6748770214617252,
+            "minimum_request_mean_kl": 1.220399260520935,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 235.19212937355042
+          },
+          "current": {
+            "answer_tokens": 141,
+            "mean_request_token_mean_kl": 3.744570005685091,
+            "minimum_request_mean_kl": 1.220399260520935,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 119.82624018192291
+          },
+          "old": {
+            "answer_tokens": 161,
+            "mean_request_token_mean_kl": 3.6051840372383595,
+            "minimum_request_mean_kl": 1.7172281742095947,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 115.3658891916275
+          }
+        },
+        "B32_LOW_960": {
+          "all": {
+            "answer_tokens": 302,
+            "mean_request_token_mean_kl": 3.9924603030085564,
+            "minimum_request_mean_kl": 1.286112904548645,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 255.5174593925476
+          },
+          "current": {
+            "answer_tokens": 141,
+            "mean_request_token_mean_kl": 4.065015334635973,
+            "minimum_request_mean_kl": 1.286112904548645,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 130.08049070835114
+          },
+          "old": {
+            "answer_tokens": 161,
+            "mean_request_token_mean_kl": 3.9199052713811398,
+            "minimum_request_mean_kl": 1.8745777606964111,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 125.43696868419647
+          }
+        },
+        "CMS_NO_RESET": {
+          "all": {
+            "answer_tokens": 302,
+            "mean_request_token_mean_kl": 1.806155135583576e-05,
+            "minimum_request_mean_kl": -1.0088244906114596e-08,
+            "negative_request_values": 1,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 0.0011559392867734886
+          },
+          "current": {
+            "answer_tokens": 141,
+            "mean_request_token_mean_kl": 9.370440174460981e-06,
+            "minimum_request_mean_kl": 3.890392008543131e-08,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 0.0002998540855827514
+          },
+          "old": {
+            "answer_tokens": 161,
+            "mean_request_token_mean_kl": 2.6752662537210536e-05,
+            "minimum_request_mean_kl": -1.0088244906114596e-08,
+            "negative_request_values": 1,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 0.0008560852011907372
+          }
+        },
+        "RESET_ZERO": {
+          "all": {
+            "answer_tokens": 302,
+            "mean_request_token_mean_kl": 4.059376897290349,
+            "minimum_request_mean_kl": 1.302398443222046,
+            "negative_request_values": 0,
+            "request_count": 64,
+            "sum_per_request_mean_kl": 259.80012142658234
+          },
+          "current": {
+            "answer_tokens": 141,
+            "mean_request_token_mean_kl": 4.133453287184238,
+            "minimum_request_mean_kl": 1.302398443222046,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 132.27050518989563
+          },
+          "old": {
+            "answer_tokens": 161,
+            "mean_request_token_mean_kl": 3.9853005073964596,
+            "minimum_request_mean_kl": 1.9096015691757202,
+            "negative_request_values": 0,
+            "request_count": 32,
+            "sum_per_request_mean_kl": 127.5296162366867
+          }
+        },
+        "TEACHER": {
+          "all": {
+            "answer_tokens": 302,
+            "mean_request_token_mean_kl": -2.4593870935011447e-09,
+            "minimum_request_mean_kl": -4.709110612566292e-08,
+            "negative_request_values": 42,
+            "request_count": 64,
+            "sum_per_request_mean_kl": -1.5740077398407326e-07
+          },
+          "current": {
+            "answer_tokens": 141,
+            "mean_request_token_mean_kl": -3.050113877179489e-09,
+            "minimum_request_mean_kl": -2.7066592522828614e-08,
+            "negative_request_values": 22,
+            "request_count": 32,
+            "sum_per_request_mean_kl": -9.760364406974364e-08
+          },
+          "old": {
+            "answer_tokens": 161,
+            "mean_request_token_mean_kl": -1.8686603098228005e-09,
+            "minimum_request_mean_kl": -4.709110612566292e-08,
+            "negative_request_values": 20,
+            "request_count": 32,
+            "sum_per_request_mean_kl": -5.979712991432962e-08
+          }
+        },
+        "_teacher_self_kl_diagnostic": {
+          "maximum_absolute_request_mean_kl": 5.623829224532528e-08,
+          "negative_roundoff_request_count": 42,
+          "passed": true,
+          "tolerance": 1e-06
+        }
+      },
+      "rollout_manifest": {
+        "bytes": 389229,
+        "full_payload_deserialized": true,
+        "records_deserialized_from_private_payload": 3200,
+        "records_scored": 64,
+        "sha256": "3dee398a78f41b0308b77152a5ac2af09eee2baf9cf324dd4976bb5ab39a2704",
+        "total_records_in_source": 3200
+      },
+      "stored_parameter_inventory": {
+        "all_context_stored_mutable_bytes": 718295040,
+        "all_context_stored_mutable_parameters": 179573760,
+        "contexts": {
+          "B1_HIGH_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_30": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B1_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_HIGH_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_3200": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "B32_LOW_960": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 1572864,
+            "logical_receiver_parameters": 393216,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.a",
+                "numel": 196608
+              },
+              {
+                "bytes": 786432,
+                "name": "memory.1.experts.slots.0.b",
+                "numel": 196608
+              }
+            ],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "CMS_NO_RESET": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 0,
+            "logical_receiver_parameters": 0,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "RESET_ZERO": {
+            "active_slots_by_level": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 0,
+            "logical_receiver_parameters": 0,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          },
+          "TEACHER": {
+            "active_slots_by_level": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "logical_receiver_bytes": 0,
+            "logical_receiver_parameters": 0,
+            "preallocated_slots_by_level": [
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "receiver_allowed_parameter_inventory": [],
+            "stored_mutable_bytes": 71829504,
+            "stored_mutable_parameters": 17957376
+          }
+        },
+        "fixed_backbone": {
+          "bytes": 6425499648,
+          "parameters": 3212749824
+        },
+        "interpretation": "parameter-object numel and bytes (buffers excluded); contexts are separately materialized views, slot activation is not execution count; no FLOPs inferred",
+        "model_owned_mutable_adapter": {
+          "bytes": 71829504,
+          "parameters": 17957376
+        }
+      },
+      "work": {
+        "answer_tokens_scored": 3020,
+        "full_backbone_forwards": 64,
+        "full_backbone_input_tokens": 2090,
+        "generation_updates": 0,
+        "optimizer_updates": 0,
+        "tail_calls": 640
+      }
+    }
+  },
+  "selection": "exact first 64 private fixed-teacher training trajectories per seed; 32 old/32 current by frozen alternating request schedule; no content/score filtering.",
+  "status": "complete",
+  "training_config_sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25",
+  "work": {
+    "P2_accessed": false,
+    "full_backbone_forwards": 192,
+    "full_backbone_input_tokens": 6664,
+    "generation_updates": 0,
+    "official_test_read": false,
+    "optimizer_updates": 0,
+    "stored_fit_wall_seconds": 31.733999999938533,
+    "tail_calls": 1920
+  }
+}

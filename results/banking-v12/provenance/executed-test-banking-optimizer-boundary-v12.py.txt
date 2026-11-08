@@ -1,0 +1,193 @@
+from __future__ import annotations
+
+import json
+import io
+from pathlib import Path
+import sys
+
+import pytest
+import numpy as np
+import torch
+from torch import nn
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
+sys.path.insert(0, str(ROOT / "tests"))
+
+import run_banking_cil_v10 as driver  # noqa: E402
+import run_banking_optimizer_boundary_v12 as v12  # noqa: E402
+from clinc_tail_runtime_v8 import MutableContext  # noqa: E402
+from test_banking_cil_v12_batching_cpu import make_closure, make_tx  # noqa: E402
+from banking_cil_v12_batching import optimize_request_batch  # noqa: E402
+
+
+def draft_config():
+    return json.loads((ROOT / "configs/banking_v12_optimizer_boundary_draft.json")
+                      .read_text(encoding="utf-8"))
+
+
+def test_fixed_arm_exposure_and_update_budget():
+    cfg = draft_config()
+    totals = v12.arm_request_update_totals(cfg)
+    assert totals == {
+        "request_exposures_per_seed": 6080,
+        "physical_adamw_steps_per_seed": 2050,
+    }
+    assert v12.validate_config(cfg, require_frozen=False) is cfg
+    assert totals["request_exposures_per_seed"] * 3 == 18240
+    assert totals["physical_adamw_steps_per_seed"] * 3 == 6150
+
+
+@pytest.mark.parametrize("mutate", [
+    lambda cfg: cfg.update(test_data_read=True),
+    lambda cfg: cfg.update(post_fit_wake_ticks=1),
+    lambda cfg: cfg.update(objective="pooled_token_kl"),
+    lambda cfg: cfg["arms"][2].update(effective_batch_size=1),
+])
+def test_config_rejects_unregistered_scientific_changes(mutate):
+    cfg = draft_config()
+    mutate(cfg)
+    with pytest.raises(ValueError):
+        v12.validate_config(cfg, require_frozen=False)
+
+
+def test_execution_rejects_unfrozen_config():
+    with pytest.raises(ValueError, match="frozen"):
+        v12.validate_config(draft_config(), require_frozen=True)
+
+
+class FakeWake:
+    def __init__(self):
+        self.ticks = 0
+
+    def proposals(self):
+        return {0: {"proposal": self.ticks}} if self.ticks == 3 else {}
+
+
+def test_boundary_selector_uses_actual_due_clock_not_fixed_tick():
+    wake = FakeWake()
+
+    def tick():
+        wake.ticks += 1
+
+    count, proposals = v12.select_first_due_level0(wake, 8, tick)
+    assert count == 3
+    assert proposals == {0: {"proposal": 3}}
+
+
+def test_boundary_selector_fails_closed_when_level_zero_never_due():
+    wake = FakeWake()
+    with pytest.raises(RuntimeError, match="did not become due"):
+        v12.select_first_due_level0(wake, 2, lambda: setattr(wake, "ticks", wake.ticks + 1))
+
+
+def test_gkd_request_stream_is_fixed_length_and_balanced_by_role():
+    rows = [{"id": f"synthetic-{i}", "intent_id": i} for i in range(77)]
+    selected = v12.fixed_teacher_request_rows(driver, rows, tuple(range(77)), 3200)
+    assert len(selected) == 3200
+    assert all(kind == "gkd" for kind, _row, _role in selected)
+    roles = {role: sum(item[2] == role for item in selected) for role in ("old", "current")}
+    assert roles == {"old": 1600, "current": 1600}
+    assert {int(row["intent_id"]) for _kind, row, role in selected if role == "old"} == set(range(11))
+    assert {int(row["intent_id"]) for _kind, row, role in selected if role == "current"} == set(range(11, 22))
+
+
+def test_development_population_is_220_and_partitioned_110_110():
+    dev = [{"id": f"d-{cid}-{n}", "intent_id": cid}
+           for cid in range(77) for n in range(10)]
+    rows, counts = v12.evaluation_rows(dev, tuple(range(77)))
+    assert len(rows) == 220
+    assert counts == {"old": 110, "current": 110}
+    assert {int(row["intent_id"]) for row in rows} == set(range(22))
+
+
+def test_development_population_rejects_wrong_per_class_denominator():
+    dev = [{"id": f"d-{cid}-{n}", "intent_id": cid}
+           for cid in range(77) for n in range(10)]
+    dev.pop(0)
+    with pytest.raises(ValueError, match="110 old"):
+        v12.evaluation_rows(dev, tuple(range(77)))
+
+
+class FakeRow:
+    def __init__(self, values):
+        self.values = values
+
+    def tolist(self):
+        return list(self.values)
+
+
+class FakeMatrix:
+    ndim = 2
+
+    def __init__(self, rows):
+        self.rows = rows
+        self.shape = (len(rows), len(rows[0]))
+
+    def __getitem__(self, key):
+        row, column = key
+        return FakeRow(self.rows[row][column])
+
+
+class FakeLength:
+    def __init__(self, value):
+        self.value = value
+
+    def item(self):
+        return self.value
+
+
+class FakeGeneration:
+    def __init__(self):
+        self.token_ids = FakeMatrix([
+            [10, 11, 12, 13, 5, 2, 2],
+            [20, 21, 22, 23, 2, 2, 2],
+        ])
+        self.valid_lengths = [FakeLength(6), FakeLength(5)]
+
+
+def test_teacher_rollout_trimming_honors_per_row_first_eos_lengths():
+    rows = v12.extract_valid_rollouts(FakeGeneration(), [4, 4], max_new_tokens=10)
+    assert rows == [
+        [10, 11, 12, 13, 5, 2],
+        [20, 21, 22, 23, 2],
+    ]
+    assert v12.count_rollout_answer_tokens(rows, [4, 4]) == 3
+
+
+def test_stable_hash_roundtrips_optimized_snapshot_scalar_adam_step_and_numpy_rng():
+    _live, tx = make_tx(seed=519)
+    x = torch.arange(24, dtype=torch.float32).reshape(4, 6) / 10
+    target = torch.full((4, 6), 0.13)
+    optimize_request_batch(tx, [make_closure(tx, x, target)])
+    payload = {"snapshot": tx.snapshot(), "numpy_rng": np.random.RandomState(73).get_state()}
+    before = v12.stable_state_sha(payload, torch)
+    stream = io.BytesIO()
+    torch.save(payload, stream)
+    stream.seek(0)
+    restored = torch.load(stream, map_location="cpu", weights_only=False)
+    after = v12.stable_state_sha(restored, torch)
+    assert before == after
+    assert v12._same_nested(payload, restored, torch)
+
+
+def test_freeze_teacher_context_uses_real_tail_mutable_context_and_children_only():
+    context = MutableContext(
+        memory=nn.ModuleList([nn.Sequential(nn.Linear(3, 3), nn.Dropout(0.5))]),
+        readout_a=nn.Parameter(torch.ones(2, 3)),
+        readout_b=nn.Parameter(torch.zeros(3, 2)),
+        readout_fp32_accumulation=True,
+    )
+    assert not hasattr(context, "eval")
+    shared_frozen_head = nn.Linear(3, 3)
+    for parameter in context.parameters():
+        parameter.grad = torch.ones_like(parameter)
+    returned = v12.freeze_teacher_context(context)
+    assert returned is context
+    assert all(not parameter.requires_grad and parameter.grad is None
+               for parameter in context.parameters())
+    assert all(not module.training for module in context.memory[0].modules())
+    assert context.readout_a.requires_grad is False
+    assert context.readout_b.requires_grad is False
+    assert shared_frozen_head.training
+    assert all(parameter.requires_grad for parameter in shared_frozen_head.parameters())

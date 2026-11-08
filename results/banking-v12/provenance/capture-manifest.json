@@ -1,0 +1,121 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1731,
+      "copy_mode": "exact_bytes",
+      "package_file": "v12-source-config-freeze-a.json",
+      "sha256": "e96a118af2d4e32c4cd06750006b8797adc5e05133862aa682bc73ffc145c5da",
+      "source_relative_path": "outputs/v12-prep/v12-source-config-freeze-a.json"
+    },
+    {
+      "bytes": 1746,
+      "copy_mode": "exact_bytes",
+      "package_file": "v12-source-config-freeze-b.json",
+      "sha256": "922fcc3ccd4011ece149d428422a421b0b2ded3d62d81d79ca745bf9ef3b283c",
+      "source_relative_path": "outputs/v12-prep/v12-source-config-freeze-b.json"
+    },
+    {
+      "bytes": 885,
+      "copy_mode": "exact_bytes",
+      "package_file": "actual-all-three-cpu-preflight-b.json",
+      "sha256": "2583f7c5e9f8a152ea4b6e889f58173855d23e3b79962467785f810fc36c18c5",
+      "source_relative_path": "outputs/v12-prep/actual-all-three-cpu-preflight-b.json"
+    },
+    {
+      "bytes": 3354,
+      "copy_mode": "exact_bytes",
+      "package_file": "actual-seed17-b-restore-qualification-independent-review.json",
+      "sha256": "ad55d3198c3a1538a872eb049bc4e86519fbb59e851656f818e732241eff9ace",
+      "source_relative_path": "outputs/v12-prep/actual-seed17-b-restore-qualification-independent-review.json"
+    },
+    {
+      "bytes": 7433,
+      "copy_mode": "exact_bytes",
+      "package_file": "actual-seed17-b-terminal-independent-review.json",
+      "sha256": "13a3e8c3a1753a8ad5165087aa718b8b255716308befd2fc04abb1901c8a507d",
+      "source_relative_path": "outputs/v12-prep/actual-seed17-b-terminal-independent-review.json"
+    },
+    {
+      "bytes": 863,
+      "copy_mode": "exact_bytes",
+      "package_file": "root-seed17-terminal-metadata-review-b.json",
+      "sha256": "95677abc39c1d921e2f532613ad77440d7862a57d2379fed122b74bc60bd5817",
+      "source_relative_path": "outputs/v12-prep/root-seed17-terminal-metadata-review-b.json"
+    },
+    {
+      "bytes": 872,
+      "copy_mode": "exact_bytes",
+      "package_file": "root-seed29-terminal-metadata-review-b.json",
+      "sha256": "5c8868078c9ecd1193ae1ed59f0bc3e50e47353e380b19b2da4adfcfdc60fcfb",
+      "source_relative_path": "outputs/v12-prep/root-seed29-terminal-metadata-review-b.json"
+    },
+    {
+      "bytes": 873,
+      "copy_mode": "exact_bytes",
+      "package_file": "root-seed43-terminal-metadata-review-b.json",
+      "sha256": "5099cd1fca5720b69bd857d053517464edb9f83cba0887bec85d846a76f09439",
+      "source_relative_path": "outputs/v12-prep/root-seed43-terminal-metadata-review-b.json"
+    },
+    {
+      "bytes": 5480,
+      "copy_mode": "exact_bytes",
+      "package_file": "engineering-history-a.json",
+      "sha256": "5ce3dd0e9f4ff68178049c74e5c2599faf09186e0727a49cabab28370c182fe8",
+      "source_relative_path": "outputs/v12-prep/engineering-history-a.json"
+    },
+    {
+      "bytes": 550,
+      "copy_mode": "exact_bytes",
+      "package_file": "public-test-portability-receipt.json",
+      "sha256": "2674a6ba339148595526316d2a71f8f7743ce2f5f21955314279090f00320488",
+      "source_relative_path": "outputs/v12-prep/public-test-portability-receipt.json"
+    },
+    {
+      "bytes": 702,
+      "copy_mode": "exact_bytes",
+      "package_file": "startup-A-failure-archive-note.json",
+      "sha256": "d0584d4fbbea29dda33aaa875cf1443e91b3a5ef54b60c362d60628cb00bf09d",
+      "source_relative_path": "outputs/v12-prep/startup-a-mutablecontext-eval-archive/archive-note.json"
+    },
+    {
+      "bytes": 49538,
+      "copy_mode": "exact_bytes",
+      "package_file": "startup-A-runner.py.txt",
+      "sha256": "c46aed9f40157cd2d26604d9bb477028c0e4ea3f19d21acc3d823cc533337609",
+      "source_relative_path": "outputs/v12-prep/startup-a-mutablecontext-eval-archive/run_banking_optimizer_boundary_v12.py"
+    },
+    {
+      "bytes": 5543,
+      "copy_mode": "exact_bytes",
+      "package_file": "startup-A-tests.py.txt",
+      "sha256": "68338c2a63870a0d0348660fee8a7cc087d892f7b3abe4d5da9df0da040a6d05",
+      "source_relative_path": "outputs/v12-prep/startup-a-mutablecontext-eval-archive/test_banking_optimizer_boundary_v12_cpu.py"
+    },
+    {
+      "bytes": 6663,
+      "copy_mode": "exact_bytes",
+      "package_file": "executed-test-banking-optimizer-boundary-v12.py.txt",
+      "sha256": "7f07e47bde64a5416f9f8bf2a87c9bf265e6c8d42d239149579d1b89b2773857",
+      "source_relative_path": "outputs/v12-prep/public-test-portability-archive/executed-test-banking-optimizer-boundary-v12.py.txt"
+    },
+    {
+      "bytes": 713,
+      "copy_mode": "authored_packaging_metadata",
+      "package_file": "packaging-correction.json",
+      "sha256": "4878e0aef77c062d16b07897d891b024bc94e4c3d8af2c76541939e3f180e292"
+    },
+    {
+      "bytes": 1263,
+      "copy_mode": "authored_packaging_metadata",
+      "package_file": "README.md",
+      "sha256": "a9b8959da921fff1b4f7e2d566e2bfb47b8ee72928673fef1558d3106f052b24"
+    }
+  ],
+  "created_utc": "2026-11-08T00:29:23.380631+00:00",
+  "main_failed_A_source_sha256": "c46aed9f40157cd2d26604d9bb477028c0e4ea3f19d21acc3d823cc533337609",
+  "main_failed_A_test_sha256": "68338c2a63870a0d0348660fee8a7cc087d892f7b3abe4d5da9df0da040a6d05",
+  "raw_data_or_weights_included": false,
+  "schema": "banking-v12-main-provenance-capture-r2-v1",
+  "source_config_freeze_a": "v12-source-config-freeze-a.json",
+  "source_config_freeze_b": "v12-source-config-freeze-b.json"
+}

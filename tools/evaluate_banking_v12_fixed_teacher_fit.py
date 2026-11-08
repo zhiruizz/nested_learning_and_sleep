@@ -1,0 +1,1187 @@
+"""Read-only fixed-trajectory teacher-fit diagnostic for Banking V12.
+
+This evaluates a predeclared prefix of private training rollouts. It is not a
+held-out or confirmatory evaluation and performs no generation or optimization.
+The script does not print or write token IDs, text, labels, predictions, or
+individual per-request losses.
+"""
+from __future__ import annotations
+
+from copy import deepcopy
+import argparse
+import datetime
+import hashlib
+import json
+import math
+import os
+from pathlib import Path
+import sys
+import time
+
+
+PLAN_SCHEMA = "banking-v12-fixed-teacher-fit-evaluation-plan-v1"
+RESULT_SCHEMA = "banking-v12-fixed-teacher-fit-result-v1"
+SEEDS = (17, 29, 43)
+CHECKPOINT_CONTEXTS = (
+    ("B1_HIGH_30", "B1_HIGH", 30, 30),
+    ("B1_HIGH_960", "B1_HIGH", 960, 960),
+    ("B1_LOW_30", "B1_LOW", 30, 30),
+    ("B1_LOW_960", "B1_LOW", 960, 960),
+    ("B32_HIGH_960", "B32_HIGH", 960, 30),
+    ("B32_LOW_960", "B32_LOW", 960, 30),
+    ("B32_LOW_3200", "B32_LOW", 3200, 100),
+)
+BASELINE_CONTEXTS = ("TEACHER", "CMS_NO_RESET", "RESET_ZERO")
+
+
+def sha256_file(path: str | Path) -> str:
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def canonical_sha(value) -> str:
+    raw = json.dumps(value, sort_keys=True, separators=(",", ":"),
+                     ensure_ascii=False, allow_nan=False).encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()
+
+
+def _utc_now():
+    return datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _safe_work_snapshot(value):
+    if callable(value):
+        value = value()
+    if not isinstance(value, dict):
+        value = {}
+    allowed = (
+        "full_backbone_forward_calls", "full_backbone_forward_tokens",
+        "executed_input_tokens_including_padding", "padded_input_tokens",
+        "tail_calls", "tail_backward_calls", "tail_backward_tokens",
+        "wake_updates", "physical_adamw_updates", "update_attempts",
+        "sampled_output_tokens", "active_wall_seconds",
+    )
+    return {key: value.get(key, 0) for key in allowed}
+
+
+def _append_progress(output_dir: Path, runtime_state: dict, event: str):
+    runtime_state["progress_sequence"] = int(runtime_state.get("progress_sequence", 0)) + 1
+    record = {
+        "schema": "banking-v12-fixed-teacher-fit-progress-v1",
+        "sequence": runtime_state["progress_sequence"], "utc": _utc_now(),
+        "event": event, "phase": runtime_state.get("phase", "unknown"),
+        "active_seed": runtime_state.get("active_seed"),
+        "active_checkpoint_context": runtime_state.get("active_checkpoint_context"),
+        "active_request_ordinal": runtime_state.get("active_request_ordinal"),
+        "completed_request_ordinal": runtime_state.get("completed_request_ordinal"),
+        "completed_seed_count": runtime_state.get("completed_seed_count", 0),
+        "work": _safe_work_snapshot(runtime_state.get("work_provider")),
+        "plan_sha256": runtime_state["plan_sha256"],
+        "training_config_sha256": runtime_state["training_config_sha256"],
+        "evaluator_sha256": runtime_state["evaluator_sha256"],
+        "input_manifest_sha256": runtime_state["input_manifest_sha256"],
+        "cpu_snapshot_reconstruction_sha256": runtime_state["cpu_snapshot_reconstruction_sha256"],
+        "raw_examples_or_request_content_written": False,
+    }
+    path = output_dir / "progress.jsonl"
+    with path.open("a", encoding="utf-8", newline="\n") as stream:
+        stream.write(json.dumps(record, sort_keys=True, ensure_ascii=False, allow_nan=False) + "\n")
+        stream.flush()
+        os.fsync(stream.fileno())
+
+
+def _write_json_once(path: Path, value):
+    temporary = path.with_name(path.name + ".tmp")
+    payload = json.dumps(value, sort_keys=True, ensure_ascii=False,
+                         indent=2, allow_nan=False).encode("utf-8") + b"\n"
+    with temporary.open("xb") as stream:
+        stream.write(payload)
+        stream.flush()
+        os.fsync(stream.fileno())
+    if path.exists():
+        temporary.unlink(missing_ok=True)
+        raise FileExistsError(f"refusing to overwrite {path.name}")
+    os.rename(temporary, path)
+
+
+def build_input_manifest_document(scientific_inputs, model_assets, evaluator_sha256):
+    if not isinstance(scientific_inputs, list) or not isinstance(model_assets, list):
+        raise TypeError("input manifest sections must be lists")
+    return {"scientific_inputs": scientific_inputs,
+            "model_assets": model_assets,
+            "v12_evaluator_sha256": evaluator_sha256}
+
+
+def _write_completed_seed_aggregate(output_dir: Path, seed: int, seed_result: dict,
+                                    input_bindings: dict):
+    record = {
+        "schema": "banking-v12-fixed-teacher-fit-seed-aggregate-v1",
+        "status": "complete", "seed": seed,
+        "input_bindings": input_bindings,
+        "aggregate": seed_result,
+        "raw_examples_or_request_content_written": False,
+    }
+    path = output_dir / f"seed-{seed}-fixed-teacher-fit-aggregate.json"
+    _write_json_once(path, record)
+    return path
+
+
+def _record_terminal_failure(output_dir: Path, runtime_state: dict, exc: BaseException):
+    failure = {
+        "schema": "banking-v12-fixed-teacher-fit-terminal-v1",
+        "status": "failed", "terminal": True, "utc": _utc_now(),
+        "phase": runtime_state.get("phase", "unknown"),
+        "error_type": type(exc).__name__,
+        "plan_sha256": runtime_state["plan_sha256"],
+        "training_config_sha256": runtime_state["training_config_sha256"],
+        "evaluator_sha256": runtime_state["evaluator_sha256"],
+        "input_manifest_sha256": runtime_state["input_manifest_sha256"],
+        "completed_seed_count": runtime_state.get("completed_seed_count", 0),
+        "active_seed": runtime_state.get("active_seed"),
+        "active_checkpoint_context": runtime_state.get("active_checkpoint_context"),
+        "active_request_ordinal": runtime_state.get("active_request_ordinal"),
+        "completed_request_ordinal": runtime_state.get("completed_request_ordinal"),
+        "best_known_spent_work": _safe_work_snapshot(runtime_state.get("work_provider")),
+        "optimizer_updates": 0, "generation_updates": 0,
+        "official_test_read": False, "P2_accessed": False,
+        "raw_examples_or_request_content_written": False,
+    }
+    _write_json_once(output_dir / "failure.json", failure)
+    _append_progress(output_dir, runtime_state, "failed")
+
+
+def tensor_mapping_sha(value) -> str:
+    """Hash a state mapping without retaining tensor values in any output."""
+    digest = hashlib.sha256()
+    for name in sorted(value):
+        tensor = value[name]
+        if not hasattr(tensor, "detach"):
+            raise TypeError("model adapter state contains a non-tensor value")
+        t = tensor.detach().cpu().contiguous()
+        digest.update(name.encode("utf-8"))
+        digest.update(str((t.dtype, tuple(t.shape))).encode("ascii"))
+        digest.update(t.reshape(-1).view(__import__("torch").uint8).numpy().tobytes())
+    return digest.hexdigest()
+
+
+def validate_plan(plan: dict, training_config_sha256: str) -> dict:
+    if not isinstance(plan, dict) or plan.get("schema") != PLAN_SCHEMA:
+        raise ValueError("fixed-fit plan schema mismatch")
+    if plan.get("status") != "fixed_input_plan_before_development_scores_are_read":
+        raise ValueError("fixed-fit plan status is not the preread frozen plan")
+    if plan.get("training_config_sha256") != training_config_sha256:
+        raise ValueError("fixed-fit plan is not bound to these training config bytes")
+    if tuple(plan.get("seeds", ())) != SEEDS:
+        raise ValueError("fixed-fit plan must cover exactly seeds 17/29/43")
+    if plan.get("trajectory_source") != "matching_seed_private_fixed_teacher_training_rollouts":
+        raise ValueError("fixed-fit trajectory source changed")
+    if plan.get("trajectory_indices") != {"start_inclusive": 0, "stop_exclusive": 64}:
+        raise ValueError("fixed-fit cohort must be exactly the first 64 requests")
+    if plan.get("selection") != "fixed_prefix_no_score_or_content_filter":
+        raise ValueError("fixed-fit cohort may not depend on scores or content")
+    if plan.get("role_counts_from_frozen_alternation") != {"old": 32, "current": 32}:
+        raise ValueError("fixed-fit expected role counts changed")
+    if plan.get("objective") != "teacher_to_student_full_vocabulary_KL_T1_answer_token_mean_per_request_then_request_mean":
+        raise ValueError("fixed-fit KL objective changed")
+    expected_contexts = [*BASELINE_CONTEXTS, *(item[0] for item in CHECKPOINT_CONTEXTS)]
+    if plan.get("contexts") != expected_contexts:
+        raise ValueError("fixed-fit context list or ordering changed")
+    if (plan.get("optimizer_updates"), plan.get("generation_updates"),
+            plan.get("new_generation"), plan.get("official_test_accessed"),
+            plan.get("heldout_or_confirmatory_claim")) != (0, 0, False, False, False):
+        raise ValueError("fixed-fit plan must remain read-only and non-confirmatory")
+    if plan.get("claim_scope") != "supplementary_training_fit_diagnostic_on_identical_teacher_trajectories_not_heldout_accuracy":
+        raise ValueError("fixed-fit claim scope changed")
+    for name, expected in (("max_full_backbone_forwards", 192),
+                           ("max_tail_calls", 2112),
+                           ("max_active_wall_seconds", 1800)):
+        value = plan.get(name)
+        if type(value) is not int or value != expected:
+            raise ValueError(f"fixed-fit budget changed: {name}")
+    return plan
+
+
+def checkpoint_specs():
+    return {name: {"arm": arm, "requests": requests, "adamw_steps": steps}
+            for name, arm, requests, steps in CHECKPOINT_CONTEXTS}
+
+
+def verify_plan_config(plan_path: Path, config_path: Path):
+    plan_bytes = sha256_file(plan_path)
+    config_sha = sha256_file(config_path)
+    plan = json.loads(plan_path.read_text(encoding="utf-8"))
+    return validate_plan(plan, config_sha), plan_bytes, config_sha
+
+
+def _verify_checkpoint_sidecars(seed_dir: Path, final_receipt: dict, seed: int):
+    specs = checkpoint_specs()
+    expected_initials = {*BASELINE_CONTEXTS, *(item[1] for item in CHECKPOINT_CONTEXTS)}
+    initial = final_receipt.get("initial_state_hashes")
+    if not isinstance(initial, dict) or not expected_initials.issubset(initial):
+        raise ValueError(f"seed {seed}: baseline/arm initial-state hashes are incomplete")
+    checkpoints = {}
+    inputs = []
+    for context_name, spec in specs.items():
+        sidecar_path = seed_dir / "receiver-checkpoints" / f"{context_name}.json"
+        cp_path = seed_dir / "receiver-checkpoints" / f"{context_name}.pt"
+        if not sidecar_path.is_file() or not cp_path.is_file():
+            raise FileNotFoundError(f"seed {seed}: missing frozen checkpoint sidecar/payload")
+        sidecar = json.loads(sidecar_path.read_text(encoding="utf-8"))
+        if (sidecar.get("path"), sidecar.get("requests"), sidecar.get("adamw_steps")) != (
+                cp_path.name, spec["requests"], spec["adamw_steps"]):
+            raise ValueError(f"seed {seed}: checkpoint sidecar fields differ from plan")
+        actual_sha = sha256_file(cp_path)
+        if sidecar.get("sha256") != actual_sha:
+            raise ValueError(f"seed {seed}: checkpoint payload hash mismatch")
+        checkpoints[context_name] = {"path": cp_path, "sha256": actual_sha,
+                                     "bytes": cp_path.stat().st_size,
+                                     "sidecar_sha256": sha256_file(sidecar_path),
+                                     **spec}
+        inputs.append({"logical_path": f"seed{seed}/receiver-checkpoints/{context_name}.pt",
+                       "sha256": actual_sha, "bytes": cp_path.stat().st_size})
+
+    rollout_path = seed_dir / "teacher-rollouts-private.pt"
+    if not rollout_path.is_file():
+        raise FileNotFoundError(f"seed {seed}: private teacher rollout payload missing")
+    rollout_sha = sha256_file(rollout_path)
+    recorded_rollouts = final_receipt.get("fixed_teacher_rollouts")
+    if not isinstance(recorded_rollouts, dict) or recorded_rollouts.get("sha256") != rollout_sha:
+        raise ValueError(f"seed {seed}: fixed rollout payload hash mismatch")
+    inputs.append({"logical_path": f"seed{seed}/teacher-rollouts-private.pt",
+                   "sha256": rollout_sha, "bytes": rollout_path.stat().st_size})
+    return checkpoints, {"path": rollout_path, "sha256": rollout_sha,
+                         "bytes": rollout_path.stat().st_size}, inputs
+
+
+def preflight(args):
+    """Metadata, protocol and payload-hash checks; no model or CUDA load."""
+    plan, plan_sha, config_sha = verify_plan_config(args.plan, args.v12_config)
+    v12_cfg = json.loads(Path(args.v12_config).read_text(encoding="utf-8"))
+    v10_cfg = json.loads(Path(args.v10_config).read_text(encoding="utf-8"))
+    if v12_cfg.get("status") != "frozen":
+        raise ValueError("fit evaluation requires the frozen V12 training config")
+    if v12_cfg.get("v10_config_file_sha256") != sha256_file(args.v10_config):
+        raise ValueError("V10 config bytes differ from the frozen V12 reference")
+    if v12_cfg.get("training_manifest_sha256") != v10_cfg.get("training_manifest_sha256"):
+        raise ValueError("V12 and V10 manifest pins differ")
+    if Path(args.seed_root).resolve().exists() is False:
+        raise FileNotFoundError("three-seed V12 root does not exist")
+    source_manifest = []
+    for root, source_map, label in (
+            (Path(args.project_root).resolve(), v10_cfg.get("source_hashes", {}), "v10-source"),
+            (Path(__file__).resolve().parents[1], v12_cfg.get("source_hashes", {}), "v12-source")):
+        if not source_map:
+            raise ValueError(f"{label} hash lock is empty")
+        for relative, expected in sorted(source_map.items()):
+            path = (root / relative).resolve()
+            if root not in path.parents or not path.is_file():
+                raise ValueError(f"{label} path is missing or escapes its source root")
+            actual = sha256_file(path)
+            if actual != expected:
+                raise ValueError(f"{label} hash mismatch: {relative}")
+            source_manifest.append({"logical_path": f"{label}/{relative}",
+                                    "sha256": actual, "bytes": path.stat().st_size})
+    seed_metadata = {}
+    all_inputs = [
+        {"logical_path": "plan", "sha256": plan_sha, "bytes": Path(args.plan).stat().st_size},
+        {"logical_path": "v12-training-config", "sha256": config_sha,
+         "bytes": Path(args.v12_config).stat().st_size},
+        {"logical_path": "v10-training-config", "sha256": sha256_file(args.v10_config),
+         "bytes": Path(args.v10_config).stat().st_size},
+        {"logical_path": "aux-fixed-fit-evaluator", "sha256": sha256_file(__file__),
+         "bytes": Path(__file__).stat().st_size},
+    ] + source_manifest
+    for seed in SEEDS:
+        seed_dir = Path(args.seed_root).resolve() / f"seed{seed}"
+        protocol_path = seed_dir / "protocol.json"
+        final_path = seed_dir / "final-receipt.json"
+        if not protocol_path.is_file() or not final_path.is_file():
+            raise FileNotFoundError(f"seed {seed}: all three completed runs are required")
+        protocol = json.loads(protocol_path.read_text(encoding="utf-8"))
+        final_sha = sha256_file(final_path)
+        if (protocol.get("schema"), protocol.get("status"), protocol.get("seed"),
+                protocol.get("config_sha256"), protocol.get("final_receipt_sha256"),
+                protocol.get("training_manifest_sha256"), protocol.get("claim_scope"),
+                protocol.get("test_data_read"), protocol.get("v12_source_hashes")) != (
+                "banking-v12-boundary-protocol-v1", "complete", seed, config_sha,
+                final_sha, v12_cfg["training_manifest_sha256"], v12_cfg["claim_scope"],
+                False, v12_cfg["source_hashes"]):
+            raise ValueError(f"seed {seed}: final run protocol/status/config binding mismatch")
+        final = json.loads(final_path.read_text(encoding="utf-8"))
+        if (final.get("schema"), final.get("status"), final.get("seed"),
+                final.get("test_data_read"), final.get("official_test_read"),
+                final.get("claim_scope")) != (
+                "banking-v12-boundary-result-v1", "complete", seed, False, False,
+                v12_cfg.get("claim_scope")):
+            raise ValueError(f"seed {seed}: training final receipt scope/status mismatch")
+        if final.get("fixed_teacher_rollouts", {}).get("requests") != 3200:
+            raise ValueError(f"seed {seed}: fixed teacher rollout source is incomplete")
+        required_initials = {"TEACHER", "CMS_NO_RESET", "RESET_ZERO", "B1_HIGH", "B1_LOW",
+                             "B32_HIGH", "B32_LOW"}
+        if not required_initials.issubset(final.get("initial_state_hashes", {})):
+            raise ValueError(f"seed {seed}: initial context-state hash receipt is incomplete")
+        initial_hashes = final["initial_state_hashes"]
+        if len({initial_hashes[name] for name in ("RESET_ZERO", "B1_HIGH", "B1_LOW",
+                                                   "B32_HIGH", "B32_LOW")}) != 1:
+            raise ValueError(f"seed {seed}: arm initial receiver states are not shared")
+        checkpoints, rollouts, inputs = _verify_checkpoint_sidecars(seed_dir, final, seed)
+        inputs.extend([
+            {"logical_path": f"seed{seed}/protocol.json",
+             "sha256": sha256_file(protocol_path), "bytes": protocol_path.stat().st_size},
+            {"logical_path": f"seed{seed}/final-receipt.json",
+             "sha256": final_sha, "bytes": final_path.stat().st_size},
+        ])
+        all_inputs.extend(inputs)
+        seed_metadata[seed] = {
+            "seed_dir": seed_dir, "final_receipt": final, "final_receipt_sha256": final_sha,
+            "protocol_sha256": sha256_file(protocol_path), "checkpoints": checkpoints,
+            "rollouts": rollouts, "initial_state_hashes": final["initial_state_hashes"],
+        }
+    output_dir = Path(args.output_dir).resolve()
+    if output_dir.exists():
+        raise FileExistsError("fixed-fit output directory must be fresh")
+    project_root = Path(args.project_root).resolve()
+    protected_roots = (Path(args.seed_root).resolve(), Path(args.model_path).resolve(),
+                       project_root / "src", project_root / "tools",
+                       Path(__file__).resolve().parents[1] / "tools")
+    for protected in protected_roots:
+        if output_dir == protected or protected in output_dir.parents or output_dir in protected.parents:
+            raise ValueError("fixed-fit output overlaps protected source/model/run trees")
+    return {"status": "preflight_pass", "plan_sha256": plan_sha,
+            "training_config_sha256": config_sha, "seed_metadata": seed_metadata,
+            "input_manifest": all_inputs, "test_data_read": False,
+            "model_loaded": False, "cuda_initialized": False,
+            "project_root": Path(args.project_root).resolve(),
+            "input_manifest_v10_config_sha256": sha256_file(args.v10_config),
+            "evaluator_sha256": sha256_file(__file__),
+            "optimizer_updates": 0, "generation_updates": 0}
+
+
+def restore_mutable_context(prototype, state, bank_states, route_policy,
+                            lifecycle, routes):
+    """Reconstruct one context with v8 bank/runtime state and v10 route policy."""
+    context = deepcopy(prototype)
+    context.load_state_dict(state)
+    lifecycle._v8._restore_banks(context, bank_states)
+    routes.restore_route_policy(context, route_policy)
+    routes.validate_additive_routes(context)
+    return context
+
+
+def cpu_prototype_from_snapshot(snapshot, v10_config, project_root=None):
+    """Build a CPU-only exact-dtype context skeleton from saved state shapes."""
+    import re
+    import torch
+    from torch import nn
+    tools_root = Path(__file__).resolve().parent
+    source_root = (Path(project_root).resolve() if project_root is not None
+                   else Path(__file__).resolve().parents[1]) / "src"
+    for path in (tools_root, source_root):
+        if str(path) not in sys.path:
+            sys.path.insert(0, str(path))
+    from clinc_tail_runtime_v8 import MutableContext
+    from nested_sleep.experts import LowRankMemoryLevel
+
+    state = snapshot.payload.teacher_state
+    memory_state = state["memory"]
+    modules = []
+    for level in range(len(v10_config["periods"])):
+        prefix = f"{level}."
+        local_state = {key[len(prefix):]: value for key, value in memory_state.items()
+                       if key.startswith(prefix)}
+        a = local_state.get("a")
+        if not isinstance(a, torch.Tensor) or a.ndim != 2:
+            raise ValueError("snapshot has no valid level A matrix")
+        slots = [int(match.group(1)) for key in local_state
+                 if (match := re.fullmatch(r"experts\.slots\.(\d+)\.a", key))]
+        if not slots or slots != list(range(max(slots) + 1)):
+            raise ValueError("snapshot bank slot topology is malformed")
+        module = LowRankMemoryLevel(dim=int(a.shape[1]), rank=int(a.shape[0]),
+                                    capacity=max(slots) + 1)
+        module.to(dtype=a.dtype)
+        parameters = dict(module.named_parameters())
+        buffers = dict(module.named_buffers())
+        module_state = module.state_dict()
+        if set(module_state) != set(local_state):
+            raise ValueError("snapshot memory layer schema differs from the installed module")
+        for name in parameters:
+            target = parameters[name]
+            source = local_state[name]
+            if target.shape != source.shape:
+                raise ValueError("snapshot parameter shape differs from installed module")
+            if target.dtype != source.dtype:
+                parent_path, _, leaf = name.rpartition(".")
+                parent = module.get_submodule(parent_path) if parent_path else module
+                setattr(parent, leaf, nn.Parameter(torch.empty_like(source),
+                                                    requires_grad=target.requires_grad))
+        for name in buffers:
+            target = buffers[name]
+            source = local_state[name]
+            if target.shape != source.shape:
+                raise ValueError("snapshot buffer shape differs from installed module")
+            if target.dtype != source.dtype:
+                parent_path, _, leaf = name.rpartition(".")
+                parent = module.get_submodule(parent_path) if parent_path else module
+                parent._buffers[leaf] = torch.empty_like(source)
+        modules.append(module)
+    if len(modules) != len(v10_config["periods"]):
+        raise ValueError("snapshot level count differs from frozen V10 periods")
+    readout_a, readout_b = state["readout_a"], state["readout_b"]
+    prototype = MutableContext(nn.ModuleList(modules), nn.Parameter(torch.zeros_like(readout_a)),
+                               nn.Parameter(torch.zeros_like(readout_b)),
+                               bool(state["readout_fp32_accumulation"]))
+    prototype.load_state_dict(state)
+    return prototype
+
+
+def cpu_snapshot_reconstruction_preflight(prepared, v10_config, v12_config):
+    """Load saved CPs on CPU and verify all ten contexts before CUDA setup."""
+    import torch
+    tools_root = Path(__file__).resolve().parent
+    source_root = Path(prepared["project_root"]).resolve() / "src"
+    for path in (tools_root, source_root):
+        if str(path) not in sys.path:
+            sys.path.insert(0, str(path))
+    import clinc_lifecycle_v8 as v8_lifecycle
+    import banking_cil_v10_lifecycle as lifecycle
+    import banking_cil_v10_routing as routing
+    import banking_cil_v12_batching as batching
+
+    if torch.cuda.is_initialized():
+        raise RuntimeError("CUDA was initialized before the CPU snapshot gate")
+    config = {**v10_config, **v12_config}
+    seed_reports = {}
+    for seed in SEEDS:
+        metadata = prepared["seed_metadata"][seed]
+        if sha256_file(metadata["seed_dir"] / "final-receipt.json") != metadata["final_receipt_sha256"]:
+            raise RuntimeError(f"seed {seed}: final receipt changed after metadata preflight")
+        snapshots = {}
+        for name, spec in checkpoint_specs().items():
+            record = metadata["checkpoints"][name]
+            if sha256_file(record["path"]) != record["sha256"]:
+                raise RuntimeError(f"seed {seed}/{name}: checkpoint changed before CPU reconstruction")
+            blob = torch.load(record["path"], map_location="cpu", weights_only=False)
+            if (not isinstance(blob, dict) or
+                    blob.get("schema") != "banking-v12-receiver-snapshot-v1" or
+                    blob.get("seed") != seed or blob.get("arm") != spec["arm"] or
+                    blob.get("requests") != spec["requests"] or
+                    blob.get("adamw_steps") != spec["adamw_steps"]):
+                raise ValueError(f"seed {seed}/{name}: checkpoint envelope differs from plan")
+            snapshots[name] = blob.get("snapshot")
+            if snapshots[name] is None:
+                raise ValueError(f"seed {seed}/{name}: snapshot payload missing")
+        prototype = cpu_prototype_from_snapshot(next(iter(snapshots.values())), v10_config,
+                                                prepared["project_root"])
+        contexts, receipt = reconstruct_context_set(
+            prototype, snapshots, config, metadata["final_receipt"], lifecycle, routing, batching)
+        hashes = {name: v8_lifecycle._state_hash(ctx) for name, ctx in contexts.items()}
+        if hashes != {**receipt["baseline_state_sha256"], **receipt["student_state_sha256"]}:
+            raise RuntimeError(f"seed {seed}: context state changed during CPU reconstruction gate")
+        parameter_inventory = {}
+        for name, context in contexts.items():
+            params = dict(context.named_parameters())
+            allowed = snapshots[name].payload.metadata["allowed_names"] if name in snapshots else []
+            parameter_inventory[name] = {
+                "stored_mutable_parameters": sum(p.numel() for p in context.parameters()),
+                "stored_mutable_bytes": sum(p.numel() * p.element_size() for p in context.parameters()),
+                "active_slots_by_level": [sum(bool(slot.active) for slot in bank.slots)
+                                          for bank in context.banks()],
+                "preallocated_slots_by_level": [len(bank.slots) for bank in context.banks()],
+                "receiver_allowed_parameters": [
+                    {"name": n, "numel": params[n].numel(),
+                     "bytes": params[n].numel() * params[n].element_size()}
+                    for n in sorted(allowed)],
+            }
+        seed_reports[str(seed)] = {
+            "checkpoint_manifest": [
+                {"context": n, "sha256": metadata["checkpoints"][n]["sha256"],
+                 "bytes": metadata["checkpoints"][n]["bytes"]}
+                for n in checkpoint_specs()],
+            "initial_state_hashes_verified": receipt["initial_state_hashes_verified"],
+            "context_state_hashes": hashes,
+            "mutable_parameter_inventory": parameter_inventory,
+        }
+        del contexts, snapshots, prototype
+    if torch.cuda.is_initialized():
+        raise RuntimeError("CUDA initialized during CPU snapshot reconstruction")
+    return {"status": "cpu_snapshot_reconstruction_pass", "seeds": seed_reports,
+            "cuda_initialized_before_after": False, "optimizer_updates": 0,
+            "generation_updates": 0, "rollout_rows_loaded": 0,
+            "official_test_read": False, "development_scores_read": False}
+
+
+def _configure_aux_cuda(v12_config):
+    """Apply the frozen local GPU policy only after the CPU-only gates pass."""
+    allocator = v12_config["cuda_allocator_conf"]
+    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = allocator
+    import torch
+    if torch.cuda.is_initialized():
+        raise RuntimeError("CUDA was initialized before the auxiliary GPU policy")
+    if not torch.__version__.startswith("2.8.0") or torch.version.cuda != "12.8":
+        raise RuntimeError("auxiliary fit evaluation requires the frozen Torch 2.8.0+cu128 build")
+    if allocator != "garbage_collection_threshold:0.7" or float(v12_config["cuda_memory_fraction"]) != 0.8:
+        raise ValueError("auxiliary GPU policy differs from the frozen V12 run policy")
+    if not torch.cuda.is_available():
+        raise RuntimeError("CUDA device 0 is unavailable")
+    torch.cuda.set_per_process_memory_fraction(0.8, 0)
+    return {"torch_version": torch.__version__, "cuda_version": torch.version.cuda,
+            "allocator_conf": allocator, "memory_fraction": 0.8,
+            "device_index": 0, "cuda_initialized_after_policy": torch.cuda.is_initialized()}
+
+
+def reconstruct_context_set(prototype, snapshots: dict, config: dict,
+                            final_receipt: dict, lifecycle, routing,
+                            batch_transaction):
+    """Rebuild all ten contexts and fail if the three receipt baselines do not match."""
+    if set(snapshots) != set(checkpoint_specs()):
+        raise ValueError("the seven declared receiver snapshots are required")
+    initial_hashes = final_receipt["initial_state_hashes"]
+    teacher_states = []
+    student_states = []
+    teacher_contexts = {}
+    students = {}
+    for context_name in (item[0] for item in CHECKPOINT_CONTEXTS):
+        wrapper = snapshots[context_name]
+        if not isinstance(wrapper, lifecycle.AdditiveSleepSnapshot):
+            raise TypeError(f"{context_name}: expected AdditiveSleepSnapshot")
+        payload = wrapper.payload
+        metadata = payload.metadata
+        spec = checkpoint_specs()[context_name]
+        if (wrapper.schema != lifecycle.AdditiveSleepTransaction.SNAPSHOT_SCHEMA
+                or wrapper.sender != 0 or wrapper.receiver != 1
+                or metadata.get("sender") != 0 or metadata.get("receiver") != 1
+                or metadata.get("slot") != wrapper.receiver_slot
+                or set(metadata.get("allowed_names", [])) != {
+                    f"memory.1.experts.slots.{wrapper.receiver_slot}.a",
+                    f"memory.1.experts.slots.{wrapper.receiver_slot}.b"}):
+            raise ValueError(f"{context_name}: snapshot transaction identity mismatch")
+        if (wrapper.reset_slots != payload.metadata.get("v10_reset_slots")
+                or set(lifecycle._slot_names(prototype, 1, wrapper.receiver_slot)) !=
+                set(metadata.get("allowed_names", []))):
+            raise ValueError(f"{context_name}: reset or receiver A/B scope differs from snapshot")
+        if payload.counters.get("adamw_steps") != spec["adamw_steps"]:
+            raise ValueError(f"{context_name}: optimizer step count differs from the sidecar plan")
+        if (final_receipt["optimizer_arms"].get(spec["arm"], {}).get("effective_batch_size")
+                != (1 if spec["arm"].startswith("B1_") else 32)):
+            raise ValueError(f"{context_name}: optimizer arm metadata differs from training receipt")
+        teacher = restore_mutable_context(
+            prototype, payload.teacher_state, payload.bank_states["teacher"],
+            wrapper.teacher_routes, lifecycle, routing)
+        student = restore_mutable_context(
+            prototype, payload.student_state, payload.bank_states["student"],
+            wrapper.student_routes, lifecycle, routing)
+        if lifecycle._state_hash(teacher) != metadata.get("teacher_hash"):
+            raise ValueError(f"{context_name}: teacher state hash mismatch")
+        if lifecycle._state_hash(student, exclude=metadata["allowed_names"]) != metadata.get("student_frozen_hash"):
+            raise ValueError(f"{context_name}: frozen student state hash mismatch")
+        if metadata.get("sender_reset_policy") != "redraw_A_normal_0_0.02_zero_B":
+            raise ValueError(f"{context_name}: sender reset policy mismatch")
+        if wrapper.teacher_routes != snapshots[next(iter(snapshots))].teacher_routes:
+            raise ValueError("teacher route policy differs across endpoint checkpoints")
+        teacher_states.append(lifecycle._state_hash(teacher))
+        student_states.append(lifecycle._state_hash(student))
+        teacher_contexts[context_name] = teacher
+        students[context_name] = student
+    if len(set(teacher_states)) != 1:
+        raise ValueError("teacher state differs across the seven saved endpoints")
+    if teacher_states[0] != initial_hashes.get("TEACHER"):
+        raise ValueError("reconstructed teacher does not match the initial baseline receipt")
+
+    base_context = teacher_contexts[next(iter(teacher_contexts))]
+    for name, context in teacher_contexts.items():
+        if lifecycle._state_hash(context) != teacher_states[0]:
+            raise ValueError(f"{name}: endpoint teacher differs from the frozen shared teacher")
+    chosen_student = students["B32_LOW_960"]
+    cms = deepcopy(base_context)
+    params_cms = dict(cms.named_parameters())
+    params_student = dict(chosen_student.named_parameters())
+    prospective_names = lifecycle._base_names(0)
+    for name in prospective_names:
+        params_cms[name].data.copy_(params_student[name].detach().to(params_cms[name]))
+    active_level0 = [i for i, slot in enumerate(cms.banks()[0].slots) if bool(slot.active)]
+    if len(active_level0) != 1:
+        raise ValueError("CMS baseline reconstruction requires one active level-0 fast slot")
+    wake = lifecycle.AdditiveWakeController(
+        cms, periods=config["periods"], base_lr=config["base_lr"], fast_lr=config["fast_lr"])
+    wake.prepare_wake()
+    cms = wake.context
+    if lifecycle._state_hash(cms) != initial_hashes.get("CMS_NO_RESET"):
+        raise ValueError("reconstructed CMS no-reset context does not match receipt state hash")
+
+    # Recover the zero-update receiver from the saved fitted student without
+    # redrawing the CUDA-generator sender reset on CPU. The transaction retains
+    # the receiver's stored teacher A basis and zeroes only receiver B.
+    reset_endpoint = snapshots["B32_LOW_960"]
+    reset_student = deepcopy(students["B32_LOW_960"])
+    receiver_slot = reset_endpoint.receiver_slot
+    receiver_names = lifecycle._slot_names(reset_student, 1, receiver_slot)
+    params_reset = dict(reset_student.named_parameters())
+    params_teacher = dict(base_context.named_parameters())
+    if bool(base_context.banks()[1].slots[receiver_slot].active):
+        raise ValueError("RESET_ZERO receiver slot was already active in its teacher")
+    if receiver_names != set(reset_endpoint.payload.metadata["allowed_names"]):
+        raise ValueError("RESET_ZERO receiver scope differs from the endpoint receipt")
+    a_names = [name for name in receiver_names if name.endswith(".a")]
+    b_names = [name for name in receiver_names if name.endswith(".b")]
+    if len(a_names) != 1 or len(b_names) != 1:
+        raise ValueError("RESET_ZERO must contain exactly one receiver A/B pair")
+    with __import__("torch").no_grad():
+        params_reset[a_names[0]].copy_(params_teacher[a_names[0]])
+        params_reset[b_names[0]].zero_()
+    reset_zero = reset_student
+    fitted_student_hashes_after_reset = {
+        name: lifecycle._state_hash(context) for name, context in students.items()
+    }
+    if fitted_student_hashes_after_reset != {
+            name: state_hash for name, state_hash in zip(
+                (item[0] for item in CHECKPOINT_CONTEXTS), student_states)}:
+        raise RuntimeError("RESET_ZERO reconstruction mutated a fitted endpoint context")
+    if lifecycle._state_hash(reset_zero) != initial_hashes.get("RESET_ZERO"):
+        raise ValueError("reconstructed reset-zero receiver does not match receipt state hash")
+    contexts = {
+        "TEACHER": base_context,
+        "CMS_NO_RESET": cms,
+        "RESET_ZERO": reset_zero,
+        **students,
+    }
+    if list(contexts) != [*BASELINE_CONTEXTS, *checkpoint_specs()]:
+        raise RuntimeError("reconstructed context ordering differs from the preregistered plan")
+    return contexts, {
+        "teacher_state_sha256": teacher_states[0],
+        "student_state_sha256": fitted_student_hashes_after_reset,
+        "baseline_state_sha256": {name: lifecycle._state_hash(context)
+                                  for name, context in contexts.items()
+                                  if name in BASELINE_CONTEXTS},
+        "initial_state_hashes_verified": True,
+    }
+
+
+def _parameter_inventory(model, contexts, snapshots):
+    """Counts storage and activation; deliberately does not estimate FLOPs."""
+    adapter = model.adapter_state_dict()
+    adapter_names = set(adapter)
+    named = dict(model.named_parameters())
+    model_state_names = set(model.state_dict())
+    if not adapter_names or not adapter_names.issubset(model_state_names):
+        raise ValueError("adapter state keys do not map to the loaded model state")
+    adapter_parameter_names = adapter_names & set(named)
+    if not adapter_parameter_names:
+        raise ValueError("adapter state contains no named model parameters")
+    expected_adapter_parameters = {
+        name for name in named
+        if name.startswith(model.memory_prefix) or name in set(model.policy_names())
+    }
+    if adapter_parameter_names != expected_adapter_parameters:
+        raise ValueError("adapter state parameter keys do not exactly cover mutable model parameters")
+    fixed_params = [parameter for name, parameter in named.items()
+                    if name not in adapter_parameter_names]
+    adapter_params = [named[name] for name in sorted(adapter_parameter_names)]
+    fixed = {"parameters": sum(p.numel() for p in fixed_params),
+             "bytes": sum(p.numel() * p.element_size() for p in fixed_params)}
+    model_mutable = {"parameters": sum(p.numel() for p in adapter_params),
+                     "bytes": sum(p.numel() * p.element_size() for p in adapter_params)}
+    per_context = {}
+    for name, context in contexts.items():
+        total = sum(p.numel() for p in context.parameters())
+        byte_total = sum(p.numel() * p.element_size() for p in context.parameters())
+        active = [sum(bool(slot.active) for slot in bank.slots) for bank in context.banks()]
+        allocated = [len(bank.slots) for bank in context.banks()]
+        receiver_numel = 0
+        receiver_bytes = 0
+        receiver_parameters = []
+        if name in snapshots:
+            snap = snapshots[name]
+            params = dict(context.named_parameters())
+            allowed = snap.payload.metadata["allowed_names"]
+            receiver_numel = sum(params[n].numel() for n in allowed)
+            receiver_bytes = sum(params[n].numel() * params[n].element_size() for n in allowed)
+            receiver_parameters = [
+                {"name": n, "numel": params[n].numel(),
+                 "bytes": params[n].numel() * params[n].element_size()}
+                for n in sorted(allowed)
+            ]
+        per_context[name] = {
+            "stored_mutable_parameters": total, "stored_mutable_bytes": byte_total,
+            "active_slots_by_level": active, "preallocated_slots_by_level": allocated,
+            "logical_receiver_parameters": receiver_numel,
+            "logical_receiver_bytes": receiver_bytes,
+            "receiver_allowed_parameter_inventory": receiver_parameters,
+        }
+    return {"fixed_backbone": fixed, "model_owned_mutable_adapter": model_mutable,
+            "contexts": per_context,
+            "all_context_stored_mutable_parameters": sum(x["stored_mutable_parameters"] for x in per_context.values()),
+            "all_context_stored_mutable_bytes": sum(x["stored_mutable_bytes"] for x in per_context.values()),
+            "interpretation": ("parameter-object numel and bytes (buffers excluded); contexts are separately "
+                               "materialized views, slot activation is not execution count; no FLOPs inferred")}
+
+
+def _load_rollout_prefix(path, torch, expected_seed, count=64):
+    payload = torch.load(path, map_location="cpu", weights_only=False)
+    if (not isinstance(payload, dict) or
+            payload.get("schema") != "banking-v12-fixed-teacher-rollouts-private-v1" or
+            payload.get("seed") != expected_seed or
+            not isinstance(payload.get("rollouts"), list) or len(payload["rollouts"]) != 3200):
+        raise ValueError("private rollout payload schema/seed/count mismatch")
+    prefix = payload["rollouts"][:count]
+    if len(prefix) != 64:
+        raise ValueError("fixed-fit cohort did not contain exactly 64 rows")
+    for row in prefix:
+        if (not isinstance(row, dict) or set(row) != {"input_ids", "prompt_length", "answer_tokens"}
+                or not isinstance(row["input_ids"], list)
+                or type(row["prompt_length"]) is not int or type(row["answer_tokens"]) is not int
+                or row["prompt_length"] < 1 or row["answer_tokens"] < 1
+                or len(row["input_ids"]) != row["prompt_length"] + row["answer_tokens"]
+                or any(type(token) is not int or token < 0 for token in row["input_ids"])):
+            raise ValueError("private fixed trajectory row schema/length mismatch")
+    return prefix
+
+
+def validate_prefix_roles(rollouts):
+    """Check the frozen alternating old/current identity pattern without disclosure."""
+    if len(rollouts) != 64:
+        raise ValueError("fixed-fit prefix must contain exactly 64 trajectories")
+    counts = {"old": 0, "current": 0}
+    for index, row in enumerate(rollouts):
+        role = "current" if index % 2 == 0 else "old"
+        counts[role] += 1
+        if row["answer_tokens"] < 1 or row["prompt_length"] < 1:
+            raise ValueError("fixed-fit prefix contains an empty prompt/answer")
+    if counts != {"old": 32, "current": 32}:
+        raise ValueError("fixed-fit prefix old/current role balance mismatch")
+    return counts
+
+
+def _new_fit_counters():
+    return {"full_backbone_forwards": 0, "full_backbone_input_tokens": 0,
+            "tail_calls": 0, "answer_tokens_scored": 0,
+            "optimizer_updates": 0, "generation_updates": 0}
+
+
+def _score_seed(model, contexts, trajectories, torch, device,
+                tail_runtime, budget, counters, request_progress=None):
+    if len(trajectories) != 64 or len(contexts) != 10:
+        raise ValueError("fixed-fit scoring requires 64 requests and ten declared contexts")
+    accumulator = {
+        name: {group: {"sum_per_request_mean_kl": 0.0, "request_count": 0,
+                       "answer_tokens": 0, "negative_request_values": 0,
+                       "minimum_request_mean_kl": None}
+               for group in ("all", "old", "current")}
+        for name in contexts
+    }
+    self_abs_max = 0.0
+    negative_self = 0
+    for index, row in enumerate(trajectories):
+        if request_progress is not None:
+            request_progress("started", index + 1)
+        ids = torch.tensor([row["input_ids"]], dtype=torch.long, device=device)
+        mask = torch.ones_like(ids)
+        cache = tail_runtime.capture(model, ids, mask, device=device)
+        counters["full_backbone_forwards"] += 1
+        counters["full_backbone_input_tokens"] += len(row["input_ids"])
+        with torch.no_grad():
+            teacher_logits = tail_runtime.tail_logits(model, contexts["TEACHER"], cache)
+        counters["tail_calls"] += 1
+        answer_mask = torch.zeros_like(ids, dtype=torch.bool)
+        answer_mask[:, row["prompt_length"]:] = True
+        with torch.no_grad():
+            teacher_self, teacher_tokens = tail_runtime.causal_token_kl(
+                teacher_logits, teacher_logits, answer_mask, temperature=1.0)
+        self_value = float(teacher_self.detach().float().cpu())
+        self_abs_max = max(self_abs_max, abs(self_value))
+        negative_self += int(self_value < 0)
+        if int(teacher_tokens) != int(row["answer_tokens"]):
+            raise ValueError("teacher self-KL answer token denominator mismatch")
+        role = "current" if index % 2 == 0 else "old"
+        for context_name, context in contexts.items():
+            if context_name == "TEACHER":
+                value, token_count = teacher_self, int(teacher_tokens)
+            else:
+                with torch.no_grad():
+                    student_logits = tail_runtime.tail_logits(model, context, cache)
+                    value, token_count = tail_runtime.causal_token_kl(
+                        student_logits, teacher_logits, answer_mask, temperature=1.0)
+                counters["tail_calls"] += 1
+            mean_kl = float(value.detach().float().cpu())
+            if not math.isfinite(mean_kl) or token_count != row["answer_tokens"]:
+                raise ValueError("fixed-fit KL or answer-token count is invalid")
+            counters["answer_tokens_scored"] += int(token_count)
+            for group in ("all", role):
+                item = accumulator[context_name][group]
+                item["sum_per_request_mean_kl"] += mean_kl
+                item["request_count"] += 1
+                item["answer_tokens"] += int(token_count)
+                item["negative_request_values"] += int(mean_kl < 0)
+                item["minimum_request_mean_kl"] = (
+                    mean_kl if item["minimum_request_mean_kl"] is None
+                    else min(item["minimum_request_mean_kl"], mean_kl))
+        if request_progress is not None:
+            request_progress("completed", index + 1)
+    result = {}
+    for context_name, groups in accumulator.items():
+        result[context_name] = {}
+        for group_name, values in groups.items():
+            count = int(values["request_count"])
+            expected = 64 if group_name == "all" else 32
+            if count != expected:
+                raise RuntimeError(f"{context_name}/{group_name}: denominator mismatch")
+            result[context_name][group_name] = {
+                **values, "mean_request_token_mean_kl": values["sum_per_request_mean_kl"] / count,
+            }
+    result["_teacher_self_kl_diagnostic"] = {
+        "maximum_absolute_request_mean_kl": self_abs_max,
+        "negative_roundoff_request_count": negative_self,
+        "tolerance": 1e-6,
+        "passed": self_abs_max <= 1e-6,
+    }
+    return result
+
+
+def _run_fit_evaluation_body(args, prepared, output_dir, runtime_state):
+    """Run the aggregate-only scoring pass inside a durable output envelope."""
+    if (prepared.get("status") != "preflight_pass" or
+            prepared.get("snapshot_reconstruction", {}).get("status") != "cpu_snapshot_reconstruction_pass"):
+        raise ValueError("matching metadata and CPU snapshot-reconstruction gates are required")
+    if sha256_file(__file__) != prepared["evaluator_sha256"]:
+        raise RuntimeError("fixed-fit evaluator source changed after preflight")
+    plan = json.loads(Path(args.plan).read_text(encoding="utf-8"))
+    v10_cfg = json.loads(Path(args.v10_config).read_text(encoding="utf-8"))
+    v12_cfg = json.loads(Path(args.v12_config).read_text(encoding="utf-8"))
+    if (sha256_file(args.plan) != prepared["plan_sha256"] or
+            sha256_file(args.v12_config) != prepared["training_config_sha256"] or
+            sha256_file(args.v10_config) != prepared["input_manifest_v10_config_sha256"]):
+        raise RuntimeError("fixed plan or V10/V12 training config changed after preflight")
+    runtime_state["phase"] = "cuda_policy"
+    cuda_policy = _configure_aux_cuda(v12_cfg)
+    task_tools = Path(__file__).resolve().parent
+    if str(task_tools) not in sys.path:
+        sys.path.insert(0, str(task_tools))
+    from run_banking_cil_v10 import _load_model, _verify_loaded_project_modules, _verify_model_assets
+    import run_banking_cil_v10 as driver
+    import banking_cil_v10_lifecycle as lifecycle
+    import banking_cil_v10_routing as routing
+    import banking_cil_v12_batching as batch_transaction
+    import clinc_lifecycle_v8 as v8_lifecycle
+    import clinc_tail_runtime_v8 as tail_runtime
+    import torch
+
+    runtime_state["phase"] = "verify_model_assets"
+    _verify_model_assets(Path(args.model_path).resolve(), v10_cfg["model_assets_sha256"])
+    model_asset_manifest = []
+    model_asset_stat_before = {}
+    model_root = Path(args.model_path).resolve()
+    for relative, expected in sorted(v10_cfg["model_assets_sha256"].items()):
+        path = (model_root / relative).resolve()
+        if model_root not in path.parents or not path.is_file():
+            raise RuntimeError(f"verified model asset disappeared: {relative}")
+        model_asset_manifest.append({"logical_path": f"model-assets/{relative}",
+                                     "sha256": expected, "bytes": path.stat().st_size})
+        model_asset_stat_before[relative] = (path.stat().st_size, path.stat().st_mtime_ns)
+    runtime_state["phase"] = "load_model"
+    model, tokenizer = None, None
+    torch, tokenizer, model, immutable_versions = _load_model(
+        Path(args.project_root).resolve(), Path(args.model_path).resolve(), v10_cfg)
+    _verify_loaded_project_modules(Path(args.project_root).resolve())
+    model_before = immutable_versions(model)
+    model_adapter_sha_before = tensor_mapping_sha(model.adapter_state_dict())
+    model.eval()
+    for parameter in model.parameters():
+        if parameter.requires_grad:
+            parameter.requires_grad_(False)
+            parameter.grad = None
+
+    budget = driver.Budget({
+        "max_wall_seconds": int(plan["max_active_wall_seconds"]),
+        "max_forward_calls": int(plan["max_full_backbone_forwards"]),
+        "max_update_steps": 1,
+    })
+    original_logits = model.logits
+
+    def counted_logits(tokens, mask=None):
+        budget.forward(mask if mask is not None else torch.ones_like(tokens))
+        return original_logits(tokens, mask)
+
+    model.logits = counted_logits
+    tail_runtime, original_tail = driver._install_tail_counter(budget)
+    started = time.monotonic()
+    budget.started = started
+    runtime_state["work_provider"] = budget.as_dict
+    seed_results = {}
+    seed_inputs = {}
+    try:
+        for seed in SEEDS:
+            runtime_state["phase"] = "load_seed_checkpoints"
+            runtime_state["active_seed"] = seed
+            runtime_state["active_request_ordinal"] = None
+            runtime_state["completed_request_ordinal"] = 0
+            seed_meta = prepared["seed_metadata"][seed]
+            final = seed_meta["final_receipt"]
+            if sha256_file(seed_meta["seed_dir"] / "protocol.json") != seed_meta["protocol_sha256"]:
+                raise RuntimeError(f"seed {seed}: protocol changed after preflight")
+            if sha256_file(seed_meta["seed_dir"] / "final-receipt.json") != seed_meta["final_receipt_sha256"]:
+                raise RuntimeError(f"seed {seed}: final receipt changed after preflight")
+            snapshots = {}
+            cp_manifest = []
+            for name, spec in checkpoint_specs().items():
+                record = seed_meta["checkpoints"][name]
+                if sha256_file(record["path"]) != record["sha256"]:
+                    raise RuntimeError(f"seed {seed}/{name}: checkpoint changed after preflight")
+                blob = torch.load(record["path"], map_location="cpu", weights_only=False)
+                if (not isinstance(blob, dict) or
+                        blob.get("schema") != "banking-v12-receiver-snapshot-v1" or
+                        blob.get("seed") != seed or blob.get("arm") != spec["arm"] or
+                        blob.get("requests") != spec["requests"] or
+                        blob.get("adamw_steps") != spec["adamw_steps"]):
+                    raise ValueError(f"seed {seed}/{name}: checkpoint envelope differs from plan")
+                snapshots[name] = blob.get("snapshot")
+                if snapshots[name] is None:
+                    raise ValueError(f"seed {seed}/{name}: snapshot payload missing")
+                cp_manifest.append({"context": name, "sha256": record["sha256"],
+                                    "bytes": record["bytes"], "requests": spec["requests"],
+                                    "adamw_steps": spec["adamw_steps"]})
+                runtime_state["phase"] = "load_seed_checkpoints"
+                runtime_state["active_checkpoint_context"] = name
+                if name == "B32_LOW_3200" or len(snapshots) % 2 == 0:
+                    _append_progress(output_dir, runtime_state, "checkpoint_loaded")
+            runtime_state["active_checkpoint_context"] = None
+            runtime_state["phase"] = "reconstruct_contexts"
+            prototype = tail_runtime.clone_mutable_context(model)
+            context_config = {**v10_cfg, **v12_cfg}
+            contexts, reconstruction = reconstruct_context_set(
+                prototype, snapshots, context_config, final, lifecycle, routing, batch_transaction)
+            initial_context_hashes = {name: v8_lifecycle._state_hash(context)
+                                      for name, context in contexts.items()}
+            if sha256_file(seed_meta["rollouts"]["path"]) != seed_meta["rollouts"]["sha256"]:
+                raise RuntimeError(f"seed {seed}: rollout payload changed after preflight")
+            trajectories = _load_rollout_prefix(
+                seed_meta["rollouts"]["path"], torch, seed, count=64)
+            if sha256_file(seed_meta["rollouts"]["path"]) != seed_meta["rollouts"]["sha256"]:
+                raise RuntimeError(f"seed {seed}: rollout payload changed during read")
+            validate_prefix_roles(trajectories)
+            fit_counters = _new_fit_counters()
+            work_before = budget.as_dict()
+            runtime_state["phase"] = "score_fixed_prefix"
+            runtime_state["active_request_ordinal"] = None
+            runtime_state["completed_request_ordinal"] = 0
+
+            def request_progress(event, ordinal):
+                if event == "started":
+                    runtime_state["active_request_ordinal"] = ordinal
+                elif event == "completed":
+                    runtime_state["active_request_ordinal"] = None
+                    runtime_state["completed_request_ordinal"] = ordinal
+                    if ordinal % 8 == 0 or ordinal == 64:
+                        _append_progress(output_dir, runtime_state, "requests_completed")
+
+            metrics = _score_seed(model, contexts, trajectories,
+                                  torch, next(model.parameters()).device,
+                                  tail_runtime, budget, fit_counters,
+                                  request_progress=request_progress)
+            context_after_hashes = {name: v8_lifecycle._state_hash(context)
+                                    for name, context in contexts.items()}
+            if context_after_hashes != initial_context_hashes:
+                raise RuntimeError(f"seed {seed}: context mutated during read-only fit scoring")
+            work_after = budget.as_dict()
+            seed_budget_delta = {
+                "full_backbone_forwards": work_after["full_backbone_forward_calls"] - work_before["full_backbone_forward_calls"],
+                "tail_calls": work_after["tail_calls"] - work_before["tail_calls"],
+                "full_backbone_input_tokens": work_after["full_backbone_forward_tokens"] - work_before["full_backbone_forward_tokens"],
+                "tail_backward_calls": work_after["tail_backward_calls"] - work_before["tail_backward_calls"],
+                "optimizer_updates": 0, "generation_updates": 0,
+            }
+            if (seed_budget_delta["full_backbone_forwards"], seed_budget_delta["tail_calls"],
+                    seed_budget_delta["tail_backward_calls"]) != (64, 640, 0):
+                raise RuntimeError(f"seed {seed}: observed work differs from the frozen 64x10 scoring plan")
+            if (fit_counters["full_backbone_forwards"], fit_counters["tail_calls"],
+                    fit_counters["optimizer_updates"], fit_counters["generation_updates"]) != (64, 640, 0, 0):
+                raise RuntimeError(f"seed {seed}: internal scoring counters differ from the fixed plan")
+            seed_results[str(seed)] = {
+                "fixed_trajectory_fit": metrics,
+                "context_reconstruction": reconstruction,
+                "context_hashes_before_after_identical": True,
+                "stored_parameter_inventory": _parameter_inventory(model, contexts, snapshots),
+                "checkpoint_manifest": cp_manifest,
+                "rollout_manifest": {"sha256": seed_meta["rollouts"]["sha256"],
+                                     "bytes": seed_meta["rollouts"]["bytes"],
+                                     "records_scored": 64,
+                                     "records_deserialized_from_private_payload": 3200,
+                                     "full_payload_deserialized": True,
+                                     "total_records_in_source": 3200},
+                "work": fit_counters,
+                "budget_delta": seed_budget_delta,
+            }
+            seed_inputs[str(seed)] = {
+                "final_receipt_sha256": seed_meta["final_receipt_sha256"],
+                "protocol_sha256": seed_meta["protocol_sha256"],
+                "initial_state_hashes": final["initial_state_hashes"],
+            }
+            _write_completed_seed_aggregate(
+                output_dir, seed, seed_results[str(seed)], seed_inputs[str(seed)])
+            runtime_state["completed_seed_count"] = len(seed_results)
+            runtime_state["active_seed"] = None
+            runtime_state["active_request_ordinal"] = None
+            runtime_state["completed_request_ordinal"] = None
+            runtime_state["phase"] = "seed_complete"
+            _append_progress(output_dir, runtime_state, "seed_completed")
+            del contexts, snapshots, trajectories
+        if immutable_versions(model) != model_before:
+            raise RuntimeError("frozen shared backbone changed during fit evaluation")
+        model_adapter_sha_after = tensor_mapping_sha(model.adapter_state_dict())
+        if model_adapter_sha_after != model_adapter_sha_before:
+            raise RuntimeError("model-owned mutable adapter state changed during fit evaluation")
+        evaluator_sha_after = sha256_file(__file__)
+        if evaluator_sha_after != prepared["evaluator_sha256"]:
+            raise RuntimeError("fixed-fit evaluator source changed during execution")
+        for relative in model_asset_stat_before:
+            path = (model_root / relative).resolve()
+            current = (path.stat().st_size, path.stat().st_mtime_ns)
+            if current != model_asset_stat_before[relative]:
+                raise RuntimeError(f"verified model asset changed during evaluation: {relative}")
+        final_budget = budget.as_dict()
+        if (final_budget["full_backbone_forward_calls"] != plan["max_full_backbone_forwards"]
+                or final_budget["tail_calls"] != 1920
+                or final_budget["tail_backward_calls"] != 0
+                or final_budget["physical_adamw_updates"] != 0
+                or final_budget["wake_updates"] != 0
+                or final_budget["sampled_output_tokens"] != 0
+                or final_budget["full_backbone_forward_calls"] > plan["max_full_backbone_forwards"]
+                or final_budget["tail_calls"] > plan["max_tail_calls"]
+                or time.monotonic() - started > plan["max_active_wall_seconds"]):
+            raise RuntimeError("fixed-fit aggregate cost exceeded its frozen limit")
+        input_manifest = build_input_manifest_document(
+            prepared["input_manifest"], model_asset_manifest, evaluator_sha_after)
+        result = {
+            "schema": RESULT_SCHEMA, "status": "complete",
+            "plan_sha256": prepared["plan_sha256"],
+            "training_config_sha256": prepared["training_config_sha256"],
+            "input_manifest": input_manifest, "seeds": seed_results,
+            "cpu_snapshot_reconstruction": prepared["snapshot_reconstruction"],
+            "gpu_policy": cuda_policy,
+            "model_state_integrity": {
+                "immutable_backbone_parameter_versions_unchanged": True,
+                "model_adapter_state_sha256_before": model_adapter_sha_before,
+                "model_adapter_state_sha256_after": model_adapter_sha_after,
+                "fixed_fit_evaluator_sha256_before_after": evaluator_sha_after,
+                "model_asset_stat_before_after_unchanged": True,
+            },
+            "seed_protocol_bindings": seed_inputs,
+            "work": {
+                "full_backbone_forwards": final_budget["full_backbone_forward_calls"],
+                "tail_calls": final_budget["tail_calls"],
+                "full_backbone_input_tokens": final_budget["full_backbone_forward_tokens"],
+                "stored_fit_wall_seconds": time.monotonic() - started,
+                "optimizer_updates": 0, "generation_updates": 0,
+                "official_test_read": False, "P2_accessed": False,
+            },
+            "scope": plan["claim_scope"],
+            "metric_definition": "T=1 teacher-to-student full-vocabulary KL; mean over answer tokens within each request, then mean of request means; train-fit only, not held-out or confirmatory.",
+            "selection": "exact first 64 private fixed-teacher training trajectories per seed; 32 old/32 current by frozen alternating request schedule; no content/score filtering.",
+            "raw_requests_tokens_labels_or_predictions_written": False,
+        }
+        tmp = output_dir / "fixed-teacher-fit-aggregate.json.tmp"
+        target = output_dir / "fixed-teacher-fit-aggregate.json"
+        with tmp.open("x", encoding="utf-8", newline="\n") as stream:
+            json.dump(result, stream, sort_keys=True, ensure_ascii=False, indent=2, allow_nan=False)
+            stream.write("\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(tmp, target)
+        result["result_sha256"] = sha256_file(target)
+        runtime_state["phase"] = "complete"
+        runtime_state["active_seed"] = None
+        runtime_state["completed_seed_count"] = len(seed_results)
+        _append_progress(output_dir, runtime_state, "complete")
+        return result
+    finally:
+        model.logits = original_logits
+        driver._remove_tail_counter(tail_runtime, original_tail)
+
+
+def run_fit_evaluation(args, prepared):
+    """Reserve a fresh output tree and persist aggregate-only progress/terminal state."""
+    if (prepared.get("status") != "preflight_pass" or
+            prepared.get("snapshot_reconstruction", {}).get("status") != "cpu_snapshot_reconstruction_pass"):
+        raise ValueError("matching metadata and CPU snapshot-reconstruction gates are required")
+    if sha256_file(__file__) != prepared.get("evaluator_sha256"):
+        raise RuntimeError("fixed-fit evaluator source changed after preflight")
+    if (sha256_file(args.plan) != prepared["plan_sha256"] or
+            sha256_file(args.v12_config) != prepared["training_config_sha256"] or
+            sha256_file(args.v10_config) != prepared["input_manifest_v10_config_sha256"]):
+        raise RuntimeError("fixed plan or V10/V12 config changed after preflight")
+    output_dir = Path(args.output_dir).resolve()
+    if output_dir.exists():
+        raise FileExistsError("fixed-fit output directory must be fresh")
+    output_dir.mkdir(parents=False, exist_ok=False)
+    runtime_state = {
+        "phase": "run_start", "active_seed": None,
+        "active_checkpoint_context": None, "active_request_ordinal": None,
+        "completed_request_ordinal": None, "completed_seed_count": 0,
+        "plan_sha256": prepared["plan_sha256"],
+        "training_config_sha256": prepared["training_config_sha256"],
+        "evaluator_sha256": prepared["evaluator_sha256"],
+        "input_manifest_sha256": canonical_sha(prepared["input_manifest"]),
+        "cpu_snapshot_reconstruction_sha256": canonical_sha(prepared["snapshot_reconstruction"]),
+        "work_provider": None, "progress_sequence": 0,
+    }
+    start_receipt = {
+        "schema": "banking-v12-fixed-teacher-fit-run-start-v1",
+        "status": "started", "utc": _utc_now(),
+        "plan_sha256": runtime_state["plan_sha256"],
+        "v10_config_sha256": prepared["input_manifest_v10_config_sha256"],
+        "v12_config_sha256": runtime_state["training_config_sha256"],
+        "evaluator_sha256": runtime_state["evaluator_sha256"],
+        "input_manifest_sha256": runtime_state["input_manifest_sha256"],
+        "cpu_snapshot_reconstruction_sha256": runtime_state["cpu_snapshot_reconstruction_sha256"],
+        "seed_count": len(prepared["seed_metadata"]),
+        "optimizer_updates": 0, "generation_updates": 0,
+        "official_test_read": False, "P2_accessed": False,
+        "raw_examples_or_request_content_written": False,
+    }
+    _write_json_once(output_dir / "run-start.json", start_receipt)
+    _append_progress(output_dir, runtime_state, "started")
+    try:
+        return _run_fit_evaluation_body(args, prepared, output_dir, runtime_state)
+    except BaseException as exc:
+        try:
+            _record_terminal_failure(output_dir, runtime_state, exc)
+        except BaseException:
+            # Keep the original execution error visible if a filesystem failure
+            # also prevents the best-effort terminal receipt.
+            pass
+        raise
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--plan", type=Path, default=Path("configs/banking_v12_fixed_teacher_fit_eval_plan.json"))
+    parser.add_argument("--v12-config", type=Path, default=Path("configs/banking_v12_optimizer_boundary_frozen_b.json"))
+    parser.add_argument("--v10-config", type=Path, default=Path("configs/banking_v10_frozen_k10.json"))
+    parser.add_argument("--seed-root", type=Path, required=True)
+    parser.add_argument("--project-root", type=Path, required=True)
+    parser.add_argument("--model-path", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--preflight-only", action="store_true")
+    args = parser.parse_args(argv)
+    prepared = preflight(args)
+    if args.preflight_only:
+        print(json.dumps({"status": prepared["status"],
+                          "seed_count": len(prepared["seed_metadata"]),
+                          "input_count": len(prepared["input_manifest"]),
+                          "optimizer_updates": 0, "generation_updates": 0},
+                         sort_keys=True))
+        return 0
+    v10_cfg = json.loads(Path(args.v10_config).read_text(encoding="utf-8"))
+    v12_cfg = json.loads(Path(args.v12_config).read_text(encoding="utf-8"))
+    prepared["snapshot_reconstruction"] = cpu_snapshot_reconstruction_preflight(
+        prepared, v10_cfg, v12_cfg)
+    result = run_fit_evaluation(args, prepared)
+    print(json.dumps({"status": result["status"], "result_sha256": result["result_sha256"],
+                      "seeds": sorted(result["seeds"].keys()),
+                      "work": result["work"]}, sort_keys=True))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,11 @@
+{
+  "schema": "banking-v12-fixed-fit-protocol-lineage-archive-correction-v1",
+  "correction_of": "archive-record.json",
+  "archived_source_sha256": "c0bfb9dacef9842408d7d27318f8cb80a2e0c4386f3c062e8d60c1b4473f9c63",
+  "archived_source_file": "evaluate_banking_v12_fixed_teacher_fit.pre-manifest-fix.py",
+  "identity": "the archived bytes are the post protocol-lineage-fix source c0bfb9dacef9842408d7d27318f8cb80a2e0c4386f3c062e8d60c1b4473f9c63",
+  "classification": "post-fix archival copy; the archive was mislabeled pre-manifest-fix",
+  "missing_preimage_sha256": "6d20c242422003c84559971b2f2985c92b02e181bfd9c2c62d7d3a082eea71af",
+  "missing_preimage_status": "exact 6d20 source bytes are not present in the located archive files and are not claimed preserved",
+  "scope": "metadata correction only; original archive-record.json remains unchanged"
+}

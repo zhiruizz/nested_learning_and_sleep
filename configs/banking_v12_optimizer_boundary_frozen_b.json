@@ -1,0 +1,102 @@
+{
+  "arms": [
+    {
+      "checkpoint_requests": [
+        30,
+        960
+      ],
+      "effective_batch_size": 1,
+      "learning_rate": 0.001,
+      "max_requests": 960,
+      "name": "B1_HIGH"
+    },
+    {
+      "checkpoint_requests": [
+        30,
+        960
+      ],
+      "effective_batch_size": 1,
+      "learning_rate": 5e-06,
+      "max_requests": 960,
+      "name": "B1_LOW"
+    },
+    {
+      "checkpoint_requests": [
+        960
+      ],
+      "effective_batch_size": 32,
+      "learning_rate": 0.001,
+      "max_requests": 960,
+      "name": "B32_HIGH"
+    },
+    {
+      "checkpoint_requests": [
+        960,
+        3200
+      ],
+      "effective_batch_size": 32,
+      "learning_rate": 5e-06,
+      "max_requests": 3200,
+      "name": "B32_LOW"
+    }
+  ],
+  "boundary_selection": "first_level0_due_after_foundation_no_performance_selection",
+  "claim_scope": "three_seed_development_fixed_teacher_single_boundary_mechanism_diagnostic",
+  "clip_norm": 1.0,
+  "cuda_allocator_conf": "garbage_collection_threshold:0.7",
+  "cuda_memory_fraction": 0.8,
+  "evaluation": {
+    "candidate_batch_size": 32,
+    "candidate_labels": 77,
+    "current_rows": 110,
+    "include_greedy": true,
+    "old_rows": 110,
+    "split": "development_only"
+  },
+  "execution_order": [
+    "B32_LOW",
+    "B1_HIGH",
+    "B1_LOW",
+    "B32_HIGH"
+  ],
+  "fixed_teacher_rollout_requests": 3200,
+  "max_forward_calls": 25000,
+  "max_new_tokens": 10,
+  "max_prefix_wake_ticks": 16,
+  "max_update_steps": 5000,
+  "max_wall_seconds": 7200,
+  "objective": "fixed_teacher_policy_full_vocab_KL_T1_mean_tokens_then_mean_requests",
+  "parent_release_commit": "363c2a1184b59cc14b3bcd2610424dafab7be846",
+  "post_fit_wake_ticks": 0,
+  "receiver_initialization_seed_offset": 120000,
+  "request_selection": "v10_balanced_seen_class_cycle_gkd_only",
+  "restore_qualification": {
+    "arm": "B32_LOW",
+    "compare_after_requests": 64,
+    "require_original_vs_disk_restore": true,
+    "seed": 17,
+    "snapshot_after_requests": 32
+  },
+  "rollout_microbatch_size": 8,
+  "rollout_seed_offset": 121000,
+  "rollout_temperature": 0.8,
+  "schema": "banking-optimizer-boundary-v12-config-v1",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "sender": 0,
+  "source_hashes": {
+    "tools/banking_cil_v12_batching.py": "99e0163c333fe1fdec1928bb2f932c79d88c7f0683b8d917883f2c79e8b0c829",
+    "tools/launch_banking_optimizer_boundary_v12.py": "e45cf1fdad02d335138394cfa28fc0a82779952c11c87bb0ddf6263bc8de9874",
+    "tools/run_banking_optimizer_boundary_v12.py": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f",
+    "tools/run_banking_v12_cpu_acceptance.py": "9d0a9fc5bbca4f953bbcd3d8e0e1bba687a207a4e987c2f462b7e1e650aadd39"
+  },
+  "status": "frozen",
+  "task_id": 1,
+  "test_data_read": false,
+  "training_manifest_sha256": "ed9f4b047768021cbf16a3fa042db12baf212038f89f33a00099f2e32b7300f3",
+  "v10_config_file_sha256": "785ded5cc9d205dc3cbc6d25179abf6fd0d589ce6943a42626aa1692b54dfd9d",
+  "weight_decay": 0.0
+}

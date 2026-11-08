@@ -1,0 +1,132 @@
+{
+  "schema": "v12-independent-receipt-aggregate-crosscheck-v1",
+  "status": "passed_safe_aggregate_crosscheck",
+  "source_files": {
+    "aggregate_sha256": "00bc7ee2a973c1048f87dcef73a368985a2d698abb0c43db0b39a7fa89a9a3df",
+    "csv_sha256": "bac729fc40336c98957ee0e63f05e633ba8b59e523fd06997bbd37eb306348bd",
+    "private_final_receipt_sha256": {
+      "17": "85a8130e2e7d361657d960a2649ed2a071e06576e591c0683937d29c11e79da4",
+      "29": "b0ebf971400564e8aaddbddf7d94ef786bfa168745a043b5fba87ca24ad59369",
+      "43": "c4e49f31604a4764146b4cfcdf9bf2a9768af0727598a79f240a5df5999bff75"
+    }
+  },
+  "scope": {
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "context_count": 10,
+    "contexts": [
+      "TEACHER",
+      "CMS_NO_RESET",
+      "RESET_ZERO",
+      "B1_HIGH_30",
+      "B1_HIGH_960",
+      "B1_LOW_30",
+      "B1_LOW_960",
+      "B32_HIGH_960",
+      "B32_LOW_960",
+      "B32_LOW_3200"
+    ],
+    "metric_rows_expected_and_observed": 300,
+    "csv_cells_checked": 1230,
+    "all_row_checks_passed": true,
+    "summary_cells_recomputed": 100,
+    "paired_contrasts_recomputed": 80,
+    "receipt_population_counts_per_seed": {
+      "old": 110,
+      "current": 110,
+      "all77": 220
+    },
+    "official_test_read": false,
+    "raw_rows_or_ids_read": false
+  },
+  "cost_reconciliation": {
+    "core_request_exposures_recomputed_from_optimizer_arm_receipts": 18240,
+    "core_adamw_steps_recomputed_from_optimizer_arm_receipts": 6150,
+    "seed17_32_to_64_restore_qualification_extra_request_evaluations": 32,
+    "seed17_32_to_64_restore_qualification_extra_physical_adamw_steps": 1,
+    "actual_physical_adamw_updates_sum_including_qualification": 6151,
+    "qualification_counted_as_separate_execution_overhead_not_fourth_arm": true,
+    "qualification_exposures_are_extra_execution_not_unique_dataset_rows": true,
+    "recorded_three_seed_run_totals": {
+      "full_backbone_forward_calls": 39018,
+      "tail_calls": 72473,
+      "tail_backward_calls": 18300,
+      "physical_adamw_updates": 6151,
+      "active_wall_seconds": 2037.9839999999385,
+      "full_backbone_forward_tokens": 6641211,
+      "executed_input_tokens_including_padding": 6736506,
+      "sampled_output_tokens": 48190
+    }
+  },
+  "primary_all77_teacher_forced_sum_accuracy": {
+    "TEACHER": {
+      "mean": 0.5590909090909091,
+      "sample_sd": 0.10918556499513016,
+      "n": 3
+    },
+    "CMS_NO_RESET": {
+      "mean": 0.5606060606060606,
+      "sample_sd": 0.11099971459025676,
+      "n": 3
+    },
+    "RESET_ZERO": {
+      "mean": 0.28484848484848485,
+      "sample_sd": 0.04731059089695757,
+      "n": 3
+    },
+    "B1_HIGH_30": {
+      "mean": 0.4196969696969697,
+      "sample_sd": 0.039713158854791375,
+      "n": 3
+    },
+    "B1_HIGH_960": {
+      "mean": 0.537878787878788,
+      "sample_sd": 0.10614715083719392,
+      "n": 3
+    },
+    "B1_LOW_30": {
+      "mean": 0.28484848484848485,
+      "sample_sd": 0.05169309730070297,
+      "n": 3
+    },
+    "B1_LOW_960": {
+      "mean": 0.43030303030303035,
+      "sample_sd": 0.05932355136500574,
+      "n": 3
+    },
+    "B32_HIGH_960": {
+      "mean": 0.5227272727272727,
+      "sample_sd": 0.10484147813337084,
+      "n": 3
+    },
+    "B32_LOW_960": {
+      "mean": 0.2818181818181818,
+      "sample_sd": 0.04810456929208347,
+      "n": 3
+    },
+    "B32_LOW_3200": {
+      "mean": 0.29393939393939394,
+      "sample_sd": 0.053846532254293526,
+      "n": 3
+    }
+  },
+  "publication_claim_review": {
+    "CMS_no_reset_mean_accuracy": 0.5606060606060606,
+    "best_fitted_context": "B1_HIGH_960",
+    "best_fitted_context_mean_accuracy": 0.537878787878788,
+    "comparison_supported_at_this_boundary": true,
+    "full_paper_reproduction_or_native_HOPE_claim_supported": false,
+    "limits": [
+      "single early due boundary; not long-horizon retention",
+      "local last-MLP/additive receiver and frozen backbone; not native full paper system",
+      "three class-order seeds share one foundation/pretraining lineage",
+      "development-only, no V12 official test read",
+      "greedy and label-ranking are distinct metrics; label ranking uses all 77 candidate labels"
+    ],
+    "CMS_minus_best_fitted_context_percentage_points": 2.2727272727272596,
+    "report_placeholder_SUPPLEMENT_PENDING": true
+  }
+}

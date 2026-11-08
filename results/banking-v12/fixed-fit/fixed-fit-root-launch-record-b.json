@@ -1,0 +1,22 @@
+{
+  "automatic_retries": 0,
+  "evaluator_sha256": "91039fbefe26c1210f79af9639df44740817c671fe3ca63f70040e5a9be9a7ee",
+  "exit_code": 0,
+  "full_process_wall_seconds_including_cpu_preflight_model_load_and_shutdown": 57.375,
+  "independent_review_sha256": "df3bbfc0b16866afb4dd5f3b8df17d7f383356bf61052257c7bb3e18ad1f95d7",
+  "material_freeze_sha256": "5650ae1174f230dac5465a13c205dff06a6698cc8a2621a4f59d81ed58dee07c",
+  "read_only_recomputation_after_preserved_serialization_failure_A": true,
+  "result_sha256": "a6b45be15453d1370e31ea3f8fd94272ca3e5e8d712b66b51a5ccacd6c7fd629",
+  "schema": "root-banking-v12-fixed-fit-launch-v1",
+  "status": "complete",
+  "work": {
+    "P2_accessed": false,
+    "full_backbone_forwards": 192,
+    "full_backbone_input_tokens": 6664,
+    "generation_updates": 0,
+    "official_test_read": false,
+    "optimizer_updates": 0,
+    "stored_fit_wall_seconds": 31.733999999938533,
+    "tail_calls": 1920
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "decision": {
+    "aggregate_values_changed": false,
+    "descriptive_reporting": "The user authorized an aggregate-only descriptive report with protocol deviation and incidents disclosed. This follow-up adds no new approval gate and does not create formal acceptance/release.",
+    "formal_disposition_unchanged": "NOT_ACCEPTED_UNDER_FROZEN_PROTOCOL; DESCRIPTIVE_REPORTING_ONLY",
+    "interpretation": "The new incident is a data-minimization failure and provenance limit; it does not alter the already-finished run or the previously verified aggregate numbers. It further prevents treating any reused schedule identity/endpoint cohort as blinded confirmation.",
+    "original_protocol_acceptance": false,
+    "remote_terminal_modified": false
+  },
+  "incident": {
+    "access_flags": {
+      "checkpoint_weights_or_state_payload_read": false,
+      "confirmation_or_sealed_data_read": false,
+      "endpoint_rows_or_payload_read": false,
+      "gold_labels_read": false,
+      "training_text_read": false
+    },
+    "description": "A read-only metadata query serialized a nested paired-schedule seed object to stdout. The truncated output included some training sample identifiers and token/hash/count metadata; the visible number is unknown. No raw stdout or IDs were retained in the incident artifact.",
+    "event_timestamp_utc": "UNKNOWN",
+    "exact_utc_timestamp_unknown": true,
+    "impact": "The query ran after the four formal runs completed, so it did not change their execution. Because some schedule identifiers/metadata were exposed, do not reuse this exact schedule as blinded confirmation. No text, gold labels, endpoint rows, sealed/confirmation data, or checkpoint payload was exposed according to the safe incident record.",
+    "response": {
+      "banking_experiment_affected": false,
+      "exposed_values_used_for_tuning_or_selection": false,
+      "released_reports_or_aggregates_modified": false,
+      "remote_files_modified": false,
+      "remote_job_started": false,
+      "schedule_queries_stopped_immediately": true
+    },
+    "safe_record": "incident-corrected.json",
+    "safe_record_sha256": "a6fa52c391608eb4683eec7aef7cc19baf1ca3fe9600de8f6ceede2e00ace1c8",
+    "status": "RECORDED; NO FURTHER SCHEDULE READS"
+  },
+  "provenance_review": {
+    "dataset": {
+      "candidate_contract_equals_formal_bound_contract": false,
+      "candidate_contract_sha256": "082b06e7acdb25f1456f0bf7838ee8f10a64d23bb66f2efbf2cbd5fa780e6444",
+      "claim_status": "P2 contract self-description only; upstream provenance/version not independently established.",
+      "contract_source_text": "CLINC OOS-eval same-source grouped heldout; no source-independent claim.",
+      "dataset_release_or_version": null,
+      "formal_bound_p2_contract_sha256": "002c669055c2137b44458d1933b6db96673a16cd21c9d8d080844320d52cdb40",
+      "human_old_new_task_mapping": null,
+      "limit": "The payload digest matches the formal train-dev payload digest, but the candidate data-contract SHA differs from the formal bound P2 contract SHA and no chain proves those contract artifacts equivalent. The digest does not independently identify the upstream dataset release/version or old/new task mapping.",
+      "payload_opened": false,
+      "payload_sha256": "4ecae68b836482da0af3a4079e732cad58945a08bcae1f3ac2f97074d95b5f49",
+      "payload_sha_matches_formal_train_dev_binding": true
+    },
+    "experiment_scope_manifest": {
+      "all_parameter_tensor_count": 261,
+      "all_scope_manifest_sha256": "8f9037fbaa00a87ea6b88b378eb750c288d8a29411f7219a7a11c320f43ee635",
+      "arm_scope_manifest_sha256": "d40dedf9eb7fea66160e62b028477e986dcd03f350b3db3685532c7b861f7c90",
+      "interpretation": "These bind the experiment configuration, not the upstream dataset release.",
+      "new_group_tensor_count": 9,
+      "old_group_tensor_count": 252
+    },
+    "model_config": {
+      "attention_heads": 24,
+      "exact_upstream_repository": null,
+      "hidden_size": 3072,
+      "immutable_upstream_revision": null,
+      "kv_heads": 8,
+      "layers": 28,
+      "limit": "The local config shape and config hash do not establish an exact upstream repository or immutable model revision.",
+      "local_config_sha256": "35f063e9f381e8678eea34bc56c3ecef3c6d10149f6b2cbdf27b8ee1bad3073d",
+      "matches_frozen_asset_lock": true,
+      "max_position_embeddings": 131072,
+      "model_type": "llama",
+      "torch_dtype": "bfloat16",
+      "vocab_size": 128256
+    },
+    "safe_record": "outputs/ubuntu-formal-metadata-audit/provenance-followup-20261108.json",
+    "safe_record_sha256": "6457d679dc1fba459f9bcb809c6b48202235d33bf3bb9fcbd4128f36fe0cc8f8",
+    "status": "LIMITED_PROVENANCE_VERIFIED; EXACT_REPOSITORY_REVISION_UNRESOLVED",
+    "unknowns": [
+      "Exact model repository ID and immutable revision",
+      "Human-readable old/new task mapping",
+      "Upstream dataset release/version"
+    ]
+  },
+  "public_projection": {
+    "correction_review_sha256": "8424ac1dd71e2bd2c8f012a3135c8cf64b2fb2b29a490acaf94c7df83b9c500e",
+    "source_sha256": "93626e37557f3fbaac7c0fe74364916f2b20f3f812761dc69ea451dbfa52dd2b",
+    "transform": "replace prior ambiguous incident date/access-field representation and its record binding with reviewed r2; scientific and provenance conclusions unchanged"
+  },
+  "relationship_to_prior_review": {
+    "existing_write_time_readback_deviation_remains": true,
+    "formal_contract_sha256": "28906555f8cf6255fb1caa46b6e20535e76eb020a4e971ff34782a4e65b8a83f",
+    "formal_terminal_status": "FORMAL_RUN_COMPLETE_PENDING_INDEPENDENT_REVIEW",
+    "prior_review": "outputs/ubuntu-formal-metadata-audit/independent-final-disposition-20261108-r1.json",
+    "prior_review_sha256": "9524e0a4d3fdd7e3f639819efcd92fb2bc961d9584142c019e1d21becce93ed9",
+    "science_aggregate": "outputs/ubuntu-formal-metadata-audit/science-aggregate-20261108-r2.json",
+    "science_aggregate_sha256": "00f76516d6f0f62e1bae0b46b5c0048443d0385327e46618e1a3a454b64af027",
+    "source_lock_sha256": "80def5fb4ed001b67328ee897796b7c083da9e8bb4b7871c03284b83e5803fd1"
+  },
+  "reviewed_at_utc": "2026-11-07T23:35:24.681055+00:00",
+  "schema": "p2-provenance-followup-independent-review-v1",
+  "scope_limits": [
+    "Only the two sanitized local metadata records, prior aggregate-only review, and safe aggregate were read.",
+    "No SSH, remote filesystem access, raw stdout, identifiers, schedules, sample payloads, endpoint rows, confirmation data, model weights, or checkpoint state payloads were read.",
+    "This record neither changes nor supersedes the previous non-acceptance disposition."
+  ]
+}

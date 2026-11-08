@@ -1,0 +1,71 @@
+{
+  "schema": "banking-v12-fixed-fit-evaluator-independent-review-v2",
+  "status": "pass",
+  "reviewed_utc": "2026-11-08T00:22:06.2857008Z",
+  "scope": "source/plan/CPU regressions and actual all-three material/reconstruction gates; no score run performed by reviewer",
+  "artifacts": {
+    "evaluator_sha256": "91039fbefe26c1210f79af9639df44740817c671fe3ca63f70040e5a9be9a7ee",
+    "test_sha256": "8f9e100101310d0c62f8227df5373b3d02c2c3fd97775234d6baa62c71faeb67",
+    "plan_sha256": "56b7faeef9c1bf86443391a22efe387e59850e1490510f6771ed816c6b335153",
+    "all3_gate_sha256": "40d6cdc301086c17d503bc59ea4211e538b2255bc3d5b695ed02987b0342f4fc",
+    "material_freeze_sha256": "5650ae1174f230dac5465a13c205dff06a6698cc8a2621a4f59d81ed58dee07c",
+    "combined_cpu_acceptance_sha256": "04b01a32a70e0d0ee07aaa798c057cacd19f11bf0f37fbf192a528e874b65df8",
+    "preserved_failed_run_failure_sha256": "98ceb040f2f19884187aba193756936740129d5de4536dc177e5a1cc6b94188b"
+  },
+  "cpu_checks": {
+    "focused_tests": "7 passed",
+    "py_compile": "passed",
+    "combined_acceptance_status": "pass",
+    "seeds": [
+      {
+        "seed": 17,
+        "checkpoints": 7,
+        "contexts": 10,
+        "initial_hashes_verified": true
+      },
+      {
+        "seed": 29,
+        "checkpoints": 7,
+        "contexts": 10,
+        "initial_hashes_verified": true
+      },
+      {
+        "seed": 43,
+        "checkpoints": 7,
+        "contexts": 10,
+        "initial_hashes_verified": true
+      }
+    ],
+    "all3_input_manifest_entries": 62,
+    "cuda_initialized": false,
+    "model_loaded": false,
+    "rollout_rows_loaded": 0,
+    "optimizer_updates": 0,
+    "generation_updates": 0,
+    "official_test_read": false
+  },
+  "source_review": {
+    "diff_scope": "serialization of explicit list sections, per-seed aggregate persistence, and accurate rollout deserialization disclosure; no KL/scoring math or cohort change from archived c0 bytes",
+    "manifest_unpack_fixed": true,
+    "v10config_rechecked_after_preflight": true,
+    "per_seed_aggregate_written_after_complete_seed": true,
+    "failure_ledger_and_progress_preserve_work": true,
+    "reset_zero_is_deepcopy_and_seven_fitted_states_are_guarded": true,
+    "scored_requests_per_seed": 64,
+    "rollout_records_deserialized_per_seed": 3200,
+    "rollout_selection": "first64 only, fixed by preread plan; 32 old and 32 current",
+    "output_contains_raw_requests_or_predictions": false
+  },
+  "previous_failed_aux_run": {
+    "classification": "post-scoring serialization TypeError, not a scientific outcome",
+    "status": "failed",
+    "phase": "seed_complete",
+    "completed_seeds": 3,
+    "full_backbone_forwards": 192,
+    "tail_calls": 1920,
+    "backward_calls": 0,
+    "optimizer_updates": 0,
+    "active_wall_seconds": 31.57799999997951
+  },
+  "readiness": "Conditional clear for one fresh parent-controlled read-only evaluation under the frozen plan/source. Preserve and account for the prior failed attempt separately; no training repeat is warranted."
+}

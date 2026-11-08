@@ -1,0 +1,23 @@
+{
+  "schema": "banking-v12-fixed-teacher-fit-evaluation-plan-v1",
+  "status": "fixed_input_plan_before_development_scores_are_read",
+  "training_config_sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25",
+  "seeds": [17, 29, 43],
+  "trajectory_source": "matching_seed_private_fixed_teacher_training_rollouts",
+  "trajectory_indices": {"start_inclusive": 0, "stop_exclusive": 64},
+  "selection": "fixed_prefix_no_score_or_content_filter",
+  "role_counts_from_frozen_alternation": {"old": 32, "current": 32},
+  "objective": "teacher_to_student_full_vocabulary_KL_T1_answer_token_mean_per_request_then_request_mean",
+  "contexts": ["TEACHER", "CMS_NO_RESET", "RESET_ZERO", "B1_HIGH_30", "B1_HIGH_960", "B1_LOW_30", "B1_LOW_960", "B32_HIGH_960", "B32_LOW_960", "B32_LOW_3200"],
+  "optimizer_updates": 0,
+  "generation_updates": 0,
+  "new_generation": false,
+  "official_test_accessed": false,
+  "heldout_or_confirmatory_claim": false,
+  "claim_scope": "supplementary_training_fit_diagnostic_on_identical_teacher_trajectories_not_heldout_accuracy",
+  "required_before_execution": ["all_three_training_runs_complete", "receiver_checkpoint_and_rollout_hashes_match_receipts", "auxiliary_source_and_actual_input_manifest_frozen", "independent_code_and_material_review"],
+  "max_full_backbone_forwards": 192,
+  "max_tail_calls": 2112,
+  "max_active_wall_seconds": 1800,
+  "cost_scope": "measured_separately_from_primary_training_and_development_evaluation"
+}

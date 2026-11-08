@@ -1,5 +1,7 @@
 # Numeric tables and aggregate experiments
 
+[Banking V12 optimizer diagnostic](banking-v12/README.md): all three seeded orders and ten fixed contexts, separate request/update/dose comparisons, read-only fixed-training-trajectory KL, costs and preserved failures. Development only.
+
 [Ubuntu P2 descriptive evidence](ubuntu-p2-descriptive/README.md): all four runs completed; original-protocol acceptance rejected, n=2 seed-sensitive collapse.
 
 

@@ -1,0 +1,21 @@
+{
+  "active_wall_seconds": 676.4680000001099,
+  "backbone_forwards": 12854,
+  "complete_launch_equals_final_receipt": true,
+  "config_sha256": "a5a01bed82b5f82314436a00061b40c475a1396f9fb3a28b861f340e05e01d25",
+  "core_receiver_adam_steps": 2050,
+  "core_receiver_requests": 6080,
+  "expected_prefix_wake": 14,
+  "extra_restore_adam_steps": 0,
+  "extra_restore_requests": 0,
+  "final_receipt_sha256": "c4e49f31604a4764146b4cfcdf9bf2a9768af0727598a79f240a5df5999bff75",
+  "launch_record_sha256": "c1cccf159be94b31fc3b8fe0bf10290402cb42ed89589c322aba1106099e0867",
+  "official_test_accessed": false,
+  "raw_rows_weights_or_model_read": false,
+  "schema": "root-banking-v12-terminal-metadata-review-v1",
+  "seed": 43,
+  "status": "pass",
+  "tail_backwards": 6094,
+  "tail_forwards": 24055,
+  "ten_context_schema_and_cost_reconciliation_validated": true
+}
