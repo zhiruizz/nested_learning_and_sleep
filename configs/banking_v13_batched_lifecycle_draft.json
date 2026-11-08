@@ -1,0 +1,159 @@
+{
+  "schema": "banking-v13-batched-lifecycle-config-v1",
+  "status": "draft_not_for_gpu_launch",
+  "parent_release": "d9c516cc16da3d8ad7d2cfb2f8173fdae90c3a87",
+  "v10_config_file_sha256": "785ded5cc9d205dc3cbc6d25179abf6fd0d589ce6943a42626aa1692b54dfd9d",
+  "v10_source_lock_sha256": "3fcc2e2cb930149e9ee5204dcf8fa8910888cd7b05cd31f66d10ceb852d6844c",
+  "training_manifest_sha256": "ed9f4b047768021cbf16a3fa042db12baf212038f89f33a00099f2e32b7300f3",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "initialization_seed": 1907008,
+  "task_id": 1,
+  "sender": 0,
+  "wake_batch_size": 32,
+  "wake_batch_policy": "full_32_requests_from_concatenated_deterministic_epochs_0_and_1_no_drop_or_partial",
+  "inherited_foundation_wake_batch_size": 8,
+  "fast_lr": 0.1,
+  "base_lr": 0.001,
+  "periods": [
+    16,
+    64,
+    256,
+    1024,
+    null
+  ],
+  "clock_unit": "wake_optimizer_minibatches_local_assumption_not_paper_token_units",
+  "prefix_ticks_by_seed": {
+    "17": 4,
+    "29": 10,
+    "43": 14
+  },
+  "sleep_events_per_run": 2,
+  "wake_ticks_between_sleep_events": 16,
+  "wake_ticks_after_last_sleep": 15,
+  "expected_total_wake_ticks_by_seed": {
+    "17": 35,
+    "29": 41,
+    "43": 45
+  },
+  "sleep_method_cycle": [
+    "gkd",
+    "gkd",
+    "lti"
+  ],
+  "gkd_sampling_owner_policy": "alternate_teacher_student_start_teacher_each_event",
+  "sleep_selector_event_stride": 3200,
+  "sleep_selector_policy": "v10_balanced_old_current_seen_class_cycle_first_prefix_of_common_3200_request_schedule_each_event",
+  "temperature": 0.8,
+  "max_new_tokens": 10,
+  "max_sequence_length": 128,
+  "weight_decay": 0.0,
+  "clip_norm": 1.0,
+  "objective": "v10_local_GKD_and_LTI_assembly_unchanged_request_mean_gradient_accumulation",
+  "objective_numerics": {
+    "KL_temperature": 1.0,
+    "LTI_KL_weight": 0.5,
+    "LTI_reward_CE_weight": 0.5,
+    "semantic_proxy_weight": 0.5,
+    "edit_weight": 0.5,
+    "edit_distance_z0": 8
+  },
+  "semantic_reward": "canonical_label_equivalence_local_proxy_not_paper_frozen_reward_model",
+  "lora_alpha": null,
+  "lora_alpha_reason": "Table5_LoRA_alpha128_does_not_define_scaling_for_our_nonlinear_low_rank_CMS_experts",
+  "arms": [
+    {
+      "name": "CMS_ONLY",
+      "sleep": false,
+      "effective_batch_size": null,
+      "learning_rate": null,
+      "requests_per_event": 0
+    },
+    {
+      "name": "B1_HIGH",
+      "sleep": true,
+      "effective_batch_size": 1,
+      "learning_rate": 0.001,
+      "requests_per_event": 960
+    },
+    {
+      "name": "B1_LOW",
+      "sleep": true,
+      "effective_batch_size": 1,
+      "learning_rate": 5e-06,
+      "requests_per_event": 960
+    },
+    {
+      "name": "B32_HIGH",
+      "sleep": true,
+      "effective_batch_size": 32,
+      "learning_rate": 0.001,
+      "requests_per_event": 960
+    },
+    {
+      "name": "B32_LOW",
+      "sleep": true,
+      "effective_batch_size": 32,
+      "learning_rate": 5e-06,
+      "requests_per_event": 960
+    },
+    {
+      "name": "B32_LOW_DOSE",
+      "sleep": true,
+      "effective_batch_size": 32,
+      "learning_rate": 5e-06,
+      "requests_per_event": 3200
+    }
+  ],
+  "execution_order_per_seed": [
+    "B32_HIGH",
+    "CMS_ONLY",
+    "B1_HIGH",
+    "B1_LOW",
+    "B32_LOW",
+    "B32_LOW_DOSE"
+  ],
+  "evaluation": {
+    "split": "development_only",
+    "old_rows": 110,
+    "current_rows": 110,
+    "candidate_labels": 77,
+    "candidate_batch_size": 32,
+    "primary": "teacher_forced_sum",
+    "include_greedy": true,
+    "stages": [
+      "event1_before",
+      "event1_after",
+      "event2_before",
+      "event2_after",
+      "postwake15"
+    ]
+  },
+  "request_matching": "primary_2x2_matches_prompt_request_exposures_not_generated_targets_actual_tokens_Adam_or_FLOPs",
+  "dose_comparison": "B32_LOW_DOSE_vs_B32_LOW_varies_requests_and_updates_not_a_pure_batch_effect",
+  "cms_comparison": "reference_only_not_information_or_compute_matched_to_Sleep",
+  "max_wall_seconds": 14400,
+  "max_forward_calls": 200000,
+  "max_update_steps": 8000,
+  "cuda_memory_fraction": 0.8,
+  "cuda_allocator_conf": "garbage_collection_threshold:0.7",
+  "source_hashes": {},
+  "test_data_read": false,
+  "claim_scope": "three_seed_development_two_natural_boundaries_plus_postwake_batched_full_local_KS_diagnostic_not_paper_reproduction",
+  "no_test_based_selection": true,
+  "automatic_retries": 0,
+  "restore_qualification": {
+    "seed": 17,
+    "arm": "B32_HIGH",
+    "event_index": 0,
+    "snapshot_after_requests": 32,
+    "compare_after_requests": 64,
+    "extra_request_evaluations": 32,
+    "extra_adamw_updates": 1,
+    "require_before_other_trajectories": true,
+    "whole_job_resume_claim": false
+  }
+}

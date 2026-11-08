@@ -1,0 +1,157 @@
+{
+  "schema": "banking-v13-independent-first-trajectory-readiness-v1",
+  "status": "ready_for_remaining_17",
+  "reviewed_utc": "2026-11-08",
+  "scope": "Correctness/provenance readiness for the remaining 17 frozen development trajectories only; not a performance selection or scientific-result endorsement.",
+  "config_sha256": "1c4aae0c13d6b80193fee548639e7adbf6fae4d5b2c13d3d21d5f72ba26f0f35",
+  "first_terminal_receipt_sha256": "7c0751f015dae5ab2931d4deef1d5d3925221dc64669344740c3e1444bd4c095",
+  "first_protocol_sha256": "cb1d4b753927606ce8dcd58a984b8aac3b4d91fd2792b8c96d108e08bb969998",
+  "first_launch_record_sha256": "fdfb648efcbadb1d13b715a943cb0ab3ff4db7732ac6fb77038510ebe43f8db2",
+  "orchestrator_sha256": "0a692e95c55a0ecb977a12964d67095dcfa288e59d90f0fecbadf3b8fbe1bc14",
+  "frozen_source_graph_sha256": {
+    "tools/banking_cil_v13_batching.py": "425dc393e501188ae54677476846922345cad1d446abbc5d13195aefd00a6f45",
+    "tools/banking_sleep_v13_runtime.py": "beedb41e9723349d056ebca8485da6241164f2d6e945d99b7ed904dba87b72df",
+    "tools/banking_v13_execution.py": "7d4b98d55090950d214778fc77fe5ad24f7718563fe3463c521bb252b1e7ccec",
+    "tools/banking_v13_restore_qualification.py": "8765ce4f7eefd615fa8107d60840fc68ca5151dc9599e6f8ee32932c23904954",
+    "tools/launch_banking_sleep_lifecycle_v13.py": "aed61cdb9c6bac1761ed18379d26fbfec7a8bc85a506956cd7dc86a9f5d0d58c",
+    "tools/run_banking_optimizer_boundary_v12.py": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f",
+    "tools/run_banking_sleep_lifecycle_v13.py": "08d1e481cd22db1ebb0b97dda1da8af17d07fbfad8d8c7ff1581c13551c31465",
+    "tools/run_banking_v13_cpu_acceptance.py": "2f065e25b9b0bf2ee19a54e640a03d005d8d8942cf1e4fb19bd47436c4644544"
+  },
+  "checks": {
+    "terminal_and_protocol_match": true,
+    "launch_record_matches_terminal": true,
+    "all_frozen_sources_match_config_and_freeze_record": true,
+    "first_run_status_complete": true,
+    "first_run_no_retry": true,
+    "preflight_cpu_only_and_zero_updates": true,
+    "official_test_and_P2_not_read": true,
+    "model_immutable_versions_unchanged": true,
+    "restore_qualification_pass": true,
+    "all_five_stage_checkpoint_bytes_match_sidecars_and_receipt": true,
+    "all_stage_checkpoints_reported_readback_by_producer": true,
+    "event_requests_and_updates_match_frozen_budget": true,
+    "integer_work_counters_reconcile_exactly": true,
+    "forward_and_tail_shape_histograms_reconcile": true,
+    "checkpoint_files_deserialized_by_this_review": false
+  },
+  "run_metadata": {
+    "seed": 17,
+    "arm": "B32_HIGH",
+    "initial_wake_tick": 348,
+    "event_boundaries": [
+      {
+        "event_index": 0,
+        "level": 0,
+        "selected_requests": 960,
+        "effective_batch_size": 32,
+        "physical_adamw_steps": 30,
+        "pre_stage": "event1_before",
+        "post_stage": "event1_after"
+      },
+      {
+        "event_index": 1,
+        "level": 0,
+        "selected_requests": 960,
+        "effective_batch_size": 32,
+        "physical_adamw_steps": 30,
+        "pre_stage": "event2_before",
+        "post_stage": "event2_after"
+      }
+    ],
+    "final_wake_tick": 383,
+    "expected_wake_updates": 35,
+    "stage_count": 5,
+    "stage_wake_ticks": {
+      "event1_before": 352,
+      "event1_after": 352,
+      "event2_before": 368,
+      "event2_after": 368,
+      "postwake15": 383
+    },
+    "active_wall_seconds": 893.5159999998286,
+    "launcher_wall_seconds_including_preflight": 899.3120000001509,
+    "phase_wall_sum_seconds": 880.5769999995828,
+    "unattributed_wall_residual_seconds": 12.93900000024587,
+    "checkpoint_hashes": [
+      {
+        "stage": "event1_after",
+        "file": "checkpoints/event1_after.pt",
+        "bytes": 149049451,
+        "sha256": "0187a1702d3d9d7072362f8c652d5b8cb506df14c8f2ad222b28ebc50003a2eb",
+        "global_wake_tick": 352,
+        "producer_readback_flag": true
+      },
+      {
+        "stage": "event1_before",
+        "file": "checkpoints/event1_before.pt",
+        "bytes": 150623251,
+        "sha256": "2d6f2f53d7f0a77f98c85c969d8069fc863eed889776fcb1f5fc4e60acc66035",
+        "global_wake_tick": 352,
+        "producer_readback_flag": true
+      },
+      {
+        "stage": "event2_after",
+        "file": "checkpoints/event2_after.pt",
+        "bytes": 149049515,
+        "sha256": "fcb2063f949741b8c080067ced7943cb0a7937f2951cc19c529368cf2f97bef6",
+        "global_wake_tick": 368,
+        "producer_readback_flag": true
+      },
+      {
+        "stage": "event2_before",
+        "file": "checkpoints/event2_before.pt",
+        "bytes": 150623443,
+        "sha256": "e4989aacbd13be03ce9cd2d52043d3e80b31e5468e157e71e74b79cbd9eb048d",
+        "global_wake_tick": 368,
+        "producer_readback_flag": true
+      },
+      {
+        "stage": "postwake15",
+        "file": "checkpoints/postwake15.pt",
+        "bytes": 150621947,
+        "sha256": "b95b75411ee4a0784df9ad44ba089d867e05fbd04d3bbac09b62b629a758c5a7",
+        "global_wake_tick": 383,
+        "producer_readback_flag": true
+      }
+    ],
+    "restore_qualification": {
+      "status": "pass",
+      "extra_request_evaluations": 32,
+      "extra_physical_adamw_steps": 1,
+      "snapshot_file_sha256": "e360dd001892be4c1504f632e03cd0dfd670595c94ff3165e9edc69281db0cea",
+      "snapshot_bytes": 147467773,
+      "original_vs_restored_range_content_equal": true,
+      "full_snapshot_content_equal": true,
+      "batch_metrics_content_equal": true,
+      "global_rng_restored": true
+    },
+    "work_counters": {
+      "executed_input_tokens_including_padding": 3758007,
+      "full_backbone_forward_calls": 19209,
+      "full_backbone_forward_tokens": 3714125,
+      "padded_input_tokens": 43882,
+      "physical_adamw_updates": 61,
+      "sampled_output_tokens": 13085,
+      "sleep_events": 2,
+      "tail_backward_calls": 1987,
+      "tail_backward_tokens": 18085,
+      "tail_calls": 21161,
+      "tail_grad_enabled_calls": 1987,
+      "tail_no_grad_calls": 19174,
+      "update_attempts": 61,
+      "wake_updates": 35
+    },
+    "sleep_event_count": 2,
+    "core_sleep_physical_adamw_steps": 60,
+    "qualification_physical_adamw_steps": 1,
+    "total_physical_adamw_updates": 61,
+    "wake_updates": 35
+  },
+  "limitations": [
+    "This is a first-trajectory correctness/provenance gate, not an assessment of development performance.",
+    "Checkpoint files were hashed bytewise only; this review did not deserialize tensors or inspect examples, labels, or score values.",
+    "Integer work counters reconcile exactly; phase wall slices sum to 880.577 seconds, leaving 12.939 seconds within the inclusive runner wall for unpartitioned setup/overhead.",
+    "This review authorizes the orchestrator to attempt the remaining 17 frozen runs serially; each run must still pass its own frozen launcher checks and failures remain no-retry."
+  ]
+}

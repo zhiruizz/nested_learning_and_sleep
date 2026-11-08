@@ -1,5 +1,24 @@
 # NL/Sleep Reproduction Lab
 
+## Banking V13: two-boundary development study
+
+The frozen V13 grid compares six arms across three class-order seeds at two natural boundaries. Every arm uses task-1 wake batch 32; the reused task-0 foundations were trained at batch 8. The four-arm batch/LR comparison uses batch 1 or 32 and LR 1e-3 or 5e-6 at matched 960-request exposure, but batch 32 makes 30 update opportunities versus 960 for batch 1, so this is not a batch-only or compute-matched effect. A separate batch-32 low-rate arm uses 3,200 requests and 100 update opportunities per event. Development evaluation covers 22 seen classes (11 old and 11 current) from the 77-label set. This is not a full seven-task benchmark or a paper reproduction.
+
+See the [V13 report](reports/banking77-batched-lifecycle-v13.md), [controlled protocol](docs/banking-v13-controlled-protocol.md), [paper-protocol cross-check](docs/sleep-paper-v13-primary-source-audit.md), and [frozen configuration](configs/banking_v13_batched_lifecycle_frozen_a.json).
+
+All 18 trajectories completed without retry. Joint development accuracy (mean ± sample SD, three seeds):
+
+| Arm | Joint accuracy % |
+|---|---:|
+| `CMS_ONLY` | 46.97 ± 1.05 |
+| `B1_HIGH` | 52.58 ± 5.11 |
+| `B1_LOW` | 37.88 ± 2.05 |
+| `B32_HIGH` | 49.39 ± 3.19 |
+| `B32_LOW` | 38.79 ± 3.92 |
+| `B32_LOW_DOSE` | 39.55 ± 3.61 |
+
+Higher-rate Sleep retains more old accuracy on average while learning less of the current task than CMS. The batch-32/low-rate 100-update condition does not recover that retention. The grid used 42,240 core replay requests and 12,480 core Sleep AdamW updates; its 5.254 summed runner hours already include the separately recorded 32-request/one-update restore qualification. These are development results; no V13 official-test/P2 access or paper-headline comparison is claimed.
+
 Banking V12 completed a three-seed, one-boundary receiver optimizer diagnostic. At 960 shared teacher-request exposures, batch 1/32 at 1e-3 reach 53.79%/52.27% global sum-score development accuracy, versus 43.03%/28.18% at 5e-6; the no-reset CMS reference is 56.06%. This is a local development mechanism study, not full Sleep or independent confirmation. See the [V12 report](reports/banking77-optimizer-boundary-v12.md), [aggregate evidence](results/banking-v12/README.md) and [execution guide](docs/banking-v12-reproduction.md).
 
 Ubuntu P2 update: four 40-step runs completed, but independent review found the original checkpoint protocol was not satisfied. The two-seed k4 result was unstable. See the [descriptive report](reports/ubuntu-p2-formal-descriptive-disposition.md) and [aggregate evidence](results/ubuntu-p2-descriptive/README.md); this is not a formal acceptance or confirmation claim.

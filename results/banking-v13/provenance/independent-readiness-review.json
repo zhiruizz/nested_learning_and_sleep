@@ -1,0 +1,156 @@
+{
+  "schema": "banking-v13-independent-readiness-review-v1",
+  "status": "conditional_ready_for_seed17_B32_HIGH_only",
+  "review_scope": "Frozen-source/material prelaunch review; no model load, CUDA, GPU run, or dataset/test read by reviewer",
+  "config_sha256": "1c4aae0c13d6b80193fee548639e7adbf6fae4d5b2c13d3d21d5f72ba26f0f35",
+  "source_config_freeze_sha256": "94391f2a11328d02749e7bc0945c8cb811f980a6ab2a656f45ffacb2dbcc794a",
+  "source_count": 8,
+  "test_count": 8,
+  "frozen_source_hashes": {
+    "tools/banking_cil_v13_batching.py": "425dc393e501188ae54677476846922345cad1d446abbc5d13195aefd00a6f45",
+    "tools/banking_sleep_v13_runtime.py": "beedb41e9723349d056ebca8485da6241164f2d6e945d99b7ed904dba87b72df",
+    "tools/banking_v13_execution.py": "7d4b98d55090950d214778fc77fe5ad24f7718563fe3463c521bb252b1e7ccec",
+    "tools/banking_v13_restore_qualification.py": "8765ce4f7eefd615fa8107d60840fc68ca5151dc9599e6f8ee32932c23904954",
+    "tools/launch_banking_sleep_lifecycle_v13.py": "aed61cdb9c6bac1761ed18379d26fbfec7a8bc85a506956cd7dc86a9f5d0d58c",
+    "tools/run_banking_optimizer_boundary_v12.py": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f",
+    "tools/run_banking_sleep_lifecycle_v13.py": "08d1e481cd22db1ebb0b97dda1da8af17d07fbfad8d8c7ff1581c13551c31465",
+    "tools/run_banking_v13_cpu_acceptance.py": "2f065e25b9b0bf2ee19a54e640a03d005d8d8942cf1e4fb19bd47436c4644544"
+  },
+  "frozen_test_hashes": {
+    "tests/test_banking_cil_v13_batching_cpu.py": "9399979938808fc3091356f4777b58350d38331bb33c1e316c58832e885c7597",
+    "tests/test_banking_cil_v13_snapshot_cpu.py": "719973f425442e2197736b31fae254e5dc53b229663bb092bbd77fd756fef5e6",
+    "tests/test_banking_sleep_v13_runtime_cpu.py": "f02548259bf484221e070f25b5f45336193abdf05a92415914f79bb7a60d70d7",
+    "tests/test_banking_v13_launcher_cpu.py": "350a962c62a4cc97580dacb90e853ba9b85893d8234ee56ab1fb9ab3983630a5",
+    "tests/test_banking_v13_objective_parity_cpu.py": "90d5a0dcc58372a1e10ac3c809d80d6581b266d17c6883e44396bf1ec383add1",
+    "tests/test_banking_v13_restore_qualification_cpu.py": "d134cf104c7fccfefcf80c0bea7ee7ca4439d577c7d3e5eb8c0fef06b1df6921",
+    "tests/test_reanalyze_banking_sleep_lifecycle_v13_cpu.py": "2beaac8622fcad7740d46023e119f04ecb88a7b624747f25ae153332a03b6578",
+    "tests/test_run_banking_sleep_lifecycle_v13_cpu.py": "631ed7f43e5dcdd2f8a0e4bb7641e6d5a86cb3d6b1d5ead1b699aacbe5d7192c"
+  },
+  "source_and_test_hash_mismatches": [],
+  "actual_cpu_preflight": {
+    "path": "outputs/v13-prep/actual-three-seed-cpu-preflight-a.json",
+    "sha256": "f7b2a8fcf9c7a235f0e380b26273ed5e1fe3ae4295a8efee6aa0ff2b86620b7c",
+    "status": "pass",
+    "seed_count": 3,
+    "cuda_initialized": false,
+    "model_loaded": false,
+    "official_test_read": false,
+    "optimizer_updates": 0,
+    "seeds": [
+      {
+        "seed": 17,
+        "foundation_wake_ticks": 348,
+        "inherited_clocks": {
+          "0": 12,
+          "1": 28,
+          "2": 92,
+          "3": 348
+        },
+        "event_ticks_and_endpoint": [
+          352,
+          368,
+          383
+        ],
+        "foundation_checkpoint_sha256": "668e8b979cf22fe29db827202d0a18b819864b6f36cf65d01d9b78e0138feeb2",
+        "foundation_receipt_sha256": "11813c0b68dd829cd57052f2c18897699a21ab83aacb38f9f63520392848f7c4",
+        "due_levels_at_events": [
+          0,
+          0
+        ],
+        "other_due_levels": []
+      },
+      {
+        "seed": 29,
+        "foundation_wake_ticks": 326,
+        "inherited_clocks": {
+          "0": 6,
+          "1": 6,
+          "2": 70,
+          "3": 326
+        },
+        "event_ticks_and_endpoint": [
+          336,
+          352,
+          367
+        ],
+        "foundation_checkpoint_sha256": "167c6c48ad168fc7271a08aa10c18a0518d8dbf5a825eb9165745f282ec24782",
+        "foundation_receipt_sha256": "dd5f867789469d4836d42c1ea0ede960ffc0e7dd7dfbc56d2f779ff2ab49d13d",
+        "due_levels_at_events": [
+          0,
+          0
+        ],
+        "other_due_levels": []
+      },
+      {
+        "seed": 43,
+        "foundation_wake_ticks": 322,
+        "inherited_clocks": {
+          "0": 2,
+          "1": 2,
+          "2": 66,
+          "3": 322
+        },
+        "event_ticks_and_endpoint": [
+          336,
+          352,
+          367
+        ],
+        "foundation_checkpoint_sha256": "99c5faf58e517be01d6959c98558a29786ed48a57fc980fa46baec797ea55ea8",
+        "foundation_receipt_sha256": "36aaeb56d2035357ab04a4a75ca91f5438491583ea962dc07b15ba23a5c72cf5",
+        "due_levels_at_events": [
+          0,
+          0
+        ],
+        "other_due_levels": []
+      }
+    ]
+  },
+  "clock_audit": {
+    "path": "outputs/v13-prep/actual-foundation-clock-audit.json",
+    "sha256": "31bdd42de990772992a789432b68b00e8bc6fde4fcfba1401982017062e50192",
+    "status": "pass",
+    "only_sender0_boundaries_for_all_seeds": true
+  },
+  "guarded_cpu_acceptance": {
+    "path": "outputs/v13-prep/guarded-cpu-acceptance-b.json",
+    "sha256": "1d43b77d7dd3724ca261a1010c95c4fc0ddcc8579ca58c5cd26730498c4a4f99",
+    "status": "pass",
+    "pytest_exit_code": 0,
+    "test_log_sha256": "50524b3b4981142fdb004942b215db751ad7718d50c387d4e3e3937daa5276d4",
+    "passes": 41,
+    "real_model_loaded": false,
+    "cuda_initialization_prohibited": true,
+    "network_prohibited": true,
+    "guard_sha256": "c22f07489d40ed5c3b49c6e9c6790ff15f97cae3bbdd9d65e388b853ef2f4fd9",
+    "guard_unchanged": true,
+    "optimizer_attempts": 26,
+    "guard_limit": 256,
+    "functional_cms_attempts": 0,
+    "controller_attempts": 0
+  },
+  "plan": {
+    "first_run": "seed 17 / B32_HIGH only",
+    "qualification": "After request 32, serialize/read back snapshot; compare original and restored requests 32:64 including snapshot/metrics; require a persisted pass receipt before continuing the same seed/arm trajectory.",
+    "on_qualification_failure": "Preserve failure record and stop; no retry.",
+    "other_runs": "Do not launch any other seed/arm until parent reviews terminal seed-17 qualification.",
+    "test_data_read": false,
+    "automatic_retries": 0,
+    "request_budget_per_seed": 14080,
+    "request_budget_all_three_seeds": 42240,
+    "max_wall_seconds_per_run": 14400,
+    "max_forward_calls_per_run": 200000,
+    "max_update_steps_per_run": 8000,
+    "claim_scope": "three_seed_development_two_natural_boundaries_plus_postwake_batched_full_local_KS_diagnostic_not_paper_reproduction"
+  },
+  "review_findings": [
+    "All eight frozen source hashes and eight frozen CPU-test hashes match the current workspace.",
+    "The actual three-seed CPU preflight binds the frozen config, source lock, qualified foundation checkpoint/receipt, and observed clocks; all report CUDA=false, model_loaded=false, test_read=false, updates=0.",
+    "Guarded CPU acceptance reports 41 passed, 26 toy optimizer attempts, 0 CMS/controller attempts, unchanged guard, and no model/network/CUDA.",
+    "The V13 execution loop keeps all five dev evaluations after training and qualification, and separates qualification replay work from core event work."
+  ],
+  "remaining_limits": [
+    "This receipt only clears the first seed-17 B32_HIGH run and its internal restore qualification; it does not clear the remaining grid.",
+    "No scientific run outcome or performance result is claimed."
+  ],
+  "reviewed_utc": "2026-11-08T02:28:40.2765133Z"
+}

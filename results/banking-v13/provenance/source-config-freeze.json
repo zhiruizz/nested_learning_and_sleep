@@ -1,0 +1,29 @@
+{
+  "config_file": "configs/banking_v13_batched_lifecycle_frozen_a.json",
+  "config_sha256": "1c4aae0c13d6b80193fee548639e7adbf6fae4d5b2c13d3d21d5f72ba26f0f35",
+  "draft_config_sha256": "b9f96fa9d44303cfbf542750ca9e580634e87608d1c63776be3534d003715e25",
+  "independent_readiness_pending": true,
+  "model_or_training_launched": false,
+  "old_v10_v12_execution_sources_preserved": true,
+  "schema": "banking-v13-source-and-config-freeze-v1",
+  "source_hashes": {
+    "tools/banking_cil_v13_batching.py": "425dc393e501188ae54677476846922345cad1d446abbc5d13195aefd00a6f45",
+    "tools/banking_sleep_v13_runtime.py": "beedb41e9723349d056ebca8485da6241164f2d6e945d99b7ed904dba87b72df",
+    "tools/banking_v13_execution.py": "7d4b98d55090950d214778fc77fe5ad24f7718563fe3463c521bb252b1e7ccec",
+    "tools/banking_v13_restore_qualification.py": "8765ce4f7eefd615fa8107d60840fc68ca5151dc9599e6f8ee32932c23904954",
+    "tools/launch_banking_sleep_lifecycle_v13.py": "aed61cdb9c6bac1761ed18379d26fbfec7a8bc85a506956cd7dc86a9f5d0d58c",
+    "tools/run_banking_optimizer_boundary_v12.py": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f",
+    "tools/run_banking_sleep_lifecycle_v13.py": "08d1e481cd22db1ebb0b97dda1da8af17d07fbfad8d8c7ff1581c13551c31465",
+    "tools/run_banking_v13_cpu_acceptance.py": "2f065e25b9b0bf2ee19a54e640a03d005d8d8942cf1e4fb19bd47436c4644544"
+  },
+  "test_hashes": {
+    "tests/test_banking_cil_v13_batching_cpu.py": "9399979938808fc3091356f4777b58350d38331bb33c1e316c58832e885c7597",
+    "tests/test_banking_cil_v13_snapshot_cpu.py": "719973f425442e2197736b31fae254e5dc53b229663bb092bbd77fd756fef5e6",
+    "tests/test_banking_sleep_v13_runtime_cpu.py": "f02548259bf484221e070f25b5f45336193abdf05a92415914f79bb7a60d70d7",
+    "tests/test_banking_v13_launcher_cpu.py": "350a962c62a4cc97580dacb90e853ba9b85893d8234ee56ab1fb9ab3983630a5",
+    "tests/test_banking_v13_objective_parity_cpu.py": "90d5a0dcc58372a1e10ac3c809d80d6581b266d17c6883e44396bf1ec383add1",
+    "tests/test_banking_v13_restore_qualification_cpu.py": "d134cf104c7fccfefcf80c0bea7ee7ca4439d577c7d3e5eb8c0fef06b1df6921",
+    "tests/test_reanalyze_banking_sleep_lifecycle_v13_cpu.py": "2beaac8622fcad7740d46023e119f04ecb88a7b624747f25ae153332a03b6578",
+    "tests/test_run_banking_sleep_lifecycle_v13_cpu.py": "631ed7f43e5dcdd2f8a0e4bb7641e6d5a86cb3d6b1d5ead1b699aacbe5d7192c"
+  }
+}

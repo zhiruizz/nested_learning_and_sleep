@@ -1,0 +1,83 @@
+{
+  "adapter_correction": {
+    "GPU_training_repeated": false,
+    "failure": "First offline contract call expected a stage dictionary; the frozen executor writes an ordered list.",
+    "historical_CPU_receipts_preserved": true,
+    "numerical_sources_or_config_changed": false,
+    "predetermined_arms_endpoints_or_statistics_changed": false,
+    "repair": "Validate the actual ordered list, unique stage names, delayed evaluation flags, and unchanged metric/work definitions.",
+    "science_scores_printed_or_used_for_selection": false
+  },
+  "analysis_source_hashes": {
+    "tools/plot_banking_sleep_lifecycle_v13.py": "9f2fb27423d33de3bd09592a8b5227023a2dce629738c30dcdf1fe14e8e9417b",
+    "tools/reanalyze_banking_sleep_lifecycle_v13.py": "46984a8df2142b5b96124364810d9e690ce97b0d144d7119af980a065761e881",
+    "tools/verify_banking_v13_private_checkpoints.py": "d7305958e062fda2d9e3e9c69c7b2006df6ca4ac22f9fd0cd02ee11974741db3"
+  },
+  "config_sha256": "1c4aae0c13d6b80193fee548639e7adbf6fae4d5b2c13d3d21d5f72ba26f0f35",
+  "current_cpu_test_hashes": {
+    "test_banking_cil_v13_batching_cpu.py": "9399979938808fc3091356f4777b58350d38331bb33c1e316c58832e885c7597",
+    "test_banking_cil_v13_snapshot_cpu.py": "719973f425442e2197736b31fae254e5dc53b229663bb092bbd77fd756fef5e6",
+    "test_banking_sleep_v13_runtime_cpu.py": "f02548259bf484221e070f25b5f45336193abdf05a92415914f79bb7a60d70d7",
+    "test_banking_v13_launcher_cpu.py": "350a962c62a4cc97580dacb90e853ba9b85893d8234ee56ab1fb9ab3983630a5",
+    "test_banking_v13_objective_parity_cpu.py": "90d5a0dcc58372a1e10ac3c809d80d6581b266d17c6883e44396bf1ec383add1",
+    "test_banking_v13_restore_qualification_cpu.py": "d134cf104c7fccfefcf80c0bea7ee7ca4439d577c7d3e5eb8c0fef06b1df6921",
+    "test_reanalyze_banking_sleep_lifecycle_v13_cpu.py": "6ef9ce30b7f66d99aec2c8dc69ba45f3480b9b23bc48e82f404103767cde01bf",
+    "test_run_banking_sleep_lifecycle_v13_cpu.py": "631ed7f43e5dcdd2f8a0e4bb7641e6d5a86cb3d6b1d5ead1b699aacbe5d7192c"
+  },
+  "current_cpu_tests_passed": 41,
+  "current_guarded_cpu_acceptance_sha256": "a4c138d25c77c3098b40696e92a29d9f7bee7732d0a82649776fda77975d98c9",
+  "figure_caption_correction": {
+    "GPU_training_repeated": false,
+    "aggregate_sha256_unchanged": "4d45247352b3cc8328918a34e5dce63a4448d1333a78abc1918a8296feea02fd",
+    "current_core_tests_unchanged": true,
+    "endpoint_or_metric_selection_changed": false,
+    "metrics_csv_sha256_unchanged": "8a0694dbe7da75dfa5514087ac1d9018fdb8381afe9b7211a3ba061d7db8c79e",
+    "new_plot_manifest_sha256": "71db132f7f832d3bb63cbf423f88bcbd25de7da3c9d93bfea613a27a5b62a702",
+    "new_plot_source_sha256": "9f2fb27423d33de3bd09592a8b5227023a2dce629738c30dcdf1fe14e8e9417b",
+    "old_plot_source_archive_sha256": "7c726a9dd65ee005c672da6df847f139b7383806e895ff92dbc8d7c70e9fcc7e",
+    "old_plot_source_sha256": "7c726a9dd65ee005c672da6df847f139b7383806e895ff92dbc8d7c70e9fcc7e",
+    "only_source_change": "one figure-caption string; data, statistics, plotting code and numerical experiment unchanged",
+    "reason": "Actual rendered caption conflated one shared initialization with the three different seed-specific qualified foundations."
+  },
+  "first_terminal_contract_validation": {
+    "arm": "B32_HIGH",
+    "events": 2,
+    "receipt_sha256": "7c0751f015dae5ab2931d4deef1d5d3925221dc64669344740c3e1444bd4c095",
+    "seed": 17,
+    "stages": 5,
+    "status": "pass"
+  },
+  "guard_sha256": "c22f07489d40ed5c3b49c6e9c6790ff15f97cae3bbdd9d65e388b853ef2f4fd9",
+  "historical_analysis_binding_sha256": "ba20ff3941e3f916be335ab8f763196871a4c10d44c502101ad5b4bfed962a57",
+  "historical_caption_binding_sha256": "802834e1896c7cea904ddfe8f1df746f406cf4a17354f8de0b4b64123bd0e40d",
+  "historical_prelaunch_freeze_sha256": "94391f2a11328d02749e7bc0945c8cb811f980a6ab2a656f45ffacb2dbcc794a",
+  "numeric_source_hashes": {
+    "tools/banking_cil_v13_batching.py": "425dc393e501188ae54677476846922345cad1d446abbc5d13195aefd00a6f45",
+    "tools/banking_sleep_v13_runtime.py": "beedb41e9723349d056ebca8485da6241164f2d6e945d99b7ed904dba87b72df",
+    "tools/banking_v13_execution.py": "7d4b98d55090950d214778fc77fe5ad24f7718563fe3463c521bb252b1e7ccec",
+    "tools/banking_v13_restore_qualification.py": "8765ce4f7eefd615fa8107d60840fc68ca5151dc9599e6f8ee32932c23904954",
+    "tools/launch_banking_sleep_lifecycle_v13.py": "aed61cdb9c6bac1761ed18379d26fbfec7a8bc85a506956cd7dc86a9f5d0d58c",
+    "tools/run_banking_optimizer_boundary_v12.py": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f",
+    "tools/run_banking_sleep_lifecycle_v13.py": "08d1e481cd22db1ebb0b97dda1da8af17d07fbfad8d8c7ff1581c13551c31465",
+    "tools/run_banking_v13_cpu_acceptance.py": "2f065e25b9b0bf2ee19a54e640a03d005d8d8942cf1e4fb19bd47436c4644544"
+  },
+  "publication_fixture_correction": {
+    "GPU_training_or_metrics_changed": false,
+    "core_test_sources_changed": false,
+    "corrected_copy_payloads": 65,
+    "draft_fixture_file": "configs/banking_v13_batched_lifecycle_draft.json",
+    "draft_fixture_sha256": "b9f96fa9d44303cfbf542750ca9e580634e87608d1c63776be3534d003715e25",
+    "draft_remains_not_for_GPU_launch": true,
+    "failed_legacy_links_check_sha256": "179bc79a8e09fac30d358f3fd972dfbe787c1a4f3a53177df20717629bc61d08",
+    "failed_relocated_acceptance_sha256": "8ad31aa247ab4b5f547e326a6c19bf04ccb638146861aadf097cb5d4111a3bea",
+    "failure": "First relocated public acceptance: 34 passed, 7 fixture errors because draft config was omitted; one protocol link also targeted the missing file.",
+    "initial_copy_payloads": 64
+  },
+  "raw_rows_or_ids_emitted": false,
+  "real_model_loaded_for_analysis_validation": false,
+  "recorded_utc": "2026-11-08T08:12:08.193554+00:00",
+  "schema": "banking-v13-source-analysis-binding-v1",
+  "status": "numeric_sources_unchanged_public_test_fixture_included",
+  "test_data_read": false,
+  "toy_optimizer_attempts": 26
+}

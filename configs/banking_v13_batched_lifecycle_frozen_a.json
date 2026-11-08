@@ -1,0 +1,170 @@
+{
+  "arms": [
+    {
+      "effective_batch_size": null,
+      "learning_rate": null,
+      "name": "CMS_ONLY",
+      "requests_per_event": 0,
+      "sleep": false
+    },
+    {
+      "effective_batch_size": 1,
+      "learning_rate": 0.001,
+      "name": "B1_HIGH",
+      "requests_per_event": 960,
+      "sleep": true
+    },
+    {
+      "effective_batch_size": 1,
+      "learning_rate": 5e-06,
+      "name": "B1_LOW",
+      "requests_per_event": 960,
+      "sleep": true
+    },
+    {
+      "effective_batch_size": 32,
+      "learning_rate": 0.001,
+      "name": "B32_HIGH",
+      "requests_per_event": 960,
+      "sleep": true
+    },
+    {
+      "effective_batch_size": 32,
+      "learning_rate": 5e-06,
+      "name": "B32_LOW",
+      "requests_per_event": 960,
+      "sleep": true
+    },
+    {
+      "effective_batch_size": 32,
+      "learning_rate": 5e-06,
+      "name": "B32_LOW_DOSE",
+      "requests_per_event": 3200,
+      "sleep": true
+    }
+  ],
+  "automatic_retries": 0,
+  "base_lr": 0.001,
+  "claim_scope": "three_seed_development_two_natural_boundaries_plus_postwake_batched_full_local_KS_diagnostic_not_paper_reproduction",
+  "clip_norm": 1.0,
+  "clock_unit": "wake_optimizer_minibatches_local_assumption_not_paper_token_units",
+  "cms_comparison": "reference_only_not_information_or_compute_matched_to_Sleep",
+  "cuda_allocator_conf": "garbage_collection_threshold:0.7",
+  "cuda_memory_fraction": 0.8,
+  "dose_comparison": "B32_LOW_DOSE_vs_B32_LOW_varies_requests_and_updates_not_a_pure_batch_effect",
+  "evaluation": {
+    "candidate_batch_size": 32,
+    "candidate_labels": 77,
+    "current_rows": 110,
+    "include_greedy": true,
+    "old_rows": 110,
+    "primary": "teacher_forced_sum",
+    "split": "development_only",
+    "stages": [
+      "event1_before",
+      "event1_after",
+      "event2_before",
+      "event2_after",
+      "postwake15"
+    ]
+  },
+  "execution_order_per_seed": [
+    "B32_HIGH",
+    "CMS_ONLY",
+    "B1_HIGH",
+    "B1_LOW",
+    "B32_LOW",
+    "B32_LOW_DOSE"
+  ],
+  "expected_total_wake_ticks_by_seed": {
+    "17": 35,
+    "29": 41,
+    "43": 45
+  },
+  "fast_lr": 0.1,
+  "frozen_utc": "2026-11-08T02:24:22.963374+00:00",
+  "gkd_sampling_owner_policy": "alternate_teacher_student_start_teacher_each_event",
+  "inherited_foundation_wake_batch_size": 8,
+  "initialization_seed": 1907008,
+  "launch_gate": "actual_all_three_CPU_preflight_and_independent_review_then_seed17_B32_HIGH_real_restore_qualification_before_other_trajectories",
+  "lora_alpha": null,
+  "lora_alpha_reason": "Table5_LoRA_alpha128_does_not_define_scaling_for_our_nonlinear_low_rank_CMS_experts",
+  "max_forward_calls": 200000,
+  "max_new_tokens": 10,
+  "max_sequence_length": 128,
+  "max_update_steps": 8000,
+  "max_wall_seconds": 14400,
+  "no_test_based_selection": true,
+  "objective": "v10_local_GKD_and_LTI_assembly_unchanged_request_mean_gradient_accumulation",
+  "objective_numerics": {
+    "KL_temperature": 1.0,
+    "LTI_KL_weight": 0.5,
+    "LTI_reward_CE_weight": 0.5,
+    "edit_distance_z0": 8,
+    "edit_weight": 0.5,
+    "semantic_proxy_weight": 0.5
+  },
+  "parent_release": "d9c516cc16da3d8ad7d2cfb2f8173fdae90c3a87",
+  "periods": [
+    16,
+    64,
+    256,
+    1024,
+    null
+  ],
+  "prefix_ticks_by_seed": {
+    "17": 4,
+    "29": 10,
+    "43": 14
+  },
+  "request_matching": "primary_2x2_matches_prompt_request_exposures_not_generated_targets_actual_tokens_Adam_or_FLOPs",
+  "restore_qualification": {
+    "arm": "B32_HIGH",
+    "compare_after_requests": 64,
+    "event_index": 0,
+    "extra_adamw_updates": 1,
+    "extra_request_evaluations": 32,
+    "require_before_other_trajectories": true,
+    "seed": 17,
+    "snapshot_after_requests": 32,
+    "whole_job_resume_claim": false
+  },
+  "schema": "banking-v13-batched-lifecycle-config-v1",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "semantic_reward": "canonical_label_equivalence_local_proxy_not_paper_frozen_reward_model",
+  "sender": 0,
+  "sleep_events_per_run": 2,
+  "sleep_method_cycle": [
+    "gkd",
+    "gkd",
+    "lti"
+  ],
+  "sleep_selector_event_stride": 3200,
+  "sleep_selector_policy": "v10_balanced_old_current_seen_class_cycle_first_prefix_of_common_3200_request_schedule_each_event",
+  "source_hashes": {
+    "tools/banking_cil_v13_batching.py": "425dc393e501188ae54677476846922345cad1d446abbc5d13195aefd00a6f45",
+    "tools/banking_sleep_v13_runtime.py": "beedb41e9723349d056ebca8485da6241164f2d6e945d99b7ed904dba87b72df",
+    "tools/banking_v13_execution.py": "7d4b98d55090950d214778fc77fe5ad24f7718563fe3463c521bb252b1e7ccec",
+    "tools/banking_v13_restore_qualification.py": "8765ce4f7eefd615fa8107d60840fc68ca5151dc9599e6f8ee32932c23904954",
+    "tools/launch_banking_sleep_lifecycle_v13.py": "aed61cdb9c6bac1761ed18379d26fbfec7a8bc85a506956cd7dc86a9f5d0d58c",
+    "tools/run_banking_optimizer_boundary_v12.py": "638852b8a064ea388119c503c59c3c66b1f2678e3f71c41304072a27e691269f",
+    "tools/run_banking_sleep_lifecycle_v13.py": "08d1e481cd22db1ebb0b97dda1da8af17d07fbfad8d8c7ff1581c13551c31465",
+    "tools/run_banking_v13_cpu_acceptance.py": "2f065e25b9b0bf2ee19a54e640a03d005d8d8942cf1e4fb19bd47436c4644544"
+  },
+  "status": "frozen",
+  "task_id": 1,
+  "temperature": 0.8,
+  "test_data_read": false,
+  "training_manifest_sha256": "ed9f4b047768021cbf16a3fa042db12baf212038f89f33a00099f2e32b7300f3",
+  "v10_config_file_sha256": "785ded5cc9d205dc3cbc6d25179abf6fd0d589ce6943a42626aa1692b54dfd9d",
+  "v10_source_lock_sha256": "3fcc2e2cb930149e9ee5204dcf8fa8910888cd7b05cd31f66d10ceb852d6844c",
+  "wake_batch_policy": "full_32_requests_from_concatenated_deterministic_epochs_0_and_1_no_drop_or_partial",
+  "wake_batch_size": 32,
+  "wake_ticks_after_last_sleep": 15,
+  "wake_ticks_between_sleep_events": 16,
+  "weight_decay": 0.0
+}

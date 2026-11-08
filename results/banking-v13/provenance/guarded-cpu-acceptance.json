@@ -1,0 +1,32 @@
+{
+  "cuda_initialization_prohibited": true,
+  "elapsed_wall_seconds": 6.141000000061467,
+  "guard_sha256": "c22f07489d40ed5c3b49c6e9c6790ff15f97cae3bbdd9d65e388b853ef2f4fd9",
+  "guard_unchanged": true,
+  "ledger": {
+    "controller_attempts": 0,
+    "functional_cms_attempts": 0,
+    "last_session_seconds": 4.0,
+    "limit": 256,
+    "optimizer_attempts": 26
+  },
+  "ledger_sha256": "a3ee5ae67b43d28d5dee0a96a405648acde1fc2af63ce7086ee97ddd55a1ee73",
+  "log_sha256": "a766bb9058780185c4840065844ffe8ce1ad08870628afada733657c5f5a165a",
+  "network_prohibited": true,
+  "pytest_exit_code": 0,
+  "real_model_loaded": false,
+  "schema": "banking-v13-cpu-acceptance-v1",
+  "setup_or_integrity_error": null,
+  "status": "pass",
+  "test_source_hashes": {
+    "test_banking_cil_v13_batching_cpu.py": "9399979938808fc3091356f4777b58350d38331bb33c1e316c58832e885c7597",
+    "test_banking_cil_v13_snapshot_cpu.py": "719973f425442e2197736b31fae254e5dc53b229663bb092bbd77fd756fef5e6",
+    "test_banking_sleep_v13_runtime_cpu.py": "f02548259bf484221e070f25b5f45336193abdf05a92415914f79bb7a60d70d7",
+    "test_banking_v13_launcher_cpu.py": "350a962c62a4cc97580dacb90e853ba9b85893d8234ee56ab1fb9ab3983630a5",
+    "test_banking_v13_objective_parity_cpu.py": "90d5a0dcc58372a1e10ac3c809d80d6581b266d17c6883e44396bf1ec383add1",
+    "test_banking_v13_restore_qualification_cpu.py": "d134cf104c7fccfefcf80c0bea7ee7ca4439d577c7d3e5eb8c0fef06b1df6921",
+    "test_reanalyze_banking_sleep_lifecycle_v13_cpu.py": "6ef9ce30b7f66d99aec2c8dc69ba45f3480b9b23bc48e82f404103767cde01bf",
+    "test_run_banking_sleep_lifecycle_v13_cpu.py": "631ed7f43e5dcdd2f8a0e4bb7641e6d5a86cb3d6b1d5ead1b699aacbe5d7192c"
+  },
+  "test_sources_unchanged": true
+}

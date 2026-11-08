@@ -1,5 +1,24 @@
 # NL/Sleep Reproduction Lab
 
+## Banking V13：双边界开发研究
+
+冻结的 V13 网格包含 3 个类别顺序种子、6 个实验臂和 2 个自然边界。所有实验臂的 task-1 wake batch 均为 32；复用的 task-0 foundation 使用 batch 8 训练。四臂 batch/LR 对照在 960 个请求下比较 batch 1/32 与学习率 1e-3/5e-6，但 batch 32 只有 30 次更新机会，batch 1 有 960 次，因此这不是单独的 batch 效应，也不是计算量匹配的比较。另有一个 batch-32、低学习率条件，每个事件使用 3,200 个请求和 100 次更新机会。开发集评估覆盖 77 个标签中的 22 个已见类别（11 个旧类、11 个当前类）。这不是完整七任务基准，也不是论文复现。
+
+参见 [V13 报告](reports/banking77-batched-lifecycle-v13.md)、[冻结协议](docs/banking-v13-controlled-protocol.md)、[论文基准协议核对](docs/sleep-paper-v13-primary-source-audit.md)和[冻结配置](configs/banking_v13_batched_lifecycle_frozen_a.json)。
+
+18 条轨迹已全部完成，没有失败或重试。合计开发集准确率（3 个种子的均值 ± 样本标准差）：
+
+| 组别 | 合计准确率 % |
+|---|---:|
+| `CMS_ONLY` | 46.97 ± 1.05 |
+| `B1_HIGH` | 52.58 ± 5.11 |
+| `B1_LOW` | 37.88 ± 2.05 |
+| `B32_HIGH` | 49.39 ± 3.19 |
+| `B32_LOW` | 38.79 ± 3.92 |
+| `B32_LOW_DOSE` | 39.55 ± 3.61 |
+
+高学习率 Sleep 组平均保留了更多旧任务能力，但新任务准确率低于 CMS。batch 32、低学习率增加至每事件 100 次更新也没有带来旧知识保留收益。网格共使用 42,240 条核心回放请求、12,480 次核心 Sleep AdamW 更新，运行总墙钟约 5.254 小时，已含恢复资格检查；该检查的额外 32 条请求和 1 次更新单独标出，不重复计入。本轮未访问官方测试集或 P2，也不将这些开发结果与原文最终准确率作同条件比较。
+
 Banking V12 已完成三个 seed 的单次巩固边界优化诊断。在相同的 960 条教师请求下，学习率 1e-3、有效批量 1/32 的全 77 类排序开发集准确率为 53.79%/52.27%；5e-6 对应为 43.03%/28.18%，不重置的 CMS 参照为 56.06%。这是本地开发集机制实验，尚未建立完整 Sleep 收益或独立确认。详见 [V12 报告](reports/banking77-optimizer-boundary-v12.md)、[汇总证据](results/banking-v12/README.md)及[复现说明](docs/banking-v12-reproduction.md)。
 
 Ubuntu P2 更新：四次 40 步运行已完成，独立验收裁定原检查点协议不满足；分频更新的两个种子结果不稳定。见[描述性报告](reports/ubuntu-p2-formal-descriptive-disposition.md)与[脱敏聚合](results/ubuntu-p2-descriptive/README.md)。这不是正式验收通过或确认性结论。
